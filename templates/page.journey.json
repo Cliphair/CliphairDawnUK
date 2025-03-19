@@ -240,6 +240,7 @@
         "heading_size": "h2",
         "text_allignment": "center",
         "color_scheme": "background-2",
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n      <div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-stars=\"5\" data-text-color=\"#414141\">\n        <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n      </div>\n      <!-- End TrustBox widget -->",
         "padding_top": 12,
         "padding_bottom": 12
       }
