@@ -1,12 +1,12 @@
 /*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "banner": {
@@ -28,23 +28,35 @@
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
-        "colour_as_title": true,
-        "show_type": true,
+        "colour_as_title": false,
+        "show_type": false,
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": false,
         "display_type_image": false,
-        "type_image_src": "shade",
+        "type_image_src": "second",
         "badge_style": "fixed",
         "display_low_inventory": true,
         "low_inventory": 5,
         "enable_filtering": true,
         "filter_type": "drawer",
-        "remove_filters": "Length",
+        "remove_filters": "Colour Group,Colour",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 20,
         "padding_bottom": 0
+      }
+    },
+    "trustpilot_carrousel_kGpBUc": {
+      "type": "trustpilot-carrousel",
+      "settings": {
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "color_scheme": "background-2",
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-tags=\"QUALITY-CUSTOMERSERVICE\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "db22f337-3a12-4ced-9dd2-bf58688d855a": {
@@ -68,7 +80,7 @@
         "layout": "none",
         "arrow_style": "half-arrow",
         "color_scheme": "inverse",
-        "container_color_scheme": "accent-4",
+        "container_color_scheme": "inverse",
         "open_first_collapsible_row": false,
         "padding_top": 40,
         "padding_bottom": 40
@@ -80,40 +92,40 @@
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
-            "text_label": "<p>Ethically<br>Sourced</p>",
+            "image": "shopify:\/\/shop_images\/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "text_label": "<p>Ethically<br>Sourced<\/p>",
             "link": ""
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
-            "text_label": "<p>Outstanding<br>Reviews</p>",
-            "link": "shopify://pages/testimonials"
+            "image": "shopify:\/\/shop_images\/Outstanding-Reviews-_White.svg",
+            "text_label": "<p>Outstanding<br>Reviews<\/p>",
+            "link": "shopify:\/\/pages\/testimonials"
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
-            "text_label": "<p>Cliphair<br>Rewards</p>",
-            "link": "shopify://pages/rewards"
+            "image": "shopify:\/\/shop_images\/Cliphair-Rewards-_White.svg",
+            "text_label": "<p>Cliphair<br>Rewards<\/p>",
+            "link": "shopify:\/\/pages\/rewards"
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Free-Delivery-_White.svg",
-            "text_label": "<p>Free Delivery<br>& Returns</p>",
+            "image": "shopify:\/\/shop_images\/Free-Delivery-_White.svg",
+            "text_label": "<p>Free Delivery<br>& Returns<\/p>",
             "link": ""
           }
         },
         "cbdbff03-f013-487f-8288-6c9a46426bc6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
-            "text_label": "<p>Buy Now<br>Pay Later</p>",
+            "image": "shopify:\/\/shop_images\/Buy-Now-Pay-Later-_White.svg",
+            "text_label": "<p>Buy Now<br>Pay Later<\/p>",
             "link": ""
           }
         }
@@ -128,7 +140,7 @@
       "custom_css": [
         "img {max-height: 70px;}",
         "a {text-decoration: none;}",
-        "@media screen and (min-width: 750px) and (max-width: 989px) {.grid--4-col-tablet .grid__item {width: calc((100% - var(--grid-desktop-horizontal-spacing) * 4) / 5); }}"
+        "@media screen and (min-width: 750px) and (max-width: 989px) {.grid--4-col-tablet .grid__item {width: calc((100% - var(--grid-desktop-horizontal-spacing) * 4) \/ 5); }}"
       ],
       "settings": {
         "title": "",
@@ -149,6 +161,7 @@
   "order": [
     "banner",
     "product-grid",
+    "trustpilot_carrousel_kGpBUc",
     "db22f337-3a12-4ced-9dd2-bf58688d855a",
     "b400924f-2211-460e-841c-e909605faf8f",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b"
