@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "information_videos_8BXc9p": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "accent-4"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -34,12 +28,6 @@
             "title": "Features"
           }
         },
-        "information_videos_MKNiNH": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "inverse"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -50,12 +38,8 @@
             "picker_type": "dropdown"
           }
         },
-        "quantity_selector_RERRjV": {
+        "quantity_selector_jRL7p9": {
           "type": "quantity_selector",
-          "settings": {}
-        },
-        "sc_back_in_stock_app_block_JKfDnH": {
-          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
         "buy_buttons": {
@@ -70,29 +54,6 @@
           "type": "share",
           "settings": {
             "share_label": "Share"
-          }
-        },
-        "icon_with_text_D9qjLA": {
-          "type": "icon-with-text",
-          "disabled": true,
-          "settings": {
-            "layout": "vertical",
-            "icon_1": "truck",
-            "heading_1": "<strong>Unlock Free Sunday Delivery!</strong> Spend Over £75",
-            "icon_2": "none",
-            "heading_2": "",
-            "icon_3": "none",
-            "heading_3": ""
-          }
-        },
-        "order_deadline_67UiV7": {
-          "type": "order_deadline",
-          "settings": {}
-        },
-        "reward_points_B9N8X4": {
-          "type": "reward-points",
-          "settings": {
-            "page": "rewards-pop-up"
           }
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
@@ -111,6 +72,7 @@
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "specification",
             "heading": "Details",
@@ -121,6 +83,7 @@
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "instructions",
             "heading": "How to Style",
@@ -128,58 +91,26 @@
             "content": "",
             "page": ""
           }
-        },
-        "collapsible_tab_JGqU4U": {
-          "type": "collapsible_tab",
-          "settings": {
-            "type": "custom",
-            "heading": "Delivery Info",
-            "icon": "none",
-            "content": "<p><span style=\"text-decoration:underline\"><strong>UK</strong></span></p><ul><li>Economy Tracked: 3-5 Working Days - FREE on Orders over £30</li><li>Express Tracked: 1-2 Working Days - £3.99</li><li>Next Working Day Guaranteed (Order Before 4pm Mon-Thu) - £7.99</li><li>Next Working Day by 10.30 AM (Order Before 3pm Mon-Thu) - £11.99</li><li>Saturday Guaranteed (Order Before 4pm Friday) - £8.99</li><li>Sunday Guaranteed (Order Before 3pm Saturday) - £5.99</li><li>Monday Guaranteed (Order Before 3pm Sunday) - £7.99</li><li>Pickup at Nearby Shop (Order Before      3pm For Next Working Day) - £3.99</li></ul><p><span style=\"text-decoration:underline\"><strong>USA</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £9.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>Canada</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £12.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>IRELAND/EU</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – 11.49<br/><strong>(Taxes Paid by Customer on Delivery)</strong></li><li>Economy Tracked: (4-7 Working Days) - £25.00<br/><strong>(Inc. All Taxes & Duties. Nothing to pay on Delivery)</strong> </li></ul><p><span style=\"text-decoration:underline\"><strong>REST OF THE WORLD</strong></span></p><ul><li>Express Tracked: (2-4 Working Days) – 14.99</li></ul><p><strong>Please note you might have to pay duties which are not included in carriage.</strong></p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_36Cgxc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "type": "custom",
-            "heading": "Return Policy",
-            "icon": "none",
-            "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
-        "information_videos_8BXc9p",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
-        "information_videos_MKNiNH",
         "price",
         "variant_picker",
-        "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
+        "quantity_selector_jRL7p9",
         "buy_buttons",
         "share",
-        "icon_with_text_D9qjLA",
-        "order_deadline_67UiV7",
-        "reward_points_B9N8X4",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc"
-      ],
-      "custom_css": [
-        "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
-        "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}"
+        "collapsible-row-2"
       ],
       "settings": {
         "enable_sticky_info": true,
         "image_ratio": "square",
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -192,41 +123,29 @@
         "padding_bottom": 40
       }
     },
-    "video_list_metafields_UqTJAJ": {
-      "type": "video-list-metafields",
-      "custom_css": [
-        ".deferred-media__poster-button {color: white;}"
-      ],
+    "trustpilot_carrousel_xcFh7r": {
+      "type": "trustpilot-carrousel",
       "settings": {
-        "title": "SEE IT IN REAL LIFE",
-        "heading_size": "h1",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
         "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 4,
-        "swipe_on_desktop": true,
         "color_scheme": "inverse",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 0,
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-tags=\"QUALITY-SHIPPING\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
     "506f6558-7efd-4e91-a56a-75b4a46d81cc": {
       "type": "frequently-bought-together-app",
       "settings": {
-        "container_color_scheme": "background-2",
+        "container_color_scheme": "accent-2",
         "padding_top": 40,
-        "padding_bottom": 20
+        "padding_bottom": 40
       }
     },
     "related-products": {
-      "type": "related-products-by-colour",
+      "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "YOU MIGHT ALSO LIKE",
         "heading_size": "h1",
@@ -252,7 +171,7 @@
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
-        "container_color_scheme": "accent-4",
+        "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -290,22 +209,6 @@
         "slider_visual": "counter",
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "product_faq_NBzNDV": {
-      "type": "product-faq",
-      "settings": {
-        "caption": "",
-        "heading": "FAQ's",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "arrow_style": "half-arrow",
-        "color_scheme": "inverse",
-        "container_color_scheme": "inverse",
-        "open_first_collapsible_row": false,
-        "padding_top": 36,
-        "padding_bottom": 52
       }
     },
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b": {
@@ -379,7 +282,7 @@
         "padding_bottom": 40
       }
     },
-    "custom_liquid_ExyY9Q": {
+    "custom_liquid_wj84kt": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}/cart/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n</script>",
@@ -391,13 +294,12 @@
   },
   "order": [
     "main",
-    "video_list_metafields_UqTJAJ",
+    "trustpilot_carrousel_xcFh7r",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26",
     "2ba62760-f7d7-46c5-ae93-8ade6e208816",
-    "product_faq_NBzNDV",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b",
-    "custom_liquid_ExyY9Q"
+    "custom_liquid_wj84kt"
   ]
 }
