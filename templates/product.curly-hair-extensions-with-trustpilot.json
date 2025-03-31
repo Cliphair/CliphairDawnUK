@@ -54,10 +54,6 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "sc_back_in_stock_app_block_JKfDnH": {
-          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -145,7 +141,7 @@
             "type": "custom",
             "heading": "Return Policy",
             "icon": "none",
-            "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
+            "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p><strong>Please note that returns for curly extensions will only be accepted if the silver or gold hygiene bands are still intact on the product. If the bands are removed and the product has been opened, we will not be able to authorise the return</strong>. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
         }
@@ -159,7 +155,6 @@
         "price",
         "variant_picker",
         "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
         "buy_buttons",
         "share",
         "icon_with_text_D9qjLA",
@@ -189,6 +184,18 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "trustpilot_carrousel_xcFh7r": {
+      "type": "trustpilot-carrousel",
+      "settings": {
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "color_scheme": "inverse",
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-tags=\"QUALITY-SHIPPING\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
@@ -379,7 +386,7 @@
         "padding_bottom": 40
       }
     },
-    "custom_liquid_ExyY9Q": {
+    "custom_liquid_XVFimB": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}/cart/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n</script>",
@@ -391,6 +398,7 @@
   },
   "order": [
     "main",
+    "trustpilot_carrousel_xcFh7r",
     "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
@@ -398,6 +406,6 @@
     "2ba62760-f7d7-46c5-ae93-8ade6e208816",
     "product_faq_NBzNDV",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b",
-    "custom_liquid_ExyY9Q"
+    "custom_liquid_XVFimB"
   ]
 }
