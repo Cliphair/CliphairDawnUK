@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "information_videos_8BXc9p": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "accent-4"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -34,12 +28,6 @@
             "title": "Features"
           }
         },
-        "information_videos_MKNiNH": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "inverse"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -50,12 +38,8 @@
             "picker_type": "dropdown"
           }
         },
-        "quantity_selector_RERRjV": {
+        "quantity_selector_pXA3nB": {
           "type": "quantity_selector",
-          "settings": {}
-        },
-        "sc_back_in_stock_app_block_JKfDnH": {
-          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
         "buy_buttons": {
@@ -63,7 +47,7 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "color_scheme": "inverse"
+            "color_scheme": "background-2"
           }
         },
         "share": {
@@ -72,7 +56,7 @@
             "share_label": "Share"
           }
         },
-        "icon_with_text_D9qjLA": {
+        "icon_with_text_h36Ea9": {
           "type": "icon-with-text",
           "disabled": true,
           "settings": {
@@ -89,7 +73,7 @@
           "type": "order_deadline",
           "settings": {}
         },
-        "reward_points_B9N8X4": {
+        "reward_points_j7RyPg": {
           "type": "reward-points",
           "settings": {
             "page": "rewards-pop-up"
@@ -112,26 +96,6 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "type": "specification",
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "type": "instructions",
-            "heading": "How to Style",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible_tab_JGqU4U": {
-          "type": "collapsible_tab",
-          "settings": {
             "type": "custom",
             "heading": "Delivery Info",
             "icon": "none",
@@ -139,7 +103,7 @@
             "page": ""
           }
         },
-        "collapsible_tab_36Cgxc": {
+        "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
             "type": "custom",
@@ -151,35 +115,26 @@
         }
       },
       "block_order": [
-        "information_videos_8BXc9p",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
-        "information_videos_MKNiNH",
         "price",
         "variant_picker",
-        "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
+        "quantity_selector_pXA3nB",
         "buy_buttons",
         "share",
-        "icon_with_text_D9qjLA",
+        "icon_with_text_h36Ea9",
         "order_deadline_67UiV7",
-        "reward_points_B9N8X4",
+        "reward_points_j7RyPg",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc"
-      ],
-      "custom_css": [
-        "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
-        "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}"
+        "collapsible-row-2"
       ],
       "settings": {
         "enable_sticky_info": true,
         "image_ratio": "square",
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -189,6 +144,18 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "trustpilot_carrousel_xcFh7r": {
+      "type": "trustpilot-carrousel",
+      "settings": {
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "color_scheme": "inverse",
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-tags=\"QUALITY-SHIPPING\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
@@ -252,7 +219,7 @@
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
-        "container_color_scheme": "accent-4",
+        "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -379,7 +346,7 @@
         "padding_bottom": 40
       }
     },
-    "custom_liquid_ExyY9Q": {
+    "custom_liquid_JTwgXX": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}/cart/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n</script>",
@@ -391,6 +358,7 @@
   },
   "order": [
     "main",
+    "trustpilot_carrousel_xcFh7r",
     "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
@@ -398,6 +366,6 @@
     "2ba62760-f7d7-46c5-ae93-8ade6e208816",
     "product_faq_NBzNDV",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b",
-    "custom_liquid_ExyY9Q"
+    "custom_liquid_JTwgXX"
   ]
 }
