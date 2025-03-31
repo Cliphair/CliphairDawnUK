@@ -47,6 +47,18 @@
         "padding_bottom": 0
       }
     },
+    "trustpilot_carrousel_kGpBUc": {
+      "type": "trustpilot-carrousel",
+      "settings": {
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "color_scheme": "background-2",
+        "carousel_code": "<!-- TrustBox widget - Carousel -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"53aa8912dec7e10d38f59f36\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"140px\" data-style-width=\"100%\" data-tags=\"QUALITY-CUSTOMERSERVICE\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "db22f337-3a12-4ced-9dd2-bf58688d855a": {
       "type": "main-collection-more-info",
       "settings": {
@@ -149,6 +161,7 @@
   "order": [
     "banner",
     "product-grid",
+    "trustpilot_carrousel_kGpBUc",
     "db22f337-3a12-4ced-9dd2-bf58688d855a",
     "b400924f-2211-460e-841c-e909605faf8f",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b"
