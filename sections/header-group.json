@@ -122,6 +122,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Express_Delivery_Ends_Today_Ticker.gif",
             "text_alignment": "center",
