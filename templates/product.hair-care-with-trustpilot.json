@@ -32,6 +32,10 @@
           "type": "price",
           "settings": {}
         },
+        "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -56,28 +60,9 @@
             "share_label": "Share"
           }
         },
-        "icon_with_text_MgbyJh": {
-          "type": "icon-with-text",
-          "disabled": true,
-          "settings": {
-            "layout": "vertical",
-            "icon_1": "truck",
-            "heading_1": "<strong>Unlock Free Sunday Delivery!</strong> Spend Over £75",
-            "icon_2": "none",
-            "heading_2": "",
-            "icon_3": "none",
-            "heading_3": ""
-          }
-        },
         "order_deadline_67UiV7": {
           "type": "order_deadline",
           "settings": {}
-        },
-        "reward_points_7hAtU4": {
-          "type": "reward-points",
-          "settings": {
-            "page": "rewards-pop-up"
-          }
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
@@ -139,19 +124,23 @@
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "price",
+        "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6",
         "variant_picker",
         "quantity_selector_6HELXY",
         "buy_buttons",
         "share",
-        "icon_with_text_MgbyJh",
         "order_deadline_67UiV7",
-        "reward_points_7hAtU4",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_Qap6UU",
         "collapsible_tab_L3aqbx"
+      ],
+      "custom_css": [
+        ".product__info-container > div:has(> .price) {margin-bottom: 0;}",
+        ".product__info-container > div:has(> .price) ~ * {margin-top: 0;}",
+        ".trustblox-instruction {color: inherit; animation: none; opacity: 0.7; font-weight: 400; display: block;}"
       ],
       "settings": {
         "enable_sticky_info": true,
