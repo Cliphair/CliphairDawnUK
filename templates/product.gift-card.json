@@ -20,8 +20,7 @@
         },
         "a0b50969-ea33-4844-941d-db5577728e55": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
           "type": "short-description",
@@ -31,8 +30,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -42,15 +40,13 @@
         },
         "quantity_selector_jRL7p9": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "enable_sc-out-of-stock_app": true,
             "color_scheme": "inverse"
           }
         },
@@ -62,36 +58,13 @@
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
-          "settings": {
-          }
+          "settings": {}
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
             "type": "description",
             "heading": "Description",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "specification",
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "instructions",
-            "heading": "How to Style",
             "icon": "none",
             "content": "",
             "page": ""
@@ -108,9 +81,7 @@
         "buy_buttons",
         "share",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2"
+        "collapsible-row-0"
       ],
       "settings": {
         "enable_sticky_info": true,
