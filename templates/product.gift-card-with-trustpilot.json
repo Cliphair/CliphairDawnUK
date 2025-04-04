@@ -69,28 +69,6 @@
             "content": "",
             "page": ""
           }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "specification",
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "instructions",
-            "heading": "How to Style",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -103,9 +81,7 @@
         "buy_buttons",
         "share",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2"
+        "collapsible-row-0"
       ],
       "settings": {
         "enable_sticky_info": true,
