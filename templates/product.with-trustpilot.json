@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "information_videos_rENdVk": {
+          "type": "information-videos",
+          "settings": {
+            "color_scheme": "accent-4"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -26,6 +32,12 @@
           "type": "short-description",
           "settings": {
             "title": "Features"
+          }
+        },
+        "information_videos_PBjary": {
+          "type": "information-videos",
+          "settings": {
+            "color_scheme": "accent-4"
           }
         },
         "price": {
@@ -100,9 +112,11 @@
         }
       },
       "block_order": [
+        "information_videos_rENdVk",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
+        "information_videos_PBjary",
         "price",
         "yotpo_loyalty_rewards_product_points_module_app_block_zbApjd",
         "variant_picker",
