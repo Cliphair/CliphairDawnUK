@@ -176,7 +176,7 @@
           "settings": {
             "image": "shopify://shop_images/discount-page-outlet.png",
             "description": "<p><strong>Outlet</strong></p><p>Get up to 70% off in our outlet sale! </p>",
-            "url": "shopify://collections/outlet",
+            "url": "shopify://collections/hair-extensions-sale",
             "button_text": "Find Out More"
           }
         },
