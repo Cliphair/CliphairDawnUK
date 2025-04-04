@@ -164,32 +164,6 @@
         "padding_bottom": 40
       }
     },
-    "video_list_metafields_UqTJAJ": {
-      "type": "video-list-metafields",
-      "disabled": true,
-      "custom_css": [
-        ".deferred-media__poster-button {color: white;}"
-      ],
-      "settings": {
-        "title": "SEE IT IN REAL LIFE",
-        "heading_size": "h1",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 4,
-        "swipe_on_desktop": true,
-        "color_scheme": "inverse",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 0,
-        "padding_bottom": 40
-      }
-    },
     "506f6558-7efd-4e91-a56a-75b4a46d81cc": {
       "type": "frequently-bought-together-app",
       "settings": {
@@ -365,7 +339,6 @@
   "order": [
     "main",
     "trustpilot_carrousel_xcFh7r",
-    "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26",
