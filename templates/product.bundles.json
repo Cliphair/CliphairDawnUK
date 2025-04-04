@@ -44,6 +44,10 @@
           "type": "price",
           "settings": {}
         },
+        "yotpo_loyalty_rewards_product_points_module_app_block_QDYrEh": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -59,7 +63,6 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "enable_sc-out-of-stock_app": true,
             "color_scheme": "inverse"
           }
         },
@@ -69,28 +72,9 @@
             "share_label": "Share"
           }
         },
-        "icon_with_text_jLRtVa": {
-          "type": "icon-with-text",
-          "disabled": true,
-          "settings": {
-            "layout": "vertical",
-            "icon_1": "truck",
-            "heading_1": "<strong>Unlock Free Sunday Delivery!</strong> Spend Over £75",
-            "icon_2": "none",
-            "heading_2": "",
-            "icon_3": "none",
-            "heading_3": ""
-          }
-        },
         "order_deadline_67UiV7": {
           "type": "order_deadline",
           "settings": {}
-        },
-        "reward_points_B9N8X4": {
-          "type": "reward-points",
-          "settings": {
-            "page": "rewards-pop-up"
-          }
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
@@ -101,28 +85,6 @@
           "settings": {
             "type": "description",
             "heading": "Description",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "specification",
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "type": "instructions",
-            "heading": "How to Style",
             "icon": "none",
             "content": "",
             "page": ""
@@ -156,23 +118,23 @@
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_MKNiNH",
         "price",
+        "yotpo_loyalty_rewards_product_points_module_app_block_QDYrEh",
         "variant_picker",
         "quantity_selector_RERRjV",
         "buy_buttons",
         "share",
-        "icon_with_text_jLRtVa",
         "order_deadline_67UiV7",
-        "reward_points_B9N8X4",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
         "collapsible_tab_JGqU4U",
         "collapsible_tab_36Cgxc"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
-        "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}"
+        "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}",
+        ".product__info-container > div:has(> .price) {margin-bottom: 0;}",
+        ".product__info-container > div:has(> .price) ~ * {margin-top: 0;}",
+        ".trustblox-instruction {color: inherit; animation: none; opacity: 0.7; font-weight: 400; display: block;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -187,32 +149,6 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
-        "padding_bottom": 40
-      }
-    },
-    "video_list_metafields_UqTJAJ": {
-      "type": "video-list-metafields",
-      "disabled": true,
-      "custom_css": [
-        ".deferred-media__poster-button {color: white;}"
-      ],
-      "settings": {
-        "title": "SEE IT IN REAL LIFE",
-        "heading_size": "h1",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 4,
-        "swipe_on_desktop": true,
-        "color_scheme": "inverse",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -390,7 +326,6 @@
   },
   "order": [
     "main",
-    "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26",
