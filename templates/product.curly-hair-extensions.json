@@ -76,6 +76,19 @@
           "type": "order_deadline",
           "settings": {}
         },
+        "icon_with_text_mALxhX": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "none",
+            "image_1": "shopify://shop_images/dpd.png",
+            "heading_1": "Click & Collect: DPD Pick Up At Nearby Shop",
+            "icon_2": "none",
+            "heading_2": "",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
@@ -144,6 +157,7 @@
         "buy_buttons",
         "share",
         "order_deadline_67UiV7",
+        "icon_with_text_mALxhX",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
