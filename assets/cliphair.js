@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
             closeReadLess(btn);
         })
     }
+
+    let readMoreButtonType2 = document.getElementsByClassName('read_more_btn');
+    for (let button of readMoreButtonType2) {
+        button.onclick = null;
+        button.addEventListener('click', (event) => {
+            let id = event.target.id;
+            id.includes("open") ? readMore(id) : readLess(id);
+        });
+    }
 })
 
 function openReadMore(btn) {
