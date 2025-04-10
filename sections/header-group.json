@@ -92,7 +92,6 @@
       "blocks": {
         "announcement_image_zkJVKU": {
           "type": "announcement-image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Saturday_Guaranteed_Delivery_-blue_-hair_extensions.gif",
             "text_alignment": "center",
