@@ -18,6 +18,12 @@
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
+{% assign countdown = section.blocks | where: 'type', 'countdown' %}
+{% if countdown.size > 0 %}
+  {{ 'countdown.css' | asset_url | stylesheet_tag }}
+  {{ 'announcement-countdown.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 <div
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
@@ -33,23 +39,60 @@
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ block.shopify_attributes }}
       >
-        {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
-            {%- if section.blocks.first.settings.link != blank -%}
-              {% render 'icon-arrow' %}
+        {% case section.blocks.first.type %}
+          {% when 'announcement' %}
+            {%- if section.blocks.first.settings.text != blank -%}
+              {%- if section.blocks.first.settings.link != blank -%}
+                <a
+                  href="{{ section.blocks.first.settings.link }}"
+                  class="announcement-bar__link link link--text focus-inset animate-arrow"
+                >
+              {%- endif -%}
+              <p class="announcement-bar__message h5">
+                <span>{{ section.blocks.first.settings.text | escape }}</span>
+                {%- if section.blocks.first.settings.link != blank -%}
+                  {% render 'icon-arrow' %}
+                {%- endif -%}
+              </p>
+              {%- if section.blocks.first.settings.link != blank -%}
+                </a>
+              {%- endif -%}
             {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
-          {%- endif -%}
-        {%- endif -%}
+          {% when 'countdown' %}
+            <div class="section-countdown-container announcement-bar__message {% if request.design_mode %}design-mode{% endif %}">
+              <p class="section-text h5 center">
+                {{ section.blocks.first.settings.text | escape }}
+              </p>
+
+              <custom-countdown
+                data-end-day="{{ section.blocks.first.day }}"
+                data-end-month="{{ section.blocks.first.month }}"
+                data-end-year="{{ section.blocks.first.year }}"
+                data-end-hour="{{ section.blocks.first.hour }}"
+                data-end-minute="{{ section.blocks.first.minute }}"
+              >
+                <div class="countdown__container">
+                  <span class="countdown__days h5">00</span>
+                  <span class="countdown__label">days</span>
+                </div>
+
+                <div class="countdown__container">
+                  <span class="countdown__hours h5">00</span>
+                  <span class="countdown__label">hours</span>
+                </div>
+
+                <div class="countdown__container">
+                  <span class="countdown__minutes h5">00</span>
+                  <span class="countdown__label">min</span>
+                </div>
+
+                <div class="countdown__container">
+                  <span class="countdown__seconds h5">00</span>
+                  <span class="countdown__label">sec</span>
+                </div>
+              </custom-countdown>
+            </div>
+        {% endcase %}
       </div>
     {%- elsif section.blocks.size > 1 -%}
       <slideshow-component
@@ -92,25 +135,62 @@
                   aria-label="{{ 'sections.header.announcement' | t }}"
                   {{ block.shopify_attributes }}
                 >
-                  {%- if block.settings.text != blank -%}
-                    {%- if block.settings.link != blank -%}
-                      <a
-                        href="{{ block.settings.link }}"
-                        class="announcement-bar__link link link--text focus-inset animate-arrow"
-                      >
-                    {%- endif -%}
-                    <p class="announcement-bar__message h5">
-                      <span>{{ block.settings.text | escape }}</span>
-                      {% comment %}
+                  {% case block.type %}
+                    {% when 'announcement' %}
+                      {%- if block.settings.text != blank -%}
                         {%- if block.settings.link != blank -%}
-                          {% render 'icon-arrow' %}
+                          <a
+                            href="{{ block.settings.link }}"
+                            class="announcement-bar__link link link--text focus-inset animate-arrow"
+                          >
                         {%- endif -%}
-                      {% endcomment %}
-                    </p>
-                    {%- if block.settings.link != blank -%}
-                      </a>
-                    {%- endif -%}
-                  {%- endif -%}
+                        <p class="announcement-bar__message h5">
+                          <span>{{ block.settings.text | escape }}</span>
+                          {% comment %}
+                            {%- if block.settings.link != blank -%}
+                              {% render 'icon-arrow' %}
+                            {%- endif -%}
+                          {% endcomment %}
+                        </p>
+                        {%- if block.settings.link != blank -%}
+                          </a>
+                        {%- endif -%}
+                      {%- endif -%}
+
+                    {% when 'countdown' %}
+                      <div class="section-countdown-container announcement-bar__message {% if request.design_mode %}design-mode{% endif %}">
+                        <p class="section-text h5">{{ block.settings.text | escape }}</p>
+
+                        <custom-countdown
+                          class="countdown"
+                          data-end-day="{{ block.settings.day }}"
+                          data-end-month="{{ block.settings.month }}"
+                          data-end-year="{{ block.settings.year }}"
+                          data-end-hour="{{ block.settings.hour }}"
+                          data-end-minute="{{ block.settings.minute }}"
+                        >
+                          <div class="countdown__container">
+                            <span class="countdown__days h5">00</span>
+                            <span class="countdown__label">days</span>
+                          </div>
+
+                          <div class="countdown__container">
+                            <span class="countdown__hours h5">00</span>
+                            <span class="countdown__label">hours</span>
+                          </div>
+
+                          <div class="countdown__container">
+                            <span class="countdown__minutes h5">00</span>
+                            <span class="countdown__label">min</span>
+                          </div>
+
+                          <div class="countdown__container">
+                            <span class="countdown__seconds h5">00</span>
+                            <span class="countdown__label">sec</span>
+                          </div>
+                        </custom-countdown>
+                      </div>
+                  {% endcase %}
                 </div>
               </div>
             {%- endfor -%}
@@ -310,6 +390,75 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    },
+    {
+      "type": "countdown",
+      "name": "Countdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "header",
+          "content": "End date"
+        },
+        {
+          "type": "number",
+          "id": "year",
+          "label": "Year",
+          "default": 2024
+        },
+        {
+          "type": "select",
+          "id": "month",
+          "label": "Month",
+          "options": [
+            { "value": "1", "label": "January" },
+            { "value": "2", "label": "February" },
+            { "value": "3", "label": "March" },
+            { "value": "4", "label": "April" },
+            { "value": "5", "label": "May" },
+            { "value": "6", "label": "June" },
+            { "value": "7", "label": "July" },
+            { "value": "8", "label": "August" },
+            { "value": "9", "label": "September" },
+            { "value": "10", "label": "October" },
+            { "value": "11", "label": "November" },
+            { "value": "12", "label": "December" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "range",
+          "id": "day",
+          "label": "Day",
+          "min": 1,
+          "max": 31,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "hour",
+          "label": "Hour",
+          "min": 0,
+          "max": 23,
+          "step": 1,
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "minute",
+          "label": "Minute",
+          "min": 0,
+          "max": 59,
+          "step": 1,
+          "default": 0
         }
       ]
     }

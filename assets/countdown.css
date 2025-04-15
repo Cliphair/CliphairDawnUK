@@ -45,3 +45,7 @@
     right: calc(((var(--grid-desktop-horizontal-spacing) / 2) + 2.5px) * -1);
   }
 }
+
+.design-mode.hidden {
+  display: block !important;
+}
