@@ -2348,6 +2348,10 @@ product-info .loading-overlay:not(.hidden)~*,
   font-size:1rem;
 }
 
+.announcement-bar__message>* {
+  font-size: inherit;
+}
+
 @media screen and (min-width:768px){
   .announcement-bar__message {
     font-size:1.2rem;

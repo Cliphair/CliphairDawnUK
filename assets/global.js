@@ -1482,7 +1482,12 @@ class Countdown extends HTMLElement {
       const minutes = Math.floor((diff % this.hour) / this.minute);
       const seconds = Math.floor((diff % this.minute) / this.second);
 
-      this.querySelector('.countdown__days').innerText = days <= 9 ? `0${days}` : days;
+      if (days > 0) {
+        this.querySelector('.countdown__days').innerText = days <= 9 ? `0${days}` : days;
+        this.querySelector('.countdown__days').parentElement.classList.remove('hidden')
+      } else {
+        this.querySelector('.countdown__days').parentElement.classList.add('hidden')
+      }
       this.querySelector('.countdown__hours').innerText = hours <= 9 ? `0${hours}` : hours;
       this.querySelector('.countdown__minutes').innerText = minutes <= 9 ? `0${minutes}` : minutes;
       this.querySelector('.countdown__seconds').innerText = seconds <= 9 ? `0${seconds}` : seconds;

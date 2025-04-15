@@ -1,0 +1,18 @@
+.section-countdown-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.countdown__label {
+  line-height: 1;
+  font-size: 0.8rem;
+}
+
+.announcement-bar-slider {
+  max-width: calc(100vw - 3rem);
+}
