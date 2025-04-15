@@ -14,6 +14,17 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "countdown_jYezpK": {
+          "type": "countdown",
+          "settings": {
+            "text": "Guaranteed Delivery Before Easter Sunday, Order Within:",
+            "year": 2025,
+            "month": "4",
+            "day": 17,
+            "hour": 16,
+            "minute": 0
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -38,6 +49,7 @@
         }
       },
       "block_order": [
+        "countdown_jYezpK",
         "announcement-bar-0",
         "announcement-bar-1",
         "announcement_nNPD4X"
