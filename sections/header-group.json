@@ -14,6 +14,14 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_nNPD4X": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Please note: Due to the bank holiday, orders placed from Thursday to Saturday 3 PM will be dispatched on Saturday.",
+            "link": ""
+          }
+        },
         "countdown_jYezpK": {
           "type": "countdown",
           "settings": {
@@ -38,21 +46,13 @@
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
           }
-        },
-        "announcement_nNPD4X": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "We've Revamped Our Website For A Better, Faster Shopping Experience - Explore Now!",
-            "link": "shopify://blogs/hair-blog/our-new-website-everything-you-need-to-know"
-          }
         }
       },
       "block_order": [
+        "announcement_nNPD4X",
         "countdown_jYezpK",
         "announcement-bar-0",
-        "announcement-bar-1",
-        "announcement_nNPD4X"
+        "announcement-bar-1"
       ],
       "settings": {
         "color_scheme": "",
