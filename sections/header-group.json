@@ -16,7 +16,6 @@
       "blocks": {
         "announcement_nNPD4X": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "Please note: Due to the bank holiday, orders placed from Thursday to Saturday 3 PM will be dispatched on Saturday.",
             "link": ""
@@ -24,6 +23,7 @@
         },
         "countdown_jYezpK": {
           "type": "countdown",
+          "disabled": true,
           "settings": {
             "text": "Guaranteed Delivery Before Easter Sunday, Order Within:",
             "year": 2025,
@@ -104,6 +104,7 @@
       "blocks": {
         "announcement_image_zkJVKU": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bank_Holiday_Saturday_Guaranteed_Delivery.gif",
             "text_alignment": "center",
