@@ -17,7 +17,7 @@
         "announcement_nNPD4X": {
           "type": "announcement",
           "settings": {
-            "text": "Please note: Due to the bank holiday, orders placed from Thursday to Saturday 3 PM will be dispatched on Saturday.",
+            "text": "Please note: Due to the bank holiday, orders placed from Saturday to Monday will be dispatched on Tuesday.",
             "link": ""
           }
         },
