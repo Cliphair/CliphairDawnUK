@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_nNPD4X": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Please note: Due to the bank holiday, orders placed from Saturday to Monday will be dispatched on Tuesday.",
             "link": ""
