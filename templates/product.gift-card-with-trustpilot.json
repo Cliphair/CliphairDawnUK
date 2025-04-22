@@ -42,6 +42,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "sc_back_in_stock_app_block_j9ghrP": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -78,6 +82,7 @@
         "price",
         "variant_picker",
         "quantity_selector_jRL7p9",
+        "sc_back_in_stock_app_block_j9ghrP",
         "buy_buttons",
         "share",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
