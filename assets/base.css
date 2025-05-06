@@ -3687,6 +3687,16 @@ details-disclosure>details {
     display:none;
 }
 
+@media screen and (min-width:480px) {
+  .shopify-pc__banner__btn-accept{
+    max-width: 300px;
+  }
+
+  .shopify-pc__banner__btn-manage-prefs{
+      text-align:right;
+  }
+}
+
 /* iframes */
 .deferred-media-popup-container iframe {
   position: absolute;
