@@ -3688,7 +3688,7 @@ details-disclosure>details {
 }
 
 .shopify-pc__banner__btn-accept{
-    background: #1A662A;
+    background: #1A662A!important;
   }
 
 @media screen and (min-width:480px) {
