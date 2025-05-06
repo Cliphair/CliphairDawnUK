@@ -3693,7 +3693,7 @@ details-disclosure>details {
   }
 
   .shopify-pc__banner__btn-manage-prefs{
-      text-align: right;
+      text-align: right!important;
   }
 }
 
