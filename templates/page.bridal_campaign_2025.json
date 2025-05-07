@@ -877,7 +877,6 @@
     },
     "custom_banner_d9rTna": {
       "type": "custom-banner",
-      "disabled": true,
       "custom_css": [
         "div > div {max-width: unset; padding-right: 0; padding-left: 0;}"
       ],
