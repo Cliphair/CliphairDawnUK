@@ -18,7 +18,7 @@
   }
 {% endstyle %}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div class="section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign columns_mobile_int = section.settings.columns_mobile | plus: 0
     assign show_mobile_slider = false
