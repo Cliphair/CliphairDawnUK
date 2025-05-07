@@ -377,7 +377,19 @@
           "secondary_button_label": "#bcade6",
           "shadow": "#bcade6"
         }
-      }
+      },
+      "background-sale": {
+        "settings": {
+          "background": "#E5E4F1",
+          "background_gradient": "",
+          "headers": "#000",
+          "text": "#000",
+          "button": "#fff",
+          "button_label": "#000",
+          "secondary_button_label": "#fff",
+          "shadow": "#fff"
+        }
+      },
     }
   },
   "presets": {

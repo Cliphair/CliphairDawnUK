@@ -2,6 +2,10 @@
   margin-top: 0;
 }
 
+.page-title-no-margin {
+  margin: 0;
+}
+
 .main-page-title {
   margin-bottom: 3rem;
 }

@@ -1,0 +1,581 @@
+{% liquid
+  assign min = 1
+  assign max = 100
+  assign diff = max | minus: min
+  assign randomNumber = 'now' | date: '%N' | modulo: diff | plus: min
+%}
+
+<link
+  rel="preload"
+  href="{{ 'section-bridal23-custom-text.css' | asset_url }}"
+  as="style"
+  onload="this.rel = 'stylesheet'"
+>
+<noscript>
+  {{ 'section-bridal23-custom-text.css' | asset_url | stylesheet_tag }}
+</noscript>
+{{ 'section-video-carrousel.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.max_width != empty %}
+  <style>
+    #section-{{ section.id }} > .custom-multicolumn-container{
+      max-width: {{section.settings.max_width}}px;
+    }
+  </style>
+{% endif %}
+
+<style>
+  #section-{{ section.id }}{
+    padding-top: {{ section.settings.mobile-p_top }}px;
+    padding-bottom: {{ section.settings.mobile-p_bottom }}px;
+    padding-left: {{ section.settings.mobile-p_left }}px;
+    padding-right: {{ section.settings.mobile-p_right }}px;
+    background: {{ section.settings.bg_color }};
+    width: 100%;
+    margin:0;
+    background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');
+  }
+
+  #section-{{ section.id }} > .custom-multicolumn-container{
+    margin: 0 auto;
+    display:flex;
+    flex-direction:row;
+    align-items:stretch;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+    gap:10px;
+  }
+
+  #section-{{ section.id }} .video-column{
+    width:65%;
+    padding:0;
+  }
+
+  #section-{{ section.id }} .image-column{
+    width:calc(35% - 10px);
+    padding:0;
+  }
+
+  #section-{{ section.id }} .image_container{
+    display:flex;
+    flex-direction:row;
+    align-items:stretch;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+    gap:10px;
+  }
+
+   #section-{{ section.id }} .image-entry{
+    width:50%;
+  }
+
+  #section-{{ section.id }} .image_container img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    aspect-ratio:initial;
+    display:block;
+    margin:0;
+    padding:0;
+  }
+
+  @media screen and (max-width:767px){
+    #section-{{ section.id }} .image_container .image-entry:nth-of-type(2){
+      display:none;
+    }
+  }
+
+  @media screen and (min-width:768px){
+    #section-{{ section.id }} > .custom-multicolumn-container{
+      flex-direction:row;
+      flex-wrap:nowrap;
+      gap:20px;
+    }
+  }
+
+  @media screen and (min-width:992px){
+    #section-{{ section.id }}{
+      padding-top: {{ section.settings.desktop-p_top }}px;
+      padding-bottom: {{ section.settings.desktop-p_bottom }}px;
+      padding-left: {{ section.settings.desktop-p_left }}px;
+      padding-right: {{ section.settings.desktop-p_right }}px;
+    }
+  }
+
+  @media screen and (min-width:768px){
+     #section-{{ section.id }} .video-column{
+      width:calc(50%);
+      padding:0;
+    }
+
+    #section-{{ section.id }} .image-column{
+      width:calc(50% - (20px));
+      padding:0;
+      gap:20px;
+    }
+
+     #section-{{ section.id }} .image_container{
+
+      gap:0px;
+    }
+  }
+
+  @media screen and (min-width:992px){
+     #section-{{ section.id }} .video-column{
+      width:calc(40%);
+    }
+
+    #section-{{ section.id }} .image-column{
+      width:calc(60% - (20px));
+    }
+  }
+
+  .video_container,
+  .video_container .video-entry{
+    height:100%;
+    position:relative;
+  }
+
+  #section-{{ section.id }} .video-column .video-entry{
+    position:relative;
+  }
+
+  #section-{{ section.id }} .video-column .video-entry img{
+    width:100%;
+    height:100%;
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    object-fit:contain;
+  }
+
+  #section-{{ section.id }} .button_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-{{ section.id }} .button_container span{
+    cursor:pointer;
+  }
+
+  #section-{{ section.id }} .button_container span:hover{
+    opacity:0.7;
+  }
+
+  #section-{{ section.id }} .button_container svg{
+    width:2rem;
+    color: {{ section.settings.icon-color }};
+  }
+
+  #section-{{ section.id }} .watch-me-icon{
+    position: absolute;
+    width: 150px;
+    left: -50px;
+    bottom: -75px;
+    height:auto;
+  }
+
+  @media screen and (min-width:992px){
+    #section-{{ section.id }} .button_container svg{
+      width:3rem;
+    }
+  }
+
+  #bts__video-container .video__container{
+    max-width:unset;
+  }
+
+  #section-{{ section.id }} > .inner-container > .title-container > *{
+    font-size:{{ section.settings.title-mobile-f_size }}px;
+    color:{{ section.settings.title-color }};
+  }
+
+  #section-{{ section.id }} > .inner-container > .text-container > *{
+    font-size:{{ section.settings.text-mobile-f_size }}px;
+    color:{{ section.settings.text-color }};
+  }
+
+  #section-{{ section.id }} > .inner-container > .text-container span.number{
+      width: {{ section.settings.text-mobile-f_size }}px;
+      height:{{ section.settings.text-mobile-f_size }}px;
+      background: {{ section.settings.text-color }};
+      color: {{ section.settings.bg-colour }};
+  }
+
+  #section-{{ section.id }} > .inner-container > a{
+    font-size:{{ section.settings.btn-mobile-f_size }}px;
+    color:{{ section.settings.btn-color }};
+    background:{{ section.settings.btn-bg-color }};
+  }
+
+  @media screen and (min-width:992px){
+    #section-{{ section.id }} > .inner-container > .title-container > *{
+      font-size:{{ section.settings.title-desktop-f_size }}px;
+    }
+
+    #section-{{ section.id }} > .inner-container > .text-container > *{
+      font-size:{{ section.settings.text-desktop-f_size }}px;
+    }
+
+    #section-{{ section.id }} > .inner-container > .text-container span.number{
+      width: {{ section.settings.text-desktop-f_size }}px;
+      height:{{ section.settings.text-desktop-f_size }}px;
+    }
+
+    #section-{{ section.id }} > .inner-container > a{
+      font-size:{{ section.settings.btn-desktop-f_size }}px;
+    }
+  }
+</style>
+
+<section id="section-{{ section.id }}">
+  <div class="custom-multicolumn-container">
+    <div class="video-column">
+      <div class="video_container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'video' %}
+              <div class="video-entry">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  loading="lazy"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+                <div class="button_container">
+                  <span data-url="{{ block.settings.video_link }}" class="play_button play_button_{{ randomNumber }}">
+                    {%- render 'icon-play' -%}
+                  </span>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+        <img
+          loading="lazy"
+          width="261"
+          height="109"
+          alt="watch me icon"
+          src="https://cdn.shopify.com/s/files/1/0069/6470/7389/files/arrow-up.png?v=1746538438"
+          class="watch-me-icon"
+        >
+      </div>
+    </div>
+
+    <div class="image-column">
+      <div class="image_container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'image' %}
+              <div class="image-entry">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  loading="lazy"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+      <div class="text_container bridal23-hair-quiz-section">
+        <div class="inner-container">
+          {% if section.settings.title != empty %}
+            <div class="title-container">{{ section.settings.title }}</div>
+          {% endif %}
+          {% if section.settings.intro != empty %}
+            <div class="text-container">{{ section.settings.intro }}</div>
+          {% endif %}
+          {% if section.settings['btn-text'] != empty and section %}
+            <a href="{{ section.settings.btn-url }}">
+              {{ section.settings['btn-text'] }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  var playBtns{{randomNumber}} = document.querySelectorAll('.play_button_{{randomNumber}}');
+
+  for(let button of playBtns{{randomNumber}}){
+    button.addEventListener('click', function(){
+      btsVideoTag(button.dataset.url)
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Bridal video image text",
+  "settings": [
+    {
+      "type": "richtext",
+      "label": "Section Title",
+      "id": "title"
+    },
+    {
+      "type": "richtext",
+      "label": "Section Intro",
+      "id": "intro"
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "btn-text"
+    },
+    {
+      "type": "url",
+      "label": "Button Url",
+      "id": "btn-url",
+      "info": "Add the URL you want to send the user to."
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Colour",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "label": "Max width",
+      "info": "Enter the value in px. Ex: 1400, 1250, ...",
+      "id": "max_width"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Devices"
+    },
+    {
+      "type": "range",
+      "id": "mobile-p_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile-p_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile-p_right",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile-p_left",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Desktop Devices"
+    },
+    {
+      "type": "range",
+      "id": "desktop-p_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop-p_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop-p_right",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop-p_left",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "icon-color",
+      "label": "Icons colour",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "title-mobile-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title-desktop-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (desktop)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "title-color",
+      "label": "Colour",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "range",
+      "id": "text-mobile-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "text-desktop-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (desktop)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Colour",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "range",
+      "id": "btn-mobile-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "btn-desktop-f_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size (desktop)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "btn-color",
+      "label": "Colour",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn-bg-color",
+      "label": "Background Colour",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Placeholder Image"
+        },
+        {
+          "type": "url",
+          "id": "video_link",
+          "label": "Video Link"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image file"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

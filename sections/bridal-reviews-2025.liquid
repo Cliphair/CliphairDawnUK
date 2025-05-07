@@ -1,0 +1,370 @@
+{% comment %} {{ 'section-videos-list.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'section-bridal-reviews-2025.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  {{ 'video-section.css' | asset_url | stylesheet_tag }}
+  {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop and section.blocks.size > columns_desktop_int
+      assign show_desktop_slider = true
+    endif
+
+    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+    if section.blocks.size > columns_tablet and section.settings.swipe_on_desktop
+      assign show_tablet_slider = true
+    endif
+  -%}
+
+  <div
+    class="reviews-list-wrapper page-width isolate no-heading no-mobile-link"
+  >
+    <slider-component
+      data-visual="{{ section.settings.slider_visual }}"
+      class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    >
+      <ul
+        class="reviews-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- liquid
+          assign columns = section.blocks.size
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+
+        {% for block in section.blocks %}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="reviews-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            <div class="reviews-list__review-wrapper">
+              <div class="review-section_image {{ section.settings.image_ratio }}">
+                <img
+                  srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                  src="{{ block.settings.image | image_url: width: 190 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+              <div class="review-section_text">
+                {% if block.settings.heading != blank or block.settings.content != blank %}
+                  <div class="review-section_text-top">
+                    <h3 class="h3 review-title">{{ block.settings.heading }}</h3>
+                    <div class="h5">{{ block.settings.content | truncatewords: 12 }}</div>
+                  </div>
+                {% endif %}
+                {% if block.settings.customer != blank %}
+                  <div class="review-section_text-bottom">
+                    <modal-opener
+                      class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                      data-modal="#PopupModal-{{ block.id }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <button
+                        id="ProductPopup-{{ block.id }}"
+                        class="h5 review-button"
+                        type="button"
+                        title="Read Full Review"
+                        aria-haspopup="dialog"
+                      >
+                        {{ block.settings.customer }}
+                      </button>
+                    </modal-opener>
+                    <p class="h5 review-button no-js">
+                      {{- block.settings.customer -}}
+                    </p>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
+        <div class="slider-buttons slider-buttons-{{ section.settings.image_ratio }} small-hide no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+
+          <div class="slider-counter caption visually-hidden">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+{%- for block in section.blocks -%}
+  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+    <div
+      role="dialog"
+      aria-label="{{ block.settings.text }}"
+      aria-modal="true"
+      class="product-popup-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ block.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+      <div class="product-popup-modal__content-info">
+        <div class="heading-container">
+          <h1 class="h2 center">{{ block.settings.heading }}</h1>
+        </div>
+        <div class="image-container">
+          <img
+            srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+            src="{{ block.settings.image | image_url: width: 190 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        </div>
+        <div class="content-container">
+          {{ block.settings.content }}
+        </div>
+        <div class="additional-information">
+          <span class="h5">{{ block.settings.customer }}</span>
+          |
+          <div class="reviews-review-container">
+            {% assign review_total = 5 %}
+            {% assign hearts = block.settings.stars %}
+            {% assign missign_hearts = review_total | minus: hearts %}
+
+            {% for i in (1..hearts) %}
+              <span class="reviews__reviews-review pink">{% render 'icon-heart-filled' %}</span>
+            {% endfor %}
+
+            {% for i in (1..missign_hearts) %}
+              <span class="reviews__reviews-review grey">{% render 'icon-heart-filled' %}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "Bridal reviews",
+  "tag": "section",
+  "class": "section section-reviews-list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "portrait",
+      "label": "Image ratio"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+        },
+        {
+          "value": "counter",
+          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+        }
+      ],
+      "default": "counter",
+      "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Review heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Review content"
+        },
+
+        {
+          "type": "text",
+          "label": "Review customer",
+          "id": "customer"
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "default": 5,
+          "label": "Review Stars"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Review image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

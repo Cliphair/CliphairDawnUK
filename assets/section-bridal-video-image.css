@@ -1,0 +1,75 @@
+.section-bridal_video-image .container.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.video-container {
+  width: 65%;
+  padding: 0;
+}
+
+.images-container {
+  width: calc(35% - 10px);
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.images-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: initial;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width:989px) {
+  .images-container .image-entry:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media screen and (min-width:990px) {
+  .section-bridal_video-image .container.flex {
+    gap: 20px;
+  }
+
+  .video-container {
+    width: calc(50%);
+  }
+
+  .images-container {
+    width: calc(50% - 20px);
+    gap: 20px;
+  }
+}
+
+.section-bridal_video-image .video-section__media {
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.section-bridal_video-image .video-section__poster,
+.section-bridal_video-image .video-section__poster img {
+  position: relative !important;
+}
+
+.video-entry {
+  height: 100%;
+  display: flex;
+}
+
+.section-bridal_video-image .deferred-media__poster-button {
+  background-color: transparent;
+  border: 5px solid;
+}

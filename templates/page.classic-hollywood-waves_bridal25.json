@@ -1,0 +1,737 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "166445343207c9fec0": {
+      "type": "page_font_bridal24",
+      "settings": {
+        "font-text-1": "inter_n4",
+        "font-btns": "inter_n4"
+      }
+    },
+    "6368dc69-0f53-4509-a1fe-d8783409b1a1": {
+      "type": "page-header",
+      "settings": {
+        "show_title": false,
+        "first-line": "Classic Hollywood Waves - Bridal Campaign 2025",
+        "heading_size": "h3",
+        "text_alignment": "center",
+        "padding_top":0,
+        "padding_bottom":0
+      }
+    },
+    "custom_banner_qhrEjP": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_nnGry6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-lookbook-mobile-banner.webp",
+            "image_desktop": "shopify:\/\/shop_images\/bride-lookbook-desktop-banner.webp",
+            "image_url": "",
+            "heading": "",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_nnGry6"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Cliphair slideshow banners"
+      }
+    },
+    "rich-text-intro": {
+      "type": "rich-text-sales",
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Classic Hollywood Waves</h2>",
+            "heading_size": "h2"
+          }
+        },
+        "richtext":{
+          "type": "text"
+          ,
+          "settings": {
+            "text": "<p>Old Hollywood glamour meets bridal fantasy. Cascading in soft, sculpted waves, this iconic hairstyle captures the timeless beauty of silver screen sirens. Achieved by brushing voluminous curls into glossy, manicured waves, each curve catches the light, framing the bride’s face with ultimate sensuality.</p>",
+            "read-more_text":"<p>Paired with a deep side part and a touch of vintage sparkle, it whispers romance while radiating confidence, perfect for a woman who commands the room with every step down the aisle.</p>"
+          }
+        }
+      },
+      "block_order":[
+        "heading",
+        "richtext"
+      ],
+      "settings":{
+        "desktop_content_position": "center",
+        "color_scheme": "background-sale",
+        "content_alignment" : "center",
+        "full_width": false,
+        "padding_top":52,
+        "padding_bottom": 52
+      },
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
+        ".rich-text__heading > * > em {font-size:1.7em;}",
+        "p {line-height: 1.2em;}",
+        ".read-more__btn,.read-less__btn{color:inherit;}",
+        ".gradient{background:rgba(229,228,241,0.4);}"
+      ],
+    },
+    "custom_banner_Wefi87": {
+      "type": "custom-banner",
+      "custom_css": [
+        ".background-color {background:rgba(229,228,241,0.4)!important;}",
+        "@media screen and (min-width: 751px) {section {display: none; }}"
+      ],
+      "settings": {
+        "max-width": "",
+        "bg-color": "#FFF",
+        "mobile-image": "shopify:\/\/shop_images\/bride-collage_bridal25.webp",
+        "url": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "lookbook-images-row":{
+      "type": "image-list",
+      "settings":{
+        "color_scheme": "background-sale",
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile":true,
+        "padding_top":0,
+        "padding_bottom":0
+      },
+      "blocks":{
+        "image1":{
+          "type": "image",
+          "settings":{
+            "image":"shopify:\/\/shop_images\/bride1.webp",
+            "text_label":"",
+            "link":""
+          }
+        },
+        "image2":{
+          "type": "image",
+          "settings":{
+            "image":"shopify:\/\/shop_images\/bride4.webp",
+            "text_label":"",
+            "link":""
+          }
+        },
+        "image3":{
+          "type": "image",
+          "settings":{
+            "image":"shopify:\/\/shop_images\/bride2.webp",
+            "text_label":"",
+            "link":""
+          }
+        },
+        "image4":{
+          "type": "image",
+          "settings":{
+            "image":"shopify:\/\/shop_images\/bride3.webp",
+            "text_label":"",
+            "link":""
+          }
+        }
+      },
+      "block_order":[
+        "image1",
+        "image2",
+        "image3",
+        "image4"
+      ],
+      "custom_css": [
+        ".images-list{--grid-mobile-horizontal-spacing:10px;--grid-desktop-horizontal-spacing:10px;margin-top:0;}",
+        ".images-list__item{min-width:unset;}",
+        ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        "@media screen and (max-width: 750px) {.gradient {display: none; }}"
+      ]
+    },
+    "rich-text-get-the-look": {
+      "type": "rich-text-sales",
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>GET <br><em>the</em> LOOK</h2>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order":[
+        "heading"
+      ],
+      "settings":{
+        "desktop_content_position": "center",
+        "color_scheme": "background-sale",
+        "content_alignment" : "center",
+        "full_width": false,
+        "padding_top":52,
+        "padding_bottom": 52
+      },
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
+        ".rich-text__heading > *{line-height:1.2em;}",
+        ".rich-text__heading > * > em {font-size:1.7em;}",
+        "p {line-height: 1.2em;}",
+        "p em{font-family: 'Pinyon Script', cursive; font-size:2em;vertical-align: sub;}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        "@media screen and (min-width: 951px) {.gradient {display: none; }}"
+      ],
+    },
+    "get-the-look":{
+      "type": "image-list",
+      "settings":{
+        "color_scheme": "background-sale",
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile":true,
+        "padding_top":0,
+        "padding_bottom":0
+      },
+      "blocks":{
+        "image1":{
+          "type": "image",
+          "settings":{
+            "image":"shopify:\/\/shop_images\/bride-get-the-look_bridal25.webp",
+            "text_label":"",
+            "link":""
+          }
+        }
+      },
+      "block_order":[
+        "image1",
+      ],
+      "custom_css": [
+        ".images-list{--grid-mobile-horizontal-spacing:10px;--grid-desktop-horizontal-spacing:10px;margin-top:0;}",
+        ".images-list__item{min-width:unset;}",
+        ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        "@media screen and (min-width: 951px) {.gradient {display: none; }}"
+      ]
+    },
+    "rich-text-get-the-look-box": {
+      "type": "rich-text-sales",
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Get The Look</h2>",
+            "heading_size": "h3"
+          }
+        },
+        "text":{
+          "type": "text",
+          "settings": {
+            "text": "<p>Bride wears our 22” Seamless in Biscuit Blondey</p><p><a href='\/products\/seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix'>Shop Now</a></p>"
+          }
+        }
+      },
+      "block_order":[
+        "heading",
+        "text"
+      ],
+      "settings":{
+        "desktop_content_position": "center",
+        "color_scheme": "background-sale",
+        "content_alignment" : "center",
+        "full_width": true,
+        "padding_top":0,
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
+        ".rich-text__heading > *{line-height:1.2em;}",
+        "p {line-height: 1.2em;}",
+        "p a{color:inherit;}",
+        ".rich-text__wrapper{width:100%;}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        ".center{width:100%; background:white; padding:1.5rem;margin-right:1.5rem;}",
+        "@media screen and (min-width: 951px) {.gradient {display: none; }}"
+      ],
+    },
+    "1664746053df8a22c8": {
+      "type": "video_carrousel_bridal25",
+      "blocks": {
+        "2e266794-9043-4fd6-bd27-340aec4d2029": {
+          "type": "video",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/Classic_Hollywood_Waves_Video_Thumbnail.webp",
+            "video": "shopify://files/videos/Classic Hollywood Waves.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "2e266794-9043-4fd6-bd27-340aec4d2029"
+      ],
+      "settings": {
+        "image_ratio": "portrait",
+        "columns_desktop": 1,
+        "columns_mobile": "1",
+        "color_scheme": "background-sale",
+        "swipe_on_mobile": false,
+        "swipe_on_desktop": false,
+        "padding_top":100,
+        "padding_bottom":100
+      },
+      "custom_css": [
+        ".videos-list{max-width:70%; margin:0 auto;}",
+        ".deferred-media__poster-button{color:white;}",
+        "@media screen and (max-width:1399px){.grid--peek.slider .grid__item:first-of-type{margin-left:0;}.slider--tablet::after {padding-left:0!important; margin-left:0!important}.videos-list-wrapper{padding:0 !important;}}",
+        ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}",
+        "@media screen and (min-width: 951px) {.gradient {display: none; }}"
+      ]
+    },
+    "rich-text-get-the-look-desktop": {
+      "type": "rich-text-sales",
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>GET <em>the</em> LOOK</h2>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order":[
+        "heading"
+      ],
+      "settings":{
+        "desktop_content_position": "center",
+        "color_scheme": "background-sale",
+        "content_alignment" : "center",
+        "full_width": false,
+        "padding_top":52,
+        "padding_bottom": 52
+      },
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
+        ".rich-text__heading > *{line-height:1.2em;}",
+        ".rich-text__heading > * > em {font-size:1.7em;}",
+        ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}",
+        "@media screen and (max-width: 950px) {.gradient {display: none; }}"
+      ],
+    },
+    "bridal_video_image_text_mVYJFM": {
+      "type": "bridal-video-image-text-2025",
+      "blocks": {
+        "video_rcrB4W": {
+          "type": "video",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Classic_Hollywood_Waves_Video_Thumbnail.webp",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/f6ca5e4cb2bd4ad29dfe0383f73e499d.mp4"
+          }
+        },
+        "image_kxtntG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-look.webp"
+          }
+        },
+        "image_7LydQp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-product.webp"
+          }
+        }
+      },
+      "block_order": [
+        "video_rcrB4W",
+        "image_kxtntG",
+        "image_7LydQp"
+      ],
+      "custom_css": [
+        ".inner-container {background: white; padding: 20px 30px;}",
+        ".bridal23-hair-quiz-section > .inner-container > .title-container > * {margin-bottom: 20px;}",
+        ".bridal23-hair-quiz-section > .inner-container > a {box-shadow: none; padding: 0; text-decoration: underline; text-underline-offset: 0.3rem; cursor: pointer; text-decoration-thickness: 1px; color:inherit;}",
+        ".inner-container > a:hover {text-decoration-thickness: 2px !important;}",
+        "@media screen and (max-width: 950px) {section {display: none; }}"
+      ],
+      "settings": {
+        "title": "<h3>Get The Look<\/h3>",
+        "intro": "<p>Bride wears our 22” Seamless in Biscuit Blondey<\/p>",
+        "btn-text": "SHOP NOW",
+        "btn-url": "shopify:\/\/products\/seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix",
+        "bg_color": "#ffffff",
+        "max_width": "1400",
+        "mobile-p_top": 0,
+        "mobile-p_bottom": 100,
+        "mobile-p_right": 50,
+        "mobile-p_left": 50,
+        "desktop-p_top": 0,
+        "desktop-p_bottom": 150,
+        "desktop-p_right": 50,
+        "desktop-p_left": 50,
+        "icon-color": "#ffffff",
+        "title-mobile-f_size": 14,
+        "title-desktop-f_size": 25,
+        "title-color": "#4e4e4e",
+        "text-mobile-f_size": 14,
+        "text-desktop-f_size": 25,
+        "text-color": "#4e4e4e",
+        "btn-mobile-f_size": 14,
+        "btn-desktop-f_size": 25,
+        "btn-color": "#4e4e4e",
+        "btn-bg-color": "#ffffff"
+      }
+    },
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2689": {
+      "type": "image-list",
+      "blocks": {
+        "74c3f2d7-404f-4a64-983c-c9964a5b2871": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-lookbook-image1.webp",
+          }
+        },
+        "ad8175f2-51ac-4162-b9af-ddc0f487f924": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-lookbook-image2.webp",
+          }
+        },
+        "0daf6aee-88f0-4373-80c3-3830fea777d8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-lookbook-image3.webp",
+          }
+        },
+        "905f982b-829c-4154-a8c1-f9a24b175ace": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bride-lookbook-image4.webp",
+          }
+        }
+      },
+      "block_order": [
+        "74c3f2d7-404f-4a64-983c-c9964a5b2871",
+        "ad8175f2-51ac-4162-b9af-ddc0f487f924",
+        "0daf6aee-88f0-4373-80c3-3830fea777d8",
+        "905f982b-829c-4154-a8c1-f9a24b175ace"
+      ],
+      "custom_css": [
+        ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
+        ".images-list__item{min-width:unset;}",
+        "@media screen and (max-width:1399px){.images-list-wrapper{padding:0!important;}}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        ".images-list-wrapper{max-width:950px}"
+      ],
+      "settings": {
+        "color_scheme":"background-sale",
+        "swipe_on_desktop": false,
+        "swipe_on_mobile": false,
+        "columns_desktop":2,
+        "columns_mobile": "2",
+        "padding_top":0,
+        "padding_bottom":0
+      }
+    },
+    "rich-text-insta": {
+      "type": "rich-text-sales",
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>OUR BRIDES ON INSTA</h2>",
+            "heading_size": "h2"
+          }
+        },
+        "text":{
+          "type":"text",
+          "settings":{
+            "text": "<p>Tag us @cliphairlimited and show us your bridal look</p>"
+          }
+        }
+      },
+      "block_order":[
+        "heading",
+        "text"
+      ],
+      "settings":{
+        "desktop_content_position": "center",
+        "content_alignment" : "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top":52,
+        "padding_bottom": 52
+      },
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
+        ".rich-text__heading > * > em {font-size:1.7em;}",
+        "p {line-height: 1.2em;}",
+        ".gradient{background:rgba(229,228,241,0.4);}"
+      ]
+    },
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
+      "type": "image-list",
+      "blocks": {
+        "item_MVMXD3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-1.webp",
+            "text_label":"<p>@brides_by_ayelet<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-2.webp",
+            "text_label":"<p>@emmalouisebridalhair<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-3.webp",
+            "text_label":"<p>@sophiemillsbridal<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-4.webp",
+            "text_label":"<p>@portraitsbridal<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-5.webp",
+            "text_label":"<p>@katrinakelly_weddinghair<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-6.webp",
+            "text_label":"<p>@evaschulze_hairandmakeup<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-7.webp",
+            "text_label":"<p>@portraitsbridal<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-8.webp",
+            "text_label":"<p>@blowdryskent<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-9.webp",
+            "text_label":"<p>@botiashairandmakeup<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-10.webp",
+            "text_label":"<p>@lily.e.wilks<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY11": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-11.webp",
+            "text_label":"<p>@blush.and.bows<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-12.webp",
+            "text_label":"<p>@weddinghairbycharleigh<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY13": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-13.webp",
+            "text_label":"<p>@meganlindsaybridalhair<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        },
+        "item_nTxwVY14": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-down-insta-14.webp",
+            "text_label":"<p>@weddinghairbycharleigh<\/p>",
+            "circle_image": false,
+            "border": false,
+            "text": "",
+            "subtitle": "",
+            "url": "",
+            "image-url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_MVMXD3",
+        "item_nTxwVY",
+        "item_nTxwVY3",
+        "item_nTxwVY4",
+        "item_nTxwVY5",
+        "item_nTxwVY6",
+        "item_nTxwVY7",
+        "item_nTxwVY8",
+        "item_nTxwVY9",
+        "item_nTxwVY10",
+        "item_nTxwVY11",
+        "item_nTxwVY12",
+        "item_nTxwVY13",
+        "item_nTxwVY14",
+      ],
+      "settings":{
+        "columns_desktop":4,
+        "swipe_on_desktop":true,
+        "swipe_on_mobile":true,
+        "columns_mobile":"2",
+        "color_scheme": "background-sale",
+        "padding_top":0,
+        "padding_bottom":0
+      },
+      "custom_css": [
+        ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
+        ".images-list__item{min-width:unset;}",
+        ".text-container p{margin:0; font-size:1rem; text-align:left}",
+        "@media screen and (max-width:1399px){.images-list-wrapper{padding:0!important;}}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        ".images-list__item img{aspect-ratio:1/1;}"
+      ]
+    }
+  },
+  "order": [
+    "166445343207c9fec0",
+    "6368dc69-0f53-4509-a1fe-d8783409b1a1",
+    "custom_banner_qhrEjP",
+    "rich-text-intro",
+    "custom_banner_Wefi87",
+    "lookbook-images-row",
+    "rich-text-get-the-look",
+    "get-the-look",
+    "rich-text-get-the-look-box",
+    "1664746053df8a22c8",
+    "rich-text-get-the-look-desktop",
+    "bridal_video_image_text_mVYJFM",
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2689",
+    "rich-text-insta",
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691"
+  ]
+}

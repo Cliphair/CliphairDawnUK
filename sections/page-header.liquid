@@ -1,5 +1,18 @@
-<link rel="preload" href="{{ 'section-page-header.css' | asset_url }}" as="style">
-{{ 'section-page-header.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
 
 <style>
   {% if section.settings.hide %}
@@ -51,180 +64,104 @@
   }
 </style>
 
-<section id="{{ section.id }}" class="title_container">
-  <h1 class="title_text">
-    {% if section.settings['custom-title'] %}
-      <span class="first-line">{{ section.settings['first-line'] }}</span>
-      <span class="second-line">{{ section.settings['second-line'] }}</span>
-    {% else %}
-      {% case template.name %}
-        {% when 'blog' %}
-          {{ blog.title }}}
-        {% when 'collection' %}
-          {{ collection.title }}}
-        {% when 'page' %}
-          {{ page.title }}
-      {% endcase %}
-    {% endif %}
-    {% if current_tags -%}
-      <span class="tag">{{ current_tags.first | replace: '-', ' ' }}</span>
-    {%- endif %}
-  </h1>
-</section>
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding {{ section.settings.text_alignment }}{% unless section.settings.show_title %} visually-hidden{% endunless %}">
+    <h1 class="page-title-no-margin {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ section.settings.custom_title }}
+      {% unless section.settings.custom_title != blank %}
+        {{ page.title }}
+      {% endunless %}
+    </h1>
+  </div>
+</div>
 
 {% schema %}
 {
   "name": "Page Title",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
       "type": "checkbox",
-      "id": "custom-title",
-      "label": "Use Custom Title?",
-      "default": true
+      "id": "show_title",
+      "default": false,
+      "label": "Show title"
     },
+    {
+      "type": "inline_richtext",
+      "id": "custom_title",
+      "label": "Custom title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+
     {
       "type": "header",
-      "content": "Custom Title Settings"
-    },
-    {
-      "type": "text",
-      "id": "first-line",
-      "label": "First Line"
-    },
-    {
-      "type": "text",
-      "id": "second-line",
-      "label": "Second Line"
-    },
-    {
-      "type": "header",
-      "content": "Universal Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide",
-      "label": "Hide Text?",
-      "default": false
-    },
-    {
-      "type": "color",
-      "id": "text_colour",
-      "label": "Text Colour",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "bg_colour",
-      "label": "Background Colour",
-      "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "Mobile Settings"
+      "content": "t:sections.all.padding.section_padding_heading"
     },
     {
       "type": "range",
-      "id": "mobile-font-size",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "label": "Mobile Font Size",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "mobile-top-padding",
+      "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 2,
+      "step": 4,
       "unit": "px",
-      "label": "Mobile Top Padding",
-      "default": 0
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
     },
     {
       "type": "range",
-      "id": "mobile-bottom-padding",
+      "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 2,
+      "step": 4,
       "unit": "px",
-      "label": "Mobile Bottom Padding",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "mobile-right-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Mobile Right Padding",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "mobile-left-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Mobile Left Padding",
-      "default": 0
-    },
-    {
-      "type": "header",
-      "content": "Desktop Settings"
-    },
-    {
-      "type": "range",
-      "id": "desktop-font-size",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "label": "Desktop Font Size",
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "desktop-top-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Desktop Top Padding",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "desktop-bottom-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Desktop Bottom Padding",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "desktop-right-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Desktop Right Padding",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "desktop-left-padding",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Desktop Left Padding",
-      "default": 0
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
     }
   ]
 }

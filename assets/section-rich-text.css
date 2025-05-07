@@ -8,6 +8,10 @@
   width: calc(100% - 4rem / var(--font-body-scale));
 }
 
+.rich-text__heading>* {
+  font-size: inherit;
+}
+
 .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
   margin: auto;
   width: calc(100% - 8rem / var(--font-body-scale));
@@ -45,16 +49,16 @@
   overflow-wrap: break-word;
 }
 
-.rich-text__blocks > * {
+.rich-text__blocks>* {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.rich-text__blocks > * + * {
+.rich-text__blocks>*+* {
   margin-top: 2rem;
 }
 
-.rich-text__blocks > * + a {
+.rich-text__blocks>*+a {
   margin-top: 3rem;
 }
 
@@ -68,12 +72,12 @@
   word-break: break-word;
 }
 
-.rich-text__buttons--multiple > * {
+.rich-text__buttons--multiple>* {
   flex-grow: 1;
   min-width: 22rem;
 }
 
-.rich-text__buttons + .rich-text__buttons {
+.rich-text__buttons+.rich-text__buttons {
   margin-top: 1rem;
 }
 
