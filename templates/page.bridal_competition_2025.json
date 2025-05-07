@@ -175,17 +175,16 @@
         "0daf6aee-88f0-4373-80c3-3830fea777d8",
         "905f982b-829c-4154-a8c1-f9a24b175ace"
       ],
-      "disabled": true,
       "custom_css": [
-        "section {background: rgba(229, 228, 241, 0.4)!important;}",
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".section_header h2 {font-weight: 400;}",
         ".section_header h2 em {font-size: 50px;}",
         ".section_intro p {margin-bottom: 25px;}",
         "@media screen and (min-width: 992px) {.section_header h2 em {font-size: 80px; } .section_intro p {margin-bottom: 35px; }}"
       ],
       "settings": {
-        "header": "<h2><em>Thank You</em></h2>",
-        "intro": "<p>To everyone who submitted their entries & got involved.</p><p>Our judges are now hard at work reviewing all of your stunning entries and selecting their winners!   </p><p>Winners will be announced on the <strong>31st July 2024</strong> via our <strong>Instagram @CliphairLimited</strong>. </p>",
+        "header": "",
+        "intro": "<p>The ultimate bridal hair competition is here again, and it's your time to shine!  <br/><br/>Enter your stunning bridal hair looks in any of our hairstyle categories for a chance to win cash prizes and exclusive discount vouchers. Plus, get your creations showcased across our platforms.  <br/><br/>The stage is set, the scissors are sharpened, and the competition starts NOW — show us what you’re made of! <br/><br/>COMPETITION OPENS 1st JUNE 2025 </p>",
         "main-button-text": "",
         "main-button-url": "",
         "max_width": "992",
@@ -227,7 +226,6 @@
     },
     "break_line_CB4w6g": {
       "type": "break-line",
-      "disabled": true,
       "custom_css": [
         "section {background: rgba(208, 184, 164, 0.2) !important;}"
       ],
