@@ -34,6 +34,26 @@
     "slideshow_3tCMjU": {
       "type": "slideshow",
       "blocks": {
+        "slide_cnhnUM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/bridal-campaign-2025-main-desktop-banner.webp",
+            "image_desktop": "shopify://shop_images/bridal-campaign-2025-main-mobile-banner.webp",
+            "image_url": "shopify://pages/cliphair-bridal-hair-extensions",
+            "heading": "",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_nnGry6": {
           "type": "slide",
           "settings": {
@@ -51,27 +71,6 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_cnhnUM": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Group_21068.webp",
-            "image_desktop": "shopify://shop_images/Group_21067.webp",
-            "image_url": "shopify://collections/clip-in-hair-extensions",
-            "heading": "",
-            "heading_size": "h2",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         },
@@ -98,8 +97,8 @@
         }
       },
       "block_order": [
-        "slide_nnGry6",
         "slide_cnhnUM",
+        "slide_nnGry6",
         "slide_nzbVKg"
       ],
       "settings": {
