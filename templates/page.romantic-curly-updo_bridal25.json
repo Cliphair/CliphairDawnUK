@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -20,11 +20,10 @@
       "type": "page-header",
       "settings": {
         "show_title": false,
-        "first-line": "Romantic Curly Updo - Bridal Campaign 2025",
         "heading_size": "h3",
         "text_alignment": "center",
-        "padding_top":0,
-        "padding_bottom":0
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_banner_qhrEjP": {
@@ -33,8 +32,8 @@
         "slide_nnGry6": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-mobile-banner.webp",
-            "image_desktop": "shopify:\/\/shop_images\/romantic-curly-updo-desktop-banner.webp",
+            "image": "shopify://shop_images/romantic-curly-updo-mobile-banner.webp",
+            "image_desktop": "shopify://shop_images/romantic-curly-updo-desktop-banner.webp",
             "image_url": "",
             "heading": "",
             "heading_size": "h2",
@@ -67,7 +66,7 @@
     },
     "rich-text-intro": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -75,27 +74,18 @@
             "heading_size": "h2"
           }
         },
-        "richtext":{
-          "type": "text"
-          ,
+        "richtext": {
+          "type": "text",
           "settings": {
             "text": "<p>Soft, playful, and undeniably flirty. This heart-stopping bridesmaid updo lets loose curls tumble freely and gracefully along the jawline while the top is gently swept up into a delicately tousled bun, accentuated by revealing the neck and collarbone. It’s the ultimate look for dancing through the day – and into the night – with femininity, youth and charm.</p>",
-            "read-more_text":""
+            "read-more_text": ""
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "richtext"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
@@ -103,6 +93,14 @@
         ".read-more__btn,.read-less__btn{color:inherit;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
       ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "custom_banner_Wefi87": {
       "type": "custom-banner",
@@ -113,59 +111,49 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "mobile-image": "shopify:\/\/shop_images\/romantic-curly-updo-collage.webp",
+        "mobile-image": "shopify://shop_images/romantic-curly-updo-collage.webp",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "lookbook-images-row":{
+    "lookbook-images-row": {
       "type": "image-list",
-      "settings":{
-        "color_scheme": "background-sale",
-        "text_allignment": "left",
-        "columns_desktop": 4,
-        "swipe_on_desktop": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile":true,
-        "padding_top":0,
-        "padding_bottom":0
-      },
-      "blocks":{
-        "image1":{
+      "blocks": {
+        "image1": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/romantic-curly-updo1.webp",
-            "text_label":"",
-            "link":""
+          "settings": {
+            "image": "shopify://shop_images/romantic-curly-updo1.webp",
+            "text_label": "",
+            "link": ""
           }
         },
-        "image2":{
+        "image2": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/romantic-curly-updo2.webp",
-            "text_label":"",
-            "link":""
+          "settings": {
+            "image": "shopify://shop_images/romantic-curly-updo2.webp",
+            "text_label": "",
+            "link": ""
           }
         },
-        "image3":{
+        "image3": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/romantic-curly-updo3.webp",
-            "text_label":"",
-            "link":""
+          "settings": {
+            "image": "shopify://shop_images/romantic-curly-updo3.webp",
+            "text_label": "",
+            "link": ""
           }
         },
-        "image4":{
+        "image4": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/romantic-curly-updo4.webp",
-            "text_label":"",
-            "link":""
+          "settings": {
+            "image": "shopify://shop_images/romantic-curly-updo4.webp",
+            "text_label": "",
+            "link": ""
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "image1",
         "image2",
         "image3",
@@ -177,11 +165,21 @@
         ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
         ".gradient{background:rgba(229,228,241,0.4);}",
         "@media screen and (max-width: 750px) {.gradient {display: none; }}"
-      ]
+      ],
+      "settings": {
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "background-sale",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-get-the-look": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -190,17 +188,9 @@
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > *{line-height:1.2em;}",
@@ -210,31 +200,29 @@
         ".gradient{background:rgba(229,228,241,0.4);}",
         "@media screen and (min-width: 951px) {.gradient {display: none; }}"
       ],
-    },
-    "get-the-look":{
-      "type": "image-list",
-      "settings":{
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "background-sale",
-        "text_allignment": "left",
-        "columns_desktop": 4,
-        "swipe_on_desktop": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile":true,
-        "padding_top":0,
-        "padding_bottom":0
-      },
-      "blocks":{
-        "image1":{
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "get-the-look": {
+      "type": "image-list",
+      "blocks": {
+        "image1": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/romantic-curly-updo-get-the-look.webp",
-            "text_label":"",
-            "link":""
+          "settings": {
+            "image": "shopify://shop_images/romantic-curly-updo-get-the-look.webp",
+            "text_label": "",
+            "link": ""
           }
         }
       },
-      "block_order":[
-        "image1",
+      "block_order": [
+        "image1"
       ],
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:10px;--grid-desktop-horizontal-spacing:10px;margin-top:0;}",
@@ -242,11 +230,21 @@
         ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
         ".gradient{background:rgba(229,228,241,0.4);}",
         "@media screen and (min-width: 951px) {.gradient {display: none; }}"
-      ]
+      ],
+      "settings": {
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "background-sale",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-get-the-look-box": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -254,25 +252,17 @@
             "heading_size": "h3"
           }
         },
-        "text":{
+        "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Bridesmaid wears our 18” <br>Seamless in Medium Brown</p><p><a href='\/products\/seamless-clip-in-hair-extensions-double-drawn-medium-brown'>Shop Now</a></p>"
+            "text": "<p>Bridesmaid wears our 18” <br>Seamless in Medium Brown</p><p><a href='/products/seamless-clip-in-hair-extensions-double-drawn-medium-brown'>Shop Now</a></p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": true,
-        "padding_top":0,
-        "padding_bottom": 0
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > *{line-height:1.2em;}",
@@ -283,6 +273,14 @@
         ".center{width:100%; background:white; padding:1.5rem;margin-right:1.5rem;}",
         "@media screen and (min-width: 951px) {.gradient {display: none; }}"
       ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "1664746053df8a22c8": {
       "type": "video_carrousel_bridal25",
@@ -290,35 +288,35 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Romantic_Curly_Updo_Video_Thumbnail.webp",
-            "video": "shopify://files/videos/Romantic Curly Updo.mp4"
+            "video": "shopify://files/videos/Romantic Curly Updo.mp4",
+            "cover_image": "shopify://shop_images/Romantic_Curly_Updo_Video_Thumbnail.webp"
           }
         }
       },
       "block_order": [
         "2e266794-9043-4fd6-bd27-340aec4d2029"
       ],
-      "settings": {
-        "image_ratio": "portrait",
-        "columns_desktop": 1,
-        "columns_mobile": "1",
-        "color_scheme": "background-sale",
-        "swipe_on_mobile": false,
-        "swipe_on_desktop": false,
-        "padding_top":100,
-        "padding_bottom":100
-      },
       "custom_css": [
         ".videos-list{max-width:70%; margin:0 auto;}",
         ".deferred-media__poster-button{color:white;}",
         "@media screen and (max-width:1399px){.grid--peek.slider .grid__item:first-of-type{margin-left:0;}.slider--tablet::after {padding-left:0!important; margin-left:0!important}.videos-list-wrapper{padding:0 !important;}}",
         ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}",
         "@media screen and (min-width: 951px) {.gradient {display: none; }}"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-sale",
+        "image_ratio": "portrait",
+        "columns_desktop": 1,
+        "swipe_on_desktop": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
     },
     "rich-text-get-the-look-desktop": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -327,17 +325,9 @@
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > *{line-height:1.2em;}",
@@ -345,6 +335,14 @@
         ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}",
         "@media screen and (max-width: 950px) {.gradient {display: none; }}"
       ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "bridal_video_image_text_mVYJFM": {
       "type": "bridal-video-image-text-2025",
@@ -352,20 +350,20 @@
         "video_rcrB4W": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Romantic_Curly_Updo_Video_Thumbnail.webp",
+            "image": "shopify://shop_images/Romantic_Curly_Updo_Video_Thumbnail.webp",
             "video_link": "https://cdn.shopify.com/videos/c/o/v/db49b8b8bb8c449c85d49414a06009a4.mp4"
           }
         },
         "image_kxtntG": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-look.webp"
+            "image": "shopify://shop_images/romantic-curly-updo-look.webp"
           }
         },
         "image_7LydQp": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-product.webp"
+            "image": "shopify://shop_images/romantic-curly-updo-product.webp"
           }
         }
       },
@@ -382,10 +380,10 @@
         "@media screen and (max-width: 950px) {section {display: none; }}"
       ],
       "settings": {
-        "title": "<h3>Get The Look<\/h3>",
-        "intro": "<p>Bridesmaid wears our 18” Seamless in Medium Brown<\/p>",
+        "title": "<h3>Get The Look</h3>",
+        "intro": "<p>Bridesmaid wears our 18” Seamless in Medium Brown</p>",
         "btn-text": "SHOP NOW",
-        "btn-url": "shopify:\/\/products\/seamless-clip-in-hair-extensions-double-drawn-medium-brown",
+        "btn-url": "shopify://products/seamless-clip-in-hair-extensions-double-drawn-medium-brown",
         "bg_color": "#ffffff",
         "max_width": "1400",
         "mobile-p_top": 0,
@@ -415,25 +413,25 @@
         "74c3f2d7-404f-4a64-983c-c9964a5b2871": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-lookbook-image1.webp",
+            "image": "shopify://shop_images/romantic-curly-updo-lookbook-image1.webp"
           }
         },
         "ad8175f2-51ac-4162-b9af-ddc0f487f924": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-lookbook-image2.webp",
+            "image": "shopify://shop_images/romantic-curly-updo-lookbook-image2.webp"
           }
         },
         "0daf6aee-88f0-4373-80c3-3830fea777d8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-lookbook-image3.webp",
+            "image": "shopify://shop_images/romantic-curly-updo-lookbook-image3.webp"
           }
         },
         "905f982b-829c-4154-a8c1-f9a24b175ace": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/romantic-curly-updo-lookbook-image4.webp",
+            "image": "shopify://shop_images/romantic-curly-updo-lookbook-image4.webp"
           }
         }
       },
@@ -451,18 +449,18 @@
         ".images-list-wrapper{max-width:950px}"
       ],
       "settings": {
-        "color_scheme":"background-sale",
+        "columns_desktop": 2,
         "swipe_on_desktop": false,
-        "swipe_on_mobile": false,
-        "columns_desktop":2,
+        "color_scheme": "background-sale",
         "columns_mobile": "2",
-        "padding_top":0,
-        "padding_bottom":0
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "rich-text-insta": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -470,31 +468,31 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>Tag us @cliphairlimited and show us your bridal look</p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "color_scheme": "background-sale",
-        "full_width": true,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
       "type": "image-list",
@@ -502,118 +500,64 @@
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-1.webp",
-            "text_label":"<p>@evaschulze_hairandmakeup<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-1.webp",
+            "text_label": "<p>@evaschulze_hairandmakeup</p>"
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-2.webp",
-            "text_label":"<p>@amyelliotthair<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-2.webp",
+            "text_label": "<p>@amyelliotthair</p>"
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-3.webp",
-            "text_label":"<p>@bridesbyrose<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-3.webp",
+            "text_label": "<p>@bridesbyrose</p>"
           }
         },
         "item_nTxwVY4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-4.webp",
-            "text_label":"<p>@bridalandbeauty_byrebeccajayne<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-4.webp",
+            "text_label": "<p>@bridalandbeauty_byrebeccajayne</p>"
           }
         },
         "item_nTxwVY5": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-5.webp",
-            "text_label":"<p>@natalienicholsbridal<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-5.webp",
+            "text_label": "<p>@natalienicholsbridal</p>"
           }
         },
         "item_nTxwVY6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-6.webp",
-            "text_label":"<p>@katrinakelly_weddinghair<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-6.webp",
+            "text_label": "<p>@katrinakelly_weddinghair</p>"
           }
         },
         "item_nTxwVY7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-7.webp",
-            "text_label":"<p>@shivani.hairandmakeup<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-7.webp",
+            "text_label": "<p>@shivani.hairandmakeup</p>"
           }
         },
         "item_nTxwVY8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-8.webp",
-            "text_label":"<p>@weddinghairbykirsty<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-8.webp",
+            "text_label": "<p>@weddinghairbykirsty</p>"
           }
         },
         "item_nTxwVY9": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/updo-insta-9.webp",
-            "text_label":"<p>@milliedonovanhairstylist<\/p>",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/updo-insta-9.webp",
+            "text_label": "<p>@milliedonovanhairstylist</p>"
           }
         }
       },
@@ -628,15 +572,6 @@
         "item_nTxwVY8",
         "item_nTxwVY9"
       ],
-      "settings":{
-        "columns_desktop":4,
-        "swipe_on_desktop":true,
-        "swipe_on_mobile":true,
-        "columns_mobile":"2",
-        "color_scheme": "background-sale",
-        "padding_top":0,
-        "padding_bottom":0
-      },
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
         ".images-list__item{min-width:unset;}",
@@ -644,7 +579,16 @@
         "@media screen and (max-width:1399px){.images-list-wrapper{padding:0!important;}}",
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".images-list__item img{aspect-ratio:1/1;}"
-      ]
+      ],
+      "settings": {
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "background-sale",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [

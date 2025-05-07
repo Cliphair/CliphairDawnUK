@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -23,8 +23,8 @@
         "custom_title": "Wedding Hair Extensions - Bridal Campaign 2025",
         "heading_size": "h3",
         "text_alignment": "center",
-        "padding_top":0,
-        "padding_bottom":0
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_banner_qhrEjP": {
@@ -33,8 +33,8 @@
         "slide_nnGry6": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridal_campaign_2025_mobile_banner.webp",
-            "image_desktop": "shopify:\/\/shop_images\/bridal_campaign_desktop_banner.webp",
+            "image": "shopify://shop_images/bridal_campaign_2025_mobile_banner.webp",
+            "image_desktop": "shopify://shop_images/bridal_campaign_desktop_banner.webp",
             "image_url": "",
             "heading": "",
             "heading_size": "h2",
@@ -67,7 +67,7 @@
     },
     "rich-text-intro": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -75,32 +75,31 @@
             "heading_size": "h2"
           }
         },
-        "richtext":{
-          "type": "text"
-          ,
+        "richtext": {
+          "type": "text",
           "settings": {
             "text": "<p>Your dream day deserves dream hair, <br>say <em>'I Do'</em> to flawless extensions!</p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "richtext"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         "p {line-height: 1.5em;}",
         "p em{font-family: 'Pinyon Script', cursive; font-size:2em;vertical-align: sub;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
       ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "bridal_video_image_KijGWR": {
       "type": "bridal-video-image",
@@ -108,21 +107,20 @@
         "image_bzDVL4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-image-2025.webp"
+            "image": "shopify://shop_images/bride-image-2025.webp"
           }
         },
         "image_BRGHM7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-image-2-2025.webp"
+            "image": "shopify://shop_images/bride-image-2-2025.webp"
           }
         },
         "video_J9gyw9": {
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/Bridal Campaign 2025.mp4",
-            "cover_image": "shopify:\/\/shop_images\/bridal-campaign-video-thumbnail-2025.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/72a85a90d2f046619d8a094e2c7b501a.mp4"
+            "cover_image": "shopify://shop_images/bridal-campaign-video-thumbnail-2025.webp"
           }
         }
       },
@@ -130,21 +128,20 @@
         "image_bzDVL4",
         "image_BRGHM7",
         "video_J9gyw9"
-      ],    
-      "settings": {
-        "color_scheme": "background-sale",
-        "padding_top": 0,
-        "padding_bottom":0
-      }
-      ,
+      ],
       "custom_css": [
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".deferred-media__poster-button{color:white;}"
       ],
+      "settings": {
+        "color_scheme": "background-sale",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-lookbook": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -152,32 +149,31 @@
             "heading_size": "h2"
           }
         },
-        "text":{
+        "text": {
           "type": "text",
-          "settings":{
+          "settings": {
             "text": "<p>Discover the styles inspiring everyone from brides to bridesmaids this season, from aisle-ready waves to dancefloor-proof updos</p>"
           }
         }
-        
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "1664746053df8a22c8": {
       "type": "video_carrousel_bridal25",
@@ -185,8 +181,8 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Classic_Hollywood_Waves_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Classic Hollywood Waves.mp4",
+            "cover_image": "shopify://shop_images/Classic_Hollywood_Waves_Video_Thumbnail.webp",
             "title": "Classic Hollywood Waves",
             "description": "A timeless silhouette with a modern twist.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -196,8 +192,8 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Elegant_Chignon_Bun_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Elegant Chignon Bun.mp4",
+            "cover_image": "shopify://shop_images/Elegant_Chignon_Bun_Video_Thumbnail.webp",
             "title": "Elegant Chignon Bun",
             "description": "The perfect blend of elegance and ease.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -209,25 +205,25 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029",
         "145755f4-4d91-4e80-8bb6-52a475d8285a"
       ],
-      "settings": {
-        "image_ratio": "portrait",
-        "color_scheme": "background-sale",
-        "columns_desktop": 5,
-        "swipe_on_desktop": false,
-        "columns_mobile": "2",
-        "padding_top":0,
-        "padding_bottom":0
-      },
       "custom_css": [
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".deferred-media__poster-button{color:white;}",
         ".videos-list{--grid-desktop-horizontal-spacing: 10px;}",
         "@media screen and (min-width:990px){.section-template--25250289975670__1664746053df8a22c8-padding{display:none;}"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-sale",
+        "image_ratio": "portrait",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-lookbook-bridesmaids": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -235,26 +231,25 @@
             "heading_size": "h2"
           }
         }
-        
       },
-      "block_order":[
+      "block_order": [
         "heading"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": false,
-        "padding_top":40,
-        "padding_bottom": 40
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}",
         "@media screen and (min-width:990px){.section-template--25250289975670__rich-text-lookbook-bridesmaids-padding{display:none;}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "1664746053df8a22c8-2": {
       "type": "video_carrousel_bridal25",
@@ -262,8 +257,8 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Sleek_Sultry_Waves_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Sleek Sultry Waves.mp4",
+            "cover_image": "shopify://shop_images/Sleek_Sultry_Waves_Video_Thumbnail.webp",
             "title": "Sleek Sultry Waves",
             "description": "Sophistication with a touch of seduction.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -273,8 +268,8 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Heavenly_Half_Up_Half_Down_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Heavenly Half Up Half Down.mp4",
+            "cover_image": "shopify://shop_images/Heavenly_Half_Up_Half_Down_Video_Thumbnail.webp",
             "title": "Heavenly Half Up Half Down",
             "description": "Soft, classic, and full of storybook magic.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -284,8 +279,8 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Romantic_Curly_Updo_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Romantic Curly Updo.mp4",
+            "cover_image": "shopify://shop_images/Romantic_Curly_Updo_Video_Thumbnail.webp",
             "title": "Romantic Curly Updo",
             "description": "Romantic, radiant, and effortlessly you.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -298,16 +293,6 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da"
       ],
-      "settings": {
-        "image_ratio": "portrait",
-        "color_scheme": "background-sale",
-        "columns_desktop": 5,
-        "swipe_on_desktop": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile":true,
-        "padding_top":0,
-        "padding_bottom":0
-      },
       "custom_css": [
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".deferred-media__poster-button{color:white;}",
@@ -315,7 +300,17 @@
         ".videos-list-wrapper{padding:0;}",
         ".videos-list__item{margin-left:0;}",
         "@media screen and (min-width:990px){.section-template--25250289975670__1664746053df8a22c8-2-padding{display:none;}"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-sale",
+        "image_ratio": "portrait",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "1664746053df8a22c8-desktop": {
       "type": "video_carrousel_bridal25",
@@ -323,8 +318,8 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Classic_Hollywood_Waves_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Classic Hollywood Waves.mp4",
+            "cover_image": "shopify://shop_images/Classic_Hollywood_Waves_Video_Thumbnail.webp",
             "title": "Classic Hollywood Waves",
             "description": "A timeless silhouette with a modern twist.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -334,8 +329,8 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Sleek_Sultry_Waves_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Sleek Sultry Waves.mp4",
+            "cover_image": "shopify://shop_images/Sleek_Sultry_Waves_Video_Thumbnail.webp",
             "title": "Sleek Sultry Waves",
             "description": "Sophistication with a touch of seduction.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -345,8 +340,8 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Elegant_Chignon_Bun_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Elegant Chignon Bun.mp4",
+            "cover_image": "shopify://shop_images/Elegant_Chignon_Bun_Video_Thumbnail.webp",
             "title": "Elegant Chignon Bun",
             "description": "The perfect blend of elegance and ease.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -356,8 +351,8 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Heavenly_Half_Up_Half_Down_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Heavenly Half Up Half Down.mp4",
+            "cover_image": "shopify://shop_images/Heavenly_Half_Up_Half_Down_Video_Thumbnail.webp",
             "title": "Heavenly Half Up Half Down",
             "description": "Soft, classic, and full of storybook magic.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -367,8 +362,8 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/Romantic_Curly_Updo_Video_Thumbnail.webp",
             "video": "shopify://files/videos/Romantic Curly Updo.mp4",
+            "cover_image": "shopify://shop_images/Romantic_Curly_Updo_Video_Thumbnail.webp",
             "title": "Romantic Curly Updo",
             "description": "Romantic, radiant, and effortlessly you.",
             "button_label": "EXPLORE LOOKBOOK",
@@ -383,25 +378,25 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da"
       ],
-      "settings": {
-        "image_ratio": "portrait",
-        "color_scheme": "background-sale",
-        "columns_desktop": 5,
-        "swipe_on_desktop": false,
-        "columns_mobile": "2",
-        "padding_top":0,
-        "padding_bottom":0
-      },
       "custom_css": [
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".deferred-media__poster-button{color:white;}",
         "@media screen and (max-width:989px){.gradient{display:none;}}",
         ".videos-list{--grid-desktop-horizontal-spacing: 10px;}"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-sale",
+        "image_ratio": "portrait",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-must-haves": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -409,103 +404,93 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>From luxurious, volume boosting clip ins to lifesaving accessories, these are the bridal essentials needed to create swoonworthy hairstyles.</p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "color_scheme": "background-sale",
-        "full_width": true,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
-    },
-    "bridal-must-haves":{
-      "type": "image-list",
-      "settings":{
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "background-sale",
-        "text_allignment": "left",
-        "columns_desktop": 5,
-        "swipe_on_desktop": true,
-        "columns_mobile": "3",
-        "swipe_on_mobile":true,
-        "padding_top":0,
-        "padding_bottom":52
-      },
-      "blocks":{
-        "image1":{
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "bridal-must-haves": {
+      "type": "image-list",
+      "blocks": {
+        "image1": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Seamless_Must_Have.webp",
-            "text_label":"<h4>Seamless</h4>",
-            "link":"shopify:\/\/collections\/seamless-clip-in-hair-extensions-double-drawn-hair"
+          "settings": {
+            "image": "shopify://shop_images/Seamless_Must_Have.webp",
+            "text_label": "<h4>Seamless</h4>",
+            "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
         },
-        "image2":{
+        "image2": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Double_Weft_Must_Have.webp",
-            "text_label":"<h4>Double Weft</h4>",
-            "link":"shopify:\/\/collections\/double-wefted-clip-in-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Double_Weft_Must_Have.webp",
+            "text_label": "<h4>Double Weft</h4>",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
         },
-        "image3":{
+        "image3": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Ultra_Volume_Must_Have.webp",
-            "text_label":"<h4>Ultra Volume</h4>",
-            "link":"shopify:\/\/collections\/ultra-clip-in-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Ultra_Volume_Must_Have.webp",
+            "text_label": "<h4>Ultra Volume</h4>",
+            "link": "shopify://collections/ultra-clip-in-hair-extensions"
           }
         },
-        "image4":{
+        "image4": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Classic_Must_Have.webp",
-            "text_label":"<h4>Classic</h4>",
-            "link":"shopify:\/\/collections\/full-head-clip-in-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Classic_Must_Have.webp",
+            "text_label": "<h4>Classic</h4>",
+            "link": "shopify://collections/full-head-clip-in-hair-extensions"
           }
         },
-        "image5":{
+        "image5": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Quad_Weft_Must_Have.webp",
-            "text_label":"<h4>Quad Weft</h4>",
-            "link":"shopify:\/\/collections\/quad-weft-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Quad_Weft_Must_Have.webp",
+            "text_label": "<h4>Quad Weft</h4>",
+            "link": "shopify://collections/quad-weft-hair-extensions"
           }
         },
-        "image6":{
+        "image6": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Top_Up_Must_Have.webp",
-            "text_label":"<h4>Top Up</h4>",
-            "link":"shopify:\/\/collections\/one-piece-top-up-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Top_Up_Must_Have.webp",
+            "text_label": "<h4>Top Up</h4>",
+            "link": "shopify://collections/one-piece-top-up-hair-extensions"
           }
         },
-        "image7":{
+        "image7": {
           "type": "image",
-          "settings":{
-            "image":"shopify:\/\/shop_images\/Curly_Must_Have.webp",
-            "text_label":"<h4>Curly</h4>",
-            "link":"shopify:\/\/collections\/curly-clip-in-hair-extensions"
+          "settings": {
+            "image": "shopify://shop_images/Curly_Must_Have.webp",
+            "text_label": "<h4>Curly</h4>",
+            "link": "shopify://collections/curly-clip-in-hair-extensions"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "image1",
         "image2",
         "image3",
@@ -521,11 +506,21 @@
         ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
         ".gradient{background:rgba(229,228,241,0.4);}",
         ".text-container > *{margin-top:0.5rem; margin-bottom:0;}"
-      ]
+      ],
+      "settings": {
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "color_scheme": "background-sale",
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
     },
     "rich-text-vidoes": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -533,63 +528,63 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>Explore this year’s top trending wedding guest hairstyles for your loved one’s big day and enjoy feeling your most beautiful self.</p>"
           }
         }
       },
-      "block_order":[
-        "heading","text"
+      "block_order": [
+        "heading",
+        "text"
       ],
       "disabled": true,
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "full_width": false,
-        "color_scheme": "background-sale",
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:transparent;}",
         ".isolate{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
     "1664746053df8a22c": {
       "type": "video_carrousel_bridal25",
-      "disabled": true,
       "blocks": {
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/diana-updo.webp",
-            "video": "shopify://files/videos/Diana's Bridal Bun.mp4"
+            "video": "shopify://files/videos/Diana's Bridal Bun.mp4",
+            "cover_image": "shopify://shop_images/diana-updo.webp"
           }
         },
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/lauren.webp",
-            "video": "shopify://files/videos/Lauren's Styling.mp4"
+            "video": "shopify://files/videos/Lauren's Styling.mp4",
+            "cover_image": "shopify://shop_images/lauren.webp"
           }
         },
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/jennica.webp",
-            "video": "shopify://files/videos/Jennica's Styling.mp4"
+            "video": "shopify://files/videos/Jennica's Styling.mp4",
+            "cover_image": "shopify://shop_images/jennica.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify:\/\/shop_images\/diana.webp",
-            "video": "shopify://files/videos/Diana's Half up half down.mp4"
+            "video": "shopify://files/videos/Diana's Half up half down.mp4",
+            "cover_image": "shopify://shop_images/diana.webp"
           }
         }
       },
@@ -599,22 +594,23 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d"
       ],
-      "settings": {
-        "image_ratio": "portrait",
-        "columns_desktop": 4,
-        "columns_mobile": "3",
-        "color_scheme": "background-faded-blue",
-        "swipe_on_mobile": true,
-        "swipe_on_desktop": true,
-        "padding_top":0,
-        "padding_bottom":52
-      },
+      "disabled": true,
       "custom_css": [
         ".videos-list{--grid-mobile-horizontal-spacing:10px;--grid-desktop-horizontal-spacing:10px}",
         ".videos-list__item{min-width:unset;}",
         "@media screen and (max-width:1399px){.grid--peek.slider .grid__item:first-of-type{margin-left:0;}.slider--tablet::after {padding-left:0!important; margin-left:0!important}.videos-list-wrapper{padding:0 !important;}}",
         ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-faded-blue",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
     },
     "custom_banner_j6XPmV": {
       "type": "custom-banner",
@@ -624,16 +620,16 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/bridal-quiz-banner-desktop.webp",
-        "mobile-image": "shopify:\/\/shop_images\/Bridal_2025_Quiz.webp",
-        "url": "shopify:\/\/pages\/bridal-hair-extension-quiz",
+        "desktop-image": "shopify://shop_images/bridal-quiz-banner-desktop.webp",
+        "mobile-image": "shopify://shop_images/Bridal_2025_Quiz.webp",
+        "url": "shopify://pages/bridal-hair-extension-quiz",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
     "rich-text-wear-cliphair": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -641,123 +637,123 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>Hear from real brides who wore Cliphair on their wedding day – and looked unforgettable doing it. </p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "full_width": true,
-        "padding_top":80,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1,7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:transparent;}",
         ".isolate{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
     },
-    "bridal-wear-cliphair":{
+    "bridal-wear-cliphair": {
       "type": "bridal-reviews-2025",
       "blocks": {
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review1.webp",
             "heading": "",
             "content": "<p>I recently purchased Cliphair extensions for my wedding, and I couldn’t be happier! They were absolutely perfect in every way. From the moment I received them, I was impressed by their quality. They were incredibly lightweight and comfortable throughout the day. The colour match was spot on, and they held up beautifully despite the salty air and humidity. The quality was truly remarkable. If you’re looking for high-quality, natural-looking hair, then Cliphair is the way to go!</p>",
-            "customer": "Mika"
+            "customer": "Mika",
+            "image": "shopify://shop_images/review1.webp"
           }
         },
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review2.webp",
             "heading": "",
             "content": "<p>These extensions were great! I purchased them for a bride who wanted a modern Hollywood wave style and the colour blended seamlessly with the natural tones in her hair. They are always super easy to work with and easy to curl and set for the waves. I also love the price-point, especially as they are such fantastic quality.</p>",
-            "customer": "Sabrina"
+            "customer": "Sabrina",
+            "image": "shopify://shop_images/review2.webp"
           }
         },
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review3.webp",
             "heading": "",
             "content": "<p>Wore them on my wedding day and they looked fantastic and was very pleased with how long they stayed in. Overall I am so glad I went for these amazing extensions for my wedding day, they made my hair look 100 times better.</p>",
-            "customer": "Holly"
+            "customer": "Holly",
+            "image": "shopify://shop_images/review3.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review4.webp",
             "heading": "",
             "content": "<p>So many wonderful compliments. Perfect match, thickness is fabulous, and I feel and look incredible with this hair! Also used the extensions on my wedding day.</p>",
-            "customer": "Sophie"
+            "customer": "Sophie",
+            "image": "shopify://shop_images/review4.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d5": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review5.webp",
             "heading": "",
             "content": "<p>These extensions look just like real hair and blend in really well. The colour is accurate to the photo and is enough to give a good level of volume to fine hair. Great value for money and great quality. I used these for my wedding and they made my hair look SO much nicer.</p>",
-            "customer": "Lucy"
+            "customer": "Lucy",
+            "image": "shopify://shop_images/review5.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d6": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review6.webp",
             "heading": "",
             "content": "<p>Absolutely loved them! Bought extensions for my wedding and I'm glad I did now. I got so many compliments and the stylist loved them. They gave me so much more confidence.</p>",
-            "customer": "Shannon"
+            "customer": "Shannon",
+            "image": "shopify://shop_images/review6.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d7": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review7.webp",
             "heading": "",
             "content": "<p>Couldn’t recommend enough! Ordered these for my wedding day and the quality of hair was unreal. Colour match was perfect!</p>",
-            "customer": "Jessica"
+            "customer": "Jessica",
+            "image": "shopify://shop_images/review7.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d8": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review8.webp",
             "heading": "",
             "content": "<p>Fantastic colour match! Bought for thickness for my wedding and you can’t even see them! Never had extensions before but the process was quick and simple. Would definitely recommend.</p>",
-            "customer": "Nicola"
+            "customer": "Nicola",
+            "image": "shopify://shop_images/review8.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d9": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review9.webp",
             "heading": "",
             "content": "<p>Great quality hair! I’ve been having extensions for years and honestly these are lovely, I’ve bought these for my wedding and the company colour matched so well! Definitely recommend.</p>",
-            "customer": "Stacey"
+            "customer": "Stacey",
+            "image": "shopify://shop_images/review9.webp"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d10": {
           "type": "review",
           "settings": {
-            "image": "shopify:\/\/shop_images\/review10.webp",
             "heading": "",
             "content": "<p>I have never used hair extensions before and these were brilliant! These clip ins are great. They look so natural, the colour matching service is great too, and the colour I was matched with was perfect. Thank you Cliphair! I will be using these on my wedding day.</p>",
-            "customer": "Jennifer"
+            "customer": "Jennifer",
+            "image": "shopify://shop_images/review10.webp"
           }
         }
       },
@@ -773,40 +769,34 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d9",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d10"
       ],
-      "settings": {
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "swipe_on_desktop":true,
-        "padding_top":0,
-        "padding_bottom":0
-      },
-      "custom_css":[
+      "custom_css": [
         ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}.reviews-list-wrapper{padding:0 !important;}",
         ".gradient{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}",
         ".reviews-list{background: var(--gradient-background);}"
-      ]
+      ],
+      "settings": {
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-empty": {
       "type": "rich-text-sales",
-      "blocks":{
-
-      },
-      "block_order":[
-        
-      ],
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "full_width": true,
-        "padding_top":80,
-        "padding_bottom": 0
-      },
       "custom_css": [
         ".gradient{background:transparent;}",
         ".isolate{background: fixed top/contain repeat url('https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286');}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
     },
     "custom_banner_d9rTna": {
       "type": "custom-banner",
@@ -816,16 +806,16 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/bridal-awards-banner-desktop.webp",
-        "mobile-image": "shopify:\/\/shop_images\/bridal-awards-2025.webp",
-        "url": "shopify:\/\/pages\/2024-hairstylist-award",
+        "desktop-image": "shopify://shop_images/bridal-awards-banner-desktop.webp",
+        "mobile-image": "shopify://shop_images/bridal-awards-2025.webp",
+        "url": "shopify://pages/2024-hairstylist-award",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
     "rich-text-bundle": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -833,89 +823,85 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>Everything you need for wedding day hair perfection – bundled and beautifully curated for brides, bridesmaids, bridal stylists and beyond.</p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "color_scheme": "background-sale",
-        "content_alignment" : "center",
-        "full_width": true,
-        "padding_top":80,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
     },
-    "bridal-bundle":{
+    "bridal-bundle": {
       "type": "image-list",
-      "blocks":{
-        "image1":{
+      "blocks": {
+        "image1": {
           "type": "image",
-          "settings":{
-            "image": "shopify:\/\/shop_images\/Bridal_Hair_Extension_Styling_Set.webp",
-            "url":"#"
+          "settings": {
+            "image": "shopify://shop_images/Bridal_Hair_Extension_Styling_Set.webp"
           }
         },
-        "image2":{
+        "image2": {
           "type": "image",
-          "settings":{
-            "image": "shopify:\/\/shop_images\/Bridal_Haircare_Essentials.webp",
-            "url":"#"
+          "settings": {
+            "image": "shopify://shop_images/Bridal_Haircare_Essentials.webp"
           }
         },
-        "image3":{
+        "image3": {
           "type": "image",
-          "settings":{
-            "image": "shopify:\/\/shop_images\/Brides_Wear_Cliphair.webp",
-            "url":"#"
+          "settings": {
+            "image": "shopify://shop_images/Brides_Wear_Cliphair.webp"
           }
         },
-        "image4":{
+        "image4": {
           "type": "image",
-          "settings":{
-            "image": "shopify:\/\/shop_images\/Pro_Bridal_Hairstyling_Kit.webp",
-            "url":"#"
+          "settings": {
+            "image": "shopify://shop_images/Pro_Bridal_Hairstyling_Kit.webp"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "image1",
         "image2",
         "image3",
         "image4"
       ],
-      "settings":{
-        "color_scheme": "background-sale",
-        "columns_mobile": "2",
-        "columns_desktop":4,
-        "swipe_on_desktop":false,
-        "swipe_on_mobile":false,
-        "padding_bottom":0,
-        "padding_top":0
-      },
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
         ".images-list__item img{object-fit:cover;}",
         ".grid--peek.slider .grid__item:first-of-type{margin-left:0;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "background-sale",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "rich-text-insta": {
       "type": "rich-text-sales",
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
@@ -923,81 +909,57 @@
             "heading_size": "h2"
           }
         },
-        "text":{
-          "type":"text",
-          "settings":{
+        "text": {
+          "type": "text",
+          "settings": {
             "text": "<p>Tag us @cliphairlimited and show us your bridal look</p>"
           }
         }
       },
-      "block_order":[
+      "block_order": [
         "heading",
         "text"
       ],
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment" : "center",
-        "color_scheme": "background-sale",
-        "full_width": true,
-        "padding_top":52,
-        "padding_bottom": 52
-      },
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top:1.5rem;}",
         ".rich-text__heading > * > em {font-size:1.7em;}",
         "p {line-height: 1.2em;}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     },
-    "bridal-insta":{
+    "bridal-insta": {
       "type": "image-list",
       "blocks": {
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta2.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/insta2.webp"
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta4.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/insta4.webp"
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta9.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/insta9.webp"
           }
         },
         "item_nTxwVY4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta10.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "",
-            "subtitle": "",
-            "url": "",
-            "image-url": ""
+            "image": "shopify://shop_images/insta10.webp"
           }
         }
       },
@@ -1005,21 +967,21 @@
         "item_MVMXD3",
         "item_nTxwVY",
         "item_nTxwVY3",
-        "item_nTxwVY4",
+        "item_nTxwVY4"
       ],
-      "settings":{
-        "columns_desktop":4,
-        "columns_mobile":"2",
-        "color_scheme": "background-sale",
-        "padding_top":0,
-        "padding_bottom":0
-      },
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
         ".images-list__item{min-width:unset;}",
         "@media screen and (max-width:1399px){.images-list-wrapper{padding:0!important;}}",
         ".gradient{background:rgba(229,228,241,0.4);}"
-      ]
+      ],
+      "settings": {
+        "columns_desktop": 4,
+        "color_scheme": "background-sale",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
