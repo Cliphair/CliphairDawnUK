@@ -935,7 +935,7 @@
           "settings": {
             "image": "shopify://shop_images/Bridal_Hair_Extension_Styling_Set.webp",
             "text_label": "",
-            "link": ""
+            "link": "shopify://products/clip-in-styling-starter-kit"
           }
         },
         "image2": {
@@ -943,7 +943,7 @@
           "settings": {
             "image": "shopify://shop_images/Bridal_Haircare_Essentials.webp",
             "text_label": "",
-            "link": ""
+            "link": "shopify://products/ultimate-haircare-bundle"
           }
         },
         "image3": {
@@ -951,7 +951,7 @@
           "settings": {
             "image": "shopify://shop_images/Brides_Wear_Cliphair.webp",
             "text_label": "",
-            "link": ""
+            "link": "shopify://products/signature-cliphair-styling-kit"
           }
         },
         "image4": {
@@ -959,7 +959,7 @@
           "settings": {
             "image": "shopify://shop_images/Pro_Bridal_Hairstyling_Kit.webp",
             "text_label": "",
-            "link": ""
+            "link": "shopify://products/pro-hairstyling-kit"
           }
         }
       },
