@@ -227,15 +227,15 @@
     "break_line_CB4w6g": {
       "type": "break-line",
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}"
+        "section {background: rgba(229, 228, 241, 0.4) !important;}"
       ],
       "settings": {
         "bg_color": "#4e4e4e",
         "max_width": "280",
         "height": 1,
-        "mobile-p_top-bottom": 0,
+        "mobile-p_top-bottom": 20,
         "mobile-p_sides": 50,
-        "desktop-p_top-bottom": 0,
+        "desktop-p_top-bottom": 30,
         "desktop-p_sides": 0
       }
     },
