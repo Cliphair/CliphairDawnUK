@@ -36,7 +36,6 @@
       "blocks": {
         "slide_cnhnUM": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/bridal-campaign-2025-main-desktop-banner.webp",
             "image_desktop": "shopify://shop_images/bridal-campaign-2025-main-mobile-banner.webp",
