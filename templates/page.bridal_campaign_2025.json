@@ -1033,31 +1033,239 @@
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/insta2.webp",
-            "text_label": "",
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "<p>@brides_by_ayelet</p>",
             "link": ""
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/insta4.webp",
-            "text_label": "",
+            "image": "shopify://shop_images/hair-down-insta-15.webp",
+            "text_label": "<p>@staciegoodwinbridalhair</p>",
             "link": ""
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/insta9.webp",
-            "text_label": "",
+            "image": "shopify://shop_images/hair-down-insta-16.webp",
+            "text_label": "<p>@k_mua_oxford</p>",
             "link": ""
           }
         },
         "item_nTxwVY4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/insta10.webp",
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-4",
+            "text_label": "<p>@blowdryskent</p>",
+            "link": ""
+          }
+        },
+        "item_nTxwVY6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY11": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY13": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY14": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY15": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY16": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY17": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY18": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },        
+        "item_nTxwVY19": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY20": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY21": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY22": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY23": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY24": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY25": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY26": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY28": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY29": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "item_nTxwVY30": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/half-up-insta-2.webp",
             "text_label": "",
             "link": ""
           }
@@ -1067,7 +1275,7 @@
         "item_MVMXD3",
         "item_nTxwVY",
         "item_nTxwVY3",
-        "item_nTxwVY4"
+        "item_nTxwVY5"
       ],
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px; --grid-mobile-vertical-spacing: 5px; --grid-desktop-vertical-spacing: 5px; margin-top: 0;}",
