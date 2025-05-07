@@ -35,7 +35,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/bridal_campaign_2025_mobile_banner.webp",
-            "image_desktop": "shopify://shop_images/bridal_campaign_desktop_banner.webp",
+            "image_desktop": "shopify://shop_images/Bridal_Campaign_2025_desktop_banner.webp",
             "image_url": "",
             "heading": "",
             "heading_size": "h2",
@@ -79,7 +79,7 @@
         "richtext": {
           "type": "text",
           "settings": {
-            "text": "<p>Your dream day deserves dream hair, say <em>'I Do'</em> to flawless extensions!</p>",
+            "text": "<p>Your dream day deserves dream hair,<br/>say <em>'I Do'</em> to flawless extensions!</p>",
             "read-more_text": ""
           }
         }
