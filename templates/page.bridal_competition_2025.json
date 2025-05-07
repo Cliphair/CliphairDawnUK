@@ -1610,6 +1610,7 @@
         },
         "item_pqcPy3": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "title": "<h3>When will the winners be announced?</h3>",
             "body": "<p>Winners will be announced on our social channels on ____ 2025.</p>"
