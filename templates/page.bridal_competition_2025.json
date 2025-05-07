@@ -18,10 +18,19 @@
     },
     "6368dc69-0f53-4509-a1fe-d8783409b1a1": {
       "type": "page-header",
-      "settings": {}
+      "settings": {
+        "show_title": false,
+        "custom_title": "",
+        "heading_size": "h2",
+        "text_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "back_to_HtgLH7": {
       "type": "back-to",
+      "disabled": true,
       "settings": {
         "back_url": "shopify://pages/cliphair-bridal-hair-extensions",
         "back_text": "Back To Bridal Campaign",
@@ -37,13 +46,13 @@
     "custom_banner_qhrEjP": {
       "type": "custom-banner",
       "custom_css": [
-        "div>div{padding:0; max-width:unset;}"
+        "div > div {padding: 0; max-width: unset;}"
       ],
       "settings": {
         "max-width": "",
-        "bg-color": "#FFF",
-        "desktop-image": "shopify://shop_images/competition_desktop_banner.webp",
-        "mobile-image": "shopify://shop_images/competition_mobile_banner.webp",
+        "bg-color": "#ffffff",
+        "desktop-image": "shopify://shop_images/bridal-awards-desktop-banner2025.webp",
+        "mobile-image": "shopify://shop_images/bridal-awards-mobile-banner2025.webp",
         "url": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -52,7 +61,7 @@
     "57c89bc1-e173-4782-bfe1-7229f34f91ab": {
       "type": "custom_multicolumn_bridal",
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".section_header {margin-bottom: 10px; text-transform: none; font-weight: 400;}",
         ".description_container p {margin-bottom: 10px;}",
         ".text_container button.btn__read-more {background: none; color: inherit; text-decoration: underline; text-underline-offset: 0.3rem;}",
@@ -60,7 +69,7 @@
         ".star-image {display: none !important;}"
       ],
       "settings": {
-        "bg_color": "#edeae7",
+        "bg_color": "#e5e4f1",
         "max_width": "992",
         "mobile-p_top": 20,
         "mobile-p_bottom": 20,
@@ -72,9 +81,9 @@
         "desktop-p_left": 16,
         "enable_text": true,
         "custom_text": true,
-        "header": "#CliphairBridalAwards24",
+        "header": "#CliphairBridalAwards25",
         "sub_header": "",
-        "description": "<p>OUR BRIDAL COMPETITION IS NOW CLOSED </p>",
+        "description": "",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -166,8 +175,9 @@
         "0daf6aee-88f0-4373-80c3-3830fea777d8",
         "905f982b-829c-4154-a8c1-f9a24b175ace"
       ],
+      "disabled": true,
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
+        "section {background: rgba(229, 228, 241, 0.4)!important;}",
         ".section_header h2 {font-weight: 400;}",
         ".section_header h2 em {font-size: 50px;}",
         ".section_intro p {margin-bottom: 25px;}",
@@ -217,6 +227,7 @@
     },
     "break_line_CB4w6g": {
       "type": "break-line",
+      "disabled": true,
       "custom_css": [
         "section {background: rgba(208, 184, 164, 0.2) !important;}"
       ],
@@ -233,15 +244,15 @@
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2690": {
       "type": "custom-carrousel-3-bridal24",
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".section_header h2 {font-weight: 400;}",
         ".section_header h2 em {font-size: 50px;}",
         ".section_intro p {margin-bottom: 25px;}",
         "@media screen and (min-width: 992px) {.section_header h2 em {font-size: 80px; } .section_intro p {margin-bottom: 35px; }}"
       ],
       "settings": {
-        "header": "<h2><em>Our Winners</em></h2>",
-        "intro": "<p>After much deliberation, our judges have now chosen our winners for the Cliphair Bridal Awards 2024. We’d like to offer a huge congratulations to all of our winners and extend our thanks to our esteemed panel of judges who took the time to select all of our finalists this year.</p><p>If you missed out this time, don’t worry! There’s plenty of opportunities to enter in the future, as we host our competition annually.</p>",
+        "header": "<h2><em>2024 Winners</em></h2>",
+        "intro": "<p><br/>Get inspired by last year’s winning looks! </p>",
         "main-button-text": "",
         "main-button-url": "",
         "max_width": "1500",
@@ -384,7 +395,7 @@
         "video_F84bN3"
       ],
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".bg-image {display: none;}",
         "h3 {font-size: 14px;}",
         ".video-description p {font-size: 12px;}",
@@ -483,7 +494,7 @@
     "break_line_tr4VKD": {
       "type": "break-line",
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}"
+        "section {background: rgba(229, 228, 241, 0.4) !important;}"
       ],
       "settings": {
         "bg_color": "#4e4e4e",
@@ -502,56 +513,63 @@
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Bridal Look</strong></h3>",
-            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels </li></ul><p><strong><br/>Judge: </strong>Kasia Fortuna</p>"
+            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><strong><br/>Judge: TBC</strong></p>"
           }
         },
         "item_gFqRVQ": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Cliphair Look - People’s Choice</strong></h3>",
-            "body": "<p>The best bridal look using Cliphair extensions selected by the public.</p><p><strong>Prize:</strong></p><ul><li>£300 cash prize</li><li>5000 Loyalty Points</li><li>Ultimate Hair Kit (bundle worth £250)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li></ul><p>Judged by the public</p>"
+            "body": "<p>The best bridal look using Cliphair extensions selected by the public.</p><p><strong>Prize:</strong></p><ul><li>£300 cash prize</li><li>5000 Loyalty Points</li><li>Ultimate Hair Kit (bundle worth £250)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge</li></ul><p>Judged by the public</p>"
           }
         },
         "item_GWRYHN": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Cliphair Look - Judges</strong></h3>",
-            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels  </li></ul><p><strong><br/>Judge: </strong>Zoe Webbe</p>"
+            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge  </li></ul><p><strong><br/>Judge: </strong>TBC</p>"
           }
         },
         "item_nVwEew": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Hair Down</strong></h3>",
-            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels  </li></ul><p><br/><strong>Judge:</strong> Boe Wright</p>"
+            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels </li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Boe Wright</p>"
           }
         },
         "item_eH49hy": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Hair Up </strong></h3>",
-            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels </li></ul><p><br/><strong>Judge:</strong> Hannah Taylor</p>"
+            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
           }
         },
         "item_LcBBM4": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Half Up Half Down </strong></h3>",
-            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels </li></ul><p><br/><strong>Judge:</strong> Kim Annesley</p>"
+            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
           }
         },
         "item_LqwfPT": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Braid</strong></h3>",
-            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels </li></ul><p><br/><strong>Judge:</strong> Liz Cooper</p>"
+            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
           }
         },
         "item_8Qkx7d": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Ponytail</strong></h3>",
-            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels </li></ul><p><br/><strong>Judge:</strong> Olga Markuse</p>"
+            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        },
+        "item_aWKpPm": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best International Look</strong></h3>",
+            "body": "<p>This category is for any hairstyle.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
           }
         }
       },
@@ -563,10 +581,11 @@
         "item_eH49hy",
         "item_LcBBM4",
         "item_LqwfPT",
-        "item_8Qkx7d"
+        "item_8Qkx7d",
+        "item_aWKpPm"
       ],
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
         "h2 {margin-bottom: 20px;}",
         "p {line-height: 1.5em; margin-bottom: 10px;}",
         "ul {list-style-position: inside; padding-inline-start: 10px;}",
@@ -576,7 +595,7 @@
       ],
       "settings": {
         "section_title": "<h2>Categories & Prizes </h2>",
-        "intro": "",
+        "intro": "<p>Want To Win? <br/><br/>You could be in the chance of winning our £500 cash prize, an Ultimate Cliphair Hair Kit worth £500, a dedicated feature on our blog and a post on our socials highlighting your talent!</p>",
         "text_color": "#4e4e4e",
         "bg_color": "#ffffff",
         "max_width": "1500",
@@ -597,8 +616,9 @@
     },
     "break_line_YidFKe": {
       "type": "break-line",
+      "disabled": true,
       "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}"
+        "section {background: rgba(229, 228, 241, 0.4) !important;}"
       ],
       "settings": {
         "bg_color": "#4e4e4e",
@@ -700,6 +720,7 @@
         "video_xfiyD9",
         "video_Uftm6w"
       ],
+      "disabled": true,
       "custom_css": [
         "section {background: rgba(208, 184, 164, 0.2) !important;}",
         ".bg-image {display: none;}",
@@ -864,7 +885,7 @@
       ],
       "settings": {
         "max-width": "",
-        "bg-color": "#FFF",
+        "bg-color": "#ffffff",
         "url": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -1586,14 +1607,14 @@
           "type": "item",
           "settings": {
             "title": "<h3>When does the competition end?</h3>",
-            "body": "<p>30th June 2024.</p>"
+            "body": "<p>30th June 2025.</p>"
           }
         },
         "item_pqcPy3": {
           "type": "item",
           "settings": {
             "title": "<h3>When will the winners be announced?</h3>",
-            "body": "<p>Winners will be announced on our social channels on 31st July 2024.</p>"
+            "body": "<p>Winners will be announced on our social channels on ____ 2025.</p>"
           }
         }
       },
@@ -1612,7 +1633,7 @@
         "@media screen and (min-width: 992px) {h2 {margin-bottom: 40px; }}"
       ],
       "settings": {
-        "section_title": "<h2>Bridal Awards 2024: <br/>Your Questions Answered</h2>",
+        "section_title": "<h2>Bridal Awards 2025: <br/>Your Questions Answered</h2>",
         "intro": "",
         "text_color": "#4e4e4e",
         "bg_color": "#ffffff",
