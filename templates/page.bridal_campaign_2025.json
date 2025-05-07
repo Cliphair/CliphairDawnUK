@@ -193,7 +193,7 @@
             "title": "Classic Hollywood Waves",
             "description": "A timeless silhouette with a modern twist.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/classic-hollywood-waves-lookbook"
           }
         },
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
@@ -206,7 +206,7 @@
             "title": "Elegant Chignon Bun",
             "description": "The perfect blend of elegance and ease.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/elegant-chignon-bun-lookbook"
           }
         }
       },
@@ -275,7 +275,7 @@
             "title": "Sleek Sultry Waves",
             "description": "Sophistication with a touch of seduction.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/sleek-sultry-waves-lookbook"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
@@ -288,7 +288,7 @@
             "title": "Heavenly Half Up Half Down",
             "description": "Soft, classic, and full of storybook magic.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/heavenly-half-up-half-down-lookbook"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da": {
@@ -301,7 +301,7 @@
             "title": "Romantic Curly Updo",
             "description": "Romantic, radiant, and effortlessly you.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/romantic-curly-updo-lookbook"
           }
         }
       },
@@ -343,7 +343,7 @@
             "title": "Classic Hollywood Waves",
             "description": "A timeless silhouette with a modern twist.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/classic-hollywood-waves-lookbook"
           }
         },
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
@@ -356,7 +356,7 @@
             "title": "Elegant Chignon Bun",
             "description": "The perfect blend of elegance and ease.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/elegant-chignon-bun-lookbook"
           }
         },
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
@@ -369,7 +369,7 @@
             "title": "Sleek Sultry Waves",
             "description": "Sophistication with a touch of seduction.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/sleek-sultry-waves-lookbook"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
@@ -382,7 +382,7 @@
             "title": "Heavenly Half Up Half Down",
             "description": "Soft, classic, and full of storybook magic.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/heavenly-half-up-half-down-lookbook"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da": {
@@ -395,7 +395,7 @@
             "title": "Romantic Curly Updo",
             "description": "Romantic, radiant, and effortlessly you.",
             "button_label": "EXPLORE LOOKBOOK",
-            "url": "#"
+            "url": "shopify://pages/romantic-curly-updo-lookbook"
           }
         }
       },
