@@ -79,7 +79,7 @@
         "richtext": {
           "type": "text",
           "settings": {
-            "text": "<p>Your dream day deserves dream hair, <br>say <em>'I Do'</em> to flawless extensions!</p>",
+            "text": "<p>Your dream day deserves dream hair, say <em>'I Do'</em> to flawless extensions!</p>",
             "read-more_text": ""
           }
         }
@@ -311,12 +311,12 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da"
       ],
       "custom_css": [
-        ".gradient{background:rgba(229,228,241,0.4);}",
-        ".deferred-media__poster-button{color:white;}",
-        ".videos-list{--grid-desktop-horizontal-spacing: 10px;margin:0;}",
-        ".videos-list-wrapper{padding:0;}",
-        ".videos-list__item{margin-left:0;}",
-        "@media screen and (min-width:990px){{display:none;}}"
+        ".gradient {background: rgba(229, 228, 241, 0.4);}",
+        ".deferred-media__poster-button {color: white;}",
+        ".videos-list {--grid-desktop-horizontal-spacing: 10px; margin: 0;}",
+        ".videos-list-wrapper {padding: 0;}",
+        ".videos-list__item {margin-left: 0;}",
+        "@media screen and (min-width: 990px) {{display: none; }}"
       ],
       "settings": {
         "color_scheme": "background-sale",
