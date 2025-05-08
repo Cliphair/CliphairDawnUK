@@ -162,7 +162,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <!-- {% if forloop.first %}
+                {% if forloop.index == 5 %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                     style="display:none;"
@@ -179,7 +179,7 @@
                     </a>
                     {% endif %}
                   </li>
-                {% endif %} -->
+                {% endif %}
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
