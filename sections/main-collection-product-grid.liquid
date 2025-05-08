@@ -174,7 +174,7 @@
                     {% assign bridal_image = images["collection-image-bridal.webp"] %}
                     {% if bridal_image and bridal_page%}
                     <a href='{{ bridal_page.url }}' title='{{ bridal_page.title }}'>
-                      <img loading='lazy' style='width:100%; height:100%; object-fit:cover; position:absolute;' src='{{ bridal_image | image_url }}' width='{{ bridal_image.width }}' height='{{ bridal_image.height }}' alt='{{ bridal_image.alt }}'>
+                      <img loading='lazy' style='width:100%; height:100%; object-fit:cover;' src='{{ bridal_image | image_url }}' width='{{ bridal_image.width }}' height='{{ bridal_image.height }}' alt='{{ bridal_image.alt }}'>
                     </a>
                     {% endif %}
                   </li>
