@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -18,24 +18,7 @@
     },
     "6368dc69-0f53-4509-a1fe-d8783409b1a1": {
       "type": "page-header",
-      "settings": {
-        "custom-title": true,
-        "first-line": "Wedding Hair Extensions - Bridal Campaign 2024",
-        "second-line": "",
-        "hide": true,
-        "text_colour": "#000000",
-        "bg_colour": "#ffffff",
-        "mobile-font-size": 14,
-        "mobile-top-padding": 0,
-        "mobile-bottom-padding": 0,
-        "mobile-right-padding": 0,
-        "mobile-left-padding": 0,
-        "desktop-font-size": 20,
-        "desktop-top-padding": 0,
-        "desktop-bottom-padding": 0,
-        "desktop-right-padding": 0,
-        "desktop-left-padding": 0
-      }
+      "settings": {}
     },
     "custom_banner_qhrEjP": {
       "type": "custom-banner",
@@ -45,8 +28,8 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/bridal_campaign_desktop_banner.webp",
-        "mobile-image": "shopify:\/\/shop_images\/bridal_campaign_mobile_banner.webp",
+        "desktop-image": "shopify://shop_images/bridal_campaign_desktop_banner.webp",
+        "mobile-image": "shopify://shop_images/bridal_campaign_mobile_banner.webp",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -76,7 +59,7 @@
         "custom_text": true,
         "header": "The Bridal Shop",
         "sub_header": "",
-        "description": "<p>Say ‘I Do’ to flawless bridal hair!<\/p>",
+        "description": "<p>Say ‘I Do’ to flawless bridal hair!</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -112,21 +95,18 @@
         "image_bzDVL4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/black-white-image1.webp"
+            "image": "shopify://shop_images/black-white-image1.webp"
           }
         },
         "image_BRGHM7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/black-white-image2.webp"
+            "image": "shopify://shop_images/black-white-image2.webp"
           }
         },
         "video_J9gyw9": {
           "type": "video",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/campaign_video_thumbnail.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/72a85a90d2f046619d8a094e2c7b501a.mp4"
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -137,19 +117,7 @@
       "custom_css": [
         "section {background: rgba(208, 184, 164, 0.2) !important;}"
       ],
-      "settings": {
-        "bg_color": "#ff358b",
-        "max_width": "1500",
-        "mobile-p_top": 20,
-        "mobile-p_bottom": 20,
-        "mobile-p_right": 10,
-        "mobile-p_left": 10,
-        "desktop-p_top": 20,
-        "desktop-p_bottom": 20,
-        "desktop-p_right": 0,
-        "desktop-p_left": 0,
-        "icon-color": "#ffffff"
-      }
+      "settings": {}
     },
     "1664746053df8a22c8": {
       "type": "video_carrousel_bridal24",
@@ -157,45 +125,45 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/diana-updo.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1fb7e6c542274bfaafe29162c4dad170.mp4",
-            "video_title": "<h3>Modern French <br>Twist<\/h3>",
-            "description": "<p>Step back in time with our 60s-style Modern French Twist. Whether you’re tying the knot in a modern dress or vintage gown, its bold volume and playful details are guaranteed to make hearts soar.<\/p>",
+            "image": "shopify://shop_images/diana-updo.webp",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/1fb7e6c542274bfaafe29162c4dad170.mp4",
+            "video_title": "<h3>Modern French <br>Twist</h3>",
+            "description": "<p>Step back in time with our 60s-style Modern French Twist. Whether you’re tying the knot in a modern dress or vintage gown, its bold volume and playful details are guaranteed to make hearts soar.</p>",
             "button-text": "EXPLORE LOOKBOOK",
-            "button-link": "shopify:\/\/pages\/retro-updo-lookbook"
+            "button-link": "shopify://pages/retro-updo-lookbook"
           }
         },
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lauren.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c7af9a821489431eab2324ed05ff9b7a.mp4",
-            "video_title": "<h3>Romantic Half Up <br>Half Down<\/h3>",
-            "description": "<p>Delicate and ethereal, our Romantic Half Up Half Down hairstyle captures the essence of true love with cascading, sultry curls.<\/p>",
+            "image": "shopify://shop_images/lauren.webp",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/c7af9a821489431eab2324ed05ff9b7a.mp4",
+            "video_title": "<h3>Romantic Half Up <br>Half Down</h3>",
+            "description": "<p>Delicate and ethereal, our Romantic Half Up Half Down hairstyle captures the essence of true love with cascading, sultry curls.</p>",
             "button-text": "EXPLORE LOOKBOOK",
-            "button-link": "shopify:\/\/pages\/romantic-half-up-half-down-lookbook"
+            "button-link": "shopify://pages/romantic-half-up-half-down-lookbook"
           }
         },
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jennica.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9381f2517e814facbce28151b2cb82e8.mp4",
-            "video_title": "<h3>Classic Hollywood <br>Waves<\/h3>",
-            "description": "<p>Inspired by the sirens of the silver screen, channel the glamour and allure of the golden age starlet with our Classic Hollywood Waves.<\/p>",
+            "image": "shopify://shop_images/jennica.webp",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/9381f2517e814facbce28151b2cb82e8.mp4",
+            "video_title": "<h3>Classic Hollywood <br>Waves</h3>",
+            "description": "<p>Inspired by the sirens of the silver screen, channel the glamour and allure of the golden age starlet with our Classic Hollywood Waves.</p>",
             "button-text": "EXPLORE LOOKBOOK",
-            "button-link": "shopify:\/\/pages\/classic-hollywood-waves-lookbook"
+            "button-link": "shopify://pages/classic-hollywood-waves-lookbook"
           }
         },
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/diana.webp",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1fd93b17544a4509a436a6a50f776079.mp4",
-            "video_title": "<h3>Sleek Half Up <br>Half Down<\/h3>",
-            "description": "<p>For the modern bride who radiates confidence and sophistication, our Sleek Half Up Half Down style offers a contemporary twist on a classic bridal look.<\/p>",
+            "image": "shopify://shop_images/diana.webp",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/1fd93b17544a4509a436a6a50f776079.mp4",
+            "video_title": "<h3>Sleek Half Up <br>Half Down</h3>",
+            "description": "<p>For the modern bride who radiates confidence and sophistication, our Sleek Half Up Half Down style offers a contemporary twist on a classic bridal look.</p>",
             "button-text": "EXPLORE LOOKBOOK",
-            "button-link": "shopify:\/\/pages\/sleek-half-up-half-down-lookbook"
+            "button-link": "shopify://pages/sleek-half-up-half-down-lookbook"
           }
         }
       },
@@ -217,8 +185,8 @@
         ".video-button-container {display: flex; align-items: flex-end;}"
       ],
       "settings": {
-        "header": "<h2><em>Shop<\/em> THE LOOKBOOK<\/h2>",
-        "intro": "<p>Become a true bridal goddess with the latest looks and must-haves in our breathtaking new lookbook, where every page paints a portrait of pure hair perfection.<\/p>",
+        "header": "<h2><em>Shop</em> THE LOOKBOOK</h2>",
+        "intro": "<p>Become a true bridal goddess with the latest looks and must-haves in our breathtaking new lookbook, where every page paints a portrait of pure hair perfection.</p>",
         "image_orientation": "portrait",
         "title-position": "bottom",
         "text_color": "#4e4e4e",
@@ -267,84 +235,84 @@
         "74c3f2d7-404f-4a64-983c-c9964a5b2871": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Semlaess.webp",
+            "image": "shopify://shop_images/Semlaess.webp",
             "circle_image": false,
             "border": false,
-            "text": "<em>Seamless<\/em>",
+            "text": "<em>Seamless</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
             "image-url": ""
           }
         },
         "ad8175f2-51ac-4162-b9af-ddc0f487f924": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Ultrra.webp",
+            "image": "shopify://shop_images/Ultrra.webp",
             "circle_image": false,
             "border": false,
-            "text": "<em>Ultra-Volume<\/em>",
+            "text": "<em>Ultra-Volume</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/ultra-clip-in-hair-extensions",
+            "url": "shopify://collections/ultra-clip-in-hair-extensions",
             "image-url": ""
           }
         },
         "0daf6aee-88f0-4373-80c3-3830fea777d8": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/double_weft_15299c8d-1e7e-4296-bfc2-d85df6447cf2.webp",
+            "image": "shopify://shop_images/double_weft_15299c8d-1e7e-4296-bfc2-d85df6447cf2.webp",
             "circle_image": false,
             "border": false,
-            "text": "<em>Double Weft<\/em>",
+            "text": "<em>Double Weft</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/double-wefted-clip-in-hair-extensions",
+            "url": "shopify://collections/double-wefted-clip-in-hair-extensions",
             "image-url": ""
           }
         },
         "905f982b-829c-4154-a8c1-f9a24b175ace": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/full_head.webp",
+            "image": "shopify://shop_images/full_head.webp",
             "circle_image": true,
             "border": false,
-            "text": "<em>Full Head<\/em>",
+            "text": "<em>Full Head</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/full-head-clip-in-hair-extensions",
+            "url": "shopify://collections/full-head-clip-in-hair-extensions",
             "image-url": ""
           }
         },
         "5b119cfd-f135-4017-895e-4dcbd1fd4b20": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/quad_weft_758f3281-8236-48d3-b143-5a245c861b96.webp",
+            "image": "shopify://shop_images/quad_weft_758f3281-8236-48d3-b143-5a245c861b96.webp",
             "circle_image": true,
             "border": false,
-            "text": "<em>Quad Weft<\/em>",
+            "text": "<em>Quad Weft</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/quad-weft-hair-extensions",
+            "url": "shopify://collections/quad-weft-hair-extensions",
             "image-url": ""
           }
         },
         "7a03e7f8-e613-49ba-a407-ebc8ac3d7fe6": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/nano_ring.webp",
+            "image": "shopify://shop_images/nano_ring.webp",
             "circle_image": true,
             "border": false,
-            "text": "<em>Nano Ring<\/em>",
+            "text": "<em>Nano Ring</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/nano-rings-hair-extensions",
+            "url": "shopify://collections/nano-rings-hair-extensions",
             "image-url": ""
           }
         },
         "item_VtT8E7": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/top-up_86b5d763-bf3a-47df-bdc0-3ad4fd65f7f3.webp",
+            "image": "shopify://shop_images/top-up_86b5d763-bf3a-47df-bdc0-3ad4fd65f7f3.webp",
             "circle_image": true,
             "border": false,
-            "text": "<em>Top-Up<\/em>",
+            "text": "<em>Top-Up</em>",
             "subtitle": "",
-            "url": "shopify:\/\/collections\/one-piece-top-up-hair-extensions",
+            "url": "shopify://collections/one-piece-top-up-hair-extensions",
             "image-url": ""
           }
         }
@@ -369,7 +337,7 @@
         "@media screen and (min-width: 992px) {.carrousel-items > .item {padding-right: 30px; } .scroll-arrow.right {right: -50px; } .scroll-arrow.left {left: -50px; } .section_header h3 {font-size: 30px; }}"
       ],
       "settings": {
-        "header": "<h2>OUR BRIDAL MUST HAVES<\/h2>",
+        "header": "<h2>OUR BRIDAL MUST HAVES</h2>",
         "intro": "",
         "main-button-text": "",
         "main-button-url": "",
@@ -390,7 +358,7 @@
         "desktop-text-font_size": 20,
         "text_color": "#4e4e4e",
         "include-button": false,
-        "button-text": "<p>Shop<\/p>",
+        "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
         "desktop-button-font_size": 20,
         "button_color": "#ffffff",
@@ -416,9 +384,9 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/bridal-quiz-desktop_f71250e3-6b18-4954-be8c-b7188f3e7f42.webp",
-        "mobile-image": "shopify:\/\/shop_images\/bridal-quiz-mobile.webp",
-        "url": "shopify:\/\/pages\/bridal-hair-extension-quiz",
+        "desktop-image": "shopify://shop_images/bridal-quiz-desktop_f71250e3-6b18-4954-be8c-b7188f3e7f42.webp",
+        "mobile-image": "shopify://shop_images/bridal-quiz-mobile.webp",
+        "url": "shopify://pages/bridal-hair-extension-quiz",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -429,36 +397,36 @@
         "image_gePkT4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/clip_ins_for_bundles_image.webp",
-            "description": "<p>Extra Volume Clip In Extensions Bundle<\/p>",
-            "url": "shopify:\/\/products\/extra-volume-clip-in-extensions-bundle",
+            "image": "shopify://shop_images/clip_ins_for_bundles_image.webp",
+            "description": "<p>Extra Volume Clip In Extensions Bundle</p>",
+            "url": "shopify://products/extra-volume-clip-in-extensions-bundle",
             "button_text": "View Product"
           }
         },
         "image_QrbPrA": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hair_shampoo_conditioner_bundle.webp",
-            "description": "<p>Double Weft Quench The Thirst Bundle<\/p>",
-            "url": "shopify:\/\/products\/double-weft-quench-the-thirst-bundle",
+            "image": "shopify://shop_images/hair_shampoo_conditioner_bundle.webp",
+            "description": "<p>Double Weft Quench The Thirst Bundle</p>",
+            "url": "shopify://products/double-weft-quench-the-thirst-bundle",
             "button_text": "View Product"
           }
         },
         "image_mhF8mg": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ACCESSOries_bundle3_2.webp",
-            "description": "<p>Quench The Thirst Styling Bundle<\/p>",
-            "url": "shopify:\/\/products\/quench-the-thirst-styling-bundle",
+            "image": "shopify://shop_images/ACCESSOries_bundle3_2.webp",
+            "description": "<p>Quench The Thirst Styling Bundle</p>",
+            "url": "shopify://products/quench-the-thirst-styling-bundle",
             "button_text": "View Product"
           }
         },
         "image_t3X8FX": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ACCESSOries_bundle.webp",
-            "description": "<p>Ultimate Styling And Accessories Bundle<\/p>",
-            "url": "shopify:\/\/products\/ultimate-styling-and-accessories-bundle",
+            "image": "shopify://shop_images/ACCESSOries_bundle.webp",
+            "description": "<p>Ultimate Styling And Accessories Bundle</p>",
+            "url": "shopify://products/ultimate-styling-and-accessories-bundle",
             "button_text": "View Product"
           }
         }
@@ -495,7 +463,7 @@
         "include-dots": false,
         "dot_icon_size": 16,
         "dot_icon_colour": "#000000",
-        "header": "<h2>BRIDAL BUNDLES<\/h2>",
+        "header": "<h2>BRIDAL BUNDLES</h2>",
         "header_color": "#4e4e4e",
         "header_bg_color": "#ffffff",
         "sub_header": "",
@@ -503,10 +471,10 @@
         "have_buttons": true,
         "buttons_color": "#4e4e4e",
         "buttons_bg_color": "#ffffff",
-        "intro": "<p>Shop our Bridal Bundles: enjoy our exclusive combinations of luxury extensions, rejuvenating haircare and stylish accessories!<\/p>",
+        "intro": "<p>Shop our Bridal Bundles: enjoy our exclusive combinations of luxury extensions, rejuvenating haircare and stylish accessories!</p>",
         "show_collection": true,
         "collection-text": "Bundles Collection",
-        "url": "shopify:\/\/collections\/hair-extensions-bundle",
+        "url": "shopify://collections/hair-extensions-bundle",
         "header-mobile-font_size": 20,
         "mobile-font_size": 14,
         "mobile-p_top": 20,
@@ -529,9 +497,9 @@
       "settings": {
         "max-width": "",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/competition-banner-desktop.webp",
-        "mobile-image": "shopify:\/\/shop_images\/competition-banner-mobile.webp",
-        "url": "shopify:\/\/pages\/2024-hairstylist-award",
+        "desktop-image": "shopify://shop_images/competition-banner-desktop.webp",
+        "mobile-image": "shopify://shop_images/competition-banner-mobile.webp",
+        "url": "shopify://pages/hairstylist-award",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -542,34 +510,34 @@
         "title_AEa9wX": {
           "type": "title",
           "settings": {
-            "title": "<h2>CALLING ALL STYLISTS<\/h2>"
+            "title": "<h2>CALLING ALL STYLISTS</h2>"
           }
         },
         "html_intro_WEfGhk": {
           "type": "html-intro",
           "settings": {
-            "html-intro": "<p>Cliphair’s Annual Bridal <em>Styling Awards<\/em><br><strong><em>COMING SOON<\/em>...<\/strong><\/p>"
+            "html-intro": "<p>Cliphair’s Annual Bridal <em>Styling Awards</em><br><strong><em>COMING SOON</em>...</strong></p>"
           }
         },
         "intro_TQnyxB": {
           "type": "intro",
           "disabled": true,
           "settings": {
-            "intro": "<p>Cliphair’s Annual Bridal <em>Styling Awards<\/em><\/p>"
+            "intro": "<p>Cliphair’s Annual Bridal <em>Styling Awards</em></p>"
           }
         },
         "intro_AKGg8X": {
           "type": "intro",
           "disabled": true,
           "settings": {
-            "intro": "<p><strong>COMING SOON...<\/strong><\/p>"
+            "intro": "<p><strong>COMING SOON...</strong></p>"
           }
         },
         "button_6LwGxh": {
           "type": "button",
           "settings": {
             "btn-text": "SIGN UP TO BE NOTIFIED",
-            "btn-url": "shopify:\/\/pages\/bridal-competition-sign-up"
+            "btn-url": "shopify://pages/bridal-competition-sign-up"
           }
         }
       },
@@ -616,11 +584,11 @@
         "item_MVMXD3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta1.webp",
+            "image": "shopify://shop_images/insta1.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/C6g6-l1NVQR\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/C6g6-l1NVQR\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/C6g6-l1NVQR/\" target=\"_blank\" title=\"https://www.instagram.com/p/C6g6-l1NVQR/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -628,11 +596,11 @@
         "item_nTxwVY": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta2.webp",
+            "image": "shopify://shop_images/insta2.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cyu2djqMtAm\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cyu2djqMtAm\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cyu2djqMtAm/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cyu2djqMtAm/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -640,11 +608,11 @@
         "item_nTxwVY3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta3.webp",
+            "image": "shopify://shop_images/insta3.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CbTIbnvMjc1\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CbTIbnvMjc1\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CbTIbnvMjc1/\" target=\"_blank\" title=\"https://www.instagram.com/p/CbTIbnvMjc1/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -652,11 +620,11 @@
         "item_nTxwVY4": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta4.webp",
+            "image": "shopify://shop_images/insta4.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/C53oGCUMfCa\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/C53oGCUMfCa\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/C53oGCUMfCa/\" target=\"_blank\" title=\"https://www.instagram.com/p/C53oGCUMfCa/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -664,11 +632,11 @@
         "item_nTxwVY5": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta5.webp",
+            "image": "shopify://shop_images/insta5.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CvgtjI_NY3R\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CvgtjI_NY3R\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CvgtjI_NY3R/\" target=\"_blank\" title=\"https://www.instagram.com/p/CvgtjI_NY3R/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -676,11 +644,11 @@
         "item_nTxwVY6": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta6.webp",
+            "image": "shopify://shop_images/insta6.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cop9TT_sXLz\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cop9TT_sXLz\/\">@kasia_fortuna<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cop9TT_sXLz/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cop9TT_sXLz/\">@kasia_fortuna</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -688,11 +656,11 @@
         "item_nTxwVY7": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta7.webp",
+            "image": "shopify://shop_images/insta7.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CdOgkc2sXVH\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CdOgkc2sXVH\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CdOgkc2sXVH/\" target=\"_blank\" title=\"https://www.instagram.com/p/CdOgkc2sXVH/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -700,11 +668,11 @@
         "item_nTxwVY8": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta8.webp",
+            "image": "shopify://shop_images/insta8.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cs-hiy0NWO7\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cs-hiy0NWO7\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cs-hiy0NWO7/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cs-hiy0NWO7/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -712,11 +680,11 @@
         "item_nTxwVY9": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta9.webp",
+            "image": "shopify://shop_images/insta9.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CuQ7ns2tg2T\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CuQ7ns2tg2T\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CuQ7ns2tg2T/\" target=\"_blank\" title=\"https://www.instagram.com/p/CuQ7ns2tg2T/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -724,11 +692,11 @@
         "item_nTxwVY10": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta10.webp",
+            "image": "shopify://shop_images/insta10.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CxOWjOaMYwG\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CxOWjOaMYwG\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CxOWjOaMYwG/\" target=\"_blank\" title=\"https://www.instagram.com/p/CxOWjOaMYwG/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -736,11 +704,11 @@
         "item_nTxwVY11": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta11.webp",
+            "image": "shopify://shop_images/insta11.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CofxSAsMgFw\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CofxSAsMgFw\/\">@kasia_fortuna<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CofxSAsMgFw/\" target=\"_blank\" title=\"https://www.instagram.com/p/CofxSAsMgFw/\">@kasia_fortuna</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -748,11 +716,11 @@
         "item_nTxwVY12": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta12.webp",
+            "image": "shopify://shop_images/insta12.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CsW335utg-C\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CsW335utg-C\/\">@staciegoodwinbridalhair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CsW335utg-C/\" target=\"_blank\" title=\"https://www.instagram.com/p/CsW335utg-C/\">@staciegoodwinbridalhair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -760,11 +728,11 @@
         "item_nTxwVY13": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta13.webp",
+            "image": "shopify://shop_images/insta13.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CeJ-eLDsBw-\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CeJ-eLDsBw-\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CeJ-eLDsBw-/\" target=\"_blank\" title=\"https://www.instagram.com/p/CeJ-eLDsBw-/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -772,11 +740,11 @@
         "item_nTxwVY14": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta14.webp",
+            "image": "shopify://shop_images/insta14.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CtKGVx6NJ8k\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CtKGVx6NJ8k\/\">@monamieweddinghair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CtKGVx6NJ8k/\" target=\"_blank\" title=\"https://www.instagram.com/p/CtKGVx6NJ8k/\">@monamieweddinghair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -784,11 +752,11 @@
         "item_nTxwVY15": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta15.webp",
+            "image": "shopify://shop_images/insta15.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cop9TT_sXLz\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cop9TT_sXLz\/\">@kasia_fortuna<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cop9TT_sXLz/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cop9TT_sXLz/\">@kasia_fortuna</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -796,11 +764,11 @@
         "item_nTxwVY16": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta16.webp",
+            "image": "shopify://shop_images/insta16.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CSj2tKzIAkV\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CSj2tKzIAkV\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CSj2tKzIAkV/\" target=\"_blank\" title=\"https://www.instagram.com/p/CSj2tKzIAkV/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -808,11 +776,11 @@
         "item_nTxwVY17": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta17.webp",
+            "image": "shopify://shop_images/insta17.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/ClzFkSHMJKx\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/ClzFkSHMJKx\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/ClzFkSHMJKx/\" target=\"_blank\" title=\"https://www.instagram.com/p/ClzFkSHMJKx/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -820,11 +788,11 @@
         "item_nTxwVY18": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta18.webp",
+            "image": "shopify://shop_images/insta18.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CosYJKnNQr4\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CosYJKnNQr4\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CosYJKnNQr4/\" target=\"_blank\" title=\"https://www.instagram.com/p/CosYJKnNQr4/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -832,11 +800,11 @@
         "item_nTxwVY19": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta19.webp",
+            "image": "shopify://shop_images/insta19.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CyTjdzMsTey\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CyTjdzMsTey\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CyTjdzMsTey/\" target=\"_blank\" title=\"https://www.instagram.com/p/CyTjdzMsTey/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -844,11 +812,11 @@
         "item_nTxwVY20": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta20.webp",
+            "image": "shopify://shop_images/insta20.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CW2_nQQMddr\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CW2_nQQMddr\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CW2_nQQMddr/\" target=\"_blank\" title=\"https://www.instagram.com/p/CW2_nQQMddr/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -856,11 +824,11 @@
         "item_nTxwVY21": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta21.webp",
+            "image": "shopify://shop_images/insta21.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CyfglDesxdS\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CyfglDesxdS\/\">@@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CyfglDesxdS/\" target=\"_blank\" title=\"https://www.instagram.com/p/CyfglDesxdS/\">@@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -868,11 +836,11 @@
         "item_nTxwVY22": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta22.webp",
+            "image": "shopify://shop_images/insta22.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CsolgxqsdYe\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CsolgxqsdYe\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CsolgxqsdYe/\" target=\"_blank\" title=\"https://www.instagram.com/p/CsolgxqsdYe/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -880,11 +848,11 @@
         "item_nTxwVY23": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta23.webp",
+            "image": "shopify://shop_images/insta23.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CSd1s0WoUEZ\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CSd1s0WoUEZ\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CSd1s0WoUEZ/\" target=\"_blank\" title=\"https://www.instagram.com/p/CSd1s0WoUEZ/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -892,11 +860,11 @@
         "item_nTxwVY24": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta24.webp",
+            "image": "shopify://shop_images/insta24.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CsQd3eJtTlP\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CsQd3eJtTlP\/\">@hollyedmondshair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CsQd3eJtTlP/\" target=\"_blank\" title=\"https://www.instagram.com/p/CsQd3eJtTlP/\">@hollyedmondshair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -904,11 +872,11 @@
         "item_nTxwVY25": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta25.webp",
+            "image": "shopify://shop_images/insta25.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/C5WYokPMJWd\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/C5WYokPMJWd\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/C5WYokPMJWd/\" target=\"_blank\" title=\"https://www.instagram.com/p/C5WYokPMJWd/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -916,11 +884,11 @@
         "item_nTxwVY26": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta26.webp",
+            "image": "shopify://shop_images/insta26.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CvEbUZrNYWQ\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CvEbUZrNYWQ\/\">@@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CvEbUZrNYWQ/\" target=\"_blank\" title=\"https://www.instagram.com/p/CvEbUZrNYWQ/\">@@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -928,11 +896,11 @@
         "item_nTxwVY27": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta27.webp",
+            "image": "shopify://shop_images/insta27.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CvHQrg-s3lw\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CvHQrg-s3lw\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CvHQrg-s3lw/\" target=\"_blank\" title=\"https://www.instagram.com/p/CvHQrg-s3lw/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -940,11 +908,11 @@
         "item_nTxwVY28": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta28.webp",
+            "image": "shopify://shop_images/insta28.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CnUFZApjRwD\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CnUFZApjRwD\/\">@kimannelsey.hair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CnUFZApjRwD/\" target=\"_blank\" title=\"https://www.instagram.com/p/CnUFZApjRwD/\">@kimannelsey.hair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -952,11 +920,11 @@
         "item_nTxwVY29": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta29.webp",
+            "image": "shopify://shop_images/insta29.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CS67BrxoMbz\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CS67BrxoMbz\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CS67BrxoMbz/\" target=\"_blank\" title=\"https://www.instagram.com/p/CS67BrxoMbz/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -964,11 +932,11 @@
         "item_nTxwVY30": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta30.webp",
+            "image": "shopify://shop_images/insta30.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CzQZZJ2MbmM\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CzQZZJ2MbmM\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CzQZZJ2MbmM/\" target=\"_blank\" title=\"https://www.instagram.com/p/CzQZZJ2MbmM/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -976,11 +944,11 @@
         "item_nTxwVY31": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta31.webp",
+            "image": "shopify://shop_images/insta31.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/C5fapAaME2q\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/C5fapAaME2q\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/C5fapAaME2q/\" target=\"_blank\" title=\"https://www.instagram.com/p/C5fapAaME2q/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -988,11 +956,11 @@
         "item_nTxwVY32": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta32.webp",
+            "image": "shopify://shop_images/insta32.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CwqDjZBsFxb\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CwqDjZBsFxb\/\">@staciegoodwinbridalhair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CwqDjZBsFxb/\" target=\"_blank\" title=\"https://www.instagram.com/p/CwqDjZBsFxb/\">@staciegoodwinbridalhair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1000,11 +968,11 @@
         "item_nTxwVY33": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta33.webp",
+            "image": "shopify://shop_images/insta33.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CTRPwtEoh1c\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CTRPwtEoh1c\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CTRPwtEoh1c/\" target=\"_blank\" title=\"https://www.instagram.com/p/CTRPwtEoh1c/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1012,11 +980,11 @@
         "item_nTxwVY34": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta34.webp",
+            "image": "shopify://shop_images/insta34.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CvB0Y4yNy2y\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CvB0Y4yNy2y\/\">@bridalbybeckah<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CvB0Y4yNy2y/\" target=\"_blank\" title=\"https://www.instagram.com/p/CvB0Y4yNy2y/\">@bridalbybeckah</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1024,11 +992,11 @@
         "item_nTxwVY35": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta35.webp",
+            "image": "shopify://shop_images/insta35.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/C0xCjXQsaLo\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/C0xCjXQsaLo\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/C0xCjXQsaLo/\" target=\"_blank\" title=\"https://www.instagram.com/p/C0xCjXQsaLo/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1036,11 +1004,11 @@
         "item_nTxwVY36": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta36.webp",
+            "image": "shopify://shop_images/insta36.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cu0_XEqNa-o\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cu0_XEqNa-o\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cu0_XEqNa-o/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cu0_XEqNa-o/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1048,11 +1016,11 @@
         "item_nTxwVY37": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta37.webp",
+            "image": "shopify://shop_images/insta37.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/Cr89N4bN_QB\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/Cr89N4bN_QB\/\">@staciegoodwinbridalhair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/Cr89N4bN_QB/\" target=\"_blank\" title=\"https://www.instagram.com/p/Cr89N4bN_QB/\">@staciegoodwinbridalhair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1060,11 +1028,11 @@
         "item_nTxwVY38": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta38.webp",
+            "image": "shopify://shop_images/insta38.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CvWgBYhsJHj\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CvWgBYhsJHj\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CvWgBYhsJHj/\" target=\"_blank\" title=\"https://www.instagram.com/p/CvWgBYhsJHj/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1072,11 +1040,11 @@
         "item_nTxwVY39": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta39.webp",
+            "image": "shopify://shop_images/insta39.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CaRSNmeo2lk\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CaRSNmeo2lk\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CaRSNmeo2lk/\" target=\"_blank\" title=\"https://www.instagram.com/p/CaRSNmeo2lk/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1084,11 +1052,11 @@
         "item_nTxwVY40": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta40.webp",
+            "image": "shopify://shop_images/insta40.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CS2DT_gILV5\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CS2DT_gILV5\/\">@botiashairandmakeup<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CS2DT_gILV5/\" target=\"_blank\" title=\"https://www.instagram.com/p/CS2DT_gILV5/\">@botiashairandmakeup</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1096,11 +1064,11 @@
         "item_nTxwVY41": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/insta41.webp",
+            "image": "shopify://shop_images/insta41.webp",
             "circle_image": false,
             "border": false,
             "text": "",
-            "subtitle": "<p><a href=\"https:\/\/www.instagram.com\/p\/CiqET1-DAaX\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/p\/CiqET1-DAaX\/\">@kimannelsey.hair<\/a><\/p>",
+            "subtitle": "<p><a href=\"https://www.instagram.com/p/CiqET1-DAaX/\" target=\"_blank\" title=\"https://www.instagram.com/p/CiqET1-DAaX/\">@kimannelsey.hair</a></p>",
             "url": "",
             "image-url": ""
           }
@@ -1161,8 +1129,8 @@
         ".carrousel-items > .item .block-subtitle * a:hover {color: inherit; text-underline-offset: 0.25rem;}"
       ],
       "settings": {
-        "header": "<h2>OUR BRIDES ON INSTA<\/h2>",
-        "intro": "<p>Tag us @cliphairlimited and show us your bridal look<\/p>",
+        "header": "<h2>OUR BRIDES ON INSTA</h2>",
+        "intro": "<p>Tag us @cliphairlimited and show us your bridal look</p>",
         "main-button-text": "",
         "main-button-url": "",
         "max_width": "1500",
@@ -1182,7 +1150,7 @@
         "desktop-text-font_size": 25,
         "text_color": "#4e4e4e",
         "include-button": false,
-        "button-text": "<p>Shop<\/p>",
+        "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
         "desktop-button-font_size": 20,
         "button_color": "#ffffff",
@@ -1208,11 +1176,11 @@
         "74c3f2d7-404f-4a64-983c-c9964a5b2871": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shopie_l_1.webp",
+            "image": "shopify://shop_images/shopie_l_1.webp",
             "circle_image": true,
             "border": false,
             "text": "I’ll always buy these extensions!",
-            "subtitle": "<p>So many wonderful compliments! Perfect match, thickness is fabulous, and I feel and look incredible with this hair! Also used the extensions on my wedding day<\/p><p>Sophie L<\/p>",
+            "subtitle": "<p>So many wonderful compliments! Perfect match, thickness is fabulous, and I feel and look incredible with this hair! Also used the extensions on my wedding day</p><p>Sophie L</p>",
             "url": "",
             "image-url": ""
           }
@@ -1220,11 +1188,11 @@
         "905f982b-829c-4154-a8c1-f9a24b175ace": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shannon_a_1.webp",
+            "image": "shopify://shop_images/shannon_a_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Absolutely loved them!  ",
-            "subtitle": "<p>I bought these extensions for my wedding and I’m glad I did now. I got so many compliments, and the stylist loved them. They gave me so much more confidence. <\/p><p>Shannon A<\/p>",
+            "subtitle": "<p>I bought these extensions for my wedding and I’m glad I did now. I got so many compliments, and the stylist loved them. They gave me so much more confidence. </p><p>Shannon A</p>",
             "url": "",
             "image-url": ""
           }
@@ -1232,11 +1200,11 @@
         "ad8175f2-51ac-4162-b9af-ddc0f487f924": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lucy_1.webp",
+            "image": "shopify://shop_images/lucy_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Perfect colour match and great value for money",
-            "subtitle": "<p>These extensions look just like real hair and blend in really well! The colour is accurate to the photo and is enough to give a good level of volume to fine hair. Great value for money and great quality. I used these for my wedding, and they made my hair look SO much nicer.<\/p><p>Lucy<\/p>",
+            "subtitle": "<p>These extensions look just like real hair and blend in really well! The colour is accurate to the photo and is enough to give a good level of volume to fine hair. Great value for money and great quality. I used these for my wedding, and they made my hair look SO much nicer.</p><p>Lucy</p>",
             "url": "",
             "image-url": ""
           }
@@ -1244,11 +1212,11 @@
         "0daf6aee-88f0-4373-80c3-3830fea777d8": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/holly_j_1.webp",
+            "image": "shopify://shop_images/holly_j_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Wonderfully thick and slick extensions",
-            "subtitle": "<p>Wore them on my wedding day and they looked fantastic and was very pleased with how long they stayed in. Overall, I am so glad I went for these amazing extensions for my wedding day, they made my hair look 100 times better.<\/p><p>Holly J<\/p>",
+            "subtitle": "<p>Wore them on my wedding day and they looked fantastic and was very pleased with how long they stayed in. Overall, I am so glad I went for these amazing extensions for my wedding day, they made my hair look 100 times better.</p><p>Holly J</p>",
             "url": "",
             "image-url": ""
           }
@@ -1256,11 +1224,11 @@
         "5b119cfd-f135-4017-895e-4dcbd1fd4b20": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jessica_w_1.webp",
+            "image": "shopify://shop_images/jessica_w_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Couldn’t recommend enough!  ",
-            "subtitle": "<p>Ordered these for my wedding day and the quality of the hair was unreal. The colour match was perfect!<\/p><p>Jessica W<\/p>",
+            "subtitle": "<p>Ordered these for my wedding day and the quality of the hair was unreal. The colour match was perfect!</p><p>Jessica W</p>",
             "url": "",
             "image-url": ""
           }
@@ -1268,23 +1236,23 @@
         "7a03e7f8-e613-49ba-a407-ebc8ac3d7fe6": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rachel_j_1.webp",
+            "image": "shopify://shop_images/rachel_j_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Great! ",
-            "subtitle": "<p>Super great hair used for my wedding in an updo and on my honeymoon, they’re fab!<\/p><p>Rachael J<\/p>",
-            "url": "shopify:\/\/products\/party-season-bundle",
+            "subtitle": "<p>Super great hair used for my wedding in an updo and on my honeymoon, they’re fab!</p><p>Rachael J</p>",
+            "url": "shopify://products/party-season-bundle",
             "image-url": ""
           }
         },
         "item_w6MEtD": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/erica_c_1.webp",
+            "image": "shopify://shop_images/erica_c_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Above and beyond description!",
-            "subtitle": "<p>Absolutely gorgeous soft hair! I always buy from Cliphair and I even used them for my wedding day. I have black hair and the colour absolutely matched with my hair. The clips do not cause any pain and the hair is not heavy. I have washed them 3 times and the hair is still beautiful and shiny.<\/p><p>Erica C<\/p>",
+            "subtitle": "<p>Absolutely gorgeous soft hair! I always buy from Cliphair and I even used them for my wedding day. I have black hair and the colour absolutely matched with my hair. The clips do not cause any pain and the hair is not heavy. I have washed them 3 times and the hair is still beautiful and shiny.</p><p>Erica C</p>",
             "url": "",
             "image-url": ""
           }
@@ -1292,11 +1260,11 @@
         "item_HmyQCB": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rebecca_j_1.webp",
+            "image": "shopify://shop_images/rebecca_j_1.webp",
             "circle_image": true,
             "border": false,
             "text": "Perfect for my wedding! ",
-            "subtitle": "<p>I bought this hair for my wedding and honestly, it’s amazing. I absolutely loved the quality. I ordered the Double Wefted  set in 20” shade darkest brown for £124. Packaging is great, when I take the hair out, I put them back in the box, so it does come in handy. Website was easy to get around and I looked at other reviews to work out the shade I needed which was great.<\/p><p>Rebecca J<\/p>",
+            "subtitle": "<p>I bought this hair for my wedding and honestly, it’s amazing. I absolutely loved the quality. I ordered the Double Wefted  set in 20” shade darkest brown for £124. Packaging is great, when I take the hair out, I put them back in the box, so it does come in handy. Website was easy to get around and I looked at other reviews to work out the shade I needed which was great.</p><p>Rebecca J</p>",
             "url": "",
             "image-url": ""
           }
@@ -1325,7 +1293,7 @@
         ".block-title {font-family: \"Libre Caslon Text\", serif; margin: 15px 0;}"
       ],
       "settings": {
-        "header": "<h2><em>Bridal <\/em>Reviews<\/h2>",
+        "header": "<h2><em>Bridal </em>Reviews</h2>",
         "intro": "",
         "main-button-text": "",
         "main-button-url": "",
@@ -1346,7 +1314,7 @@
         "desktop-text-font_size": 20,
         "text_color": "#4e4e4e",
         "include-button": false,
-        "button-text": "<p>Shop<\/p>",
+        "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
         "desktop-button-font_size": 20,
         "button_color": "#ffffff",
@@ -1401,7 +1369,7 @@
         "desktop-arrow": 40,
         "include-btn": true,
         "btn-text": "MORE BLOGS",
-        "btn-url": "https:\/\/www.cliphair.co.uk\/blogs\/hair-blog\/tagged\/bridal-blogs",
+        "btn-url": "https://www.cliphair.co.uk/blogs/hair-blog/tagged/bridal-blogs",
         "btn-color": "#000000",
         "btn-bg-color": "#edeae7"
       }
@@ -1412,29 +1380,29 @@
         "963cb829-5abc-430b-aa41-c9999a9a5666": {
           "type": "item",
           "settings": {
-            "title": "<h3>How Soon Before the Wedding Should You Get Extensions?<\/h3>",
-            "body": "<p>It is recommended to get bridal hair extensions at least a few weeks before your wedding day. This timeframe allows for proper application, any necessary adjustments or touch-ups, and time to get comfortable with the extensions.<\/p>"
+            "title": "<h3>How Soon Before the Wedding Should You Get Extensions?</h3>",
+            "body": "<p>It is recommended to get bridal hair extensions at least a few weeks before your wedding day. This timeframe allows for proper application, any necessary adjustments or touch-ups, and time to get comfortable with the extensions.</p>"
           }
         },
         "37e8c7f1-722f-4702-bbce-9e8b581dae7a": {
           "type": "item",
           "settings": {
-            "title": "<h3>How Do Bridal Hair Extensions Work?<\/h3>",
-            "body": "<p>Bridal hair extensions work by adding length, volume, or texture to your natural hair, enhancing your bridal hairstyle. They can be attached using various methods such as <a href=\"\/collections\/clip-in-hair-extensions\" title=\"Clip In Hair Extensions: 100% Remy Human Hair\">clip ins<\/a>, <a href=\"\/collections\/tape-in-hair-extensions\" title=\"Tape In Hair Extensions\">tape ins<\/a>, or <a href=\"\/collections\/micro-ring-loop-hair-extensions\" title=\"Micro Ring Hair Extensions\">micro ring<\/a> extensions.<\/p>"
+            "title": "<h3>How Do Bridal Hair Extensions Work?</h3>",
+            "body": "<p>Bridal hair extensions work by adding length, volume, or texture to your natural hair, enhancing your bridal hairstyle. They can be attached using various methods such as <a href=\"/collections/clip-in-hair-extensions\" title=\"Clip In Hair Extensions: 100% Remy Human Hair\">clip ins</a>, <a href=\"/collections/tape-in-hair-extensions\" title=\"Tape In Hair Extensions\">tape ins</a>, or <a href=\"/collections/micro-ring-loop-hair-extensions\" title=\"Micro Ring Hair Extensions\">micro ring</a> extensions.</p>"
           }
         },
         "5bbe76b3-da75-4df7-93af-847a7165a945": {
           "type": "item",
           "settings": {
-            "title": "<h3>What Extensions Are Best for Updos?<\/h3>",
-            "body": "<p>For updo hairstyles, tape-in or sew-in extensions are often recommended. These types of extensions provide a secure and discreet hold, allowing the hairstylist to create intricate updo styles with ease.<\/p>"
+            "title": "<h3>What Extensions Are Best for Updos?</h3>",
+            "body": "<p>For updo hairstyles, tape-in or sew-in extensions are often recommended. These types of extensions provide a secure and discreet hold, allowing the hairstylist to create intricate updo styles with ease.</p>"
           }
         },
         "e5e823f4-b94e-49c7-8e89-c86c4d1cdbc6": {
           "type": "item",
           "settings": {
-            "title": "<h3>How Long Do Wedding Hair Extensions Last?<\/h3>",
-            "body": "<p>The longevity of wedding hair extensions depends on several factors, including the type of extensions, how well they are cared for, and the application method. Clip-in extensions can be easily removed and reused and typically last for several months, whilst semi-permanent extensions, can last anywhere from several weeks to a few months.<\/p>"
+            "title": "<h3>How Long Do Wedding Hair Extensions Last?</h3>",
+            "body": "<p>The longevity of wedding hair extensions depends on several factors, including the type of extensions, how well they are cared for, and the application method. Clip-in extensions can be easily removed and reused and typically last for several months, whilst semi-permanent extensions, can last anywhere from several weeks to a few months.</p>"
           }
         }
       },
@@ -1446,7 +1414,7 @@
       ],
       "disabled": true,
       "settings": {
-        "section_title": "<h2>Frequently Asked Questions<\/h2>",
+        "section_title": "<h2>Frequently Asked Questions</h2>",
         "intro": "",
         "text_color": "#000000",
         "bg_color": "#ffffff",

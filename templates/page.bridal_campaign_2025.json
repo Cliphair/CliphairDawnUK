@@ -885,7 +885,7 @@
         "bg-color": "#ffffff",
         "desktop-image": "shopify://shop_images/bridal-awards-banner-desktop.webp",
         "mobile-image": "shopify://shop_images/bridal-awards-2025.webp",
-        "url": "shopify://pages/2024-hairstylist-award",
+        "url": "shopify://pages/hairstylist-award",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -1173,7 +1173,7 @@
             "text_label": "",
             "link": ""
           }
-        },        
+        },
         "item_nTxwVY19": {
           "type": "image",
           "settings": {
