@@ -10,7 +10,7 @@
         </li>
         {% case t %}
           {% when 'page' %}
-            {% assign bridal_page_handles = '/pages/classic-hollywood-waves-lookbook,/elegant-chignon-bun-lookbook,/sleek-sultry-waves-lookbook,/heavenly-half-up-half-down-lookbook,/romantic-curly-updo-lookbook,/bridal-hair-extension-quiz,/2024-hairstylist-award' | split: ',' %}
+            {% assign bridal_page_handles = '/pages/classic-hollywood-waves-lookbook,/pages/elegant-chignon-bun-lookbook,/pages/sleek-sultry-waves-lookbook,/pages/heavenly-half-up-half-down-lookbook,/pages/romantic-curly-updo-lookbook,/pages/bridal-hair-extension-quiz,/pages/2024-hairstylist-award' | split: ',' %}
             {% if bridal_page_handles contains request.path %}
               {% assign bridal_page = pages['cliphair-bridal-hair-extensions'] %}
               <li>
