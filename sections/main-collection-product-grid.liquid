@@ -162,7 +162,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                {% if forloop.index == 5 %}
+                {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                     style="display:none;"
