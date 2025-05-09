@@ -74,14 +74,18 @@
         {% endif %}h
       {% endcomment %}
     >
-      {% if option.available -%}
-        {{- 'products.product.value_unavailable' | t: option_value: value -}}
-      {%- else -%}
+      {% unless product.gift_card? %}
+        {% if option.available or product.gift_card?-%}
+          {{- 'products.product.value_unavailable' | t: option_value: value -}}
+        {%- else -%}
+          {{- value -}}
+          {% if value.variant.inventory_quantity <= 0 %}
+            {{- 'products.product.value_unavailable' | t: option_value: '' -}}
+          {% endif %}
+        {%- endif %}
+      {% else %}
         {{- value -}}
-        {% if value.variant.inventory_quantity <= 0 %}
-          {{- 'products.product.value_unavailable' | t: option_value: '' -}}
-        {% endif %}
-      {%- endif %}
+      {% endunless %}
     </option>
   {%- endif -%}
 {%- endfor -%}
