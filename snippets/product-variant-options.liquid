@@ -74,7 +74,7 @@
         {% endif %}h
       {% endcomment %}
     >
-      {% if option.available -%}
+      {% if option.available or product.gift_card? -%}
         {{- 'products.product.value_unavailable' | t: option_value: value -}}
       {%- else -%}
         {{- value -}}
