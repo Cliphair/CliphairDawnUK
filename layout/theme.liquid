@@ -418,6 +418,8 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 
+    <script src="{{ 'consent-script.js' | asset_url }}" defer="defer"></script>
+    
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
