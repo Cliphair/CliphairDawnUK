@@ -1027,39 +1027,214 @@
         "padding_bottom": 52
       }
     },
-    "bridal-insta": {
-      "type": "image-list",
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
+      "type": "image-list-with-product-link",
       "blocks": {
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-2.webp",
-            "text_label": "<p>@brides_by_ayelet</p>",
-            "link": ""
+            "image": "shopify://shop_images/instagram-section-huhd-2.webp",
+            "text_label": "@brides_by_ayelet",
+            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-15.webp",
-            "text_label": "<p>@staciegoodwinbridalhair</p>",
-            "link": ""
+            "image": "shopify://shop_images/instagram-section-waves-1.webp",
+            "text_label": "@staciegoodwinbridalhair",
+            "product":"blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-16.webp",
-            "text_label": "<p>@k_mua_oxford</p>",
-            "link": ""
+            "image": "shopify://shop_images/instagram-section-waves-2.webp",
+            "text_label": "@k_mua_oxford",
+            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn"
+          }
+        },
+        "item_nTxwVY4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-1.webp",
+            "text_label": "@k_mua_oxford",
+            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix"
           }
         },
         "item_nTxwVY5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-4.webp",
-            "text_label": "<p>@blowdryskent</p>",
-            "link": ""
+            "image": "shopify://shop_images/instagram-section-huhd-4.webp",
+            "text_label": "@blowdryskent"
+          }
+        },
+        "item_nTxwVY6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-2.webp",
+            "text_label": "@gabygoldringhairstylist"
+          }
+        },
+        "item_nTxwVY7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-2.webp",
+            "text_label": "@botiashairandmakeup"
+          }
+        },
+        "item_nTxwVY8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-1.webp",
+            "text_label": "@brides_by_ayelet"
+          }
+        },
+        "item_nTxwVY9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-6.webp",
+            "text_label": "@botiashairandmakeup"
+          }
+        },
+        "item_nTxwVY10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-4.webp",
+            "text_label": "@hair.so.boho"
+          }
+        },
+        "item_nTxwVY11": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-1.webp",
+            "text_label": "@evaschulze_hairandmakeup"
+          }
+        },
+        "item_nTxwVY12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-3.webp",
+            "text_label": "@haircreationsbycolette"
+          }
+        },
+        "item_nTxwVY13": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-5.webp",
+            "text_label": "@hair.so.boho"
+          }
+        },
+        "item_nTxwVY14": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-4.webp",
+            "text_label": "@suzannedusekmakeup"
+          }
+        },
+        "item_nTxwVY15": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-10.webp",
+            "text_label": "@gabygoldringhairstylist"
+          }
+        },
+        "item_nTxwVY16": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-17.webp",
+            "text_label": "@lily.e.wilks"
+          }
+        },
+        "item_nTxwVY17": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-6.webp",
+            "text_label": "@bridalandbeauty_byrebeccajayne"
+          }
+        },
+        "item_nTxwVY18": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-5.webp",
+            "text_label": "@bridesmadeartistry"
+          }
+        },
+        "item_nTxwVY19": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-9.webp",
+            "text_label": "@emmalouisebridalhair"
+          }
+        },
+        "item_nTxwVY20": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-11.webp",
+            "text_label": "@portraitsbridal"
+          }
+        },
+        "item_nTxwVY21": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-3.webp",
+            "text_label": "@botiashairandmakeup"
+          }
+        },
+        "item_nTxwVY22": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-3.webp",
+            "text_label": "@brides_by_ayelet"
+          }
+        },
+        "item_nTxwVY23": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-8.webp",
+            "text_label": "@cj_beauty_and_co"
+          }
+        },
+        "item_nTxwVY24": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-13.webp",
+            "text_label": "@evaschulze_hairandmakeup"
+          }
+        },
+        "item_nTxwVY25": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-13.webp",
+            "text_label": "@charlotteheather_bridalhair"
+          }
+        },
+        "item_nTxwVY26": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-14.webp",
+            "text_label": "@portraitsbridal"
+          }
+        },
+        "item_nTxwVY27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-16.webp",
+            "text_label": "@hairbylouisekitching"
+          }
+        },
+        "item_nTxwVY28": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-5.webp",
+            "text_label": "@occasionhairbymegan"
+          }
+        },
+        "item_nTxwVY29": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-6.webp",
+            "text_label": "@madeforyouroccasion"
           }
         }
       },
@@ -1067,25 +1242,47 @@
         "item_MVMXD3",
         "item_nTxwVY",
         "item_nTxwVY3",
-        "item_nTxwVY5"
+        "item_nTxwVY4",
+        "item_nTxwVY5",
+        "item_nTxwVY6",
+        "item_nTxwVY7",
+        "item_nTxwVY8",
+        "item_nTxwVY9",
+        "item_nTxwVY10",
+        "item_nTxwVY11",
+        "item_nTxwVY12",
+        "item_nTxwVY13",
+        "item_nTxwVY14",
+        "item_nTxwVY15",
+        "item_nTxwVY16",
+        "item_nTxwVY17",
+        "item_nTxwVY18",
+        "item_nTxwVY19",
+        "item_nTxwVY20",
+        "item_nTxwVY21",
+        "item_nTxwVY22",
+        "item_nTxwVY23",
+        "item_nTxwVY24",
+        "item_nTxwVY25",
+        "item_nTxwVY26",
+        "item_nTxwVY27",
+        "item_nTxwVY28",
+        "item_nTxwVY29"
       ],
       "custom_css": [
-        ".images-list {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px; --grid-mobile-vertical-spacing: 5px; --grid-desktop-vertical-spacing: 5px; margin-top: 0;}",
-        ".images-list__item {min-width: unset;}",
-        "@media screen and (max-width: 1399px) {.images-list-wrapper {padding: 0 !important; }}",
-        ".gradient {background: rgba(229, 228, 241, 0.4);}"
+        ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
+        ".images-list__item{min-width:unset;}",
+        ".text-container p{margin:0; font-size:1rem; text-align:left}",
+        "@media screen and (max-width:1399px){.images-list-wrapper{padding:0!important;}}",
+        ".gradient{background:rgba(229,228,241,0.4);}",
+        ".images-list__item img{aspect-ratio:1/1;}"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
         "columns_desktop": 4,
-        "swipe_on_desktop": false,
+        "swipe_on_desktop": true,
         "color_scheme": "background-sale",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "slider_visual": "counter",
+        "swipe_on_mobile": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -1114,6 +1311,6 @@
     "rich-text-bundle",
     "bridal-bundle",
     "rich-text-insta",
-    "bridal-insta"
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691"
   ]
 }

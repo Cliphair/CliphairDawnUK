@@ -495,118 +495,136 @@
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
-      "type": "image-list",
+      "type": "image-list-with-product-link",
       "blocks": {
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-1.webp",
-            "text_label": "<p>@brides_by_ayelet</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-1.webp",
+            "text_label": "@brides_by_ayelet",
+            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-2.webp",
-            "text_label": "<p>@brides_by_ayelet</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-2.webp",
+            "text_label": "@brides_by_ayelet",
+            "product":"darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-3.webp",
-            "text_label": "<p>@brides_by_ayelet</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-3.webp",
+            "text_label": "@brides_by_ayelet",
+            "product":"remy-royale-seamless-clip-ins-16-60"
           }
         },
         "item_nTxwVY4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-4.webp",
-            "text_label": "<p>@blowdryskent</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-4.webp",
+            "text_label": "@blowdryskent",
+            "product":"natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-5.webp",
-            "text_label": "<p>@brides_by_ayelet</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-5.webp",
+            "text_label": "@bridesmadeartistry"
           }
         },
         "item_nTxwVY6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-6.webp",
-            "text_label": "<p>@cj_beauty_and_co</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-6.webp",
+            "text_label": "@octoberhairartistry"
           }
         },
         "item_nTxwVY7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-7.webp",
-            "text_label": "<p>@wittsallabout_theglam</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-7.webp",
+            "text_label": "@brides_by_ayelet"
           }
         },
         "item_nTxwVY8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-8.webp",
-            "text_label": "<p>@gabygoldringhairstylist</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-8.webp",
+            "text_label": "@cj_beauty_and_co"
           }
         },
         "item_nTxwVY9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-9.webp",
-            "text_label": "<p>@nicholajmakeup</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-9.webp",
+            "text_label": "@wittsallabout_theglam"
           }
         },
         "item_nTxwVY10": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-10.webp",
-            "text_label": "<p>@occasionhairbymegan</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-10.webp",
+            "text_label": "@gabygoldringhairstylist"
           }
         },
         "item_nTxwVY11": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-11.webp",
-            "text_label": "<p>@charlotteheather_bridalhair</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-11.webp",
+            "text_label": "@nicholajmakeup"
           }
         },
         "item_nTxwVY12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-12.webp",
-            "text_label": "<p>@wittsallabout_theglam</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-12.webp",
+            "text_label": "@occasionhairbymegan"
           }
         },
         "item_nTxwVY13": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-13.webp",
-            "text_label": "<p>@occasionhairbymegan</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-13.webp",
+            "text_label": "@charlotteheather_bridalhair"
           }
         },
         "item_nTxwVY14": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-14.webp",
-            "text_label": "<p>@hairbylouisekitching</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-14.webp",
+            "text_label": "@wittsallabout_theglam"
           }
         },
         "item_nTxwVY15": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-15.webp",
-            "text_label": "<p>@ayeletgarson_hairandmakeup</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-15.webp",
+            "text_label": "@occasionhairbymegan"
           }
         },
         "item_nTxwVY16": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/half-up-insta-16.webp",
-            "text_label": "<p>@timeabreban</p>"
+            "image": "shopify://shop_images/instagram-section-huhd-16.webp",
+            "text_label": "@hairbylouisekitching"
+          }
+        },
+        "item_nTxwVY17": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-17.webp",
+            "text_label": "@ayeletgarson_hairandmakeup"
+          }
+        },
+        "item_nTxwVY18": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-18.webp",
+            "text_label": "@timeabreban"
           }
         }
       },
@@ -626,7 +644,9 @@
         "item_nTxwVY13",
         "item_nTxwVY14",
         "item_nTxwVY15",
-        "item_nTxwVY16"
+        "item_nTxwVY16",
+        "item_nTxwVY17",
+        "item_nTxwVY18"
       ],
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",

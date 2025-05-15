@@ -1,6 +1,6 @@
-{% unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' %}
-  {{ 'section-breadcrumbs.css' | asset_url | stylesheet_tag }}
+{{ 'section-breadcrumbs.css' | asset_url | stylesheet_tag }}
 
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' %}
   {% assign t = template | split: '.' | first %}
   <section id="section-{{ section.id }}" class="page-width">
     <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
@@ -10,7 +10,9 @@
         </li>
         {% case t %}
           {% when 'page' %}
-            {% assign bridal_page_handles = '/pages/classic-hollywood-waves-lookbook,/pages/elegant-chignon-bun-lookbook,/pages/sleek-sultry-waves-lookbook,/pages/heavenly-half-up-half-down-lookbook,/pages/romantic-curly-updo-lookbook,/pages/bridal-hair-extension-quiz,/pages/hairstylist-award' | split: ',' %}
+            {% assign bridal_page_handles = '/pages/classic-hollywood-waves-lookbook,/pages/elegant-chignon-bun-lookbook,/pages/sleek-sultry-waves-lookbook,/pages/heavenly-half-up-half-down-lookbook,/pages/romantic-curly-updo-lookbook,/pages/bridal-hair-extension-quiz,/pages/hairstylist-award'
+              | split: ','
+            %}
             {% if bridal_page_handles contains request.path %}
               {% assign bridal_page = pages['cliphair-bridal-hair-extensions'] %}
               <li>

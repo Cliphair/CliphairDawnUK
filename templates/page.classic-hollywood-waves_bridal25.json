@@ -495,104 +495,157 @@
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
-      "type": "image-list",
+      "type": "image-list-with-product-link",
       "blocks": {
         "item_MVMXD3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-1.webp",
-            "text_label": "<p>@brides_by_ayelet</p>"
+            "image": "shopify://shop_images/instagram-section-waves-1.webp",
+            "text_label": "@staciegoodwinbridalhair",
+            "product": "blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "item_nTxwVY": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-2.webp",
-            "text_label": "<p>@emmalouisebridalhair</p>"
+            "image": "shopify://shop_images/instagram-section-waves-2.webp",
+            "text_label": "@k_mua_oxford",
+            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn"
           }
         },
         "item_nTxwVY3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-3.webp",
-            "text_label": "<p>@sophiemillsbridal</p>"
+            "image": "shopify://shop_images/instagram-section-waves-3.webp",
+            "text_label": "@botiashairandmakeup",
+            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix"
           }
         },
         "item_nTxwVY4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-4.webp",
-            "text_label": "<p>@portraitsbridal</p>"
+            "image": "shopify://shop_images/instagram-section-waves-4.webp",
+            "text_label": "@hair.so.boho",
+            "product":"double-wefted-set-clip-in-hair-extensions-brown-blonde-mix-4-27"
           }
         },
         "item_nTxwVY5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-5.webp",
-            "text_label": "<p>@katrinakelly_weddinghair</p>"
+            "image": "shopify://shop_images/instagram-section-waves-5.webp",
+            "text_label": "@hair.so.boho"
           }
         },
         "item_nTxwVY6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-6.webp",
-            "text_label": "<p>@evaschulze_hairandmakeup</p>"
+            "image": "shopify://shop_images/instagram-section-waves-6.webp",
+            "text_label": "@botiashairandmakeup"
           }
         },
         "item_nTxwVY7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-7.webp",
-            "text_label": "<p>@portraitsbridal</p>"
+            "image": "shopify://shop_images/instagram-section-waves-7.webp",
+            "text_label": "@monamieweddinghair"
           }
         },
         "item_nTxwVY8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-8.webp",
-            "text_label": "<p>@blowdryskent</p>"
+            "image": "shopify://shop_images/instagram-section-waves-8.webp",
+            "text_label": "@brides_by_ayelet"
           }
         },
         "item_nTxwVY9": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-9.webp",
-            "text_label": "<p>@botiashairandmakeup</p>"
+            "image": "shopify://shop_images/instagram-section-waves-9.webp",
+            "text_label": "@emmalouisebridalhair"
           }
         },
         "item_nTxwVY10": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-10.webp",
-            "text_label": "<p>@lily.e.wilks</p>"
+            "image": "shopify://shop_images/instagram-section-waves-10.webp",
+            "text_label": "@sophiemillsbridal"
           }
         },
         "item_nTxwVY11": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-11.webp",
-            "text_label": "<p>@blush.and.bows</p>"
+            "image": "shopify://shop_images/instagram-section-waves-11.webp",
+            "text_label": "@portraitsbridal"
           }
         },
         "item_nTxwVY12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-12.webp",
-            "text_label": "<p>@weddinghairbycharleigh</p>"
+            "image": "shopify://shop_images/instagram-section-waves-12.webp",
+            "text_label": "@katrinakelly_weddinghair"
           }
         },
         "item_nTxwVY13": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-13.webp",
-            "text_label": "<p>@meganlindsaybridalhair</p>"
+            "image": "shopify://shop_images/instagram-section-waves-13.webp",
+            "text_label": "@evaschulze_hairandmakeup"
           }
         },
         "item_nTxwVY14": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hair-down-insta-14.webp",
-            "text_label": "<p>@weddinghairbycharleigh</p>"
+            "image": "shopify://shop_images/instagram-section-waves-14.webp",
+            "text_label": "@portraitsbridal"
+          }
+        },
+        "item_nTxwVY15": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-15.webp",
+            "text_label": "@blowdryskent"
+          }
+        },
+        "item_nTxwVY16": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-16.webp",
+            "text_label": "@botiashairandmakeup"
+          }
+        },
+        "item_nTxwVY17": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-17.webp",
+            "text_label": "@lily.e.wilks"
+          }
+        },
+        "item_nTxwVY18": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-18.webp",
+            "text_label": "@blush.and.bows"
+          }
+        },
+        "item_nTxwVY19": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-19.webp",
+            "text_label": "@weddinghairbycharleigh"
+          }
+        },
+        "item_nTxwVY20": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-20.webp",
+            "text_label": "@meganlindsaybridalhair"
+          }
+        },
+        "item_nTxwVY21": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-21.webp",
+            "text_label": "@weddinghairbycharleigh"
           }
         }
       },
@@ -610,7 +663,14 @@
         "item_nTxwVY11",
         "item_nTxwVY12",
         "item_nTxwVY13",
-        "item_nTxwVY14"
+        "item_nTxwVY14",
+        "item_nTxwVY15",
+        "item_nTxwVY16",
+        "item_nTxwVY17",
+        "item_nTxwVY18",
+        "item_nTxwVY19",
+        "item_nTxwVY20",
+        "item_nTxwVY21"
       ],
       "custom_css": [
         ".images-list{--grid-mobile-horizontal-spacing:5px;--grid-desktop-horizontal-spacing:5px;--grid-mobile-vertical-spacing:5px;--grid-desktop-vertical-spacing:5px;margin-top:0;}",
