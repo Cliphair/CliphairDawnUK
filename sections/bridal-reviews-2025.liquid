@@ -85,6 +85,19 @@
                 {% if block.settings.heading != blank or block.settings.content != blank %}
                   <div class="review-section_text-top">
                     <h3 class="h3 review-title">{{ block.settings.heading }}</h3>
+                    <div class="reviews-review-container">
+                      {% assign review_total = 5 %}
+                      {% assign hearts = block.settings.stars %}
+                      {% assign missign_hearts = review_total | minus: hearts %}
+
+                      {% for i in (1..hearts) %}
+                        <span class="reviews__reviews-review yellow">{% render 'icon-star' %}</span>
+                      {% endfor %}
+
+                      {% for i in (1..missign_hearts) %}
+                        <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+                      {% endfor %}
+                    </div>
                     <div class="h5">{{ block.settings.content | truncatewords: 12 }}</div>
                   </div>
                 {% endif %}
@@ -190,11 +203,11 @@
             {% assign missign_hearts = review_total | minus: hearts %}
 
             {% for i in (1..hearts) %}
-              <span class="reviews__reviews-review pink">{% render 'icon-heart-filled' %}</span>
+              <span class="reviews__reviews-review yellow">{% render 'icon-star' %}</span>
             {% endfor %}
 
             {% for i in (1..missign_hearts) %}
-              <span class="reviews__reviews-review grey">{% render 'icon-heart-filled' %}</span>
+              <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
             {% endfor %}
           </div>
         </div>

@@ -44,9 +44,14 @@
   margin: 0;
 }
 
+.review-section_text-top .reviews-review-container {
+  margin: 1rem 0;
+  ;
+}
+
 .review-section_text p {
-  padding: 0.6rem 0;
-  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .review-section_text .review-button {
@@ -128,7 +133,7 @@
   height: auto;
   max-width: min(450px, 70%) !important;
   margin: 0 auto;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .content-container {
@@ -170,8 +175,8 @@
   height: 1.5rem;
 }
 
-.reviews-review-container .reviews__reviews-review.pink svg {
-  fill: #ff8ea2 !important;
+.reviews-review-container .reviews__reviews-review.yellow svg {
+  fill: #FFE100 !important;
 }
 
 .reviews-review-container .reviews__reviews-review.grey {
