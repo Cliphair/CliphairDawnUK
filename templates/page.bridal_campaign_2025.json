@@ -1035,7 +1035,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-huhd-2.webp",
             "text_label": "@brides_by_ayelet",
-            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
+            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":50,
+            "marker_horizontal": 50
           }
         },
         "item_nTxwVY": {
@@ -1043,7 +1045,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-1.webp",
             "text_label": "@staciegoodwinbridalhair",
-            "product":"blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
+            "product":"blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":60,
+            "marker_horizontal": 70
           }
         },
         "item_nTxwVY3": {
@@ -1051,7 +1055,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-2.webp",
             "text_label": "@k_mua_oxford",
-            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn"
+            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn",
+            "marker_vertical":75,
+            "marker_horizontal": 70
           }
         },
         "item_nTxwVY4": {
@@ -1059,7 +1065,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-all-1.webp",
             "text_label": "@k_mua_oxford",
-            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix"
+            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix",
+            "marker_vertical":30,
+            "marker_horizontal": 35
           }
         },
         "item_nTxwVY5": {

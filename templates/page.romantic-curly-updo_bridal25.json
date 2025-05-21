@@ -502,7 +502,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-updo-1.webp",
             "text_label": "@evaschulze_hairandmakeup",
-            "product": "remy-royale-seamless-clip-ins-16-60"
+            "product": "remy-royale-seamless-clip-ins-16-60",
+            "marker_vertical":25,
+            "marker_horizontal": 65
           }
         },
         "item_nTxwVY": {
@@ -510,7 +512,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-updo-2.webp",
             "text_label": "@gabygoldringhairstylist",
-            "product":"double-wefted-set-clip-in-hair-extensions-medium-brown-4"
+            "product":"double-wefted-set-clip-in-hair-extensions-medium-brown-4",
+            "marker_vertical":15,
+            "marker_horizontal": 65
           }
         },
         "item_nTxwVY3": {
@@ -518,7 +522,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-updo-3.webp",
             "text_label": "@k_mua_oxford",
-            "product":"full-head-set-clip-in-hair-extensions-brown-blonde-mix-18-613"
+            "product":"full-head-set-clip-in-hair-extensions-brown-blonde-mix-18-613",
+            "marker_vertical":30,
+            "marker_horizontal":35
           }
         },
         "item_nTxwVY4": {
@@ -526,7 +532,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-updo-4.webp",
             "text_label": "@botiashairandmakeup",
-            "product":"double-wefted-full-head-remy-clip-in-human-hair-extensions-silver-sand-ss"
+            "product":"double-wefted-full-head-remy-clip-in-human-hair-extensions-silver-sand-ss",
+            "marker_vertical":20,
+            "marker_horizontal":60
           }
         },
         "item_nTxwVY5": {

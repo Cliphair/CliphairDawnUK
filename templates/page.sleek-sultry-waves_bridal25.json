@@ -502,7 +502,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-1.webp",
             "text_label": "@staciegoodwinbridalhair",
-            "product": "blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
+            "product": "blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":60,
+            "marker_horizontal": 70
           }
         },
         "item_nTxwVY": {
@@ -510,7 +512,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-2.webp",
             "text_label": "@k_mua_oxford",
-            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn"
+            "product":"seamless-clip-in-hair-extensions-double-drawn-light-auburn",
+            "marker_vertical":75,
+            "marker_horizontal": 70
           }
         },
         "item_nTxwVY3": {
@@ -518,7 +522,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-3.webp",
             "text_label": "@botiashairandmakeup",
-            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix"
+            "product":"seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix",
+            "marker_vertical":70,
+            "marker_horizontal":65
           }
         },
         "item_nTxwVY4": {
@@ -526,7 +532,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-waves-4.webp",
             "text_label": "@hair.so.boho",
-            "product":"double-wefted-set-clip-in-hair-extensions-brown-blonde-mix-4-27"
+            "product":"double-wefted-set-clip-in-hair-extensions-brown-blonde-mix-4-27",
+            "marker_vertical":65,
+            "marker_horizontal": 60
           }
         },
         "item_nTxwVY5": {

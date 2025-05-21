@@ -101,7 +101,7 @@
             {% for j in (current_index..final_index) %}
               {% assign block = section.blocks[j] %}
               {% if block %}
-                {% if block.settings.product %}
+                {% if block.settings.product != blank %}
                   <div class="no-js-hidden">
                     <modal-opener
                       class="product-popup-modal__opener no-js-hidden"
@@ -119,15 +119,21 @@
                           and block.settings.image.src != blank
                           and block.settings.text_label != blank
                         -%}
-                          <img
-                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}"
-                            src="{{ block.settings.image | image_url: width: 190 }}"
-                            alt="{{ block.settings.image.alt | escape }}"
-                            loading="lazy"
-                            width="{{ block.settings.image.width }}"
-                            height="{{ block.settings.image.height }}"
-                          >
+                          <div>
+                            <img
+                              srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}"
+                              src="{{ block.settings.image | image_url: width: 190 }}"
+                              alt="{{ block.settings.image.alt | escape }}"
+                              loading="lazy"
+                              width="{{ block.settings.image.width }}"
+                              height="{{ block.settings.image.height }}"
+                            >
 
+                            <div
+                              class="pointer"
+                              style="top:{{ block.settings.marker_vertical }}%; left:{{ block.settings.marker_horizontal }}%"
+                            ></div>
+                          </div>
                           <div class="text-container h5">
                             <p>{{ block.settings.text_label }}</p>
                           </div>
@@ -137,7 +143,7 @@
                   </div>
                 {% endif %}
                 <div
-                  {% if block.settings.product %}
+                  {% if block.settings.product != blank %}
                     class="no-js"
                   {% endif %}
                 >
@@ -426,6 +432,28 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Marker position"
+        },
+        {
+          "type": "range",
+          "id": "marker_vertical",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "label": "Vertical"
+        },
+        {
+          "type": "range",
+          "id": "marker_horizontal",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "label": "Horizontal"
         }
       ]
     }

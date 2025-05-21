@@ -502,7 +502,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-huhd-1.webp",
             "text_label": "@brides_by_ayelet",
-            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
+            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":20,
+            "marker_horizontal":30
           }
         },
         "item_nTxwVY": {
@@ -510,7 +512,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-huhd-2.webp",
             "text_label": "@brides_by_ayelet",
-            "product":"darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g"
+            "product":"darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":50,
+            "marker_horizontal":50
           }
         },
         "item_nTxwVY3": {
@@ -518,7 +522,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-huhd-3.webp",
             "text_label": "@brides_by_ayelet",
-            "product":"remy-royale-seamless-clip-ins-16-60"
+            "product":"remy-royale-seamless-clip-ins-16-60",
+            "marker_vertical":50,
+            "marker_horizontal":50
           }
         },
         "item_nTxwVY4": {
@@ -526,7 +532,9 @@
           "settings": {
             "image": "shopify://shop_images/instagram-section-huhd-4.webp",
             "text_label": "@blowdryskent",
-            "product":"natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
+            "product":"natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical":55,
+            "marker_horizontal":65
           }
         },
         "item_nTxwVY5": {
