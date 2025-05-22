@@ -171,13 +171,6 @@
                 | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
               }}
             {% endcomment %}
-          {%- else -%}
-            {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
-            {%- if placeholder_slide == 1 -%}
-              {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- else -%}
-              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
           {%- endif -%}
         </div>
 
