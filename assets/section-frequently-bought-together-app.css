@@ -1,11 +1,6 @@
 .cbb-frequently-bought-container {
   margin: 0 auto !important;
   max-width: unset !important;
-  display:none;
-}
-
-.section-frequently-bought-app .cbb-frequently-bought-container{
-  display: block;
 }
 
 .cbb-frequently-bought-title {
