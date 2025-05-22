@@ -43,13 +43,15 @@
           {% case block.type %}
             {% when 'image' %}
               <div class="image-entry">
-                <img
-                  src="{{ block.settings.image | image_url }}"
-                  loading="lazy"
-                  alt="{{ block.settings.image.alt }}"
-                  width="{{ block.settings.image.width }}"
-                  height="{{ block.settings.image.height }}"
-                >
+                {% if block.settings.url %}<a href='{{ block.settings.url }}'>{% endif %}
+                  <img
+                    src="{{ block.settings.image | image_url }}"
+                    loading="lazy"
+                    alt="{{ block.settings.image.alt }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                  >
+                {% if block.settings.url %}</a>{% endif %}
               </div>
           {% endcase %}
         {% endfor %}
@@ -148,6 +150,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image file"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Image link",
+          "info": "Not required"
         }
       ]
     }
