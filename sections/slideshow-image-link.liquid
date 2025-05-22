@@ -35,7 +35,7 @@
   {%- endstyle -%}
 {%- endif -%}
 
-{% if section.blocks.first.image %}
+{% if section.blocks.first.settings.image %}
   <slideshow-component
     class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
     role="region"
