@@ -216,7 +216,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "dots",
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     },
     "slideshow_image_link_QyBpYz": {
