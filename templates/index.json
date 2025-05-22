@@ -57,8 +57,8 @@
         "slide_nnGry6": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Cliphair_HomePage_USA_-_Mobile_Optimized.webp",
-            "image_desktop": "shopify://shop_images/Cliphair_HomePage_USA_-_Desktop_Optimized.webp",
+            "image": "shopify://shop_images/2025-homepage-banner-mobile.jpg",
+            "image_desktop": "shopify://shop_images/2025-homepage-banner-desktop.jpg",
             "image_url": "shopify://pages/hair-extensions-by-colour",
             "heading": "",
             "heading_size": "h2",
