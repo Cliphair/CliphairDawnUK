@@ -575,7 +575,6 @@
         "heading",
         "text"
       ],
-      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -598,10 +597,10 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Diana's Bridal Bun.mp4",
+            "video": "shopify://files/videos/@cherriecherry_.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "alt": "",
-            "cover_image": "shopify://shop_images/diana-updo.webp",
+            "alt": "@cherriecherry_ on Tiktok",
+            "cover_image": "shopify://shop_images/video-thumbnail__cherriecherry.webp",
             "title": "",
             "description": "",
             "button_label": "",
@@ -611,10 +610,10 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Lauren's Styling.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "alt": "",
-            "cover_image": "shopify://shop_images/lauren.webp",
+            "video": "shopify://files/videos/@alice_keay.mp4",
+            "video_url": "",
+            "alt": "@alice_keay video on TikTok",
+            "cover_image": "shopify://shop_images/video-thumbnail__alice_keay.webp",
             "title": "",
             "description": "",
             "button_label": "",
@@ -624,10 +623,10 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Jennica's Styling.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "alt": "",
-            "cover_image": "shopify://shop_images/jennica.webp",
+            "video": "shopify://files/videos/@hollyjai.mp4",
+            "video_url": "",
+            "alt": "@hollyjai video on Instagram",
+            "cover_image": "shopify://shop_images/video-thumbnail__hollyjai.jpg",
             "title": "",
             "description": "",
             "button_label": "",
@@ -637,10 +636,23 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Diana's Half up half down.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "alt": "",
-            "cover_image": "shopify://shop_images/diana.webp",
+            "video": "shopify://files/videos/@bolu_baj.mp4",
+            "video_url": "",
+            "alt": "@bolu_baj video on Instagram",
+            "cover_image": "shopify://shop_images/video-thumbnail__bolu_baj.jpg",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": ""
+          }
+        },
+        "video_V9wxX3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@charleighjaynehair.mp4",
+            "video_url": "",
+            "alt": "@charleighjaynehair video on Instagram",
+            "cover_image": "shopify://shop_images/video_-thumbnail__charleighjaynehair.jpg",
             "title": "",
             "description": "",
             "button_label": "",
@@ -652,9 +664,9 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029",
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
         "145755f4-4d91-4e80-8bb6-52a475d8285a",
-        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d"
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
+        "video_V9wxX3"
       ],
-      "disabled": true,
       "custom_css": [
         ".videos-list {--grid-mobile-horizontal-spacing: 10px; --grid-desktop-horizontal-spacing: 10px;}",
         ".videos-list__item {min-width: unset;}",
@@ -664,9 +676,9 @@
       "settings": {
         "color_scheme": "background-faded-blue",
         "image_ratio": "portrait",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "swipe_on_desktop": true,
-        "columns_mobile": "3",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 0,
