@@ -688,11 +688,43 @@
             "link": ""
           }
         },
+        "image_Bt9aJr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ameliadimz.jpg",
+            "text_label": "<p>@ameliadimz styled by @elliefoxhair <br/><br/><a href=\"/products/double-wefted-set-clip-in-hair-extensions-lightest-brown-18\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Lightest Brown (#18)\">20\" Lightest Brown (#18) Double Weft Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_8rezVL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/amyhartxo.jpg",
+            "text_label": "<p>@amyhartxo Styled By @hairbyjaypinder<br/><br/><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">18\" Barbie Blonde (#16/60) Seamless Clip Ins</a></p>",
+            "link": ""
+          }
+        },
         "image_fDTmfe": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-9.webp",
             "text_label": "<p>@nicolacoughlan styled by @halleybrisker for SKIMS</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">22\" Barbie Blonde Double Drawn Seamless Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_pC6jNV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/chloeburrows.jpg",
+            "text_label": "<p>@chloeburrows styled by @hairbyjaypinder</p><p><a href=\"/products/blonde-mix-16-60-clip-in-ponytail-extensions\" title=\"Barbie Blonde (#16/60) Straight Up Wrap Around Ponytail Extension\">24\" Barbie Blonde Wrap Around Ponytail</a></p>",
+            "link": ""
+          }
+        },
+        "image_g8G4zb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/emthenutritionist.jpg",
+            "text_label": "<p>@emthenutritionist styled by @hairbyjaypinder </p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">18” Lightest Blonde (#60) Seamless Clip Ins </a></p>",
             "link": ""
           }
         },
@@ -843,7 +875,11 @@
       },
       "block_order": [
         "image_UJnFyW",
+        "image_Bt9aJr",
+        "image_8rezVL",
         "image_fDTmfe",
+        "image_pC6jNV",
+        "image_g8G4zb",
         "image_FNDhT7",
         "image_KJrQnV",
         "image_rHmacL",
