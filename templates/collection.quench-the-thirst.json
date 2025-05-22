@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "custom_banner_Lgrbw4": {
@@ -17,8 +17,8 @@
       "settings": {
         "max-width": "2560",
         "bg-color": "#ffffff",
-        "desktop-image": "shopify:\/\/shop_images\/deep-moisture-hair-care-range-desktop.webp",
-        "mobile-image": "shopify:\/\/shop_images\/deep-moisture-hair-care-range-mobile.webp",
+        "desktop-image": "shopify://shop_images/deep-moisture-hair-care-range-desktop.webp",
+        "mobile-image": "shopify://shop_images/deep-moisture-hair-care-range-mobile.webp",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -55,7 +55,7 @@
         "low_inventory": 5,
         "enable_filtering": true,
         "filter_type": "drawer",
-        "remove_filters": "Colour Group,Colour",
+        "remove_filters": "Colour Group,Colour,Discount Amount",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 20,
@@ -68,7 +68,7 @@
       "settings": {
         "max-width": "768",
         "bg-color": "#fffafc",
-        "desktop-image": "shopify:\/\/shop_images\/why-cliphair-shade-4.webp",
+        "desktop-image": "shopify://shop_images/why-cliphair-shade-4.webp",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -107,40 +107,40 @@
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
-            "text_label": "<p>Ethically<br>Sourced<\/p>",
+            "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Outstanding-Reviews-_White.svg",
-            "text_label": "<p>Outstanding<br>Reviews<\/p>",
-            "link": "shopify:\/\/pages\/testimonials"
+            "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "text_label": "<p>Outstanding<br>Reviews</p>",
+            "link": "shopify://pages/testimonials"
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Cliphair-Rewards-_White.svg",
-            "text_label": "<p>Cliphair<br>Rewards<\/p>",
-            "link": "shopify:\/\/pages\/rewards"
+            "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "text_label": "<p>Cliphair<br>Rewards</p>",
+            "link": "shopify://pages/rewards"
           }
         },
         "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Free-Delivery-_White.svg",
-            "text_label": "<p>Free Delivery<br>& Returns<\/p>",
+            "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
         },
         "cbdbff03-f013-487f-8288-6c9a46426bc6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Buy-Now-Pay-Later-_White.svg",
-            "text_label": "<p>Buy Now<br>Pay Later<\/p>",
+            "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
         }
@@ -155,7 +155,7 @@
       "custom_css": [
         "img {max-height: 70px;}",
         "a {text-decoration: none;}",
-        "@media screen and (min-width: 750px) and (max-width: 989px) {.grid--4-col-tablet .grid__item {width: calc((100% - var(--grid-desktop-horizontal-spacing) * 4) \/ 5); }}"
+        "@media screen and (min-width: 750px) and (max-width: 989px) {.grid--4-col-tablet .grid__item {width: calc((100% - var(--grid-desktop-horizontal-spacing) * 4) / 5); }}"
       ],
       "settings": {
         "title": "",

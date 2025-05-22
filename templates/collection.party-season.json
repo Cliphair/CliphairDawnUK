@@ -103,7 +103,7 @@
         "low_inventory": 5,
         "enable_filtering": true,
         "filter_type": "drawer",
-        "remove_filters": "Length",
+        "remove_filters": "Length,Discount Amount",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 20,
