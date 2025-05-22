@@ -3788,6 +3788,13 @@ details-disclosure>details {
   padding: 0 !important
 }
 
+.cbb-frequently-bought-container {
+  display:none;
+}
+
+.section-frequently-bought-app .cbb-frequently-bought-container{
+  display: block;
+}
 /* Old read mores - can be deleted once collections udpated */
 .closed {
   display: none;
