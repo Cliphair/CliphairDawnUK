@@ -135,6 +135,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Weekend_Delivery_Black-Optimized_2.gif",
             "text_alignment": "center",
