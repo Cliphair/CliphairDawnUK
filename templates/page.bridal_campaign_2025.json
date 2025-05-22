@@ -109,13 +109,15 @@
         "image_bzDVL4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bride-image-2025.webp"
+            "image": "shopify://shop_images/bride-image-2025.webp",
+            "url": "shopify://pages/classic-hollywood-waves-lookbook"
           }
         },
         "image_BRGHM7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bride-image-2-2025.webp"
+            "image": "shopify://shop_images/bride-image-2-2025.webp",
+            "url": "shopify://pages/classic-hollywood-waves-lookbook"
           }
         },
         "video_J9gyw9": {
@@ -652,7 +654,6 @@
             "video": "shopify://files/videos/@charleighjaynehair.mp4",
             "video_url": "",
             "alt": "@charleighjaynehair video on Instagram",
-            "cover_image": "shopify://shop_images/video_-thumbnail__charleighjaynehair.jpg",
             "title": "",
             "description": "",
             "button_label": "",
