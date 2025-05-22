@@ -187,8 +187,8 @@
           "settings": {
             "label": "",
             "collection-list": "choose-by-hair-colour",
-            "button_label": "FREE COLOUR MATCH",
-            "link": "shopify://pages/colour-matching-service",
+            "button_label": "",
+            "link": "",
             "button_style_secondary": false,
             "circle_images": true
           }
@@ -217,6 +217,32 @@
         "slider_visual": "dots",
         "padding_top": 40,
         "padding_bottom": 0
+      }
+    },
+    "slideshow_image_link_QyBpYz": {
+      "type": "slideshow-image-link",
+      "blocks": {
+        "slide_tjmATN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/colour-matching-mobile-banner.jpg",
+            "image_desktop": "shopify://shop_images/colour-matching-desktop-banner.jpg",
+            "image_url": "shopify://pages/colour-matching-service"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tjmATN"
+      ],
+      "name": "Slideshow image link",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": false,
+        "accessibility_info": "Visit our colour matching page"
       }
     },
     "collection_carrousel_fb6cDE": {
@@ -294,6 +320,7 @@
         "text_wgJyct",
         "button_czJX6E"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__wrapper {width: 100% !important;}",
         ".rich-text__blocks > * + * {margin-top: 1rem;}",
@@ -307,6 +334,32 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "slideshow_image_link_yUWnKi": {
+      "type": "slideshow-image-link",
+      "blocks": {
+        "slide_ALaCjx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/quiz-mobile-banner.jpg",
+            "image_desktop": "shopify://shop_images/quiz-desktop-banner.jpg",
+            "image_url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ALaCjx"
+      ],
+      "name": "Slideshow image link",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": false,
+        "accessibility_info": "Visit our quiz page"
       }
     },
     "rich_text_rApCNT": {
@@ -458,6 +511,7 @@
         "image_QJdHcj",
         "image_piJ8Qx"
       ],
+      "disabled": true,
       "custom_css": [
         ".button {margin-top: 5rem;}"
       ],
@@ -473,6 +527,32 @@
         "desktop-column": 6,
         "padding_top": 0,
         "padding_bottom": 40
+      }
+    },
+    "slideshow_image_link_GiHNFC": {
+      "type": "slideshow-image-link",
+      "blocks": {
+        "slide_6zqfjf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/lookbook-mobile-banner.jpg",
+            "image_desktop": "shopify://shop_images/lookbook-desktop-banner.jpg",
+            "image_url": "shopify://pages/lookbook"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6zqfjf"
+      ],
+      "name": "Slideshow image link",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": false,
+        "accessibility_info": "Visit our lookbook page"
       }
     },
     "rich_text_XgpBnz": {
@@ -1148,11 +1228,14 @@
     "maquee_bdNYHF",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
+    "slideshow_image_link_QyBpYz",
     "collection_carrousel_fb6cDE",
     "rich_text_ez6FdW",
+    "slideshow_image_link_yUWnKi",
     "rich_text_rApCNT",
     "yotpo_review_carrousel_eXBCYB",
     "rich_text_collage_bg_qibWaW",
+    "slideshow_image_link_GiHNFC",
     "rich_text_XgpBnz",
     "maquee_mnMgq6",
     "b19c81a2-f86e-4e52-9a50-dca37f731b16",
