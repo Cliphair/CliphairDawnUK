@@ -29,8 +29,18 @@
   }
 {%- endstyle -%}
 
+{% liquid
+  assign bridal_page = pages["cliphair-bridal-hair-extensions"]
+  assign bridal_image = images["collection-image-bridal.webp"]
+  assign paginate_by =  section.settings.products_per_page
+
+  if bridal_image and bridal_page
+   assign paginate_by =  paginate_by | minus: 1
+  endif
+%}
+
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
-  {%- paginate collection.products by section.settings.products_per_page -%}
+  {%- paginate collection.products by paginate_by -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
@@ -162,6 +172,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                
                 {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -170,15 +181,15 @@
                       style="--animation-order: {{ forloop.index }};"
                     {% endif %}
                   >
-                    {% assign bridal_page = pages["cliphair-bridal-hair-extensions"] %}
-                    {% assign bridal_image = images["collection-image-bridal.webp"] %}
-                    {% if bridal_image and bridal_page%}
-                    <a href='{{ bridal_page.url }}' title='{{ bridal_page.title }}'>
-                      <img loading='lazy' style='width:100%; height:100%; object-fit:cover; display:block;' src='{{ bridal_image | image_url }}' width='{{ bridal_image.width }}' height='{{ bridal_image.height }}' alt='{{ bridal_image.alt }}'>
-                    </a>
+
+                    {% if bridal_image and bridal_page %}
+                      <a href='{{ bridal_page.url }}' title='{{ bridal_page.title }}'>
+                        <img loading='lazy' style='width:100%; height:100%; object-fit:cover; display:block;' src='{{ bridal_image | image_url }}' width='{{ bridal_image.width }}' height='{{ bridal_image.height }}' alt='{{ bridal_image.alt }}'>
+                      </a>
                     {% endif %}
                   </li>
                 {% endif %}
+                
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
