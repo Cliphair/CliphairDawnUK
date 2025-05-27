@@ -91,11 +91,11 @@
         "header_desktop_font": 40,
         "text_mobile_font": 14,
         "text_desktop_font": 20,
-        "header_color": "#4e4e4e",
+        "header_color": "#000000",
         "header_opacity": 100,
-        "sub_header_color": "#4e4e4e",
-        "text_color": "#4e4e4e",
-        "enable_video": false,
+        "sub_header_color": "#000000",
+        "text_color": "#000000",
+        "enable_video": true,
         "video_width": 50,
         "play-size-mobile": 40,
         "play-size-desktop": 60,
@@ -115,66 +115,6 @@
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab26": {
       "type": "custom-carrousel-3-bridal24",
-      "blocks": {
-        "74c3f2d7-404f-4a64-983c-c9964a5b2871": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Semlaess.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "<em>Seamless</em>",
-            "subtitle": "",
-            "url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "image-url": ""
-          }
-        },
-        "ad8175f2-51ac-4162-b9af-ddc0f487f924": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Ultrra.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "<em>Ultra-Volume</em>",
-            "subtitle": "",
-            "url": "shopify://collections/ultra-clip-in-hair-extensions",
-            "image-url": ""
-          }
-        },
-        "0daf6aee-88f0-4373-80c3-3830fea777d8": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/double_weft_15299c8d-1e7e-4296-bfc2-d85df6447cf2.webp",
-            "circle_image": false,
-            "border": false,
-            "text": "<em>Double Weft</em>",
-            "subtitle": "",
-            "url": "shopify://collections/double-wefted-clip-in-hair-extensions",
-            "image-url": ""
-          }
-        },
-        "905f982b-829c-4154-a8c1-f9a24b175ace": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/full_head.webp",
-            "circle_image": true,
-            "border": false,
-            "text": "<em>Full Head</em>",
-            "subtitle": "",
-            "url": "shopify://collections/full-head-clip-in-hair-extensions",
-            "image-url": ""
-          }
-        }
-      },
-      "block_order": [
-        "74c3f2d7-404f-4a64-983c-c9964a5b2871",
-        "ad8175f2-51ac-4162-b9af-ddc0f487f924",
-        "0daf6aee-88f0-4373-80c3-3830fea777d8",
-        "905f982b-829c-4154-a8c1-f9a24b175ace"
-      ],
       "custom_css": [
         "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".section_header h2 {font-weight: 400;}",
@@ -184,7 +124,7 @@
       ],
       "settings": {
         "header": "",
-        "intro": "<p>The ultimate bridal hair competition is here again, and it's your time to shine!  <br/><br/>Enter your stunning bridal hair looks in any of our hairstyle categories for a chance to win cash prizes and exclusive discount vouchers. Plus, get your creations showcased across our platforms.  <br/><br/>The stage is set, the scissors are sharpened, and the competition starts NOW — show us what you’re made of! <br/><br/>COMPETITION OPENS 1st JUNE 2025 </p>",
+        "intro": "<p>The ultimate bridal hair competition is here again, and it's your time to shine!  <br/><br/>Enter your stunning bridal hair looks in any of our hairstyle categories for a chance to win cash prizes and exclusive discount vouchers. Plus, get your creations showcased across our platforms.  <br/><br/>The stage is set, the scissors are sharpened, and the competition starts NOW — show us what you’re made of! <br/><br/>COMPETITION OPEN NOW</p>",
         "main-button-text": "",
         "main-button-url": "",
         "max_width": "992",
@@ -199,10 +139,10 @@
         "desktop-p_left": 50,
         "mobile-header-font_size": 20,
         "desktop-header-font_size": 40,
-        "header_color": "#4e4e4e",
+        "header_color": "#000000",
         "mobile-text-font_size": 14,
         "desktop-text-font_size": 20,
-        "text_color": "#4e4e4e",
+        "text_color": "#000000",
         "include-button": false,
         "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
@@ -224,6 +164,76 @@
         "arrow_color": "#4e4e4e"
       }
     },
+    "rich_text_RyBGKD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Wfz4Vi": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Enter",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text_LnwW9y": {
+          "type": "text",
+          "settings": {
+            "text": "<ol><li>Style a jaw-dropping bridal look</li><li>Snap it (high-quality images, please!)</li><li>Post to Instagram or Facebook</li><li>Use the hashtag #CliphairBridalAwards25</li><li> For Best Cliphair Look use the hashtag #BestOfCliphairBridal</li><li>Tag us @cliphairlimited  </li></ol>",
+            "read-more_text": ""
+          }
+        },
+        "heading_JFBCJR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Some Ground Rules",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
+        "text_tJLDJp": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>The competition will run from <strong>June 1st 2025 - June 31st 2025</strong>. Entries must be submitted before 11:59pm BST June 31st</li><li>All hairstyles must be created on a real person, not a training mannequin.</li><li>There is no limit on the number of entries you can submit.    </li></ul>",
+            "read-more_text": ""
+          }
+        },
+        "heading_RHGTDb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who Can Enter?  ",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
+        "text_G9iGQT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Any qualified, training or student hairstylist worldwide is eligible to enter. All entries submitted must be your own work.   </p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Wfz4Vi",
+        "text_LnwW9y",
+        "heading_JFBCJR",
+        "text_tJLDJp",
+        "heading_RHGTDb",
+        "text_G9iGQT"
+      ],
+      "custom_css": [
+        ".gradient {background: rgba(229, 228, 241, 0.4) !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-sale",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "break_line_CB4w6g": {
       "type": "break-line",
       "custom_css": [
@@ -237,6 +247,129 @@
         "mobile-p_sides": 50,
         "desktop-p_top-bottom": 30,
         "desktop-p_sides": 0
+      }
+    },
+    "bridal_dropdown_DCMaTp": {
+      "type": "bridal_dropdown",
+      "blocks": {
+        "item_8thME7": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Bridal Look</strong></h3>",
+            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><strong><br/>Judge: TBC</strong></p>"
+          }
+        },
+        "item_gFqRVQ": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Cliphair Look - People’s Choice</strong></h3>",
+            "body": "<p>The best bridal look using Cliphair extensions selected by the public.</p><p><strong>Prize:</strong></p><ul><li>£300 cash prize</li><li>5000 Loyalty Points</li><li>Ultimate Hair Kit (bundle worth £250)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge</li></ul><p>Judged by the public</p>"
+          }
+        },
+        "item_GWRYHN": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Cliphair Look - Judges</strong></h3>",
+            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge  </li></ul><p><strong><br/>Judge: </strong>TBC</p>"
+          }
+        },
+        "item_nVwEew": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Hair Down</strong></h3>",
+            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels </li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Boe Wright</p>"
+          }
+        },
+        "item_eH49hy": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Hair Up </strong></h3>",
+            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        },
+        "item_LcBBM4": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Half Up Half Down </strong></h3>",
+            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        },
+        "item_LqwfPT": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Braid</strong></h3>",
+            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        },
+        "item_8Qkx7d": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best Ponytail</strong></h3>",
+            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        },
+        "item_aWKpPm": {
+          "type": "item",
+          "settings": {
+            "title": "<h3><strong>Best International Look</strong></h3>",
+            "body": "<p>This category is for any hairstyle.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_8thME7",
+        "item_gFqRVQ",
+        "item_GWRYHN",
+        "item_nVwEew",
+        "item_eH49hy",
+        "item_LcBBM4",
+        "item_LqwfPT",
+        "item_8Qkx7d",
+        "item_aWKpPm"
+      ],
+      "custom_css": [
+        "section {background: rgba(229, 228, 241, 0.4) !important;}",
+        "h2 {margin-bottom: 20px;}",
+        "p {line-height: 1.5em; margin-bottom: 10px;}",
+        "ul {list-style-position: inside; padding-inline-start: 10px;}",
+        "li {line-height: 1.5em; margin-bottom: 10px;}",
+        ".section-bridal-dropdown .item:last-of-type {margin-bottom: 0;}",
+        "@media screen and (min-width: 992px) {h2 {margin-bottom: 40px; }}"
+      ],
+      "settings": {
+        "section_title": "<h2>Categories & Prizes </h2>",
+        "intro": "<p>Want To Win? <br/><br/>You could be in the chance of winning our £500 cash prize, an Ultimate Cliphair Hair Kit worth £500, a dedicated feature on our blog and a post on our socials highlighting your talent!</p>",
+        "text_color": "#000000",
+        "bg_color": "#ffffff",
+        "max_width": "1500",
+        "is_faq": false,
+        "header-mobile-font_size": 20,
+        "text-mobile-font_size": 14,
+        "mobile-p_top": 20,
+        "mobile-p_bottom": 0,
+        "mobile-p_right": 10,
+        "mobile-p_left": 10,
+        "header-desktop-font_size": 40,
+        "text-desktop-font_size": 20,
+        "desktop-p_top": 30,
+        "desktop-p_bottom": 10,
+        "desktop-p_right": 50,
+        "desktop-p_left": 50
+      }
+    },
+    "break_line_tr4VKD": {
+      "type": "break-line",
+      "custom_css": [
+        "section {background: rgba(229, 228, 241, 0.4) !important;}"
+      ],
+      "settings": {
+        "bg_color": "#4e4e4e",
+        "max_width": "280",
+        "height": 1,
+        "mobile-p_top-bottom": 20,
+        "mobile-p_sides": 30,
+        "desktop-p_top-bottom": 30,
+        "desktop-p_sides": 50
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2690": {
@@ -265,10 +398,10 @@
         "desktop-p_left": 50,
         "mobile-header-font_size": 16,
         "desktop-header-font_size": 25,
-        "header_color": "#4e4e4e",
+        "header_color": "#000000",
         "mobile-text-font_size": 14,
         "desktop-text-font_size": 20,
-        "text_color": "#4e4e4e",
+        "text_color": "#000000",
         "include-button": false,
         "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
@@ -407,7 +540,7 @@
         "intro": "",
         "image_orientation": "portrait",
         "title-position": "bottom",
-        "text_color": "#4e4e4e",
+        "text_color": "#000000",
         "bg_color": "#d0b8a4",
         "max_width": "1500",
         "social-media": false,
@@ -445,544 +578,6 @@
         "btn-bg-color": "#ffffff",
         "btn-size-mobile": 12,
         "btn-size-desktop": 12
-      }
-    },
-    "bridal23_custom_text_Ga7hqm": {
-      "type": "bridal23_custom-text",
-      "blocks": {
-        "button_hQHVNR": {
-          "type": "button",
-          "settings": {
-            "btn-text": "PLACE YOUR VOTE",
-            "btn-url": "shopify://pages/best-cliphair-look-peoples-choice"
-          }
-        }
-      },
-      "block_order": [
-        "button_hQHVNR"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
-        "a {box-shadow: none; border: 1px solid; border-radius: 30px;}"
-      ],
-      "settings": {
-        "max-width": "1500",
-        "bg-colour": "#ffffff",
-        "mobile-p_top": 0,
-        "mobile-p_bottom": 16,
-        "mobile-p_right": 20,
-        "mobile-p_left": 20,
-        "desktop-p_top": 0,
-        "desktop-p_bottom": 30,
-        "desktop-p_right": 50,
-        "desktop-p_left": 50,
-        "title-mobile-f_size": 12,
-        "title-desktop-f_size": 12,
-        "title-color": "#4e4e4e",
-        "text-mobile-f_size": 12,
-        "text-desktop-f_size": 12,
-        "text-color": "#4e4e4e",
-        "btn-mobile-f_size": 14,
-        "btn-desktop-f_size": 20,
-        "btn-color": "#4e4e4e",
-        "btn-bg-color": "#ffffff"
-      }
-    },
-    "break_line_tr4VKD": {
-      "type": "break-line",
-      "custom_css": [
-        "section {background: rgba(229, 228, 241, 0.4) !important;}"
-      ],
-      "settings": {
-        "bg_color": "#4e4e4e",
-        "max_width": "1500",
-        "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 30,
-        "desktop-p_top-bottom": 30,
-        "desktop-p_sides": 50
-      }
-    },
-    "bridal_dropdown_DCMaTp": {
-      "type": "bridal_dropdown",
-      "blocks": {
-        "item_8thME7": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Bridal Look</strong></h3>",
-            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><strong><br/>Judge: TBC</strong></p>"
-          }
-        },
-        "item_gFqRVQ": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Cliphair Look - People’s Choice</strong></h3>",
-            "body": "<p>The best bridal look using Cliphair extensions selected by the public.</p><p><strong>Prize:</strong></p><ul><li>£300 cash prize</li><li>5000 Loyalty Points</li><li>Ultimate Hair Kit (bundle worth £250)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge</li></ul><p>Judged by the public</p>"
-          }
-        },
-        "item_GWRYHN": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Cliphair Look - Judges</strong></h3>",
-            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge  </li></ul><p><strong><br/>Judge: </strong>TBC</p>"
-          }
-        },
-        "item_nVwEew": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Hair Down</strong></h3>",
-            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels </li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Boe Wright</p>"
-          }
-        },
-        "item_eH49hy": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Hair Up </strong></h3>",
-            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
-          }
-        },
-        "item_LcBBM4": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Half Up Half Down </strong></h3>",
-            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
-          }
-        },
-        "item_LqwfPT": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Braid</strong></h3>",
-            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
-          }
-        },
-        "item_8Qkx7d": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best Ponytail</strong></h3>",
-            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
-          }
-        },
-        "item_aWKpPm": {
-          "type": "item",
-          "settings": {
-            "title": "<h3><strong>Best International Look</strong></h3>",
-            "body": "<p>This category is for any hairstyle.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_8thME7",
-        "item_gFqRVQ",
-        "item_GWRYHN",
-        "item_nVwEew",
-        "item_eH49hy",
-        "item_LcBBM4",
-        "item_LqwfPT",
-        "item_8Qkx7d",
-        "item_aWKpPm"
-      ],
-      "custom_css": [
-        "section {background: rgba(229, 228, 241, 0.4) !important;}",
-        "h2 {margin-bottom: 20px;}",
-        "p {line-height: 1.5em; margin-bottom: 10px;}",
-        "ul {list-style-position: inside; padding-inline-start: 10px;}",
-        "li {line-height: 1.5em; margin-bottom: 10px;}",
-        ".section-bridal-dropdown .item:last-of-type {margin-bottom: 0;}",
-        "@media screen and (min-width: 992px) {h2 {margin-bottom: 40px; }}"
-      ],
-      "settings": {
-        "section_title": "<h2>Categories & Prizes </h2>",
-        "intro": "<p>Want To Win? <br/><br/>You could be in the chance of winning our £500 cash prize, an Ultimate Cliphair Hair Kit worth £500, a dedicated feature on our blog and a post on our socials highlighting your talent!</p>",
-        "text_color": "#4e4e4e",
-        "bg_color": "#ffffff",
-        "max_width": "1500",
-        "is_faq": false,
-        "header-mobile-font_size": 20,
-        "text-mobile-font_size": 14,
-        "mobile-p_top": 20,
-        "mobile-p_bottom": 0,
-        "mobile-p_right": 10,
-        "mobile-p_left": 10,
-        "header-desktop-font_size": 40,
-        "text-desktop-font_size": 20,
-        "desktop-p_top": 30,
-        "desktop-p_bottom": 10,
-        "desktop-p_right": 50,
-        "desktop-p_left": 50
-      }
-    },
-    "break_line_YidFKe": {
-      "type": "break-line",
-      "disabled": true,
-      "custom_css": [
-        "section {background: rgba(229, 228, 241, 0.4) !important;}"
-      ],
-      "settings": {
-        "bg_color": "#4e4e4e",
-        "max_width": "1500",
-        "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 30,
-        "desktop-p_top-bottom": 50,
-        "desktop-p_sides": 50
-      }
-    },
-    "1664746053df8a22c8": {
-      "type": "video_carrousel_bridal24",
-      "blocks": {
-        "2e266794-9043-4fd6-bd27-340aec4d2029": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Kasia_Fortuna.webp",
-            "video_link": "",
-            "video_title": "<h3>Kasia Fortuna<br/>Best Bridal Look Judge </h3>",
-            "description": "<p>World-renowned, award-winning hairstylist, hair educator and bridal hair expert Kasia Fortuna is joining us as a judge for our Bridal Hairstyling Awards to share her wisdom after a successful career freelancing, teaching masterclasses and being featured in high fashion editorials, catwalks, and even collaborating with royalty.</p>",
-            "button-text": "@kasia_fortuna",
-            "button-link": "https://www.instagram.com/kasia_fortuna/"
-          }
-        },
-        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Zoe_Webbe.webp",
-            "video_link": "",
-            "video_title": "<h3>Zoe Webbe<br/>Best Cliphair Look Judge </h3>",
-            "description": "<p>With over 13 years of professional hairstyling experience, several awards under her belt and masterclass status, Zoe Webbe has quickly made a name for herself working at prominent salons around London and styling for the likes of Pippa Middelton and Lottie Moss.</p>",
-            "button-text": "@zwhairmua",
-            "button-link": "https://www.instagram.com/zwhairmua/"
-          }
-        },
-        "145755f4-4d91-4e80-8bb6-52a475d8285a": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Boe_Wright.webp",
-            "video_link": "",
-            "video_title": "<h3>Boe Wright<br/>Best Hair Down Judge </h3>",
-            "description": "<p>After studying Media Hair and Makeup at the London College of Fashion, Boe Wright built a successful freelancing career in the fashion and music industry and discovered her passion for bridal hair and beauty at a Bridal fayre. She has worked with fashion houses Chanel and Alexander McQueen, and has had her work featured in publications such as Harper’s BAZAAR, Vogue, Sheerluxe, and The Wed.</p>",
-            "button-text": "@botiashairandmakeup",
-            "button-link": "https://www.instagram.com/botiashairandmakeup/"
-          }
-        },
-        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Hannah_Taylor.webp",
-            "video_link": "",
-            "video_title": "<h3>Hannah Taylor<br/>Best Hair Up Judge </h3>",
-            "description": "<p>With an impressive 17 years of hairstyling experience to her name, Hannah Taylor has been specialising in bridal hair for over a decade and dedicates her time to travelling the globe for her bridal parties and educating and inspiring over 1,300 hairstyling students.</p>",
-            "button-text": "@hairbyhannahtaylor",
-            "button-link": "https://www.instagram.com/hairbyhannahtaylor/"
-          }
-        },
-        "video_yzghNQ": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Kim_Annesley.webp",
-            "video_link": "",
-            "video_title": "<h3>Kim Annesley<br/>Best Half Up Half Down Judge </h3>",
-            "description": "<p>Award-winning, sought-after hairstylist Kim Annesley is known for her effortlessly beautiful, modern and relaxed bridal looks. Winner of Hair Business of The Year and Northern Ireland Beauty Excellence Awards 2023, she has had her work featured in Rock My Wedding, One Fab Day, Rock ‘n Roll Bride, Ulster Tatler and more.</p>",
-            "button-text": "@kimannesley.hair",
-            "button-link": "https://www.instagram.com/kimannesley.hair/"
-          }
-        },
-        "video_xfiyD9": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Liz_Cooper.webp",
-            "video_link": "",
-            "video_title": "<h3>Liz Cooper<br/>Best Braid Judge </h3>",
-            "description": "<p>After kickstarting her career as a freelancer over a decade ago, Liz Cooper is now an award-winning hairstylist known for her love of everything ‘boho’. A free spirit, Liz is deeply inspired by nature, particularly when working from her Bridal Boutique nestled away in a log cabin in Hampshire. </p>",
-            "button-text": "@theartfulhairstylist",
-            "button-link": "https://www.instagram.com/theartfulhairstylist/"
-          }
-        },
-        "video_Uftm6w": {
-          "type": "video",
-          "settings": {
-            "image": "shopify://shop_images/Olga_Markuse.webp",
-            "video_link": "",
-            "video_title": "<h3>Olga Markuse<br/>Best Ponytail Judge </h3>",
-            "description": "<p>An established bridal hairstylist and wedding hair educator, Olga Markuse has been passionate about hair since childhood. Known for creating elegant and understated bridal hair looks, she is deeply inspired by her clients and strives to make them feel as beautiful as possible.</p>",
-            "button-text": "@bridal_hairstylist",
-            "button-link": "https://www.instagram.com/bridal_hairstylist/"
-          }
-        }
-      },
-      "block_order": [
-        "2e266794-9043-4fd6-bd27-340aec4d2029",
-        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
-        "145755f4-4d91-4e80-8bb6-52a475d8285a",
-        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
-        "video_yzghNQ",
-        "video_xfiyD9",
-        "video_Uftm6w"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
-        ".bg-image {display: none;}",
-        "h2 {margin-bottom: 25px;}",
-        "h2 em {font-size: 35px;}",
-        "h3 {font-size: 16px;}",
-        ".video-description p {font-size: 12px;}",
-        ".intro_container {margin-bottom: 20px;}",
-        "@media screen and (min-width: 992px) {h2 em {font-size: 60px; } .video-description p {font-size: 14px; } h3 {font-size: 19px; }}",
-        ".video-button-container {display: flex; align-items: flex-end;}",
-        ".button_container {display: none;}"
-      ],
-      "settings": {
-        "header": "<h2>MEET OUR JUDGES</h2>",
-        "intro": "",
-        "image_orientation": "portrait",
-        "title-position": "bottom",
-        "text_color": "#4e4e4e",
-        "bg_color": "#d0b8a4",
-        "max_width": "1500",
-        "social-media": false,
-        "header-mobile-font_size": 25,
-        "text-mobile-font_size": 14,
-        "mobile-p_top": 20,
-        "mobile-p_bottom": 30,
-        "mobile-p_right": 10,
-        "mobile-p_left": 10,
-        "header-desktop-font_size": 40,
-        "text-desktop-font_size": 20,
-        "desktop-p_top": 20,
-        "desktop-p_bottom": 50,
-        "desktop-p_right": 0,
-        "desktop-p_left": 0,
-        "display": "carrousel",
-        "display-mobile": 1.2,
-        "display-tablet": 2.2,
-        "display-desktop": 3.2,
-        "include-dots": false,
-        "dot-color": "#000000",
-        "dot-size": 8,
-        "include-arrows": true,
-        "arrow-color": "#4e4e4e",
-        "arrow-size-mobile": 50,
-        "arrow-size-tablet": 50,
-        "arrow-size-desktop": 50,
-        "arrow-position-mobile": 43,
-        "arrow-position-tablet": 43,
-        "arrow-position-desktop": 45,
-        "include-btn": false,
-        "btn-text": "",
-        "btn-url": "",
-        "btn-color": "#4e4e4e",
-        "btn-bg-color": "#ffffff",
-        "btn-size-mobile": 12,
-        "btn-size-desktop": 12
-      }
-    },
-    "column_carrousel_cHtXiR": {
-      "type": "column-carrousel-bridal24",
-      "blocks": {
-        "image_gePkT4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/clip_ins_for_bundles_image.webp",
-            "description": "<p>Extra Volume Clip In Extensions Bundle</p>",
-            "url": "shopify://products/extra-volume-clip-in-extensions-bundle",
-            "button_text": "View Product"
-          }
-        },
-        "image_QrbPrA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hair_shampoo_conditioner_bundle.webp",
-            "description": "<p>Double Weft Quench The Thirst Bundle</p>",
-            "url": "shopify://products/double-weft-quench-the-thirst-bundle",
-            "button_text": "View Product"
-          }
-        },
-        "image_mhF8mg": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ACCESSOries_bundle3_2.webp",
-            "description": "<p>Quench The Thirst Styling Bundle</p>",
-            "url": "shopify://products/quench-the-thirst-styling-bundle",
-            "button_text": "View Product"
-          }
-        },
-        "image_t3X8FX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ACCESSOries_bundle.webp",
-            "description": "<p>Ultimate Styling And Accessories Bundle</p>",
-            "url": "shopify://products/ultimate-styling-and-accessories-bundle",
-            "button_text": "View Product"
-          }
-        }
-      },
-      "block_order": [
-        "image_gePkT4",
-        "image_QrbPrA",
-        "image_mhF8mg",
-        "image_t3X8FX"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media screen and (max-width: 768px) {br {display: none; } .intro_container {margin-bottom: 30px; }}",
-        ".intro_container {margin-bottom: 50px;}",
-        "h2 {margin-bottom: 0;}",
-        ".intro_container {margin-top: 15px;}",
-        "p {line-height: 1.2em;}",
-        ".column p:last-of-type {text-decoration: underline; cursor: pointer; text-underline-offset: 0.3rem; font-size: 16px;}",
-        ".view-collection {margin-top: 30px;}"
-      ],
-      "settings": {
-        "max_width": "1500",
-        "bg_color": "#ffffff",
-        "display": "column",
-        "item_per_row_mobile": 2,
-        "item_per_row_tablet": 4,
-        "item_per_row_desktop": 4,
-        "circle_images": false,
-        "include-arrows": false,
-        "arrow-position-mobile": 12,
-        "arrow-position-desktop": 12,
-        "arrow-size": 12,
-        "arrow-colour": "#000000",
-        "include-dots": false,
-        "dot_icon_size": 16,
-        "dot_icon_colour": "#000000",
-        "header": "<h2>BRIDAL BUNDLES</h2>",
-        "header_color": "#4e4e4e",
-        "header_bg_color": "#ffffff",
-        "sub_header": "",
-        "sub_header_color": "#4e4e4e",
-        "have_buttons": true,
-        "buttons_color": "#4e4e4e",
-        "buttons_bg_color": "#ffffff",
-        "intro": "<p>Shop our Bridal Bundles: enjoy our exclusive combinations of luxury extensions, rejuvenating haircare and stylish accessories!</p>",
-        "show_collection": true,
-        "collection-text": "Bundles Collection",
-        "url": "shopify://collections/hair-extensions-bundle",
-        "header-mobile-font_size": 20,
-        "mobile-font_size": 14,
-        "mobile-p_top": 20,
-        "mobile-p_bottom": 20,
-        "mobile-p_right": 20,
-        "mobile-p_left": 20,
-        "header-desktop-font_size": 40,
-        "desktop-font_size": 25,
-        "desktop-p_top": 50,
-        "desktop-p_bottom": 50,
-        "desktop-p_right": 30,
-        "desktop-p_left": 30
-      }
-    },
-    "custom_banner_d9rTna": {
-      "type": "custom-banner",
-      "disabled": true,
-      "custom_css": [
-        "section {padding-top: 20px;}",
-        "@media screen and (min-width: 992px) {section {padding-top: 50px; }}"
-      ],
-      "settings": {
-        "max-width": "",
-        "bg-color": "#ffffff",
-        "url": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "bridal23_custom_text_iPzVXq": {
-      "type": "bridal23_custom-text",
-      "blocks": {
-        "intro_TQnyxB": {
-          "type": "intro",
-          "settings": {
-            "intro": "<p>1. Create a bridal hair look with or without extensions </p><p>2.  Share your post (either an image or video/reel) on Instagram</p><p>3. Follow us & tag @Cliphairlimited in your post</p><p>4. Use the hashtag #CliphairBridalAwards24 to enter for all categories except for Best Cliphair Look</p><p>5. For Best Cliphair Look use the hashtag #BestOfCliphairBridal  </p>"
-          }
-        }
-      },
-      "block_order": [
-        "intro_TQnyxB"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "a {box-shadow: none; border: 1px solid; border-radius: 30px;}",
-        "h2 {margin-bottom: 30px;}",
-        "p {line-height: 1.5em; margin-bottom: 10px;}",
-        "ul {list-style-position: inside; padding-inline-start: 10px;}",
-        "li {line-height: 1.5em; margin-bottom: 10px;}"
-      ],
-      "settings": {
-        "max-width": "1500",
-        "bg-colour": "#ffffff",
-        "mobile-p_top": 30,
-        "mobile-p_bottom": 30,
-        "mobile-p_right": 6,
-        "mobile-p_left": 6,
-        "desktop-p_top": 50,
-        "desktop-p_bottom": 50,
-        "desktop-p_right": 10,
-        "desktop-p_left": 10,
-        "title-mobile-f_size": 25,
-        "title-desktop-f_size": 40,
-        "title-color": "#4e4e4e",
-        "text-mobile-f_size": 14,
-        "text-desktop-f_size": 20,
-        "text-color": "#4e4e4e",
-        "btn-mobile-f_size": 14,
-        "btn-desktop-f_size": 20,
-        "btn-color": "#4e4e4e",
-        "btn-bg-color": "#ffffff"
-      }
-    },
-    "bridal23_custom_text_cUAYwY": {
-      "type": "bridal23_custom-text",
-      "blocks": {
-        "title_DntpYh": {
-          "type": "title",
-          "settings": {
-            "title": "<h2>Some Ground Rules</h2>"
-          }
-        },
-        "intro_pjRjBK": {
-          "type": "intro",
-          "settings": {
-            "intro": "<p>The competition will run from 1st June to 30th June 2024. Entries must be submitted before 11:59pm BST.  </p><p>All hairstyles must be created on a real person, not a training mannequin. </p><p>There is no limit on the number of entries you can submit.  </p>"
-          }
-        }
-      },
-      "block_order": [
-        "title_DntpYh",
-        "intro_pjRjBK"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "section {background: rgba(208, 184, 164, 0.2) !important;}",
-        "a {box-shadow: none; border: 1px solid; border-radius: 30px;}",
-        "h2 {margin-bottom: 30px; text-transform: uppercase;}",
-        "p {line-height: 1.5em; margin-bottom: 10px;}",
-        "ul {list-style-position: inside; padding-inline-start: 10px;}",
-        "li {line-height: 1.5em; margin-bottom: 10px;}"
-      ],
-      "settings": {
-        "max-width": "1500",
-        "bg-colour": "#ffffff",
-        "mobile-p_top": 20,
-        "mobile-p_bottom": 30,
-        "mobile-p_right": 10,
-        "mobile-p_left": 10,
-        "desktop-p_top": 40,
-        "desktop-p_bottom": 50,
-        "desktop-p_right": 10,
-        "desktop-p_left": 10,
-        "title-mobile-f_size": 25,
-        "title-desktop-f_size": 30,
-        "title-color": "#4e4e4e",
-        "text-mobile-f_size": 14,
-        "text-desktop-f_size": 20,
-        "text-color": "#4e4e4e",
-        "btn-mobile-f_size": 12,
-        "btn-desktop-f_size": 12,
-        "btn-color": "#000000",
-        "btn-bg-color": "#ffffff"
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2689": {
@@ -1524,6 +1119,7 @@
         "item_nTxwVY40",
         "item_nTxwVY41"
       ],
+      "disabled": true,
       "custom_css": [
         ".section_header {margin-bottom: 5px;}",
         ".section_intro {margin-bottom: 30px;}",
@@ -1552,10 +1148,10 @@
         "desktop-p_left": 6,
         "mobile-header-font_size": 20,
         "desktop-header-font_size": 40,
-        "header_color": "#4e4e4e",
+        "header_color": "#000000",
         "mobile-text-font_size": 14,
         "desktop-text-font_size": 25,
-        "text_color": "#4e4e4e",
+        "text_color": "#000000",
         "include-button": false,
         "button-text": "<p>Shop</p>",
         "mobile-button-font_size": 12,
@@ -1575,6 +1171,389 @@
         "tablet-arrow": 40,
         "desktop-arrow": 45,
         "arrow_color": "#ffffff"
+      }
+    },
+    "rich-text-insta": {
+      "type": "rich-text-sales",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>OUR BRIDES ON INSTA</h2>",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tag us @cliphairlimited and show us your bridal look</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
+        ".rich-text__heading > * > em {font-size: 1.7em;}",
+        "p {line-height: 1.2em;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
+      "type": "image-list-with-product-link",
+      "blocks": {
+        "item_MVMXD3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-2.webp",
+            "text_label": "@brides_by_ayelet",
+            "product": "darkest-brown-2-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-1.webp",
+            "text_label": "@staciegoodwinbridalhair",
+            "product": "blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g",
+            "marker_vertical": 60,
+            "marker_horizontal": 70
+          }
+        },
+        "item_nTxwVY3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-2.webp",
+            "text_label": "@k_mua_oxford",
+            "product": "seamless-clip-in-hair-extensions-double-drawn-light-auburn",
+            "marker_vertical": 75,
+            "marker_horizontal": 70
+          }
+        },
+        "item_nTxwVY4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-1.webp",
+            "text_label": "@k_mua_oxford",
+            "product": "seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix",
+            "marker_vertical": 20,
+            "marker_horizontal": 70
+          }
+        },
+        "item_nTxwVY5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-4.webp",
+            "text_label": "@blowdryskent",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-2.webp",
+            "text_label": "@gabygoldringhairstylist",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-2.webp",
+            "text_label": "@botiashairandmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-1.webp",
+            "text_label": "@brides_by_ayelet",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-6.webp",
+            "text_label": "@botiashairandmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-4.webp",
+            "text_label": "@hair.so.boho",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY11": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-1.webp",
+            "text_label": "@evaschulze_hairandmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-3.webp",
+            "text_label": "@haircreationsbycolette",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY13": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-5.webp",
+            "text_label": "@hair.so.boho",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY14": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-4.webp",
+            "text_label": "@suzannedusekmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY15": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-10.webp",
+            "text_label": "@gabygoldringhairstylist",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY16": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-17.webp",
+            "text_label": "@lily.e.wilks",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY17": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-updo-6.webp",
+            "text_label": "@bridalandbeauty_byrebeccajayne",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY18": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-5.webp",
+            "text_label": "@bridesmadeartistry",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY19": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-9.webp",
+            "text_label": "@emmalouisebridalhair",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY20": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-11.webp",
+            "text_label": "@portraitsbridal",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY21": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-3.webp",
+            "text_label": "@botiashairandmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY22": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-3.webp",
+            "text_label": "@brides_by_ayelet",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY23": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-8.webp",
+            "text_label": "@cj_beauty_and_co",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY24": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-13.webp",
+            "text_label": "@evaschulze_hairandmakeup",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY25": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-13.webp",
+            "text_label": "@charlotteheather_bridalhair",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY26": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-waves-14.webp",
+            "text_label": "@portraitsbridal",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-huhd-16.webp",
+            "text_label": "@hairbylouisekitching",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY28": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-5.webp",
+            "text_label": "@occasionhairbymegan",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        },
+        "item_nTxwVY29": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/instagram-section-all-6.webp",
+            "text_label": "@madeforyouroccasion",
+            "product": "",
+            "marker_vertical": 50,
+            "marker_horizontal": 50
+          }
+        }
+      },
+      "block_order": [
+        "item_MVMXD3",
+        "item_nTxwVY",
+        "item_nTxwVY3",
+        "item_nTxwVY4",
+        "item_nTxwVY5",
+        "item_nTxwVY6",
+        "item_nTxwVY7",
+        "item_nTxwVY8",
+        "item_nTxwVY9",
+        "item_nTxwVY10",
+        "item_nTxwVY11",
+        "item_nTxwVY12",
+        "item_nTxwVY13",
+        "item_nTxwVY14",
+        "item_nTxwVY15",
+        "item_nTxwVY16",
+        "item_nTxwVY17",
+        "item_nTxwVY18",
+        "item_nTxwVY19",
+        "item_nTxwVY20",
+        "item_nTxwVY21",
+        "item_nTxwVY22",
+        "item_nTxwVY23",
+        "item_nTxwVY24",
+        "item_nTxwVY25",
+        "item_nTxwVY26",
+        "item_nTxwVY27",
+        "item_nTxwVY28",
+        "item_nTxwVY29"
+      ],
+      "custom_css": [
+        ".images-list {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px; --grid-mobile-vertical-spacing: 5px; --grid-desktop-vertical-spacing: 5px; margin-top: 0;}",
+        ".images-list__item {min-width: unset;}",
+        ".text-container p {margin: 0; font-size: 1rem; text-align: left;}",
+        "@media screen and (max-width: 1399px) {.images-list-wrapper {padding: 0 !important; }}",
+        ".images-list__item img {aspect-ratio: 1/1;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "e2f1cba5-450b-4f18-b7f7-68b2979b08bd": {
@@ -1634,7 +1613,7 @@
       "settings": {
         "section_title": "<h2>Bridal Awards 2025: <br/>Your Questions Answered</h2>",
         "intro": "",
-        "text_color": "#4e4e4e",
+        "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1500",
         "is_faq": true,
@@ -1651,46 +1630,6 @@
         "desktop-p_right": 10,
         "desktop-p_left": 10
       }
-    },
-    "c40d35d5-1ed0-4861-90e6-3cbeff9d1e0c": {
-      "type": "article-trending-tag-bridal23",
-      "disabled": true,
-      "settings": {
-        "header": "THE CLIPHAIR’S BRIDAL DIGEST",
-        "intro": "",
-        "tag": "bridal-blogs",
-        "header_colour": "#000000",
-        "text_colour": "#000000",
-        "bg_colour": "#ffffff",
-        "max-width": "1440",
-        "header-mobile-font-size": 16,
-        "text-mobile-font-size": 12,
-        "arrow-mobile-size": 40,
-        "mobile-top-padding": 20,
-        "mobile-bottom-padding": 20,
-        "mobile-right-padding": 10,
-        "mobile-left-padding": 10,
-        "header-desktop-font-size": 22,
-        "text-desktop-font-size": 20,
-        "arrow-desktop-size": 50,
-        "desktop-top-padding": 30,
-        "desktop-bottom-padding": 30,
-        "desktop-right-padding": 16,
-        "desktop-left-padding": 16,
-        "display-mobile": 2,
-        "display-tablet": 3,
-        "display-desktop": 3,
-        "enable_arrows": true,
-        "colour-arrow": "#ffffff",
-        "mobile-arrow": 35,
-        "tablet-arrow": 35,
-        "desktop-arrow": 40,
-        "include-btn": true,
-        "btn-text": "MORE BLOGS",
-        "btn-url": "https://www.cliphair.co.uk/blogs/hair-blog/tagged/bridal-blogs",
-        "btn-color": "#000000",
-        "btn-bg-color": "#edeae7"
-      }
     }
   },
   "order": [
@@ -1700,20 +1639,15 @@
     "custom_banner_qhrEjP",
     "57c89bc1-e173-4782-bfe1-7229f34f91ab",
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab26",
+    "rich_text_RyBGKD",
     "break_line_CB4w6g",
+    "bridal_dropdown_DCMaTp",
+    "break_line_tr4VKD",
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2690",
     "video_carrousel_bridal24_jtMTeL",
-    "bridal23_custom_text_Ga7hqm",
-    "break_line_tr4VKD",
-    "bridal_dropdown_DCMaTp",
-    "break_line_YidFKe",
-    "1664746053df8a22c8",
-    "column_carrousel_cHtXiR",
-    "custom_banner_d9rTna",
-    "bridal23_custom_text_iPzVXq",
-    "bridal23_custom_text_cUAYwY",
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2689",
-    "e2f1cba5-450b-4f18-b7f7-68b2979b08bd",
-    "c40d35d5-1ed0-4861-90e6-3cbeff9d1e0c"
+    "rich-text-insta",
+    "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691",
+    "e2f1cba5-450b-4f18-b7f7-68b2979b08bd"
   ]
 }
