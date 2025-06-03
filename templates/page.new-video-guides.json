@@ -84,6 +84,42 @@
     "tutorials_pDW6YK": {
       "type": "tutorials",
       "blocks": {
+        "video_UReXF7": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/double-weft.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/double-weft-thumbnail.webp",
+            "description": "",
+            "title": "HOW TO APPLY THE DOUBLE WEFT ",
+            "button_label": "Double Weft - View Collection",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
+          }
+        },
+        "video_tycK3b": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/seamless.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/seamless-thumbnail.webp",
+            "description": "",
+            "title": "HOW TO APPLY SEAMLESS CLIP INS",
+            "button_label": "Seamless - View Collection",
+            "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
+          }
+        },
+        "video_nzpih8": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/quad-weft.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/quad-weft-thumbnail.webp",
+            "description": "",
+            "title": "HOW TO APPLY THE QUAD WEFT VOLUMISER",
+            "button_label": "Quad Weft - View Collection",
+            "link": "shopify://collections/quad-weft-hair-extensions"
+          }
+        },
         "video_eVVtAL": {
           "type": "video",
           "settings": {
@@ -601,42 +637,12 @@
             "button_label": "Ponytail - View Collection",
             "link": "shopify://collections/clip-in-ponytail-extensions"
           }
-        },
-        "video_YkW7ke": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=nrZTPJ3qGQo",
-            "cover_image": "shopify://shop_images/TRANSFORMATIONS_4.png",
-            "description": "SLEEK STRAIGHT PONY",
-            "title": "SLEEK STRAIGHT PONY",
-            "button_label": "Ponytail - View Collection",
-            "link": "shopify://collections/clip-in-ponytail-extensions"
-          }
-        },
-        "video_M4JQB3": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=yx6MV-t0Uag",
-            "cover_image": "shopify://shop_images/TRANSFORMATIONS_3.png",
-            "description": "DYSON AIR WRAP",
-            "title": "DYSON AIR WRAP",
-            "button_label": "Ultra-Volume - View Collection",
-            "link": "shopify://collections/ultra-clip-in-hair-extensions"
-          }
-        },
-        "video_CbGaAQ": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=Re-qNFGFg-0",
-            "cover_image": "shopify://shop_images/TRANSFORMATIONS_1.png",
-            "description": "SLEEK PONYTAIL",
-            "title": "SLEEK PONYTAIL",
-            "button_label": "Ponytail - View Collection",
-            "link": "shopify://collections/clip-in-ponytail-extensions"
-          }
         }
       },
       "block_order": [
+        "video_UReXF7",
+        "video_tycK3b",
+        "video_nzpih8",
         "video_eVVtAL",
         "video_eRmDNf",
         "video_QNyMmD",
@@ -683,10 +689,7 @@
         "video_iUbdYV",
         "video_JhQwgb",
         "video_LLXyb8",
-        "video_phGQrG",
-        "video_YkW7ke",
-        "video_M4JQB3",
-        "video_CbGaAQ"
+        "video_phGQrG"
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: white;}"
