@@ -692,7 +692,8 @@
         "video_phGQrG"
       ],
       "custom_css": [
-        ".deferred-media__poster-button {color: white;}"
+        ".deferred-media__poster-button {color: white;}",
+        "li:nth-child(-n+3) img{object-position:top;}"
       ],
       "settings": {
         "type": "apply-style",
