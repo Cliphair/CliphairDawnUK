@@ -896,8 +896,8 @@
       "settings": {
         "max-width": "",
         "bg-color": "#ffffff",
-        "desktop-image": "shopify://shop_images/bridal-awards-2025.jpg",
-        "mobile-image": "shopify://shop_images/bridal-awards-2025.webp",
+        "desktop-image": "shopify://shop_images/bridal-awards-desktop-2025.jpg",
+        "mobile-image": "shopify://shop_images/bridal-awards-mobile-2025.jpg",
         "url": "shopify://pages/hairstylist-award",
         "padding_top": 0,
         "padding_bottom": 0
