@@ -110,7 +110,7 @@
           "settings": {
             "heading": "Will I Get Charged For Returning An Item?",
             "icon": "none",
-            "row_content": "<p>No, as long as you’re a UK-based customer, we’ll take care of any return charges.</p><p>If you’re ordering from the United States, check our US website for returns and exchanges!</p><p>For any other international buyers, unfortunately at the time being we are unable to cover the return cost, therefore you will be charged for return shipping.</p>",
+            "row_content": "<p>No, as long as you’re a UK-based customer, we’ll take care of any return charges.</p><p>If you’re ordering from the United States, check our US website for returns and exchanges!</p>",
             "page": ""
           }
         },
