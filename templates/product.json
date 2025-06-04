@@ -197,7 +197,8 @@
       "type": "video-list-metafields",
       "custom_css": [
         ".deferred-media__poster-button {color: white;}",
-        ".video-section__poster img {object-position: top;}"
+        ".video-section__poster img {object-position: top;}",
+        ".videos-list__item{flex-grow:0;}"
       ],
       "settings": {
         "title": "SEE IT IN REAL LIFE",
