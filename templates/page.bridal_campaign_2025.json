@@ -875,7 +875,42 @@
     },
     "rich-text-empty": {
       "type": "rich-text-sales",
+      "blocks": {
+        "heading_krUHVH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Share Your Bridal Hair Moment For A Special Discount</h2>",
+            "heading_size": "h2"
+          }
+        },
+        "text_bkExxV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’d love to see how Cliphair helped you shine on your big day! Share your bridal hair experience with a photo and be featured in our gallery of real brides as well as receiving a special discount code as a thankyou from us.</p>",
+            "read-more_text": ""
+          }
+        },
+        "button_QnVrac": {
+          "type": "button",
+          "settings": {
+            "button_label": "Leave Your Bridal Review Here",
+            "button_link": "shopify://pages/share-your-bridal-hair-moment",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_krUHVH",
+        "text_bkExxV",
+        "button_QnVrac"
+      ],
       "custom_css": [
+        ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
+        ".rich-text__heading > * > em {font-size: 1, 7em;}",
+        "p {line-height: 1.2em; margin-bottom: 3rem;}",
         ".gradient {background: transparent;}",
         ".isolate {background: fixed top/contain repeat url(\"https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Group_15340_2_1.webp?v=1746135286\");}"
       ],
@@ -884,8 +919,8 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 80,
-        "padding_bottom": 0
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "custom_banner_d9rTna": {
