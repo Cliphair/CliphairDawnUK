@@ -470,7 +470,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Seamless_Must_Have.webp",
-            "text_label": "<h4>Seamless</h4>",
+            "text_label": "<h3>Seamless</h3>",
             "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
         },
@@ -478,7 +478,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Double_Weft_Must_Have.webp",
-            "text_label": "<h4>Double Weft</h4>",
+            "text_label": "<h3>Double Weft</h3>",
             "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
         },
@@ -486,7 +486,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ultra_Volume_Must_Have.webp",
-            "text_label": "<h4>Ultra Volume</h4>",
+            "text_label": "<h3>Ultra Volume</h3>",
             "link": "shopify://collections/ultra-clip-in-hair-extensions"
           }
         },
@@ -494,7 +494,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Classic_Must_Have.webp",
-            "text_label": "<h4>Classic</h4>",
+            "text_label": "<h3>Classic</h3>",
             "link": "shopify://collections/full-head-clip-in-hair-extensions"
           }
         },
@@ -502,7 +502,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Quad_Weft_Must_Have.webp",
-            "text_label": "<h4>Quad Weft</h4>",
+            "text_label": "<h3>Quad Weft</h3>",
             "link": "shopify://collections/quad-weft-hair-extensions"
           }
         },
@@ -510,7 +510,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Top_Up_Must_Have.webp",
-            "text_label": "<h4>Top Up</h4>",
+            "text_label": "<h3>Top Up</h3>",
             "link": "shopify://collections/one-piece-top-up-hair-extensions"
           }
         },
@@ -518,7 +518,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Curly_Must_Have.webp",
-            "text_label": "<h4>Curly</h4>",
+            "text_label": "<h3>Curly</h3>",
             "link": "shopify://collections/curly-clip-in-hair-extensions"
           }
         }
