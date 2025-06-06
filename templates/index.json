@@ -37,8 +37,8 @@
         "slide_cnhnUM": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/bridal-campaign-2025-main-desktop-banner.webp",
-            "image_desktop": "shopify://shop_images/bridal-campaign-2025-main-mobile-banner.webp",
+            "image": "shopify://shop_images/bridal-high-res-test-mobile.jpg",
+            "image_desktop": "shopify://shop_images/bridal-high-res-test.jpg",
             "image_url": "shopify://pages/cliphair-bridal-hair-extensions",
             "heading": "",
             "heading_size": "h2",
@@ -57,8 +57,8 @@
         "slide_nnGry6": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/2025-homepage-banner-mobile.jpg",
-            "image_desktop": "shopify://shop_images/2025-homepage-banner-desktop.jpg",
+            "image": "shopify://shop_images/high-res-image-test-mobile.jpg",
+            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
             "image_url": "shopify://pages/hair-extensions-by-colour",
             "heading": "",
             "heading_size": "h2",
