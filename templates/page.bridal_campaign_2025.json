@@ -72,14 +72,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>The Bridal Shop</h2>",
+            "heading": "<h2>The Bridal Hair Extensions Shop</h2>",
             "heading_size": "h2"
           }
         },
         "richtext": {
           "type": "text",
           "settings": {
-            "text": "<p>Your dream day deserves dream hair,<br/>say <em>'I Do'</em> to flawless extensions!</p>",
+            "text": "<p>Your dream day deserves dream hair,<br/>say <em>'I Do'</em> to flawless wedding day hair extensions!</p>",
             "read-more_text": ""
           }
         }
@@ -92,7 +92,8 @@
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         "p {line-height: 1.5em;}",
         "p em {font-family: \"Pinyon Script\", cursive; font-size: 2em; vertical-align: sub;}",
-        ".gradient {background: rgba(229, 228, 241, 0.4);}"
+        ".gradient {background: rgba(229, 228, 241, 0.4);}",
+        "@media screen and (max-width: 78px) {p br {display: none; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
