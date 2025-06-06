@@ -193,7 +193,7 @@
         "text_tJLDJp": {
           "type": "text",
           "settings": {
-            "text": "<ul><li>The competition will run from <strong>June 1st 2025 - June 30th 2025</strong>. Entries must be submitted before 11:59pm BST June 31st</li><li>All hairstyles must be created on a real person, not a training mannequin.</li><li>Please ensure all entries uploaded are dated from June 1st 2025 onwards. Any entries uploaded before this will unfortunately not be considered.</li><li>Before you upload your entry, please state what category your entry applies to in the caption of your post.</li><li>There is no limit on the number of entries you can submit.</li></ul>",
+            "text": "<ul><li>The competition will run from <strong>June 1st 2025 - June 30th 2025</strong>. Entries must be submitted before 11:59pm BST June 30th</li><li>All hairstyles must be created on a real person, not a training mannequin.</li><li>Please ensure all entries uploaded are dated from June 1st 2025 onwards. Any entries uploaded before this will unfortunately not be considered.</li><li>Before you upload your entry, please state what category your entry applies to in the caption of your post.</li><li>There is no limit on the number of entries you can submit.</li></ul>",
             "read-more_text": ""
           }
         },
@@ -256,7 +256,7 @@
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Bridal Look</strong></h3>",
-            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><strong><br/>Judge: TBC</strong></p>"
+            "body": "<p>Any bridal hair creation featured on a model/bride</p><p><strong>Prize:</strong></p><ul><li>£500 cash prize</li><li>Ultimate Hair Kit (bundle worth £500)</li><li>A dedicated blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><strong><br/>Judge: </strong>Kasia Fortuna</p>"
           }
         },
         "item_gFqRVQ": {
@@ -270,49 +270,49 @@
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Cliphair Look - Judges</strong></h3>",
-            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge  </li></ul><p><strong><br/>Judge: </strong>TBC</p>"
+            "body": "<p>The best bridal look using Cliphair extensions selected by our judges. </p><p><strong>Prize:</strong> </p><ul><li>£300 cash prize </li><li>5000 Loyalty Points  </li><li>Ultimate Hair Kit (bundle worth £250) </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge  </li></ul><p><strong><br/>Judge: </strong>Zoe Webbe</p>"
           }
         },
         "item_nVwEew": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Hair Down</strong></h3>",
-            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels </li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Boe Wright</p>"
+            "body": "<p>This category is for any bridal hair down styles. </p><p><strong>Prize:</strong> </p><ul><li>Gift card £150 </li><li>A mention in our winners' blog on our website  </li><li>Featured on our social media channels </li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Stacie Goodwin</p>"
           }
         },
         "item_eH49hy": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Hair Up </strong></h3>",
-            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+            "body": "<p>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</p><p><strong>Prize: </strong></p><ul><li>Gift card £150</li><li>A mention in our winners' blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Hannah Taylor</p>"
           }
         },
         "item_LcBBM4": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Half Up Half Down </strong></h3>",
-            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+            "body": "<p>This category is for any bridal half up half down styles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Olga Markuse</p>"
           }
         },
         "item_LqwfPT": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Braid</strong></h3>",
-            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+            "body": "<p>This category is for any braided bridal hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Liz Cooper</p>"
           }
         },
         "item_8Qkx7d": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best Ponytail</strong></h3>",
-            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+            "body": "<p>This category is for any ponytail hairstyles.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Claire Hartley</p>"
           }
         },
         "item_aWKpPm": {
           "type": "item",
           "settings": {
             "title": "<h3><strong>Best International Look</strong></h3>",
-            "body": "<p>This category is for any hairstyle.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> TBC</p>"
+            "body": "<p>This category is for any hairstyle.</p><p><strong>Prize:</strong></p><ul><li>Gift card £150</li><li>A mention in our winners’ blog on our website</li><li>Featured on our social media channels</li><li>Cliphair Award Certificate & Digital Badge </li></ul><p><br/><strong>Judge:</strong> Ulyana Aster</p>"
           }
         }
       },
