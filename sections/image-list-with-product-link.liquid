@@ -147,9 +147,9 @@
                     class="no-js"
                   {% endif %}
                 >
-                  {%- unless block.settings.product != blank -%}
+                  {% if block.settings.product != blank %}
                     <a href="{{ block.settings.product.url }}" title="{{ block.settings.product.url }}">
-                  {%- endunless -%}
+                  {%- endif -%}
                   {%- if block.settings.image != blank and block.settings.image.src != blank -%}
                     <img
                       srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}"
@@ -163,9 +163,9 @@
                       <p>{{ block.settings.text_label }}</p>
                     </div>
                   {%- endif -%}
-                  {%- unless block.settings.product != blank -%}
+                  {% if block.settings.product != blank %}
                     </a>
-                  {%- endunless -%}
+                  {%- endif -%}
                 </div>
               {% endif %}
             {% endfor %}
