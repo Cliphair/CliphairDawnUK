@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "b6c51df6-b6e1-4084-867c-38313ffac6d0": {
@@ -172,7 +172,7 @@
         "show_page_title": false,
         "layout": "grid",
         "show_image": true,
-        "image_height": "adapt",
+        "image_height": "medium",
         "show_date": true,
         "show_author": true,
         "color_scheme": "inverse",
