@@ -1,0 +1,20 @@
+{% comment %}
+  This section renders a single product card.
+  It expects a `handle` parameter via the URL.
+{% endcomment %}
+
+{% assign product = all_products[request.query.handle] %}
+
+{% if product %}
+  <li
+    id="Slide-recommended-products-cart-{{ request.query.index }}"
+    class="grid__item slider__slide"
+  >
+    {% render 'card-product',
+      card_product: product,
+      media_aspect_ratio: 'square',
+      show_rating: true,
+      section_id: 'recommended-products-cart'
+    %}
+  </li>
+{% endif %}
