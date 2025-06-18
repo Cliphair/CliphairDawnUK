@@ -1131,6 +1131,7 @@
         },
         "item_nTxwVY6": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/instagram-section-updo-2.webp",
             "text_label": "@gabygoldringhairstylist",
