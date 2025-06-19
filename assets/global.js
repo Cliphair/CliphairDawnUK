@@ -652,6 +652,27 @@ customElements.define('deferred-media-popup', DeferredMediaPopUp);
 class SliderComponent extends HTMLElement {
   constructor() {
     super();
+    this.initSlider();
+    // this.slider = this.querySelector('[id^="Slider-"]');
+    // this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
+    // this.enableSliderLooping = false;
+    // this.currentPageElement = this.querySelector('.slider-counter--current');
+    // this.pageTotalElement = this.querySelector('.slider-counter--total');
+    // this.prevButton = this.querySelector('button[name="previous"]');
+    // this.nextButton = this.querySelector('button[name="next"]');
+
+    // if (!this.slider || !this.nextButton) return;
+
+    // this.initPages();
+    // const resizeObserver = new ResizeObserver((entries) => this.initPages());
+    // resizeObserver.observe(this.slider);
+
+    // this.slider.addEventListener('scroll', this.update.bind(this));
+    // this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
+    // this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  initSlider() {
     this.slider = this.querySelector('[id^="Slider-"]');
     this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
     this.enableSliderLooping = false;
@@ -666,9 +687,22 @@ class SliderComponent extends HTMLElement {
     const resizeObserver = new ResizeObserver((entries) => this.initPages());
     resizeObserver.observe(this.slider);
 
+    // Remove previous listeners to avoid duplicates
+    this.slider.removeEventListener('scroll', this.updateBound);
+    this.prevButton.removeEventListener('click', this.onButtonClickBound);
+    this.nextButton.removeEventListener('click', this.onButtonClickBound);
+
+    // Bind methods so we can add and remove listeners properly
+    this.updateBound = this.update.bind(this);
+    this.onButtonClickBound = this.onButtonClick.bind(this);
+
     this.slider.addEventListener('scroll', this.update.bind(this));
     this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
     this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  resetSlider() {
+    this.initSlider();
   }
 
   initPages() {
