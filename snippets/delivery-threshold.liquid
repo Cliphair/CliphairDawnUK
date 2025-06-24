@@ -1,5 +1,5 @@
 {% liquid
-  assign max_value = 100
+  assign max_value = 30
   assign cart_value = cart.total_price | divided_by: 100.00
 
   assign delivery_name = 'Economy Delivery'
@@ -21,7 +21,7 @@
   assign remaining_value_cents = max_value | minus: cart_value | times: 100.00
 %}
 
-<div id="delivery-threshold-container" class="color-{{ color_scheme }} gradient">
+<div id="delivery-threshold-container" class="color-{{ color_scheme }} gradient quick-add-hidden">
   <div class="delivery-threshold {% if remaining_value_cents > 0 %}delivery-threshold-incomplete{% else %}delivery-threshold-complete{% endif %}">
     <label class="h5 inline-richtext delivery-threshold__label">
       {% render 'icon-accordion', icon: 'truck' %}

@@ -1,0 +1,164 @@
+<style>
+  .videos-list__item {
+    min-width: 300px;
+  }
+
+  .collection-modal-card {
+    border: 1px solid;
+    margin-top: 1rem;
+  }
+
+  .collection-modal-card .grid {
+    flex-wrap: nowrap;
+  }
+
+  .collection-modal-card__image-wrapper {
+    width: 40%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .collection-modal-card__text-wrapper {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .collection-title {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.2em;
+    margin-bottom: 1rem;
+  }
+
+  .collection-cta.button {
+    font-size: 1rem;
+    line-height: 1.2em;
+    padding: 0 1rem;
+    width: 100%;
+    min-height: 3rem;
+    box-sizing: border-box;
+    min-width: unset;
+  }
+
+  .collection-base-price {
+    margin: 0px;
+    font-size: 1.4rem;
+    line-height: 1.2em;
+    margin-top: 1rem;
+  }
+</style>
+
+<div class="collection-modal-card">
+  <div class="grid grid--gapless">
+    <div class="collection-modal-card__image-wrapper">
+      <img
+        src="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840"
+        alt="Load video: Seamless application video"
+        srcset="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=375 375w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=750 750w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1100 1100w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1500 1500w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1780 1780w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=2000 2000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3000 3000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840 3840w"
+        width="3840"
+        height="6825"
+        loading="lazy"
+        sizes="
+          (min-width: 1400px) 1300px, (min-width: 750px)
+          calc(100vw - 10rem), 100vw
+        "
+        style="width: 100%;height: 100%;aspect-ratio: 1;object-fit: cover;display: block;"
+      >
+    </div>
+    <div class="collection-modal-card__text-wrapper">
+      <p class="collection-title"><b>Seamless Clip In</b> Hair Extensions</p>
+      <modal-opener
+        data-modal="#PopupModal-{{ block.id }}"
+        {{ block.shopify_attributes }}
+      >
+        <button
+          class="collection-cta button no-js-hidden"
+          id="CollectionPopup-{{ block.id }}"
+          type="button"
+          title="Select Length & Shade"
+          aria-haspopup="dialog"
+        >
+          Select Length & Shade
+        </button>
+      </modal-opener>
+      <noscript><a href="#" class="collection-cta button js-hidden">View Collection</a></noscript>
+      <p class="collection-base-price">From £150</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-media-modal {
+    background-color: rgb(var(--color-background));
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .product-media-modal[open] {
+    visibility: visible;
+    opacity: 1;
+    z-index: 101;
+  }
+
+  .product-media-modal__dialog {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .product-media-modal__content {
+    max-height: 100vh;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .product-media-modal__content > *:not(.active),
+  .product__media-list .deferred-media {
+    display: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-media-modal__content {
+      padding-bottom: 2rem;
+    }
+
+    .product-media-modal__content > *:not(.active) {
+      display: block;
+    }
+
+    .product__modal-opener:not(.product__modal-opener--image) {
+      display: none;
+    }
+  }
+</style>
+
+<modal-dialog id="PopupModal-{{ block.id }}" class="" {{ block.shopify_attributes }}>
+  <div
+    role="dialog"
+    aria-label="####ADD SOMETHING HERE ####"
+    aria-modal="true"
+    class=""
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ block.id }}"
+      type="button"
+      class=""
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+    <div>
+      <div class="grid">
+        <div>image</div>
+        <div>Content</div>
+      </div>
+    </div>
+  </div>
+</modal-dialog>

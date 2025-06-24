@@ -28,6 +28,12 @@
           "type": "rating",
           "settings": {}
         },
+        "delivery-threshold": {
+          "type":"delivery_threshold",
+          "settings": {
+            "color_scheme": "accent-2"
+          }
+        },
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
           "type": "short-description",
           "settings": {
@@ -148,6 +154,7 @@
         "information_videos_8BXc9p",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
+        "delivery-threshold",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_MKNiNH",
         "price",

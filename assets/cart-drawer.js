@@ -24,6 +24,7 @@ class CartDrawer extends HTMLElement {
   }
 
   open(triggeredBy) {
+
     if (triggeredBy) this.setActiveElement(triggeredBy);
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
@@ -43,6 +44,10 @@ class CartDrawer extends HTMLElement {
       },
       { once: true }
     );
+
+    setTimeout(() => {
+      this.shuffleRecommendedProducts();
+    }, 500)
 
     document.body.classList.add('overflow-hidden');
   }
@@ -79,31 +84,24 @@ class CartDrawer extends HTMLElement {
       sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
     });
 
-    // setTimeout(() => {
-    //   this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
-    //   this.open();
-    // });
-
-    // Call open
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
       this.open();
-
-      // Observe recommended products and shuffle once loaded
-      this.observeRecommendedProducts();
     });
   }
 
-  shuffleRecommendedProducts() {
-    const container = this.querySelector('#Slider-recommended-products-cart');
-    const loadingSpinner = this.querySelector('#recommended-products-cart .loading-overlay');
+  shuffleRecommendedProducts(root = this) {
+    const container = root.querySelector('#Slider-recommended-products-cart');
+    if (!container || !container.children.length) return root;
+
+    const loadingSpinner = root.querySelector('#recommended-products-cart .loading-overlay');
     const parent = container.parentElement;
 
     if (loadingSpinner) loadingSpinner.classList.remove('hidden');
-    parent.classList.add('visually-hidden');
-    parent.ariaHidden = true;
-
-    if (!container || !container.children.length) return;
+    if (parent) {
+      parent.classList.add('visually-hidden');
+      parent.ariaHidden = true;
+    }
 
     // Shuffle logic
     const elements = Array.from(container.children);
@@ -112,14 +110,18 @@ class CartDrawer extends HTMLElement {
     container.innerHTML = '';
     shuffled.forEach(el => container.appendChild(el));
 
-    // Handle class changes
-    if (loadingSpinner) loadingSpinner.classList.add('hidden');
+    setTimeout(() => {
+      // Handle class changes
+      if (loadingSpinner) loadingSpinner.classList.add('hidden');
 
-    if (parent && typeof parent.resetSlider === 'function') {
-      parent.resetSlider();
-    }
-    parent.classList.remove('visually-hidden');
-    parent.ariaHidden = false;
+      if (parent && typeof parent.resetSlider === 'function') {
+        parent.resetSlider();
+      }
+      parent.classList.remove('visually-hidden');
+      parent.ariaHidden = false;
+    });
+
+    return root;
   }
 
   shuffleProducts(array) {
@@ -142,22 +144,10 @@ class CartDrawer extends HTMLElement {
     return shuffled;
   }
 
-  observeRecommendedProducts() {
-    const container = this.querySelector('#recommended-products-cart');
-    if (!container) return;
-
-    const observer = new MutationObserver((mutationsList, obs) => {
-      if (container.children.length > 0) {
-        this.shuffleRecommendedProducts();
-        obs.disconnect(); // stop watching after it’s loaded
-      }
-    });
-
-    observer.observe(container, { childList: true, subtree: true });
-  }
-
   getSectionInnerHTML(html, selector = '.shopify-section') {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+    let parsedElement = new DOMParser().parseFromString(html, 'text/html').querySelector(selector);
+
+    return parsedElement.innerHTML;
   }
 
   getSectionsToRender() {
