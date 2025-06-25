@@ -88,76 +88,179 @@
 </div>
 
 <style>
-  .product-media-modal {
-    background-color: rgb(var(--color-background));
-    height: 100%;
+  .collection-popup-modal {
+    box-sizing: border-box;
+    opacity: 0;
     position: fixed;
+    visibility: hidden;
+    z-index: -1;
+    margin: 0 auto;
     top: 0;
     left: 0;
+    overflow: auto;
     width: 100%;
-    visibility: hidden;
-    opacity: 0;
-    z-index: -1;
+    background: rgba(var(--color-foreground), 0.2);
+    height: 100%;
   }
 
-  .product-media-modal[open] {
+  .collection-popup-modal[open] {
     visibility: visible;
     opacity: 1;
     z-index: 101;
   }
 
-  .product-media-modal__dialog {
+  .collection-popup-modal__dialog {
     display: flex;
     align-items: center;
     height: 100vh;
   }
 
-  .product-media-modal__content {
-    max-height: 100vh;
-    width: 100%;
+  .collection-popup-modal__content {
+    border-radius: var(--popup-corner-radius);
+    background-color: rgb(var(--color-background));
     overflow: auto;
+    height: fit-content;
+    max-height: 80%;
+    margin: 0 auto;
+    margin-top: 0px;
+    padding:0 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 92%;
+    max-width: 768px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+    border-style: solid;
+    border-width: var(--popup-border-width);
+    box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset)
+      var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
   }
 
-  .product-media-modal__content > *:not(.active),
+  .collection-popup-modal__toggle {
+    background-color: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 50%;
+    color: rgba(var(--color-foreground), 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: sticky;
+    padding: 1.2rem;
+    z-index: 2;
+    top: 1.5rem;
+    width: 4rem;
+    margin: 0 0 0 auto;
+  }
+
+  .collection-popup-modal__toggle .icon {
+    height: auto;
+    margin: 0;
+    width: 2.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .collection-popup-modal__content {
+      width: 70%;
+    }
+  }
+
+  {% comment %} .collection-popup-modal__content > *:not(.active),
   .product__media-list .deferred-media {
     display: none;
   }
 
   @media screen and (min-width: 750px) {
-    .product-media-modal__content {
+    .collection-popup-modal__content {
       padding-bottom: 2rem;
     }
 
-    .product-media-modal__content > *:not(.active) {
+    .collection-popup-modal__content > *:not(.active) {
       display: block;
     }
 
     .product__modal-opener:not(.product__modal-opener--image) {
       display: none;
     }
-  }
+  } {% endcomment %}
 </style>
 
-<modal-dialog id="PopupModal-{{ block.id }}" class="" {{ block.shopify_attributes }}>
+<modal-dialog id="PopupModal-{{ block.id }}" class="collection-popup-modal" {{ block.shopify_attributes }}>
   <div
     role="dialog"
     aria-label="####ADD SOMETHING HERE ####"
     aria-modal="true"
-    class=""
+    class="collection-popup-modal__content"
     tabindex="-1"
   >
     <button
       id="ModalClose-{{ block.id }}"
       type="button"
-      class=""
+      class="collection-popup-modal__toggle"
       aria-label="{{ 'accessibility.close' | t }}"
     >
       {% render 'icon-close' %}
     </button>
-    <div>
+    <div class="collection-popup-modal__content-info">
       <div class="grid">
-        <div>image</div>
-        <div>Content</div>
+        <div>
+          <img
+            src="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840"
+            alt="Load video: Seamless application video"
+            srcset="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=375 375w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=750 750w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1100 1100w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1500 1500w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1780 1780w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=2000 2000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3000 3000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840 3840w"
+            width="3840"
+            height="6825"
+            loading="lazy"
+            sizes="
+              (min-width: 1400px) 1300px, (min-width: 750px)
+              calc(100vw - 10rem), 100vw
+            "
+            style="width: 100%;height: 100%;aspect-ratio: 1;object-fit: cover;display: block;"
+          >
+        </div>
+        <div class="">
+          <p class="h1">Short Head Meta Title</p>
+          <div class="content-info__options">
+            <div class="content-info__option-group">
+              <label class="h3 label"> Length </label>
+              <div class="select">
+                <select class="select__select">
+                  <option value="12">12"</option>
+                  <option value="16">16"</option>
+                  <option value="20">20"</option>
+                  <option value="20">22"</option>
+                  <option value="24">24"</option>
+                  <option value="26">26"</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div class="content-info__option-group">
+              <label class="h3 label"> Shade </label>
+              <div class="select">
+                <select class="select__select">
+                  <option value="12">Blacks</option>
+                  <option value="16">Blondes</option>
+                  <option value="20">Browns</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="content-info__ctas">
+            <a class="button">View All</a>
+            <a class="button">Colour Match</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
