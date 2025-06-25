@@ -158,6 +158,7 @@ if (!customElements.get('quiz-question')) {
       }
 
       getQuizAnswer(answerElement) {
+        console.log(answerElement)
         const answers = this.getUserAnswers();
         if (!answers) return;
 
