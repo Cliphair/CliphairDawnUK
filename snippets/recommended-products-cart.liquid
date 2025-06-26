@@ -2,85 +2,12 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
-{% assign colour_collections = 'ash-black-balayage:ash-black-balayage-hair-extensions,
-  ash-brown-9:ash-brown-hair-extensions-9,
-  autumn-spice-30b:autumn-spice-hair-extensions-30b,
-  barbie-blonde-16-60:blonde-mix-16-60-hair-extensions,
-  biscuit-blondey-18-613:brown-blonde-mix-hair-extensions-18-613,
-  biscuit-blondey-balayage:biscuit-blondey-balayage-hair-extensions,
-  bleach-blonde-613:bleach-blonde-hair-extensions-613,
-  blondeme-60-ss:blondeme-60-ss-hair-extensions,
-  blue:blue-hair-extensions,
-  bright-red:bright-red-hair-extensions,
-  butterscotch-blonde-10-16:brown-blonde-mix-hair-extensions-10-16,
-  chestnut-bronde-6-613:brown-blonde-mix-hair-extensions-6-613,
-  chestnut-bronde-balayage:chestnut-bronde-balayage-hair-extensions,
-  chestnut-honey-balayage:chestnut-honey-balayage-hair-extensions,
-  chocolate-honey-4-27:brown-blonde-mix-hair-extensions-4-27,
-  chocolate-honey-ombre-t4-27:ombre-t4-27-hair-extensions,
-  cinnamon-brownie-4-30:brown-auburn-mix-hair-extensions-4-30,
-  cinnamon-swirl-27-30:cinnamon-swirl-balayage-hair-extensions,
-  cinnamon-swirl-balayage:cinnamon-swirl-balayage-hair-extensions,
-  cookies-cream-4-613:brown-blonde-mix-hair-extensions-4-613,
-  cowgirl-copper-350-33:cowgirl-copper-350-33-hair-extensions,
-  creamy-blonde-22-613:blonde-mix-hair-extensions-22-613,
-  dark-auburn-33:dark-auburn-copper-red-hair-extensions-33,
-  dark-blonde-14:dark-blonde-hair-extensions-14,
-  dark-brown-3:dark-brown-hair-extensions-3,
-  darkest-brown-2:darkest-brown-hair-extensions-2,
-  deep-red:deep-red-hair-extensions,
-  dirty-blonde-9-613:brown-blonde-mix-hair-extensions-9-613,
-  espresso-honey-ombre-t2-27:ombre-t2-27-hair-extensions,
-  espresso-melt-2-4-6:brown-mix-hair-extensions-2-4-6,
-  espresso-melt-balayage:dark-espresso-melt-balayage-hair-extensions,
-  flaming-ginger-350:ginger-natural-red-hair-extensions-350,
-  golden-blonde-16:light-golden-blonde-hair-extensions-16,
-  goldilocks-16-613:blonde-mix-hair-extensions-16-613,
-  hazelnut-brondie-6-27:brown-ginger-blonde-mix-hair-extensions-6-27,
-  ice-blonde:ice-blonde-platinum-blonde-hair-extensions,
-  iced-cappuccino-14-22:blonde-mix-hair-extensions-14-22,
-  jet-black-1:jet-black-hair-extensions-1,
-  light-ash-blonde-22:light-ash-blonde-hair-extensions-22,
-  light-auburn-30:light-auburn-hair-extensions-30,
-  light-brown-6:light-chestnut-brown-hair-extensions-6,
-  lightest-blonde-60:lightest-blonde-hair-extensions-60,
-  lightest-brown-18:lightest-brown-hair-extensions-18,
-  mahogany-red-99j:mahogany-red-hair-extensions-99j,
-  medium-ash-brown-8:medium-ash-brown-hair-extensions-8,
-  medium-brown-4:medium-brown-hair-extensions-4,
-  mousey-brown-6b:mousey-brown-hair-extensions-6b,
-  natural-black-1b:off-natural-black-hair-extensions-1b,
-  natural-sandy-blonde-12-16-613:brown-blonde-mix-hair-extensions-12-16-613,
-  oak-brondie:oak-brondie-hair-extensions,
-  pastel-pink:pastel-pink-hair-extensions,
-  peaches-cream-27-613:blonde-mix-hair-extensions-27-613,
-  pink:pastel-pink-hair-extensions,
-  platinum-blondeme:platinum-blondeme-hair-extensions,
-  plum-cherry-red-530:plum-cherry-red-hair-extensions-530,
-  purple:purple-hair-extensions,
-  silver-black-ombre-t1b-sg:ombre-t1b-sg-hair-extensions,
-  silver-grey-sg:silver-hair-extensions-sg,
-  silver-sand-ss:sandy-blonde-hair-extensions-ss,
-  silver-shadow-balayage:silver-shadow-balayage-hair-extensions,
-  soft-bronze-balayage:soft-bronze-balayage-hair-extensions,
-  strawberry-blonde-27:strawberry-ginger-blonde-hair-extensions-27,
-  toffee-brown-5:toffee-brown-hair-extensions-5,
-  toffee-honey-ombre-t6-27:ombre-t6-27-hair-extensions,
-  turquoise:turquoise-hair-extensions'
-  | split: ','
-%}
-
 {% liquid
-  assign cart_products_shade = ''
   assign product_handles = 'quench-the-thirst-deep-moisture-shampoo,quench-the-thirst-deep-moisture-conditioner,quench-the-thirst-deep-conditioning-hair-mask,cliphair-silky-hair-spray,cliphair-heat-spray,hair-extension-hanger-and-carrier-bag,hair-extension-holder,detangling-hair-brush,wave-comb-and-pouch,pintail-comb,alligator-clips,'
   assign cart_product_handles = ''
 
   for item in cart.items
     assign product = item.product
-
-    unless product.type == 'Hair Care' or product.type == 'Accessories' or product.type == 'Gift Card'
-      assign cart_products_shade = cart_products_shade | append: product.metafields.custom.colour_name | append: ','
-    endunless
 
     if product.type == 'Tape in Hair Extensions'
       assign product_handles = product_handles | append: 'tape-in-hair-extensions-remover,spare-tape-pack-for-tape-in-extensions,'
@@ -96,35 +23,6 @@
 
     assign cart_product_handles = cart_product_handles | append: product.handle | append: ','
     assign product_handles = product_handles | remove_first: product.handle | append: ','
-  endfor
-
-  assign cart_products_shade_list = cart_products_shade | split: ','
-  for shade in cart_products_shade_list
-    assign products_added = 0
-    assign comparator = shade | strip | handle
-    for element in colour_collections
-      assign key = element | split: ':' | first | strip
-      assign value = element | split: ':' | last | strip
-
-      if key == comparator
-        assign collection_mapped = collections[value]
-        break
-      endif
-    endfor
-
-    if collection_mapped
-      for product in collection_mapped.products
-        assign product_handle = product.handle | handle
-        unless cart_product_handles contains product_handle
-          assign product_handles = product_handles | append: product_handle | append: ','
-          assign products_added = products_added | plus: 1
-        endunless
-
-        if products_added >= 2
-          break
-        endif
-      endfor
-    endif
   endfor
 
   assign recommended_products_handles_list = product_handles | replace: ',,', ',' | split: ',' | uniq
@@ -144,17 +42,36 @@
 %}
 
 <style>
-  .is-empty #recommended-products-cart {
+  .is-empty #recommended-products-cart,
+  .is-empty #recommended-products-cart-title {
     display: none;
   }
 
-  #recommended-products-cart {
-    padding: 2rem 1.5rem 0;
+  #recommended-products-cart,
+  #recommended-products-cart-title {
+    padding: 2rem 1.5rem 1.5rem;
+    z-index: 5;
   }
 
-  #recommended-products-cart .title-wrapper {
+  #recommended-products-cart {
+    padding-top: 0rem;
+  }
+
+  #recommended-products-cart-title {
+    position: sticky;
+    bottom: 0;
+  }
+
+  #recommended-products-cart-title .title-wrapper {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #recommended-products-cart-title .title-wrapper .icon {
+    height: 1rem;
   }
 
   #recommended-products-cart .grid {
@@ -162,6 +79,11 @@
     --grid-mobile-vertical-spacing: 1rem;
     --grid-desktop-horizontal-spacing: 1rem;
     --grid-desktop-vertical-spacing: 1rem;
+    margin-top: 0;
+  }
+
+  #recommended-products-cart .grid .grid__item {
+    min-width: 150px;
   }
 
   #recommended-products-cart .slider--desktop .slider__slide:first-child {
@@ -226,25 +148,39 @@
   }
 </style>
 
-<div id="recommended-products-cart" class="color-{{ color_scheme }} gradient">
+<div
+  id="recommended-products-cart-title"
+  class="color-{{ color_scheme }} gradient scroll-to-bottom"
+  onclick="scrollToBottomSmooth(this)"
+>
   <div class="title-wrapper title-wrapper--no-margin">
     <h2 class="title inline-richtext h3">
       {{ section.settings.title | default: 'You Might Also Like' }}
     </h2>
-    <div class="loading-overlay hidden">
-      <div class="loading-overlay__spinner">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          class="spinner"
-          viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-        </svg>
+    {% render 'icon-caret' %}
+  </div>
+</div>
+<div id="recommended-products-cart" class="color-{{ color_scheme }} gradient">
+  {% comment %}
+    <div class="title-wrapper title-wrapper--no-margin">
+      <h2 class="title inline-richtext h3">
+        {{ section.settings.title | default: 'You Might Also Like' }}
+      </h2>
+      <div class="loading-overlay hidden">
+        <div class="loading-overlay__spinner">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
+  {% endcomment %}
 
   <slider-component
     aria-hidden="true"
@@ -307,6 +243,26 @@
 </div>
 
 <script>
+  function scrollToBottomSmooth(element) {
+    const parent = element.parentElement;
+    const prevSibling = element.previousElementSibling;
+
+    let extraSpace = 0;
+
+    if (prevSibling) {
+      const style = getComputedStyle(prevSibling);
+      console.log('marginBottom:', style.marginBottom);
+      extraSpace = parseFloat(style.marginBottom) || 0;
+    } else {
+      console.log('No previous sibling found.');
+    }
+
+    parent.scrollTo({
+      top: parent.scrollHeight + extraSpace,
+      behavior: 'smooth',
+    });
+  }
+
   function shuffleProducts(array) {
     const shuffled = array.slice();
 
