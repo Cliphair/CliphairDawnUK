@@ -294,6 +294,11 @@
       tempDiv.innerHTML = html;
 
       const mainContent = tempDiv.querySelector('#MainContent');
+      const titles = mainContent.querySelectorAll('h2.h1');
+      titles.forEach((title) => {
+        title.classList.remove('h1')
+        title.classList.add('h3')
+      })
       if (mainContent) {
         contentContainer.innerHTML = mainContent.innerHTML;
         const quizElements = contentContainer.querySelectorAll('quiz-question');
