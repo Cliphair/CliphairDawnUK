@@ -200,6 +200,55 @@
         "padding_bottom": 52
       }
     },
+    "videos_list_with_collection_modal_WyRdAx": {
+      "type": "videos-list-with-collection-modal",
+      "blocks": {
+        "video_PzH9TV": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/quad-weft.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "product": ""
+          }
+        },
+        "video_mGVtFX": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/seamless.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_PzH9TV",
+        "video_mGVtFX"
+      ],
+      "name": "Videos list test",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "left",
+        "image_ratio": "portrait",
+        "hide_card_arrow": false,
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "visual_menu_66DUPMN": {
       "type": "visual-menu",
       "custom_css": [
@@ -1269,6 +1318,7 @@
     "maquee_bdNYHF",
     "hair_extension_comparison_table_HXEJnY",
     "colour_match_quiz_grid_r7eUg4",
+    "videos_list_with_collection_modal_WyRdAx",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
