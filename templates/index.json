@@ -179,6 +179,16 @@
         "padding_bottom": 0
       }
     },
+    "hair_extension_comparison_table_HXEJnY": {
+      "type": "hair-extension-comparison-table",
+      "name": "Comparison Table",
+      "settings": {
+        "color_scheme": "",
+        "options": "hair-extensions-features",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
     "753975ec-3602-477e-b65e-6d089a9053cb": {
       "type": "collection-carrousel",
       "blocks": {
@@ -1227,6 +1237,7 @@
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
     "visual_menu_66DUPMN",
+    "hair_extension_comparison_table_HXEJnY",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
     "collection_carrousel_fb6cDE",
