@@ -36,10 +36,19 @@
           "settings": {
             "image": "shopify://shop_images/summer-campaing-2025-landing-page-mobile-banner.jpg",
             "image_desktop": "shopify://shop_images/summer-campaing-2025-landing-page-desktop-banner.jpg",
+            "image_url": "",
             "heading": "",
+            "heading_size": "h1",
             "subheading": "",
             "button_label": "",
-            "show_text_box": false
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
@@ -47,8 +56,12 @@
         "banner"
       ],
       "settings": {
+        "layout": "full_bleed",
         "slide_height": "adapt_image",
         "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Summer Campaing 2025 Banners"
       }
@@ -77,11 +90,12 @@
       ],
       "custom_css": [
         ".rich-text__heading {margin-bottom: 2.4rem;}",
-        "@media screen and (min-width 768px) {.rich-text__heading {margin-bottom: 3rem;}}"
+        "@media screen and (min-width 768px) {.rich-text__heading {margin-bottom: 3rem; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "color_scheme": "",
         "full_width": false,
         "padding_top": 40,
         "padding_bottom": 0
@@ -93,19 +107,25 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-1.jpg"
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-1.jpg",
+            "text_label": "",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-2.jpg"
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-2.jpg",
+            "text_label": "",
+            "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-3.jpg"
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-3.jpg",
+            "text_label": "",
+            "link": ""
           }
         }
       },
@@ -116,12 +136,19 @@
       ],
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
-        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item{max-width: 350px;}}"
+        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item {max-width: 350px; }}"
       ],
       "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
         "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
+        "slider_visual": "counter",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -143,6 +170,7 @@
       ],
       "settings": {
         "description": "Bring the heat with rich, warm tones. From sunlit chestnut to molten mocha, these shades serve serious glow.",
+        "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -153,19 +181,25 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-sunset-glam-1.jpg"
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-1.jpg",
+            "text_label": "",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-sunset-glam-2.jpg"
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-2.jpg",
+            "text_label": "",
+            "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/summer-lookbook-sunset-glam-3.jpg"
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-3.jpg",
+            "text_label": "",
+            "link": ""
           }
         }
       },
@@ -176,12 +210,19 @@
       ],
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
-        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item{max-width: 350px;}}"
+        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item {max-width: 350px; }}"
       ],
       "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
         "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
+        "slider_visual": "counter",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -203,6 +244,7 @@
       ],
       "settings": {
         "description": "Become the ultimate bombshell blonde this summer with luminous locks that shimmer from sunrise to sunset.",
+        "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -210,21 +252,37 @@
     "bundles": {
       "type": "featured-collection",
       "custom_css": [
-        ".gradient > div{text-align:center;}",
-        ".card__information,.card-information{text-align:left;}",
-        ".collection__view-all > .button{min-height:unset;padding:1rem 0;margin-top:0}",
+        ".gradient > div {text-align: center;}",
+        ".card__information,.card-information {text-align: left;}",
+        ".collection__view-all > .button {min-height: unset; padding: 1rem 0; margin-top: 0;}",
         ".title {margin-bottom: 2.4rem;}",
-        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem;}}"
+        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem; }}"
       ],
       "settings": {
         "title": "<b><em>Summer</em></b> Hair Bundles",
         "heading_size": "h2",
         "description": "<p>Our Summer Bundles have everything you need for extensions that stand up to heat, humidity and holiday glam.</p>",
+        "show_description": false,
+        "description_style": "body",
         "collection": "hair-extensions-bundle",
         "products_to_show": 8,
         "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
         "enable_quick_add": false,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 52,
@@ -234,21 +292,37 @@
     "best-sellers": {
       "type": "featured-collection",
       "custom_css": [
-        ".gradient > div{text-align:center;}",
-        ".card__information,.card-information{text-align:left;}",
-        ".collection__view-all > .button{min-height:unset;padding:1rem 0;margin-top:0}",
+        ".gradient > div {text-align: center;}",
+        ".card__information,.card-information {text-align: left;}",
+        ".collection__view-all > .button {min-height: unset; padding: 1rem 0; margin-top: 0;}",
         ".title {margin-bottom: 2.4rem;}",
-        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem;}}"
+        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem; }}"
       ],
       "settings": {
         "title": "Best Sellers",
         "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "collection": "cliphair-best-sellers",
         "products_to_show": 8,
         "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "enable_desktop_slider": true,
+        "color_scheme": "",
         "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
         "enable_quick_add": false,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 0,
@@ -274,18 +348,21 @@
         "list"
       ],
       "custom_css": [
-        "h3.card__heading{color:#414141;}"
+        "h3.card__heading {color: #414141;}"
       ],
       "settings": {
         "title": "Shop By Shade",
         "heading_size": "h2",
+        "introduction": "",
         "text_allignment": "center",
         "image_ratio": "square",
         "hide_card_arrow": true,
         "columns_desktop": 6,
         "swipe_on_desktop": true,
+        "color_scheme": "",
         "columns_mobile": "3",
         "swipe_on_mobile": true,
+        "slider_visual": "counter",
         "padding_top": 52,
         "padding_bottom": 52
       }
@@ -297,9 +374,11 @@
           "type": "button",
           "settings": {
             "button_label": "Explore All",
-            "button_link": "#",
+            "button_link": "shopify://pages/hair-extensions-by-colour",
+            "button_style_secondary": false,
             "button_label_2": "Colour Match",
-            "button_link_2": "#"
+            "button_link_2": "shopify://pages/colour-matching-service",
+            "button_style_secondary_2": false
           }
         }
       },
@@ -307,12 +386,13 @@
         "buttons"
       ],
       "custom_css": [
-        ".rich-text__wrapper, .rich-text__wrapper>div{width:100%;}",
-        ".rich-text__buttons > .button{min-height:unset;padding:1rem;margin-top:0;min-width:fit-content;}"
+        ".rich-text__wrapper,.rich-text__wrapper > div {width: 100%;}",
+        ".rich-text__buttons > .button {min-height: unset; padding: 1rem; margin-top: 0; min-width: fit-content;}"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "color_scheme": "",
         "full_width": false,
         "padding_top": 0,
         "padding_bottom": 0
@@ -379,16 +459,22 @@
         "video_V9wxX3"
       ],
       "custom_css": [
-        ".deferred-media__poster-button{border-color:white}",
-        ".deferred-media__poster-button .icon-play{color:white}"
+        ".deferred-media__poster-button {border-color: white;}",
+        ".deferred-media__poster-button .icon-play {color: white;}"
       ],
       "settings": {
         "title": "<b><em>Summer</em></b> Hair Tips / Reels",
         "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
         "text_allignment": "center",
         "image_ratio": "portrait",
+        "hide_card_arrow": false,
         "columns_desktop": 5,
         "swipe_on_desktop": true,
+        "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
@@ -402,13 +488,17 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/lookbook-both-small-1.jpg"
+            "image": "shopify://shop_images/lookbook-both-small-1.jpg",
+            "text_label": "",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/lookbook-both-small-2.jpg"
+            "image": "shopify://shop_images/lookbook-both-small-2.jpg",
+            "text_label": "",
+            "link": ""
           }
         }
       },
@@ -418,8 +508,8 @@
       ],
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
-        ".images-list-wrapper  {max-width: 768px; margin: 0 auto;}",
-        "@media screen and (max-width: 749px) {.images-list-wrapper  {padding:0;}}"
+        ".images-list-wrapper {max-width: 768px; margin: 0 auto;}",
+        "@media screen and (max-width: 749px) {.images-list-wrapper {padding: 0; }}"
       ],
       "settings": {
         "title": "",
@@ -428,8 +518,10 @@
         "text_allignment": "center",
         "columns_desktop": 2,
         "swipe_on_desktop": false,
+        "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
+        "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -457,7 +549,7 @@
         "popup_pymxbP"
       ],
       "custom_css": [
-        "div.gradient > div  {max-width: 768px; margin: 0 auto;}"
+        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
       ],
       "name": "Colour Match & Quiz",
       "settings": {
@@ -486,6 +578,7 @@
             "heading": "Layan N.",
             "content": "<p>“Consistently good service and quality! I've been shopping cliphair products for a few years now, I use them personally and for actors in various film and TV productions. Great products and withstand all my diving and swimming too.”</p>",
             "customer": "Read Full Review",
+            "product": "",
             "stars": 5,
             "image": "shopify://shop_images/review2-summer-2025.jpg"
           }
@@ -496,6 +589,7 @@
             "heading": "Kirsty",
             "content": "<p>“I've been using Cliphair nano extensions for 2 years now and I absolutely love them. I've also been on holidays in the sun and water with them and they were still perfect. The lady who puts my hair in also loved the hair when she saw how good the quality it is, now she uses it on her clients also. Highly recommend this brand!”</p>",
             "customer": "Read Full Review",
+            "product": "",
             "stars": 5,
             "image": "shopify://shop_images/review3-summer-2025.jpg"
           }
@@ -517,6 +611,7 @@
             "heading": "Jackie K.",
             "content": "<p>“This is the BEST hair piece you’ll ever buy. I bought a 24” auburn copper wrap round ponytail and I absolutely love it! Excellent quality and nice and thick and not even weighty on the head. I got my hair chopped up into a bob and I kina regret it, so this is perfect while I’m growing it back. Super for every occasion, including holidays!”</p>",
             "customer": "Read Full Review",
+            "product": "",
             "stars": 5,
             "image": "shopify://shop_images/review5-summer-2025.jpg"
           }
