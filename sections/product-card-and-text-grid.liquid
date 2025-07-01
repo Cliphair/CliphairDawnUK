@@ -1,0 +1,276 @@
+<style>
+  /* GRID LAYOUT */
+  .section-product-card-text-grid .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+      'text'
+      'card'
+      'buttons';
+  }
+
+  .section-product-card-text-grid .grid .grid__item {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .section-product-card-text-grid .text-content {
+    grid-area: text;
+  }
+  .section-product-card-text-grid .card-content {
+    grid-area: card;
+  }
+  .section-product-card-text-grid .buttons-content {
+    grid-area: buttons;
+  }
+
+  /* RESPONSIVE: MOBILE */
+  @media screen and (max-width: 749px) {
+    .section-product-card-text-grid .grid {
+      gap: 1rem;
+    }
+
+    .text-content__text,
+    .buttons-content__text,
+    .button,
+    .card__text p {
+      font-size: 1.2rem;
+    }
+
+    .text-content__text {
+      text-align: center;
+    }
+
+    .card__text {
+      padding: 1rem 0.5rem;
+    }
+
+    .card__text p {
+      line-height: 1;
+    }
+
+    .card__text .button {
+      font-size: 1rem;
+    }
+  }
+
+  /* RESPONSIVE: DESKTOP */
+  @media screen and (min-width: 950px) {
+    .section-product-card-text-grid .grid {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        'card text'
+        'card buttons';
+      height: 100%;
+    }
+
+    .section-product-card-text-grid .card-content {
+      align-self: stretch;
+      height: 100%;
+    }
+
+    .section-product-card-text-grid .text-content,
+    .section-product-card-text-grid .buttons-content {
+      align-self: center;
+    }
+  }
+
+  /* TEXT CONTENT */
+  .text-content__text,
+  .buttons-content__text {
+    margin: 0;
+  }
+
+  /* BUTTONS */
+  .buttons-content__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .buttons-content__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-grow: 1;
+    min-width: fit-content;
+  }
+
+  .buttons-content__buttons .button {
+    padding: 1rem;
+    flex-grow: 1;
+    min-height: unset;
+  }
+
+  /* CARD */
+  .card-content__card {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid;
+  }
+
+  .card__image {
+    width: 40%;
+  }
+
+  .card-content__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    display: block;
+  }
+
+  .card__text {
+    width: 60%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .card__text p {
+    margin: 0;
+  }
+
+  .card__text .button {
+    padding: 1rem;
+    min-height: unset;
+  }
+</style>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient" id="{{ section.id }}">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="grid">
+      <!-- CARD -->
+      <div class="grid__item card-content">
+        {% for block in section.blocks %}
+          <div class="card-content__card">
+            <div class="card__image">
+              <img
+                srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}"
+                src="{{ block.settings.image | image_url: width: 190 }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                loading="lazy"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+              >
+            </div>
+            <div class="card__text">
+              <p>{{ block.settings.text }}</p>
+              <a class="button" href="{{ block.settings.product.url }}">Shop Now</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.description != blank %}
+        <!-- TEXT -->
+        <div class="grid__item text-content">
+          <p class="text-content__text">
+            {{ section.settings.description }}
+          </p>
+        </div>
+      {% endif %}
+
+      <!-- BUTTONS -->
+      <div class="grid__item buttons-content">
+        <p class="buttons-content__text">Help Me Choose</p>
+        <div class="buttons-content__buttons">
+          <a class="button button--secondary" href="/pages/colour-matching-service">Colour Match</a>
+          <a class="button button--secondary" href="/pages/colour-matching-service">Customer Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Images list",
+  "tag": "section",
+  "class": "section section-product-card-text-grid",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Card text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

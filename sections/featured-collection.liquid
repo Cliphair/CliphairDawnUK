@@ -15,16 +15,38 @@
 {%- endif -%}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+  /* slider buttons */
+  .section-featured-collection .slider-buttons>.slider-button {
+  	background: var(--gradient-background);
+  	border-radius: 50%;
+  	position: absolute;
+  	top: calc(50% - 22px);
+  	right: 1.5rem;
+  	border: 1px solid rgba(var(--color-foreground), .1)
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  .section-featured-collection .slider-buttons>.slider-button--prev {
+  	left: 1.5rem;
+  }
+
+  .section-featured-collection .slider-buttons>.slider-button--next {
+  	right: 1.5rem;
+  }
+
+  .section-featured-collection .slider-buttons>.slider-button .icon {
+  	height: 1.2rem;
   }
 {%- endstyle -%}
 
@@ -49,7 +71,7 @@
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
+  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %} page-width">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -122,7 +144,7 @@
         {%- endfor -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons no-js-hidden">
+        <div class="slider-buttons small-hide no-js-hidden">
           <button
             type="button"
             class="slider-button slider-button--prev"
@@ -132,7 +154,7 @@
           >
             {% render 'icon-caret' %}
           </button>
-          <div class="slider-counter caption">
+          <div class="slider-counter caption visually-hidden">
             <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -172,7 +194,7 @@
 {
   "name": "t:sections.featured-collection.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section-featured-collection",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

@@ -1,0 +1,425 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .images-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .images-container > * {
+    width: 100%;
+  }
+
+  .images-container > modal-opener > button {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<style>
+  .collection-popup-modal {
+    box-sizing: border-box;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    z-index: -1;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    background: rgba(var(--color-foreground), 0.2);
+    height: 100%;
+  }
+
+  .collection-popup-modal[open] {
+    visibility: visible;
+    opacity: 1;
+    z-index: 101;
+  }
+
+  .collection-popup-modal__dialog {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .collection-popup-modal__content {
+    border-radius: var(--popup-corner-radius);
+    background-color: rgb(var(--color-background));
+    overflow: auto;
+    height: fit-content;
+    max-height: 80%;
+    margin: 0 auto;
+    margin-top: 0px;
+    padding: 0 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 92%;
+    max-width: 950px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+    border-style: solid;
+    border-width: var(--popup-border-width);
+    box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset)
+      var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  }
+
+  .collection-popup-modal__toggle {
+    background-color: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 50%;
+    color: rgba(var(--color-foreground), 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: sticky;
+    padding: 1.2rem;
+    z-index: 2;
+    top: 1.5rem;
+    width: 4rem;
+    margin: 0 0 0 auto;
+  }
+
+  .collection-popup-modal__toggle .icon {
+    height: auto;
+    margin: 0;
+    width: 2.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .collection-popup-modal__content {
+      width: 70%;
+    }
+  }
+
+  .container {
+    margin-bottom: 40px;
+  }
+</style>
+
+<style>
+  .section-trutpilot-yotpo {
+    display: none;
+  }
+  .answers-wrapper {
+    justify-content: stretch;
+  }
+  .section-quiz-question .answer-card h3 {
+    height: 100%;
+  }
+  .quiz .answer-wrapper .media img {
+    height: auto;
+  }
+
+  .information-wrapper button {
+    color: inherit;
+  }
+</style>
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding page-width">
+    <div class="images-container">
+      {% for block in section.blocks %}
+        {% liquid
+          assign image_mobile = block.settings.image_mobile
+          assign image_desktop = block.settings.image_desktop
+        %}
+        {% case block.type %}
+          {% when 'popup' %}
+            <modal-opener
+              data-modal="#PopupModal-{{ block.id }}"
+              {{ block.shopify_attributes }}
+            >
+              <button
+                class="no-js-hidden"
+                id="CollectionPopup-{{ block.id }}"
+                type="button"
+                title="Select Length & Shade"
+                aria-haspopup="dialog"
+              >
+                <picture>
+                  <!-- Desktop version for screens >= 750px -->
+                  <source
+                    media="(min-width: 750px)"
+                    srcset="{{ image_desktop | image_url: width: 1200 }} 1200w, {{ image_desktop | image_url: width: 800 }} 800w"
+                    sizes="calc(50vw - 10rem)"
+                  >
+
+                  <!-- Mobile version for screens < 750px -->
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 400 }} 400w"
+                    sizes="calc(50vw - 3rem)"
+                  >
+
+                  <!-- Fallback image -->
+                  <img
+                    class="responsive-image"
+                    src="{{ image_mobile | image_url: width: 600 }}"
+                    alt="{{ image_mobile.alt | escape }}"
+                    loading="lazy"
+                    width="{{ image_mobile.width }}"
+                    height="{{ image_mobile.height }}"
+                  >
+                </picture>
+              </button>
+            </modal-opener>
+            <modal-dialog id="PopupModal-{{ block.id }}" class="collection-popup-modal" {{ block.shopify_attributes }}>
+              <div
+                role="dialog"
+                aria-label="####ADD SOMETHING HERE ####"
+                aria-modal="true"
+                class="collection-popup-modal__content"
+                tabindex="-1"
+              >
+                <button
+                  id="ModalClose-{{ block.id }}"
+                  type="button"
+                  class="collection-popup-modal__toggle"
+                  aria-label="{{ 'accessibility.close' | t }}"
+                >
+                  {% render 'icon-close' %}
+                </button>
+                <div class="collection-popup-modal__content-info">
+                  <div class="container"></div>
+                </div>
+              </div>
+            </modal-dialog>
+
+            <noscript
+              ><a href="{{ block.settings.url }}"
+                ><picture>
+                  <!-- Desktop version for screens >= 750px -->
+                  <source
+                    media="(min-width: 750px)"
+                    srcset="{{ image_desktop | image_url: width: 1200 }} 1200w, {{ image_desktop | image_url: width: 800 }} 800w"
+                    sizes="calc(50vw - 10rem)"
+                  >
+
+                  <!-- Mobile version for screens < 750px -->
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 400 }} 400w"
+                    sizes="calc(50vw - 3rem)"
+                  >
+
+                  <!-- Fallback image -->
+                  <img
+                    class="responsive-image"
+                    src="{{ image_mobile | image_url: width: 600 }}"
+                    alt="{{ image_mobile.alt | escape }}"
+                    loading="lazy"
+                    width="{{ image_mobile.width }}"
+                    height="{{ image_mobile.height }}"
+                  > </picture></a
+            ></noscript>
+          {% when 'link' %}
+            <a href="{{ block.settings.url }}" title="">
+              <picture>
+                <!-- Desktop version for screens >= 750px -->
+                <source
+                  media="(min-width: 750px)"
+                  srcset="{{ image_desktop | image_url: width: 1200 }} 1200w, {{ image_desktop | image_url: width: 800 }} 800w"
+                  sizes="calc(50vw - 10rem)"
+                >
+
+                <!-- Mobile version for screens < 750px -->
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 400 }} 400w"
+                  sizes="calc(50vw - 3rem)"
+                >
+
+                <!-- Fallback image -->
+                <img
+                  class="responsive-image"
+                  src="{{ image_mobile | image_url: width: 600 }}"
+                  alt="{{ image_mobile.alt | escape }}"
+                  loading="lazy"
+                  width="{{ image_mobile.width }}"
+                  height="{{ image_mobile.height }}"
+                >
+              </picture>
+            </a>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    setupModal(); // initialize on page load
+  });
+
+  async function setupModal() {
+    const contentContainer = document.querySelector('modal-dialog .container');
+
+    if (!contentContainer) {
+      console.error('Modal container not found');
+      return;
+    }
+
+    try {
+      const response = await fetch('/pages/journey');
+      const html = await response.text();
+
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+
+      const mainContent = tempDiv.querySelector('#MainContent');
+      const titles = mainContent.querySelectorAll('h2.h1');
+      titles.forEach((title) => {
+        title.classList.remove('h1');
+        title.classList.add('h3');
+      });
+      if (mainContent) {
+        contentContainer.innerHTML = mainContent.innerHTML;
+        const quizElements = contentContainer.querySelectorAll('quiz-question');
+        quizElements.forEach((el) => {
+          el.checkIfIsOnQuizPage = () => true;
+        });
+        reloadScripts(contentContainer); // optional: re-run inline scripts
+      }
+    } catch (err) {
+      contentContainer.innerHTML = '<p>Failed to load content.</p>';
+      console.error(err);
+    }
+  }
+
+  function reloadScripts(element) {
+    const scripts = element.querySelectorAll('script:not([type="application/json"])');
+    scripts.forEach((oldScript) => {
+      const newScript = document.createElement('script');
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+        newScript.async = false; // maintain execution order
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Colour Match & Quiz",
+  "tag": "section",
+  "class": "section colour-match-quiz-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "popup",
+      "name": "Popup",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Page url",
+          "info": "Page that will be used to populate the popup"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Page url",
+          "info": "Page that will be used on the anchor element"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Colour Match & Quiz",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

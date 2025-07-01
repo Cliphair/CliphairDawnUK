@@ -1,0 +1,599 @@
+{
+  "sections": {
+    "page-font": {
+      "type": "page_font_summer25",
+      "settings": {
+        "font-text-1": "inter_n4",
+        "font-btns": "inter_n4"
+      }
+    },
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "show_title": false,
+        "custom_title": "Bridal Campaign 2025",
+        "heading_size": "h3",
+        "text_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main-banner": {
+      "type": "slideshow",
+      "settings": {
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "show_text_below": false,
+        "accessibility_info": "Summer Campaing 2025 Banners"
+      },
+      "blocks": {
+        "banner": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/summer-campaing-2025-landing-page-mobile-banner.jpg",
+            "image_desktop": "shopify://shop_images/summer-campaing-2025-landing-page-desktop-banner.jpg",
+            "show_text_box": false,
+            "heading": "",
+            "subheading": "",
+            "button_label":""
+          }
+        }
+      },
+      "block_order": [
+        "banner"
+      ]
+    },
+    "rich-text-intro": {
+      "type": "rich-text-sales",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Your One Way Trip to Flawless Hair</h2>",
+            "heading_size": "h2"
+          }
+        },
+        "richtext": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get poolside and party-ready with our two signature summer looks of the season…</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "richtext"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        ".rich-text__heading {margin-bottom: 2.4rem;}",
+        "@media screen and (min-width 768px) {.rich-text__heading {margin-bottom: 3rem;}}"
+      ],
+    },
+    "lookbook-carrousel-beach-bombshell": {
+      "type": "image-list",
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top":40,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-1.jpg"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-2.jpg"
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-beach-bombshell-3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "custom_css": [
+        ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item{max-width: 350px;}}"
+      ],
+    },
+    "lookbook-card-beach-bombshell":{
+      "type": "product-card-and-text-grid",
+      "settings":{
+        "description": "Bring the heat with rich, warm tones. From sunlit chestnut to molten mocha, these shades serve serious glow.",
+        "padding_top":0,
+        "padding_bottom":0
+      },
+      "blocks":{
+        "card":{
+          "type": "card",
+          "settings": {
+            "text": "Anna is wearing 20\" Ultra Volume Clip In Extensions in shade Light Brown",
+            "image":"shopify://shop_images/6-tw_website-attachment.jpg",
+            "product": "light-chestnut-brown-6-ultra-volume-clip-in-full-head-set-240-300g"
+          }
+        }
+      },
+      "block_order":[
+        "card"
+      ]
+    },
+    "lookbook-carrousel-sunset-glam": {
+      "type": "image-list",
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top":40,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-1.jpg"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-2.jpg"
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/summer-lookbook-sunset-glam-3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "custom_css": [
+        ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item{max-width: 350px;}}"
+      ],
+    },
+    "lookbook-card-sunset-glam":{
+      "type": "product-card-and-text-grid",
+      "settings":{
+        "description": "Become the ultimate bombshell blonde this summer with luminous locks that shimmer from sunrise to sunset.",
+        "padding_top":0,
+        "padding_bottom":0
+      },
+      "blocks":{
+        "card":{
+          "type": "card",
+          "settings": {
+            "text": "Collette is wearing 24\" Remy Royale Seamless Clip Ins in shade Barbie Blonde",
+            "image":"shopify://shop_images/SeamlessExtensionClipsCloseUp-__16-60.jpg",
+            "product": "remy-royale-seamless-clip-ins-16-60"
+          }
+        }
+      },
+      "block_order":[
+        "card"
+      ]
+    },
+    "bundles": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<b><em>Summer<\/em><\/b> Hair Bundles",
+        "heading_size": "h2",
+        "description": "<p>Our Summer Bundles have everything you need for extensions that stand up to heat, humidity and holiday glam.</p>",
+        "collection": "hair-extensions-bundle",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top":52,
+        "padding_bottom": 52
+      },
+      "custom_css": [
+        ".gradient > div{text-align:center;}",
+        ".card__information,.card-information{text-align:left;}",
+        ".collection__view-all > .button{min-height:unset;padding:1rem 0;margin-top:0}",
+        ".title {margin-bottom: 2.4rem;}",
+        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem;}}"
+      ],
+    },
+    "best-sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "collection": "cliphair-best-sellers",
+        "image_ratio": "square",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top":0,
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        ".gradient > div{text-align:center;}",
+        ".card__information,.card-information{text-align:left;}",
+        ".collection__view-all > .button{min-height:unset;padding:1rem 0;margin-top:0}",
+        ".title {margin-bottom: 2.4rem;}",
+        "@media screen and (min-width 768px) {.title {margin-bottom: 3rem;}}"
+      ],
+    },
+    "shop-by-shade": {
+      "type": "collection-carrousel",
+      "settings": {
+        "title": "Shop By Shade",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "hide_card_arrow": true,
+        "columns_desktop": 6,
+        "swipe_on_desktop": true,
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      },
+      "blocks": {
+        "list": {
+          "type": "collections",
+          "settings": {
+            "label": "",
+              "collection-list": "choose-by-hair-colour",
+              "button_label": "",
+              "link": "",
+              "button_style_secondary": false,
+              "circle_images": true
+          }
+        }
+      },
+      "block_order": [
+        "list"
+      ],
+      "custom_css": [
+        "h3.card__heading{color:#414141;}"
+      ],
+    },
+    "two-buttons": {
+      "type": "rich-text-sales",
+      "blocks": {
+        "buttons": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore All",
+            "button_link": "#",
+            "button_label_2": "Colour Match",
+            "button_link_2": "#"
+          }
+        }
+      },
+      "block_order": [
+        "buttons"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        ".rich-text__wrapper, .rich-text__wrapper>div{width:100%;}",
+        ".rich-text__buttons > .button{min-height:unset;padding:1rem;margin-top:0;min-width:fit-content;}",
+      ],
+    },
+    "reels": {
+      "type": "videos-list",
+      "blocks": {
+        "2e266794-9043-4fd6-bd27-340aec4d2029": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@cherriecherry_.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "alt": "@cherriecherry_ on Tiktok",
+            "cover_image": "shopify://shop_images/video-thumbnail__cherriecherry.webp",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": "#"
+          }
+        },
+        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@alice_keay.mp4",
+            "video_url": "",
+            "alt": "@alice_keay video on TikTok",
+            "cover_image": "shopify://shop_images/video-thumbnail__alice_keay.webp",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": ""
+          }
+        },
+        "145755f4-4d91-4e80-8bb6-52a475d8285a": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@hollyjai.mp4",
+            "video_url": "",
+            "alt": "@hollyjai video on Instagram",
+            "cover_image": "shopify://shop_images/video-thumbnail__hollyjai.jpg",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": ""
+          }
+        },
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@bolu_baj.mp4",
+            "video_url": "",
+            "alt": "@bolu_baj video on Instagram",
+            "cover_image": "shopify://shop_images/video-thumbnail__bolu_baj.jpg",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": ""
+          }
+        },
+        "video_V9wxX3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/@charleighjaynehair.mp4",
+            "video_url": "",
+            "alt": "@charleighjaynehair video on Instagram",
+            "title": "",
+            "description": "",
+            "button_label": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e266794-9043-4fd6-bd27-340aec4d2029",
+        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
+        "145755f4-4d91-4e80-8bb6-52a475d8285a",
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
+        "video_V9wxX3"
+      ],
+      "settings": {
+        "title": "<b><em>Summer<\/em><\/b> Hair Tips / Reels",
+        "heading_size": "h2",
+        "text_allignment":"center",
+        "image_ratio": "portrait",
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 52,
+        "padding_bottom": 40
+      },
+      "custom_css": [
+        ".deferred-media__poster-button{border-color:white}",
+        ".deferred-media__poster-button .icon-play{color:white}"
+      ],
+    },
+    "2-col-images": {
+      "type": "image-list",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "columns_desktop": 2,
+        "swipe_on_desktop": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top":0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lookbook-both-small-1.jpg"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lookbook-both-small-2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2"
+      ],
+      "custom_css": [
+        ".images-list {--grid-mobile-horizontal-spacing: 0px; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
+        ".images-list-wrapper  {max-width: 768px; margin: 0 auto;}",
+        "@media screen and (max-width: 749px) {.images-list-wrapper  {padding:0;}}"
+      ],
+    },
+    "colour_match_quiz_grid": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_XDLgfN": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/colour-matching-service"
+          }
+        },
+        "popup_pymxbP": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image.jpg",
+            "url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "link_XDLgfN",
+        "popup_pymxbP"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      },
+      "custom_css": [
+        "div.gradient > div  {max-width: 768px; margin: 0 auto;}"
+      ],
+    },
+    "reviews": {
+      "type": "summer-reviews-2025",
+      "blocks": {
+        "2e266794-9043-4fd6-bd27-340aec4d2029": {
+          "type": "review",
+          "settings": {
+            "heading": "Mika",
+            "content": "<p>“The perfect summer blonde! I love the colour, such a bright blonde and no yellowing or brassiness. The shade match was so easy and it feels so soft!”<\/p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review1-summer-2025.jpg",
+            "product": "full-head-set-clip-in-hair-extensions-ice-blonde"
+          }
+        },
+        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
+          "type": "review",
+          "settings": {
+            "heading": "Layan N.",
+            "content": "<p>“Consistently good service and quality! I've been shopping cliphair products for a few years now, I use them personally and for actors in various film and TV productions. Great products and withstand all my diving and swimming too.”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review2-summer-2025.jpg"
+          }
+        },
+        "145755f4-4d91-4e80-8bb6-52a475d8285a": {
+          "type": "review",
+          "settings": {
+            "heading": "Kirsty",
+            "content": "<p>“I've been using Cliphair nano extensions for 2 years now and I absolutely love them. I've also been on holidays in the sun and water with them and they were still perfect. The lady who puts my hair in also loved the hair when she saw how good the quality it is, now she uses it on her clients also. Highly recommend this brand!”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review3-summer-2025.jpg"
+          }
+        },
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
+          "type": "review",
+          "settings": {
+            "heading": "Mika N.",
+            "content": "<p>“The colour match was spot-on, and the extensions felt unbelievably soft to the touch. The real test came the next day during our photoshoot by the sea. Despite the salty air and humidity, the extensions held up beautifully. After a dip in the sea, I washed them, and they remained just as soft and glowing as before. The quality of these extensions is truly remarkable.”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review4-summer-2025.jpg",
+            "product": "tape-in-remy-human-hair-extension-dark-brown-3"
+          }
+        },
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d5": {
+          "type": "review",
+          "settings": {
+            "heading": "Jackie K.",
+            "content": "<p>“This is the BEST hair piece you’ll ever buy. I bought a 24” auburn copper wrap round ponytail and I absolutely love it! Excellent quality and nice and thick and not even weighty on the head. I got my hair chopped up into a bob and I kina regret it, so this is perfect while I’m growing it back. Super for every occasion, including holidays!”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review5-summer-2025.jpg",
+            "products": "remy-royale-seamless-clip-ins-silver-sand-ss"
+          }
+        },
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d6": {
+          "type": "review",
+          "settings": {
+            "heading": "Shoana M.",
+            "content": "<p>“Lovely colour, soft and thick. I’ve always used this brand for many years now and I wouldn’t go anywhere else as I know what I’m getting and I’m never disappointed. Thick from top to bottom and look so pretty in the sun.”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review6-summer-2025.jpg",
+            "product": "20-inch-classic-ponytail-extensions"
+          }
+        },
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d7": {
+          "type": "review",
+          "settings": {
+            "heading": "Cora R.",
+            "content": "<p>“LOVE THEM! They are thick and perfectly coloured to my hair! These clips do not weigh your hair down at all. I would highly recommend these to anyone looking to add fullness to your hair in the summer. I also got their heat protection spray  which has worked wonders.”</p>",
+            "customer": "Read Full Review",
+            "stars": 5,
+            "image": "shopify://shop_images/review7-summer-2025.jpg",
+            "product": "iced-cappuccino-14-22-remy-royale-double-drawn-weave-extensions"
+          }
+        }
+      },
+      "block_order": [
+        "2e266794-9043-4fd6-bd27-340aec4d2029",
+        "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
+        "145755f4-4d91-4e80-8bb6-52a475d8285a",
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d5",
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d6",
+        "bdc998d1-815a-46f8-9f36-e62f96eb4b3d7"
+      ],
+      "custom_css": [
+        ".grid--peek.slider .grid__item:first-of-type {margin-left: 0;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image_ratio": "square",
+        "circle_images": true,
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+  },
+  "order": [
+    "page-font",
+    "page-header",
+    "main-banner",
+    "rich-text-intro",
+    "lookbook-carrousel-beach-bombshell",
+    "lookbook-card-beach-bombshell",
+    "lookbook-carrousel-sunset-glam",
+    "lookbook-card-sunset-glam",
+    "bundles",
+    "best-sellers",
+    "shop-by-shade",
+    "two-buttons",
+    "reels",
+    "2-col-images",
+    "colour_match_quiz_grid",
+    "reviews"
+  ]
+
+}
