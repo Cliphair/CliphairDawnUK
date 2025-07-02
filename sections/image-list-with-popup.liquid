@@ -156,7 +156,7 @@
                     </button>
                     <div class="collection-popup-modal__content-info">
                       <img
-                        src="{{ block.settings.popup_image | image_url: width: 190 }}"
+                        src="{{ block.settings.popup_image | image_url: width: block.settings.popup_image.width }}"
                         alt="{{ block.settings.popup_image.alt | escape }}"
                         loading="lazy"
                         width="{{ block.settings.popup_image.width }}"
