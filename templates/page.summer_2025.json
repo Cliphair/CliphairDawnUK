@@ -259,7 +259,7 @@
         "@media screen and (min-width 768px) {.title {margin-bottom: 3rem; }}"
       ],
       "settings": {
-        "title": "<b><em>Summer</em></b> Hair Bundles",
+        "title": "<em><strong>Summer</strong></em> Hair Bundles",
         "heading_size": "h2",
         "description": "<p>Our Summer Bundles have everything you need for extensions that stand up to heat, humidity and holiday glam.</p>",
         "show_description": false,
@@ -404,9 +404,9 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@cherriecherry_.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/video-thumbnail__cherriecherry.webp",
+            "video": "shopify://files/videos/reel-video-1.mp4",
+            "video_url": "",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -414,9 +414,9 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@alice_keay.mp4",
+            "video": "shopify://files/videos/reel-video-2.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__alice_keay.webp",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -424,9 +424,9 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@hollyjai.mp4",
+            "video": "shopify://files/videos/reel-video-3.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__hollyjai.jpg",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -434,9 +434,9 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@bolu_baj.mp4",
+            "video": "shopify://files/videos/reel-video-4.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__bolu_baj.jpg",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -444,7 +444,79 @@
         "video_V9wxX3": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@charleighjaynehair.mp4",
+            "video": "shopify://files/videos/reel-video-5.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX32": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-6.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX37": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-7.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX38": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-8.mov",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX39": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-9.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX310": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-10.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX311": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX312": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX313": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "",
             "title": "",
             "description": ""
@@ -456,14 +528,22 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
         "145755f4-4d91-4e80-8bb6-52a475d8285a",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
-        "video_V9wxX3"
+        "video_V9wxX3",
+        "video_V9wxX32",
+        "video_V9wxX37",
+        "video_V9wxX38",
+        "video_V9wxX39",
+        "video_V9wxX310",
+        "video_V9wxX311",
+        "video_V9wxX312",
+        "video_V9wxX313"
       ],
       "custom_css": [
         ".deferred-media__poster-button {border-color: white;}",
         ".deferred-media__poster-button .icon-play {color: white;}"
       ],
       "settings": {
-        "title": "<b><em>Summer</em></b> Hair Tips / Reels",
+        "title": "<em><strong>Summer</strong></em> Hair Tips / Reels",
         "heading_size": "h2",
         "introduction": "",
         "button_label": "",
@@ -479,7 +559,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 52,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "reels carrousel"
       }
     },
     "2-col-images": {

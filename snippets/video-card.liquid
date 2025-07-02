@@ -77,6 +77,10 @@
     class="video-section__poster media deferred-media__poster media--landscape"
     type="button"
     aria-label="{{ alt }}"
+    {% if tracking and tracking != "" %}
+      data-event-type="section_click" 
+      data-cta-label="{{ tracking }}"
+    {% endif %}
   >
     {%- if poster != null -%}
       {{
