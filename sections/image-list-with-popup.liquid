@@ -102,40 +102,22 @@
                 >
                   <button
                     class="no-js-hidden"
-                    id="CollectionPopup-{{ block.id }}"
+                    id="CollectionImagePopup-{{ block.id }}"
                     type="button"
-                    title="Select Length & Shade"
+                    title="View Image"
                     aria-haspopup="dialog"
                     {% if section.settings.trackable_name != blank %}
                       data-event-type="section_click" 
                       data-cta-label="click_journey"
                     {% endif %}
                   >
-                    <picture>
-                      <!-- Desktop version for screens >= 750px -->
-                      <source
-                        media="(min-width: 750px)"
-                        srcset="{{ image_desktop | image_url: width: 1200 }} 1200w, {{ image_desktop | image_url: width: 800 }} 800w"
-                        sizes="calc(50vw - 10rem)"
-                      >
-    
-                      <!-- Mobile version for screens < 750px -->
-                      <source
-                        media="(max-width: 749px)"
-                        srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 400 }} 400w"
-                        sizes="calc(50vw - 3rem)"
-                      >
-    
-                      <!-- Fallback image -->
-                      <img
-                        class="responsive-image"
-                        src="{{ image_mobile | image_url: width: 600 }}"
-                        alt="{{ image_mobile.alt | escape }}"
-                        loading="lazy"
-                        width="{{ image_mobile.width }}"
-                        height="{{ image_mobile.height }}"
-                      >
-                    </picture>
+                    <img
+                    srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                    src="{{ block.settings.image | image_url: width: 190 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}">
                   </button>
                 </modal-opener>
                 <modal-dialog id="PopupImageModal-{{ block.id }}" class="collection-popup-modal" {{ block.shopify_attributes }}>
