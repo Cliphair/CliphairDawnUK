@@ -572,7 +572,7 @@
       }
     },
     "2-col-images": {
-      "type": "image-list",
+      "type": "image-list-with-popup",
       "blocks": {
         "image1": {
           "type": "image",
