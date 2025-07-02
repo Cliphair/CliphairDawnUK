@@ -541,8 +541,15 @@ class ModalDialog extends HTMLElement {
         if (event.pointerType === 'mouse' && !event.target.closest('deferred-media, product-model')) this.hide();
       });
     } else {
+      const children = this.querySelector("image-popup-modal__content"); // NEED TO FIX STYLE TO PREVENT THIS ISSUE
+      
       this.addEventListener('click', (event) => {
         if (event.target === this) this.hide();
+      });
+
+      if (!children) return;
+      children.addEventListener('click', (event) => {
+        if (event.target.parent === this) this.hide();
       });
     }
   }
