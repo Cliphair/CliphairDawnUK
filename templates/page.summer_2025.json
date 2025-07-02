@@ -585,6 +585,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-2.jpg",
+            "popup_image": "shopify://shop_images/lookbook-both-big-2.jpg",
             "text_label": "",
             "link": ""
           }
