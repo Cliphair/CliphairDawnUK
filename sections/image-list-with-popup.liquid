@@ -14,6 +14,99 @@
     }
   }
 {% endstyle %}
+<style>
+  .section-images-list-with-popup modal-opener > button {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+</style>
+
+<style>
+  .section-images-list-with-popup .image-popup-modal {
+    box-sizing: border-box;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    z-index: -1;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    background: rgba(var(--color-foreground), 0.2);
+    height: 100%;
+  }
+
+  .section-images-list-with-popup .image-popup-modal[open] {
+    visibility: visible;
+    opacity: 1;
+    z-index: 101;
+  }
+
+  .section-images-list-with-popup .image-popup-modal__dialog {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .section-images-list-with-popup .image-popup-modal__content {
+    border-radius: var(--popup-corner-radius);
+    background-color: rgb(var(--color-background));
+    overflow: auto;
+    height: fit-content;
+    max-height: 80%;
+    margin: 0 auto;
+    margin-top: 0px;
+    padding: 0 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 92%;
+    max-width: 950px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+    border-style: solid;
+    border-width: var(--popup-border-width);
+    box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset)
+      var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  }
+
+  .section-images-list-with-popup .image-popup-modal__toggle {
+    background-color: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 50%;
+    color: rgba(var(--color-foreground), 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: sticky;
+    padding: 1.2rem;
+    z-index: 2;
+    top: 1.5rem;
+    width: 4rem;
+    margin: 0 0 0 auto;
+  }
+
+  .section-images-list-with-popup .image-popup-modal__toggle .icon {
+    height: auto;
+    margin: 0;
+    width: 2.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-images-list-with-popup .image-popup-modal__content {
+      width: 70%;
+    }
+  }
+
+</style>
 
 <div
   class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
@@ -120,23 +213,23 @@
                     height="{{ block.settings.image.height }}">
                   </button>
                 </modal-opener>
-                <modal-dialog id="PopupImageModal-{{ block.id }}" class="collection-popup-modal" {{ block.shopify_attributes }}>
+                <modal-dialog id="PopupImageModal-{{ block.id }}" class="image-popup-modal" {{ block.shopify_attributes }}>
                   <div
                     role="dialog"
                     aria-label=""
                     aria-modal="true"
-                    class="collection-popup-modal__content"
+                    class="image-popup-modal__content"
                     tabindex="-1"
                   >
                     <button
                       id="ModalClose-{{ block.id }}"
                       type="button"
-                      class="collection-popup-modal__toggle"
+                      class="image-popup-modal__toggle"
                       aria-label="{{ 'accessibility.close' | t }}"
                     >
                       {% render 'icon-close' %}
                     </button>
-                    <div class="collection-popup-modal__content-info">
+                    <div class="image-popup-modal__content-info">
                       <img
                         src="{{ block.settings.popup_image | image_url: width: block.settings.popup_image.width }}"
                         alt="{{ block.settings.popup_image.alt | escape }}"
@@ -240,7 +333,7 @@
 {
   "name": "Images list",
   "tag": "section",
-  "class": "section section-images-list",
+  "class": "section section-images-list-with-popup",
   "settings": [
     {
       "type": "inline_richtext",
