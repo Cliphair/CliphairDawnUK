@@ -36,7 +36,7 @@
 </style>
 
 <style>
-  .section-images-list-with-popup .image-popup-modal {
+  .image-popup-modal {
     box-sizing: border-box;
     opacity: 0;
     position: fixed;
@@ -51,19 +51,19 @@
     height: 100%;
   }
 
-  .section-images-list-with-popup .image-popup-modal[open] {
+  .image-popup-modal[open] {
     visibility: visible;
     opacity: 1;
     z-index: 101;
   }
 
-  .section-images-list-with-popup .image-popup-modal__dialog {
+  .image-popup-modal__dialog {
     display: flex;
     align-items: center;
     height: 100vh;
   }
 
-  .section-images-list-with-popup .image-popup-modal__content {
+  .image-popup-modal__content {
     border-radius: var(--popup-corner-radius);
     background-color: rgb(var(--color-background));
     overflow: auto;
@@ -87,7 +87,7 @@
       var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
   }
 
-  .section-images-list-with-popup .image-popup-modal__toggle {
+  .image-popup-modal__toggle {
     background-color: rgb(var(--color-background));
     border: 0.1rem solid rgba(var(--color-foreground), 0.1);
     border-radius: 50%;
@@ -104,14 +104,14 @@
     margin: 0 0 0 auto;
   }
 
-  .section-images-list-with-popup .image-popup-modal__toggle .icon {
+  .image-popup-modal__toggle .icon {
     height: auto;
     margin: 0;
     width: 2.2rem;
   }
 
   @media screen and (min-width: 750px) {
-    .section-images-list-with-popup .image-popup-modal__content {
+    .image-popup-modal__content {
       width: 70%;
     }
   }
