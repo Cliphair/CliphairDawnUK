@@ -86,6 +86,7 @@
     border-width: var(--popup-border-width);
     box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset)
       var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+    position:relative;
   }
 
   .image-popup-modal__toggle {
@@ -103,12 +104,28 @@
     top: 1.5rem;
     width: 4rem;
     margin: 0 0 0 auto;
+    position: absolute;
+    right: 1.2rem;
   }
 
   .image-popup-modal__toggle .icon {
     height: auto;
     margin: 0;
     width: 2.2rem;
+  }
+
+  .image-popupmodal__content-info{
+    height: 100%;
+    text-align: center;
+    padding: 5rem 0;
+  }
+
+  .image-popupmodal__content-info img{
+    height: 100%;
+    width:auto;
+    padding: 5rem 0;
+    display:block;
+    margin:0;
   }
 
 </style>
