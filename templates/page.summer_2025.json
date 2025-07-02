@@ -98,7 +98,8 @@
         "color_scheme": "",
         "full_width": false,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "lookbook-carrousel-beach-bombshell": {
@@ -150,7 +151,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "bronzed brunette lookbook"
       }
     },
     "lookbook-card-beach-bombshell": {
@@ -172,7 +174,8 @@
         "description": "Bring the heat with rich, warm tones. From sunlit chestnut to molten mocha, these shades serve serious glow.",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "bronzed brunette information"
       }
     },
     "lookbook-carrousel-sunset-glam": {
@@ -224,7 +227,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "beach blonde lookbook"
       }
     },
     "lookbook-card-sunset-glam": {
@@ -246,7 +250,8 @@
         "description": "Become the ultimate bombshell blonde this summer with luminous locks that shimmer from sunrise to sunset.",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "beach blonde information"
       }
     },
     "bundles": {
@@ -286,7 +291,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": "bundles product carrousel"
       }
     },
     "best-sellers": {
@@ -326,7 +332,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "best sellers product carrousel"
       }
     },
     "shop-by-shade": {
@@ -395,7 +402,8 @@
         "color_scheme": "",
         "full_width": false,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "explore and colour match buttons"
       }
     },
     "reels": {
@@ -604,7 +612,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "colour_match_quiz_grid": {
@@ -636,7 +645,8 @@
       "settings": {
         "color_scheme": "",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "colour match and quiz"
       }
     },
     "reviews": {
@@ -742,7 +752,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 20,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "trackable_name": "reviews carrousel"
       }
     }
   },
