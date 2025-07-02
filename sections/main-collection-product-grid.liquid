@@ -30,11 +30,11 @@
 {%- endstyle -%}
 
 {% liquid
-  assign bridal_page = pages["summer-campaign-2025"]
-  assign bridal_image = images["mini-collection-banner.jpg"]
+  assign campaign_page = pages["summer-campaign-2025"]
+  assign campaign_image = images["mini-collection-banner.jpg"]
   assign paginate_by =  section.settings.products_per_page
 
-  if bridal_image and bridal_page
+  if campaign_image and campaign_page
    assign paginate_by =  paginate_by | minus: 1
   endif
 %}
@@ -175,16 +175,21 @@
                 
                 {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
-                    class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} trackable-section"
                     {% if settings.animations_reveal_on_scroll %}
                       data-cascade
                       style="--animation-order: {{ forloop.index }};"
                     {% endif %}
+                    data-section-name="collection_mini_banner"
                   >
 
-                    {% if bridal_image and bridal_page %}
-                      <a href='{{ bridal_page.url }}' title='{{ bridal_page.title }}'>
-                        <img loading='lazy' style='width:100%; height:100%; object-fit:cover; display:block;' src='{{ bridal_image | image_url }}' width='{{ bridal_image.width }}' height='{{ bridal_image.height }}' alt='{{ bridal_image.alt }}'>
+                    {% if campaign_image and campaign_page %}
+                      <a href='{{ campaign_page.url }}' title='{{ campaign_page.title }}'
+                          data-event-type="section_click"
+                          data-section-name="collection_campaign_banner"
+                          data-cta-label="click_summer_2025_mini_banner"  
+                      >
+                        <img loading='lazy' style='width:100%; height:100%; object-fit:cover; display:block;' src='{{ campaign_image | image_url }}' width='{{ campaign_image.width }}' height='{{ campaign_image.height }}' alt='{{ campaign_image.alt }}'>
                       </a>
                     {% endif %}
                   </li>
