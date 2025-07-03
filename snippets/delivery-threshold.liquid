@@ -1,0 +1,48 @@
+{% liquid
+  assign max_value = 30
+  assign cart_value = cart.total_price | divided_by: 100.00
+
+  assign delivery_name = 'Economy Delivery'
+
+  assign settings_page = pages['global-settings']
+  if settings_page
+    assign custom_delivery_information = settings_page.metafields.global_settings.free_delivery_sale.value
+    if custom_delivery_information
+      assign start_date = custom_delivery_information.start_date | date: '%s'
+      assign end_date = custom_delivery_information.end_date | date: '%s'
+      assign current_date_int = 'now' | date: '%s'
+      if start_date <= current_date_int and end_date > current_date_int
+        assign max_value = custom_delivery_information.value
+        assign delivery_name = custom_delivery_information.delivery_method
+      endif
+    endif
+  endif
+
+  assign remaining_value_cents = max_value | minus: cart_value | times: 100.00
+%}
+
+<div id="delivery-threshold-container" class="color-{{ color_scheme }} gradient quick-add-hidden">
+  <div class="delivery-threshold {% if remaining_value_cents > 0 %}delivery-threshold-incomplete{% else %}delivery-threshold-complete{% endif %}">
+    <label class="h5 inline-richtext delivery-threshold__label">
+      {% render 'icon-accordion', icon: 'truck' %}
+      <p class="delivery-threshold__label-incomplete">
+        Spend {{ cart.currency.symbol -}}
+        <span class="delivery-threshold__label-value">{{ remaining_value_cents | money_without_currency }}</span> more
+        for Free
+        <span class="delivery-threshold__label-delivery-name">{{ delivery_name }}</span>
+      </p>
+      <p class="delivery-threshold__label-complete">
+        You qualify for Free <span class="delivery-threshold__label-delivery-name">{{ delivery_name }}</span>
+      </p>
+    </label>
+    <progress
+      class="delivery-threshold__progress-bar"
+      value="{{ cart_value }}"
+      max="{{ max_value }}"
+      aria-valuemin="0"
+      aria-valuemax="{{ max_value }}"
+      aria-valuenow="{{ cart_value }}"
+      aria-label="Progress toward free {{ delivery_name }}"
+    ></progress>
+  </div>
+</div>
