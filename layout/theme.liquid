@@ -3,7 +3,7 @@
   <head>
     <!-- Google Consent Mode V2 Consentmo -->
     {% render 'gcm-integration-script' %}
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,8 +18,8 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {% render "meta-title" %}
-    {% render "meta-description" %}
+    {% render 'meta-title' %}
+    {% render 'meta-description' %}
     {% render 'meta-tags' %}
 
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -316,12 +316,12 @@
       gtag('js', new Date());
       gtag('config', 'AW-1042639650', { ' allow_enhanced_conversions': true });
     </script>
-       
+
     <!-- Google Search Console -->
-    <meta name="google-site-verification" content="HvAqHHuAuJHeEcYJApy0_ntuJ3siwlX4pstL0cHorNc" />
-    <meta name="google-site-verification" content="JoPHbiizYu_xo-uwJW6PG-hXqbFGGkdCtN-FLT_9Tq4" />
+    <meta name="google-site-verification" content="HvAqHHuAuJHeEcYJApy0_ntuJ3siwlX4pstL0cHorNc">
+    <meta name="google-site-verification" content="JoPHbiizYu_xo-uwJW6PG-hXqbFGGkdCtN-FLT_9Tq4">
     <!-- End Google Search Console -->
-    
+
     <!-- Tradedoubler tracking code -->
     <!-- Sales Script -->
     <script language="JavaScript">
@@ -371,7 +371,7 @@
       }
     </script>
 
-    <!-- Intelligems scripts --> 
+    <!-- Intelligems scripts -->
     <script>
       window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
       window._template = {
@@ -380,8 +380,14 @@
           suffix: "{{ template.suffix }}"
       };
     </script>
-    <script type="module" blocking="render" fetchpriority="high" src="https://cdn.intelligems.io/esm/a815b85d9315/bundle.js" async></script>
-    
+    <script
+      type="module"
+      blocking="render"
+      fetchpriority="high"
+      src="https://cdn.intelligems.io/esm/a815b85d9315/bundle.js"
+      async
+    ></script>
+
     {% include 'pagefly-app-header' %}
   </head>
 
@@ -422,7 +428,7 @@
     </ul>
 
     <script src="{{ 'consent-script.js' | asset_url }}" defer="defer"></script>
-    
+
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
