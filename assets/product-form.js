@@ -93,7 +93,6 @@ if (!customElements.get('product-form')) {
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
             this.querySelector('.loading-overlay__spinner').classList.add('hidden');
             this.addToCartEvent();
-            this.updateDeliveryProgress();
           });
       }
 
@@ -111,15 +110,7 @@ if (!customElements.get('product-form')) {
           this.errorMessage.textContent = errorMessage;
         }
       }
-
-      updateDeliveryProgress() {
-        fetch('/cart.js')
-          .then(res => res.json())
-          .then(cart => {
-            updateDeliveryThreshold(cart.total_price / 100);
-          });
-      }
-
+      
       addToCartEvent() {
         this.googleAnalyticsEvent();
       }
