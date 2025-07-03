@@ -48,8 +48,7 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center",
-            "banner_id": ""
+            "text_alignment_mobile": "center"
           }
         }
       },
@@ -64,8 +63,7 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Summer Campaing 2025 Banners",
-        "trackable_name": ""
+        "accessibility_info": "Summer Campaing 2025 Banners"
       }
     },
     "rich-text-intro": {
@@ -154,7 +152,7 @@
         "slider_visual": "counter",
         "padding_top": 40,
         "padding_bottom": 40,
-        "trackable_name": "Bronzed Brunette Lookbook"
+        "trackable_name": "bronzed brunette lookbook"
       }
     },
     "lookbook-card-beach-bombshell": {
@@ -416,6 +414,7 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-1.mp4",
             "video_url": "",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -425,6 +424,7 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-2.mp4",
             "video_url": "",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -434,6 +434,7 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-3.mp4",
             "video_url": "",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -443,6 +444,7 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-4.mp4",
             "video_url": "",
+            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -565,18 +567,16 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 52,
-        "padding_bottom": 40,
-        "trackable_name": "reels carrousel"
+        "padding_bottom": 40
       }
     },
     "2-col-images": {
-      "type": "image-list-with-popup",
+      "type": "image-list",
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-1.jpg",
-            "popup_image": "shopify://shop_images/lookbook-both-big-1.jpg",
             "text_label": "",
             "link": ""
           }
@@ -585,7 +585,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-2.jpg",
-            "popup_image": "shopify://shop_images/lookbook-both-big-2.jpg",
             "text_label": "",
             "link": ""
           }
