@@ -735,8 +735,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "dots",
         "padding_top": 40,
-        "padding_bottom": 0,
-        "trackable_name": ""
+        "padding_bottom": 0
       }
     },
     "image_list_nPnYgL": {
@@ -824,6 +823,7 @@
         },
         "image_C8JtLM": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-11.webp",
             "text_label": "<p>@ekinsuofficial styled by @leahsmithhair</p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-medium-brown-4\" title=\"Medium Brown (#4) Double Wefted Full Head Clip In Hair Extensions\">20\" Medium Brown Double Weft Clip In Hair Extensions</a></p>",
@@ -976,7 +976,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "dots",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "342029b3-5620-4e2e-864b-55edf0aa9b0d": {
@@ -1200,7 +1201,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     }
   },
