@@ -15,16 +15,38 @@
 {%- endif -%}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+  /* slider buttons */
+  .section-featured-collection .slider-buttons>.slider-button {
+  	background: var(--gradient-background);
+  	border-radius: 50%;
+  	position: absolute;
+  	top: calc(50% - 22px);
+  	right: 1.5rem;
+  	border: 1px solid rgba(var(--color-foreground), .1)
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  .section-featured-collection .slider-buttons>.slider-button--prev {
+  	left: 1.5rem;
+  }
+
+  .section-featured-collection .slider-buttons>.slider-button--next {
+  	right: 1.5rem;
+  }
+
+  .section-featured-collection .slider-buttons>.slider-button .icon {
+  	height: 1.2rem;
   }
 {%- endstyle -%}
 
@@ -48,8 +70,15 @@
   endif
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
+<div class="color-{{ section.settings.color_scheme }} isolate gradient {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}>
+  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %} page-width">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -76,14 +105,19 @@
         class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
         role="list"
         aria-label="{{ 'general.slider.name' | t }}"
+        {% if section.settings.trackable_name != blank %}data-horizontal-scroll{% endif %}
       >
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}{% include 'easylockdown_filter_collection' with product %}
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
               style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+            {% if section.settings.trackable_name != blank %}
+              data-event-type="section_click" 
+              data-cta-label="click_element_{{ forloop.index }}"
             {% endif %}
           >
             {%
@@ -122,7 +156,7 @@
         {%- endfor -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons no-js-hidden">
+        <div class="slider-buttons small-hide no-js-hidden">
           <button
             type="button"
             class="slider-button slider-button--prev"
@@ -132,7 +166,7 @@
           >
             {% render 'icon-caret' %}
           </button>
-          <div class="slider-counter caption">
+          <div class="slider-counter caption visually-hidden">
             <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -157,6 +191,10 @@
           href="{{ section.settings.collection.url }}"
           class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
+          {% if section.settings.trackable_name != blank %}
+            data-event-type="section_click" 
+            data-cta-label="click_view_all"
+          {% endif %}
         >
           {{ 'sections.featured_collection.view_all' | t }}
         </a>
@@ -172,7 +210,7 @@
 {
   "name": "t:sections.featured-collection.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section-featured-collection",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -490,6 +528,15 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "presets": [

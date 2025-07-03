@@ -541,8 +541,15 @@ class ModalDialog extends HTMLElement {
         if (event.pointerType === 'mouse' && !event.target.closest('deferred-media, product-model')) this.hide();
       });
     } else {
+      const children = this.querySelector(".image-popup-modal__content-info"); // NEED TO FIX STYLE TO PREVENT THIS ISSUE
+      
       this.addEventListener('click', (event) => {
         if (event.target === this) this.hide();
+      });
+
+      if (!children) return;
+      children.addEventListener('click', (event) => {
+        if (event.target.closest("modal-dialog") === this) this.hide();
       });
     }
   }
@@ -582,7 +589,6 @@ class ModalOpener extends HTMLElement {
     if (!button) return;
     button.addEventListener('click', () => {
       const modal = document.querySelector(this.getAttribute('data-modal'));
-      console.log(modal)
       if (modal) modal.show(button);
     });
   }

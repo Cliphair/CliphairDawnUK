@@ -14,6 +14,122 @@
     }
   }
 {% endstyle %}
+<style>
+  .section-images-list-with-popup modal-opener > button {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor:pointer;
+  }
+
+  .section-images-list-with-popup .images-list__item img {
+    width: 100%;
+    display: block;
+    height:auto;
+    aspect-ratio:initial;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<style>
+  .image-popup-modal {
+    box-sizing: border-box;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    z-index: -1;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    background: rgba(var(--color-foreground), 0.2);
+    height: 100%;
+  }
+
+  .image-popup-modal[open] {
+    visibility: visible;
+    opacity: 1;
+    z-index: 101;
+  }
+
+  .image-popup-modal__dialog {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .image-popup-modal__content {
+    border-radius: var(--popup-corner-radius);
+    background-color: trasparent;
+    overflow: auto;
+    height: 100%;
+    max-height:100vh;
+    max-height: unset;
+    margin: 0 auto;
+    margin-top: 0px;
+    padding: 0 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: unset;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+    border-style: solid;
+    border-width: var(--popup-border-width);
+    box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset)
+      var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+    position:relative;
+  }
+
+  .image-popup-modal__toggle {
+    background-color: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    border-radius: 50%;
+    color: rgba(var(--color-foreground), 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: sticky;
+    padding: 1.2rem;
+    z-index: 2;
+    top: 1.5rem;
+    width: 4rem;
+    margin: 0 0 0 auto;
+    position: absolute;
+    right: 1.2rem;
+  }
+
+  .image-popup-modal__toggle .icon {
+    height: auto;
+    margin: 0;
+    width: 2.2rem;
+  }
+
+  .image-popup-modal__content-info{
+    height: 100%;
+    text-align: center;
+    padding: 5rem 0;
+  }
+
+  .image-popup-modal__content-info img{
+    height: 100%;
+    width:auto;
+    display:block;
+    margin:0 auto;
+    max-width:100%;
+    object-fit:contain;
+  }
+
+</style>
 
 <div
   class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
@@ -85,35 +201,93 @@
         -%}
 
         {%- for block in section.blocks -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="images-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}">
-            {%- endif -%}
-            {%- if block.settings.image != blank and block.settings.image.src != blank -%}
-              <img
-                srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}"
-                src="{{ block.settings.image | image_url: width: 190 }}"
-                alt="{{ block.settings.image.alt | escape }}"
-                loading="lazy"
-                width="{{ block.settings.image.width }}"
-                height="{{ block.settings.image.height }}"
-              >
-              {% if block.settings.text_label != null %}
-                <div class="text-container h5">{{ block.settings.text_label }}</div>
-              {%- endif -%}
-            {%- endif -%}
-            {%- if block.settings.link != blank -%}
-              </a>
-            {%- endif -%}
-          </li>
+          {%- if block.settings.image != blank and block.settings.image.src != blank -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="images-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% if block.settings.popup_image %}
+                <modal-opener
+                  data-modal="#PopupImageModal-{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <button
+                    class="no-js-hidden"
+                    id="ImagePopup-{{ block.id }}"
+                    type="button"
+                    title="View Image"
+                    aria-haspopup="dialog"
+                    {% if section.settings.trackable_name != blank %}
+                      data-event-type="section_click" 
+                      data-cta-label="click_open_image"
+                    {% endif %}
+                  >
+                    <img
+                    srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                    src="{{ block.settings.image | image_url: width: 190 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}">
+                  </button>
+                </modal-opener>
+                <modal-dialog id="PopupImageModal-{{ block.id }}" class="image-popup-modal" {{ block.shopify_attributes }}>
+                  <div
+                    role="dialog"
+                    aria-label=""
+                    aria-modal="true"
+                    class="image-popup-modal__content"
+                    tabindex="-1"
+                  >
+                    <button
+                      id="ModalClose-{{ block.id }}"
+                      type="button"
+                      class="image-popup-modal__toggle"
+                      aria-label="{{ 'accessibility.close' | t }}"
+                    >
+                      {% render 'icon-close' %}
+                    </button>
+                    <div class="image-popup-modal__content-info">
+                      <img
+                        src="{{ block.settings.popup_image | image_url: width: block.settings.popup_image.width }}"
+                        alt="{{ block.settings.popup_image.alt | escape }}"
+                        loading="lazy"
+                        width="{{ block.settings.popup_image.width }}"
+                        height="{{ block.settings.popup_image.height }}">
+                    </div>
+                  </div>
+                </modal-dialog>
+    
+                <noscript>
+                  <a href="{{ block.settings.image | image_url: width: block.settings.image.width }}">
+                    <img
+                    srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                    src="{{ block.settings.image | image_url: width: 190 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}">
+                  </a>
+                </noscript>
+              {% else %}
+                <img
+                  srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                  src="{{ block.settings.image | image_url: width: 190 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}">
+                {% if block.settings.text_label != null %}
+                  <div class="text-container h5">{{ block.settings.text_label }}</div>
+                {%- endif -%}
+              {% endif %}
+            </li>
+          {% endif %}
         {%- endfor -%}
       </ul>
 
@@ -182,7 +356,7 @@
 {
   "name": "Images list",
   "tag": "section",
-  "class": "section section-images-list",
+  "class": "section section-images-list-with-popup",
   "settings": [
     {
       "type": "inline_richtext",
@@ -348,6 +522,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_image",
+          "label": "Popup image"
         },
         {
           "type": "richtext",

@@ -10,6 +10,7 @@
 
 .reviews-list>.reviews-list__item {
   padding: 0 !important;
+  min-width: 130px;
 }
 
 .review-section_image>img {
@@ -36,7 +37,7 @@
 }
 
 .review-section_text:has(>*) {
-  padding: 2rem;
+  padding: 2rem 0;
   background: white;
   flex-grow: 1;
   display: flex;

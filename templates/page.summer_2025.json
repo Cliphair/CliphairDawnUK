@@ -48,7 +48,8 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "text_alignment_mobile": "center",
+            "banner_id": ""
           }
         }
       },
@@ -63,7 +64,8 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Summer Campaing 2025 Banners"
+        "accessibility_info": "Summer Campaing 2025 Banners",
+        "trackable_name": ""
       }
     },
     "rich-text-intro": {
@@ -98,7 +100,8 @@
         "color_scheme": "",
         "full_width": false,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "lookbook-carrousel-beach-bombshell": {
@@ -173,7 +176,8 @@
         "description": "Bring the heat with rich, warm tones. From sunlit chestnut to molten mocha, these shades serve serious glow.",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "bronzed brunette information"
       }
     },
     "lookbook-carrousel-sunset-glam": {
@@ -225,7 +229,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "beach blonde lookbook"
       }
     },
     "lookbook-card-sunset-glam": {
@@ -247,7 +252,8 @@
         "description": "Become the ultimate bombshell blonde this summer with luminous locks that shimmer from sunrise to sunset.",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "beach blonde information"
       }
     },
     "bundles": {
@@ -260,7 +266,7 @@
         "@media screen and (min-width 768px) {.title {margin-bottom: 3rem; }}"
       ],
       "settings": {
-        "title": "<b><em>Summer</em></b> Hair Bundles",
+        "title": "<em><strong>Summer</strong></em> Hair Bundles",
         "heading_size": "h2",
         "description": "<p>Our Summer Bundles have everything you need for extensions that stand up to heat, humidity and holiday glam.</p>",
         "show_description": false,
@@ -287,7 +293,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": "bundles product carrousel"
       }
     },
     "best-sellers": {
@@ -327,7 +334,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "best sellers product carrousel"
       }
     },
     "shop-by-shade": {
@@ -396,7 +404,8 @@
         "color_scheme": "",
         "full_width": false,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "explore and colour match buttons"
       }
     },
     "reels": {
@@ -405,9 +414,8 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@cherriecherry_.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/video-thumbnail__cherriecherry.webp",
+            "video": "shopify://files/videos/reel-video-1.mp4",
+            "video_url": "",
             "title": "",
             "description": ""
           }
@@ -415,9 +423,8 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@alice_keay.mp4",
+            "video": "shopify://files/videos/reel-video-2.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__alice_keay.webp",
             "title": "",
             "description": ""
           }
@@ -425,9 +432,8 @@
         "145755f4-4d91-4e80-8bb6-52a475d8285a": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@hollyjai.mp4",
+            "video": "shopify://files/videos/reel-video-3.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__hollyjai.jpg",
             "title": "",
             "description": ""
           }
@@ -435,9 +441,8 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@bolu_baj.mp4",
+            "video": "shopify://files/videos/reel-video-4.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/video-thumbnail__bolu_baj.jpg",
             "title": "",
             "description": ""
           }
@@ -445,7 +450,79 @@
         "video_V9wxX3": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@charleighjaynehair.mp4",
+            "video": "shopify://files/videos/reel-video-5.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX32": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-6.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX37": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-7.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX38": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-8.mov",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX39": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-9.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX310": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-10.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX311": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX312": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_V9wxX313": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "",
             "title": "",
             "description": ""
@@ -457,14 +534,22 @@
         "8f9b5f9f-b72e-48ef-be92-af04af2a64ba",
         "145755f4-4d91-4e80-8bb6-52a475d8285a",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
-        "video_V9wxX3"
+        "video_V9wxX3",
+        "video_V9wxX32",
+        "video_V9wxX37",
+        "video_V9wxX38",
+        "video_V9wxX39",
+        "video_V9wxX310",
+        "video_V9wxX311",
+        "video_V9wxX312",
+        "video_V9wxX313"
       ],
       "custom_css": [
         ".deferred-media__poster-button {border-color: white;}",
         ".deferred-media__poster-button .icon-play {color: white;}"
       ],
       "settings": {
-        "title": "<b><em>Summer</em></b> Hair Tips / Reels",
+        "title": "<em><strong>Summer</strong></em> Hair Tips / Reels",
         "heading_size": "h2",
         "introduction": "",
         "button_label": "",
@@ -480,16 +565,18 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 52,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "reels carrousel"
       }
     },
     "2-col-images": {
-      "type": "image-list",
+      "type": "image-list-with-popup",
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-1.jpg",
+            "popup_image": "shopify://shop_images/lookbook-both-big-1.jpg",
             "text_label": "",
             "link": ""
           }
@@ -498,6 +585,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-2.jpg",
+            "popup_image": "shopify://shop_images/lookbook-both-big-2.jpg",
             "text_label": "",
             "link": ""
           }
@@ -524,7 +612,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "colour_match_quiz_grid": {
@@ -556,7 +645,8 @@
       "settings": {
         "color_scheme": "",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "colour match and quiz"
       }
     },
     "reviews": {
@@ -662,7 +752,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 20,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "trackable_name": "reviews carrousel"
       }
     }
   },
