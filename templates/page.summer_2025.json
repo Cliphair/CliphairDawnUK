@@ -48,7 +48,8 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "text_alignment_mobile": "center",
+            "banner_id": ""
           }
         }
       },
@@ -63,7 +64,8 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Summer Campaing 2025 Banners"
+        "accessibility_info": "Summer Campaing 2025 Banners",
+        "trackable_name": ""
       }
     },
     "rich-text-intro": {
@@ -414,7 +416,6 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-1.mp4",
             "video_url": "",
-            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -424,7 +425,6 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-2.mp4",
             "video_url": "",
-            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -434,7 +434,6 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-3.mp4",
             "video_url": "",
-            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -444,7 +443,6 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-4.mp4",
             "video_url": "",
-            "cover_image": "",
             "title": "",
             "description": ""
           }
@@ -577,6 +575,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-1.jpg",
+            "popup_image": "shopify://shop_images/lookbook-both-big-1.jpg",
             "text_label": "",
             "link": ""
           }
@@ -585,6 +584,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lookbook-both-small-2.jpg",
+            "popup_image": "shopify://shop_images/lookbook-both-big-2.jpg",
             "text_label": "",
             "link": ""
           }
