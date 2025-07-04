@@ -183,7 +183,7 @@
         ".collection-carrousel__item {min-width: unset;}",
         ".collection-carrousel {margin-bottom: 5rem;}",
         "@media screen and (max-width: 349px) {.card__heading {font-size: 1.2rem; }}",
-        "@media screen and (max-width: 299px) {.collection-carrousel {--grid-mobile-horizontal-spacing: 1.5rem; } .button-wrapper a {max-height: unset; padding: 1rem 1.5rem; }}"
+        "@media screen and (max-width: 299px) {.collection-carrousel {--grid-mobile-horizontal-spacing: 1.5rem; } .button-wrapper a {max-height: unset; padding: 1rem 1.5rem; font-size: 1.2rem }}"
       ],
       "name": "Collection carrousel",
       "settings": {
