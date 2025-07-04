@@ -248,7 +248,8 @@
         "video_KfhrNN"
       ],
       "custom_css": [
-        "a.button {box-sizing:border-box; max-width: 100%; }",
+        "a.button {box-sizing: border-box; max-width: 100%;}",
+        ".grid__item{min-width:180px;}",
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}"
       ],
       "name": "Videos list button",
