@@ -159,45 +159,44 @@
         "padding_bottom": 20
       }
     },
-    "hair_extension_comparison_table_HXEJnY": {
-      "type": "hair-extension-comparison-table",
-      "name": "Comparison Table",
-      "settings": {
-        "color_scheme": "",
-        "options": "hair-extensions-features",
-        "padding_top": 12,
-        "padding_bottom": 12
-      }
-    },
-    "colour_match_quiz_grid_r7eUg4": {
-      "type": "colour-match-quiz-grid",
+    "collection_carrousel_QhAGdA": {
+      "type": "collection-carrousel",
       "blocks": {
-        "link_XDLgfN": {
-          "type": "link",
+        "collections_dTy7qE": {
+          "type": "collections",
           "settings": {
-            "image_mobile": "shopify://shop_images/test-image2.jpg",
-            "image_desktop": "shopify://shop_images/2025-homepage-banner-desktop.jpg",
-            "url": "shopify://pages/colour-matching-service"
-          }
-        },
-        "popup_pymxbP": {
-          "type": "popup",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image.jpg",
-            "image_desktop": "shopify://shop_images/desktop-banner-xl-compressed.jpg",
-            "url": "shopify://pages/journey"
+            "label": "",
+            "collection-list": "shop-by-shade",
+            "button_label": "Explore All",
+            "link": "shopify://pages/hair-extensions-by-colour",
+            "button_style_secondary": false,
+            "circle_images": true
           }
         }
       },
       "block_order": [
-        "link_XDLgfN",
-        "popup_pymxbP"
+        "collections_dTy7qE"
       ],
-      "name": "Colour Match & Quiz",
+      "custom_css": [
+        "h3 {color: #414141;}",
+        ".button-wrapper a {font-weight: 500;}"
+      ],
+      "name": "Collection carrousel",
       "settings": {
+        "title": "Shop by shade",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "hide_card_arrow": true,
+        "columns_desktop": 6,
+        "swipe_on_desktop": true,
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "visual_menu_66DUPMN": {
@@ -1267,8 +1266,7 @@
     "visual_menu_66DUPM",
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
-    "hair_extension_comparison_table_HXEJnY",
-    "colour_match_quiz_grid_r7eUg4",
+    "collection_carrousel_QhAGdA",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
