@@ -202,6 +202,72 @@
         "padding_bottom": 36
       }
     },
+    "videos_list_with_button_LFzwqE": {
+      "type": "videos-list-with-button",
+      "blocks": {
+        "video_cTH4ex": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "/",
+            "button_text": "Clip Ins",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "/",
+            "button_text": "Tape Ins",
+            "button_secondary": false
+          }
+        },
+        "video_KfhrNN": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "/",
+            "button_text": "Professional",
+            "button_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "video_cTH4ex",
+        "video_XtAaKF",
+        "video_KfhrNN"
+      ],
+      "name": "Videos list button",
+      "settings": {
+        "title": "Product Type Video Carousel",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": true,
+        "columns_desktop": 3,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "visual_menu_66DUPMN": {
       "type": "visual-menu",
       "custom_css": [
@@ -1270,6 +1336,7 @@
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
     "collection_carrousel_QhAGdA",
+    "videos_list_with_button_LFzwqE",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
