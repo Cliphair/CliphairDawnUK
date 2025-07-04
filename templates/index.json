@@ -391,7 +391,8 @@
         "video_ayXWCz"
       ],
       "custom_css": [
-        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}"
+        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
       ],
       "name": "Videos list test",
       "settings": {
@@ -1481,10 +1482,10 @@
     "visual_menu_66DUPM",
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
+    "videos_list_with_collection_modal_qBLHPL",
     "anchor_menu_CThXHh",
     "collection_carrousel_QhAGdA",
     "videos_list_with_button_LFzwqE",
-    "videos_list_with_collection_modal_qBLHPL",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
