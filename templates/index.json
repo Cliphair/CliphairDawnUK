@@ -179,7 +179,7 @@
       ],
       "custom_css": [
         "h3 {color: #414141;}",
-        ".button-wrapper a {font-weight: 500;}"
+        ".button-wrapper a {font-weight: 500; max-width: 250px;}"
       ],
       "name": "Collection carrousel",
       "settings": {
@@ -192,7 +192,7 @@
         "columns_desktop": 6,
         "swipe_on_desktop": true,
         "color_scheme": "",
-        "columns_mobile": "2",
+        "columns_mobile": "3",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 36,
