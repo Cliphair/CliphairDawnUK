@@ -213,7 +213,7 @@
             "title": "",
             "description": "",
             "button_url": "/",
-            "button_text": "Clip Ins",
+            "button_text": "CLIP INS",
             "button_secondary": false
           }
         },
@@ -225,7 +225,7 @@
             "title": "",
             "description": "",
             "button_url": "/",
-            "button_text": "Tape Ins",
+            "button_text": "TAPE INS",
             "button_secondary": false
           }
         },
@@ -237,7 +237,7 @@
             "title": "",
             "description": "",
             "button_url": "/",
-            "button_text": "Professional",
+            "button_text": "PROFESSIONAL",
             "button_secondary": false
           }
         }
