@@ -390,16 +390,19 @@
         "video_t8zGmx",
         "video_ayXWCz"
       ],
+      "custom_css": [
+        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}"
+      ],
       "name": "Videos list test",
       "settings": {
         "title": "Shoppable Video Carousel",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "introduction": "",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
         "text_allignment": "center",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "hide_card_arrow": false,
         "columns_desktop": 5,
         "swipe_on_desktop": true,
