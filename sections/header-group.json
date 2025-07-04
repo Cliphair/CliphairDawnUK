@@ -115,7 +115,6 @@
         },
         "announcement_image_FmKiMd": {
           "type": "announcement-image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Sunday_delivery_hair_extensions_blackfriday_sale.gif",
             "text_alignment": "center",
