@@ -249,7 +249,8 @@
       ],
       "custom_css": [
         "a.button {box-sizing: border-box; max-width: 100%;}",
-        ".grid__item{min-width:180px;}",
+        ".grid__item {min-width: 180px;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}"
       ],
       "name": "Videos list button",
@@ -263,7 +264,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": true,
-        "columns_desktop": 3,
+        "columns_desktop": 5,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
