@@ -179,7 +179,10 @@
       ],
       "custom_css": [
         "h3 {color: #414141;}",
-        ".button-wrapper a {font-weight: 500; max-width: 250px;}"
+        ".button-wrapper a {font-weight: 500; max-width: 250px;}",
+        ".collection-carrousel__item {min-width: unset;}",
+        "@media screen and (max-width: 349px) {.card__heading {font-size: 1.2rem; }}",
+        "@media screen and (max-width: 249px) {.collection-carrousel {--grid-mobile-horizontal-spacing: 1.5rem; }}"
       ],
       "name": "Collection carrousel",
       "settings": {
