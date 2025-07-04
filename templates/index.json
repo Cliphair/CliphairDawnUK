@@ -252,7 +252,7 @@
         ".grid__item {min-width: 180px;}",
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
-        ".videos-list-wrapper{margin-top:0;}"
+        ".videos-list-wrapper {margin-top: 0;}"
       ],
       "name": "Videos list button",
       "settings": {
@@ -273,6 +273,82 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "anchor_menu_CThXHh": {
+      "type": "anchor-menu",
+      "blocks": {
+        "anchor_37ChwE": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 1",
+            "anchor_id": "#"
+          }
+        },
+        "anchor_PeyMrt": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 2",
+            "anchor_id": ""
+          }
+        },
+        "anchor_G94cWf": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 3",
+            "anchor_id": ""
+          }
+        },
+        "anchor_UjpA6L": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 4",
+            "anchor_id": ""
+          }
+        },
+        "anchor_EQ6qR6": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 5",
+            "anchor_id": ""
+          }
+        },
+        "anchor_nDBtWz": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 6",
+            "anchor_id": ""
+          }
+        },
+        "anchor_xF3T9q": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "ELEMENT 7",
+            "anchor_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "anchor_37ChwE",
+        "anchor_PeyMrt",
+        "anchor_G94cWf",
+        "anchor_UjpA6L",
+        "anchor_EQ6qR6",
+        "anchor_nDBtWz",
+        "anchor_xF3T9q"
+      ],
+      "name": "Anchor menu",
+      "settings": {
+        "text_allignment": "left",
+        "button_secondary": true,
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "visual_menu_66DUPMN": {
@@ -1344,6 +1420,7 @@
     "maquee_bdNYHF",
     "collection_carrousel_QhAGdA",
     "videos_list_with_button_LFzwqE",
+    "anchor_menu_CThXHh",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
