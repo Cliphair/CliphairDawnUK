@@ -45,6 +45,14 @@
     endif
   -%}
 
+  <style>
+    .videos-list__item a.button {
+      min-width: 70%;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+  </style>
+
   <div
     class="videos-list-wrapper page-width isolate no-heading no-mobile-link {{ section.settings.text_allignment }}"
     style="padding:0!important;"
@@ -71,7 +79,7 @@
       class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     >
       <ul
-        class="videos-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items {%comment%}slide-mobile-{{ show_mobile_slider }}{%endcomment%} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
+        class="videos-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -92,22 +100,27 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'video-card',
-              video: block.settings.video,
-              video_url: block.settings.video_url,
-              video_url_id: block.settings.video_url.id,
-              video_url_type: block.settings.video_url.type,
-              description: block.settings.description,
-              cover_image: block.settings.cover_image,
-              image_ratio: image_ratio,
-              title: block.settings.title
-            %}
-            {% if block.settings.modal_collection and block.settings.modal_image %}
-              {% render 'collection-modal-card',
-                collection: block.settings.modal_collection,
-                image: block.settings.modal_image
+            <div class="center">
+              {% render 'video-card',
+                video: block.settings.video,
+                video_url: block.settings.video_url,
+                video_url_id: block.settings.video_url.id,
+                video_url_type: block.settings.video_url.type,
+                description: block.settings.description,
+                cover_image: block.settings.cover_image,
+                image_ratio: image_ratio,
+                title: block.settings.title
               %}
-            {% endif %}
+              {% if block.settings.button_url %}
+                <a
+                  href="{{ block.settings.button_url }}"
+                  class="button {% if block.settings.button_secondary %}button--secondary{% endif %}"
+                  title="{{ block.settings.button_text | escape }}"
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
           </li>
         {% endfor %}
       </ul>
@@ -188,11 +201,9 @@
   </div>
 </div>
 
-<script src="{{ 'collection-modal.js' | asset_url }}" defer></script>
-
 {% schema %}
 {
-  "name": "Videos list test",
+  "name": "Videos list button",
   "tag": "section",
   "class": "section section-videos-list",
   "max_blocks": 10,
@@ -429,30 +440,42 @@
         },
         {
           "type": "text",
+          "id": "title",
+          "label": "Video title"
+        },
+        {
+          "type": "text",
           "id": "description",
           "label": "t:sections.video.settings.description.label",
           "info": "t:sections.video.settings.description.info"
         },
         {
           "type": "header",
-          "content": "Modal settings"
+          "content": "Button settings"
         },
         {
-          "type": "collection",
-          "id": "modal_collection",
-          "label": "Collection"
+          "type": "url",
+          "label": "Button url",
+          "id": "button_url"
         },
         {
-          "type": "image_picker",
-          "id": "modal_image",
-          "label": "Modal image"
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "View"
+        },
+        {
+          "type": "checkbox",
+          "default": false,
+          "id": "button_secondary",
+          "label": "Secondary style"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Videos list test",
+      "name": "Videos list button",
       "blocks": []
     }
   ]

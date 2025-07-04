@@ -1,0 +1,68 @@
+.section-anchor-menu .grid {
+  margin-bottom: 0 !important;
+  margin: 0;
+  padding: 1.5rem 0;
+}
+
+.section-anchor-menu .anchor-menu__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+  min-width: 250px;
+}
+
+@media screen and (max-width:299px) {
+  .anchor-menu {
+    --grid-mobile-horizontal-spacing: 1rem;
+  }
+
+  .section-anchor-menu .anchor-menu__item {
+    min-width: calc(100% - 5rem);
+  }
+}
+
+.section-anchor-menu .anchor-menu__item a.button {
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.section-anchor-menu .anchor-menu__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.section-anchor-menu .anchor-menu__item p {
+  margin: 5px 0 0;
+  line-height: 1.2em;
+}
+
+.section-anchor-menu .anchor-menu__item .text-container p {
+  margin: 1rem 0;
+}
+
+/* slider */
+.section-anchor-menu .slider-buttons>.slider-button {
+  background: var(--gradient-background);
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 22px);
+  right: 1.5rem;
+  border: 1px solid rgba(var(--color-foreground), .1)
+}
+
+.section-anchor-menu .slider-buttons>.slider-button--prev {
+  left: 1.5rem;
+}
+
+.section-anchor-menu .slider-buttons>.slider-button--next {
+  right: 1.5rem;
+}
+
+.section-anchor-menu .slider-buttons>.slider-button .icon {
+  height: 1.2rem;
+}

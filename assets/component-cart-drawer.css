@@ -166,6 +166,7 @@ cart-drawer {
   /* display: flex;
   flex-wrap: wrap; */
   padding: 0 1.5rem;
+  min-height: 100%;
   /* margin-bottom: 5rem; */
 }
 

@@ -1,4 +1,23 @@
+<!-- card -->
+{% liquid
+  assign collection_title = collection.metafields.display.collection_title | default: collection.title
+  assign lowest_price = blank
+  for product in collection.products
+    assign product_price = product.price_min
+    if lowest_price == blank or product_price < lowest_price
+      assign lowest_price = product_price
+    endif
+  endfor
+
+  assign colour_match = pages['colour-matching-service']
+%}
 <style>
+  .videos-list__item.grid__item {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
   .videos-list__item {
     min-width: 300px;
   }
@@ -6,16 +25,26 @@
   .collection-modal-card {
     border: 1px solid;
     margin-top: 1rem;
+    flex: 1;
   }
 
   .collection-modal-card .grid {
     flex-wrap: nowrap;
+    height: 100%;
   }
 
   .collection-modal-card__image-wrapper {
     width: 40%;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+
+  .collection-modal-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
   }
 
   .collection-modal-card__text-wrapper {
@@ -46,34 +75,53 @@
     line-height: 1.2em;
     margin-top: 1rem;
   }
+
+  @media screen and (max-width: 350px) {
+    .videos-list__item.grid__item {
+      min-width: calc(100% - 5rem);
+    }
+
+    .collection-title {
+      font-size: 1rem;
+    }
+
+    .collection-base-price {
+      font-size: 1.2rem;
+    }
+
+    .collection-modal-card__text-wrapper {
+      padding: 0.5rem;
+    }
+  }
 </style>
+
+{%- capture sizes -%}
+	(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px)
+	calc(100vw - 10rem), 100vw
+{%- endcapture -%}
 
 <div class="collection-modal-card">
   <div class="grid grid--gapless">
     <div class="collection-modal-card__image-wrapper">
-      <img
-        src="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840"
-        alt="Load video: Seamless application video"
-        srcset="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=375 375w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=750 750w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1100 1100w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1500 1500w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1780 1780w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=2000 2000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3000 3000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840 3840w"
-        width="3840"
-        height="6825"
-        loading="lazy"
-        sizes="
-          (min-width: 1400px) 1300px, (min-width: 750px)
-          calc(100vw - 10rem), 100vw
-        "
-        style="width: 100%;height: 100%;aspect-ratio: 1;object-fit: cover;display: block;"
-      >
+      {{
+        image
+        | image_url: width: image.width
+        | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+          alt: image.alt
+      }}
     </div>
     <div class="collection-modal-card__text-wrapper">
-      <p class="collection-title"><b>Seamless Clip In</b> Hair Extensions</p>
+      <p class="collection-title">{{ collection_title }}</p>
       <modal-opener
-        data-modal="#PopupModal-{{ block.id }}"
+        data-modal="#PopupModal-{{ collection_title | handle }}"
         {{ block.shopify_attributes }}
       >
         <button
           class="collection-cta button no-js-hidden"
-          id="CollectionPopup-{{ block.id }}"
+          id="CollectionPopup-{{ collection_title | handle }}"
           type="button"
           title="Select Length & Shade"
           aria-haspopup="dialog"
@@ -81,12 +129,13 @@
           Select Length & Shade
         </button>
       </modal-opener>
-      <noscript><a href="#" class="collection-cta button js-hidden">View Collection</a></noscript>
-      <p class="collection-base-price">From £150</p>
+      <noscript><a href="{{ collection.url }}" class="collection-cta button js-hidden">View Collection</a></noscript>
+      <p class="collection-base-price">From {{ lowest_price | money }}</p>
     </div>
   </div>
 </div>
 
+<!-- modal -->
 <style>
   .collection-popup-modal {
     box-sizing: border-box;
@@ -120,14 +169,13 @@
     background-color: rgb(var(--color-background));
     overflow: auto;
     height: fit-content;
-    max-height: 80%;
+    max-height: calc(100% - 3rem);
     margin: 0 auto;
-    margin-top: 0px;
-    padding:0 3rem;
+    padding: 0 1.5rem 1.5rem;
     left: 50%;
     transform: translate(-50%);
-    width: 92%;
-    max-width: 768px;
+    width: 100%;
+    max-width: calc(100% - 3rem);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -164,40 +212,86 @@
 
   @media screen and (min-width: 750px) {
     .collection-popup-modal__content {
-      width: 70%;
+      max-width: min(calc(100% - 10rem), 750px);
     }
   }
 
-  {% comment %} .collection-popup-modal__content > *:not(.active),
-  .product__media-list .deferred-media {
-    display: none;
+  .image-content {
+    width: 100%;
+  }
+
+  .image-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1;
   }
 
   @media screen and (min-width: 750px) {
-    .collection-popup-modal__content {
-      padding-bottom: 2rem;
+    .image-content {
+      width: 40%;
     }
+  }
 
-    .collection-popup-modal__content > *:not(.active) {
-      display: block;
-    }
+  .text-content {
+    flex: 1;
+  }
 
-    .product__modal-opener:not(.product__modal-opener--image) {
-      display: none;
-    }
-  } {% endcomment %}
+  .text-content__title {
+    margin-top: 0;
+  }
+
+  .content-info__option-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .content-info__option-group label {
+    flex-shrink: 0;
+  }
+
+  .content-info__option-group .select {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    min-width: fit-content;
+    width: unset;
+  }
+
+  .content-info__option-group + .content-info__option-group {
+    margin-top: 1.5rem;
+  }
+
+  .content-info__ctas {
+    margin-top: 3rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .content-info__ctas .button {
+    min-width: fit-content;
+    flex: 1;
+  }
 </style>
 
-<modal-dialog id="PopupModal-{{ block.id }}" class="collection-popup-modal" {{ block.shopify_attributes }}>
+<collection-modal
+  id="PopupModal-{{ collection_title | handle }}"
+  class="collection-popup-modal"
+  data-collection-handle="{{ collection.handle }}"
+>
   <div
     role="dialog"
-    aria-label="####ADD SOMETHING HERE ####"
+    aria-label="Select Length & Shade Modal for {{ collection_title }}"
     aria-modal="true"
     class="collection-popup-modal__content"
     tabindex="-1"
   >
     <button
-      id="ModalClose-{{ block.id }}"
+      id="ModalClose-{{ collection_title | handle }}"
       type="button"
       class="collection-popup-modal__toggle"
       aria-label="{{ 'accessibility.close' | t }}"
@@ -206,34 +300,25 @@
     </button>
     <div class="collection-popup-modal__content-info">
       <div class="grid">
-        <div>
-          <img
-            src="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840"
-            alt="Load video: Seamless application video"
-            srcset="//www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=375 375w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=750 750w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1100 1100w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1500 1500w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=1780 1780w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=2000 2000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3000 3000w, //www.cliphair.co.uk/cdn/shop/files/preview_images/seamless-thumbnail.webp?v=1749046792&amp;width=3840 3840w"
-            width="3840"
-            height="6825"
-            loading="lazy"
-            sizes="
-              (min-width: 1400px) 1300px, (min-width: 750px)
-              calc(100vw - 10rem), 100vw
-            "
-            style="width: 100%;height: 100%;aspect-ratio: 1;object-fit: cover;display: block;"
-          >
+        <div class="grid__content image-content">
+          {{
+            image
+            | image_url: width: image.width
+            | image_tag:
+              loading: 'lazy',
+              sizes: sizes,
+              widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+              alt: image.alt
+          }}
         </div>
-        <div class="">
-          <p class="h1">Short Head Meta Title</p>
+        <div class="grid__content text-content">
+          <p class="h2 text-content__title">{{ collection_title }}</p>
           <div class="content-info__options">
-            <div class="content-info__option-group">
-              <label class="h3 label"> Length </label>
+            <div class="content-info__option-group" data-filter-type="length">
+              <label class="h3 label">Length</label>
               <div class="select">
                 <select class="select__select">
-                  <option value="12">12"</option>
-                  <option value="16">16"</option>
-                  <option value="20">20"</option>
-                  <option value="20">22"</option>
-                  <option value="24">24"</option>
-                  <option value="26">26"</option>
+                  <option default>Select an option</option>
                 </select>
                 <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
@@ -241,13 +326,11 @@
                 </svg>
               </div>
             </div>
-            <div class="content-info__option-group">
-              <label class="h3 label"> Shade </label>
+            <div class="content-info__option-group" data-filter-type="colour-group">
+              <label class="h3 label">Shade</label>
               <div class="select">
                 <select class="select__select">
-                  <option value="12">Blacks</option>
-                  <option value="16">Blondes</option>
-                  <option value="20">Browns</option>
+                  <option default>Select an option</option>
                 </select>
                 <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
@@ -257,11 +340,11 @@
             </div>
           </div>
           <div class="content-info__ctas">
-            <a class="button">View All</a>
-            <a class="button">Colour Match</a>
+            <a id="view-all-button" class="button" href="{{ collection.url }}">View All</a>
+            <a class="button" href="{{ colour_match.url }}">Colour Match</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</modal-dialog>
+</collection-modal>
