@@ -3,6 +3,8 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
+  {% assign delivery_threshold_block = section.blocks | where: 'type', 'delivery_threshold' %}
+
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {% if delivery_threshold_block != empty %}
     {{ 'component-delivery-threshold.css' | asset_url | stylesheet_tag }}
@@ -96,14 +98,14 @@
             {% when 'product-subtitle' %}
               {% if product.metafields.descriptors.subtitle != blank %}
                 <p
-                  class="product__text inline-richtext product__subtitle"
+                  class="product__text inline-richtext product__subtitle quick-add-hidden"
                   {{ block.shopify_attributes }}
                 >
                   {{- product.metafields.descriptors.subtitle -}}
                 </p>
               {% endif %}
             {%- when 'payment_services' -%}
-              <div class="payment_services">
+              <div class="payment_services quick-add-hidden">
                 <div class="klarna-pacement">
                   <!-- Placement v2 -->
                   <klarna-placement
@@ -132,7 +134,7 @@
                 </div>
               </div>
             {%- when 'order_deadline' -%}
-              <div id="order-deadline"></div>
+              <div id="order-deadline" class="quick-add-hidden"></div>
             {%- when 'sc-out-of-stock_placement' -%}
               <div id="esc-oos-form"></div>
             {%- when 'title' -%}
@@ -155,7 +157,7 @@
 
               {%- if ShortDescription -%}
                 <div
-                  class="product__text inline-richtext short-description"
+                  class="product__text inline-richtext short-description quick-add-hidden"
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.title != blank %}
@@ -345,7 +347,7 @@
             {%- when 'quantity_selector' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
-                class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                class="product-form__input quick-add-hidden product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -577,7 +579,7 @@
               {% assign points = product.selected_or_first_available_variant.price | divided_by: 100 | round: 0 %}
               <modal-opener
                 id="rewards"
-                class="product-reward_points product-popup-modal__opener no-js-hidden quick-add-hidden center {% if points < 1 %}visually-hidden{% endif %}"
+                class="product-reward_points product-popup-modal__opener no-js-hidden quick-add-hidden center {% if points < 1 %}visually-hidden{% endif %} quick-add-hidden"
                 data-modal="#PopupModal-{{ block.id }}"
                 {{ block.shopify_attributes }}
               >
@@ -624,7 +626,7 @@
               -%}
             {%- when 'rating' -%}
               <div
-                class="yotpo-widget-instance"
+                class="yotpo-widget-instance quick-add-hidden"
                 data-yotpo-instance-id="277269"
                 data-yotpo-product-id="{{product.id}}"
                 data-yotpo-cart-product-id="{{item.product.id}}"

@@ -12,18 +12,19 @@ class CartDrawer extends HTMLElement {
     cartLink.setAttribute('role', 'button');
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
-      // event.preventDefault();
-      // this.open(cartLink);
+      event.preventDefault();
+      this.open(cartLink);
     });
     cartLink.addEventListener('keydown', (event) => {
       if (event.code.toUpperCase() === 'SPACE') {
-        // event.preventDefault();
-        // this.open(cartLink);
+        event.preventDefault();
+        this.open(cartLink);
       }
     });
   }
 
   open(triggeredBy) {
+
     if (triggeredBy) this.setActiveElement(triggeredBy);
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
@@ -43,6 +44,10 @@ class CartDrawer extends HTMLElement {
       },
       { once: true }
     );
+
+    setTimeout(() => {
+      this.shuffleRecommendedProducts();
+    }, 500)
 
     document.body.classList.add('overflow-hidden');
   }
@@ -85,8 +90,64 @@ class CartDrawer extends HTMLElement {
     });
   }
 
+  shuffleRecommendedProducts(root = this) {
+    const container = root.querySelector('#Slider-recommended-products-cart');
+    if (!container || !container.children.length) return root;
+
+    const loadingSpinner = root.querySelector('#recommended-products-cart .loading-overlay');
+    const parent = container.parentElement;
+
+    if (loadingSpinner) loadingSpinner.classList.remove('hidden');
+    if (parent) {
+      parent.classList.add('visually-hidden');
+      parent.ariaHidden = true;
+    }
+
+    // Shuffle logic
+    const elements = Array.from(container.children);
+    const shuffled = this.shuffleProducts(elements);
+
+    container.innerHTML = '';
+    shuffled.forEach(el => container.appendChild(el));
+
+    setTimeout(() => {
+      // Handle class changes
+      if (loadingSpinner) loadingSpinner.classList.add('hidden');
+
+      if (parent && typeof parent.resetSlider === 'function') {
+        parent.resetSlider();
+      }
+      parent.classList.remove('visually-hidden');
+      parent.ariaHidden = false;
+    });
+
+    return root;
+  }
+
+  shuffleProducts(array) {
+    const shuffled = array.slice();
+
+    // Store original IDs before shuffling
+    const originalIds = shuffled.map((el) => el.id);
+
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    // Reassign original IDs to new order (swap IDs between elements)
+    shuffled.forEach((el, idx) => {
+      el.id = originalIds[idx];
+    });
+
+    return shuffled;
+  }
+
   getSectionInnerHTML(html, selector = '.shopify-section') {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+    let parsedElement = new DOMParser().parseFromString(html, 'text/html').querySelector(selector);
+
+    return parsedElement.innerHTML;
   }
 
   getSectionsToRender() {

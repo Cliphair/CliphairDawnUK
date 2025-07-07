@@ -216,6 +216,7 @@ class CartItems extends HTMLElement {
       })
       .finally(() => {
         this.disableLoading(line);
+        this.updateDeliveryProgress();
       });
   }
 
@@ -261,6 +262,14 @@ class CartItems extends HTMLElement {
 
     cartItemElements.forEach((overlay) => overlay.classList.add('hidden'));
     cartDrawerItemElements.forEach((overlay) => overlay.classList.add('hidden'));
+  }
+
+  updateDeliveryProgress() {
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+        updateDeliveryThreshold(cart.total_price / 100);
+      });
   }
 }
 

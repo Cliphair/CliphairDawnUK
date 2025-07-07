@@ -1,0 +1,352 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign product_handles = 'quench-the-thirst-deep-moisture-shampoo,quench-the-thirst-deep-moisture-conditioner,quench-the-thirst-deep-conditioning-hair-mask,cliphair-silky-hair-spray,cliphair-heat-spray,hair-extension-hanger-and-carrier-bag,hair-extension-holder,detangling-hair-brush,wave-comb-and-pouch,pintail-comb,alligator-clips,'
+  assign cart_product_handles = ''
+
+  for item in cart.items
+    assign product = item.product
+
+    if product.type == 'Tape in Hair Extensions'
+      assign product_handles = product_handles | append: 'tape-in-hair-extensions-remover,spare-tape-pack-for-tape-in-extensions,'
+    endif
+
+    if product.type == 'Nano Ring Hair Extensions' or product.type == 'Remy Royale Nano Bonds'
+      assign product_handles = product_handles | append: 'silicone-lined-nano-rings-beads-200-pack,'
+    endif
+
+    if product.metafields.custom.colour_group == 'Blondes'
+      assign product_handles = product_handles | append: 'silver-lining-purple-toning-shampoo,'
+    endif
+
+    assign cart_product_handles = cart_product_handles | append: product.handle | append: ','
+    assign product_handles = product_handles | remove_first: product.handle | append: ','
+  endfor
+
+  assign recommended_products_handles_list = product_handles | replace: ',,', ',' | split: ',' | uniq
+  assign products_to_display = recommended_products_handles_list.size
+
+  assign columns_mobile_int = 2 | plus: 0
+  assign show_mobile_slider = false
+  if products_to_display > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+
+  assign columns_desktop_int = 2 | plus: 0
+  assign show_desktop_slider = false
+  if products_to_display > columns_desktop_int
+    assign show_desktop_slider = true
+  endif
+%}
+
+<style>
+  .is-empty #recommended-products-cart,
+  .is-empty #recommended-products-cart-title {
+    display: none;
+  }
+
+  #recommended-products-cart,
+  #recommended-products-cart-title {
+    padding: 2rem 1.5rem 1.5rem;
+    z-index: 5;
+  }
+
+  #recommended-products-cart {
+    padding-top: 0rem;
+  }
+
+  #recommended-products-cart-title {
+    position: sticky;
+    bottom: 0;
+  }
+
+  #recommended-products-cart-title .title-wrapper {
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #recommended-products-cart-title .title-wrapper .icon {
+    height: 1rem;
+  }
+
+  #recommended-products-cart .grid {
+    --grid-mobile-horizontal-spacing: 1rem;
+    --grid-mobile-vertical-spacing: 1rem;
+    --grid-desktop-horizontal-spacing: 1rem;
+    --grid-desktop-vertical-spacing: 1rem;
+    margin-top: 0;
+  }
+
+  #recommended-products-cart .grid .grid__item {
+    min-width: 150px;
+  }
+
+  #recommended-products-cart .slider--desktop .slider__slide:first-child {
+    margin-left: 0;
+    scroll-margin-left: 0;
+  }
+
+  #recommended-products-cart .card__heading {
+    font-size: 1rem;
+  }
+
+  #recommended-products-cart .price {
+    font-size: 1.2rem;
+  }
+
+  #recommended-products-cart .card__information {
+    padding-bottom: 0;
+  }
+
+  #recommended-products-cart .yotpo-sr-bottom-line-summary > div {
+    margin-right: 0 !important;
+    height: 1.2rem !important;
+  }
+
+  #recommended-products-cart .yotpo-sr-bottom-line-right-panel {
+    display: none !important;
+  }
+
+  #recommended-products-cart .star-container {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  /* slider buttons */
+  #recommended-products-cart .slider-buttons > .slider-button {
+    background: var(--gradient-background);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 22px);
+    right: 1.5rem;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    z-index: 2;
+  }
+
+  #recommended-products-cart .slider-buttons > .slider-button--prev {
+    left: 1.5rem;
+  }
+
+  #recommended-products-cart .slider-buttons > .slider-button--next {
+    right: 1.5rem;
+  }
+
+  #recommended-products-cart .slider-buttons > .slider-button .icon {
+    height: 1.2rem;
+  }
+
+  #recommended-products-cart .loading-overlay {
+    right: 0;
+    left: unset;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+</style>
+
+<div
+  id="recommended-products-cart-title"
+  class="color-{{ color_scheme }} gradient scroll-to-bottom"
+  onclick="scrollToBottomSmooth(this)"
+>
+  <div class="title-wrapper title-wrapper--no-margin">
+    <h2 class="title inline-richtext h3">
+      {{ section.settings.title | default: 'You Might Also Like' }}
+    </h2>
+    {% render 'icon-caret' %}
+  </div>
+</div>
+<div id="recommended-products-cart" class="color-{{ color_scheme }} gradient">
+  {% comment %}
+    <div class="title-wrapper title-wrapper--no-margin">
+      <h2 class="title inline-richtext h3">
+        {{ section.settings.title | default: 'You Might Also Like' }}
+      </h2>
+      <div class="loading-overlay hidden">
+        <div class="loading-overlay__spinner">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  {% endcomment %}
+
+  <slider-component
+    aria-hidden="true"
+    class=" slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}"
+  >
+    <ul
+      id="Slider-recommended-products-cart"
+      class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ columns_desktop_int }}-col-desktop grid--{{ columns_mobile_int }}-col-tablet-down slider slider--desktop slider--tablet grid--peek"
+      role="list"
+      aria-label="{{ 'general.slider.name' | t }}"
+    >
+      {%- for product_handle in recommended_products_handles_list -%}
+        {% assign cleaned_handle = product_handle | strip %}
+        {% assign product = all_products[cleaned_handle] %}
+
+        {% if product and cleaned_handle != '' %}
+          <li
+            id="Slide-recommended-products-cart-{{ forloop.index }}"
+            class="grid__item slider__slide"
+          >
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: 'square',
+              show_rating: true,
+              section_id: 'recommended-products-cart'
+            %}
+          </li>
+        {% endif %}
+      {%- endfor -%}
+    </ul>
+    {%- if show_mobile_slider or show_desktop_slider -%}
+      <div class="slider-buttons no-js-hidden">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+          aria-controls="Slider-recommended-products-cart"
+        >
+          {% render 'icon-caret' %}
+        </button>
+        <div class="slider-counter caption visually-hidden">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+          <span class="slider-counter--total">{{ products_to_display }}</span>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+          aria-controls="Slider-recommended-products-cart"
+        >
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    {%- endif -%}
+  </slider-component>
+</div>
+
+<script>
+  function scrollToBottomSmooth(element) {
+    const parent = element.parentElement;
+    const prevSibling = element.previousElementSibling;
+
+    let extraSpace = 0;
+
+    if (prevSibling) {
+      const style = getComputedStyle(prevSibling);
+      console.log('marginBottom:', style.marginBottom);
+      extraSpace = parseFloat(style.marginBottom) || 0;
+    } else {
+      console.log('No previous sibling found.');
+    }
+
+    parent.scrollTo({
+      top: parent.scrollHeight + extraSpace,
+      behavior: 'smooth',
+    });
+  }
+
+  function shuffleProducts(array) {
+    const shuffled = array.slice();
+
+    // Store original IDs before shuffling
+    const originalIds = shuffled.map((el) => el.id);
+
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    // Reassign original IDs to new order (swap IDs between elements)
+    shuffled.forEach((el, idx) => {
+      el.id = originalIds[idx];
+    });
+
+    return shuffled;
+  }
+
+  function shuffleRecommendedProducts() {
+    const container = document.querySelector('#Slider-recommended-products-cart');
+    const loadingSpinner = document.querySelector('#recommended-products-cart .loading-overlay');
+
+    if (!container || !container.children.length) return;
+
+    // Shuffle logic
+    const elements = Array.from(container.children);
+    const shuffled = shuffleProducts(elements);
+
+    container.innerHTML = '';
+    shuffled.forEach((el) => container.appendChild(el));
+
+    // Handle class changes
+    if (loadingSpinner) loadingSpinner.classList.add('hidden');
+    const parent = container.parentElement;
+    if (parent && typeof parent.resetSlider === 'function') {
+      parent.resetSlider();
+    }
+    parent.classList.remove('visually-hidden');
+    parent.removeAttribute('aria-hidden');
+  }
+
+  // Initialize when drawer is opened
+  document.addEventListener('DOMContentLoaded', () => {
+    shuffleRecommendedProducts();
+  });
+</script>
+
+{% comment %}
+  <script>
+    async function fetchProductCard(handle, index) {
+      const res = await fetch(
+        window.Shopify.routes.root + `?section_id=product-recommendation-card-render&handle=${handle}&index=${index}`
+      );
+      const html = await res.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      console.log(`Rendering product card for handle: ${handle}`);
+      console.log(`Response HTML: ${html}`);
+      return doc.querySelector('li'); // The <li> from the section
+    }
+
+    async function renderRecommendedProducts(handles) {
+      const container = document.querySelector('#Slider-recommended-products-cart');
+      if (!container || !handles || handles.length === 0) return;
+
+      const shuffled = handles.sort(() => 0.5 - Math.random()).slice(0, 4);
+      container.innerHTML = '';
+
+      for (let i = 0; i < shuffled.length; i++) {
+        const li = await fetchProductCard(shuffled[i], i);
+        if (li) container.appendChild(li);
+      }
+    }
+
+    // Initialize when drawer is opened
+    document.addEventListener('DOMContentLoaded', () => {
+      const handleData = document.querySelector('#recommended-products-cart');
+      if (handleData) {
+        const handles = handleData.dataset.handles.split(',').filter(Boolean);
+        renderRecommendedProducts(handles);
+      }
+    });
+  </script>
+{% endcomment %}

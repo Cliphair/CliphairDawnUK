@@ -163,10 +163,11 @@ cart-drawer {
 }
 
 .cart-drawer__form {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   padding: 0 1.5rem;
+  min-height: 100%;
+  /* margin-bottom: 5rem; */
 }
 
 .cart-drawer__collection {
@@ -195,6 +196,10 @@ cart-drawer {
 cart-drawer-items {
   overflow: auto;
   flex: 1;
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 
 @media screen and (max-height: 650px) {

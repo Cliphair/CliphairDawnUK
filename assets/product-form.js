@@ -111,7 +111,6 @@ if (!customElements.get('product-form')) {
           this.errorMessage.textContent = errorMessage;
         }
       }
-<<<<<<< HEAD
 
       updateDeliveryProgress() {
         fetch('/cart.js')
@@ -121,16 +120,12 @@ if (!customElements.get('product-form')) {
           });
       }
 
-=======
-      
->>>>>>> 2b66253d2bf86338de38b99e7efdded0352dab35
       addToCartEvent() {
         this.googleAnalyticsEvent();
       }
 
       googleAnalyticsEvent() {
         const productForm = this.form;
-
         const itemSku = productForm.querySelector('input[name="sku"]').value;                  // product variant sku
         const itemName = productForm.querySelector('input[name="product-title"]').value;       // product title
         const itemVariant = productForm.querySelector('input[name="option-title"]').value;    // product variant title
