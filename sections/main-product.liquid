@@ -3,8 +3,6 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
-  {% assign delivery_threshold_block = section.blocks | where: 'type', 'delivery_threshold' %}
-
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {% if delivery_threshold_block != empty %}
     {{ 'component-delivery-threshold.css' | asset_url | stylesheet_tag }}
@@ -1018,6 +1016,10 @@
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
 
+  {% if delivery_threshold_block != empty %}
+    <script src="{{ 'component-delivery-threshold.js' | asset_url }}" defer></script>
+  {% endif %}
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
@@ -1420,6 +1422,18 @@
           "id": "custom_liquid",
           "label": "t:sections.custom-liquid.settings.custom_liquid.label",
           "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "delivery_threshold",
+      "name": "Delivery Threshold",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "background-1"
         }
       ]
     },
