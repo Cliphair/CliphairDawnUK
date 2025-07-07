@@ -79,8 +79,16 @@
           }
         },
         "order_deadline_67UiV7": {
-          "type": "order_deadline",
-          "settings": {}
+          "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
+          "settings": {
+            "product": "{{product}}",
+            "style": "timeline",
+            "margintop": 0,
+            "marginbottom": 0,
+            "placementRelativity": "before",
+            "placementTarget": "",
+            "loadEventName": ""
+          }
         },
         "icon_with_text_HWPKmz": {
           "type": "icon-with-text",
