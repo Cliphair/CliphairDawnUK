@@ -93,6 +93,7 @@ if (!customElements.get('product-form')) {
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
             this.querySelector('.loading-overlay__spinner').classList.add('hidden');
             this.addToCartEvent();
+            this.updateDeliveryProgress();
           });
       }
 
@@ -111,13 +112,19 @@ if (!customElements.get('product-form')) {
         }
       }
 
+      updateDeliveryProgress() {
+        fetch('/cart.js')
+          .then(res => res.json())
+          .then(cart => {
+            updateDeliveryThreshold(cart.total_price / 100);
+          });
+      }
+
       addToCartEvent() {
-        this.googleAnalyticsEvent()
-        this.pinterestEvent()
+        this.googleAnalyticsEvent();
       }
 
       googleAnalyticsEvent() {
-        console.log("Google Analytics add to cart event")
         const productForm = this.form;
 
         const itemSku = productForm.querySelector('input[name="sku"]').value;                  // product variant sku
@@ -155,29 +162,6 @@ if (!customElements.get('product-form')) {
           }
         });
       }
-
-      pinterestEvent() {
-        console.log("Pinterest add to cart event")
-        const productForm = this.form;
-
-        const productId = productForm.querySelector('input[name="product-id"]').value;
-        const variantId = productForm.querySelector('input[name="id"]').value;
-        const id = "shopify_GB_" + productId + "_" + variantId;
-        const price = parseInt(productForm.querySelector('input[name="price"]').value);
-        const currency = productForm.querySelector('input[name="currency"]').value;
-
-        const quantityInput = document.querySelector(`.quantity__input[form="${productForm.getAttribute("id")}"]`);
-        const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
-        const value = quantity * price;
-
-        pintrk('track', 'AddToCart', {
-          value: value,
-          order_quantity: quantity,
-          currency: currency,
-          product_ids: [id,]
-        });
-      }
-
     }
   );
 }

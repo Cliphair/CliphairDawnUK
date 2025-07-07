@@ -3,7 +3,12 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
+  {% assign delivery_threshold_block = section.blocks | where: 'type', 'delivery_threshold' %}
+
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {% if delivery_threshold_block != empty %}
+    {{ 'component-delivery-threshold.css' | asset_url | stylesheet_tag }}
+  {% endif %}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -81,6 +86,8 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {% when 'delivery_threshold' %}
+              {% render 'delivery-threshold', color_scheme: block.settings.color_scheme %}
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
