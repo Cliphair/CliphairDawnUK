@@ -82,8 +82,21 @@
             "share_label": "Share"
           }
         },
+        "order_deadline_2_app_block_product_wa7Bmb": {
+          "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
+          "settings": {
+            "product": "{{product}}",
+            "style": "timeline",
+            "margintop": 0,
+            "marginbottom": 0,
+            "placementRelativity": "before",
+            "placementTarget": "",
+            "loadEventName": ""
+          }
+        },
         "order_deadline_67UiV7": {
           "type": "order_deadline",
+          "disabled": true,
           "settings": {}
         },
         "icon_with_text_AGQyTW": {
@@ -168,6 +181,7 @@
         "sc_back_in_stock_app_block_JKfDnH",
         "buy_buttons",
         "share",
+        "order_deadline_2_app_block_product_wa7Bmb",
         "order_deadline_67UiV7",
         "icon_with_text_AGQyTW",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
