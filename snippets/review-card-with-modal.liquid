@@ -1,0 +1,99 @@
+<div class="reviews-list__review-wrapper">
+  <div class="review-section_image square circle">
+    {% comment %}
+      WILL BE LOADED VIA JS
+      <img
+        srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+        src="{{ block.settings.image | image_url: width: 190 }}"
+        alt="{{ block.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
+      >
+    {% endcomment %}
+  </div>
+  <div class="review-section_text center">
+    <div class="review-section_text-top">
+      <div class="reviews-review-container">
+        {% for i in (1..5) %}
+          <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+        {% endfor %}
+      </div>
+      <p class="h3 review-title">HEADING</p>
+      <div class="h5">CONTENT - TRUNCATE 12 WORDS</div>
+    </div>
+
+    <div class="review-section_text-bottom">
+      <modal-opener
+        class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+        data-modal="#ReviewCardPopupModal-{{ block.id }}"
+      >
+        <button
+          id="ReviewCardPopup-{{ block.id }}"
+          class="h5 review-button"
+          type="button"
+          title="Read Full Review"
+          aria-haspopup="dialog"
+          {% if trackable_name != blank %}
+            data-event-type="section_click"
+            data-cta-label="click_review_{{ forloop.index }}"
+          {% endif %}
+        >
+          READ FULL REVIEW
+        </button>
+      </modal-opener>
+      <p class="h5 review-button no-js">CUSTOMER NAME</p>
+    </div>
+  </div>
+</div>
+
+<modal-dialog id="ReviewCardPopupModal-{{ block.id }}" class="product-popup-modal">
+  <div
+    role="dialog"
+    aria-label="Review from ADD CUSTOMER NAME HERE"
+    aria-modal="true"
+    class="product-popup-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ block.id }}"
+      type="button"
+      class="product-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+    <div class="product-popup-modal__content-info">
+      <div class="heading-container">
+        <p class="h2 center">CUSTOMER NAME</p>
+      </div>
+      <div class="image-container">
+        {% comment %}
+          WILL BE ADDED VIA JS
+          <img
+            srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+            src="{{ block.settings.image | image_url: width: 190 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        {% endcomment %}
+      </div>
+      <div class="content-container">REVIEW CONTENT</div>
+      <div class="additional-information">
+        <div class="reviews-review-container">
+          {% for i in (1..5) %}
+            <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+          {% endfor %}
+        </div>
+        {% if block.settings.product != blank %}
+          |
+          <span class="h5 product-title">
+            {{- block.settings.product.title | link_to: block.settings.product.url -}}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</modal-dialog>

@@ -1,0 +1,489 @@
+{{ 'section-summer-reviews-2025.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% assign product = all_products['tape-in-remy-human-hair-extension-darkest-brown-2'] %}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop and section.blocks.size > columns_desktop_int
+      assign show_desktop_slider = true
+    endif
+
+    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+    if section.blocks.size > columns_tablet and section.settings.swipe_on_desktop
+      assign show_tablet_slider = true
+    endif
+  -%}
+
+  <div
+    class="reviews-list-wrapper page-width isolate no-heading no-mobile-link"
+  >
+    <slider-component
+      data-visual="{{ section.settings.slider_visual }}"
+      class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    >
+      <ul
+        class="reviews-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
+        id="Slider-{{ section.id }}"
+        role="list"
+        {% if section.settings.trackable_name != blank %}
+          data-horizontal-scroll
+        {% endif %}
+      >
+        {%- liquid
+          assign columns = section.blocks.size
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+
+        {% for block in section.blocks %}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="reviews-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            <div class="reviews-list__review-wrapper">
+              <div class="review-section_image {% if section.settings.circle_images %}square circle{% else %}{{ section.settings.image_ratio }}{% endif %}">
+                <img
+                  srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                  src="{{ block.settings.image | image_url: width: 190 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+              <div class="review-section_text center">
+                {% if block.settings.heading != blank or block.settings.content != blank %}
+                  <div class="review-section_text-top">
+                    <div class="reviews-review-container">
+                      {% assign review_total = 5 %}
+                      {% assign hearts = block.settings.stars %}
+                      {% assign missign_hearts = review_total | minus: hearts %}
+
+                      {% for i in (1..hearts) %}
+                        <span class="reviews__reviews-review yellow">{% render 'icon-star' %}</span>
+                      {% endfor %}
+
+                      {% for i in (1..missign_hearts) %}
+                        <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+                      {% endfor %}
+                    </div>
+                    <p class="h3 review-title">{{ block.settings.heading }}</p>
+                    <div class="h5">{{ block.settings.content | truncatewords: 12 }}</div>
+                  </div>
+                {% endif %}
+                {% if block.settings.customer != blank %}
+                  <div class="review-section_text-bottom">
+                    <modal-opener
+                      class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                      data-modal="#PopupModal-{{ block.id }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <button
+                        id="ProductPopup-{{ block.id }}"
+                        class="h5 review-button"
+                        type="button"
+                        title="Read Full Review"
+                        aria-haspopup="dialog"
+                        {% if section.settings.trackable_name != blank %}
+                          data-event-type="section_click"
+                          data-cta-label="click_review_{{ forloop.index }}"
+                        {% endif %}
+                      >
+                        {{ block.settings.customer }}
+                      </button>
+                    </modal-opener>
+                    <p class="h5 review-button no-js">
+                      {{- block.settings.customer -}}
+                    </p>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
+        <div class="slider-buttons slider-buttons-{{ section.settings.image_ratio }} small-hide no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+
+          <div class="slider-counter caption visually-hidden">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+{%- for block in section.blocks -%}
+  <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+    <div
+      role="dialog"
+      aria-label="{{ block.settings.text }}"
+      aria-modal="true"
+      class="product-popup-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ block.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+      <div class="product-popup-modal__content-info">
+        <div class="heading-container">
+          <p class="h2 center">{{ block.settings.heading }}</p>
+        </div>
+        <div class="image-container">
+          <img
+            srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+            src="{{ block.settings.image | image_url: width: 190 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        </div>
+        <div class="content-container">
+          {{ block.settings.content }}
+        </div>
+        <div class="additional-information">
+          <div class="reviews-review-container">
+            {% assign review_total = 5 %}
+            {% assign hearts = block.settings.stars %}
+            {% assign missign_hearts = review_total | minus: hearts %}
+
+            {% for i in (1..hearts) %}
+              <span class="reviews__reviews-review yellow">{% render 'icon-star' %}</span>
+            {% endfor %}
+
+            {% for i in (1..missign_hearts) %}
+              <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+            {% endfor %}
+          </div>
+          {% if block.settings.product != blank %}
+            |
+            <span class="h5 product-title">
+              {{- block.settings.product.title | link_to: block.settings.product.url -}}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </modal-dialog>
+{%- endfor -%}
+{{ product.id }}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    (async function() {
+      const appKey = "aMREVTSJZfbqjVqxLsKxYMHAmpb94LftONho8TDm";  // Replace with your Yotpo public app key
+      const productId = "{{ product.id }}"; // Shopify Liquid product ID or SKU
+
+      const apiUrl = `https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json?per_page=50`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (!data.response || !data.response.reviews) {
+          console.error("No reviews data found");
+          return;
+        }
+
+        // Step 1: Filter only 4 or 5-star reviews
+        const highRatingReviews = data.response.reviews.filter(r => r.score >= 4);
+
+        // Step 2: Separate reviews with images and without images
+        const withImages = highRatingReviews.filter(r => r.images_data && r.images_data.length > 0);
+        const withoutImages = highRatingReviews.filter(r => !r.images_data || r.images_data.length === 0);
+        
+        // Step 3: Sort both arrays by score descending (if you want)
+        withImages.sort((a, b) => b.score - a.score);
+        withoutImages.sort((a, b) => b.score - a.score);
+
+        // Step 4: Take all with images first, then fill from without images until total 10
+        const desiredCount = 10;
+        const selectedReviews = [
+          ...withImages.slice(0, desiredCount),
+          ...withoutImages.slice(0, Math.max(0, desiredCount - withImages.length))
+        ];
+
+        // Map to simplified data for your carousel
+        const formattedReviews = selectedReviews.map(r => ({
+          image: r.images_data?.[0]?.original_url	 || null,
+          name: r.user.display_name || "Anonymous",
+          verified: r.verified_buyer,
+          content: r.content,
+          score: r.score
+        }));
+
+        console.log(formattedReviews);
+
+        // TODO: Render your carousel here using formattedReviews
+
+      } catch (error) {
+        console.error("Failed to fetch Yotpo reviews:", error);
+      }
+    })();
+  });
+
+  {% comment %} document.addEventListener("DOMContentLoad", () => {
+    getTopYotpoReviews();
+  }) {% endcomment %}
+
+{% comment %} getTopYotpoReviews("YOUR_APP_KEY", "YOUR_PRODUCT_ID", 10)
+.then(reviews => {
+  console.log("Top carousel-ready reviews:", reviews);
+  // Pass to your rendering logic
+}); {% endcomment %}
+</script>
+{% schema %}
+{
+  "name": "Summer reviews",
+  "tag": "section",
+  "class": "section section-reviews-list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "portrait",
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "circle_images",
+      "label": "Circle images",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+        },
+        {
+          "value": "counter",
+          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+        }
+      ],
+      "default": "counter",
+      "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Review heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Review content"
+        },
+        {
+          "type": "text",
+          "label": "Review customer",
+          "id": "customer"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Not required."
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "default": 5,
+          "label": "Review Stars"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Review image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Summer reviews"
+    }
+  ]
+}
+{% endschema %}
