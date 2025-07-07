@@ -28,6 +28,12 @@
           "type": "rating",
           "settings": {}
         },
+        "delivery_threshold_d7hmim": {
+          "type": "delivery_threshold",
+          "settings": {
+            "color_scheme": "accent-2"
+          }
+        },
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
           "type": "short-description",
           "settings": {
@@ -152,6 +158,7 @@
         "information_videos_8BXc9p",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
+        "delivery_threshold_d7hmim",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_MKNiNH",
         "price",
@@ -198,7 +205,7 @@
       "custom_css": [
         ".deferred-media__poster-button {color: white;}",
         ".video-section__poster img {object-position: top;}",
-        ".videos-list__item{flex-grow:0;}"
+        ".videos-list__item {flex-grow: 0;}"
       ],
       "settings": {
         "title": "SEE IT IN REAL LIFE",
@@ -379,7 +386,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "custom_liquid_ExyY9Q": {
