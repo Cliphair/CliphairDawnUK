@@ -10,10 +10,15 @@
     --grid-desktop-vertical-spacing: 20px;
   }
 
-  .grid__item details,
-  .grid__item summary,
+  .main-grid {
+    max-width: var(--page-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .grid__item > * {
     height: 100%;
+    cursor: pointer;
   }
 
   .grid__item img {
@@ -42,35 +47,73 @@
     }
   }
 
-  .pulldown-inner .h2 {
-    margin: 0;
+  .pulldown-content__inner * {
+    letter-spacing: -5%;
   }
 
-  .pulldown-inner .grid {
+  .pulldown-content__inner .h2 {
+    margin: 2rem 0 0;
+  }
+
+  .pulldown-content__inner .grid {
     align-items: stretch;
+    margin: 2rem 0;
+    justify-content: center;
   }
 
-  .pulldown-inner .grid__item > div {
+  .pulldown-content__inner .pulldown__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    border: 1px solid rgba(var(--color-foreground), 0.5);
   }
 
-  .pulldown-inner .grid__item > div ul {
+  .pulldown-content__inner .pulldown__card-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+
+  .pulldown-content__inner .pulldown__card-bottom .h3 {
+    margin: 0;
+  }
+
+  .pulldown-content__inner .pulldown__card-bottom ul {
     list-style-position: inside;
+    list-style-type: disc;
     padding: 0;
+    margin: 1.5rem 0;
   }
 
-  .pulldown-inner .grid__item img {
+  .pulldown-content__inner .pulldown__card-bottom .button {
+    min-height: unset;
+    min-width: unset;
+    padding: 0.75rem 1rem;
+  }
+
+  .pulldown-content__inner .grid__item img {
     width: 100%;
     height: auto;
     aspect-ratio: 1;
     object-fit: cover;
   }
+
+  @media screen and (min-width: {{ settings.page_width }}px) {
+    .main-grid {
+      padding: 0 5rem;
+    }
+
+    .pulldown-content__inner.page-width {
+      padding: 0;
+    }
+  }
 </style>
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="page-width section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<pulldown-container class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <ul
       class="grid main-grid grid--{{ columns_desktop }}-col-desktop grid--{{ columns_mobile }}-col-tablet-down"
       role="list"
@@ -81,26 +124,63 @@
         <li class="grid__item main-grid__item">
           {% case block.type %}
             {% when 'pulldown' %}
-              <div class="pulldown-opener" data-pulldown-id="PulldownElement-{{ section.id }}-{{ forloop.index }}">
-                <img src="{{ block.settings.image | image_url }}">
-              </div>
               <div
-                id="PulldownElement-{{ section.id }}-{{ forloop.index }}"
-                class="pulldown-content hidden"
-                style="display:none;"
+                class="pulldown-opener"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="PulldownElement-{{ section.id }}-{{ forloop.index }}"
+                data-pulldown-id="PulldownElement-{{ section.id }}-{{ forloop.index }}"
               >
-                <div class="pulldown-inner">
+                {% assign img = block.settings.image %}
+                <img
+                  src="{{ img | image_url: width: 400 }}"
+                  srcset="
+                    {{ img | image_url: width: 320 }} 320w,
+                    {{ img | image_url: width: 480 }} 480w,
+                    {{ img | image_url: width: 768 }} 768w,
+                    {{ img | image_url: width: 1024 }} 1024w,
+                    {{ img | image_url: width: 1440 }} 1440w
+                  "
+                  sizes="(max-width: 749px) calc(50vw - 1.5rem), (max-width: 989px) calc(50vw - 5rem), (max-width: 1399px) 25vw, calc(25vw - 2.5rem)"
+                  width="{{ img.width }}"
+                  height="{{ img.height }}"
+                  alt="{{ img.alt | escape }}"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+
+              <template id="PulldownElement-{{ section.id }}-{{ forloop.index }}">
+                <div class="pulldown-content__inner page-width">
                   <p class="h2 center">{{ block.settings.pulldown.title }}</p>
                   <div class="center">{{ block.settings.pulldown.introduction | metafield_tag }}</div>
+
                   <ul
                     class="grid grid--{{ columns_desktop }}-col-desktop grid--{{ columns_mobile }}-col-tablet-down"
                     role="list"
                   >
                     {% for element in block.settings.pulldown.elements.value %}
                       <li class="grid__item">
-                        <div>
-                          <img src="{{ element.image | image_url }}">
-                          <div>
+                        <div class="pulldown__card card">
+                          {% assign img = element.image %}
+                          <img
+                            src="{{ img | image_url: width: 400 }}"
+                            srcset="
+                              {{ img | image_url: width: 320 }} 320w,
+                              {{ img | image_url: width: 480 }} 480w,
+                              {{ img | image_url: width: 768 }} 768w,
+                              {{ img | image_url: width: 1024 }} 1024w,
+                              {{ img | image_url: width: 1440 }} 1440w
+                            "
+                            sizes="(max-width: 749px) calc(50vw - 1.5rem), (max-width: 989px) calc(50vw - 5rem), (max-width: 1399px) 25vw, calc(25vw - 2.5rem)"
+                            width="{{ img.width }}"
+                            height="{{ img.height }}"
+                            alt="{{ img.alt | escape }}"
+                            loading="lazy"
+                            decoding="async"
+                          >
+                          <div class="pulldown__card-bottom">
                             <div>
                               <p class="h3">{{ element.title }}</p>
                               <ul>
@@ -110,7 +190,7 @@
                               </ul>
                             </div>
                             {% if element.url.value %}
-                              <a class="button" href="{{ element.url.value }}">Learn more</a>
+                              <a class="button button--secondary" href="{{ element.url.value }}">Filter Product</a>
                             {% endif %}
                           </div>
                         </div>
@@ -118,80 +198,218 @@
                     {% endfor %}
                   </ul>
                 </div>
-              </div>
+              </template>
             {% when 'url' %}
               <a href="{{ block.settings.url }}">
-                <img src="{{ block.settings.image | image_url }}">
+                {% assign img = block.settings.image %}
+                <img
+                  src="{{ img | image_url: width: 400 }}"
+                  srcset="
+                    {{ img | image_url: width: 320 }} 320w,
+                    {{ img | image_url: width: 480 }} 480w,
+                    {{ img | image_url: width: 768 }} 768w,
+                    {{ img | image_url: width: 1024 }} 1024w,
+                    {{ img | image_url: width: 1440 }} 1440w
+                  "
+                  sizes="(max-width: 749px) calc(50vw - 1.5rem), (max-width: 989px) calc(50vw - 5rem), (max-width: 1399px) 25vw, calc(25vw - 2.5rem)"
+                  width="{{ img.width }}"
+                  height="{{ img.height }}"
+                  alt="{{ img.alt | escape }}"
+                  loading="lazy"
+                  decoding="async"
+                >
               </a>
           {% endcase %}
         </li>
       {% endfor %}
     </ul>
   </div>
-</div>
+</pulldown-container>
 
 {% comment %}
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    {% comment %} document.addEventListener('DOMContentLoaded', () => {
       const pulldownOpeners = document.querySelectorAll('.pulldown-opener');
 
       pulldownOpeners.forEach((opener) => {
-        opener.addEventListener('click', (event) => {
-          console.log('clicked', event.target.closest('.pulldown-opener'));
-          createPulldown(event.target.closest('.pulldown-opener'));
+        opener.addEventListener('click', () => {
+          const grid = opener.closest('ul.main-grid');
+          const columns =
+            window.innerWidth < 990 ? parseInt(grid.dataset.columnsMobile) : parseInt(grid.dataset.columnsDesktop);
+          const items = [...grid.querySelectorAll('.main-grid__item')];
+          const openerItem = opener.closest('.main-grid__item');
+          const index = items.indexOf(openerItem);
+          const row = Math.floor(index / columns);
+          const insertAfterIndex = Math.min((row + 1) * columns - 1, items.length - 1);
+
+          // Remove any existing pulldown rows
+          grid.querySelectorAll('.grid__item--pulldown').forEach((el) => el.remove());
+
+          const pulldownId = opener.dataset.pulldownId;
+          const contentEl = document.getElementById(pulldownId);
+          if (!contentEl) return;
+
+          const li = document.createElement('li');
+          li.classList.add('grid__item', 'grid__item--pulldown');
+          li.innerHTML = contentEl.innerHTML;
+
+          items[insertAfterIndex].after(li);
         });
       });
+    }); {% endcomment %}
 
-      function createPulldown(opener) {
-        const parent = opener.closest('.grid');
-        const totalElements = parent.querySelectorAll('.grid__item').length;
-        const columns = window.screen.width < 990 ? parent.dataset.columnsMobile : parent.dataset.columnsDesktop;
+    if (!customElements.get('pulldown-container')) {
+      customElements.define(
+        'pulldown-container',
+        class PulldownContainer extends HTMLElement {
+          constructor() {
+            super();
+          }
 
-        const totlaRows = Math.ceil(totalElements / columns);
+          connectedCallback() {
+            this.init();
+          }
 
-        console.log(parent);
-        console.log(totalElements);
-        console.log(columns);
-        console.log(totlaRows);
+          init() {
+            this.mainContainer = this.querySelector('.main-grid');
+            this.openers = [...this.mainContainer.querySelectorAll('.pulldown-opener')];
 
-        const li = document.createElement('li');
-        li.innerHTML = opener.querySelector('pulldown-content').innerHTML;
-        console.log(li);
-      }
-    });
+            this.openers.forEach(opener => {
+              opener.addEventListener('click', this.openerClick.bind(this));
+            });
+          }
+
+          openerClick(event) {
+            const opener = event.target.closest(".pulldown-opener");
+            const isOpen = opener.dataset.open ? true : false;
+
+            if (isOpen) {
+              this.clear(opener);
+              return;
+            }
+
+            opener.dataset.open = true;
+
+            const mobileColumns = parseInt(this.mainContainer.dataset.columnsMobile);
+            const desktopColumns = parseInt(this.mainContainer.dataset.columnsDesktop);
+
+            const columns = window.innerWidth < 990 ? mobileColumns : desktopColumns;
+            const allItems = [...this.mainContainer.querySelectorAll('.main-grid__item')];
+            const openerItem = opener.closest('.main-grid__item');
+            const index = allItems.indexOf(openerItem);
+            const row = Math.floor(index / columns);
+            const insertAfterIndex = Math.min((row + 1) * columns - 1, items.length - 1);
+
+
+
+            const pulldownId = opener.dataset.pulldownId;
+            const contentEl = document.getElementById(pulldownId);
+            if (!contentEl) return;
+
+            const li = document.createElement('li');
+            li.classList.add('grid__item', 'grid__item--pulldown');
+            li.innerHTML = contentEl.innerHTML;
+
+            allItems[insertAfterIndex].after(li);
+          }
+
+          clear(opener = false) {
+            if(opener) opener.removeAttribute('data-open');
+
+            // Remove any existing pulldown rows
+            this.mainContainer.querySelectorAll('.grid__item--pulldown').forEach((el) => el.remove());
+          }
+        }
+      );
+    }
   </script>
 {% endcomment %}
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const pulldownOpeners = document.querySelectorAll('.pulldown-opener');
+  if (!customElements.get('pulldown-container')) {
+    customElements.define(
+      'pulldown-container',
+      class PulldownContainer extends HTMLElement {
+        constructor() {
+          super();
+          this.abortController = new AbortController();
+          this.activeOpener = null;
+        }
 
-    pulldownOpeners.forEach((opener) => {
-      opener.addEventListener('click', () => {
-        console.log('test');
-        const grid = opener.closest('ul.main-grid');
-        const columns =
-          window.innerWidth < 990 ? parseInt(grid.dataset.columnsMobile) : parseInt(grid.dataset.columnsDesktop);
-        const items = [...grid.querySelectorAll('.main-grid__item')];
-        const openerItem = opener.closest('.main-grid__item');
-        const index = items.indexOf(openerItem);
-        const row = Math.floor(index / columns);
-        const insertAfterIndex = Math.min((row + 1) * columns - 1, items.length - 1);
+        connectedCallback() {
+          this.mainContainer = this.querySelector('.main-grid');
+          if (!this.mainContainer) return;
 
-        // Remove any existing pulldown rows
-        grid.querySelectorAll('.grid__item--pulldown').forEach((el) => el.remove());
+          this.mainContainer.addEventListener('click', this.handleGridClick.bind(this), {
+            signal: this.abortController.signal,
+          });
 
-        const pulldownId = opener.dataset.pulldownId;
-        const contentEl = document.getElementById(pulldownId);
-        if (!contentEl) return;
+          window.addEventListener('resize', this.handleResize.bind(this));
+        }
 
-        const li = document.createElement('li');
-        li.classList.add('grid__item', 'grid__item--pulldown');
-        li.innerHTML = contentEl.innerHTML;
+        disconnectedCallback() {
+          this.abortController.abort();
+          window.removeEventListener('resize', this.handleResize.bind(this));
+        }
 
-        items[insertAfterIndex].after(li);
-      });
-    });
-  });
+        handleGridClick(event) {
+          const opener = event.target.closest('.pulldown-opener');
+          if (!opener) return;
+          this.openerClick(opener);
+        }
+
+        openerClick(opener) {
+          const isOpen = opener.getAttribute('aria-expanded') === 'true';
+
+          this.clear();
+
+          if (isOpen) return;
+
+          this.activeOpener = opener;
+          opener.setAttribute('aria-expanded', 'true');
+          opener.setAttribute('data-open', 'true');
+
+          const pulldownId = opener.dataset.pulldownId;
+          opener.setAttribute('aria-controls', pulldownId);
+
+          const template = document.getElementById(pulldownId);
+          if (!template || !template.content) return;
+
+          const mobileCols = parseInt(this.mainContainer.dataset.columnsMobile || '2', 10);
+          const desktopCols = parseInt(this.mainContainer.dataset.columnsDesktop || '4', 10);
+          const columns = window.innerWidth < 990 ? mobileCols : desktopCols;
+
+          const items = [...this.mainContainer.querySelectorAll('.main-grid__item')];
+          const openerItem = opener.closest('.main-grid__item');
+          const index = items.indexOf(openerItem);
+          const row = Math.floor(index / columns);
+          const insertAfterIndex = Math.min((row + 1) * columns - 1, items.length - 1);
+
+          const pulldownRow = document.createElement('li');
+          pulldownRow.classList.add('grid__item', 'grid__item--pulldown');
+          pulldownRow.appendChild(template.content.cloneNode(true));
+
+          items[insertAfterIndex].after(pulldownRow);
+        }
+
+        handleResize() {
+          if (!this.activeOpener) return;
+          this.openerClick(this.activeOpener);
+        }
+
+        clear() {
+          if (this.activeOpener) {
+            this.activeOpener.removeAttribute('aria-expanded');
+            this.activeOpener.removeAttribute('aria-controls');
+            this.activeOpener.removeAttribute('data-open');
+            this.activeOpener = null;
+          }
+
+          this.mainContainer?.querySelectorAll('.grid__item--pulldown')?.forEach((el) => el.remove());
+        }
+      }
+    );
+  }
 </script>
 
 {% schema %}
