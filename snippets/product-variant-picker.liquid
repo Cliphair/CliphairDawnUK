@@ -60,7 +60,12 @@
               name="options[{{ option.name | escape }}]"
               form="{{ product_form_id }}"
             >
-              <option value="{{ option.selected_value | escape }}" selected="selected" disabled class="option-name">
+              <option
+                value="{{ option.selected_value | escape }}"
+                selected="selected"
+                disabled
+                class="option-name placeholder"
+              >
                 Select Your {{ option.name | remove: 'Select ' }}
               </option>
               {% render 'product-variant-options', product: product, option: option, block: block %}

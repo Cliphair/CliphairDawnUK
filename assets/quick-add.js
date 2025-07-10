@@ -28,6 +28,7 @@ if (!customElements.get('quick-add-modal')) {
             this.productElement = responseHTML.querySelector('section[id^="MainProduct-"]');
             this.preventDuplicatedIDs();
             this.removeDOMElements();
+            this.updateHeading(opener.getAttribute('data-product-url'));
             this.setInnerHTML(this.modalContent, this.productElement.innerHTML);
 
             if (window.Shopify && Shopify.PaymentButton) {
@@ -114,6 +115,20 @@ if (!customElements.get('quick-add-modal')) {
         }
 
         mediaImages.forEach((img) => img.setAttribute('sizes', mediaImageSizes));
+      }
+
+      updateHeading() {
+        const headingContainer = this.productElement.querySelector('.product__title');
+        if (!headingContainer) return;
+
+        const h1 = headingContainer.querySelector('h1');
+
+        const newHeading = document.createElement('h2');
+        newHeading.className = 'h3';
+        newHeading.innerText = h1.innerText;
+
+        headingContainer.innerHTML = "";
+        headingContainer.appendChild(newHeading);
       }
     }
   );

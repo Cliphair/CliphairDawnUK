@@ -532,6 +532,13 @@ customElements.define('header-drawer', HeaderDrawer);
 class ModalDialog extends HTMLElement {
   constructor() {
     super();
+  }
+
+  connectedCallback() {
+    if (this.moved) return;
+    this.moved = true;
+    document.body.appendChild(this);
+
     this.querySelector('[id^="ModalClose-"]').addEventListener('click', this.hide.bind(this, false));
     this.addEventListener('keyup', (event) => {
       if (event.code.toUpperCase() === 'ESCAPE') this.hide();
@@ -545,12 +552,6 @@ class ModalDialog extends HTMLElement {
         if (event.target === this) this.hide();
       });
     }
-  }
-
-  connectedCallback() {
-    if (this.moved) return;
-    this.moved = true;
-    document.body.appendChild(this);
   }
 
   show(opener) {
@@ -582,6 +583,8 @@ class ModalOpener extends HTMLElement {
     if (!button) return;
     button.addEventListener('click', () => {
       const modal = document.querySelector(this.getAttribute('data-modal'));
+      console.log(modal)
+      console.log(this.getAttribute('data-modal'))
       if (modal) modal.show(button);
     });
   }

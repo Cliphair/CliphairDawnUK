@@ -158,6 +158,15 @@
   margin-top: 0.5rem;
 }
 
+select.product-form__error {
+  box-shadow: 0 0 0 var(--inputs-border-width) rgba(235, 0, 27, var(--inputs-border-opacity));
+}
+
+select:focus.product-form__error,
+select:hover.product-form__error {
+  box-shadow: 0 0 0 calc(.1rem + var(--inputs-border-width)) rgba(235, 0, 27);
+}
+
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
