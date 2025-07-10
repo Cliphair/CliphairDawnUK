@@ -76,32 +76,6 @@
             "color_scheme": "inverse"
           }
         },
-        "wishlist_plus_wishlist_pdp_button_7mUcha": {
-          "type": "shopify://apps/wishlist-plus/blocks/wishlist-pdp-button/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-          "settings": {
-            "swym_atw_button_icon": "heart",
-            "swym_atw_icon_thickness": 1,
-            "swym_atw_display_btn_text": true,
-            "swym_button_position": "default",
-            "swym_atw_button_vertical_offset": 0,
-            "swym_atw_full_width": false,
-            "swym_atw_button_alignment": "left",
-            "swym_add_to_wishlist_color": "#ffffff",
-            "swym_added_to_wishlist_color": "#a590c1",
-            "swym_button_text_color": "#a590c1",
-            "swym_atw_border_color": "#ffffff",
-            "swym_atw_border_thickness": 0,
-            "swym_atw_button_border_radius": 0,
-            "swym_enable_hover_customization": false,
-            "swym_hover_add_to_wishlist_color": "#a590c1",
-            "swym_hover_added_to_wishlist_color": "#ffffff",
-            "swym_hover_button_text_color": "#ffffff",
-            "swym_hover_atw_border_color": "#a590c1",
-            "swym_hover_atw_border_thickness": 0,
-            "swym_hover_atw_button_border_radius": 0,
-            "swym_custom_css": ""
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -206,7 +180,6 @@
         "quantity_selector_RERRjV",
         "sc_back_in_stock_app_block_JKfDnH",
         "buy_buttons",
-        "wishlist_plus_wishlist_pdp_button_7mUcha",
         "share",
         "order_deadline_2_app_block_product_wa7Bmb",
         "order_deadline_67UiV7",
