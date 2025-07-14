@@ -1668,6 +1668,10 @@ a.product__text {
 }
 
 /* payment services block */
+.payment_services {
+  max-width: 44rem;
+}
+
 .payment_services~square-placement {
   margin-top: 15px !important;
 }

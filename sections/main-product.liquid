@@ -105,7 +105,7 @@
                 </p>
               {% endif %}
             {%- when 'payment_services' -%}
-              <div class="payment_services quick-add-hidden">
+              <div class="payment_services">
                 <div class="klarna-pacement">
                   <!-- Placement v2 -->
                   <klarna-placement
@@ -140,11 +140,13 @@
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1 class="{{ block.settings.heading_size }}">{{ product.title | escape }}</h1>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="{{ block.settings.heading_size }}">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
+                {% comment %}
+                  <a href="{{ product.url }}" class="product__title">
+                    <h2 class="{{ block.settings.heading_size }}">
+                      {{ product.title | escape }}
+                    </h2>
+                  </a>
+                {% endcomment %}
               </div>
             {%- when 'short-description' -%}
               {% liquid
@@ -157,7 +159,7 @@
 
               {%- if ShortDescription -%}
                 <div
-                  class="product__text inline-richtext short-description quick-add-hidden"
+                  class="product__text inline-richtext short-description"
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.title != blank %}
@@ -626,7 +628,7 @@
               -%}
             {%- when 'rating' -%}
               <div
-                class="yotpo-widget-instance quick-add-hidden"
+                class="yotpo-widget-instance"
                 data-yotpo-instance-id="277269"
                 data-yotpo-product-id="{{product.id}}"
                 data-yotpo-cart-product-id="{{item.product.id}}"
@@ -829,7 +831,7 @@
                 endif
               %}
 
-              <div class="information-videos color-{{ block.settings.color_scheme }}">
+              <div class="information-videos color-{{ block.settings.color_scheme }} quick-add-hidden">
                 {% unless product.type == 'Hair Care' or product.type == 'Accessories' or product.type == 'Gift Card' %}
                   <noscript>
                     <a

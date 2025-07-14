@@ -632,11 +632,13 @@
         "all": "All Shades",
         "blacks": {
           "blacks": "Blacks",
+          "all": "All Black Shades",
           "jet_black": "Jet Black (#1)",
           "natural_black": "Off/Natural Black (#1B)"
         },
         "browns": {
           "browns": "Browns",
+          "all": "All Brown Shades",
           "darkest_brown": "Darkest Brown (#2)",
           "dark_brown": "Dark Brown (#3)",
           "medium_brown": "Medium Brown (#4)",
@@ -648,6 +650,7 @@
         },
         "blondes": {
           "blondes": "Blondes",
+          "all": "All Blonde Shades",
           "silver_sand": "Silver Sand (#SS)",
           "ice_blonde": "Ice Blonde",
           "lightest_blonde": "Lightest Blonde (#60)",
@@ -660,6 +663,7 @@
         },
         "highlights": {
           "highlights": "Highlights",
+          "all": "All Highlight Shades",
           "iced_cappuccino": "Iced Cappuccino (#14/22)",
           "oak_brondie": "Oak Brondie",
           "biscuit_blondey": "Biscuit Blondey (#18/613)",
@@ -681,6 +685,7 @@
         },
         "balayages": {
           "balayages": "Balayages",
+          "all": "All Balayage Shades",
           "ash_black_balayage": "Ash Black Balayage",
           "silver_shadow_balayage": "Silver Shadow Balayage",
           "espresso_melt_balayage": "Espresso Melt Balayage",
@@ -692,6 +697,7 @@
         },
         "ombres": {
           "ombres": "Ombres",
+          "all": "All Ombre Shades",
           "silver_black_ombre": "Silver Black Ombre (#T1B/SG)",
           "espresso_honey_ombre": "Espresso Honey Ombre (#T2/27)",
           "chocolate_honey_ombre": "Chocolate Honey Ombre (#T4/27)",
@@ -699,6 +705,7 @@
         },
         "reds": {
           "reds": "Reds & Auburns",
+          "all": "All Red Shades",
           "strawberry_blonde": "Strawberry Blonde (#27)",
           "light_auburn": "Light Auburn (#30)",
           "autumn_spice": "Autumn Spice (#30B)",
@@ -712,6 +719,7 @@
         },
         "funkies": {
           "funkies": "Funkies",
+          "all": "All Funkie Shades",
           "silver_grey": "Silver/Grey",
           "pastel_pink": "Pastel Pink",
           "turquoise": "Turquoise",
