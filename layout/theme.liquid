@@ -485,57 +485,58 @@
     <!-- End Klarna -->
   </body>
 </html>
+{% comment %}
+  <!-- Begin Shopify-Clearpay JavaScript Snippet (v1.2.0) -->
+  {% if cart.currency.iso_code == shop.currency %}
+    <script type="text/javascript">
+      // Overrides:
+      var clearpay_msg_size = 'xs';  // Can be 'xs', 'sm', 'md' or 'lg'.
+      var clearpay_bold_amount = false;
+      // var clearpay_logo_theme = 'colour';  // Can be 'colour', 'black' or 'white'.
+      // var clearpay_modal_open_icon = true;
+      // var clearpay_hide_upper_limit = false;
+      // var clearpay_hide_lower_limit = true;
+      // var clearpay_show_if_outside_limits = true;
 
-<!-- Begin Shopify-Clearpay JavaScript Snippet (v1.2.0) -->
-{% if cart.currency.iso_code == shop.currency %}
-  <script type="text/javascript">
-    // Overrides:
-    var clearpay_msg_size = 'xs';  // Can be 'xs', 'sm', 'md' or 'lg'.
-    var clearpay_bold_amount = false;
-    // var clearpay_logo_theme = 'colour';  // Can be 'colour', 'black' or 'white'.
-    // var clearpay_modal_open_icon = true;
-    // var clearpay_hide_upper_limit = false;
-    // var clearpay_hide_lower_limit = true;
-    // var clearpay_show_if_outside_limits = true;
+      //var clearpay_product_integration_enabled = false;
+      var clearpay_product_selector = '#clearpay';
+      // var clearpay_variable_price_fallback = false;
+      var clearpay_variable_price_fallback_selector = '.final-price .money';
+      // var clearpay_variable_price_fallback_method = 'mutation';  // Can be 'mutation' or 'interval'.
 
-    //var clearpay_product_integration_enabled = false;
-    var clearpay_product_selector = '#clearpay';
-    // var clearpay_variable_price_fallback = false;
-    var clearpay_variable_price_fallback_selector = '.final-price .money';
-    // var clearpay_variable_price_fallback_method = 'mutation';  // Can be 'mutation' or 'interval'.
+      var clearpay_cart_integration_enabled = false;
+      // var clearpay_cart_static_selector = '#cart-subtotal-selector';
+      // var clearpay_variable_subtotal_fallback = false;
+      // var clearpay_variable_subtotal_fallback_selector = '';
+      // var clearpay_variable_subtotal_fallback_method = 'mutation'; // Can be 'mutation' or 'interval'.
 
-    var clearpay_cart_integration_enabled = false;
-    // var clearpay_cart_static_selector = '#cart-subtotal-selector';
-    // var clearpay_variable_subtotal_fallback = false;
-    // var clearpay_variable_subtotal_fallback_selector = '';
-    // var clearpay_variable_subtotal_fallback_method = 'mutation'; // Can be 'mutation' or 'interval'.
+      // var clearpay_dynamic_cart_integration_enabled = false;
+      // var clearpay_dynamic_cart_selector = '.cart-drawer__footer .totals';
+      // var clearpay_dynamic_cart_observer_target = '#CartDrawer';
 
-    // var clearpay_dynamic_cart_integration_enabled = false;
-    // var clearpay_dynamic_cart_selector = '.cart-drawer__footer .totals';
-    // var clearpay_dynamic_cart_observer_target = '#CartDrawer';
+      var clearpay_footer_logo_enabled = true;
+      var clearpay_footer_logo_format = 'icon';  // Can be 'icon', 'stacked' or 'logo'.
+      var clearpay_footer_logo_theme = 'colour'; // Can be 'colour', 'black' or 'white'.
+      var clearpay_footer_logo_background = 'border';  // Can be 'border' or 'transparent'.
+      var clearpay_footer_logo_container = 'footer ul.list-payment';
+      var clearpay_footer_logo_template = '<li class="list-payment__item"><object data="{logo_path}" type="image/svg+xml"></object></li>';
 
-    var clearpay_footer_logo_enabled = true;
-    var clearpay_footer_logo_format = 'icon';  // Can be 'icon', 'stacked' or 'logo'.
-    var clearpay_footer_logo_theme = 'colour'; // Can be 'colour', 'black' or 'white'.
-    var clearpay_footer_logo_background = 'border';  // Can be 'border' or 'transparent'.
-    var clearpay_footer_logo_container = 'footer ul.list-payment';
-    var clearpay_footer_logo_template = '<li class="list-payment__item"><object data="{logo_path}" type="image/svg+xml"></object></li>';
-
-    // Non-editable fields:
-    var clearpay_js_language = {{ localization.language.iso_code | slice: 0, 2 | json }};
-    var clearpay_js_country = {{ localization.country.iso_code | json }};
-    var clearpay_shop_currency = {{ shop.currency | json }};
-    var clearpay_cart_currency = {{ cart.currency.iso_code | json }};
-    var clearpay_shop_money_format = {{ shop.money_format | json }};
-    var clearpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
-    var clearpay_theme_name = {{ theme.name | json }};
-    var clearpay_product = {{ product | json }};
-    var clearpay_current_variant = {{ product.selected_or_first_available_variant | json }};
-    var clearpay_cart_total_price = {{ cart.total_price | json }};
-    var clearpay_js_snippet_version = '1.2.0';
-  </script>
-  <script type="text/javascript" src="https://static.afterpay.com/shopify-clearpay-javascript.js" async></script>
-{% else %}
-  <!-- Clearpay disabled: {{ cart.currency.iso_code }} != {{ shop.currency }} -->
-{% endif %}
-<!-- End Shopify-Clearpay JavaScript Snippet (v1.2.0) -->
+      // Non-editable fields:
+      var clearpay_js_language = {{ localization.language.iso_code | slice: 0, 2 | json }};
+      var clearpay_js_country = {{ localization.country.iso_code | json }};
+      var clearpay_shop_currency = {{ shop.currency | json }};
+      var clearpay_cart_currency = {{ cart.currency.iso_code | json }};
+      var clearpay_shop_money_format = {{ shop.money_format | json }};
+      var clearpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+      var clearpay_theme_name = {{ theme.name | json }};
+      var clearpay_product = {{ product | json }};
+      var clearpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+      var clearpay_cart_total_price = {{ cart.total_price | json }};
+      var clearpay_js_snippet_version = '1.2.0';
+    </script>
+    <script type="text/javascript" src="https://static.afterpay.com/shopify-clearpay-javascript.js" async></script>
+  {% else %}
+    <!-- Clearpay disabled: {{ cart.currency.iso_code }} != {{ shop.currency }} -->
+  {% endif %}
+  <!-- End Shopify-Clearpay JavaScript Snippet (v1.2.0) -->
+{% endcomment %}

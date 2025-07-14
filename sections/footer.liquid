@@ -346,7 +346,10 @@
                 </li>
               {%- endfor -%}
               <li class="list-payment__item">
-                {{ "klarna" | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                {{ 'klarna' | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+              <li class="list-payment__item">
+                {{ 'clearpay' | payment_type_svg_tag: class: 'icon icon--full-color' }}
               </li>
             </ul>
           </div>
@@ -363,7 +366,7 @@
         <ul class="policies list-unstyled">
           {%- for policy in shop.policies -%}
             {%- if policy != blank -%}
-              {% if policy.title == "Contact information" %}
+              {% if policy.title == 'Contact information' %}
                 <li>
                   <small class="copyright__content"
                     ><a href="/pages/contact-us">{{ policy.title }}</a></small

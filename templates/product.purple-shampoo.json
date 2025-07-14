@@ -103,6 +103,32 @@
             "heading_3": ""
           }
         },
+        "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
+          "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
+          "settings": {
+            "text_align": "inherit",
+            "margin_top": 16,
+            "margin_bottom": 16,
+            "color": "",
+            "size": "xs",
+            "intro_text": "Pay in",
+            "show_interest_free": true,
+            "payment_amount_is_bold": false,
+            "show_with": true,
+            "logo_type": "badge",
+            "logo_theme": "black-on-mint",
+            "modal_link_style": "circled-info-icon",
+            "modal_theme": "mint",
+            "breakpoint": 749,
+            "text_align_mobile": "inherit",
+            "margin_top_mobile": 16,
+            "margin_bottom_mobile": 16,
+            "show_lower_limit": true,
+            "show_upper_limit": true,
+            "show_if_outside_limits": true,
+            "product": "{{product}}"
+          }
+        },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
@@ -173,6 +199,7 @@
         "share",
         "order_deadline_67UiV7",
         "icon_with_text_HWPKmz",
+        "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
