@@ -9,28 +9,6 @@
  */
 {
   "sections": {
-    "visual_menu_66DUPM": {
-      "type": "visual-menu",
-      "custom_css": [
-        ".grid--peek .grid__item {min-width: unset;}",
-        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--3-col-tablet-down .grid__item {width: calc( (100% - 1.5rem - var(--grid-mobile-horizontal-spacing) * 5) / 3 ); }}",
-        "@media screen and (min-width: 1400px) {.section-visual-menu {display: none; }}"
-      ],
-      "settings": {
-        "collection-list": "visual-menu",
-        "image_ratio": "square",
-        "circle_images": true,
-        "hide_card_arrow": true,
-        "columns_desktop": 6,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "3",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 12,
-        "padding_bottom": 0
-      }
-    },
     "slideshow_3tCMjU": {
       "type": "slideshow",
       "blocks": {
@@ -112,51 +90,102 @@
         "accessibility_info": "Cliphair slideshow banners"
       }
     },
-    "maquee_bdNYHF": {
-      "type": "maquee",
+    "featured_collection_HYViXD": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "hair-care",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "videos_list_with_collection_modal_qBLHPL": {
+      "type": "videos-list-with-collection-modal",
       "blocks": {
-        "element_h6YLkb": {
-          "type": "element",
+        "video_TfRk3t": {
+          "type": "video",
           "settings": {
-            "text_label": "FREE UK DELIVERY ON ORDERS OVER £30",
-            "link": "shopify://pages/hair-extensions-shipping-delivery"
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_collection": "fringe-clip-in-hair-extensions",
+            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
           }
         },
-        "element_zx3LNE": {
-          "type": "element",
+        "video_t8zGmx": {
+          "type": "video",
           "settings": {
-            "text_label": "FREE VIRTUAL HAIR COLOUR MATCHING",
-            "link": "shopify://pages/colour-matching-service"
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
+            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
           }
         },
-        "element_PzXtwm": {
-          "type": "element",
+        "video_ayXWCz": {
+          "type": "video",
           "settings": {
-            "text_label": "PAY YOUR WAY WITH <a href=\"/pages/clearpay-hair-extensions\" title=\"Clearpay\">CLEARPAY</a> & <a href=\"/pages/klarna-faqs\" title=\"Klarna FAQs | Hair Extensions Klarna\">KLARNA</a>",
-            "link": ""
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_collection": "remy-royale-tape-in-extensions",
+            "modal_image": "shopify://shop_images/Featured_Image.jpg"
           }
         }
       },
       "block_order": [
-        "element_h6YLkb",
-        "element_zx3LNE",
-        "element_PzXtwm"
+        "video_TfRk3t",
+        "video_t8zGmx",
+        "video_ayXWCz"
       ],
       "custom_css": [
-        "a {color: inherit; text-decoration: none;}",
-        "a:hover {text-decoration: underline;}"
+        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
       ],
+      "name": "Videos list test",
       "settings": {
-        "text_size": "p",
-        "color_scheme": "background-2",
-        "columns_mobile": "1",
-        "scroll_mobile": true,
-        "duration_mobile": 20,
-        "columns_desktop": 3,
-        "scroll_desktop": true,
-        "duration_desktop": 20,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "title": "Shoppable Video Carousel",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": false,
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "anchor_menu_CThXHh": {
@@ -349,70 +378,6 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "videos_list_with_collection_modal_qBLHPL": {
-      "type": "videos-list-with-collection-modal",
-      "blocks": {
-        "video_TfRk3t": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
-          }
-        },
-        "video_t8zGmx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
-          }
-        },
-        "video_ayXWCz": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "video_TfRk3t",
-        "video_t8zGmx",
-        "video_ayXWCz"
-      ],
-      "custom_css": [
-        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
-      ],
-      "name": "Videos list test",
-      "settings": {
-        "title": "Shoppable Video Carousel",
-        "heading_size": "h2",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 5,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "visual_menu_66DUPMN": {
@@ -1479,9 +1444,8 @@
     }
   },
   "order": [
-    "visual_menu_66DUPM",
     "slideshow_3tCMjU",
-    "maquee_bdNYHF",
+    "featured_collection_HYViXD",
     "videos_list_with_collection_modal_qBLHPL",
     "anchor_menu_CThXHh",
     "collection_carrousel_QhAGdA",
