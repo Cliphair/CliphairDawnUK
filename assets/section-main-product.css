@@ -1697,7 +1697,8 @@ klarna-placement::part(osm-badge-container) {
 }
 
 .payment_services klarna-placement,
-.payment_services .clearpay-placement {
+.payment_services .clearpay-placement,
+square-placement {
   border: 1px solid #eae7e4;
   padding: 10px;
   min-height: 70px;

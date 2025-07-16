@@ -264,3 +264,96 @@ quick-add-modal .product__info-wrapper .price.price--large {
 quick-add-modal .product__info-container .product-form {
   margin-top: 0;
 }
+
+quick-add-modal square-placement {
+  display: none;
+}
+
+@media screen and (min-width:750px) {
+  quick-add-modal .slider.slider--mobile {
+    position: relative;
+    flex-wrap: inherit;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+  }
+
+  quick-add-modal .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  quick-add-modal .thumbnail-slider {
+    display: flex;
+    align-items: center;
+  }
+
+  quick-add-modal .thumbnail-slider .thumbnail-list.slider {
+    display: flex;
+    padding: .5rem;
+    flex: 1;
+    scroll-padding-left: .5rem;
+  }
+
+  quick-add-modal .slider.slider--mobile {
+    position: relative;
+    flex-wrap: inherit;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+  }
+
+  quick-add-modal .medium-hide {
+    display: flex !important;
+  }
+
+  quick-add-modal .product__media-wrapper .slider-mobile-gutter .slider-button {
+    display: flex !important;
+  }
+
+  quick-add-modal .slider.slider--mobile .slider__slide {
+    margin-bottom: 0;
+    padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
+    padding-bottom: max(var(--focus-outline-padding), var(--shadow-padding-bottom));
+  }
+
+  quick-add-modal .thumbnail-list__item.slider__slide {
+    width: calc(33% - .6rem);
+  }
+
+  .quick-add-modal__content {
+
+    max-height: calc(100% - var(--modal-height-offset));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  quick-add-modal .product--stacked .product__media-item {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  quick-add-modal .quick-add-modal__content {
+    width: 100%;
+    max-width: 990px;
+    ;
+  }
+
+  quick-add-modal .quick-add-modal__content {
+    --modal-height-offset: 5rem;
+    margin-top: var(--modal-height-offset);
+    max-height: calc(100% - var(--modal-height-offset) * 2);
+  }
+}
+
+.quick-add-modal {
+  background: rgba(var(--color-foreground), .6);
+}
