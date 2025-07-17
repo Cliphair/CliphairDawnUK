@@ -53,6 +53,19 @@
     min-width:200px;
   } 
 
+  .section-featured-collection .card__information,
+  .section-featured-collection .card-information{
+    text-align:left;
+  }
+  
+  button.button{
+    width: fit-content;
+    min-width: 0;
+    min-height: 0;
+    padding: 1rem 2.5rem;
+    max-width: 100%;
+  }
+  
   @media screen and (min-width: 990px) {
     .section-featured-collection .slider--desktop .slider__slide:first-child {
       margin-left: 0;
@@ -101,7 +114,7 @@
             {% endif %}
           >
             {%
-              render 'card-product',
+              render 'card-product-v2',
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
