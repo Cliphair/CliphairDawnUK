@@ -24,6 +24,7 @@
       "block_order": [
         "slide_CBmATa"
       ],
+      "disabled": true,
       "name": "Slideshow image link",
       "settings": {
         "layout": "full_bleed",
@@ -33,6 +34,23 @@
         "change_slides_speed": 5,
         "show_text_below": false,
         "accessibility_info": "{{ collection.title }} main banner"
+      }
+    },
+    "main_collection_banner_with_text_overlay_Xtzd8P": {
+      "type": "main-collection-banner-with-text-overlay",
+      "name": "Collection banner with text overlay",
+      "settings": {
+        "image": "{{ collection.metafields.custom.custom_banner_mobile.value }}",
+        "image_desktop": "{{ collection.metafields.custom.custom_banner_desktop.value }}",
+        "heading_size": "h2",
+        "box_align": "bottom-left",
+        "show_text_box": true,
+        "text_alignment": "left",
+        "image_overlay_opacity": 50,
+        "color_scheme": "accent-3",
+        "text_alignment_mobile": "left",
+        "image_behavior": "none",
+        "show_text_below": false
       }
     },
     "collection_filter_circle_Giyhbq": {
@@ -194,6 +212,7 @@
   },
   "order": [
     "slideshow_image_link_r4crkL",
+    "main_collection_banner_with_text_overlay_Xtzd8P",
     "collection_filter_circle_Giyhbq",
     "product-grid",
     "banner",
