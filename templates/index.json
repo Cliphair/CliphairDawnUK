@@ -196,23 +196,6 @@
       "name": "Table Of Contents",
       "settings": {}
     },
-    "yotpo_reviews_dynamic_carrousel_UeNWFY": {
-      "type": "yotpo-reviews-dynamic-carrousel",
-      "name": "Summer reviews",
-      "settings": {
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "circle_images": true,
-        "columns_desktop": 5,
-        "swipe_on_desktop": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "trackable_name": ""
-      }
-    },
     "featured_collection_HYViXD": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -245,6 +228,23 @@
         "swipe_on_mobile": true,
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "yotpo_reviews_dynamic_carrousel_UeNWFY": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "name": "Summer reviews",
+      "settings": {
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "circle_images": true,
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "dots",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "videos_list_with_collection_modal_qBLHPL": {
@@ -931,8 +931,8 @@
     "slideshow_3tCMjU",
     "pulldown_info_grid_B88Q8G",
     "table_of_content_CtFVX8",
-    "yotpo_reviews_dynamic_carrousel_UeNWFY",
     "featured_collection_HYViXD",
+    "yotpo_reviews_dynamic_carrousel_UeNWFY",
     "videos_list_with_collection_modal_qBLHPL",
     "anchor_menu_CThXHh",
     "collection_carrousel_QhAGdA",
