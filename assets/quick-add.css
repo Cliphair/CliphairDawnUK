@@ -347,8 +347,8 @@ quick-add-modal square-placement {
   }
 
   quick-add-modal .quick-add-modal__content {
-    --modal-height-offset: 0;
-    margin-top: var(--modal-height-offset);
+    --modal-height-offset: 10rem;
+    margin-top: 0;
     max-height: calc(100% - 10rem);
     top: 50%;
     left: 50%;
