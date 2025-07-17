@@ -20,6 +20,17 @@
   .reviews-list__item.no-image .review-section_text{
     justify-content:flex-start;
   }
+
+  modal-dialog.no-image .product-popup-modal__content-info .product-popup-modal__content-info {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "heading"
+      "content"
+      "additional";
+    height: 100%;
+  }
 </style>
 
 {% assign product = all_products['tape-in-remy-human-hair-extension-darkest-brown-2'] %}
