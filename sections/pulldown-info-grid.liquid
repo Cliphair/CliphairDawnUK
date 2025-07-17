@@ -2,7 +2,7 @@
 {% assign columns_mobile = section.settings.columns_mobile | default: 2 %}
 
 <style>
-  .grid {
+  pulldown-container .grid {
     align-items: stretch;
     --grid-mobile-horizontal-spacing: 10px;
     --grid-mobile-vertical-spacing: 10px;
@@ -10,18 +10,18 @@
     --grid-desktop-vertical-spacing: 20px;
   }
 
-  .main-grid {
+  pulldown-container .main-grid {
     max-width: var(--page-width);
     margin-right: auto;
     margin-left: auto;
   }
 
-  .grid__item > * {
+  pulldown-container .grid__item > * {
     height: 100%;
     cursor: pointer;
   }
 
-  .grid__item img {
+  pulldown-container .grid__item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -29,7 +29,7 @@
     margin: 0;
   }
 
-  .grid__item--pulldown {
+  pulldown-container .grid__item--pulldown {
     grid-column: 1 / -1;
     animation: fadeIn 0.3s ease;
     width: 100% !important;
@@ -47,21 +47,21 @@
     }
   }
 
-  .pulldown-content__inner * {
+  pulldown-container .pulldown-content__inner * {
     letter-spacing: -5%;
   }
 
-  .pulldown-content__inner .h2 {
+  pulldown-container .pulldown-content__inner .h2 {
     margin: 2rem 0 0;
   }
 
-  .pulldown-content__inner .grid {
+  pulldown-container .pulldown-content__inner .grid {
     align-items: stretch;
     margin: 2rem 0;
     justify-content: center;
   }
 
-  .pulldown-content__inner .pulldown__card {
+  pulldown-container .pulldown-content__inner .pulldown__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,7 +69,7 @@
     border: 1px solid rgba(var(--color-foreground), 0.5);
   }
 
-  .pulldown-content__inner .pulldown__card-bottom {
+  pulldown-container .pulldown-content__inner .pulldown__card-bottom {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -77,11 +77,11 @@
     padding: 1.5rem;
   }
 
-  .pulldown-content__inner .pulldown__card-bottom .h4 {
+  pulldown-container .pulldown-content__inner .pulldown__card-bottom .h4 {
     margin: 0;
   }
 
-  .pulldown-content__inner .pulldown__card-bottom ul {
+  pulldown-container .pulldown-content__inner .pulldown__card-bottom ul {
     list-style-position: inside;
     list-style-type: disc;
     padding: 0;
@@ -90,18 +90,18 @@
   }
 
   @media screen and (min-width:990px){
-    .pulldown-content__inner .pulldown__card-bottom ul {
+    pulldown-container .pulldown-content__inner .pulldown__card-bottom ul {
       font-size:1.5rem;
     }
   }
 
-  .pulldown-content__inner .pulldown__card-bottom .button {
+  pulldown-container .pulldown-content__inner .pulldown__card-bottom .button {
     min-height: unset;
     min-width: unset;
     padding: 0.75rem 1rem;
   }
 
-  .pulldown-content__inner .grid__item img {
+  pulldown-container .pulldown-content__inner .grid__item img {
     width: 100%;
     height: auto;
     aspect-ratio: 1;
@@ -109,11 +109,11 @@
   }
 
   @media screen and (min-width: {{ settings.page_width }}px) {
-    .main-grid {
+    pulldown-container .main-grid {
       padding: 0 5rem;
     }
 
-    .pulldown-content__inner.page-width {
+    pulldown-container .pulldown-content__inner.page-width {
       padding: 0;
     }
   }
