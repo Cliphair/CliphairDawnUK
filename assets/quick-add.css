@@ -347,9 +347,12 @@ quick-add-modal square-placement {
   }
 
   quick-add-modal .quick-add-modal__content {
-    --modal-height-offset: 10rem;
+    --modal-height-offset: 0;
     margin-top: var(--modal-height-offset);
-    max-height: calc(100% - var(--modal-height-offset) * 2);
+    max-height: calc(100% - 10rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
