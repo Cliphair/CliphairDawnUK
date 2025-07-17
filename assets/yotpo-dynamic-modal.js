@@ -159,6 +159,8 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
         imageContainer.className = 'image-container';
         if (review.image) {
           imageContainer.appendChild(this.createImage(review.image, review.name));
+        } else{
+          modal.classList.add("no-image")
         }
 
         const contentContainer = document.createElement('div');
