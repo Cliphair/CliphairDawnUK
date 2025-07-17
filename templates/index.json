@@ -196,6 +196,15 @@
       "name": "Table Of Contents",
       "settings": {}
     },
+    "yotpo_review_carrousel_U6gUrW": {
+      "type": "yotpo-review-carrousel",
+      "name": "Yotpo review carrousel",
+      "settings": {
+        "container_color_scheme": "background-collection-titles",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "featured_collection_HYViXD": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -914,6 +923,7 @@
     "slideshow_3tCMjU",
     "pulldown_info_grid_B88Q8G",
     "table_of_content_CtFVX8",
+    "yotpo_review_carrousel_U6gUrW",
     "featured_collection_HYViXD",
     "videos_list_with_collection_modal_qBLHPL",
     "anchor_menu_CThXHh",
