@@ -160,6 +160,7 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
         if (review.image) {
           imageContainer.appendChild(this.createImage(review.image, review.name));
         } else{
+          imageContainer.classList.add('hidden')
           modal.classList.add("no-image")
         }
 
