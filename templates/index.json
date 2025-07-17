@@ -90,6 +90,47 @@
         "accessibility_info": "Cliphair slideshow banners"
       }
     },
+    "pulldown_info_grid_B88Q8G": {
+      "type": "pulldown-info-grid",
+      "blocks": {
+        "pulldown_bUjGGf": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-collection.jpg",
+            "pulldown": "clip-in-collection"
+          }
+        },
+        "pulldown_zymnJe": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/professional-collection.jpg",
+            "pulldown": "professional-collection"
+          }
+        },
+        "pulldown_mjNU8w": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/brides.jpg",
+            "pulldown": ""
+          }
+        },
+        "url_g3FQwj": {
+          "type": "url",
+          "settings": {
+            "image": "shopify://shop_images/haircare_52151ca3-d42b-4ea7-81ad-ae9187ad1b1f.jpg",
+            "url": "shopify://collections/hair-care"
+          }
+        }
+      },
+      "block_order": [
+        "pulldown_bUjGGf",
+        "pulldown_zymnJe",
+        "pulldown_mjNU8w",
+        "url_g3FQwj"
+      ],
+      "name": "Pulldown info grid",
+      "settings": {}
+    },
     "featured_collection_HYViXD": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -1445,6 +1486,7 @@
   },
   "order": [
     "slideshow_3tCMjU",
+    "pulldown_info_grid_B88Q8G",
     "featured_collection_HYViXD",
     "videos_list_with_collection_modal_qBLHPL",
     "anchor_menu_CThXHh",
