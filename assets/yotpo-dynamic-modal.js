@@ -55,8 +55,8 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
 
       async fetchReviews() {
         const url = this.productId
-          ? `https://api.yotpo.com/v1/widget/${this.appKey}/products/${this.productId}/reviews.json?per_page=50`
-          : `https://api.yotpo.com/v1/widget/${this.appKey}/reviews.json?per_page=50`;
+          ? `https://api.yotpo.com/v1/widget/${this.appKey}/products/${this.productId}/reviews.json?per_page=250`
+          : `https://api.yotpo.com/v1/widget/${this.appKey}/reviews.json?per_page=250`;
 
         try {
           const response = await fetch(url);
