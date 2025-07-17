@@ -40,7 +40,7 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
 
         const selected = [
           ...withImages.slice(0, 10),
-          ...withoutImages.slice(0, 10 - withImages.length),
+          ...withoutImages.slice(0, Math.max(0, 10 - withImages.length)),
         ];
 
         return selected.map(r => ({
