@@ -182,6 +182,14 @@
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('back-top-top');
     if (button) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          button.classList.remove('visually-hidden');
+        } else {
+          button.classList.add('visually-hidden');
+        }
+    });
+      
       button.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
