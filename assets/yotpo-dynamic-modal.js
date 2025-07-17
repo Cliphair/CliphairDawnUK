@@ -15,8 +15,13 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
 
       async init() {
         const reviews = await this.getTopReviewsWithImage();
+        const slider = this.querySelector('slider-component');
+        
         if (reviews.length > 0) {
           this.renderReviewCards(reviews);
+          if(!slider) return
+
+          slider.resetSlider();
         } else {
           this.showEmptyState();
         }
