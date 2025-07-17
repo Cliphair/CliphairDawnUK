@@ -48,6 +48,20 @@
   endif
 -%}
 
+<style
+  .section-featured-collection .grid__item{
+    min-width:200px;
+  } 
+
+  @media screen and (min-width: 990px) {
+    .section-featured-collection .slider--desktop .slider__slide:first-child {
+      margin-left: 0;
+      scroll-margin-left: 0;
+    }
+  }
+</style>
+
+
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %} page-width">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin {% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
@@ -172,7 +186,7 @@
 {
   "name": "t:sections.featured-collection.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section-featured-collection",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
