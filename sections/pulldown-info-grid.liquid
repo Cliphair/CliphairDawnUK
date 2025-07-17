@@ -77,7 +77,7 @@
     padding: 1.5rem;
   }
 
-  .pulldown-content__inner .pulldown__card-bottom .h3 {
+  .pulldown-content__inner .pulldown__card-bottom .h4 {
     margin: 0;
   }
 
@@ -86,6 +86,12 @@
     list-style-type: disc;
     padding: 0;
     margin: 1.5rem 0;
+  }
+
+  @media screen and (max-width:450px){
+    .pulldown-content__inner .pulldown__card-bottom ul {
+      font-size:1.2rem;
+    }
   }
 
   .pulldown-content__inner .pulldown__card-bottom .button {
@@ -182,7 +188,7 @@
                           >
                           <div class="pulldown__card-bottom">
                             <div>
-                              <p class="h3">{{ element.title }}</p>
+                              <p class="h4">{{ element.title }}</p>
                               <ul>
                                 {% for feature in element.features.value %}
                                   <li>{{ feature }}</li>
