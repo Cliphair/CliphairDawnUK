@@ -97,6 +97,9 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
         if (review.image) {
           imgContainer.innerHTML = '';
           imgContainer.appendChild(this.createImage(review.image, review.name));
+        } else {
+            imgContainer.classList.add('hidden');
+            card.classList.add("no-image");
         }
 
         // Name & content
