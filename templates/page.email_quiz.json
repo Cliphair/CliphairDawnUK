@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "f7c8af35-61d8-4ba1-8391-d7d6406f86d0": {
@@ -9,39 +18,30 @@
     "97b34061-3408-4bdf-adb9-99a10b14d1ec": {
       "type": "page-header",
       "settings": {
-        "custom-title": true,
-        "first-line": "The Ultimate Hair Lover Quiz",
-        "second-line": "",
-        "hide": false,
-        "text_colour": "#000000",
-        "bg_colour": "#ffffff",
-        "mobile-font-size": 23,
-        "mobile-top-padding": 4,
-        "mobile-bottom-padding": 4,
-        "mobile-right-padding": 4,
-        "mobile-left-padding": 4,
-        "desktop-font-size": 30,
-        "desktop-top-padding": 10,
-        "desktop-bottom-padding": 10,
-        "desktop-right-padding": 10,
-        "desktop-left-padding": 10
+        "show_title": false,
+        "custom_title": "",
+        "heading_size": "h2",
+        "text_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "08f2a014-e4bd-40d6-b14b-604d9a37973c": {
       "type": "questions",
       "blocks": {
-        "e8abed36-c34b-4140-8f54-41c9463ffa01": {
+        "b6147055-21bd-406d-89f8-c6fdcc2d3b8c": {
           "type": "question",
           "settings": {
-            "question": "How long does your hair have to be to wear hair extensions?",
-            "answer1": "No Requirement",
-            "answer2": "4 inches",
-            "answer3": "2 Inches",
-            "answer4": "",
+            "question": "Which ingredient in a shampoo is suitable for hair extensions?",
+            "answer1": "Sulphate",
+            "answer2": "Parabens",
+            "answer3": "All of the above",
+            "answer4": "None of them are recommended",
             "answer5": "",
-            "direction": "row",
-            "answer": "b",
-            "explanation": "<p>For more information take a look at our blog: <a href=\"\/blogs\/hair-blog\/stylist-series-top-10-questions-asked-about-hair-extensions\" title=\"\/blogs\/hair-blog\/stylist-series-top-10-questions-asked-about-hair-extensions\">Stylist Series: Top 10 Questions Asked About Hair Extensions<\/a><\/p>"
+            "direction": "column",
+            "answer": "d",
+            "explanation": "<p>For hair extensions shampoos containing sulphate, parabens are not recommended at all - for more information on suitable shampoos, please refer to <a href=\"/blogs/hair-blog/7-best-shampoo-and-conditioner\" title=\"/blogs/hair-blog/7-best-shampoo-and-conditioner\">7 Best Shampoo And Conditioner</a></p>"
           }
         },
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22": {
@@ -55,14 +55,14 @@
             "answer5": "",
             "direction": "column",
             "answer": "a",
-            "explanation": "<p> In hair extensions, the term \"Halo\" refers to a type of extension that is a single weft with a transparent wire. It sits on the crown of your head like a halo, providing a quick and easy way to add volume and length without clips or tapes.<\/p>"
+            "explanation": "<p> In hair extensions, the term \"Halo\" refers to a type of extension that is a single weft with a transparent wire. It sits on the crown of your head like a halo, providing a quick and easy way to add volume and length without clips or tapes.</p>"
           }
         },
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b": {
           "type": "question",
           "settings": {
             "question": "Which shade is this closest to?",
-            "image": "shopify:\/\/shop_images\/quiz-question-9.webp",
+            "image": "shopify://shop_images/quiz-question-9.webp",
             "answer1": "Flaming Ginger",
             "answer2": "Dark Auburn",
             "answer3": "Plum Cherry",
@@ -70,7 +70,7 @@
             "answer5": "",
             "direction": "row",
             "answer": "b",
-            "explanation": "<p>For a full colour breakdown visit our <a href=\"\/pages\/hair-extensions-by-colour\" title=\"\/pages\/hair-extensions-by-colour\">colour chart page<\/a>. <\/p>"
+            "explanation": "<p>For a full colour breakdown visit our <a href=\"/pages/hair-extensions-by-colour\" title=\"/pages/hair-extensions-by-colour\">colour chart page</a>. </p>"
           }
         },
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123": {
@@ -84,14 +84,14 @@
             "answer5": "",
             "direction": "column",
             "answer": "C",
-            "explanation": "<p>The main difference between balayage and highlights lies in the application technique. Balayage involves hand-painting color onto sections of hair for a natural, sun-kissed effect with a softer regrowth line. Highlights, on the other hand, typically use foils to apply color to specific strands, creating a more defined and uniform result.<\/p>"
+            "explanation": "<p>The main difference between balayage and highlights lies in the application technique. Balayage involves hand-painting color onto sections of hair for a natural, sun-kissed effect with a softer regrowth line. Highlights, on the other hand, typically use foils to apply color to specific strands, creating a more defined and uniform result.</p>"
           }
         },
         "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e": {
           "type": "question",
           "settings": {
             "question": "In which decade did the ‘Finger wave’ hairstyle rise to prominence?",
-            "image": "shopify:\/\/shop_images\/quiz-querstion-5.webp",
+            "image": "shopify://shop_images/quiz-querstion-5.webp",
             "answer1": "1920s",
             "answer2": "1890s",
             "answer3": "1980s",
@@ -99,7 +99,21 @@
             "answer5": "",
             "direction": "row",
             "answer": "a",
-            "explanation": "<p>A finger wave is a method of setting hair into waves (curls) that was popular in the 1920s and early 1930s and again in the late 1990s in North America and Europe.<\/p>"
+            "explanation": "<p>A finger wave is a method of setting hair into waves (curls) that was popular in the 1920s and early 1930s and again in the late 1990s in North America and Europe.</p>"
+          }
+        },
+        "e8abed36-c34b-4140-8f54-41c9463ffa01": {
+          "type": "question",
+          "settings": {
+            "question": "How long does your hair have to be to wear hair extensions?",
+            "answer1": "No Requirement",
+            "answer2": "4 inches",
+            "answer3": "2 Inches",
+            "answer4": "",
+            "answer5": "",
+            "direction": "row",
+            "answer": "b",
+            "explanation": "<p>For more information take a look at our blog: <a href=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\" title=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\">Stylist Series: Top 10 Questions Asked About Hair Extensions</a></p>"
           }
         },
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd": {
@@ -113,14 +127,14 @@
             "answer5": "",
             "direction": "column",
             "answer": "b",
-            "explanation": "<p>Sometimes also referred to as stick tips or micro rings. This is a permanent hair extension type that is clamped to the hair with a small ring or copper tube. No heat or glue is required in this method.You can find more information via <a href=\"\/blogs\/hair-blog\/hair-extension-buying-guide-and-hair-glossary\" title=\"\/blogs\/hair-blog\/hair-extension-buying-guide-and-hair-glossary\">Cliphair: Hair Extension Buying Guide & Glossary<\/a><\/p>"
+            "explanation": "<p>Sometimes also referred to as stick tips or micro rings. This is a permanent hair extension type that is clamped to the hair with a small ring or copper tube. No heat or glue is required in this method.You can find more information via <a href=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\">Cliphair: Hair Extension Buying Guide & Glossary</a></p>"
           }
         },
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d": {
           "type": "question",
           "settings": {
             "question": "Which hair extensions product is this?",
-            "image": "shopify:\/\/shop_images\/quiz-question-6.webp",
+            "image": "shopify://shop_images/quiz-question-6.webp",
             "answer1": "Flat Tips",
             "answer2": "Remy Weave",
             "answer3": "Nano Bonds",
@@ -128,7 +142,7 @@
             "answer5": "",
             "direction": "row",
             "answer": "c",
-            "explanation": "<p>For more information take a look at our blog:  <a href=\"\/blogs\/hair-blog\/all-the-hype-of-nano-bond-hair-extensions-explained\" title=\"\/blogs\/hair-blog\/all-the-hype-of-nano-bond-hair-extensions-explained\">All The Hype Of Nano Bond Hair Extensions, Explained<\/a><\/p>"
+            "explanation": "<p>For more information take a look at our blog:  <a href=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\" title=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\">All The Hype Of Nano Bond Hair Extensions, Explained</a></p>"
           }
         },
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38": {
@@ -142,14 +156,14 @@
             "answer5": "",
             "direction": "column",
             "answer": "b",
-            "explanation": "<p>Invisible tape, in the context of hair extensions, refers to tape-in extensions that use ultra-thin and transparent tape. This tape is designed to be discreet, blending seamlessly with the natural hair, making the extensions virtually invisible.<\/p>"
+            "explanation": "<p>Invisible tape, in the context of hair extensions, refers to tape-in extensions that use ultra-thin and transparent tape. This tape is designed to be discreet, blending seamlessly with the natural hair, making the extensions virtually invisible.</p>"
           }
         },
         "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006": {
           "type": "question",
           "settings": {
             "question": "What style of braiding is this?",
-            "image": "shopify:\/\/shop_images\/quiz-question-8.webp",
+            "image": "shopify://shop_images/quiz-question-8.webp",
             "answer1": "French Braid",
             "answer2": "Fishtail Braid",
             "answer3": "Crown Braid",
@@ -157,14 +171,14 @@
             "answer5": "",
             "direction": "row",
             "answer": "c",
-            "explanation": "<p>Crown braids are a type of French braid that wraps around the head, just above the forehead, in a half-moon shape (resembling a crown or tiara)<\/p>"
+            "explanation": "<p>Crown braids are a type of French braid that wraps around the head, just above the forehead, in a half-moon shape (resembling a crown or tiara)</p>"
           }
         },
         "14278050-36eb-4b5e-9a59-cb67d15d8399": {
           "type": "question",
           "settings": {
             "question": "What Type of brush is this?",
-            "image": "shopify:\/\/shop_images\/quiz-question-10.webp",
+            "image": "shopify://shop_images/quiz-question-10.webp",
             "answer1": "Thermall Brush",
             "answer2": "Curve Brush",
             "answer3": "Detangling Brush",
@@ -172,28 +186,14 @@
             "answer5": "",
             "direction": "row",
             "answer": "c",
-            "explanation": "<p>Their special design minimizes damage from brushing tangled hair, and their thin flexible bristles make knot-busting easy and painless.<\/p>"
-          }
-        },
-        "b6147055-21bd-406d-89f8-c6fdcc2d3b8c": {
-          "type": "question",
-          "settings": {
-            "question": "Which ingredient in a shampoo is suitable for hair extensions?",
-            "answer1": "Sulphate",
-            "answer2": "Parabens",
-            "answer3": "All of the above",
-            "answer4": "None of them are recommended",
-            "answer5": "",
-            "direction": "column",
-            "answer": "d",
-            "explanation": "<p>For hair extensions shampoos containing sulphate, parabens are not recommended at all - for more information on suitable shampoos, please refer to <a href=\"\/blogs\/hair-blog\/7-best-shampoo-and-conditioner\" title=\"\/blogs\/hair-blog\/7-best-shampoo-and-conditioner\">7 Best Shampoo And Conditioner<\/a><\/p>"
+            "explanation": "<p>Their special design minimizes damage from brushing tangled hair, and their thin flexible bristles make knot-busting easy and painless.</p>"
           }
         },
         "1d754cc4-49c6-4dfb-aac1-e284b0a7726d": {
           "type": "question",
           "settings": {
             "question": "The red zone is an area on the head that hair extensions should be placed in.",
-            "image": "shopify:\/\/shop_images\/quiz-question-11.webp",
+            "image": "shopify://shop_images/quiz-question-11.webp",
             "answer1": "True",
             "answer2": "False",
             "answer3": "",
@@ -201,26 +201,25 @@
             "answer5": "",
             "direction": "column",
             "answer": "b",
-            "explanation": "<p>The red zone is regarded as the area where hair extensions should never be placed on. For more information visit:  <a href=\"\/blogs\/hair-blog\/how-do-you-blend-hair-extensions-that-don-t-match\" title=\"\/blogs\/hair-blog\/how-do-you-blend-hair-extensions-that-don-t-match\">How Do You Blend Hair Extensions That Don’t Match?<\/a><\/p>"
+            "explanation": "<p>The red zone is regarded as the area where hair extensions should never be placed on. For more information visit:  <a href=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\" title=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\">How Do You Blend Hair Extensions That Don’t Match?</a></p>"
           }
         }
       },
       "block_order": [
-        "e8abed36-c34b-4140-8f54-41c9463ffa01",
+        "b6147055-21bd-406d-89f8-c6fdcc2d3b8c",
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22",
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123",
         "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e",
+        "e8abed36-c34b-4140-8f54-41c9463ffa01",
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd",
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38",
         "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006",
         "14278050-36eb-4b5e-9a59-cb67d15d8399",
-        "b6147055-21bd-406d-89f8-c6fdcc2d3b8c",
         "1d754cc4-49c6-4dfb-aac1-e284b0a7726d"
       ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
