@@ -77,25 +77,25 @@
           "type": "question",
           "settings": {
             "question": "Which hair extensions product is this?",
-            "image": "shopify://shop_images/quiz-question-6.webp",
+            "image": "shopify://shop_images/18-613-rft_website-attachment_5f42048c-4a62-4f6b-aa79-93dc568020e9.webp",
             "answer1": "Flat Tips",
             "answer2": "Remy Weave",
             "answer3": "Nano Bonds",
             "answer4": "",
             "answer5": "",
             "direction": "row",
-            "answer": "c",
-            "explanation": "<p>For more information take a look at our blog:  <a href=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\" title=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\">All The Hype Of Nano Bond Hair Extensions, Explained</a></p>"
+            "answer": "A",
+            "explanation": "<p>For more information take a look at our blog:  <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/flat-tip-hair-extensions-the-super-secret-to-a-flawless-makeover\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/flat-tip-hair-extensions-the-super-secret-to-a-flawless-makeover\">Flat Tip Hair Extensions: The Super Secret To A Flawless Makeover</a></p>"
           }
         },
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b": {
           "type": "question",
           "settings": {
             "question": "Which shade is this closest to?",
-            "image": "shopify://shop_images/quiz-question-9.webp",
-            "answer1": "Flaming Ginger",
-            "answer2": "Dark Auburn",
-            "answer3": "Plum Cherry",
+            "image": "shopify://shop_images/Bridal_hair_that_lasts_throughout_your_special_day_staciegoodwinbridalhair_uses_our_Remy_hu.jpg",
+            "answer1": "Dark Brown (#3)",
+            "answer2": "Mousey Brown (#6B)",
+            "answer3": "ChocolateHoney (#4/27)",
             "answer4": "",
             "answer5": "",
             "direction": "row",
@@ -106,15 +106,15 @@
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123": {
           "type": "question",
           "settings": {
-            "question": "What is the main difference between balayage & highlights?",
-            "answer1": "Highlights involves hand-painting for a natural, blended look, while Balayage use foils for a more defined and uniform appearance.",
-            "answer2": "Balayage is the high-tech method using advanced laser technology to paint strands with precision, while highlights are the traditional, freehand approach involving a mystical hair artist.",
-            "answer3": "Balayage involves hand-painting color onto sections of hair for a natural, sun-kissed effect. Highlights, on the other hand, typically use foils to apply color to specific strands, creating a more defined and uniform result.",
-            "answer4": "",
+            "question": "What does \"double wefted\" mean in hair extensions? ",
+            "answer1": "Two Colours Blended ",
+            "answer2": "Two wefts sewn together for extra volume ",
+            "answer3": "Double the length ",
+            "answer4": "Two ypes of hair used ",
             "answer5": "",
             "direction": "column",
-            "answer": "C",
-            "explanation": "<p>The main difference between balayage and highlights lies in the application technique. Balayage involves hand-painting color onto sections of hair for a natural, sun-kissed effect with a softer regrowth line. Highlights, on the other hand, typically use foils to apply color to specific strands, creating a more defined and uniform result.</p>"
+            "answer": "B",
+            "explanation": "<p>Double wefted\" means that two wefts of hair are sewn together to create a thicker, fuller look without adding extra weight. It’s a great option for anyone who wants more volume without needing multiple layers of extensions.<br/>For more info refer to blog - <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\">Double Weft Extensions Explained</a><br/></p>"
           }
         },
         "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e": {
