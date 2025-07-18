@@ -30,6 +30,21 @@
     "08f2a014-e4bd-40d6-b14b-604d9a37973c": {
       "type": "questions",
       "blocks": {
+        "1d754cc4-49c6-4dfb-aac1-e284b0a7726d": {
+          "type": "question",
+          "settings": {
+            "question": "The red zone is an area on the head that hair extensions should be placed in.",
+            "image": "shopify://shop_images/quiz-question-11.webp",
+            "answer1": "True",
+            "answer2": "False",
+            "answer3": "",
+            "answer4": "",
+            "answer5": "",
+            "direction": "column",
+            "answer": "b",
+            "explanation": "<p>The red zone is regarded as the area where hair extensions should never be placed on. For more information visit:  <a href=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\" title=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\">How Do You Blend Hair Extensions That Don’t Match?</a></p>"
+          }
+        },
         "b6147055-21bd-406d-89f8-c6fdcc2d3b8c": {
           "type": "question",
           "settings": {
@@ -188,24 +203,10 @@
             "answer": "c",
             "explanation": "<p>Their special design minimizes damage from brushing tangled hair, and their thin flexible bristles make knot-busting easy and painless.</p>"
           }
-        },
-        "1d754cc4-49c6-4dfb-aac1-e284b0a7726d": {
-          "type": "question",
-          "settings": {
-            "question": "The red zone is an area on the head that hair extensions should be placed in.",
-            "image": "shopify://shop_images/quiz-question-11.webp",
-            "answer1": "True",
-            "answer2": "False",
-            "answer3": "",
-            "answer4": "",
-            "answer5": "",
-            "direction": "column",
-            "answer": "b",
-            "explanation": "<p>The red zone is regarded as the area where hair extensions should never be placed on. For more information visit:  <a href=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\" title=\"/blogs/hair-blog/how-do-you-blend-hair-extensions-that-don-t-match\">How Do You Blend Hair Extensions That Don’t Match?</a></p>"
-          }
         }
       },
       "block_order": [
+        "1d754cc4-49c6-4dfb-aac1-e284b0a7726d",
         "b6147055-21bd-406d-89f8-c6fdcc2d3b8c",
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22",
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
@@ -216,8 +217,7 @@
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38",
         "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006",
-        "14278050-36eb-4b5e-9a59-cb67d15d8399",
-        "1d754cc4-49c6-4dfb-aac1-e284b0a7726d"
+        "14278050-36eb-4b5e-9a59-cb67d15d8399"
       ],
       "settings": {}
     }
