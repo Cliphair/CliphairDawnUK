@@ -207,10 +207,11 @@ function retunrMessage(correctAnswers, questions){
     return  `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/HAIRGENIUS20' target='_self' title='£20 Off Code (HAIRGENIUS20)'>HAIRGENIUS20</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
+      <p>* Code valid until 20/07/2025</p>
       <p>Congratulations! You scored ${correctAnswers} out of ${questions}.</p>
       <div class='answers_display'>${displayAnswersHTML()}</div>
       <p>Please use the discount code at checkout when you are ready to purchase for £20 off your order.</p>
-      <p>* Code valid until 20/07/2025</p>
+      <p style="font-size:18px;">* Code valid until 20/07/2025</p>
       <!-- <div class='explanation-outer'>
         <p id='dropdown-btn'><span class='sign'>+</span> Check What You Got Wrong <span class='sub-text'>(click to open)</span></p>
         <div class='explanation-inner hidden'>
@@ -223,10 +224,10 @@ function retunrMessage(correctAnswers, questions){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/HAIRBOSS15' target='_self' title='£15 Off Code (HAIRBOSS15)'>HAIRBOSS15</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
+      <p style="font-size:18px;">* Code valid until 20/07/2025</p>
       <p>Congratulations! You scored ${correctAnswers} out of ${questions}.</p>
       <div class='answers_display'>${displayAnswersHTML()}</div>
       <p>Please use the discount code at checkout when you are ready to purchase for £15 off your order.</p>
-      <p>* Code valid until 20/07/2025</p>
       <!-- <div class='explanation-outer'>
         <p id='dropdown-btn'><span class='sign'>+</span> Check What You Got Wrong <span class='sub-text'>(click to open)</span></p>
         <div class='explanation-inner hidden'>
@@ -239,10 +240,10 @@ function retunrMessage(correctAnswers, questions){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/GROWNING10' target='_self' title='£10 Off Code (GROWNING10)'>GROWNING10</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
+      <p style="font-size:18px;">* Code valid until 20/07/2025</p>
       <p>Congratulations! You scored ${correctAnswers} out of ${questions}.</p>
       <div class='answers_display'>${displayAnswersHTML()}</div>
       <p>Please use the discount code at checkout when you are ready to purchase for £10 off your order.</p>
-      <p>* Code valid until 20/07/2025</p>
       <!-- <div class='explanation-outer'>
         <p id='dropdown-btn'><span class='sign'>+</span> Check What You Got Wrong <span class='sub-text'>(click to open)</span></p>
         <div class='explanation-inner hidden'>
@@ -255,10 +256,10 @@ function retunrMessage(correctAnswers, questions){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/QUIZ5' target='_self' title='£5 Off Code (QUIZ5)'>QUIZ5</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
+       <p style="font-size:18px;">* Code valid until 20/07/2025</p>
       <p>Congratulations! You scored ${correctAnswers} out of ${questions}.</p>
       <div class='answers_display'>${displayAnswersHTML()}</div>
       <p>Please use the discount code at checkout when you are ready to purchase for £5 off your order.</p>
-      <p>* Code valid until 20/07/2025</p>
       <!-- <div class='explanation-outer'>
         <p id='dropdown-btn'><span class='sign'>+</span> Check What You Got Wrong <span class='sub-text'>(click to open)</span></p>
         <div class='explanation-inner hidden'>
