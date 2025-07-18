@@ -1,7 +1,7 @@
-const queries = window.location.search;          //comment when testing
-const urlParams = new URLSearchParams(queries);  //comment when testing
-const validated = (urlParams.has('validated'));  //comment when testing
-// const validated = true; // uncomment when testing
+// const queries = window.location.search;          //comment when testing
+// const urlParams = new URLSearchParams(queries);  //comment when testing
+// const validated = (urlParams.has('validated'));  //comment when testing
+const validated = true; // uncomment when testing
 
 // Quiz just works if email validated before
 if(validated){ 
@@ -203,7 +203,7 @@ function displayExplanationHTML(){
 
 // Return the final message based on how many correct answers
 function retunrMessage(correctAnswers, questions){
-  if (correctAnswers >= 10){
+  if (correctAnswers >= 8){
     return  `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/HAIRGENIUS20' target='_self' title='£20 Off Code (HAIRGENIUS20)'>HAIRGENIUS20</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
@@ -219,7 +219,7 @@ function retunrMessage(correctAnswers, questions){
       </div> -->
     `
   }
-  else if(correctAnswers >= 7){
+  else if(correctAnswers >= 6){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/HAIRBOSS15' target='_self' title='£15 Off Code (HAIRBOSS15)'>HAIRBOSS15</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
@@ -235,7 +235,7 @@ function retunrMessage(correctAnswers, questions){
       </div> -->
     `
   }
-  else if(correctAnswers >= 5 ){
+  else if(correctAnswers >= 3 ){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/GROWNING10' target='_self' title='£10 Off Code (GROWNING10)'>GROWNING10</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
@@ -251,7 +251,7 @@ function retunrMessage(correctAnswers, questions){
       </div> -->
     `
   }
-  else if(correctAnswers >= 2){
+  else if(correctAnswers >= 1){
     return `
       <h2 class='code'>Code: <a href='https://www.cliphair.co.uk/discount/QUIZ5' target='_self' title='£5 Off Code (QUIZ5)'>QUIZ5</a></h2>
       <p class='discount_info'>(click to automatically apply)</p>
