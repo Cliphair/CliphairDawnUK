@@ -64,6 +64,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "sc_back_in_stock_app_block_DL8wre": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -195,6 +199,7 @@
         "yotpo_loyalty_rewards_product_points_module_app_block_e8QX7W",
         "variant_picker",
         "quantity_selector_J8hgHX",
+        "sc_back_in_stock_app_block_DL8wre",
         "buy_buttons",
         "share",
         "order_deadline_67UiV7",
@@ -217,7 +222,7 @@
       "settings": {
         "enable_sticky_info": true,
         "image_ratio": "square",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -414,7 +419,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "reviews-modal": {
