@@ -1,7 +1,7 @@
-// const queries = window.location.search;          //comment when testing
-// const urlParams = new URLSearchParams(queries);  //comment when testing
-// const validated = (urlParams.has('validated'));  //comment when testing
-const validated = true; // uncomment when testing
+const queries = window.location.search;          //comment when testing
+const urlParams = new URLSearchParams(queries);  //comment when testing
+const validated = (urlParams.has('validated'));  //comment when testing
+// const validated = true; // uncomment when testing
 
 // Quiz just works if email validated before
 if(validated){ 
