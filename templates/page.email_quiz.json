@@ -73,6 +73,21 @@
             "explanation": "<p> In hair extensions, the term \"Halo\" refers to a type of extension that is a single weft with a transparent wire. It sits on the crown of your head like a halo, providing a quick and easy way to add volume and length without clips or tapes.</p>"
           }
         },
+        "38d88d6c-4d59-4746-b3a6-9e9d4d98646d": {
+          "type": "question",
+          "settings": {
+            "question": "Which hair extensions product is this?",
+            "image": "shopify://shop_images/quiz-question-6.webp",
+            "answer1": "Flat Tips",
+            "answer2": "Remy Weave",
+            "answer3": "Nano Bonds",
+            "answer4": "",
+            "answer5": "",
+            "direction": "row",
+            "answer": "c",
+            "explanation": "<p>For more information take a look at our blog:  <a href=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\" title=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\">All The Hype Of Nano Bond Hair Extensions, Explained</a></p>"
+          }
+        },
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b": {
           "type": "question",
           "settings": {
@@ -145,21 +160,6 @@
             "explanation": "<p>Sometimes also referred to as stick tips or micro rings. This is a permanent hair extension type that is clamped to the hair with a small ring or copper tube. No heat or glue is required in this method.You can find more information via <a href=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\">Cliphair: Hair Extension Buying Guide & Glossary</a></p>"
           }
         },
-        "38d88d6c-4d59-4746-b3a6-9e9d4d98646d": {
-          "type": "question",
-          "settings": {
-            "question": "Which hair extensions product is this?",
-            "image": "shopify://shop_images/quiz-question-6.webp",
-            "answer1": "Flat Tips",
-            "answer2": "Remy Weave",
-            "answer3": "Nano Bonds",
-            "answer4": "",
-            "answer5": "",
-            "direction": "row",
-            "answer": "c",
-            "explanation": "<p>For more information take a look at our blog:  <a href=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\" title=\"/blogs/hair-blog/all-the-hype-of-nano-bond-hair-extensions-explained\">All The Hype Of Nano Bond Hair Extensions, Explained</a></p>"
-          }
-        },
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38": {
           "type": "question",
           "settings": {
@@ -209,12 +209,12 @@
         "1d754cc4-49c6-4dfb-aac1-e284b0a7726d",
         "b6147055-21bd-406d-89f8-c6fdcc2d3b8c",
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22",
+        "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123",
         "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e",
         "e8abed36-c34b-4140-8f54-41c9463ffa01",
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd",
-        "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38",
         "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006",
         "14278050-36eb-4b5e-9a59-cb67d15d8399"
