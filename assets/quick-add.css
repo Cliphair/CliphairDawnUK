@@ -269,6 +269,10 @@ quick-add-modal square-placement {
   display: none;
 }
 
+quick-add-modal .quick-add-show {
+  display: block !important;
+}
+
 @media screen and (min-width:750px) {
   quick-add-modal .slider.slider--mobile {
     position: relative;

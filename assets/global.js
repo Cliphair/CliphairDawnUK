@@ -1336,6 +1336,10 @@ class VariantSelects extends HTMLElement {
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
         }
 
+        const afterpayMessageDestination = document.querySelector('.payment_services .clearpay-placement');
+        const afterpayMessageSource = html.querySelector('.payment_services .clearpay-placement');
+        if (afterpayMessageSource && afterpayMessageDestination) afterpayMessageDestination.innerHTML = afterpayMessageSource.innerHTML;
+
         const price = document.getElementById(`price-${this.dataset.section}`);
 
         if (price) price.classList.remove('hidden');

@@ -106,6 +106,17 @@
               {% endif %}
             {%- when 'payment_services' -%}
               <div class="payment_services">
+                <div class="clearpay-placement hidden quick-add-show">
+                  <div>
+                    <p>
+                      Pay in 4 interest-free payments of {{ cart.currency.symbol -}}
+                      {{- product.selected_or_first_available_variant.price | divided_by: 4 | money_without_currency }}
+                      with
+                    </p>
+                    {{ 'clearpay' | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </div>
+                </div>
+
                 <div class="klarna-pacement">
                   <!-- Placement v2 -->
                   <klarna-placement
@@ -115,9 +126,6 @@
                   ></klarna-placement>
                   <!-- end Placement -->
                 </div>
-                {% comment %} <div class="clearpay-placement">
-                  <div id="clearpay"></div>
-                </div> {% endcomment %}
 
                 <div class="payment-methods-flags">
                   <ul>

@@ -1678,7 +1678,8 @@ a.product__text {
 
 klarna-placement::part(osm-message),
 klarna-placement::part(osm-cta),
-klarna-placement::part(osm-legal) {
+klarna-placement::part(osm-legal),
+.clearpay-placement p {
   font-size: 12px;
   letter-spacing: 0.06rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
@@ -1707,7 +1708,15 @@ square-placement {
 }
 
 .payment_services .clearpay-placement {
-  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.clearpay-placement>div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* payment icons */

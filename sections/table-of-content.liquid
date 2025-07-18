@@ -20,6 +20,16 @@
     padding: 0;
   }
 
+  .table-of-contents__inner {
+    position: relative;
+  }
+
+  .close-toc {
+    position: absolute;
+    bottom: calc(10vh + 40px);
+    right: 0;
+  }
+
   .back-top-top > span {
     bottom: calc(10vh - 5px);
     margin-top: 5px;
@@ -39,7 +49,7 @@
 
   .table-of-contents__inner {
     background-color: rgb(var(--color-background));
-    width: calc(100% - 5rem);
+    width: fit-content;
     margin-left: auto;
     height: 100%;
     overflow-y: auto;
@@ -55,6 +65,7 @@
       var(--drawer-shadow-horizontal-offset) var(--drawer-shadow-vertical-offset) var(--drawer-shadow-blur-radius)
         rgba(var(--color-shadow), var(--drawer-shadow-opacity))
     );
+    min-width: min(300px, calc(100% - 5rem));
   }
 
   .menu-opening .table-of-contents__inner {
@@ -165,6 +176,9 @@
                   </li>
                 {% endfor %}
               </ul>
+              <div id="close-toc" class="close-toc">
+                <span class="button button--secondary">Close Menu</span>
+              </div>
             </div>
           </div>
         </div>
@@ -181,6 +195,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('back-top-top');
+    const closeToc = document.getElementById('close-toc');
     if (button) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
@@ -188,10 +203,19 @@
         } else {
           button.classList.add('visually-hidden');
         }
-    });
-      
+      });
+
       button.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    if (closeToc) {
+      closeToc.addEventListener('click', (event) => {
+        const tocDetails = closeToc.closest('menu-drawer');
+        if (tocDetails) {
+          tocDetails.closeMenuDrawer(event);
+        }
       });
     }
   });

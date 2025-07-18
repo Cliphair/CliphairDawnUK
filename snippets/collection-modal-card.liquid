@@ -50,6 +50,14 @@
   .collection-modal-card__text-wrapper {
     padding: 1.5rem;
     flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .text-wrapper__top {
+    margin-bottom: 1rem;
   }
 
   .collection-title {
@@ -73,7 +81,6 @@
     margin: 0px;
     font-size: 1.4rem;
     line-height: 1.2em;
-    margin-top: 1rem;
   }
 
   @media screen and (max-width: 350px) {
@@ -114,7 +121,11 @@
       }}
     </div>
     <div class="collection-modal-card__text-wrapper">
-      <p class="collection-title">{{ collection_title }}</p>
+      <div class="text-wrapper__top">
+        <p class="collection-title">{{ collection_title }}</p>
+
+        <p class="collection-base-price">From {{ lowest_price | money }}</p>
+      </div>
       <modal-opener
         data-modal="#PopupModal-{{ collection_title | handle }}"
         {{ block.shopify_attributes }}
@@ -130,7 +141,6 @@
         </button>
       </modal-opener>
       <noscript><a href="{{ collection.url }}" class="collection-cta button js-hidden">View Collection</a></noscript>
-      <p class="collection-base-price">From {{ lowest_price | money }}</p>
     </div>
   </div>
 </div>
