@@ -73,6 +73,20 @@
             "explanation": "<p> In hair extensions, the term \"Halo\" refers to a type of extension that is a single weft with a transparent wire. It sits on the crown of your head like a halo, providing a quick and easy way to add volume and length without clips or tapes.</p>"
           }
         },
+        "e8abed36-c34b-4140-8f54-41c9463ffa01": {
+          "type": "question",
+          "settings": {
+            "question": "How long does your hair have to be to wear hair extensions?",
+            "answer1": "No Requirement",
+            "answer2": "4 inches",
+            "answer3": "2 Inches",
+            "answer4": "",
+            "answer5": "",
+            "direction": "row",
+            "answer": "b",
+            "explanation": "<p>For more information take a look at our blog: <a href=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\" title=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\">Stylist Series: Top 10 Questions Asked About Hair Extensions</a></p>"
+          }
+        },
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d": {
           "type": "question",
           "settings": {
@@ -117,47 +131,18 @@
             "explanation": "<p>Double wefted\" means that two wefts of hair are sewn together to create a thicker, fuller look without adding extra weight. It’s a great option for anyone who wants more volume without needing multiple layers of extensions.<br/>For more info refer to blog - <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\">Double Weft Extensions Explained</a><br/></p>"
           }
         },
-        "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e": {
-          "type": "question",
-          "settings": {
-            "question": "In which decade did the ‘Finger wave’ hairstyle rise to prominence?",
-            "image": "shopify://shop_images/quiz-querstion-5.webp",
-            "answer1": "1920s",
-            "answer2": "1890s",
-            "answer3": "1980s",
-            "answer4": "",
-            "answer5": "",
-            "direction": "row",
-            "answer": "a",
-            "explanation": "<p>A finger wave is a method of setting hair into waves (curls) that was popular in the 1920s and early 1930s and again in the late 1990s in North America and Europe.</p>"
-          }
-        },
-        "e8abed36-c34b-4140-8f54-41c9463ffa01": {
-          "type": "question",
-          "settings": {
-            "question": "How long does your hair have to be to wear hair extensions?",
-            "answer1": "No Requirement",
-            "answer2": "4 inches",
-            "answer3": "2 Inches",
-            "answer4": "",
-            "answer5": "",
-            "direction": "row",
-            "answer": "b",
-            "explanation": "<p>For more information take a look at our blog: <a href=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\" title=\"/blogs/hair-blog/stylist-series-top-10-questions-asked-about-hair-extensions\">Stylist Series: Top 10 Questions Asked About Hair Extensions</a></p>"
-          }
-        },
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd": {
           "type": "question",
           "settings": {
-            "question": "What is the main difference in hair application when using I-Tips & U-Tips Permanent Hair Extensions?",
-            "answer1": "I-Tip uses a heating connector to melt the tip, and fuse to the hair. U-Tips are clamped to the hair with a small ring or copper tube",
-            "answer2": "U-Tip uses heat connector to melt the tip, and fuse to the hair - whilst I-Tip does not need use of heating or glue for application.",
-            "answer3": "U-Tips can only be sewn into the hair, whilst I-Tips can only be glued.",
-            "answer4": "",
+            "question": "How should you store clip-in hair extensions when not in use? ",
+            "answer1": "In aplastic bag ",
+            "answer2": "Rolled up in a towel ",
+            "answer3": "Hanging in a cool, dry place ",
+            "answer4": "Indirect sunlight ",
             "answer5": "",
             "direction": "column",
-            "answer": "b",
-            "explanation": "<p>Sometimes also referred to as stick tips or micro rings. This is a permanent hair extension type that is clamped to the hair with a small ring or copper tube. No heat or glue is required in this method.You can find more information via <a href=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\">Cliphair: Hair Extension Buying Guide & Glossary</a></p>"
+            "answer": "C",
+            "explanation": "<p>Storing your clip-in hair extensions properly helps maintain their shape, shine, and longevity. A cool, dry place keeps them free from moisture, heat damage, and tangling. Hanging them or placing them flat in a storage box ensures they stay neat and ready for your next use.<br/><br/><strong>For full storage tips, check out: </strong><a href=\"https://www.cliphair.co.uk/blogs/hair-blog/how-to-store-hair-extensions\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/how-to-store-hair-extensions\">A Complete Guide On How To Store Hair Extensions</a></p>"
           }
         },
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38": {
@@ -209,11 +194,10 @@
         "1d754cc4-49c6-4dfb-aac1-e284b0a7726d",
         "b6147055-21bd-406d-89f8-c6fdcc2d3b8c",
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22",
+        "e8abed36-c34b-4140-8f54-41c9463ffa01",
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
         "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123",
-        "fae9b2b5-bd77-433f-81c8-c5ef80e85d4e",
-        "e8abed36-c34b-4140-8f54-41c9463ffa01",
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd",
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38",
         "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006",
