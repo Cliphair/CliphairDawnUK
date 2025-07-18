@@ -102,21 +102,6 @@
             "explanation": "<p>For more information take a look at our blog:  <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/flat-tip-hair-extensions-the-super-secret-to-a-flawless-makeover\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/flat-tip-hair-extensions-the-super-secret-to-a-flawless-makeover\">Flat Tip Hair Extensions: The Super Secret To A Flawless Makeover</a></p>"
           }
         },
-        "cb4556d7-bc01-41d7-a4db-61ce8c16910b": {
-          "type": "question",
-          "settings": {
-            "question": "Which shade is this closest to?",
-            "image": "shopify://shop_images/Bridal_hair_that_lasts_throughout_your_special_day_staciegoodwinbridalhair_uses_our_Remy_hu.jpg",
-            "answer1": "Dark Brown (#3)",
-            "answer2": "Mousey Brown (#6B)",
-            "answer3": "ChocolateHoney (#4/27)",
-            "answer4": "",
-            "answer5": "",
-            "direction": "row",
-            "answer": "b",
-            "explanation": "<p>For a full colour breakdown visit our <a href=\"/pages/hair-extensions-by-colour\" title=\"/pages/hair-extensions-by-colour\">colour chart page</a>. </p>"
-          }
-        },
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123": {
           "type": "question",
           "settings": {
@@ -128,14 +113,29 @@
             "answer5": "",
             "direction": "column",
             "answer": "B",
-            "explanation": "<p>Double wefted\" means that two wefts of hair are sewn together to create a thicker, fuller look without adding extra weight. It’s a great option for anyone who wants more volume without needing multiple layers of extensions.<br/>For more info refer to blog - <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\">Double Weft Extensions Explained</a><br/></p>"
+            "explanation": "<p>Double wefted\" means that two wefts of hair are sewn together to create a thicker, fuller look without adding extra weight. It’s a great option for anyone who wants more volume without needing multiple layers of extensions.<br/>For more info refer to blog - <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\" title=\"https://www.cliphair.co.uk/blogs/hair-blog/double-weft-extensions-explained\">Double Weft Extensions Explained</a></p>"
+          }
+        },
+        "cb4556d7-bc01-41d7-a4db-61ce8c16910b": {
+          "type": "question",
+          "settings": {
+            "question": "Which shade is this closest to?",
+            "image": "shopify://shop_images/Bridal_hair_that_lasts_throughout_your_special_day_staciegoodwinbridalhair_uses_our_Remy_hu.jpg",
+            "answer1": "Dark Brown (#3)",
+            "answer2": "Mousey Brown (#6B)",
+            "answer3": "Chocolate Honey (#4/27)",
+            "answer4": "",
+            "answer5": "",
+            "direction": "row",
+            "answer": "b",
+            "explanation": "<p>For a full colour breakdown visit our <a href=\"/pages/hair-extensions-by-colour\" title=\"/pages/hair-extensions-by-colour\">colour chart page</a>. </p>"
           }
         },
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd": {
           "type": "question",
           "settings": {
             "question": "How should you store clip-in hair extensions when not in use? ",
-            "answer1": "In aplastic bag ",
+            "answer1": "In a plastic bag ",
             "answer2": "Rolled up in a towel ",
             "answer3": "Hanging in a cool, dry place ",
             "answer4": "Indirect sunlight ",
@@ -148,30 +148,15 @@
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38": {
           "type": "question",
           "settings": {
-            "question": "What makes an invisible tape ‘invisible’?",
-            "answer1": "The reason it's called invisible tape is that it's made from a rare material of tape that mimics the color of your hair.",
-            "answer2": "Invisible tape in the context of hair extensions refers to tape-in extensions that utilize ultra-thin and transparent tape, creating a discreet and natural look.",
-            "answer3": "Invisible tape is called so because it contains a special reflective material that tricks the eyes into not seeing the extensions, providing a magical and hidden appearance.",
-            "answer4": "",
+            "question": "Which of these is a temporary hair extension method",
+            "answer1": "Nano Rings",
+            "answer2": "Tape Ins",
+            "answer3": "Pre-Bonded",
+            "answer4": "Clip Ins",
             "answer5": "",
             "direction": "column",
-            "answer": "b",
-            "explanation": "<p>Invisible tape, in the context of hair extensions, refers to tape-in extensions that use ultra-thin and transparent tape. This tape is designed to be discreet, blending seamlessly with the natural hair, making the extensions virtually invisible.</p>"
-          }
-        },
-        "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006": {
-          "type": "question",
-          "settings": {
-            "question": "What style of braiding is this?",
-            "image": "shopify://shop_images/quiz-question-8.webp",
-            "answer1": "French Braid",
-            "answer2": "Fishtail Braid",
-            "answer3": "Crown Braid",
-            "answer4": "",
-            "answer5": "",
-            "direction": "row",
-            "answer": "c",
-            "explanation": "<p>Crown braids are a type of French braid that wraps around the head, just above the forehead, in a half-moon shape (resembling a crown or tiara)</p>"
+            "answer": "D",
+            "explanation": "<p>Clip-in hair extensions are considered a temporary method because they can be applied and removed daily without any professional help or long-term commitment.</p>"
           }
         },
         "14278050-36eb-4b5e-9a59-cb67d15d8399": {
@@ -196,11 +181,10 @@
         "6e2d70eb-c74f-4ea0-87b3-7974ffab6d22",
         "e8abed36-c34b-4140-8f54-41c9463ffa01",
         "38d88d6c-4d59-4746-b3a6-9e9d4d98646d",
-        "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
         "834fb2e8-c080-4b7d-a34f-9ae43a55f123",
+        "cb4556d7-bc01-41d7-a4db-61ce8c16910b",
         "659100dc-389e-4e93-ba9a-f5a2a5b206dd",
         "50462cd4-9646-4c6e-9d22-ba4cc6acff38",
-        "5ee76b5c-c4dc-4ba5-b5ec-abc4642f5006",
         "14278050-36eb-4b5e-9a59-cb67d15d8399"
       ],
       "settings": {}
