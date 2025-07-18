@@ -64,6 +64,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "sc_back_in_stock_app_block_9r4aki": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -175,6 +179,7 @@
         "yotpo_loyalty_rewards_product_points_module_app_block_QDYrEh",
         "variant_picker",
         "quantity_selector_RERRjV",
+        "sc_back_in_stock_app_block_9r4aki",
         "buy_buttons",
         "share",
         "order_deadline_67UiV7",
