@@ -115,6 +115,7 @@
         },
         "announcement_image_FmKiMd": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Sunday_delivery_hair_extensions_blackfriday_sale.gif",
             "text_alignment": "center",
@@ -134,12 +135,11 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Free_Express_Delivery_-_Ship_To_Shop.gif",
+            "image": "shopify://shop_images/Offer_Ticker_72.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
-            "link": "shopify://collections/hair-extensions-by-colour"
+            "link": "https://www.cliphair.co.uk/pages/quiz-form"
           }
         }
       },
