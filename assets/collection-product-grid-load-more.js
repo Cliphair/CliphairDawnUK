@@ -40,14 +40,22 @@ document.addEventListener("DOMContentLoaded", () => {
         yotpoWidgetsContainer.initWidgets();
         loadingContainer.classList.remove("loading");
 
-        addAjaxLoadedItemsToSchema(loadedProducts);
       })
 
   })
 })
 
 function addAjaxLoadedItemsToSchema(loadedProducts) {
-  const offset = window.ItemListSchema.length;
+  const currentPage=window.SchemaInformation.currentPage;
+  const pageSize =window.SchemaInformation.pageSize;
+  const offset = (current - 1) * pageSize;
+
+  const allItems = document.querySelectorAll(".grid__item[data-product-url]");
+
+  console.log(currentPage)
+  console.log(pageSize)
+  console.log(offset)
+  console.log(allItems)
 
   const newItems = Array.from(loadedProducts).map((el, i) => {
     const urlEl = el.querySelector('[data-product-url]');
@@ -63,4 +71,24 @@ function addAjaxLoadedItemsToSchema(loadedProducts) {
 
   window.ItemListSchema.push(...newItems);
   updateItemListSchema();
+}
+
+function updateItemListSchema() {
+    const scriptId = 'item-list-schema';
+    const oldScript = document.getElementById(scriptId);
+    if (oldScript) oldScript.remove();
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = scriptId;
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": document.title,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": window.ItemListSchema.length,
+      "itemListElement": window.ItemListSchema
+    });
+
+  document.head.appendChild(script);
 }
