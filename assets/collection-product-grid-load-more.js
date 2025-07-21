@@ -53,20 +53,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupLoadMoreHandler() {
   const loadMoreButton = document.querySelector(".load-more__button");
-  const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
-  const productGrid = document.querySelector('#product-grid');
-  const paginationList = document.querySelector('.pagination__list');
 
   if (!loadMoreButton) return;
 
-  loadMoreButton.addEventListener("click", (event) => {
+  // Unbind any existing click to prevent duplicate triggers
+  const newButton = loadMoreButton.cloneNode(true);
+  loadMoreButton.replaceWith(newButton);
+
+  newButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const nextPageUrl = loadMoreButton.dataset.nextUrl?.trim();
+    const nextPageUrl = newButton.dataset.nextUrl?.trim();
     if (!nextPageUrl) return;
 
-    loadMoreButton.disabled = true;
-    loadingContainer.classList.add("loading");
+    newButton.disabled = true;
+
+    const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
+    const productGrid = document.querySelector('#product-grid');
+    const paginationList = document.querySelector('.pagination__list');
+
+    loadingContainer?.classList.add("loading");
 
     fetch(nextPageUrl)
       .then((response) => response.text())
@@ -74,24 +80,26 @@ function setupLoadMoreHandler() {
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const loadedProducts = html.querySelectorAll('#product-grid > .grid__item');
         const newPaginationList = html.querySelector('.pagination__list');
+        const freshButton = html.querySelector('.load-more__button');
 
+        // Append new products
         loadedProducts.forEach(product => productGrid.appendChild(product));
 
+        // Update pagination
         if (paginationList && newPaginationList) {
           paginationList.innerHTML = newPaginationList.innerHTML;
         }
 
-        // Replace Load More button HTML if it’s in the pagination wrapper
-        const newButton = html.querySelector('.load-more__button');
-        if (newButton) {
-          loadMoreButton.replaceWith(newButton);
-          setupLoadMoreHandler(); // 🔁 rebind event listener
+        // Update or remove Load More button
+        if (freshButton?.dataset.nextUrl) {
+          newButton.replaceWith(freshButton);
+          setupLoadMoreHandler(); // Rebind new button
         } else {
-          loadMoreButton.remove(); // no more pages
+          newButton.remove(); // No more pages
         }
 
         yotpoWidgetsContainer?.initWidgets();
-        loadingContainer.classList.remove("loading");
+        loadingContainer?.classList.remove("loading");
       })
       .finally(() => {
         addAjaxLoadedItemsToSchema();
@@ -99,6 +107,7 @@ function setupLoadMoreHandler() {
   });
 }
 
+// Schema management
 function addAjaxLoadedItemsToSchema() {
   const currentPage = window.SchemaInformation?.currentPage || 1;
   const pageSize = window.SchemaInformation?.pageSize || 15;
@@ -115,7 +124,7 @@ function addAjaxLoadedItemsToSchema() {
       "position": offset + i + 1,
       "url": url.startsWith('http') ? url : window.location.origin + url
     };
-  }).filter(item => item !== null);
+  }).filter(Boolean);
 
   updateItemListSchema(itemsSchema);
 }
