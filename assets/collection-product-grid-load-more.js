@@ -41,11 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingContainer.classList.remove("loading");
 
       })
-
+      .finally{
+        addAjaxLoadedItemsToSchema();
+      }
   })
 })
 
-function addAjaxLoadedItemsToSchema(loadedProducts) {
+function addAjaxLoadedItemsToSchema() {
   const currentPage=window.SchemaInformation.currentPage;
   const pageSize =window.SchemaInformation.pageSize;
   const offset = (current - 1) * pageSize;
