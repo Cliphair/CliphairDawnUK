@@ -113,79 +113,48 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.rich-text__readmore-block').forEach((block) => {
-    const treeWalker = document.createTreeWalker(block, NodeFilter.SHOW_COMMENT, null);
-    let comment = null;
+  document.querySelectorAll(".rich-text__readmore-block p").forEach((para) => {
+    const walker = document.createTreeWalker(para, NodeFilter.SHOW_COMMENT, null);
+    let marker = null;
 
-    while (treeWalker.nextNode()) {
-      if (treeWalker.currentNode.nodeValue.trim().toLowerCase() === 'read-more') {
-        comment = treeWalker.currentNode;
+    while (walker.nextNode()) {
+      if (walker.currentNode.nodeValue.trim().toLowerCase() === "read-more") {
+        marker = walker.currentNode;
         break;
       }
     }
 
-    if (!comment) return;
+    if (!marker) return;
 
-    const parent = comment.parentNode;
+    // Build inline span for hidden content
+    const hiddenSpan = document.createElement("span");
+    hiddenSpan.className = "readmore-inline";
+    hiddenSpan.style.display = "none";
 
-    if (parent.tagName === 'P') {
-      // Mid-paragraph break
-      const paragraph = parent;
-      const fullHtml = paragraph.innerHTML;
-      const [before, after] = fullHtml.split('<!-- read-more -->');
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "read-more__btn";
+    btn.textContent = "Read more";
 
-      // Rebuild the content
-      paragraph.innerHTML = before.trim();
-
-      const hiddenPara = document.createElement('p');
-      hiddenPara.className = 'readmore-hidden';
-      hiddenPara.style.display = 'none';
-      hiddenPara.innerHTML = after.trim();
-
-      const button = document.createElement('button');
-      button.className = 'read-more__btn';
-      button.textContent = 'Read more';
-
-      paragraph.after(hiddenPara, button);
-
-      button.addEventListener('click', () => {
-        const isOpen = hiddenPara.style.display === 'block';
-        hiddenPara.style.display = isOpen ? 'none' : 'block';
-        button.textContent = isOpen ? 'Read more' : 'Read less';
-      });
-
-    } else {
-      // Comment is outside of <p> — fallback to hide siblings
-      const hiddenWrapper = document.createElement('div');
-      hiddenWrapper.className = 'readmore-hidden';
-      hiddenWrapper.style.display = 'none';
-
-      let current = comment.nextSibling;
-      const toMove = [];
-
-      while (current) {
-        const next = current.nextSibling;
-        toMove.push(current);
-        current = next;
-      }
-
-      toMove.forEach(node => hiddenWrapper.appendChild(node));
-      block.appendChild(hiddenWrapper);
-
-      const button = document.createElement('button');
-      button.className = 'read-more__btn';
-      button.textContent = 'Read more';
-      block.appendChild(button);
-
-      button.addEventListener('click', () => {
-        const isOpen = hiddenWrapper.style.display === 'block';
-        hiddenWrapper.style.display = isOpen ? 'none' : 'block';
-        button.textContent = isOpen ? 'Read more' : 'Read less';
-      });
+    // Move everything after the comment into the span
+    let node = marker.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+      hiddenSpan.appendChild(node);
+      node = next;
     }
 
-    // Clean up: remove the original comment node
-    comment.parentNode.removeChild(comment);
+    para.appendChild(hiddenSpan);
+    para.appendChild(btn);
+
+    marker.remove(); // remove the comment
+
+    // Toggle handler
+    btn.addEventListener("click", () => {
+      const isOpen = hiddenSpan.style.display === "inline";
+      hiddenSpan.style.display = isOpen ? "none" : "inline";
+      btn.textContent = isOpen ? "Read more" : "Read less";
+    });
   });
 });
 </script>
@@ -376,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "limit": 3,
       "settings": [
         {
-          "type": "richtext",
+          "type": "textarea",
           "id": "text",
           "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
