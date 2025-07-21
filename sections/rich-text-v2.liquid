@@ -57,7 +57,7 @@
               </p>
             {%- when 'text' -%}
               {% liquid
-                assign text = block.settings.text | replace: "[read-more]", "<!-- read more -->"
+                assign text = block.settings.text | replace: "[read-more]", "<!-- read-more -->"
               %}
               <div
                 class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} rich-text__readmore-block"
