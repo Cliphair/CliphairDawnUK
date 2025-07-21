@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingContainer.classList.remove("loading");
 
       })
-      .finally{
+      .finally(() => {
         addAjaxLoadedItemsToSchema();
-      }
+      });
   })
 })
 
