@@ -21,18 +21,29 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
-              {% assign heading_tag = block.settings.h1 %}
-              <{{ heading_tag }}
-                class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {{ block.settings.heading }}
-              </{{ heading_tag }}>
-
+              {% if block.settings.h1 %}
+                <h1
+                  class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {{ block.settings.heading }}
+                </h1>
+              {% else %}
+                <h2
+                  class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {{ block.settings.heading }}
+                </h2>
+              {% endif %}
             {%- when 'caption' -%}
               <p
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -44,10 +55,9 @@
               >
                 {{ block.settings.caption | escape }}
               </p>
-
             {%- when 'text' -%}
               <div
-                class="rich-text__text rte rich-text__readmore-block{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -55,11 +65,19 @@
                 {% endif %}
               >
                 {{ block.settings.text }}
+                {% if block.settings['read-more_text'] != blank -%}
+                  <span class="read-more__btn">Read More</span>
+                {%- endif %}
               </div>
-              {% if block.settings.text contains '[[readmore]]' %}
-                <button class="read-more__btn" type="button">Read more</button>
+              {% if block.settings['read-more_text'] != blank %}
+                <div
+                  class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} hidden"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings['read-more_text'] }}
+                  <span class="read-less__btn">Read Less</span>
+                </div>
               {% endif %}
-
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -101,53 +119,6 @@
   </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.rich-text__readmore-block').forEach((block) => {
-    const fullHTML = block.innerHTML;
-    const marker = '[[readmore]]';
-    const segments = fullHTML.split(marker);
-
-    if (segments.length <= 1) return;
-
-    let currentIndex = 1;
-    block.innerHTML = segments[0];
-
-    const toggleBtn = block.nextElementSibling?.classList.contains('read-more__btn')
-      ? block.nextElementSibling
-      : null;
-
-    if (!toggleBtn) return;
-
-    toggleBtn.textContent = 'Read more';
-
-    toggleBtn.addEventListener('click', () => {
-      if (currentIndex < segments.length) {
-        block.innerHTML += segments[currentIndex];
-        currentIndex++;
-        toggleBtn.textContent = currentIndex < segments.length ? 'Read more' : 'Read less';
-      } else {
-        block.innerHTML = segments[0];
-        currentIndex = 1;
-        toggleBtn.textContent = 'Read more';
-      }
-    });
-  });
-});
-</script>
-
-<style>
-  .read-more__btn {
-    margin-top: 1rem;
-    background: none;
-    border: none;
-    color: var(--color-foreground, #000);
-    cursor: pointer;
-    text-decoration: underline;
-    font: inherit;
-    padding: 0;
-  }
-</style>
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
@@ -391,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ],
   "presets": [
     {
-      "name": "Test rich text",
+      "name": "t:sections.rich-text.presets.name",
       "blocks": [
         {
           "type": "heading"
