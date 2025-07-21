@@ -132,7 +132,13 @@
                   {{- article.published_at | time_tag: format: 'date' -}}
                 </span>
               {%- endif -%}
-              <p>Last modified on {{- article.updated_at | time_tag: format: 'date' -}}</p>
+              {% liquid
+                assign published_date = article.published_at | date: "%s"
+                assign updated_date = article.updated_at | date: "%s"
+              %}
+              {% if updated_date > published_date %}
+                <p>Last modified on {{- article.updated_at | time_tag: format: 'date' -}}</p>
+              {% endif %}
             </header>
 
           {%- when 'content' -%}
