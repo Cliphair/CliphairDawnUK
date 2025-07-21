@@ -57,7 +57,7 @@
               </p>
             {%- when 'text' -%}
               {% liquid
-                assign text = block.settings.text
+                assign text = block.settings.text | newline_to_br 
                 assign has_read_more = false
                 if block.settings.text contains "[read-more]"
                   assign has_read_more = false
@@ -74,16 +74,16 @@
                 {% if has_read_more %}
                   <p>
                     <span>
-                      {{ text | split: "[read-more]" | first | newline_to_br }}
+                      {{ text | split: "[read-more]" | first }}
                       <span class="read-more__btn">Read More</span>
                     </span>
                     <span class='hidden'>
-                      {{ text | last | newline_to_br }}
+                      {{ text | split: "[read-more]" | last }}
                       <span class="read-less__btn">Read Less</span>
                     </span>
                   </p>
                 {% else %}
-                  <p>{{ text | newline_to_br }}</p>
+                  <p>{{ text }}</p>
                 {% endif %}
               </div>
 
