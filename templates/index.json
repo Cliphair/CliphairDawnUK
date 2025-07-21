@@ -140,6 +140,52 @@
         "padding_bottom": 20
       }
     },
+    "fef9cc49-05dc-468b-82e4-1520264647b6": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15283894157373__fef9cc49-05dc-468b-82e4-1520264647b6-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Real Remy Human Hair Extensions",
+            "heading_size": "h1",
+            "h1": true
+          }
+        },
+        "463035d2-6446-4ab7-a2d4-03a24ee0cd4f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Remy Human Hair Extensions Online",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
+        "47ed8938-167c-4f51-a079-56b352d27b43": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With over 15 years industry experience,  Cliphair has become the UK’s leading Remy Human Hair extension supplier, with hundreds of thousands of digital shoppers all over the world. From <a href=\"https://www.cliphair.co.uk/collections/clip-in-hair-extensions\" title=\"Clip In collection page\">Clip Ins</a> and <a href=\"https://www.cliphair.co.uk/collections/tape-in-hair-extensions\" title=\"Tape In collection page\">Tape In Extensions</a> to <a href=\"https://www.cliphair.co.uk/collections/micro-ring-loop-hair-extensions\" title=\"Micro Ring hair extension collection page\">Permanent Micro Rings</a>, <a href=\"https://www.cliphair.co.uk/collections/one-piece-clip-in-hair-extensions\" title=\"One Piece hair extension collection page\">One Pieces</a> and <a href=\"https://www.cliphair.co.uk/collections/clip-in-ponytail-extensions\" title=\"Ponytail collection page\">Ponytail Extensions</a>, we are without doubt the no. 1 premium hair extension seller on the market.</p>",
+            "read-more_text": "<p>If you’re new to wearing hair extensions and want to take the leap, you can learn everything you need to know about choosing and purchasing extensions in our <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"Cliphair: Hair Extension Buying Guide & Glossary\">Ultimate Buying Guide</a>. For application and maintenance advice, you can also read our <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/how-to-look-after-hair-extensions-ultimate-care-guide\" title=\"Cliphair Guides: How To Look After Hair Extensions\">Hair Extension Care Guide</a>.</p><p>With a wide, stunning <a href=\"https://www.cliphair.co.uk/pages/hair-extensions-by-colour\" title=\"Hair Colour Chart\">range of shades</a>, our premium Remy Hair Extensions can be delivered straight to your door, 7 days a week – no matter where you are. Experience unmatched shine, volume and versatility with our 100% real human hair extensions made from the best quality Remy hair. Choose luxury with Cliphair!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15283894157373__fef9cc49-05dc-468b-82e4-1520264647b6-heading-1",
+        "463035d2-6446-4ab7-a2d4-03a24ee0cd4f",
+        "47ed8938-167c-4f51-a079-56b352d27b43"
+      ],
+      "custom_css": [
+        ".rich-text__blocks > * + h2 {margin-top: 1rem;}",
+        ".rich-text__wrapper {width: 100% !important;}",
+        "@media screen and (min-width: 990px) {.rich-text__blocks {max-width: unset; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "visual_menu_66DUPMN": {
       "type": "visual-menu",
       "custom_css": [
@@ -1016,52 +1062,6 @@
         "padding_bottom": 40
       }
     },
-    "fef9cc49-05dc-468b-82e4-1520264647b6": {
-      "type": "rich-text",
-      "blocks": {
-        "template--15283894157373__fef9cc49-05dc-468b-82e4-1520264647b6-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Real Remy Human Hair Extensions",
-            "heading_size": "h1",
-            "h1": true
-          }
-        },
-        "463035d2-6446-4ab7-a2d4-03a24ee0cd4f": {
-          "type": "heading",
-          "settings": {
-            "heading": "Remy Human Hair Extensions Online",
-            "heading_size": "h2",
-            "h1": false
-          }
-        },
-        "47ed8938-167c-4f51-a079-56b352d27b43": {
-          "type": "text",
-          "settings": {
-            "text": "<p>With over 15 years industry experience,  Cliphair has become the UK’s leading Remy Human Hair extension supplier, with hundreds of thousands of digital shoppers all over the world. From <a href=\"https://www.cliphair.co.uk/collections/clip-in-hair-extensions\" title=\"Clip In collection page\">Clip Ins</a> and <a href=\"https://www.cliphair.co.uk/collections/tape-in-hair-extensions\" title=\"Tape In collection page\">Tape In Extensions</a> to <a href=\"https://www.cliphair.co.uk/collections/micro-ring-loop-hair-extensions\" title=\"Micro Ring hair extension collection page\">Permanent Micro Rings</a>, <a href=\"https://www.cliphair.co.uk/collections/one-piece-clip-in-hair-extensions\" title=\"One Piece hair extension collection page\">One Pieces</a> and <a href=\"https://www.cliphair.co.uk/collections/clip-in-ponytail-extensions\" title=\"Ponytail collection page\">Ponytail Extensions</a>, we are without doubt the no. 1 premium hair extension seller on the market.</p>",
-            "read-more_text": "<p>If you’re new to wearing hair extensions and want to take the leap, you can learn everything you need to know about choosing and purchasing extensions in our <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"Cliphair: Hair Extension Buying Guide & Glossary\">Ultimate Buying Guide</a>. For application and maintenance advice, you can also read our <a href=\"https://www.cliphair.co.uk/blogs/hair-blog/how-to-look-after-hair-extensions-ultimate-care-guide\" title=\"Cliphair Guides: How To Look After Hair Extensions\">Hair Extension Care Guide</a>.</p><p>With a wide, stunning <a href=\"https://www.cliphair.co.uk/pages/hair-extensions-by-colour\" title=\"Hair Colour Chart\">range of shades</a>, our premium Remy Hair Extensions can be delivered straight to your door, 7 days a week – no matter where you are. Experience unmatched shine, volume and versatility with our 100% real human hair extensions made from the best quality Remy hair. Choose luxury with Cliphair!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--15283894157373__fef9cc49-05dc-468b-82e4-1520264647b6-heading-1",
-        "463035d2-6446-4ab7-a2d4-03a24ee0cd4f",
-        "47ed8938-167c-4f51-a079-56b352d27b43"
-      ],
-      "custom_css": [
-        ".rich-text__blocks > * + h2 {margin-top: 1rem;}",
-        ".rich-text__wrapper {width: 100% !important;}",
-        "@media screen and (min-width: 990px) {.rich-text__blocks {max-width: unset; }}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "color_scheme": "inverse",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
     "f41c0e3b-b362-4900-8b02-4a5cc75bd290": {
       "type": "collapsible-content",
       "blocks": {
@@ -1210,6 +1210,7 @@
     "visual_menu_66DUPM",
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
+    "fef9cc49-05dc-468b-82e4-1520264647b6",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "slideshow_image_link_QyBpYz",
@@ -1225,7 +1226,6 @@
     "b19c81a2-f86e-4e52-9a50-dca37f731b16",
     "image_list_nPnYgL",
     "342029b3-5620-4e2e-864b-55edf0aa9b0d",
-    "fef9cc49-05dc-468b-82e4-1520264647b6",
     "f41c0e3b-b362-4900-8b02-4a5cc75bd290",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b"
   ]
