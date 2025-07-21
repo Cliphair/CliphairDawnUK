@@ -52,29 +52,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupLoadMoreHandler() {
-  const loadMoreButton = document.querySelector(".load-more__button");
+  const oldButton = document.querySelector(".load-more__button");
 
-  if (!loadMoreButton) return;
+  if (!oldButton) return;
 
-  // Unbind any existing click to prevent duplicate triggers
-  const newButton = loadMoreButton.cloneNode(true);
-  loadMoreButton.replaceWith(newButton);
+  // Clone to ensure clean state
+  const loadMoreButton = oldButton.cloneNode(true);
+  oldButton.replaceWith(loadMoreButton);
 
-  newButton.addEventListener("click", (event) => {
+  loadMoreButton.addEventListener("click", (event) => {
     event.preventDefault();
-
-    const nextPageUrl = newButton.dataset.nextUrl?.trim();
-    if (!nextPageUrl) return;
 
     const nextPageUrl = loadMoreButton.dataset.nextUrl?.trim();
     if (!nextPageUrl) {
-      newButton.disabled = true;
-      newButton.textContent = "No more products";
+      loadMoreButton.disabled = true;
+      loadMoreButton.textContent = "No more products";
       return;
     }
 
-    newButton.disabled = true;
-
+    loadMoreButton.disabled = true;
     const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
     const productGrid = document.querySelector('#product-grid');
     const paginationList = document.querySelector('.pagination__list');
@@ -97,12 +93,15 @@ function setupLoadMoreHandler() {
           paginationList.innerHTML = newPaginationList.innerHTML;
         }
 
-        // Update or remove Load More button
+        // Handle Load More button update
         if (freshButton?.dataset.nextUrl) {
-          newButton.replaceWith(freshButton);
-          setupLoadMoreHandler(); // Rebind new button
+          // Rebind handler for new button
+          loadMoreButton.replaceWith(freshButton);
+          setupLoadMoreHandler();
         } else {
-          newButton.remove(); // No more pages
+          // No more products to load
+          loadMoreButton.disabled = true;
+          loadMoreButton.textContent = "No more products";
         }
 
         yotpoWidgetsContainer?.initWidgets();
