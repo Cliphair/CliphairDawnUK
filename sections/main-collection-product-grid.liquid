@@ -329,9 +329,9 @@
   window.ItemListSchema = window.ItemListSchema || [];
 
   document.querySelectorAll('[data-product-url]').forEach((el, i) => {
-    console.log(el)
     const url = el.getAttribute('data-product-url');
     if (url) {
+      console.log(url)
       window.ItemListSchema.push({
         "@type": "ListItem",
         "position": i + 1,
