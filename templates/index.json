@@ -143,36 +143,15 @@
     "rich_text_v2_rqH8jt": {
       "type": "rich-text-v2",
       "blocks": {
-        "heading_LKAEHi": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1",
-            "h1": false
-          }
-        },
         "text_4G6QMG": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers.[read-more] Describe a product, make announcements, or welcome customers to your store.</p><p>bla bvlasd</p><p>asdsfadgaswe</p><p>gdaeraegdcvzdafaeqawre</p>"
-          }
-        },
-        "button_CxGEEn": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "Share information about your brand with your customers.[read-more] Describe a product, make announcements, or welcome customers to your store.\nblablasd\nasfjklasdjajfklgasd\ngkldjflaksjdklads"
           }
         }
       },
       "block_order": [
-        "heading_LKAEHi",
-        "text_4G6QMG",
-        "button_CxGEEn"
+        "text_4G6QMG"
       ],
       "name": "Rich text test",
       "settings": {
