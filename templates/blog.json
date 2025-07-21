@@ -172,7 +172,7 @@
         "show_page_title": false,
         "layout": "grid",
         "show_image": true,
-        "image_height": "medium",
+        "image_height": "adapt",
         "show_date": true,
         "show_author": true,
         "color_scheme": "inverse",
@@ -247,7 +247,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 36,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     }
   },
