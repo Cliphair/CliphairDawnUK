@@ -1,4 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
+//   const loadMoreButton = document.querySelector(".load-more__button");
+//   const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
+//   const productGrid = document.querySelector('#product-grid');
+//   const paginationList = document.querySelector('.pagination__list');
+
+//   if (!loadMoreButton) return;
+
+//   loadMoreButton.addEventListener("click", (event) => {
+//     event.preventDefault();
+
+//     const nextPageUrl = loadMoreButton.dataset.nextUrl.trim();
+
+//     loadMoreButton.disabled = true;
+//     loadingContainer.classList.add("loading");
+
+//     if (!nextPageUrl) return;
+
+//     fetch(nextPageUrl)
+//       .then((response) => response.text())
+//       .then((responseText) => {
+
+//         const html = new DOMParser().parseFromString(responseText, 'text/html');
+//         const loadedProducts = html.querySelectorAll('#product-grid > .grid__item');
+//         const loadedNextPageUrl = html.querySelector(".load-more__button").dataset.nextUrl.trim();
+
+//         for (let product of loadedProducts) {
+//           productGrid.appendChild(product);
+//         }
+
+//         if (paginationList) {
+//           paginationList.innerHTML = html.querySelector('.pagination__list').innerHTML;
+//         }
+
+//         loadMoreButton.dataset.nextUrl = loadedNextPageUrl;
+
+//         if (loadedNextPageUrl) {
+//           loadMoreButton.disabled = false;
+//         }
+//         yotpoWidgetsContainer.initWidgets();
+//         loadingContainer.classList.remove("loading");
+
+//       })
+//       .finally(() => {
+//         addAjaxLoadedItemsToSchema();
+//       });
+//   })
+// })
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupLoadMoreHandler();
+});
+
+function setupLoadMoreHandler() {
   const loadMoreButton = document.querySelector(".load-more__button");
   const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
   const productGrid = document.querySelector('#product-grid');
@@ -9,43 +62,42 @@ document.addEventListener("DOMContentLoaded", () => {
   loadMoreButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const nextPageUrl = loadMoreButton.dataset.nextUrl.trim();
+    const nextPageUrl = loadMoreButton.dataset.nextUrl?.trim();
+    if (!nextPageUrl) return;
 
     loadMoreButton.disabled = true;
     loadingContainer.classList.add("loading");
 
-    if (!nextPageUrl) return;
-
     fetch(nextPageUrl)
       .then((response) => response.text())
       .then((responseText) => {
-
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const loadedProducts = html.querySelectorAll('#product-grid > .grid__item');
-        const loadedNextPageUrl = html.querySelector(".load-more__button").dataset.nextUrl.trim();
+        const newPaginationList = html.querySelector('.pagination__list');
 
-        for (let product of loadedProducts) {
-          productGrid.appendChild(product);
+        loadedProducts.forEach(product => productGrid.appendChild(product));
+
+        if (paginationList && newPaginationList) {
+          paginationList.innerHTML = newPaginationList.innerHTML;
         }
 
-        if (paginationList) {
-          paginationList.innerHTML = html.querySelector('.pagination__list').innerHTML;
+        // Replace Load More button HTML if it’s in the pagination wrapper
+        const newButton = html.querySelector('.load-more__button');
+        if (newButton) {
+          loadMoreButton.replaceWith(newButton);
+          setupLoadMoreHandler(); // 🔁 rebind event listener
+        } else {
+          loadMoreButton.remove(); // no more pages
         }
 
-        loadMoreButton.dataset.nextUrl = loadedNextPageUrl;
-
-        if (loadedNextPageUrl) {
-          loadMoreButton.disabled = false;
-        }
-        yotpoWidgetsContainer.initWidgets();
+        yotpoWidgetsContainer?.initWidgets();
         loadingContainer.classList.remove("loading");
-
       })
       .finally(() => {
         addAjaxLoadedItemsToSchema();
       });
-  })
-})
+  });
+}
 
 function addAjaxLoadedItemsToSchema() {
   const currentPage = window.SchemaInformation?.currentPage || 1;
