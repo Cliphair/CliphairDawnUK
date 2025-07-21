@@ -70,8 +70,10 @@ function addAjaxLoadedItemsToSchema() {
 
 function updateItemListSchema(items) {
   const scriptId = 'item-list-schema';
+  const placement = oldScript.parentElement;
   const oldScript = document.getElementById(scriptId);
   if (oldScript) oldScript.remove();
+  const placement = oldScript.parentElement;
 
   const totalItems = window.SchemaInformation?.totalItems || items.length;
 
@@ -87,6 +89,6 @@ function updateItemListSchema(items) {
     "itemListElement": items
   });
 
-  document.head.appendChild(script);
+  placement.appendChild(script);
   console.log("✅ Updated schema injected:", script);
 }
