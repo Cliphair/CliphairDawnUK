@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
     hiddenSpan.className = "readmore-inline";
     hiddenSpan.style.display = "none";
 
-    const btn = document.createElement("button");
-    btn.type = "button";
+    const btn = document.createElement("span");
+    btn.role = "button";
     btn.className = "read-more__btn";
     btn.textContent = "Read more";
 
