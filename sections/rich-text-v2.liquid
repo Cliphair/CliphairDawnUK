@@ -57,7 +57,11 @@
               </p>
             {%- when 'text' -%}
               {% liquid
-                assign text = block.settings.text | replace: "[read-more]", "<!-- read-more -->"
+                assign text = block.settings.text | split: "[read-more]"
+                assign has_read_more = false
+                if block.settings.text contains "[read-more]"
+                  assign has_read_more = false
+                endif
               %}
               <div
                 class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} rich-text__readmore-block"
@@ -67,7 +71,20 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                <p>{{ text | newline_to_br }}</p>
+                {% if has_read_more %}
+                  <p>
+                    <span>
+                      {{ text | first | newline_to_br }}
+                      <span class="read-more__btn">Read More</span>
+                    </span>
+                    <span class='hidden'>
+                      {{ text | last | newline_to_br }}
+                      <span class="read-less__btn">Read Less</span>
+                    </span>
+                  </p>
+                {% else %}
+                  <p>{{ text | newline_to_br }}</p>
+                {% endif %}
               </div>
 
             {%- when 'button' -%}
@@ -111,7 +128,7 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".rich-text__readmore-block p").forEach((para) => {
     const walker = document.createTreeWalker(para, NodeFilter.SHOW_COMMENT, null);
@@ -157,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-</script>
+</script> -->
 
 {% schema %}
 {
