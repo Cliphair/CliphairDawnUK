@@ -71,8 +71,8 @@ function addAjaxLoadedItemsToSchema() {
 function updateItemListSchema(items) {
   const scriptId = 'item-list-schema';
   const oldScript = document.getElementById(scriptId);
+  const placement = oldScript?.parentElement || document.head;
   if (oldScript) oldScript.remove();
-  const placement = oldScript.parentElement;
 
   const totalItems = window.SchemaInformation?.totalItems || items.length;
 
