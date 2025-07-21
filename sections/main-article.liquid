@@ -137,7 +137,7 @@
                 assign updated_date = article.updated_at | date: "%s"
               %}
               {% if updated_date > published_date %}
-                <p class="caption-with-letter-spacing">Last modified on {{- article.updated_at | time_tag: format: 'date' -}}</p>
+                <p class="caption-with-letter-spacing">Last modified on <span>{{- article.updated_at | time_tag: format: 'date' -}}</span></p>
               {% endif %}
             </header>
 
