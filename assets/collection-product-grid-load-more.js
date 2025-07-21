@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 //   const loadMoreButton = document.querySelector(".load-more__button");
 //   const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
 //   const productGrid = document.querySelector('#product-grid');
