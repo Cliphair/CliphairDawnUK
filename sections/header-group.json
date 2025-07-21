@@ -149,6 +149,7 @@
         "announcement_image_8amwCN",
         "announcement_image_Q3tyyb"
       ],
+      "disabled": true,
       "custom_css": [
         "img {height: auto;}"
       ],
