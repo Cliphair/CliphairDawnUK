@@ -168,6 +168,7 @@
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
+                  data-product-url="{{ product.url }}"
                 >
                   {%
                     render 'card-product-outlet',
