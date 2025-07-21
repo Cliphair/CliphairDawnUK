@@ -67,7 +67,7 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ text }}
+                {{ text | newline_to_br }}
               </div>
 
             {%- when 'button' -%}
