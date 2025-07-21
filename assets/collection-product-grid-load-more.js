@@ -39,6 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         yotpoWidgetsContainer.initWidgets();
         loadingContainer.classList.remove("loading");
+
+        const loadedSchemaItems = Array.from(loadedProducts).map((el, i) => {
+          const urlEl = el.querySelector('[data-product-url]');
+          const url = urlEl ? urlEl.getAttribute('data-product-url') : null;
+          if (!url) return null;
+        
+          return {
+            "@type": "ListItem",
+            "position": window.ItemListSchema.length + i + 1,
+            "url": url.startsWith('http') ? url : window.location.origin + url
+          };
+        }).filter(Boolean);
+
+        window.ItemListSchema = window.ItemListSchema.concat(loadedSchemaItems);
+        updateItemListSchema();
       })
 
   })

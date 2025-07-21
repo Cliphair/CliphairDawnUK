@@ -201,6 +201,7 @@
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
+                  data-product-url="{{ product.url }}"
                 >
                   {%
                     render 'card-product',
@@ -292,34 +293,74 @@
 </script> {% endcomment %}
 {% assign collection_current_page = current_page %}
 {% assign global_index = collection_current_page | minus: 1 | times: paginate_by %}
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": {{ collection.title | json }},
-    "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
-    "image": "{{ collection.image | img_url: "master" }}"{% endif %}
+
+<script type="application/ld+json" id="collection-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ collection.title | json }},
+  "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
+  "image": "{{ collection.image | img_url: "master" }}"{% endif %}
+}
+</script>
+
+{% if collection.products_count > 0 %}
+<script type="application/ld+json" id="item-list-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ collection.title | json }},
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": {{ collection.products_count }},
+  "itemListElement": [
+    {% for product in collection.products %}
+      {
+        "@type": "ListItem",
+        "position": {{ global_index | plus: forloop.index }},
+        "url": "{{ shop.url }}{{ product.url | escape }}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+<script>
+  window.ItemListSchema = window.ItemListSchema || [];
+
+  document.querySelectorAll('.grid__item[data-product-url]').forEach((el, i) => {
+    const url = el.getAttribute('data-product-url');
+    if (url) {
+      window.ItemListSchema.push({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": url.startsWith('http') ? url : window.location.origin + url
+      });
+    }
+  });
+
+  function updateItemListSchema() {
+    const scriptId = 'item-list-schema';
+    const oldScript = document.getElementById(scriptId);
+    if (oldScript) oldScript.remove();
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = scriptId;
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": document.title,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": window.ItemListSchema.length,
+      "itemListElement": window.ItemListSchema
+    });
+
+    document.head.appendChild(script);
   }
-  {% if collection.products_count > 0 %},
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": {{ collection.title | json }},
-    "itemListOrder": "https://schema.org/ItemListOrderAscending",
-    "numberOfItems": {{ collection.products_count }},
-    "itemListElement": [
-      {% for product in collection.products %}
-        {
-          "@type": "ListItem",
-          "position": {{ global_index | plus: forloop.index }},
-          "url": "{{ shop.url }}{{ product.url | escape }}"
-        }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]
-  }
-  {% endif %}
-]
+
+  // Inject schema on initial load
+  updateItemListSchema();
 </script>
 
 {% schema %}
