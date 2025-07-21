@@ -128,7 +128,7 @@
                 </span>
               {%- endif -%}
               {%- if block.settings.blog_show_date -%}
-                <span class="caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
+                <span class="caption-with-letter-spacing" itemprop="dateCreated datePublished">
                   {{- article.published_at | time_tag: format: 'date' -}}
                 </span>
               {%- endif -%}
@@ -137,7 +137,7 @@
                 assign updated_date = article.updated_at | date: "%s"
               %}
               {% if updated_date > published_date %}
-                <p class="caption-with-letter-spacing">Last modified on <span>{{- article.updated_at | time_tag: format: 'date_at_time' -}}</span></p>
+                <p class="caption-with-letter-spacing">Last modified on <span itemprop="dateModified">{{- article.updated_at | time_tag: format: 'date_at_time' -}}</span></p>
               {% endif %}
             </header>
 
