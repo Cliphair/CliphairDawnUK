@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function addAjaxLoadedItemsToSchema() {
   const currentPage=window.SchemaInformation.currentPage;
   const pageSize =window.SchemaInformation.pageSize;
-  const offset = (current - 1) * pageSize;
+  const offset = (currentPage - 1) * pageSize;
 
   const allItems = document.querySelectorAll(".grid__item[data-product-url]");
 
