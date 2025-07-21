@@ -328,41 +328,41 @@
 <script>
   window.ItemListSchema = [];
 
-  document.querySelectorAll('[data-product-url]').forEach((el, i) => {
-    const url = el.getAttribute('data-product-url');
-    if (url) {
-      window.ItemListSchema.push({
-        "@type": "ListItem",
-        "position": i + 1,
-        "url": url.startsWith('http') ? url : window.location.origin + url
-      });
-    }
-  });
+  // document.querySelectorAll('[data-product-url]').forEach((el, i) => {
+  //   const url = el.getAttribute('data-product-url');
+  //   if (url) {
+  //     window.ItemListSchema.push({
+  //       "@type": "ListItem",
+  //       "position": i + 1,
+  //       "url": url.startsWith('http') ? url : window.location.origin + url
+  //     });
+  //   }
+  // });
 
-  function updateItemListSchema() {
-    const scriptId = 'item-list-schema';
-    const oldScript = document.getElementById(scriptId);
-    if (oldScript) oldScript.remove();
+  // function updateItemListSchema() {
+  //   const scriptId = 'item-list-schema';
+  //   const oldScript = document.getElementById(scriptId);
+  //   if (oldScript) oldScript.remove();
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = scriptId;
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": document.title,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": window.ItemListSchema.length,
-      "itemListElement": window.ItemListSchema
-    });
+  //   const script = document.createElement('script');
+  //   script.type = 'application/ld+json';
+  //   script.id = scriptId;
+  //   script.textContent = JSON.stringify({
+  //     "@context": "https://schema.org",
+  //     "@type": "ItemList",
+  //     "name": document.title,
+  //     "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  //     "numberOfItems": window.ItemListSchema.length,
+  //     "itemListElement": window.ItemListSchema
+  //   });
 
-    console.log(script)
+  //   console.log(script)
 
-    document.head.appendChild(script);
-  }
+  //   document.head.appendChild(script);
+  // }
 
-  // Inject schema on initial load
-  updateItemListSchema();
+  // // Inject schema on initial load
+  // updateItemListSchema();
 </script>
 
 {% schema %}
