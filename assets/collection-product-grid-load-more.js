@@ -66,6 +66,13 @@ function setupLoadMoreHandler() {
     const nextPageUrl = newButton.dataset.nextUrl?.trim();
     if (!nextPageUrl) return;
 
+    const nextPageUrl = loadMoreButton.dataset.nextUrl?.trim();
+    if (!nextPageUrl) {
+      newButton.disabled = true;
+      newButton.textContent = "No more products";
+      return;
+    }
+
     newButton.disabled = true;
 
     const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
