@@ -60,7 +60,7 @@
                 assign text = block.settings.text | replace: "[read-more]", "<!-- read more -->"
               %}
               <div
-                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} rich-text__readmore-block"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -121,6 +121,85 @@
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.rich-text__readmore-block').forEach((block) => {
+    const treeWalker = document.createTreeWalker(block, NodeFilter.SHOW_COMMENT, null);
+    let comment = null;
+
+    while (treeWalker.nextNode()) {
+      if (treeWalker.currentNode.nodeValue.trim().toLowerCase() === 'read-more') {
+        comment = treeWalker.currentNode;
+        break;
+      }
+    }
+
+    if (!comment) return;
+
+    const parent = comment.parentNode;
+
+    if (parent.tagName === 'P') {
+      // Mid-paragraph break
+      const paragraph = parent;
+      const fullHtml = paragraph.innerHTML;
+      const [before, after] = fullHtml.split('<!-- read-more -->');
+
+      // Rebuild the content
+      paragraph.innerHTML = before.trim();
+
+      const hiddenPara = document.createElement('p');
+      hiddenPara.className = 'readmore-hidden';
+      hiddenPara.style.display = 'none';
+      hiddenPara.innerHTML = after.trim();
+
+      const button = document.createElement('button');
+      button.className = 'read-more__btn';
+      button.textContent = 'Read more';
+
+      paragraph.after(hiddenPara, button);
+
+      button.addEventListener('click', () => {
+        const isOpen = hiddenPara.style.display === 'block';
+        hiddenPara.style.display = isOpen ? 'none' : 'block';
+        button.textContent = isOpen ? 'Read more' : 'Read less';
+      });
+
+    } else {
+      // Comment is outside of <p> — fallback to hide siblings
+      const hiddenWrapper = document.createElement('div');
+      hiddenWrapper.className = 'readmore-hidden';
+      hiddenWrapper.style.display = 'none';
+
+      let current = comment.nextSibling;
+      const toMove = [];
+
+      while (current) {
+        const next = current.nextSibling;
+        toMove.push(current);
+        current = next;
+      }
+
+      toMove.forEach(node => hiddenWrapper.appendChild(node));
+      block.appendChild(hiddenWrapper);
+
+      const button = document.createElement('button');
+      button.className = 'read-more__btn';
+      button.textContent = 'Read more';
+      block.appendChild(button);
+
+      button.addEventListener('click', () => {
+        const isOpen = hiddenWrapper.style.display === 'block';
+        hiddenWrapper.style.display = isOpen ? 'none' : 'block';
+        button.textContent = isOpen ? 'Read more' : 'Read less';
+      });
+    }
+
+    // Clean up: remove the original comment node
+    comment.parentNode.removeChild(comment);
+  });
+});
+</script>
 
 {% schema %}
 {
@@ -365,7 +444,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.rich-text.presets.name",
+      "name": "Rich text test",
       "blocks": [
         {
           "type": "heading"
