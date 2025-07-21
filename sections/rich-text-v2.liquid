@@ -57,7 +57,7 @@
               </p>
             {%- when 'text' -%}
               {% liquid
-                assign text = block.settings.text
+                assign text = block.settings.text | newline_to_br
                 assign has_read_more = false
                 if text contains "[read-more]"
                   assign has_read_more = true
