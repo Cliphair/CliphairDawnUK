@@ -331,14 +331,12 @@
   document.querySelectorAll('[data-product-url]').forEach((el, i) => {
     const url = el.getAttribute('data-product-url');
     if (url) {
-      console.log(url)
       window.ItemListSchema.push({
         "@type": "ListItem",
         "position": i + 1,
         "url": url.startsWith('http') ? url : window.location.origin + url
       });
     }
-    console.log(window.ItemListSchema);
   });
 
   function updateItemListSchema() {
@@ -357,6 +355,8 @@
       "numberOfItems": window.ItemListSchema.length,
       "itemListElement": window.ItemListSchema
     });
+
+    console.log(script)
 
     document.head.appendChild(script);
   }
