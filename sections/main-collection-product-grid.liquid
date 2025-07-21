@@ -328,7 +328,8 @@
 <script>
   window.SchemaInformation = {
     currentPage: {{ current_page }},
-    pageSize: {{ paginate_by }}
+    pageSize: {{ paginate_by }},
+    totalItems: {{ collection.products_count }}
   };
 
   // document.querySelectorAll('[data-product-url]').forEach((el, i) => {
