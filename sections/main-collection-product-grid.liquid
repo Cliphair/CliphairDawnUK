@@ -325,10 +325,11 @@
 </script>
 {% endif %}
 
-<!-- <script>
+<script>
   window.ItemListSchema = window.ItemListSchema || [];
 
   document.querySelectorAll('[data-product-url]').forEach((el, i) => {
+    console.log(el)
     const url = el.getAttribute('data-product-url');
     if (url) {
       window.ItemListSchema.push({
@@ -361,7 +362,7 @@
 
   // Inject schema on initial load
   updateItemListSchema();
-</script> -->
+</script>
 
 {% schema %}
 {
