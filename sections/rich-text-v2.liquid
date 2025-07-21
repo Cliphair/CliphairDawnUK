@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.createElement("span");
     btn.role = "button";
     btn.className = "read-more__btn";
-    btn.textContent = "Read more";
+    btn.textContent = " Read more";
 
     // Move everything after the comment into the span
     let node = marker.nextSibling;
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const isOpen = hiddenSpan.style.display === "inline";
       hiddenSpan.style.display = isOpen ? "none" : "inline";
-      btn.textContent = isOpen ? "Read more" : "Read less";
+      btn.textContent = isOpen ? " Read more" : " Read less";
     });
   });
 });
