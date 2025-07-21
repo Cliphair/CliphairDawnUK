@@ -68,19 +68,8 @@
                 {% endif %}
               >
                 {{ text }}
-                {% if block.settings['read-more_text'] != blank -%}
-                  <span class="read-more__btn">Read More</span>
-                {%- endif %}
               </div>
-              {% if block.settings['read-more_text'] != blank %}
-                <div
-                  class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} hidden"
-                  {{ block.shopify_attributes }}
-                >
-                  {{ block.settings['read-more_text'] }}
-                  <span class="read-less__btn">Read Less</span>
-                </div>
-              {% endif %}
+
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
