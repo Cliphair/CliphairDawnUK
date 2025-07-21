@@ -54,12 +54,7 @@ function addAjaxLoadedItemsToSchema() {
 
   const allItems = document.querySelectorAll(".grid__item[data-product-url]");
 
-  console.log(currentPage)
-  console.log(pageSize)
-  console.log(offset)
-  console.log(allItems)
-
-  const newItems = Array.from(loadedProducts).map((el, i) => {
+  const itemsSchema = Array.from(allItems).map((el, i) => {
     const urlEl = el.querySelector('[data-product-url]');
     const url = urlEl?.getAttribute('data-product-url');
     if (!url) return null;
@@ -69,13 +64,12 @@ function addAjaxLoadedItemsToSchema() {
       "position": offset + i + 1,
       "url": url.startsWith('http') ? url : window.location.origin + url
     };
-  }).filter(Boolean);
+  }).filter(item => item !== null);
 
-  window.ItemListSchema.push(...newItems);
-  updateItemListSchema();
+  updateItemListSchema(itemsSchema);
 }
 
-function updateItemListSchema() {
+function updateItemListSchema(items) {
     const scriptId = 'item-list-schema';
     const oldScript = document.getElementById(scriptId);
     if (oldScript) oldScript.remove();
@@ -88,9 +82,9 @@ function updateItemListSchema() {
       "@type": "ItemList",
       "name": document.title,
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": window.ItemListSchema.length,
-      "itemListElement": window.ItemListSchema
+      "numberOfItems": window.SchemaInformation.totalItems,
+      "itemListElement": items
     });
-
+  console.log(script)
   document.head.appendChild(script);
 }
