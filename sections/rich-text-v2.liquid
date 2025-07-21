@@ -60,7 +60,6 @@
                 assign text = block.settings.text
                 assign has_read_more = false
                 if block.settings.text contains "[read-more]"
-                   assign text = block.settings.text | split: "[read-more]"
                   assign has_read_more = false
                 endif
               %}
@@ -75,7 +74,7 @@
                 {% if has_read_more %}
                   <p>
                     <span>
-                      {{ text | first | newline_to_br }}
+                      {{ text | split: "[read-more]" | first | newline_to_br }}
                       <span class="read-more__btn">Read More</span>
                     </span>
                     <span class='hidden'>
