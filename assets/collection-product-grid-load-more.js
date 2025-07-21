@@ -60,7 +60,7 @@ function addAjaxLoadedItemsToSchema() {
 
     return {
       "@type": "ListItem",
-      "position": i + 1,
+      "position": offset + i + 1,
       "url": url.startsWith('http') ? url : window.location.origin + url
     };
   }).filter(item => item !== null);
