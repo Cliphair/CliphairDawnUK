@@ -166,13 +166,14 @@
     "main": {
       "type": "main-blog",
       "custom_css": [
-        ".card__heading {color: #833c91;}"
+        ".card__heading {color: #833c91;}",
+        "img {aspect-ratio: 1;}"
       ],
       "settings": {
         "show_page_title": false,
         "layout": "grid",
         "show_image": true,
-        "image_height": "adapt",
+        "image_height": "medium",
         "show_date": true,
         "show_author": true,
         "color_scheme": "inverse",
