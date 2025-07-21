@@ -328,7 +328,7 @@
 <script>
   window.ItemListSchema = window.ItemListSchema || [];
 
-  document.querySelectorAll('.grid__item[data-product-url]').forEach((el, i) => {
+  document.querySelectorAll('[data-product-url]').forEach((el, i) => {
     const url = el.getAttribute('data-product-url');
     if (url) {
       window.ItemListSchema.push({
