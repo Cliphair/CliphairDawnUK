@@ -70,7 +70,6 @@ function addAjaxLoadedItemsToSchema() {
 
 function updateItemListSchema(items) {
   const scriptId = 'item-list-schema';
-  const placement = oldScript.parentElement;
   const oldScript = document.getElementById(scriptId);
   if (oldScript) oldScript.remove();
   const placement = oldScript.parentElement;
