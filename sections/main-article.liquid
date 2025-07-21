@@ -132,6 +132,7 @@
                   {{- article.published_at | time_tag: format: 'date' -}}
                 </span>
               {%- endif -%}
+              <p>Last modified on {{- article.updated_at | time_tag: format: 'date' -}}</p>
             </header>
 
           {%- when 'content' -%}
