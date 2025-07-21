@@ -60,7 +60,7 @@
                 assign text = block.settings.text
                 assign has_read_more = false
                 if block.settings.text contains "[read-more]"
-                   assign text = block.settings.tex | split: "[read-more]"
+                   assign text = block.settings.text | split: "[read-more]"
                   assign has_read_more = false
                 endif
               %}
