@@ -326,7 +326,10 @@
 {% endif %}
 
 <script>
-  window.CurrentPage = {{ current_page }};
+  window.SchemaInformation = {
+    current_page: {{ current_page }},
+    page_size: {{ paginate_by }}
+  };
 
   // document.querySelectorAll('[data-product-url]').forEach((el, i) => {
   //   const url = el.getAttribute('data-product-url');
