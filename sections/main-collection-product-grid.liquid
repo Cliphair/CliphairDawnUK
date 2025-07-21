@@ -290,7 +290,7 @@
     {% endfor %}
   ]
 </script> {% endcomment %}
-
+{% assign collection_current_page = current_page %}
 <script type="application/ld+json">
 [
   {
@@ -308,9 +308,7 @@
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
     "numberOfItems": {{ collection.products_count }},
     "itemListElement": [
-      {% assign collection_current_page = current_page %}
       {% assign global_index = collection_current_page | minus: 1 | times: collection.products_per_page %}
-      {% echo global_index %}
       {% for product in collection.products %}
         {
           "@type": "ListItem",
