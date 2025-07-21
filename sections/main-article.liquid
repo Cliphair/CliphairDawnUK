@@ -135,6 +135,8 @@
               {% liquid
                 assign published_date = article.published_at | date: "%s"
                 assign updated_date = article.updated_at | date: "%s"
+                 echo published_date
+                 echo updated_date
               %}
               {% if updated_date > published_date %}
                 <p>Last modified on {{- article.updated_at | time_tag: format: 'date' -}}</p>
