@@ -47,47 +47,46 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-  function addAjaxLoadedItemsToSchema() {
-    const currentPage = window.SchemaInformation?.currentPage || 1;
-    const pageSize = window.SchemaInformation?.pageSize || 15;
-    const offset = (currentPage - 1) * pageSize;
+function addAjaxLoadedItemsToSchema() {
+  const currentPage = window.SchemaInformation?.currentPage || 1;
+  const pageSize = window.SchemaInformation?.pageSize || 15;
+  const offset = (currentPage - 1) * pageSize;
 
-    const allItems = document.querySelectorAll(".grid__item[data-product-url]");
+  const allItems = document.querySelectorAll(".grid__item[data-product-url]");
 
-    const itemsSchema = Array.from(allItems).map((el, i) => {
-      const url = el.getAttribute('data-product-url');
-      if (!url) return null;
+  const itemsSchema = Array.from(allItems).map((el, i) => {
+    const url = el.getAttribute('data-product-url');
+    if (!url) return null;
 
-      return {
-        "@type": "ListItem",
-        "position": i + 1,
-        "url": url.startsWith('http') ? url : window.location.origin + url
-      };
-    }).filter(item => item !== null);
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": url.startsWith('http') ? url : window.location.origin + url
+    };
+  }).filter(item => item !== null);
 
-    updateItemListSchema(itemsSchema);
-  }
+  updateItemListSchema(itemsSchema);
+}
 
-  function updateItemListSchema(items) {
-    const scriptId = 'item-list-schema';
-    const oldScript = document.getElementById(scriptId);
-    if (oldScript) oldScript.remove();
+function updateItemListSchema(items) {
+  const scriptId = 'item-list-schema';
+  const oldScript = document.getElementById(scriptId);
+  if (oldScript) oldScript.remove();
 
-    const totalItems = window.SchemaInformation?.totalItems || items.length;
+  const totalItems = window.SchemaInformation?.totalItems || items.length;
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = scriptId;
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": document.title,
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": totalItems,
-      "itemListElement": items
-    });
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = scriptId;
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": document.title,
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": totalItems,
+    "itemListElement": items
+  });
 
-    document.head.appendChild(script);
-    console.log("✅ Updated schema injected:", script);
-  }
-</script>
+  document.head.appendChild(script);
+  console.log("✅ Updated schema injected:", script);
+}
