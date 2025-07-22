@@ -1,0 +1,102 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+  main.content-for-layout h1,
+  main.content-for-layout h2,
+  main.content-for-layout h3,
+  main.content-for-layout h4,
+  main.content-for-layout h5,
+  main.content-for-layout h6,
+  main.content-for-layout .h1,
+  main.content-for-layout .h2,
+  main.content-for-layout .h3,
+  main.content-for-layout .h4,
+  main.content-for-layout .h5,
+  main.content-for-layout .h6,
+  main.content-for-layout p,
+  main.content-for-layout a,
+  main.content-for-layout ul,
+  main.content-for-layout li,
+  main.content-for-layout label,
+  main.content-for-layout select,
+  .product-popup-modal:not(.section-images-list-with-product-link) *{
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  main.content-for-layout h1 em,
+  main.content-for-layout h2 em,
+  main.content-for-layout h3 em,
+  main.content-for-layout h4 em,
+  main.content-for-layout h5 em,
+  main.content-for-layout h6 em,
+  main.content-for-layout .h1 em,
+  main.content-for-layout .h2 em,
+  main.content-for-layout .h3 em,
+  main.content-for-layout .h4 em,
+  main.content-for-layout .h5 em,
+  main.content-for-layout .h6 em,
+  main.content-for-layout .custom-font,
+  .product-popup-modal:not(.section-images-list-with-product-link) * em{
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  {% assign text1 = section.settings.font-text-1 %}
+  {{ text1 | font_face }}
+  main.content-for-layout p,
+  main.content-for-layout a,
+  main.content-for-layout li,
+  main.content-for-layout ul,
+  main.content-for-layout label,
+  main.content-for-layout select{
+    font-family: {{ text1.family }}, {{ text1.fallback_families }};
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  main.content-for-layout p em,
+  main.content-for-layout a em,
+  main.content-for-layout label em,
+  main.content-for-layout select em,
+  .product-popup-modal * em{
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  {% assign btns = section.settings.font-btns %}
+  {{ btns | font_face }}
+  main.content-for-layout a{
+    font-family: {{ btns.family }}, {{ btns.fallback_families }};
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+{% schema %}
+{
+  "name": "Page Font",
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "font-text-1",
+      "label": "Page Text (primary)",
+      "default": "libre_baskerville_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "font-btns",
+      "label": "Page Buttons",
+      "default": "libre_baskerville_n4"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
