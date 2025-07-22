@@ -16,7 +16,16 @@
   }
 {% endstyle %}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
   <div
     class="collection-carrousel-wrapper isolate no-heading no-mobile-link {{ section.settings.text_allignment }}"
   >
@@ -80,6 +89,9 @@
             class="collection-carrousel contains-card contains-card--collection grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down {% if settings.card_style == 'standard' %} contains-card--standard{% endif %}{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} collection-carrousel--{{ block.settings['collection-list'].links.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
             id="Slider-{{ section.id }}"
             role="list"
+            {% if section.settings.trackable_name != blank %}
+              data-horizontal-scroll
+            {% endif %}
           >
             {%- liquid
               assign columns = block.settings['collection-list'].links.size
@@ -99,14 +111,21 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% assign collection_object = link.object %}
+                  {% liquid
+                    assign collection_object = link.object
+                    assign tracking = ''
+                    if section.settings.trackable_name != blank
+                      assign tracking = 'click_' | append: link.title | handleize
+                    endif
+                  %}
                   {% render 'card-collection',
                     card_collection: collection_object,
                     media_aspect_ratio: section.settings.image_ratio,
                     columns: columns,
                     custom_title: link.title,
                     circle_image: block.settings.circle_images,
-                    hide_arrow: section.settings.hide_card_arrow
+                    hide_arrow: section.settings.hide_card_arrow,
+                    tracking: tracking
                   %}
                 </li>
               {% endif %}
@@ -345,6 +364,10 @@
         {
           "value": "3",
           "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
         }
       ],
       "default": "1",
@@ -399,6 +422,15 @@
       "unit": "px",
       "label": "Bottom padding",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [

@@ -140,29 +140,6 @@
         "padding_bottom": 20
       }
     },
-    "rich_text_v2_rqH8jt": {
-      "type": "rich-text-v2",
-      "blocks": {
-        "text_4G6QMG": {
-          "type": "text",
-          "settings": {
-            "text": "Share information about your brand with your customers.[read-more] Describe a product, make announcements, or welcome customers to your store.\nblablasd\n\nasfjklasdjajfklgasd\n\ngkldjflaksjdklads"
-          }
-        }
-      },
-      "block_order": [
-        "text_4G6QMG"
-      ],
-      "name": "Rich text test",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "fef9cc49-05dc-468b-82e4-1520264647b6": {
       "type": "rich-text",
       "blocks": {
@@ -1233,7 +1210,6 @@
     "visual_menu_66DUPM",
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
-    "rich_text_v2_rqH8jt",
     "fef9cc49-05dc-468b-82e4-1520264647b6",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",

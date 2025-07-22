@@ -134,6 +134,10 @@
                 href="{{ card_collection.url }}"
               {% endif %}
               class="full-unstyled-link"
+              {% if tracking and tracking != blank %}
+                data-event-type="section_click"
+                data-cta-label="{{ tracking }}"
+              {% endif %}
             >
               {% if custom_title %}
                 {{- custom_title | escape -}}

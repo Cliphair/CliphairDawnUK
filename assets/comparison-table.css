@@ -1,0 +1,109 @@
+.interative-table-section table {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .interative-table-section table {
+    font-size: 1.3rem;
+  }
+
+  .interative-table-section .custom-select__trigger {
+    font-size: 1.3rem;
+  }
+}
+
+.interative-table-section tbody tr td:not(:first-of-type) {
+  text-align: center;
+}
+
+.interative-table-section tbody tr td .icon {
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+.interative-table-section tr>th {
+  padding: 0;
+}
+
+/* Custom Select */
+.interative-table-section .custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.interative-table-section .custom-select__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  width: 100%;
+  background-color: var(--gradient-background);
+  border-radius: 0;
+  cursor: pointer;
+  white-space: normal;
+  padding: 1em;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  border: 0;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.interative-table-section .custom-select__trigger:hover::after,
+.interative-table-section .custom-select__trigger.clicked::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2em);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  pointer-events: none;
+  box-sizing: border-box;
+  padding: 0 1em;
+}
+
+.interative-table-section .custom-select__icon {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.interative-table-section .custom-select__trigger.clicked .custom-select__icon {
+  transform: rotate(180deg);
+}
+
+.interative-table-section .custom-select__options {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--gradient-background);
+  border: 0.2rem solid rgba(var(--color-foreground), 0.2);
+  border-radius: 0;
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.interative-table-section .custom-select__options li {
+  padding: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  line-height: 1em;
+}
+
+.interative-table-section .custom-select__options li:hover,
+.interative-table-section .custom-select__options li.selected {
+  background-color: #f7f7f7;
+}

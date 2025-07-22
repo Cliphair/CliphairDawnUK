@@ -1,0 +1,305 @@
+{{ 'anchor-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
+  {%- liquid
+    assign size = section.blocks.size
+    assign remainder = size | modulo: 2
+    assign total_columns = size | divided_by: 2 | plus: remainder
+
+    assign current_index = 0
+
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and total_columns > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop and total_columns > columns_desktop_int
+      assign show_desktop_slider = true
+    endif
+
+    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+    if total_columns > columns_tablet and section.settings.swipe_on_desktop
+      assign show_tablet_slider = true
+    endif
+  -%}
+
+  <div
+    class="anchor-menu-wrapper {{ section.settings.text_allignment }} page-width isolate"
+    {%- if show_mobile_slider or show_desktop_slider or show_tablet_slider -%}
+      style="padding:0!important;"
+    {% endif %}
+  >
+    <slider-component
+      class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      data-visual="{{ section.settings.slider_visual }}"
+    >
+      <ul
+        class="anchor-menu grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} images-list--{{ section.blocks.size }}-items "
+        id="Slider-{{ section.id }}"
+        role="list"
+        {% if section.settings.trackable_name != blank %}
+          data-horizontal-scroll
+        {% endif %}
+      >
+        {%- liquid
+          assign columns = total_columns
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+
+        {% for i in (1..total_columns) %}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="anchor-menu__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {% assign final_index = current_index | plus: 1 %}
+            {% for j in (current_index..final_index) %}
+              {% assign block = section.blocks[j] %}
+              {% if block %}
+                <div>
+                  <a
+                    href="{{ request.path | append: "#" | append: block.settings.anchor_id }}"
+                    class="button {% if section.settings.button_secondary %}button--secondary{% endif %}"
+                    {% if section.settings.trackable_name != blank %}
+                      data-event-type="section_click"
+                      data-cta-label="{{ "click_" | append: block.settings.anchor_label | handleize }}"
+                    {% endif %}
+                  >
+                    {{ block.settings.anchor_label }}
+                    <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+            {% assign current_index = current_index | plus: 2 %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
+        <div class="slider-buttons no-js-hidden small-hide slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+
+          <div class="slider-counter caption visually-hidden">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ total_columns }}</span>
+          </div>
+
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Anchor menu",
+  "tag": "section",
+  "class": "section section-anchor-menu",
+  "settings": [
+    {
+      "type": "select",
+      "id": "text_allignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text allignment"
+    },
+    {
+      "type": "checkbox",
+      "default": false,
+      "label": "Use secondary button",
+      "id": "button_secondary"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+        },
+        {
+          "value": "counter",
+          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+        }
+      ],
+      "default": "counter",
+      "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "anchor",
+      "name": "Anchor element",
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_label",
+          "label": "Anchor label"
+        },
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor id",
+          "info": "Id from the specific section you want to link send the customer to."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1172,6 +1172,15 @@ summary::-webkit-details-marker {
   .slider--tablet.grid--peek.grid--3-col-tablet-down .grid__item {
     width: calc((100% - 1.5rem - var(--grid-mobile-horizontal-spacing) * 4) / 3);
   }
+
+  .grid--4-col-tablet-down .grid__item {
+    width: calc((100% - var(--grid-mobile-horizontal-spacing) * 3) / 4);
+  }
+
+  .slider--mobile.grid--peek.grid--4-col-tablet-down .grid__item,
+  .slider--tablet.grid--peek.grid--4-col-tablet-down .grid__item {
+    width: calc((100% - 1.5rem - var(--grid-mobile-horizontal-spacing) * 5) / 4);
+  }
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {

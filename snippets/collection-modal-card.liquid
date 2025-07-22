@@ -1,0 +1,134 @@
+{% liquid
+  if title and title != blank
+    assign collection_title = title
+  else
+    assign collection_title = collection.title
+  endif
+  assign lowest_price = blank
+  for product in collection.products
+    assign product_price = product.price_min
+    if lowest_price == blank or product_price < lowest_price
+      assign lowest_price = product_price
+    endif
+  endfor
+
+  assign colour_match = pages['colour-matching-service']
+%}
+
+{%- capture sizes -%}
+	(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px)
+	calc(100vw - 10rem), 100vw
+{%- endcapture -%}
+
+<div class="collection-modal-card">
+  <div class="grid grid--gapless">
+    <div class="collection-modal-card__image-wrapper">
+      {{
+        image
+        | image_url: width: image.width
+        | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+          alt: image.alt
+      }}
+    </div>
+    <div class="collection-modal-card__text-wrapper">
+      <div class="text-wrapper__top">
+        <p class="collection-title">{{ collection_title }}</p>
+
+        <p class="collection-base-price">From {{ lowest_price | money }}</p>
+      </div>
+      <modal-opener
+        data-modal="#PopupModal-{{ collection_title | handle }}-{{ index }}"
+        {{ block.shopify_attributes }}
+      >
+        <button
+          class="collection-cta button no-js-hidden"
+          id="CollectionPopup-{{ collection_title | handle }}-{{ index }}"
+          type="button"
+          title="Select Length & Shade"
+          aria-haspopup="dialog"
+          {% if tracking and tracking != '' %}
+            data-event-type="section_click"
+            data-cta-label="{{ tracking }}"
+          {% endif %}
+        >
+          Select Length & Shade
+        </button>
+      </modal-opener>
+      <noscript><a href="{{ collection.url }}" class="collection-cta button js-hidden">View Collection</a></noscript>
+    </div>
+  </div>
+</div>
+
+<collection-modal
+  id="PopupModal-{{ collection_title | handle }}-{{ index }}"
+  class="collection-popup-modal"
+  data-collection-handle="{{ collection.handle }}"
+>
+  <div
+    role="dialog"
+    aria-label="Select Length & Shade Modal for {{ collection_title }}"
+    aria-modal="true"
+    class="collection-popup-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ collection_title | handle }}"
+      type="button"
+      class="collection-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+    <div class="collection-popup-modal__content-info">
+      <div class="grid">
+        <div class="grid__content image-content">
+          {{
+            image
+            | image_url: width: image.width
+            | image_tag:
+              loading: 'lazy',
+              sizes: sizes,
+              widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+              alt: image.alt
+          }}
+        </div>
+        <div class="grid__content text-content">
+          <p class="h2 text-content__title">{{ collection_title }}</p>
+          <div class="content-info__options">
+            <div class="content-info__option-group" data-filter-type="length">
+              <label class="h3 label">Length</label>
+              <div class="select">
+                <select class="select__select">
+                  <option default>Select an option</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div class="content-info__option-group" data-filter-type="colour-group">
+              <label class="h3 label">Shade</label>
+              <div class="select">
+                <select class="select__select">
+                  <option default>Select an option</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="content-info__ctas">
+            <a id="view-all-button" class="button" href="{{ collection.url }}">View All</a>
+            <a class="button" href="{{ colour_match.url }}">Colour Match</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</collection-modal>

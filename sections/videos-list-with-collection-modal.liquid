@@ -1,0 +1,470 @@
+{{ 'section-videos-list.css' | asset_url | stylesheet_tag }}
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-collection-modal-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop and section.blocks.size > columns_desktop_int
+      assign show_desktop_slider = true
+    endif
+
+    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+    if section.blocks.size > columns_tablet and section.settings.swipe_on_desktop
+      assign show_tablet_slider = true
+    endif
+
+    assign image_ratio = 1
+    if section.settings.image_ratio == 'portrait'
+      assign image_ratio = 0.6667
+    elsif section.settings.image_ratio == 'landscape'
+      assign image_ratio = 1.7778
+    endif
+  -%}
+
+  <div
+    class="videos-list-wrapper page-width isolate no-heading no-mobile-link {{ section.settings.text_allignment }}"
+    style="padding:0!important;"
+  >
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin page-width">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="videos-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        >
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
+
+    {% unless section.settings.introduction == blank %}
+      <div class="intro-wrapper page-width">
+        {{ section.settings.introduction }}
+      </div>
+    {% endunless %}
+
+    <slider-component
+      data-visual="{{ section.settings.slider_visual }}"
+      class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    >
+      <ul
+        class="videos-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items {%comment%}slide-mobile-{{ show_mobile_slider }}{%endcomment%} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
+        id="Slider-{{ section.id }}"
+        role="list"
+        {% if section.settings.trackable_name != blank %}
+          data-horizontal-scroll
+        {% endif %}
+      >
+        {%- liquid
+          assign columns = section.blocks.size
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+
+        {% for block in section.blocks %}
+          {% liquid
+            assign tracking_video = ''
+            assign tracking_modal = ''
+            if section.settings.trackable_name != blank
+              assign tracking_video = 'play_video_' | append: forloop.index
+              assign tracking_modal = 'open_modal_' | append: forloop.index
+            endif
+          %}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="videos-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {% render 'video-card',
+              video: block.settings.video,
+              video_url: block.settings.video_url,
+              video_url_id: block.settings.video_url.id,
+              video_url_type: block.settings.video_url.type,
+              description: block.settings.description,
+              cover_image: block.settings.cover_image,
+              image_ratio: image_ratio,
+              title: block.settings.title,
+              tracking: tracking_video
+            %}
+            {% if block.settings.modal_collection and block.settings.modal_image %}
+              {% render 'collection-modal-card',
+                collection: block.settings.modal_collection,
+                title: block.settings.modal_title,
+                image: block.settings.modal_image,
+                index: forloop.index,
+                tracking: tracking_modal
+              %}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
+        <div class="slider-buttons slider-buttons-{{ section.settings.image_ratio }} small-hide no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+
+          <div class="slider-counter caption visually-hidden">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="button-wrapper page-width">
+        <a
+          {% if section.settings.link %}
+            href="{{ section.settings.link }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+          class="button {% if section.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script src="{{ 'collection-modal.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Videos with modal",
+  "tag": "section",
+  "class": "section section-videos-list section-videos-list-with-collection-modal",
+  "max_blocks": 10,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction"
+    },
+    {
+      "type": "header",
+      "content": "Section button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "default": false,
+      "id": "button_style_secondary",
+      "label": "Use outline button style"
+    },
+    {
+      "type": "select",
+      "id": "text_allignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text allignment"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_card_arrow",
+      "default": false,
+      "label": "Hide card arrow"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+        },
+        {
+          "value": "counter",
+          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+        }
+      ],
+      "default": "counter",
+      "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__1.content"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.video.settings.video.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__2.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.video.settings.paragraph.content"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "t:sections.video.settings.video_url.label",
+          "info": "t:sections.video.settings.video_url.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "t:sections.video.settings.cover_image.label"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "t:sections.video.settings.description.label",
+          "info": "t:sections.video.settings.description.info"
+        },
+        {
+          "type": "header",
+          "content": "Modal settings"
+        },
+        {
+          "type": "collection",
+          "id": "modal_collection",
+          "label": "Collection"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "modal_title",
+          "label": "Display title"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image",
+          "label": "Modal image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Videos with modal",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

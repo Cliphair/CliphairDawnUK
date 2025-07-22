@@ -1,0 +1,138 @@
+{{ 'comparison-table.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
+  <div class="page-width section-{{ section.id }}-padding page-width">
+    <interactive-table>
+      <table>
+        <thead>
+          <tr>
+            <th><span>Extensions</span></th>
+            <th class="">
+              <custom-select class="select_select custom-select" data-selected="">
+                <button class="custom-select__trigger" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-select__label">Wrap Ponytail</span>
+                  <svg class="custom-select__icon" viewBox="0 0 24 24" width="16" height="16">
+                    <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" fill="none" />
+                  </svg>
+                </button>
+                <ul class="custom-select__options" role="listbox" hidden>
+                  <li selected>Test 1</li>
+                  <li>Test 2</li>
+                  <li>Test 3</li>
+                </ul>
+              </custom-select>
+            </th>
+            <th class="">
+              <custom-select class="select_select custom-select">
+                <button class="custom-select__trigger" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-select__label">Wrap Ponytail</span>
+                  <svg class="custom-select__icon" viewBox="0 0 24 24" width="16" height="16">
+                    <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" fill="none" />
+                  </svg>
+                </button>
+                <ul class="custom-select__options" role="listbox" hidden>
+                  <li selected>Test 1</li>
+                  <li>Test 2</li>
+                  <li>Test 3</li>
+                </ul>
+              </custom-select>
+            </th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="hidden check-mark-container" aria-hidden="true">
+        {% render 'icon-checkmark' %}
+      </div>
+      <script type="application/json">
+        {{ section.settings.options.values }}
+      </script>
+    </interactive-table>
+  </div>
+</div>
+
+<script src="{{ 'component-interactive-table.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Interactive table",
+  "tag": "section",
+  "class": "section interative-table-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "metaobject",
+      "id": "options",
+      "label": "Options",
+      "metaobject_type": "hair_extensions_features"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Interctive table",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
