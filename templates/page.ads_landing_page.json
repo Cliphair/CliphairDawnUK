@@ -10,7 +10,7 @@
 {
   "sections": {
     "page-font": {
-      "type": "page_font_summer25",
+      "type": "page_font_ads",
       "settings": {
         "font-text-1": "inter_n4",
         "font-btns": "inter_n4"
