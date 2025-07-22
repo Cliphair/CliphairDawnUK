@@ -414,6 +414,18 @@
           "secondary_button_label": "#ffffff",
           "shadow": "#ffffff"
         }
+      },
+      "scheme-a84f2420-9b4e-4c74-be3c-064bbd6ce99d": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "headers": "#414141",
+          "text": "#414141",
+          "button": "#faf7f5",
+          "button_label": "#414141",
+          "secondary_button_label": "#414141",
+          "shadow": "#414141"
+        }
       }
     }
   },
