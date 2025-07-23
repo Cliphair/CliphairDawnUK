@@ -79,13 +79,13 @@
                     </span>
                     <span class='hidden'>
                       {{ read_more | newline_to_br }}
-                    <span class="read-less__btn">Read Less</span>
+                      <span class="read-less__btn">Read Less</span>
                     </span>
                   {% else %}
                     {{ text | newline_to_br }}
                   {% endif %}
                 </p>
-                {{ block.settings.text }}
+                
               </div>
             {%- when 'button' -%}
               <div
