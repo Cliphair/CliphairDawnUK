@@ -50,7 +50,17 @@ if (!customElements.get('media-gallery')) {
             activeMedia.parentElement.scrollTo({ left: activeMedia.offsetLeft });
           }
           if (!this.elements.thumbnails || this.dataset.desktopLayout === 'stacked') {
-            activeMedia.scrollIntoView({ behavior: 'smooth' });
+            // activeMedia.scrollIntoView({ behavior: 'smooth' });
+            const stickyHeader = document.querySelector('sticky-header');
+            const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+
+            const mediaRect = activeMedia.getBoundingClientRect();
+            const scrollY = window.scrollY + mediaRect.top - headerHeight - 10;
+
+            window.scrollTo({
+              top: scrollY,
+              behavior: 'smooth',
+            });
           }
         });
         this.playActiveMedia(activeMedia);
