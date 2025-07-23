@@ -59,8 +59,8 @@
               {% liquid
                 assign text = block.settings.text
                 if text contains "[read-more]"
-                  assign text = text | split: "[read-more]" | first
-                 assign read_more = text | split: "[read-more]" | last
+                  assign text = block.settings.text | split: "[read-more]" | first
+                 assign read_more = block.settings.text | split: "[read-more]" | last
                 endif
               %}
               <div
