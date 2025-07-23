@@ -1689,8 +1689,7 @@ klarna-placement::part(osm-legal),
   color: rgba(var(--color-foreground), 0.75);
 }
 
-klarna-placement::part(osm-legal),
-.clearpay-placement p {
+klarna-placement::part(osm-legal) {
   margin: 0;
 }
 
@@ -1710,7 +1709,6 @@ square-placement {
 
 .payment_services .clearpay-placement {
   margin-bottom: 15px;
-  align-content: center;
 }
 
 .clearpay-placement>div {

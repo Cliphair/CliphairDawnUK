@@ -22,6 +22,28 @@ if (!customElements.get('product-form')) {
 
         this.handleErrorMessage();
 
+        const selectBoxes = [...document.querySelectorAll(".select__select")];
+        let formIsValid = true;
+
+        for (const selectBox of selectBoxes) {
+          const selectedOption = selectBox.options[selectBox.selectedIndex];
+          if (
+            !selectedOption ||
+            selectedOption.disabled ||
+            selectedOption.classList.contains('placeholder')
+          ) {
+            selectBox.classList.add("product-form__error");
+            selectBox.focus();
+            formIsValid = false;
+            break;
+          }
+        }
+
+        if (!formIsValid) {
+          this.handleErrorMessage("You must select all the options");
+          return;
+        }
+
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
         this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
@@ -104,6 +126,14 @@ if (!customElements.get('product-form')) {
           this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
         if (!this.errorMessageWrapper) return;
         this.errorMessage = this.errorMessage || this.errorMessageWrapper.querySelector('.product-form__error-message');
+
+        if (!errorMessage) {
+          const errorElements = [...document.querySelectorAll('.product-form__error')];
+          errorElements.forEach(element => {
+            element.classList.remove('product-form__error');
+            element.blur();
+          });
+        }
 
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
