@@ -56,6 +56,13 @@
                 {{ block.settings.caption | escape }}
               </p>
             {%- when 'text' -%}
+              {% liquid
+                assign text = block.settings.text
+                if text contains "[read-more]"
+                  assign text = text | split: "[read-more]" | first
+                 assign read_more = text | split: "[read-more]" | last
+                endif
+              %}
               <div
                 class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
@@ -64,20 +71,22 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
+                <p>
+                  {% if read_more %}
+                    <span>
+                      {{ text | newline_to_br }}
+                      <span class="read-more__btn">Read More</span>
+                    </span>
+                    <span class='hidden'>
+                      {{ read_more | newline_to_br }}
+                    <span class="read-less__btn">Read Less</span>
+                    </span>
+                  {% else %}
+                    {{ text | newline_to_br }}
+                  {% endif %}
+                </p>
                 {{ block.settings.text }}
-                {% if block.settings['read-more_text'] != blank -%}
-                  <span class="read-more__btn">Read More</span>
-                {%- endif %}
               </div>
-              {% if block.settings['read-more_text'] != blank %}
-                <div
-                  class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} hidden"
-                  {{ block.shopify_attributes }}
-                >
-                  {{ block.settings['read-more_text'] }}
-                  <span class="read-less__btn">Read Less</span>
-                </div>
-              {% endif %}
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -305,15 +314,10 @@
       "limit": 3,
       "settings": [
         {
-          "type": "richtext",
+          "type": "inline_richtext",
           "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+          "default": "Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
-        },
-        {
-          "type": "richtext",
-          "id": "read-more_text",
-          "label": "Read more description"
         }
       ]
     },
