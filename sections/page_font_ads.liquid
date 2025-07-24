@@ -1,0 +1,57 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+  main.content-for-layout h1 em,
+  main.content-for-layout h2 em,
+  main.content-for-layout h3 em,
+  main.content-for-layout h4 em,
+  main.content-for-layout h5 em,
+  main.content-for-layout h6 em,
+  main.content-for-layout .h1 em,
+  main.content-for-layout .h2 em,
+  main.content-for-layout .h3 em,
+  main.content-for-layout .h4 em,
+  main.content-for-layout .h5 em,
+  main.content-for-layout .h6 em,
+  main.content-for-layout .custom-font,
+  .product-popup-modal:not(.section-images-list-with-product-link) * em {
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  main.content-for-layout p em,
+  main.content-for-layout a em,
+  main.content-for-layout label em,
+  main.content-for-layout select em,
+  .product-popup-modal * em {
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+{% schema %}
+{
+  "name": "Page Font",
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "font-text-1",
+      "label": "Page Text (primary)",
+      "default": "libre_baskerville_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "font-btns",
+      "label": "Page Buttons",
+      "default": "libre_baskerville_n4"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

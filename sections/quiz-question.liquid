@@ -61,7 +61,7 @@
             id="SectionHeading-{{ section.id }}"
             class="question inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           >
-            {{ section.settings.question }}
+            {{ section.settings.question | replace: '[break]', '<br>' }}
           </h2>
         </div>
 
@@ -90,7 +90,7 @@
                   {% endif %}
                   data-answer-id="{{ block.settings.id }}"
                 >
-                  <div class="answer answer-card card-wrapper">
+                  <div class="answer answer-card card-wrapper {% if block.settings.answer_image %} answer__image-text{% else %} answer__text-only{% endif %}">
                     <div
                       class="card card-standard"
                       style="--ratio-percentage: {{ 1 | divided_by: ratio | times: 100 }}%;"
@@ -126,6 +126,7 @@
                         <div class="card__information button-wrapper">
                           <h3 class="card__heading button h4 {% if section.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">
                             {{ block.settings.answer }}
+                            {% render 'icon-arrow' %}
                           </h3>
                         </div>
                       </div>
