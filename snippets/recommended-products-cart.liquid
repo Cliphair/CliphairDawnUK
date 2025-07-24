@@ -161,27 +161,6 @@
   </div>
 </div>
 <div id="recommended-products-cart" class="color-{{ color_scheme }} gradient">
-  {% comment %}
-    <div class="title-wrapper title-wrapper--no-margin">
-      <h2 class="title inline-richtext h3">
-        {{ section.settings.title | default: 'You Might Also Like' }}
-      </h2>
-      <div class="loading-overlay hidden">
-        <div class="loading-overlay__spinner">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            class="spinner"
-            viewBox="0 0 66 66"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-          </svg>
-        </div>
-      </div>
-    </div>
-  {% endcomment %}
-
   <slider-component
     aria-hidden="true"
     class=" slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}"

@@ -270,7 +270,7 @@
           <noscript class="">
             {%- form 'localization', id: 'HeaderCountryMobileFormNoScript', class: 'localization-form' -%}
               <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                <p class="visually-hidden" id="HeaderCountryMobileLabelNoScript">{{ 'localization.country_label' | t }}</p>
                 <select class="localization-selector link" name="country_code" aria-labelledby="HeaderCountryMobileLabelNoScript">
                   {%- for country in localization.available_countries -%}
                     <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
@@ -287,7 +287,7 @@
           <localization-form class=" no-js-hidden">
             {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
               <div>
-                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                <p class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</p>
                 {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
               </div>
             {%- endform -%}

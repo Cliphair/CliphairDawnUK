@@ -166,8 +166,8 @@
         {%- endif -%}
         <div class="card__content">
           <div class="card__information">
-            <h3
-              class="card__heading"
+            <p
+              class="card__heading h3"
               {% if card_product.featured_media == null and settings.card_style == 'standard' %}
                 id="title-{{ section_id }}-{{ card_product.id }}"
               {% endif %}
@@ -180,7 +180,7 @@
               >
                 {{ card_product.title | escape }}
               </a>
-            </h3>
+            </p>
           </div>
           <div class="card__badge {{ settings.badge_position }} {{ badge_style }}">
             {%- if card_product.available == false -%}
@@ -197,7 +197,10 @@
               >
                 {{ inventory }} LEFT
               </span>
-            {%- elsif card_product.selected_or_first_available_variant.compare_at_price > card_product.selected_or_first_available_variant.price and card_product.available -%}
+            {%- elsif card_product.selected_or_first_available_variant.compare_at_price
+                > card_product.selected_or_first_available_variant.price
+              and card_product.available
+            -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
@@ -211,7 +214,7 @@
                   | times: 100
                   | divided_by: 100
                   | floor
-                -}} 
+                -}}
                 %
               </span>
             {% elsif card_product.tags contains 'New Arrivals' and badge_style != 'fixed' %}
@@ -319,8 +322,12 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-            {% assign hidden_message_types = "Nano Ring Hair Extensions,Remy Royale Flat Tip,Remy Royale I-Tips,Remy Royale Invisible Tape,Remy Royale Nano Bonds,Remy Royale Tape ins" | split: "," %}
-            {% if hidden_message_types contains card_product.type %}<div class="caption-with-letter-spacing light hidden hidden-message">Buy 2 or more &  Get 10% off</div>{% endif %}
+            {% assign hidden_message_types = 'Nano Ring Hair Extensions,Remy Royale Flat Tip,Remy Royale I-Tips,Remy Royale Invisible Tape,Remy Royale Nano Bonds,Remy Royale Tape ins'
+              | split: ','
+            %}
+            {% if hidden_message_types contains card_product.type %}
+              <div class="caption-with-letter-spacing light hidden hidden-message">Buy 2 or more & Get 10% off</div>
+            {% endif %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
