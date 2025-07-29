@@ -4,6 +4,12 @@
   user-select: none;
   display: flex;
   gap: var(--marquee-mobile-gap);
+  -webkit-mask-image: linear-gradient(90deg,transparent 0,black 10%,black 90%,transparent);
+  mask-image: linear-gradient(90deg,transparent 0,black 10%,black 90%,transparent);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .marquee__content {
