@@ -194,10 +194,10 @@
         "color_scheme": "accent-2",
         "columns_mobile": "2",
         "scroll_mobile": true,
-        "duration_mobile": 40,
+        "duration_mobile": 60,
         "columns_desktop": 6,
         "scroll_desktop": true,
-        "duration_desktop": 101,
+        "duration_desktop": 100,
         "padding_top": 20,
         "padding_bottom": 20
       }
