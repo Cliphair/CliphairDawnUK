@@ -90,6 +90,118 @@
         "accessibility_info": "Cliphair slideshow banners"
       }
     },
+    "maquee_mnMgq6": {
+      "type": "maquee",
+      "blocks": {
+        "element_3Vf96V": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Grazia_Logo.webp",
+            "text_label": "",
+            "link": "https://graziadaily.co.uk/beauty-hair/hair/clip-in-ponytail-extensions-uk/"
+          }
+        },
+        "element_pM9XaE": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Marie_Claire_Logo.webp",
+            "text_label": "",
+            "link": "https://www.marieclaire.co.uk/promotional-feature/kate-middleton-ponytail-tips-cliphair-760263"
+          }
+        },
+        "element_8H4aiQ": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Cosmopolitan_Logo.webp",
+            "text_label": "",
+            "link": "https://www.cosmopolitan.com/uk/beauty-hair/hair/a44710529/best-clip-in-hair-extensions/"
+          }
+        },
+        "element_F6bbAV": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/The_Sun_Logo.webp",
+            "text_label": "",
+            "link": "https://www.thesun.co.uk/fabulous/18696203/hairstyle-according-to-star-sign/"
+          }
+        },
+        "element_WBBU3B": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Daily_Mail_Logo.webp",
+            "text_label": "",
+            "link": "https://www.dailymail.co.uk/femail/article-7553741/The-10-beauty-fashion-brands-NEED-know.html"
+          }
+        },
+        "element_dc3A6R": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Hair_Dresser_Journal_Logo_V3.png",
+            "text_label": "",
+            "link": "https://mag.hji.co.uk/articles/255164?article=51-1"
+          }
+        },
+        "element_KKmrXf": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Salon_Logo.webp",
+            "text_label": "",
+            "link": "https://thesalonmagazine.co.uk/cliphair-more-than-hair-extensions/"
+          }
+        },
+        "element_Q94Hw3": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Reader_s_Digest_Logo.webp",
+            "text_label": "",
+            "link": "https://www.readersdigest.co.uk/lifestyle/fashion-beauty/top-5-celebrity-ponytails-and-how-to-create-them"
+          }
+        },
+        "element_NaLGwh": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Independent_Logo.webp",
+            "text_label": "",
+            "link": "https://www.independent.co.uk/extras/indybest/fashion-beauty/best-clip-in-hair-extensions-b1891280.html"
+          }
+        },
+        "element_hBXMTc": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Metro_Logo.webp",
+            "text_label": "",
+            "link": "https://metro.co.uk/2022/02/07/this-is-how-often-you-should-wash-your-hair-depending-on-hair-type-16061705/"
+          }
+        }
+      },
+      "block_order": [
+        "element_3Vf96V",
+        "element_pM9XaE",
+        "element_8H4aiQ",
+        "element_F6bbAV",
+        "element_WBBU3B",
+        "element_dc3A6R",
+        "element_KKmrXf",
+        "element_Q94Hw3",
+        "element_NaLGwh",
+        "element_hBXMTc"
+      ],
+      "custom_css": [
+        ".marquee__item {max-width: 200px;}"
+      ],
+      "settings": {
+        "text_size": "p",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "scroll_mobile": true,
+        "duration_mobile": 40,
+        "columns_desktop": 6,
+        "scroll_desktop": true,
+        "duration_desktop": 40,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "pulldown_info_grid_B88Q8G": {
       "type": "pulldown-info-grid",
       "blocks": {
@@ -639,6 +751,7 @@
   },
   "order": [
     "slideshow_3tCMjU",
+     "maquee_mnMgq6",
     "pulldown_info_grid_B88Q8G",
     "table_of_content_CtFVX8",
     "yotpo_reviews_dynamic_carrousel_UeNWFY",
