@@ -197,7 +197,7 @@
         "duration_mobile": 40,
         "columns_desktop": 6,
         "scroll_desktop": true,
-        "duration_desktop": 40,
+        "duration_desktop": 101,
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -751,7 +751,7 @@
   },
   "order": [
     "slideshow_3tCMjU",
-     "maquee_mnMgq6",
+    "maquee_mnMgq6",
     "pulldown_info_grid_B88Q8G",
     "table_of_content_CtFVX8",
     "yotpo_reviews_dynamic_carrousel_UeNWFY",
