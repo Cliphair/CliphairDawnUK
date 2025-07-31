@@ -76,12 +76,6 @@
             "color_scheme": "background-2"
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
         "order_deadline_67UiV7": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
           "settings": {
@@ -186,6 +180,12 @@
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
@@ -201,7 +201,6 @@
         "quantity_selector_J8hgHX",
         "sc_back_in_stock_app_block_6JYKTH",
         "buy_buttons",
-        "share",
         "order_deadline_67UiV7",
         "icon_with_text_yWPnhq",
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
@@ -210,7 +209,8 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_L8wRzX",
-        "collapsible_tab_NUa6HR"
+        "collapsible_tab_NUa6HR",
+        "share"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
