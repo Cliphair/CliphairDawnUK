@@ -1803,6 +1803,14 @@ square-placement {
   max-width: 44rem;
 }
 
+.swym-atw-btn-wrapper{
+  margin-bottom:1rem;
+}
+
+.swym-atw-btn-wrapper .product-form__submit{
+  margin-bottom:0;
+}
+
 /* share button block */
 .buy-buttons~.share-button {
   margin-top: -1.5rem;
