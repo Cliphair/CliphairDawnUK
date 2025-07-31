@@ -3279,15 +3279,16 @@
                 -%}
               </a>
             {%- endif -%}
-            <div class="menu-drawer__contact">
-              <a
-                href="/pages/contact-us"
-                class="link focus-inset h5"
-              >
-                Contact Us
-              </a>
-            </div>
-            {% comment %}
+            <div class='grid' style='justify-content:space-between; flex-direction:row-reverse;'>
+              <div class="menu-drawer__contact">
+                <a
+                  href="/pages/contact-us"
+                  class="link focus-inset h5"
+                >
+                  Contact Us
+                </a>
+              </div>
+              
               {%- if localization.available_countries or localization.available_languages -%}
                 <div class="menu-drawer__localization header-localization">
                   {%- if localization.available_countries and localization.available_countries.size > 1 -%}
@@ -3319,7 +3320,7 @@
                         <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
                       {%- endform -%}
                     </noscript>
-
+  
                     <localization-form class="no-js-hidden">
                       {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
                         <div>
@@ -3331,7 +3332,7 @@
                       {%- endform -%}
                     </localization-form>
                   {% endif %}
-
+  
                   {%- if localization.available_languages and localization.available_languages.size > 1 -%}
                     <noscript>
                       {%- form 'localization',
@@ -3364,7 +3365,7 @@
                         <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
                       {%- endform -%}
                     </noscript>
-
+  
                     <localization-form class="no-js-hidden">
                       {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
                         <div>
@@ -3378,7 +3379,7 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-            {% endcomment %}
+            </div>
 
             <ul class="list list-social list-unstyled" role="list">
               {%- if settings.social_twitter_link != blank -%}
