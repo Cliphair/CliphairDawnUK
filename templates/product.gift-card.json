@@ -50,12 +50,6 @@
             "color_scheme": "inverse"
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
           "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
           "settings": {
@@ -95,6 +89,12 @@
             "content": "",
             "page": ""
           }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
@@ -105,10 +105,10 @@
         "variant_picker",
         "quantity_selector_jRL7p9",
         "buy_buttons",
-        "share",
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
-        "collapsible-row-0"
+        "collapsible-row-0",
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -270,7 +270,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "custom_liquid_wj84kt": {
