@@ -153,6 +153,7 @@
         },
         "463035d2-6446-4ab7-a2d4-03a24ee0cd4f": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Remy Human Hair Extensions Online",
             "heading_size": "h2",
@@ -174,7 +175,7 @@
       "custom_css": [
         ".rich-text__blocks > * + h2 {margin-top: 1rem;}",
         ".rich-text__wrapper {width: 100% !important;}",
-        ".rich-text__blocks {max-width: unset!important; }",
+        ".rich-text__blocks {max-width: unset !important;}",
         "@media screen and (min-width: 990px) {.rich-text__blocks {max-width: unset; }}"
       ],
       "settings": {
