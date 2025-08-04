@@ -223,7 +223,7 @@
       },
       "2408178403731195062": {
         "type": "shopify://apps/tradedoubler-affiliate/blocks/app-embed/5336782f-9a78-4117-be6f-8cc073d67e6c",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
