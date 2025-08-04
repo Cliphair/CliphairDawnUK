@@ -20,7 +20,7 @@
       <div class="title-wrapper title-wrapper--no-top-margin">
         <h2
           id="SectionHeading-{{ section.id }}"
-          class="inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="inline-richtext {{ section.settings.heading_size }}{{ section.settings.text_allignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         >
           {{ section.settings.title }}
         </h2>
@@ -73,6 +73,26 @@
       ],
       "default": "h1",
       "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "text_allignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text allignment"
     },
     {
       "type": "color_scheme",
