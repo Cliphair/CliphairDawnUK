@@ -220,6 +220,11 @@
           "storefront_layout_drawer_width": 400,
           "storefront_layout_as_section_page": ""
         }
+      },
+      "2408178403731195062": {
+        "type": "shopify://apps/tradedoubler-affiliate/blocks/app-embed/5336782f-9a78-4117-be6f-8cc073d67e6c",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
