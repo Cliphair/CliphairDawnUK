@@ -306,7 +306,7 @@
         ".yotpo-main-reviews-widget > .yotpo-head {display: none !important;}"
       ],
       "settings": {
-        "title": "Verified Reviews: What People Are Saying",
+        "title": "",
         "heading_size": "h1",
         "text_allignment": "center",
         "container_color_scheme": "accent-4",
