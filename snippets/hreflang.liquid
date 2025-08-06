@@ -42,3 +42,22 @@
   hreflang="en-AU"
   href="{{ shop.url | replace: shop.domain, 'www.cliphair.com/en-au' | append: path }}"
 >
+
+{% comment %}
+  To introduce once we move the subfolders
+  <link
+    rel="alternate"
+    hreflang="fi-FI"
+    href="{{ shop.url | replace: shop.domain, 'www.cliphair.com/fi-fi' | append: path }}"
+  >
+  <link
+    rel="alternate"
+    hreflang="no-NO"
+    href="{{ shop.url | replace: shop.domain, 'www.cliphair.com/no-no' | append: path }}"
+  >
+  <link
+    rel="alternate"
+    hreflang="el-CY"
+    href="{{ shop.url | replace: shop.domain, 'www.cliphair.com/el-cy' | append: path }}"
+  >
+{% endcomment %}

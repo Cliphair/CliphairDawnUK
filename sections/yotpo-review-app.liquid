@@ -16,6 +16,16 @@
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.container_color_scheme }} gradient">
   <div class="page-width">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="inline-richtext {{ section.settings.heading_size }} {{ section.settings.text_allignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        >
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
     <div
       class="yotpo-widget-instance"
       data-yotpo-instance-id="277270"
@@ -39,6 +49,51 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": " Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "text_allignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text allignment"
+    },
     {
       "type": "color_scheme",
       "id": "container_color_scheme",

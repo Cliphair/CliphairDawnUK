@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "information_videos_8BXc9p": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "accent-4"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -40,17 +34,11 @@
             "title": "Features"
           }
         },
-        "information_videos_MKNiNH": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "inverse"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
         },
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
+        "yotpo_loyalty_rewards_product_points_module_app_block_4cKiJn": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {}
         },
@@ -60,11 +48,11 @@
             "picker_type": "dropdown"
           }
         },
-        "quantity_selector_RERRjV": {
+        "quantity_selector_pXA3nB": {
           "type": "quantity_selector",
           "settings": {}
         },
-        "sc_back_in_stock_app_block_JKfDnH": {
+        "sc_back_in_stock_app_block_TxVpMA": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
@@ -73,10 +61,10 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "color_scheme": "inverse"
+            "color_scheme": "background-2"
           }
         },
-        "order_deadline_2_app_block_product_wa7Bmb": {
+        "order_deadline_67UiV7": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
           "settings": {
             "product": "{{product}}",
@@ -88,16 +76,11 @@
             "loadEventName": ""
           }
         },
-        "order_deadline_67UiV7": {
-          "type": "order_deadline",
-          "disabled": true,
-          "settings": {}
-        },
-        "icon_with_text_AGQyTW": {
+        "icon_with_text_pFKrMV": {
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
-            "icon_1": "heart",
+            "icon_1": "none",
             "image_1": "shopify://shop_images/dpd.png",
             "heading_1": "Click & Collect: DPD Pick Up At Nearby Shop",
             "icon_2": "none",
@@ -146,27 +129,17 @@
             "page": ""
           }
         },
+        "collapsible_tab_BmxUDr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "type": "custom",
+            "heading": "How to use",
+            "icon": "none",
+            "content": "{{ product.metafields.additional_information.how_to_use | metafield_tag }}",
+            "page": ""
+          }
+        },
         "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "type": "specification",
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "type": "instructions",
-            "heading": "How to Style",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible_tab_JGqU4U": {
           "type": "collapsible_tab",
           "settings": {
             "type": "custom",
@@ -176,7 +149,7 @@
             "page": ""
           }
         },
-        "collapsible_tab_36Cgxc": {
+        "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
             "type": "custom",
@@ -194,33 +167,27 @@
         }
       },
       "block_order": [
-        "information_videos_8BXc9p",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "delivery_threshold_d7hmim",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
-        "information_videos_MKNiNH",
         "price",
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker",
+        "yotpo_loyalty_rewards_product_points_module_app_block_4cKiJn",
         "variant_picker",
-        "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
+        "quantity_selector_pXA3nB",
+        "sc_back_in_stock_app_block_TxVpMA",
         "buy_buttons",
-        "order_deadline_2_app_block_product_wa7Bmb",
         "order_deadline_67UiV7",
-        "icon_with_text_AGQyTW",
+        "icon_with_text_pFKrMV",
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
+        "collapsible_tab_BmxUDr",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc",
         "share"
       ],
       "custom_css": [
-        "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
-        "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}",
         ".product__info-container > div:has(> .price) {margin-bottom: 0;}",
         ".product__info-container > div:has(> .price) ~ * {margin-top: 0;}",
         ".trustblox-instruction {color: inherit; animation: none; opacity: 0.7; font-weight: 400; display: block;}"
@@ -244,9 +211,7 @@
     "video_list_metafields_UqTJAJ": {
       "type": "video-list-metafields",
       "custom_css": [
-        ".deferred-media__poster-button {color: white;}",
-        ".video-section__poster img {object-position: top;}",
-        ".videos-list__item {flex-grow: 0;}"
+        ".deferred-media__poster-button {color: white;}"
       ],
       "settings": {
         "title": "SEE IT IN REAL LIFE",
@@ -302,14 +267,8 @@
     },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
-      "custom_css": [
-        ".yotpo-main-reviews-widget > .yotpo-head {display: none !important;}"
-      ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "text_allignment": "center",
-        "container_color_scheme": "accent-4",
+        "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -437,7 +396,7 @@
         "trackable_name": ""
       }
     },
-    "custom_liquid_ExyY9Q": {
+    "custom_liquid_JTwgXX": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}/cart/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n</script>",
@@ -456,6 +415,6 @@
     "2ba62760-f7d7-46c5-ae93-8ade6e208816",
     "product_faq_NBzNDV",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b",
-    "custom_liquid_ExyY9Q"
+    "custom_liquid_JTwgXX"
   ]
 }

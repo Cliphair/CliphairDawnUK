@@ -171,7 +171,7 @@
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.title != blank %}
-                    <h3>{{ block.settings.title }}</h3>
+                    <h2 class='h3'>{{ block.settings.title }}</h2>
                   {% endif %}
                   {{- ShortDescription -}}
                 </div>
@@ -304,13 +304,13 @@
                   <summary>
                     <div class="summary__title">
                       {% render 'icon-accordion', icon: block.settings.icon %}
-                      <h2 class="h4 accordion__title inline-richtext">
+                      <h3 class="h4 accordion__title inline-richtext">
                         {% if custom_information_object %}
                           {{ custom_information_object.title | metafield_tag }}
                         {% else %}
                           {{ block.settings.heading | default: block.settings.page.title }}
                         {% endif %}
-                      </h2>
+                      </h3>
                     </div>
                     {% render 'icon-caret' %}
                   </summary>

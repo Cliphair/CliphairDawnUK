@@ -136,10 +136,10 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "settings": {
-            "image": "shopify://shop_images/Offer_Ticker_72.gif",
+            "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
-            "link": "https://www.cliphair.co.uk/pages/quiz-form"
+            "link": "shopify://pages/hair-extensions-by-colour"
           }
         }
       },
@@ -149,7 +149,6 @@
         "announcement_image_8amwCN",
         "announcement_image_Q3tyyb"
       ],
-      "disabled": true,
       "custom_css": [
         "img {height: auto;}"
       ],

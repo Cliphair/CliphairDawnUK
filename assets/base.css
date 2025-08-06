@@ -3837,3 +3837,82 @@ details-disclosure>details {
   transition: text-decoration-thickness var(--duration-short) ease;
   cursor: pointer;
 }
+
+/* Whishlist */
+#MainContent #swym-storefront-layout-section-container{
+  width:100%;
+  max-width:var(--page-width);
+  margin:0 auto;
+  padding: 0 1.5rem;
+}
+
+#MainContent #swym-storefront-layout-section-container .swym-storefront-layout-body{
+  max-width: unset;
+  width:100%;
+  padding-right:0;
+  padding-left:0;
+}
+
+#MainContent #swym-storefront-layout-section-container #swym-storefront-layout-items-container{
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--grid-mobile-horizontal-spacing);
+  row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+#MainContent #swym-storefront-layout-section-container #swym-storefront-layout-items-container > swym-storefront-layout-item{
+  min-width:0;
+}
+
+#MainContent #swym-storefront-layout-section-container .swym-storefront-layout-grid-item-image-container,#MainContent #swym-storefront-layout-section-container .swym-storefront-layout-as-modal .swym-storefront-layout-grid-item-image-container{
+  background:white;
+}
+
+#MainContent #swym-storefront-layout-section-container img.swym-storefront-layout-grid-item-image{
+  object-fit:contain;
+}
+
+#MainContent #swym-storefront-layout-section-container .swym-storefront-layout-grid-item-add-to-cart-button{
+  border-radius:0;
+  font-weight: 400;
+}
+
+swym-storefront-layout-as-drawer .swym-storefront-layout-grid-item-add-to-cart-button,
+swym-storefront-layout-as-drawer .swym-storefront-layout-layout{
+  border-radius:0!important;
+}
+
+swym-storefront-layout-as-drawer .swym-storefront-layout-container {
+  overflow-y:hidden;
+}
+
+swym-storefront-layout-as-drawer .swym-storefront-layout-body{
+  overflow-x:hidden;
+}
+
+#swym-atw-button-container{
+  margin-top:0;
+}
+
+#swym-atw-button-container #swym-atw-pdp-button{
+  padding: 0;
+  font-size: 1.2rem !important;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width:750px){
+  #MainContent #swym-storefront-layout-section-container{
+    padding: 0 5rem;
+  }
+
+  #MainContent #swym-storefront-layout-section-container #swym-storefront-layout-items-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width:990px){
+  #MainContent #swym-storefront-layout-section-container #swym-storefront-layout-items-container{
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--grid-desktop-horizontal-spacing);
+    row-gap: var(--grid-desktop-vertical-spacing);
+  }
+}
