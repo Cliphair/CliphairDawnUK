@@ -1,69 +1,68 @@
 <div class="reviews-list__review-wrapper">
-  <div class="review-section_image square circle">IMAGE</div>
-  <div class="review-section_text center">
-    <div class="review-section_text-top">
-      <div class="reviews-review-container">
-        {% for i in (1..5) %}
-          <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
-        {% endfor %}
-      </div>
-      <p class="h3 review-title"></p>
-      <div class="h5 reviews__content"></div>
-    </div>
-
-    <div class="review-section_text-bottom">
-      <modal-opener
-        class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-        data-modal="#ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX"
-      >
-        <button
-          id="ReviewCardPopup-{{ section_id }}-FORLOOP.INDEX"
-          class="h5 review-button"
-          type="button"
-          title="Read Full Review"
-          aria-haspopup="dialog"
-          {% if trackable_name != blank %}
-            data-event-type="section_click"
-            data-cta-label="click_review_{{ forloop.index }}"
-          {% endif %}
-        >
-          READ FULL REVIEW
-        </button>
-      </modal-opener>
-    </div>
-  </div>
-</div>
-
-<modal-dialog id="ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX" class="product-popup-modal">
-  <div
-    role="dialog"
-    aria-label="Review from ADD CUSTOMER NAME HERE"
-    aria-modal="true"
-    class="product-popup-modal__content"
-    tabindex="-1"
+  <modal-opener
+    class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+    data-modal="#ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX"
   >
     <button
-      id="ModalClose-{{ block.id }}"
+      id="ReviewCardPopup-{{ section_id }}-FORLOOP.INDEX"
+      class="h5 modal-opener__button"
       type="button"
-      class="product-popup-modal__toggle"
-      aria-label="{{ 'accessibility.close' | t }}"
+      title="Read Full Review"
+      aria-haspopup="dialog"
+      {% if trackable_name != blank %}
+        data-event-type="section_click"
+        data-cta-label="click_review_FORLOOP.INDEX"
+      {% endif %}
     >
-      {% render 'icon-close' %}
-    </button>
+      <div class="review-section_image square circle">IMAGE</div>
+      <div class="review-section_text center">
+        <div class="review-section_text-top">
+          <div class="reviews-review-container">
+            {% for i in (1..5) %}
+              <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+            {% endfor %}
+          </div>
+          <p class="review-title"></p>
+          <div class="reviews__content"></div>
+        </div>
 
-    <div class="product-popup-modal__content-info">
-      <div class="heading-container">
-        <p class="h2 center">CUSTOMER NAME</p>
+        <div class="review-section_text-bottom"><p class="review-button">READ FULL REVIEW</p></div>
       </div>
-      <div class="image-container">IMAGE</div>
-      <div class="content-container">REVIEW CONTENT</div>
-      <div class="additional-information">
-        <div class="reviews-review-container">
-          {% for i in (1..5) %}
-            <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
-          {% endfor %}
+    </button>
+  </modal-opener>
+</div>
+{% comment %}
+  <modal-dialog id="ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX" class="product-popup-modal">
+    <div
+      role="dialog"
+      aria-label="Review from ADD CUSTOMER NAME HERE"
+      aria-modal="true"
+      class="product-popup-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-{{ block.id }}"
+        type="button"
+        class="product-popup-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {% render 'icon-close' %}
+      </button>
+
+      <div class="product-popup-modal__content-info">
+        <div class="heading-container">
+          <p class="h2 center">CUSTOMER NAME</p>
+        </div>
+        <div class="image-container">IMAGE</div>
+        <div class="content-container">REVIEW CONTENT</div>
+        <div class="additional-information">
+          <div class="reviews-review-container">
+            {% for i in (1..5) %}
+              <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</modal-dialog>
+  </modal-dialog>
+{% endcomment %}

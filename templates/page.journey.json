@@ -84,7 +84,7 @@
           "type": "answer",
           "settings": {
             "id": "short",
-            "answer": "Short hair (above your shoulders)",
+            "answer": "Short hair (above [break]your shoulders)",
             "answer_image": "shopify://shop_images/short_journey.jpg"
           }
         },
@@ -92,7 +92,7 @@
           "type": "answer",
           "settings": {
             "id": "mid",
-            "answer": "Mid length hair (top of bra)",
+            "answer": "Mid length hair [break](top of bra)",
             "answer_image": "shopify://shop_images/Avarage.jpg"
           }
         },
@@ -100,7 +100,7 @@
           "type": "answer",
           "settings": {
             "id": "long",
-            "answer": "Long hair (middle to lower back)",
+            "answer": "Long hair (middle [break]to lower back)",
             "answer_image": "shopify://shop_images/Thick.jpg"
           }
         }
@@ -136,21 +136,21 @@
           "type": "answer",
           "settings": {
             "id": "longer",
-            "answer": "Add Length"
+            "answer": "Add length"
           }
         },
         "answer_BgKN9A": {
           "type": "answer",
           "settings": {
             "id": "thicker",
-            "answer": "Add Volume"
+            "answer": "Add volume"
           }
         },
         "answer_pKrFXz": {
           "type": "answer",
           "settings": {
             "id": "l&t",
-            "answer": "Add Length & Volume"
+            "answer": "Add length & volume"
           }
         }
       },
@@ -162,19 +162,19 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What are your hair extension goals?",
+        "question": "What are your [break]<em>hair extension goals?<\/em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "accent-2",
-        "button_style_secondary": false,
+        "color_scheme": "",
+        "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 3,
         "swipe_on_desktop": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "quiz_question_nHUaJd": {
@@ -184,7 +184,7 @@
           "type": "answer",
           "settings": {
             "id": "clipin",
-            "answer": "Clip-Ins (DIY product)",
+            "answer": "Clip-in extensions [break](DIY product)",
             "answer_image": "shopify://shop_images/Clip_In_af2b4728-f605-44a7-83a7-543c895d4e9d.jpg"
           }
         },
@@ -192,7 +192,7 @@
           "type": "answer",
           "settings": {
             "id": "permanent",
-            "answer": "Permanent (professional application)",
+            "answer": "Permanent extensions [break](professional application)",
             "answer_image": "shopify://shop_images/permanent_extensions_1df2bd0b-6854-40f9-8184-26400c592c9e.jpg"
           }
         }
@@ -201,25 +201,25 @@
         "answer_Nacie8",
         "answer_aCkDFB"
       ],
-      "custom_css": [
-        "@media screen and (min-width: 990px) {.slider {justify-content: center; }}"
+      "custom_css":[
+        ".card__heading{font-size: 1.5rem; padding-right:2.1rem; padding-left:2.1rem;}"
       ],
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "Do you want Clip-ins or Permanent extensions?",
+        "question": "Do you want [break]<em>Clip-ins<\/em> or <em>Permanent<\/em> [break]extensions?",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "accent-2",
+        "color_scheme": "",
         "button_style_secondary": false,
         "show_information": true,
-        "columns_desktop": 3,
+        "columns_desktop": 1,
         "swipe_on_desktop": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "quiz_answer_YPArwe": {
@@ -227,15 +227,18 @@
       "settings": {
         "visible": false,
         "id": "journey",
-        "title": "Your perfect match is...",
+        "title": "Your [break]<em>perfect match is...<\/em>",
         "message": "If you need help choosing the correct shade, let us help you with our <a href=\"https://www.cliphair.co.uk/pages/colour-matching-service\" title=\"colour match\">free colour match</a> service.",
         "accordion_header": "You could also use:",
         "heading_size": "h1",
         "text_allignment": "center",
-        "image_ratio": "portrait",
-        "color_scheme": "accent-2",
+        "image_ratio": "square",
+        "color_scheme": "",
         "button_style_secondary": false,
         "show_information": true,
+        "image": "shopify://shop_images/colour-matching-mobile-banner.jpg",
+        "image_desktop": "shopify://shop_images/colour-matching-desktop-banner.jpg",
+        "image_url": "shopify://pages/colour-matching-service",
         "padding_top": 36,
         "padding_bottom": 36
       }

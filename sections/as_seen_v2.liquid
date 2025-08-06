@@ -1,0 +1,403 @@
+{% assign limit = section.blocks.size | minus: 1 %}
+{% capture containerClass =  %}container-{{ section.id | remove: "template--" }}{% endcapture %}
+{% assign stepMobile = section.settings.mobile-col | times: 1 %}
+{% assign stepTablet = section.settings.tablet-col | times: 1 %}
+{% assign stepDesktop = section.settings.desktop-col | times: 1 %}
+
+{% assign arrowClass = "" %}
+{% assign containerAlign = "" %}
+{% if section.blocks.size <= stepMobile %}
+  {% assign arrowClass = arrowClass | append: " mobile-hidden" %}
+  {% assign containerAlign = containerAlign | append: " mobile-centered" %}
+{% endif %}
+{% if section.blocks.size <= stepTablet %}
+  {% assign arrowClass = arrowClass | append: " tablet-hidden" %}
+  {% assign containerAlign = containerAlign | append: " tablet-centered" %}
+{% endif %}
+{% if section.blocks.size <= stepDesktop %}
+  {% assign arrowClass = arrowClass | append: " desktop-hidden" %}
+  {% assign containerAlign = containerAlign | append: " desktop-centered" %}
+{% endif %}
+
+<link rel="preload" href="{{ 'section-as-seen.css' | asset_url }}" as="style" onload="this.rel = 'stylesheet'" />
+<noscript>
+  {{ 'section-as-seen.css' | asset_url | stylesheet_tag }}
+</noscript>
+
+{% if section.settings.max-width != empty %}
+  <style>
+    #section-{{section.id}} > .inner_container{
+      max-width:{{ section.settings.max-width }}px;
+    }
+  </style>
+{% endif %}
+
+<style>
+  #section-{{ section.id }} {
+    background: {{ section.settings.bg_colour }};
+    padding-top:{{ section.settings.mobile-p_top }}px;
+    padding-bottom:{{ section.settings.mobile-p_bottom }}px;
+    padding-right:{{ section.settings.mobile-p_right }}px;
+    padding-left:{{ section.settings.mobile-p_left }}px;
+  }
+
+  #section-{{section.id}} > .inner_container > .section_title{
+    font-size: {{ section.settings.mobile-font-size }}px;
+    color: {{ section.settings.text_colour }};
+  }
+
+  #section-{{section.id}} > .inner_container > .logo_container > .press_url{
+    width: calc(100% / {{ section.settings.mobile-col }});
+    min-width: calc(100% / {{ section.settings.mobile-col }});
+  }
+
+  #section-{{section.id}} .scroll-arrow{
+    color:{{ section.settings.arrow_color }};
+    top:{{ section.settings.mobile-arrow }}%;
+    width:{{ section.settings.mobile-arrow-size }}px;
+    height:{{ section.settings.mobile-arrow-size }}px;
+    font-size: {{ section.settings.mobile-arrow-size }}px;
+  }
+
+  #section-{{section.id}} .scroll-arrow.right{
+    transform:rotate(270deg);
+  }
+
+  #section-{{section.id}} .scroll-arrow.left{
+    transform:rotate(90deg);
+  }
+
+  @media only screen and (min-width:768px){    
+    #section-{{section.id}} > .inner_container > .logo_container > .press_url{
+      width: calc(100% / {{ section.settings.tablet-col }});
+      min-width: calc(100% / {{ section.settings.tablet-col }});
+    }
+
+    #section-{{section.id}} .scroll-arrow{
+      top:{{ section.settings.tablet-arrow }}%;
+      font-size: {{ section.settings.tablet-arrow-size }}px;
+      width:{{ section.settings.tablet-arrow-size }}px;
+      height:{{ section.settings.tablet-arrow-size }}px;
+    }
+  }
+
+  @media only screen and (min-width:992px){
+    #section-{{ section.id }} {
+      padding-top:{{ section.settings.desktop-p_top }}px;
+      padding-bottom:{{ section.settings.desktop-p_bottom }}px;
+      padding-right:{{ section.settings.desktop-p_right }}px;
+      padding-left:{{ section.settings.desktop-p_left }}px;
+    }
+  
+    #section-{{section.id}} > .inner_container > .section_title{
+      font-size: {{ section.settings.desktop-font-size }}px;
+    }
+
+    #section-{{section.id}} > .inner_container > .logo_container > .press_url{
+      width: calc(100% / {{ section.settings.desktop-col }});
+      min-width: calc(100% / {{ section.settings.desktop-col }});
+    }
+
+    #section-{{section.id}} .scroll-arrow{
+      top:{{ section.settings.desktop-arrow }}%;
+      font-size: {{ section.settings.desktop-arrow-size }}px;
+      width:{{ section.settings.desktop-arrow-size }}px;
+      height:{{ section.settings.desktop-arrow-size }}px;
+    }
+  }
+</style>
+
+<section id='section-{{section.id}}' class='section-as-seen'>
+  	<div class='inner_container'>
+      	{% if section.settings.title %}
+      		<h2 class='section_title'>{{section.settings.title}}</h2>
+      	{% endif %}
+      
+      	<div class='logo_container container-{{ section.id | remove: "template--" }} {{ containerAlign }}'>
+          	{% for block in section.blocks %}
+          		{% if block.settings.logo_img != nil%}
+                    <a class='press_url' {% if block.settings.url != nil %}href='{{block.settings.url}}' target="_blank" rel='noopener norefeer'{% else %}href='#'{% endif %}>
+                        <img class='press_logo lazyload' loading='lazy' src='{{ block.settings.logo_img | img_url: 'master' }}' width='{{ block.settings.logo_img.width }}' height='{{ block.settings.logo_img.height }}' alt='{{ block.settings.logo_img.alt }}' style='opacity:calc({{block.settings.opacity}}/10);'>
+                    </a>
+          		{% endif%}
+          	{% endfor %}
+      	</div>
+
+      {% if section.settings.include-arrows %}
+        {% render "arrows", containerClass: containerClass, limit: limit, stepMobile: stepMobile, stepTablet: stepTablet, stepDesktop: stepDesktop, customClass: arrowClass %}
+      {% endif %}
+  	</div>
+</section>
+
+{% schema %}
+  {
+    "name": "As Seen On",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title"
+      },
+      {
+        "type": "header",
+        "content": "Section Settings"
+      },
+      {
+        "type": "text",
+        "id": "max-width",
+        "label": "Section Max Width"
+      },
+      {
+        "type":"color",
+        "id":"text_colour",
+        "label": "Text Color",
+        "default": "#000000"
+      },
+      {
+        "type":"color",
+        "id":"bg_colour",
+        "label": "Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Settings"
+      },
+      {
+        "type": "range",
+        "id": "mobile-font-size",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Font Size",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile-p_top",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile-p_bottom",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile-p_right",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Right",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile-p_left",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Left",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Desktop Settings"
+      },
+      {
+        "type": "range",
+        "id": "desktop-font-size",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Font Size",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "desktop-p_top",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "desktop-p_bottom",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "desktop-p_right",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Right",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "desktop-p_left",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding Left",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Display Settings"
+      },
+      {
+        "type": "range",
+        "id": "mobile-col",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "label": "Columns Mobile",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "tablet-col",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "label": "Columns Tablet",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "desktop-col",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "label": "Columns Desktop",
+        "default": 3
+      },
+      {
+        "type": "header",
+        "content": "Arrow Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "include-arrows",
+        "label": "Include Arrows",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "mobile-arrow-size",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Arrow Size (mobile)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "tablet-arrow-size",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Arrow Size (tablet)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "desktop-arrow-size",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Arrow Size (desktop)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "mobile-arrow",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "label": "Arrow Position Mobile",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "tablet-arrow",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "label": "Arrow Position Tablet",
+        "default": 40
+      },
+            {
+        "type": "range",
+        "id": "desktop-arrow",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "label": "Arrow Position Desktop",
+        "default": 40
+      },
+      {
+        "type": "color",
+        "id": "arrow_color",
+        "label": "Arrow Colour",
+        "default": "#000000"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Press",
+        "type": "press",
+        "limit":7,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo_img",
+            "label": "Company Logo"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          },
+          {
+            "type": "range",
+            "id": "opacity",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "label": "Image Opacity",
+            "default": 5
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

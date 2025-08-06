@@ -55,34 +55,102 @@
   endfor
 %}
 
-<div
-  class="
-    price
-    {%- if price_class %} {{ price_class }}{% endif -%}
-    {%- if available == false %} price--sold-out{% endif -%}
-    {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
-    {%- if product.tags contains "New Arrivals" %} price--new-arrival{% endif -%}
-    {% if template.name == "product" and code_sale_running %} price--code-sale{% endif %}
-    {%- if compare_at_price > price and product.quantity_price_breaks_configured? %} volume-pricing--sale-badge{% endif -%}
-    {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
-    {%- if show_badges %} price--show-badge{% endif -%}
-  "
->
-  <div class="price__container">
-    {%- comment -%}
-      Explanation of description list:
-        - div.price__regular: Displayed when there are no variants on sale
-        - div.price__sale: Displayed when a variant is a sale or discount code sale running (set up via metafileds)
-    {%- endcomment -%}
-    <div class="price__regular">
-      {%- if product.quantity_price_breaks_configured? -%}
-        {%- if show_compare_at_price -%}
+<div class="grid price-grid">
+  <div
+    class="
+      price
+      {%- if price_class %} {{ price_class }}{% endif -%}
+      {%- if available == false %} price--sold-out{% endif -%}
+      {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
+      {%- if product.tags contains "New Arrivals" %} price--new-arrival{% endif -%}
+      {% if template.name == "product" and code_sale_running %} price--code-sale{% endif %}
+      {%- if compare_at_price > price and product.quantity_price_breaks_configured? %} volume-pricing--sale-badge{% endif -%}
+      {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
+      {%- if show_badges %} price--show-badge{% endif -%}
+    "
+  >
+    <div class="price__container">
+      {%- comment -%}
+        Explanation of description list:
+          - div.price__regular: Displayed when there are no variants on sale
+          - div.price__sale: Displayed when a variant is a sale or discount code sale running (set up via metafileds)
+      {%- endcomment -%}
+      <div class="price__regular">
+        {%- if product.quantity_price_breaks_configured? -%}
+          {%- if show_compare_at_price -%}
+            {%- unless product.price_varies == false and product.compare_at_price_varies %}
+              <span class="visually-hidden visually-hidden--inline">
+                {{- 'products.product.price.regular_price' | t -}}
+              </span>
+              <span>
+                <s
+                  class="price-item price-item--regular variant-item__old-price"
+                  data-
+                  {% if use_variant %}
+                    variant
+                  {% else %}
+                    product
+                  {% endif -%}
+                  -id="{{ target.id }}"
+                >
+                  {% if settings.currency_code_enabled %}
+                    {{ compare_at_price | money_with_currency }}
+                  {% else %}
+                    {{ compare_at_price | money }}
+                  {% endif %}
+                </s>
+              </span>
+            {%- endunless -%}
+          {%- endif -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span
+            class="price-item price-item--regular"
+            data-
+            {% if use_variant %}
+              variant
+            {% else %}
+              product
+            {% endif -%}
+            -id="{{ target.id }}"
+          >
+            {{-
+              'products.product.volume_pricing.price_range'
+              | t: minimum: money_price_min, maximum: money_price_max
+            -}}
+          </span>
+        {%- else -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span
+            class="price-item price-item--regular{%- unless compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endunless %}"
+            data-
+            {% if use_variant %}
+              variant
+            {% else %}
+              product
+            {% endif -%}
+            -id="{{ target.id }}"
+          >
+            {{ money_price }}
+          </span>
+        {%- endif -%}
+      </div>
+      <div class="price__sale">
+        {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">
               {{- 'products.product.price.regular_price' | t -}}
             </span>
-            <span>
-              <s class="price-item price-item--regular variant-item__old-price" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+            <span
+              class="price-item price-item--regular"
+              data-
+              {% if use_variant %}
+                variant
+              {% else %}
+                product
+              {% endif -%}
+              -id="{{ target.id }}"
+            >
+              <s>
                 {% if settings.currency_code_enabled %}
                   {{ compare_at_price | money_with_currency }}
                 {% else %}
@@ -91,111 +159,152 @@
               </s>
             </span>
           {%- endunless -%}
-        {%- endif -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-          {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
-        </span>
-      {%- else -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular{%- unless compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endunless %}" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+        {% endif %}
+
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span
+          class="price-item price-item--sale price-item--last{%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endif %}"
+          data-
+          {% if use_variant %}
+            variant
+          {% else %}
+            product
+          {% endif -%}
+          -id="{{ target.id }}"
+        >
           {{ money_price }}
         </span>
-      {%- endif -%}
-    </div>
-    <div class="price__sale">
-      {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span class="price-item price-item--regular" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-            <s>
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-            </s>
-          </span>
-        {%- endunless -%}
-      {% endif %}
 
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last{%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endif %}" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-        {{ money_price }}
-      </span>
-
-      {% if template.name == 'product' %}
-        {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
-          <span class="price-item price-item--regular price-item--message" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-            <span>
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | minus: price | money_with_currency | prepend: 'SAVE ' }}
+        {% if template.name == 'product' %}
+          {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
+            <span
+              class="price-item price-item--regular price-item--message"
+              data-
+              {% if use_variant %}
+                variant
               {% else %}
-                {{ compare_at_price | minus: price | money | prepend: 'SAVE ' }}
-              {% endif %}
+                product
+              {% endif -%}
+              -id="{{ target.id }}"
+            >
+              <span>
+                {% if settings.currency_code_enabled %}
+                  {{ compare_at_price | minus: price | money_with_currency | prepend: 'SAVE ' }}
+                {% else %}
+                  {{ compare_at_price | minus: price | money | prepend: 'SAVE ' }}
+                {% endif %}
+              </span>
             </span>
-          </span>
-        {% elsif code_sale_running %}
-          {% liquid
-            assign sale_percentage = discount_object.percentage | divided_by: 100.00
-          %}
-          <span class="price-item price-item--regular price-item--message" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-            <span>
-              {% if settings.currency_code_enabled %}
-                <span class="price-item--message-save">SAVE </span>
-                {{
-                  price
-                  | times: sale_percentage
-                  | money_with_currency
-                  | append: ' '
-                  | append: discount_object.message
-                }}
+          {% elsif code_sale_running %}
+            {% liquid
+              assign sale_percentage = discount_object.percentage | divided_by: 100.00
+            %}
+            <span
+              class="price-item price-item--regular price-item--message"
+              data-
+              {% if use_variant %}
+                variant
               {% else %}
-                <span class="price-item--message-save" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}" data-price-multiplier="{{ sale_percentage }}">SAVE </span>
-                <span class="igPrice" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}" data-price-multiplier="{{ sale_percentage }}">
-                  {{ price | times: sale_percentage | money  | append: ' ' }}
-                </span>
-                {{ discount_object.message }}
-              {% endif %}
+                product
+              {% endif -%}
+              -id="{{ target.id }}"
+            >
+              <span>
+                {% if settings.currency_code_enabled %}
+                  <span class="price-item--message-save">SAVE </span>
+                  {{
+                    price
+                    | times: sale_percentage
+                    | money_with_currency
+                    | append: ' '
+                    | append: discount_object.message
+                  }}
+                {% else %}
+                  <span
+                    class="price-item--message-save"
+                    data-
+                    {% if use_variant %}
+                      variant
+                    {% else %}
+                      product
+                    {% endif -%}
+                    -id="{{ target.id }}"
+                    data-price-multiplier="{{ sale_percentage }}"
+                    >SAVE
+                  </span>
+                  <span
+                    class="igPrice"
+                    data-
+                    {% if use_variant %}
+                      variant
+                    {% else %}
+                      product
+                    {% endif -%}
+                    -id="{{ target.id }}"
+                    data-price-multiplier="{{ sale_percentage }}"
+                  >
+                    {{ price | times: sale_percentage | money | append: ' ' }}
+                  </span>
+                  {{ discount_object.message }}
+                {% endif %}
+              </span>
             </span>
-          </span>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    </div>
-    <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
-      <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-      <span class="price-item price-item--last" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
-        <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
-        <span aria-hidden="true">/</span>
-        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-        <span>
-          {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
-            {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
-          {%- endif -%}
-          {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+      </div>
+      <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+        <span
+          class="price-item price-item--last"
+          data-
+          {% if use_variant %}
+            variant
+          {% else %}
+            product
+          {% endif -%}
+          -id="{{ target.id }}"
+        >
+          <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+          <span>
+            {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+              {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+            {%- endif -%}
+            {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+          </span>
         </span>
+      </small>
+    </div>
+    {%- if show_badges -%}
+      <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
+        <!-- {{ 'products.product.on_sale' | t }} -->
+        {{
+          product.selected_or_first_available_variant.price
+          | minus: product.selected_or_first_available_variant.compare_at_price
+          | times: 100.0
+          | divided_by: product.selected_or_first_available_variant.compare_at_price
+          | times: 100
+          | divided_by: 100
+          | floor
+        -}}
+        %
       </span>
-    </small>
+
+      <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+        {{ 'products.product.sold_out' | t }}
+      </span>
+
+      <span class="badge price__badge-new-arrival color-{{ settings.sale_badge_color_scheme }}"> NEW </span>
+    {%- endif -%}
   </div>
-  {%- if show_badges -%}
-    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-      <!-- {{ 'products.product.on_sale' | t }} -->
-      {{
-        product.selected_or_first_available_variant.price
-        | minus: product.selected_or_first_available_variant.compare_at_price
-        | times: 100.0
-        | divided_by: product.selected_or_first_available_variant.compare_at_price
-        | times: 100
-        | divided_by: 100
-        | floor
-      -}}
-      %
-    </span>
-
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
-    </span>
-
-    <span class="badge price__badge-new-arrival color-{{ settings.sale_badge_color_scheme }}"> NEW </span>
-  {%- endif -%}
+  <div>
+    <div
+      class="yotpo-widget-instance"
+      data-yotpo-instance-id="277269"
+      data-yotpo-product-id="{{product.id}}"
+      data-yotpo-cart-product-id="{{item.product.id}}"
+      data-yotpo-section-id="{{template.name}}"
+    ></div>
+  </div>
 </div>

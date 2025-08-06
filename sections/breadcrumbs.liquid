@@ -13,11 +13,22 @@
             {% assign bridal_page_handles = '/pages/classic-hollywood-waves-lookbook,/pages/elegant-chignon-bun-lookbook,/pages/sleek-sultry-waves-lookbook,/pages/heavenly-half-up-half-down-lookbook,/pages/romantic-curly-updo-lookbook,/pages/bridal-hair-extension-quiz,/pages/hairstylist-award'
               | split: ','
             %}
+            {% assign sitemap_page_handles = '/pages/all-blog-posts-sitemap,/pages/all-collections-sitemap,/pages/all-products-sitemap,/pages/all-pages-sitemap'
+              | split: ','
+            %}
             {% if bridal_page_handles contains request.path %}
               {% assign bridal_page = pages['cliphair-bridal-hair-extensions'] %}
               <li>
                 <a href="{{ bridal_page.url }}" title="{{ bridal_page.title }}" class="link--text">
                   {{- bridal_page.title -}}
+                </a>
+              </li>
+            {% endif %}
+            {% if sitemap_page_handles contains request.path %}
+              {% assign sitemap_page = pages.sitemap %}
+              <li>
+                <a href="{{ sitemap_page.url }}" title="{{ sitemap_page.title }}" class="link--text">
+                  {{- sitemap_page.title -}}
                 </a>
               </li>
             {% endif %}

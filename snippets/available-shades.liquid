@@ -1,0 +1,198 @@
+<style>
+  .available-shades__title {
+    font-size: 1.7rem;
+    line-height: 1.4em;
+    letter-spacing: -2%;
+    margin-bottom: 1.2rem;
+  }
+
+  .available-shades__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .available-shades__elements {
+    width: calc((100% - 60px) / 7);
+  }
+
+  .available-shades__elements.selected {
+    border: 1px solid black;
+  }
+
+  .available-shades__elements .shade-snippet {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    display: block;
+  }
+
+  .available-shades__elements.selected .shade-snippet {
+    border: 3px solid white;
+  }
+
+  .available-shades__buttons {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .available-shades__buttons > * {
+    line-height: 1.4em;
+    letter-spacing: -2%;
+    font-size: 1.2rem;
+    color: inherit;
+    text-underline-offset: 0.3rem;
+    text-decoration: underline;
+  }
+
+  .available-shades__buttons > summary svg {
+    right: -2.25rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+
+  .available-shades__buttons > summary[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+</style>
+
+{% liquid
+  assign first_row_counter = 7
+  if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
+    assign first_row_counter = 6
+  endif
+  assign total_products = collection.all_products_count
+%}
+<div class="available-shades">
+  <p class="available-shades__title">Select shade</p>
+  <ul class="available-shades__list">
+    {% if first_row_counter == 6 %}
+      {% liquid
+        assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+        assign shade_image = images[image_handle]
+      %}
+      {% if shade_image %}
+        <li class="available-shades__elements selected">
+          <img
+            srcset="
+              {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+              {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+              {{ shade_image | image_url }} {{ shade_image.width }}w
+            "
+            src="{{ shade_image | image_url: width: 533 }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+            alt=""
+            class="motion-reduce shade-snippet"
+            loading="lazy"
+            width="{{ shade_image.width }}"
+            height="{{ shade_image.height }}"
+          >
+        </li>
+      {% endif %}
+    {% endif %}
+
+    {% for product in collection.products %}
+      {% if first_row_counter > 0 %}
+        {% unless request.path contains product.handle %}
+          {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
+            {% liquid
+              assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+              assign shade_image = images[image_handle]
+            %}
+            {% if shade_image %}
+              <li class="available-shades__elements">
+                <img
+                  srcset="
+                    {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ shade_image | image_url }} {{ shade_image.width }}w
+                  "
+                  src="{{ shade_image | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+                  alt=""
+                  class="motion-reduce shade-snippet"
+                  loading="lazy"
+                  width="{{ shade_image.width }}"
+                  height="{{ shade_image.height }}"
+                >
+              </li>
+            {% endif %}
+            {% assign first_row_counter = first_row_counter | minus: 1 %}
+          {% endif %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="available-shades__buttons">
+    <summary aria-expanded="false" aria-controls="available-shades">
+      View All
+      {% render 'icon-caret' %}
+    </summary>
+    <a href="#">Free colour match service</a>
+  </div>
+  <div id="available-shades" class="hidden">
+    <ul class="available-shades__list">
+      {% for product in collection.products %}
+        {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
+          {% liquid
+            assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+            assign shade_image = images[image_handle]
+          %}
+          {% if shade_image %}
+            <li class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}">
+              <img
+                srcset="
+                  {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+                  {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+                  {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                  {{ shade_image | image_url }} {{ shade_image.width }}w
+                "
+                src="{{ shade_image | image_url: width: 533 }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+                alt=""
+                class="motion-reduce shade-snippet"
+                loading="lazy"
+                width="{{ shade_image.width }}"
+                height="{{ shade_image.height }}"
+              >
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const summary = document.querySelector('.available-shades__buttons summary');
+    const toggleTarget = document.getElementById('available-shades');
+
+    if (summary && toggleTarget) {
+      summary.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent native summary toggle if <details> is not used
+
+        const isExpanded = summary.getAttribute('aria-expanded') === 'true';
+
+        summary.setAttribute('aria-expanded', String(!isExpanded));
+        toggleTarget.classList.toggle('hidden');
+      });
+    }
+  });
+</script>

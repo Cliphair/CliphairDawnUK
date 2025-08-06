@@ -1,0 +1,445 @@
+/* -------------------------------------
+  Layout: Reviews Section Wrapper & Grid
+------------------------------------- */
+.reviews-list-wrapper {
+  display: block;
+}
+
+.reviews-list {
+  margin: 0;
+}
+
+.reviews-list>.reviews-list__item {
+  padding: 0 !important;
+  min-width: 143px;
+  max-width: 160px;
+  ;
+}
+
+.reviews-list__review-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-list__review-wrapper modal-opener {
+  height: 100%;
+}
+
+.reviews-list__item.no-image .review-section_text {
+  justify-content: flex-start;
+}
+
+/* -------------------------------------
+  Review Card: Image & Text Blocks
+------------------------------------- */
+.review-section_image {
+  max-width: 95px;
+  margin: 0 auto;
+}
+
+.review-section_image>img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.review-section_image.square>img {
+  aspect-ratio: 1 / 1;
+}
+
+.review-section_image.portrait>img {
+  aspect-ratio: 2 / 3;
+}
+
+.review-section_image.landscape>img {
+  aspect-ratio: 16 / 9;
+}
+
+.review-section_image.circle img {
+  border-radius: 50%;
+  object-position: top;
+}
+
+.review-section_text {
+  padding: 2rem 0;
+  background: white;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-section_text p {
+  margin: 0;
+}
+
+.review-section_text p {
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  letter-spacing: 0;
+}
+
+.review-section_text .review-title {
+  margin: 1.5rem 0 1rem;
+}
+
+.review-section_text .review-button {
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.review-button::after,
+.review-button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: rgb(var(--color-foreground));
+  left: 0;
+  transition: transform 0.4s ease-out;
+}
+
+.review-button::after {
+  height: 1px;
+  bottom: -5px;
+  transform-origin: right;
+}
+
+.review-button::before {
+  height: 2px;
+  top: -5px;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.modal-opener__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.modal-opener__button:hover .review-button::before {
+  transform: scaleX(1);
+}
+
+.modal-opener__button:hover .review-button::after {
+  height: 2px;
+}
+
+/* -------------------------------------
+  Modal Base Styles
+------------------------------------- */
+.product-popup-modal {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(var(--color-foreground), 0.2);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.product-popup-modal[open] {
+  opacity: 1;
+  visibility: visible;
+  z-index: 101;
+}
+
+.product-popup-modal__opener {
+  display: inline-block;
+}
+
+.product-popup-modal__button {
+  font-size: 1.6rem;
+  padding-right: 1.3rem;
+  padding-left: 0;
+  min-height: 4.4rem;
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: text-decoration-thickness var(--duration-short) ease;
+}
+
+.product-popup-modal__button:hover {
+  text-decoration-thickness: 0.2rem;
+}
+
+/* -------------------------------------
+  Modal Content Layout
+------------------------------------- */
+.product-popup-modal .product-popup-modal__content {
+  background-color: rgb(var(--color-background));
+  border-radius: var(--popup-corner-radius);
+  border: var(--popup-border-width) solid rgba(var(--color-foreground), var(--popup-border-opacity));
+  box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  padding: 0 3rem !important;
+  width: 92%;
+  max-width: 768px;
+  height: fit-content;
+  max-height: 80%;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
+}
+
+.product-popup-modal__content:focus-visible,
+.product-popup-modal__content.focused {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3),
+    var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+}
+
+.product-popup-modal__toggle {
+  background-color: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 50%;
+  color: rgba(var(--color-foreground), 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: sticky;
+  padding: 1.2rem;
+  z-index: 2;
+  top: 1.5rem;
+  width: 4rem;
+  margin-left: auto;
+}
+
+.product-popup-modal__toggle:hover {
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.product-popup-modal__toggle .icon {
+  width: 2.2rem;
+  height: auto;
+  margin: 0;
+}
+
+/* -------------------------------------
+  Modal Grid & Content Blocks
+------------------------------------- */
+.product-popup-modal__content-info {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem !important;
+  grid-template-areas:
+
+    "image"
+    "content"
+
+    "additional"
+    "heading";
+}
+
+.product-popup-modal__content-info>* {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.heading-container {
+  grid-area: heading;
+}
+
+.heading-container>* {
+  margin: 0;
+}
+
+.image-container {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: min(450px, 70%) !important;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.content-container {
+  grid-area: content;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container blockquote {
+  margin: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 990px) {
+  .content-container blockquote {
+    width: 90%;
+  }
+}
+
+.additional-information {
+  grid-area: additional;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.additional-information .product-title a {
+  color: inherit;
+}
+
+.additional-information .yotpo-branding p {
+  font-size: 1rem;
+}
+
+/* Modal layout with no image fallback */
+modal-dialog.no-image .product-popup-modal__content-info {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "heading"
+    "content"
+    "additional";
+  height: 100%;
+}
+
+/* Wide screens layout */
+@media (min-width: 751px) {
+  .product-popup-modal__content-info {
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "image heading"
+      "image content"
+      "additional additional";
+    height: 100%;
+  }
+
+  .product-popup-modal__content-info>* {
+    min-width: 0;
+  }
+
+  .image-container img {
+    max-width: 100% !important;
+  }
+}
+
+/* -------------------------------------
+  Ratings / Star Styles
+------------------------------------- */
+.reviews-review-container {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+
+.reviews__reviews-review {
+  flex-shrink: 1;
+}
+
+.reviews__reviews-review svg {
+  height: 1.5rem;
+}
+
+.reviews__reviews-review.yellow svg {
+  fill: #FFE100 !important;
+}
+
+.reviews__reviews-review.grey {
+  fill: #80808040 !important;
+}
+
+/* -------------------------------------
+  Slider Arrows for Reviews Section
+------------------------------------- */
+.reviews-list:empty+.slider-buttons {
+  display: none;
+}
+
+.section-reviews-list .slider-buttons>.slider-button {
+  background: var(--gradient-background);
+  border-radius: 50%;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  position: absolute;
+  top: calc(50% - 22px);
+}
+
+.section-reviews-list .slider-button--prev {
+  left: 1.5rem;
+}
+
+.section-reviews-list .slider-button--next {
+  right: 1.5rem;
+}
+
+.section-reviews-list .slider-button .icon {
+  height: 1.2rem;
+}
+
+/* -------------------------------------
+  Loading Spinner for Review Section
+------------------------------------- */
+.reviews-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reviews-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: block !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -40,7 +40,7 @@
   {%- else -%}
     <variant-selects
       id="variant-selects-{{ section.id }}"
-      class="no-js-hidden"
+      class="no-js-hidden {% if product.options_with_values.size > 1 %}grid{% endif %}"
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
       {% if update_url == false %}
@@ -66,7 +66,7 @@
                 disabled
                 class="option-name placeholder"
               >
-                Select Your {{ option.name | remove: 'Select ' }}
+                {{ option.name | remove: 'Select ' }}
               </option>
               {% render 'product-variant-options', product: product, option: option, block: block %}
             </select>

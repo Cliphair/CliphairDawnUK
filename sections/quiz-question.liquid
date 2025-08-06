@@ -2,6 +2,8 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+{% assign swipe_on_desktop = false %}
+
 {% style %}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -90,7 +92,7 @@
                   {% endif %}
                   data-answer-id="{{ block.settings.id }}"
                 >
-                  <div class="answer answer-card card-wrapper {% if block.settings.answer_image %} answer__image-text{% else %} answer__text-only{% endif %}">
+                  <div class="answer answer-card card-wrapper{% if block.settings.answer_image %} answer__image-text{% else %} answer__text-only{% endif %}">
                     <div
                       class="card card-standard"
                       style="--ratio-percentage: {{ 1 | divided_by: ratio | times: 100 }}%;"
@@ -125,7 +127,7 @@
                       <div class="card__content">
                         <div class="card__information button-wrapper">
                           <h3 class="card__heading button h4 {% if section.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">
-                            {{ block.settings.answer }}
+                            {{ block.settings.answer | replace: '[break]', '<br>' }}
                             {% render 'icon-arrow' %}
                           </h3>
                         </div>
@@ -287,12 +289,6 @@
       "label": "Number of columns on desktop"
     },
     {
-      "type": "checkbox",
-      "id": "swipe_on_desktop",
-      "default": false,
-      "label": "Enable swipe on desktop"
-    },
-    {
       "type": "header",
       "content": "Mobile Layout"
     },
@@ -311,12 +307,6 @@
       ],
       "default": "1",
       "label": "Number of columns on mobile"
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": false,
-      "label": "Enable swipe on mobile"
     },
     {
       "type": "header",

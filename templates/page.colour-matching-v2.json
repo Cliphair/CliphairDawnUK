@@ -1,0 +1,348 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "font":{
+      "type":"page_font_ads"
+    },
+    // "main": {
+    //   "type": "main-page",
+    //   "settings": {
+    //     "show_title": true,
+    //     "heading_size": "h1",
+    //     "show_content": false,
+    //     "text_alignment": "center",
+    //     "color_scheme": "inverse",
+    //     "padding_top": 40,
+    //     "padding_bottom": 0
+    //   },
+    //   "custom_css": [
+    //     ".main-page-title{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}",
+    //   ]
+    // },
+    "rich-text-header": {
+      "type": "rich-text",
+      "settings":{
+        "desktop_content_position": "center",
+        "content_alignment":"center",
+        "padding_top": 40,
+        "padding_bottom": 0
+      },
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Free Colour Match",
+            "h1":true
+          }
+        },
+      },
+      "block_order": [
+        "heading"
+      ],
+      "custom_css": [
+        ".rich-text__heading{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}"
+      ]
+    },
+    "rich-text-intro": {
+      "type": "rich-text",
+      "settings":{
+        "desktop_content_position": "center",
+        "content_alignment":"center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks":{
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Find Your Perfect Shade<\/em>"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Submit three photos & receive your <br>bespoke match within 24 hours!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "custom_css": [
+        ".rich-text__heading{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}",
+        ".rich-text__text{margin-top:1.7rem;margin-bottom:2.1rem;line-height:1.2em;letter-spacing:0;}"
+      ]
+    },
+    "steps": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-1.jpg",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-2.jpg",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-3.jpg",
+            "text_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "custom_css": [
+        ".images-list__item{background:#FAF7F5;}",
+        ".section-images-list .images-list__item img{height:65px; width: auto; margin:0 auto;max-width: 100%;}",
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich-text-dos-donts": {
+      "type": "rich-text",
+      "settings":{
+        "desktop_content_position": "center",
+        "content_alignment":"center",
+        "padding_top": 44,
+        "padding_bottom": 32
+      },
+      "blocks":{
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our do’s and dont’s<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "custom_css": [
+        ".rich-text__text{margin:0;line-height:1.2em;letter-spacing:0;}"
+      ]
+    },
+    "dos-images": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/good-image-1.jpg",
+            "text_label": "<p>Selfie - hair down from root <br>to tip. In natural light</p>",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/good-image-2.jpg",
+            "text_label": "<p>Hair from the back. In <br>natural light</p>",
+            "link": ""
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/good-image-3.jpg",
+            "text_label": "<p>Selfie - hair down from root <br>to tip. In natural light</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "donts-images": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bad-image-1.jpg",
+            "text_label": "<p>No filters or edited photos<\/p>",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bad-image-2.jpg",
+            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "link": ""
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bad-image-3.jpg",
+            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "link": ""
+          }
+        },
+        "image4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bad-image-4.jpg",
+            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "link": ""
+          }
+        },
+        "image5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bad-image-5.jpg",
+            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "link": ""
+          }
+        },
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3",
+        "image4",
+        "image5"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 56
+      }
+    },
+    "banners": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-whatsapp-banner.jpg",
+            "text_label": "",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-form-banner.jpg",
+            "text_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "form_builder_KN33jz": {
+      "type": "form-builder",
+      "settings": {
+        "id": "T9sl8Fd3_2jJ8Wv3j-MZWA",
+        "max-width": "990",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        "iframe:focus-visible{outline:none;box-shadow:none;}"
+      ]
+    },
+    "break-line": {
+      "type": "break-line",
+      "settings": {
+        "bg_color": "#000"
+      },
+      "custom_css": [
+        ".break-line{margin-top: -5rem;}"
+      ]
+    }
+  },
+  "order": [
+    "font",
+    "rich-text-header",
+    "rich-text-intro",
+    "steps",
+    "rich-text-dos-donts",
+    "dos-images",
+    "donts-images",
+    "banners",
+    "form_builder_KN33jz",
+    "break-line"
+  ]
+}

@@ -8,80 +8,94 @@
 %}
 
 <style>
-  .banner__content {
-    align-items: flex-end;
-  }
-  .slideshow__text.banner__box {
-    padding: 2rem 1.5rem;
-    max-width: 100%;
-    background: rgba(var(--color-background), {{opacity}});
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
-  .banner__box * {
-    line-height: 1.25em;
-    letter-spacing: -5%;
-  }
-
-  .banner__text p:first-of-type {
-    margin: 0;
-  }
-
-  @media screen and (max-width: 749px) {
-    .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
-      background: rgba(var(--color-background), {{opacity}});
-    }
-  }
-
-  @media screen and (min-width: 600px) {
-    .banner__box {
-      padding: 5rem 3rem;
+    main.content-for-layout h1 {
+      font-family: 'Libre Caslon Text', serif;
+      font-weight: 400;
     }
 
-    .banner__box .banner__heading {
-      font-size: 3rem;
+    .banner__content {
+      align-items: flex-end;
+    }
+    .slideshow__text.banner__box {
+      padding: 2rem 0;
+      max-width: 100%;
+      background: transparent;
     }
 
-    .banner__box .banner__text {
-      font-size: 1.8rem;
+    .banner__box * {
+      line-height: 1.25em;
+      letter-spacing: -5%;
     }
-  }
 
-  @media screen and (min-width: 750px) {
-    .slideshow__text-wrapper.banner__content {
-      padding: 3rem 2rem;
+    .banner__text p:first-of-type {
+      margin: 0;
     }
-  }
+
+    @media screen and (max-width: 749px) {
+      {% comment %} .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
+        background: rgba(var(--color-background), {{opacity}});
+      } {% endcomment %}
+    }
+
+    @media screen and (min-width: 600px) {
+      .banner__box {
+        padding: 5rem 3rem;
+      }
+
+      .banner__box .banner__heading {
+        font-size: 4.5rem;
+      }
+
+      .banner__box .banner__text {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      .slideshow__text-wrapper.banner__content {
+        padding: 3rem 0;
+      }
+    }
 
   @media screen and (min-width: 769px) {
-    .slideshow__text.banner__box {
-      padding: 1.5rem;
-      max-width: 50%;
-    }
-  }
-
-  @media screen and (min-width: 990px) {
-    .slideshow__text-wrapper.banner__content {
-      padding: 5rem 3rem;
-    }
-  }
-
-  @media screen and (min-width: 1400px) {
-    .slideshow__text-wrapper.banner__content {
-      padding: 10rem;
+      .slideshow__text.banner__box {
+        {% comment %} padding: 1.5rem;
+        max-width: 50%; {% endcomment %}
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
     }
 
-    .slideshow__text.banner__box {
-      padding: 3rem;
+    @media screen and (min-width: 990px) {
+      .slideshow__text-wrapper.banner__content {
+        padding: 5rem 3rem;
+      }
+
+      {% comment %} .slideshow__text.banner__box {
+        padding: 4rem;
+      } {% endcomment %}
     }
 
-    .banner__box .banner__heading {
-      font-size: 4rem;
-    }
+    @media screen and (min-width: 1400px) {
+      .slideshow__text-wrapper.banner__content {
+        padding: 10rem;
+      }
 
-    .banner__box .banner__text {
-      font-size: 2.2rem;
+      {% comment %} .slideshow__text.banner__box {
+        padding: 3rem;
+      } {% endcomment %}
+
+      .banner__box .banner__heading {
+        font-size: 6rem;
+      }
+
+      .banner__box .banner__text {
+        font-size: 2.2rem;
+      }
     }
-  }
 </style>
 
 {%- style -%}
@@ -114,73 +128,130 @@
   {% endif %}
 {%- endstyle -%}
 
-<slideshow-component
-  class="slider-mobile-gutter{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
->
-  <div
-    class="slideshow banner banner--adapt_image grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-    id="Slider-{{ section.id }}"
+<style>
+  .bg-test {
+    background: #e9dfd6;
+  }
+
+  .slideshow {
+    overflow: visible !important;
+  }
+
+  .gradient-overlay {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(52, 44, 37, 1) 0%,
+      rgba(39, 33, 27, 0.74) 30%,
+      rgba(39, 33, 27, 0) 60%,
+      rgba(39, 33, 27, 0) 100%
+    );
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    .gradient-overlay {
+      background: linear-gradient(
+        to right,
+        rgba(52, 44, 37, 1) 0%,
+        rgba(39, 33, 27, 0.74) 30%,
+        rgba(39, 33, 27, 0) 60%,
+        rgba(39, 33, 27, 0) 100%
+      );
+    }
+  }
+
+  .slideshow__text-wrapper {
+    z-index: 3;
+  }
+</style>
+<div class="bg-test">
+  <slideshow-component
+    class="page-width slider-mobile-gutter{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
   >
     <div
-      class="slideshow__slide grid__item grid--1-col slider__slide"
-      id="Slide-{{ section.id }}"
+      class="slideshow banner banner--adapt_image grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+      id="Slider-{{ section.id }}"
     >
-      <div class="slideshow__media banner__media media{% if section.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
-        {%- if section.settings.image -%}
-          {%- liquid
-            assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
-            if section.settings.image_behavior == 'ambient'
-              assign sizes = '120vw'
-              assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
-            else
-              assign sizes = '100vw'
-              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-            endif
-          -%}
-          <picture>
-            <source media="(max-width:768px)" srcset="{{ section.settings.image | image_url: width: 768 }}">
-            {% if section.settings.image_desktop %}
-              <source media="(min-width:769px)" srcset="{{ section.settings.image_desktop | image_url: width: 3840 }}">
-            {% endif %}
-            <img
-              src="{{ section.settings.image | image_url: width: 768 }}"
-              loading="eager"
-              alt="{{ section.settings.image.alt }}"
-              width="{{ widths }}"
-              height="{{ height }}"
-              sizes="{{ sizes }}"
-            >
-          </picture>
-        {% endif %}
-      </div>
+      <div
+        class="slideshow__slide grid__item grid--1-col slider__slide"
+        id="Slide-{{ section.id }}"
+      >
+        <div class="gradient-overlay"></div>
+        <div class="slideshow__media banner__media media{% if section.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
+          {%- if section.settings.image -%}
+            {%- liquid
+              assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
+              if section.settings.image_behavior == 'ambient'
+                assign sizes = '120vw'
+                assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+              else
+                assign sizes = '100vw'
+                assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+              endif
+            -%}
+            {% liquid
+              assign image_mobile = images['black-no-bg-mobile.jpg']
+              assign image_desktop = images['black-no-bg-desktop.jpg']
+            %}
+            <picture class="">
+              <source media="(max-width:768px)" srcset="{{ image_mobile | image_url: width: 768 }}">
+              {% if section.settings.image_desktop %}
+                <source
+                  media="(min-width:769px)"
+                  srcset="{{ image_desktop | image_url: width: 3840 }}"
+                >
+              {% endif %}
+              <img
+                src="{{ image_mobile | image_url: width: 768 }}"
+                loading="eager"
+                alt="{{ section.settings.image.alt }}"
+                width="{{ widths }}"
+                height="{{ height }}"
+                sizes="{{ sizes }}"
+              >
+            </picture>
+          {% endif %}
+        </div>
 
-      <div class="slideshow__text-wrapper banner__content banner__content--{{ section.settings.box_align }} {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient slideshow__text--{{ section.settings.text_alignment }} slideshow__text-mobile--{{ section.settings.text_alignment_mobile }}">
-          <h1 class="banner__heading inline-richtext {{ section.settings.heading_size }}">
-            {{ collection.title | escape }}
-          </h1>
+        <div class="slideshow__text-wrapper banner__content banner__content--{{ section.settings.box_align }} {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient slideshow__text--{{ section.settings.text_alignment }} slideshow__text-mobile--{{ section.settings.text_alignment_mobile }}">
+            <h1 class="banner__heading inline-richtext h1">
+              {{ collection.title | escape }}
+            </h1>
 
-          {% liquid
-            assign description = collection.description
-            if description contains '<!-- split -->'
-              assign description = description | split: '<!-- split -->' | first
-            endif
+            {% comment %}
+              {% liquid
+                assign description = collection.description
+                if description contains '<!-- split -->'
+                  assign description = description | split: '<!-- split -->' | first
+                endif
 
-            if description contains '<!-- FAQ section -->'
-              assign description = description | split: '<!-- FAQ section -->' | first
-            endif
-          %}
+                if description contains '<!-- FAQ section -->'
+                  assign description = description | split: '<!-- FAQ section -->' | first
+                endif
+              %}
 
-          {%- if description != blank -%}
-            <div class="banner__text rte">
-              <p>{{ description }}</p>
-            </div>
-          {%- endif -%}
+              {%- if description != blank -%}
+                <div class="banner__text rte">
+                  <p>{{ description }}</p>
+                </div>
+              {%- endif -%}
+            {% endcomment %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</slideshow-component>
+  </slideshow-component>
+</div>
 
 {%- if request.design_mode -%}
   <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>

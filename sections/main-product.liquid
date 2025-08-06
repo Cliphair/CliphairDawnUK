@@ -5,7 +5,8 @@
 >
   {% assign delivery_threshold_block = section.blocks | where: 'type', 'delivery_threshold' %}
 
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {% comment %} {{ 'section-main-product.css' | asset_url | stylesheet_tag }} {% endcomment %}
+  {{ 'section-main-product-revised.css' | asset_url | stylesheet_tag }}
   {% if delivery_threshold_block != empty %}
     {{ 'component-delivery-threshold.css' | asset_url | stylesheet_tag }}
   {% endif %}
@@ -626,7 +627,7 @@
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons',
+              {%- render 'buy-buttons-with-variant-picker',
                 block: block,
                 product: product,
                 product_form_id: product_form_id,
@@ -941,6 +942,9 @@
                   </deferred-media-popup>
                 {% endif %}
               </div>
+            {% when 'available-shades' %}
+              {% include 'collection-mapping', map_by: 'type' %}
+              {% render 'available-shades', product: product, collection: collection_mapped, block: block %}
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -1193,6 +1197,11 @@
       ]
     },
     {
+      "type": "available-shades",
+      "name": "Available shades",
+      "limit": 1
+    },
+    {
       "type": "product-subtitle",
       "name": "Product subtitle",
       "limit": 1,
@@ -1396,6 +1405,26 @@
           "id": "color_scheme",
           "label": "t:sections.all.colors.label",
           "default": "background-1"
+        },
+        {
+          "type": "header",
+          "content": "Variant picker settings"
+        },
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "dropdown",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
         }
       ]
     },
