@@ -571,6 +571,9 @@
         "padding_bottom": 44
       }
     },
+    "shop-by-shade": {
+      "type": "quick-add-by-shade"
+    },
     "slideshow_image_link_kAgcJP": {
       "type": "slideshow-image-link",
       "blocks": {
@@ -679,6 +682,7 @@
     "image-scroll",
     "why-cliphair",
     "videos_list",
+    "shop-by-shade",
     "slideshow_image_link_kAgcJP",
     "collapsible_content_AaP6iD"
   ]
