@@ -227,7 +227,7 @@
         "image3"
       ],
       "custom_css": [
-        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top:0;}",
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
         "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
         ".text-container {position: absolute; top: 0; z-index: -1;}",
         "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
@@ -455,8 +455,8 @@
         "image4"
       ],
       "custom_css": [
-        ".images-list{--grid-desktop-horizontal-spacing: 1rem;--grid-desktop-vertical-spacing: 1rem;--grid-mobile-horizontal-spacing: 1rem;--grid-mobile-vertical-spacing: 1rem;}",
-        ".text-container p{font-size: 18px;letter-spacing: -1.08px;line-height: 1em;margin: 2rem 0 1.5rem;}",
+        ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem;}",
+        ".text-container p {font-size: 18px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
         ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
       ],
       "settings": {
@@ -595,6 +595,73 @@
         "show_text_below": true,
         "accessibility_info": "Colour matching banner"
       }
+    },
+    "collapsible_content_AaP6iD": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_PprJiX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it beginner‑friendly?",
+            "icon": "none",
+            "row_content": "<p>Yes, our Halo Hair Extensions are completely beginner-friendly. They are applied using the simple clip in and wire system, making them ideal for those new to hair extensions and for quick, fuss-free styling. We also offer a step-by-step application video guide above if you’re in need of a tutorial!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iGbTLK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to apply?",
+            "icon": "none",
+            "row_content": "<p>Cliphair Halo Hair Extensions can be applied in less than a minute. You just position and secure it to your natural hair and style it accordingly for a seamless, discreet blend.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ttW3hz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I remove it?",
+            "icon": "none",
+            "row_content": "<p>Removal is easy: simply unclip the piece gently from your natural hair, taking care to avoid snagging. Be sure to brush before removing to prevent any tangles.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wLAwRy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the return policy?",
+            "icon": "none",
+            "row_content": "<p>Cliphair offers a generous return policy: you have 60 days from purchase to return an unused, unaltered item for a full refund. If you're in the UK, returns are free. For international returns, you’ll need to ship to our UK address. <strong>*Costs may vary</strong>. Note that the item must be in its original, unused condition (e.g. no dyeing, cutting, or styling) and any packaging should be intact.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PprJiX",
+        "collapsible_row_iGbTLK",
+        "collapsible_row_ttW3hz",
+        "collapsible_row_wLAwRy"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ's",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "arrow_style": "half-arrow",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "faq_schema": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -607,6 +674,7 @@
     "image-scroll",
     "why-cliphair",
     "videos_list",
-    "slideshow_image_link_kAgcJP"
+    "slideshow_image_link_kAgcJP",
+    "collapsible_content_AaP6iD"
   ]
 }
