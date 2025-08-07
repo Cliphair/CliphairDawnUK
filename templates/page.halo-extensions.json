@@ -642,6 +642,9 @@
         "collapsible_row_ttW3hz",
         "collapsible_row_wLAwRy"
       ],
+      "custom_css": [
+        ".accordion{margin-top: 0;}"
+      ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
