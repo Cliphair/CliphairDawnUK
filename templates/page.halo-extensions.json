@@ -1,23 +1,22 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-
     "custom_liquid_YkPTqW": {
       "type": "custom-liquid",
       "custom_css": [
-        "p.h2 {margin: 0;line-height:1.17em;letter-spacing:-1.2px;}"
+        "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}"
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'>Get instant <b><em>volume<br> & length<\/em><\/b> in less than 60 seconds</p></div>",
+        "custom_liquid": "<div class='page-width'><p class='h2 center'>Get instant <b><em>volume<br> & length</em></b> in less than 60 seconds</p></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 0
@@ -25,17 +24,6 @@
     },
     "rich-text-intro": {
       "type": "rich-text-v2",
-      "custom_css": [
-        "p {margin: 0;line-height:1.17em;letter-spacing:-0.9px;}",
-        ".button {min-height: 0;padding: 1rem 2.2rem;font-size: 1.3rem;line-height: 1.47em;letter-spacing: -.65px;flex-grow: 0;min-width: 117px;}",
-        "@media screen and (min-width: 750px) {.button {font-size: 1.5rem;}}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment":"center",
-        "padding_top": 20,
-        "padding_bottom": 44
-      }, 
       "blocks": {
         "text": {
           "type": "text",
@@ -58,7 +46,20 @@
       "block_order": [
         "text",
         "buttons"
-      ]
+      ],
+      "custom_css": [
+        "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
+        ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
+        "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 44
+      }
     },
     "videos_list_with_collection_modal": {
       "type": "videos-list-with-collection-modal",
@@ -140,11 +141,11 @@
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list{scroll-padding-left: calc((100vw - 232px) / 2);}",
-        ".videos-list__item.grid__item{min-width:min(232px, calc(100% - 3rem));max-width:232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left;padding:1rem 1.2rem;}",
-        ".collection-title,.collection-base-price{font-size: 13px;line-height: 1.3em;margin: 0;letter-spacing: 0;}",
-        ".collection-cta{font-size: 12px;letter-spacing: 0;min-height:0;padding:0.5rem}",
+        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
+        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
+        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
+        ".collection-title,.collection-base-price {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
+        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -170,54 +171,63 @@
     },
     "infographic": {
       "type": "image-list",
-      "settings": {
-        "columns_desktop": 5,
-        "columns_mobile": "1",
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/halo-extensions-infographic.jpg"
+            "image": "shopify://shop_images/halo-extensions-infographic.jpg",
+            "text_label": "",
+            "link": ""
           }
         }
       },
-      "block_order": ["image1"],
+      "block_order": [
+        "image1"
+      ],
       "custom_css": [
-        ".section-images-list .grid{margin-top:0;}"
-      ]
+        ".section-images-list .grid {margin-top: 0;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
     },
     "how-to-install": {
       "type": "image-list",
-      "settings": {
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step1.jpg",
-            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>"
+            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step2.jpg",
-            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>"
+            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>",
+            "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>"
+            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
+            "link": ""
           }
         }
       },
@@ -227,11 +237,26 @@
         "image3"
       ],
       "custom_css": [
-       ".grid{--grid-mobile-horizontal-spacing:1.5rem;--grid-desktop-horizontal-spacing: 0px;margin-top:0;}",
-        "@media screen and (max-width: 749px) {.grid__item{width: calc(100% - 3rem)!important;}.small-hide{display:flex!important;}}",
-        ".text-container{position: absolute;top:0;z-index:-1;}",
-        "@media screen and (min-width:750px) {.grid__item{max-width: calc((100% - 10rem) / 3)!important;}.grid__item:first-of-type{margin-left: 5rem}.slider--tablet::after{padding-left:5rem;}.slider-buttons{display:none;}}"
-      ]
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        ".text-container {position: absolute; top: 0; z-index: -1;}",
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
     },
     "videos_list_with_collection_modal2": {
       "type": "videos-list-with-collection-modal",
@@ -313,12 +338,12 @@
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list{scroll-padding-left: calc((100vw - 232px) / 2);}",
-        ".videos-list__item.grid__item{min-width:min(232px, calc(100% - 3rem));max-width:232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left;padding:1rem 1.2rem;}",
-        ".text-wrapper__top>*{font-size: 13px;line-height: 1.3em;margin: 0;letter-spacing: 0;}",
-        ".collection-cta{font-size: 12px;letter-spacing: 0;min-height:0;padding:0.5rem}",
-        ".videos-list-title{line-height:1.16em; letter-spacing:-1.8px;}",
+        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
+        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
+        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
+        ".text-wrapper__top > * {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
+        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}",
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -344,33 +369,29 @@
     },
     "image-scroll": {
       "type": "image-list",
-      "settings": {
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step1.jpg",
-            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>"
+            "image": "shopify://shop_images/pros-halo-extensions-1.jpg",
+            "text_label": "<p>Apply in lessthan 60 seconds for a comfortable & custom fit</p>",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step2.jpg",
-            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>"
+            "image": "shopify://shop_images/pros-halo-extensions-2.jpg",
+            "text_label": "<p>Discreet & invisible wire fora secure all-day hold</p>",
+            "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>"
+            "image": "shopify://shop_images/pros-halo-extensions-3.jpg",
+            "text_label": "<p>Seamless built-inclips. No glue, no fuss.</p>",
+            "link": ""
           }
         }
       },
@@ -380,47 +401,60 @@
         "image3"
       ],
       "custom_css": [
-       ".grid{--grid-mobile-horizontal-spacing:1.5rem;--grid-desktop-horizontal-spacing: 0px;margin-top:0;}",
-        "@media screen and (max-width: 749px) {.grid__item{width: calc(100% - 3rem)!important;}.small-hide{display:flex!important;}}",
-        ".text-container{position: absolute;top:0;z-index:-1;}",
-        "@media screen and (min-width:750px) {.grid__item{max-width: calc((100% - 10rem) / 3)!important;}.grid__item:first-of-type{margin-left: 5rem}.slider--tablet::after{padding-left:5rem;}.slider-buttons{display:none;}}"
-      ]
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        ".text-container {position: absolute; top: 0; z-index: -1;}",
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
     },
     "why-cliphair": {
       "type": "image-list",
-      "settings": {
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
       "blocks": {
         "image1": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step1.jpg",
-            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>"
+            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>",
+            "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step2.jpg",
-            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>"
+            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>",
+            "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>"
+            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
+            "link": ""
           }
         },
         "image4": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>"
+            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
+            "link": ""
           }
         }
       },
@@ -431,10 +465,25 @@
         "image4"
       ],
       "custom_css": [
-       ".grid{--grid-mobile-horizontal-spacing:1.5rem;--grid-desktop-horizontal-spacing: 0px;margin-top:0;}",
-        "@media screen and (max-width: 749px) {.grid__item{width: calc(100% - 3rem)!important;}.small-hide{display:flex!important;}}",
-        "@media screen and (min-width:750px) {.grid__item{max-width: calc((100% - 10rem) / 3)!important;}.grid__item:first-of-type{margin-left: 5rem}.slider--tablet::after{padding-left:5rem;}.slider-buttons{display:none;}}"
-      ]
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
     },
     "videos_list": {
       "type": "videos-list",
@@ -444,10 +493,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "title": "",
+            "description": ""
           }
         },
         "video_t8zGmx": {
@@ -455,10 +502,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "title": "",
+            "description": ""
           }
         },
         "video_ayXWCz": {
@@ -466,10 +511,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "title": "",
+            "description": ""
           }
         },
         "video_TfRk3t4": {
@@ -477,10 +520,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "title": "",
+            "description": ""
           }
         },
         "video_t8zGmx5": {
@@ -488,10 +529,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "title": "",
+            "description": ""
           }
         },
         "video_ayXWCz6": {
@@ -499,10 +538,8 @@
           "settings": {
             "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "title": "",
+            "description": ""
           }
         }
       },
@@ -516,12 +553,12 @@
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list{scroll-padding-left: calc((100vw - 232px) / 2);}",
-        ".videos-list__item.grid__item{min-width:min(232px, calc(100% - 3rem));max-width:232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left;padding:1rem 1.2rem;}",
-        ".text-wrapper__top>*{font-size: 13px;line-height: 1.3em;margin: 0;letter-spacing: 0;}",
-        ".collection-cta{font-size: 12px;letter-spacing: 0;min-height:0;padding:0.5rem}",
-        ".videos-list-title{line-height:1.16em; letter-spacing:-1.8px;}",
+        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
+        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
+        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
+        ".text-wrapper__top > * {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
+        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}",
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -541,10 +578,9 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 72,
-        "padding_bottom": 0,
-        "trackable_name": "shoppable_video_carrousel"
+        "padding_bottom": 0
       }
-    },
+    }
   },
   "order": [
     "custom_liquid_YkPTqW",
