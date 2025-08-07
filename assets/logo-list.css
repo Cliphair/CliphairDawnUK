@@ -13,7 +13,7 @@
 
 .section-images-list .images-list__item {
 	text-align: center;
-
+	position: relative;
 }
 
 .section-images-list .images-list__item a {

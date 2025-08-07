@@ -28,7 +28,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed consectetur adipiscing elit"
+            "text": "Heavenly hair in 3 different lengths and 15 \ngorgeous shades"
           }
         },
         "buttons": {
@@ -143,9 +143,8 @@
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
         ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
         ".collection-title,.collection-base-price {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
-        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}"
+        ".collection-cta {font-size: 12px; letter-spacing: 0;}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -165,42 +164,33 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 20,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
     "infographic": {
-      "type": "image-list",
+      "type": "slideshow-image-link",
       "blocks": {
-        "image1": {
-          "type": "image",
+        "slide_rHHRdD": {
+          "type": "slide",
           "settings": {
             "image": "shopify://shop_images/halo-extensions-infographic.jpg",
-            "text_label": "",
-            "link": ""
+            "image_url": ""
           }
         }
       },
       "block_order": [
-        "image1"
+        "slide_rHHRdD"
       ],
-      "custom_css": [
-        ".section-images-list .grid {margin-top: 0;}"
-      ],
+      "name": "Slideshow image link",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
-        "columns_desktop": 5,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "layout": "grid",
+        "slide_height": "adapt_image",
         "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "trackable_name": ""
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Colour matching banner"
       }
     },
     "how-to-install": {
@@ -237,10 +227,10 @@
         "image3"
       ],
       "custom_css": [
-        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top:0;}",
         "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
         ".text-container {position: absolute; top: 0; z-index: -1;}",
-        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
       ],
       "settings": {
         "title": "",
@@ -363,7 +353,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 72,
-        "padding_bottom": 0,
+        "padding_bottom": 40,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -404,7 +394,7 @@
         ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
         "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
         ".text-container {position: absolute; top: 0; z-index: -1;}",
-        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
       ],
       "settings": {
         "title": "",
@@ -445,7 +435,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/halo-wire.jpg",
-            "text_label": "<p>Custom fit with versatile sizes</p>",
+            "text_label": "<p>Custom fit with <br>versatile sizes</p>",
             "link": ""
           }
         },
@@ -453,7 +443,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/halo-heat-proof.jpg",
-            "text_label": "<p>Heat-proof for hairstyling</p>",
+            "text_label": "<p>Heat-proof for <br>hairstyling</p>",
             "link": ""
           }
         }
@@ -464,19 +454,23 @@
         "image3",
         "image4"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".images-list{--grid-desktop-horizontal-spacing: 1rem;--grid-desktop-vertical-spacing: 1rem;--grid-mobile-horizontal-spacing: 1rem;--grid-mobile-vertical-spacing: 1rem;}",
+        ".text-container p{font-size: 18px;letter-spacing: -1.08px;line-height: 1em;margin: 2rem 0 1.5rem;}",
+        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
+      ],
       "settings": {
-        "title": "",
+        "title": "Why Cliphair?",
         "heading_size": "h1",
         "introduction": "",
-        "text_allignment": "left",
+        "text_allignment": "center",
         "columns_desktop": 4,
         "swipe_on_desktop": false,
         "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 0,
+        "padding_top": 48,
         "padding_bottom": 0,
         "trackable_name": ""
       }
@@ -573,8 +567,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 72,
-        "padding_bottom": 0
+        "padding_top": 60,
+        "padding_bottom": 44
       }
     },
     "slideshow_image_link_kAgcJP": {
@@ -584,7 +578,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/halo-colour-matching.jpg",
-            "image_url": ""
+            "image_url": "/pages/colour-matching-service"
           }
         }
       },

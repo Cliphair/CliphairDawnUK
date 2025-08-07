@@ -1,14 +1,22 @@
 /* =====================================
+   VIDEO LIST CONTAINER
+===================================== */
+.section-videos-list-with-collection-modal .videos-list.slider {
+  margin-bottom: 0;
+}
+
+/* =====================================
    VIDEO LIST ITEM
 ===================================== */
 .section-videos-list-with-collection-modal .videos-list__item {
   min-width: 300px;
 }
 
-.section-videos-list-with-collection-modal .videos-list__item.grid__item {
+.section-videos-list-with-collection-modal .videos-list .videos-list__item.grid__item {
   display: flex;
   flex-direction: column;
   min-width: 300px;
+  padding-bottom: 0;
 }
 
 /* =====================================
@@ -40,7 +48,8 @@
 }
 
 .section-videos-list-with-collection-modal .collection-modal-card__text-wrapper {
-  padding: 1.5rem;
+  padding: 1rem 1.2rem;
+  ;
   flex-grow: 1;
   text-align: left;
   display: flex;
@@ -67,9 +76,9 @@
 .section-videos-list-with-collection-modal .collection-cta.button {
   font-size: 1rem;
   line-height: 1.2em;
-  padding: 0 1rem;
+  padding: 0.5rem;
   width: 100%;
-  min-height: 3rem;
+  min-height: 0;
   box-sizing: border-box;
   min-width: unset;
 }
