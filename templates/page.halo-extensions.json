@@ -643,13 +643,15 @@
         "collapsible_row_wLAwRy"
       ],
       "custom_css": [
-        ".accordion{margin-top: 0;}"
+        ".accordion {margin-top: 0;}",
+        ".h2 {font-size: calc(var(--font-heading-scale) * 2.7rem); }",
+        "@media only screen and (max-width: 750px) {.h2 {font-size: calc(var(--font-heading-scale) * 2.7rem); }}"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
         "heading": "FAQ's",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "heading_alignment": "left",
         "layout": "none",
         "arrow_style": "half-arrow",
