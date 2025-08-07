@@ -428,32 +428,32 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step1.jpg",
-            "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>",
+            "image": "shopify://shop_images/halo-side-clips.jpg",
+            "text_label": "<p>2 bonus side clip-ins</p>",
             "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step2.jpg",
-            "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>",
+            "image": "shopify://shop_images/halo-thickness.jpg",
+            "text_label": "<p>Luxurious thickness</p>",
             "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
+            "image": "shopify://shop_images/halo-wire.jpg",
+            "text_label": "<p>Custom fit with versatile sizes</p>",
             "link": ""
           }
         },
         "image4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/how-to-install_step3.jpg",
-            "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
+            "image": "shopify://shop_images/halo-heat-proof.jpg",
+            "text_label": "<p>Heat-proof for hairstyling</p>",
             "link": ""
           }
         }
@@ -464,11 +464,7 @@
         "image3",
         "image4"
       ],
-      "custom_css": [
-        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 0px; margin-top: 0;}",
-        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
-        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 10rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -580,6 +576,31 @@
         "padding_top": 72,
         "padding_bottom": 0
       }
+    },
+    "slideshow_image_link_kAgcJP": {
+      "type": "slideshow-image-link",
+      "blocks": {
+        "slide_rHHRdD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/halo-colour-matching.jpg",
+            "image_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_rHHRdD"
+      ],
+      "name": "Slideshow image link",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Colour matching banner"
+      }
     }
   },
   "order": [
@@ -591,6 +612,7 @@
     "videos_list_with_collection_modal2",
     "image-scroll",
     "why-cliphair",
-    "videos_list"
+    "videos_list",
+    "slideshow_image_link_kAgcJP"
   ]
 }
