@@ -157,6 +157,9 @@
         "product_grid_bACcbw",
         "url_g3FQwj"
       ],
+      "custom_css": [
+        ".price-grid{justify-content: flex-start;}"
+      ],
       "name": "Pulldown info grid",
       "settings": {}
     },
