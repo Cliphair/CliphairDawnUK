@@ -196,18 +196,74 @@
       "name": "Table Of Contents",
       "settings": {}
     },
+    "why_cliphair_ngaW7M": {
+      "type": "why-cliphair",
+      "blocks": {
+        "image_EnnjYL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10318.svg",
+            "text_label": "<p>100% <br/>REMY HAIR</p>",
+            "link": ""
+          }
+        },
+        "image_F7qc9U": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_22692.svg",
+            "text_label": "<p>FREE COLOUR <br/>MATCH</p>",
+            "link": ""
+          }
+        },
+        "image_9DXKYm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10295.svg",
+            "text_label": "<p>WORLDWIDE <br/>SHIPPING</p>",
+            "link": ""
+          }
+        },
+        "image_UDQNA6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10293.svg",
+            "text_label": "<p>BUY NOW <br/>PAY LATER</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_EnnjYL",
+        "image_F7qc9U",
+        "image_9DXKYm",
+        "image_UDQNA6"
+      ],
+      "name": "Why Cliphair logos",
+      "settings": {
+        "title": "<strong>Why Cliphair?</strong>",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "4",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "yotpo_reviews_dynamic_carrousel_UeNWFY": {
       "type": "yotpo-reviews-dynamic-carrousel",
+      "disabled": true,
       "name": "Summer reviews",
       "settings": {
         "color_scheme": "background-1",
-        "image_ratio": "square",
-        "circle_images": true,
         "columns_desktop": 5,
         "swipe_on_desktop": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "slider_visual": "dots",
         "padding_top": 40,
         "padding_bottom": 40,
         "trackable_name": ""
@@ -753,6 +809,7 @@
     "slideshow_3tCMjU",
     "pulldown_info_grid_B88Q8G",
     "table_of_content_CtFVX8",
+    "why_cliphair_ngaW7M",
     "yotpo_reviews_dynamic_carrousel_UeNWFY",
     "maquee_mnMgq6",
     "visual_menu_66DUPMN",
