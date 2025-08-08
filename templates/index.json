@@ -122,7 +122,7 @@
             "introduction": "",
             "collection": "hair-care",
             "products_to_show": 8,
-            "columns_desktop": 4,
+            "columns_desktop": 5,
             "show_view_all": false,
             "view_all_style": "solid",
             "enable_desktop_slider": true,
