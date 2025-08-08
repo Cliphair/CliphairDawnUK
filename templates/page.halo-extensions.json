@@ -35,10 +35,10 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "#",
+            "button_link": "shopify://collections/halo-hair-extensions",
             "button_style_secondary": true,
             "button_label_2": "Find A Match",
-            "button_link_2": "#",
+            "button_link_2": "shopify://pages/colour-matching-service",
             "button_style_secondary_2": true
           }
         }
@@ -67,21 +67,23 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/campaign-video.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/main-campaign-video-thumbnail.jpg",
             "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
+            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "modal_image": "shopify://shop_images/1-hal_website-hand-extensions-min.jpg"
           }
         },
         "video_t8zGmx": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video": "shopify://files/videos/Tyla - Transformation.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/transformation-tyla-thumbanil.jpg",
             "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
+            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
             "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
           }
@@ -89,10 +91,11 @@
         "video_ayXWCz": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video": "shopify://files/videos/Hevillin - Transformation(TikTok ).mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/transformation-hevillin-thumbanil.jpg",
             "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
+            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
             "modal_image": "shopify://shop_images/Featured_Image.jpg"
           }
@@ -100,34 +103,13 @@
         "video_TfRk3t4": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Jayde - Transformation.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/transformation-jayde-thumbanil.jpg",
             "description": "",
             "modal_collection": "fringe-clip-in-hair-extensions",
             "modal_title": "Halo Extensions",
             "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
-          }
-        },
-        "video_t8zGmx5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
-          }
-        },
-        "video_ayXWCz6": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
           }
         }
       },
@@ -135,9 +117,7 @@
         "video_TfRk3t",
         "video_t8zGmx",
         "video_ayXWCz",
-        "video_TfRk3t4",
-        "video_t8zGmx5",
-        "video_ayXWCz6"
+        "video_TfRk3t4"
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
@@ -157,7 +137,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": false,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
@@ -175,6 +155,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/halo-extensions-infographic.jpg",
+            "image_desktop": "shopify://shop_images/halo-extensions-infogrphic-desktop.jpg",
             "image_url": ""
           }
         }
@@ -572,7 +553,26 @@
       }
     },
     "shop-by-shade": {
-      "type": "quick-add-by-shade"
+      "type": "quick-add-by-shade",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "left",
+        "image_ratio": "square",
+        "hide_card_arrow": false,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "slideshow_image_link_kAgcJP": {
       "type": "slideshow-image-link",
