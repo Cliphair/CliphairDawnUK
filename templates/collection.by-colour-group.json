@@ -68,6 +68,9 @@
     },
     "collection_filter_circle_Giyhbq": {
       "type": "collection-filter-circle",
+      "custom_css": [
+        ".filter-circle .filter-circle__item {flex-grow: 0;}"
+      ],
       "settings": {
         "filter_type": "colour",
         "heading": "",
