@@ -656,16 +656,6 @@
         "padding_top": 56,
         "padding_bottom": 40
       }
-    },
-    "custom_liquid_H8gE9J": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "{% render '' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
@@ -680,7 +670,6 @@
     "why-cliphair",
     "shop-by-shade",
     "slideshow_image_link_kAgcJP",
-    "collapsible_content_AaP6iD",
-    "custom_liquid_H8gE9J"
+    "collapsible_content_AaP6iD"
   ]
 }
