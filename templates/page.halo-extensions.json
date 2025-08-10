@@ -52,7 +52,7 @@
         "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
         "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
-        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; } .button {font-size: 2.5rem; padding:2.5rem 4.5rem } .rich-text__buttons {margin-top: 3.2rem; }}"
+        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
