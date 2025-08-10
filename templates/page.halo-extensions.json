@@ -238,10 +238,10 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Timed Application for Halo - Long Version ( 60 second )-2-2.mov",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "Halo Extensions",
+            "modal_title": "",
             "modal_image": "shopify://shop_images/Blonde_Flower.jpg",
             "collection_modal": "",
             "product_modal": ""
@@ -294,18 +294,6 @@
             "collection_modal": "",
             "product_modal": ""
           }
-        },
-        "video_ayXWCz6": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg",
-            "collection_modal": "",
-            "product_modal": ""
-          }
         }
       },
       "block_order": [
@@ -313,8 +301,7 @@
         "video_t8zGmx",
         "video_ayXWCz",
         "video_TfRk3t4",
-        "video_t8zGmx5",
-        "video_ayXWCz6"
+        "video_t8zGmx5"
       ],
       "disabled": true,
       "custom_css": [
@@ -354,8 +341,9 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Timed Application for Halo - Long Version ( 60 second )-2-2.mov",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/halo-application-thumbnail.jpg",
             "title": "",
             "description": ""
           }
@@ -363,8 +351,9 @@
         "video_t8zGmx": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video": "shopify://files/videos/Halo Removal - Duo.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/halo-extension-removal-duo-thumbnail.jpg",
             "title": "",
             "description": ""
           }
@@ -372,8 +361,9 @@
         "video_ayXWCz": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video": "shopify://files/videos/Tyla - Removal.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-tyla-thumbnail.jpg",
             "title": "",
             "description": ""
           }
@@ -381,8 +371,9 @@
         "video_TfRk3t4": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Halo Removal - Hevillin.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-habellin-thumbnail.jpg",
             "title": "",
             "description": ""
           }
@@ -390,17 +381,9 @@
         "video_t8zGmx5": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video": "shopify://files/videos/Jayde - Removal.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_ayXWCz6": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-jayde-thumbnail.jpg",
             "title": "",
             "description": ""
           }
@@ -411,8 +394,7 @@
         "video_t8zGmx",
         "video_ayXWCz",
         "video_TfRk3t4",
-        "video_t8zGmx5",
-        "video_ayXWCz6"
+        "video_t8zGmx5"
       ],
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
@@ -440,8 +422,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 60,
-        "padding_bottom": 44
+        "padding_top": 72,
+        "padding_bottom": 40
       }
     },
     "image-scroll": {
@@ -529,8 +511,8 @@
         "image4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/halo-heat-proof.jpg",
-            "text_label": "<p>Heat-proof for <br>hairstyling</p>",
+            "image": "shopify://shop_images/heat-proof-for-hairstyling.jpg",
+            "text_label": "<p>Heat-proof for <br/>hairstyling</p>",
             "link": ""
           }
         }
