@@ -211,8 +211,8 @@
         "image3"
       ],
       "custom_css": [
-        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
-        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem;}",
+        "@media screen and (max-width: 749px) {.grid {margin-top: 0;} .grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
         ".text-container {position: absolute; top: 0; z-index: -1;}",
         "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
       ],
