@@ -397,7 +397,8 @@
         "video_t8zGmx5"
       ],
       "custom_css": [
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}"
       ],
       "settings": {
         "title": "",
@@ -409,7 +410,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": false,
-        "columns_desktop": 5,
+        "columns_desktop": 3,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
