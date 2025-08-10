@@ -140,7 +140,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": false,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
