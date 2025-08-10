@@ -212,7 +212,7 @@
       ],
       "custom_css": [
         ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem;}",
-        "@media screen and (max-width: 749px) {.grid {margin-top: 0;} .grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        "@media screen and (max-width: 749px) {.grid {margin-top: 0; } .grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
         ".text-container {position: absolute; top: 0; z-index: -1;}",
         "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
       ],
@@ -316,6 +316,7 @@
         "video_t8zGmx5",
         "video_ayXWCz6"
       ],
+      "disabled": true,
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
@@ -345,6 +346,102 @@
         "padding_top": 72,
         "padding_bottom": 40,
         "trackable_name": "shoppable_video_carrousel"
+      }
+    },
+    "videos_list": {
+      "type": "videos-list",
+      "blocks": {
+        "video_TfRk3t": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_t8zGmx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_ayXWCz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_TfRk3t4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_t8zGmx5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_ayXWCz6": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_TfRk3t",
+        "video_t8zGmx",
+        "video_ayXWCz",
+        "video_TfRk3t4",
+        "video_t8zGmx5",
+        "video_ayXWCz6"
+      ],
+      "custom_css": [
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
+        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
+        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
+        ".text-wrapper__top > * {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
+        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}",
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
+      ],
+      "name": "Videos with modal",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": false,
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 60,
+        "padding_bottom": 44
       }
     },
     "image-scroll": {
@@ -463,102 +560,6 @@
         "padding_top": 48,
         "padding_bottom": 0,
         "trackable_name": ""
-      }
-    },
-    "videos_list": {
-      "type": "videos-list",
-      "blocks": {
-        "video_TfRk3t": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_t8zGmx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_ayXWCz": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_TfRk3t4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_t8zGmx5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_ayXWCz6": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_TfRk3t",
-        "video_t8zGmx",
-        "video_ayXWCz",
-        "video_TfRk3t4",
-        "video_t8zGmx5",
-        "video_ayXWCz6"
-      ],
-      "custom_css": [
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
-        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
-        ".text-wrapper__top > * {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
-        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}",
-        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
-      ],
-      "name": "Videos with modal",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 5,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 60,
-        "padding_bottom": 44
       }
     },
     "shop-by-shade": {
@@ -688,9 +689,9 @@
     "infographic",
     "how-to-install",
     "videos_list_with_collection_modal2",
+    "videos_list",
     "image-scroll",
     "why-cliphair",
-    "videos_list",
     "shop-by-shade",
     "slideshow_image_link_kAgcJP",
     "collapsible_content_AaP6iD"
