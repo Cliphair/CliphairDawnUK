@@ -71,9 +71,10 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/main-campaign-video-thumbnail.jpg",
             "description": "",
-            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/1-hal_website-hand-extensions-min.jpg"
+            "modal_image": "shopify://shop_images/halo-collection.jpg",
+            "collection_modal": "halo-hair-extensions",
+            "product_modal": ""
           }
         },
         "video_t8zGmx": {
@@ -83,9 +84,9 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/transformation-tyla-thumbanil.jpg",
             "description": "",
-            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_ayXWCz": {
@@ -95,9 +96,10 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/transformation-hevillin-thumbanil.jpg",
             "description": "",
-            "modal_collection": "halo-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "modal_image": "shopify://shop_images/Featured_Image.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_TfRk3t4": {
@@ -107,9 +109,10 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "cover_image": "shopify://shop_images/transformation-jayde-thumbanil.jpg",
             "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "modal_image": "shopify://shop_images/Blonde_Flower.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         }
       },
@@ -238,9 +241,10 @@
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "modal_image": "shopify://shop_images/Blonde_Flower.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_t8zGmx": {
@@ -249,9 +253,10 @@
             "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "modal_image": "shopify://shop_images/Beachy_Waves.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_ayXWCz": {
@@ -260,9 +265,10 @@
             "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "modal_image": "shopify://shop_images/Featured_Image.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_TfRk3t4": {
@@ -271,9 +277,10 @@
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "fringe-clip-in-hair-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "modal_image": "shopify://shop_images/Blonde_Flower.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_t8zGmx5": {
@@ -282,9 +289,10 @@
             "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "modal_image": "shopify://shop_images/Beachy_Waves.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         },
         "video_ayXWCz6": {
@@ -293,9 +301,10 @@
             "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_collection": "remy-royale-tape-in-extensions",
             "modal_title": "Halo Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "modal_image": "shopify://shop_images/Featured_Image.jpg",
+            "collection_modal": "",
+            "product_modal": ""
           }
         }
       },
