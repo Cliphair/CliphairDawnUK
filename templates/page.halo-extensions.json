@@ -397,13 +397,7 @@
         "video_t8zGmx5"
       ],
       "custom_css": [
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2);}",
-        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: 232px;}",
-        ".collection-modal-card__text-wrapper {text-align: left; padding: 1rem 1.2rem;}",
-        ".text-wrapper__top > * {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
-        ".collection-cta {font-size: 12px; letter-spacing: 0; min-height: 0; padding: 0.5rem;}",
-        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -416,7 +410,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": false,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
