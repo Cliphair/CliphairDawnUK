@@ -35,21 +35,38 @@
     }
 
     .available-shades__list .available-shades__elements.grid__item {
-      width: calc((100% - 75px - 3rem) / 6);
+      width: calc((100% - 90px - 3rem) / 6);
       min-width: 0;
       max-width: unset;
       flex-shrink: 0;
     }
 
-    @media screen and (min-width: 750px) {
-      .available-shades__list .available-shades__elements.grid__item {
+    @media screen and (min-width: 750px) and (max-width: 989px) {
+      .available-shades .slider.slider--tablet {
+        scroll-padding-left: 5rem!important;
+      }
+
+      .available-shades .slider.slider--tablet:after {
+        padding-left: 5rem!important;
+      }
+
+      .available-shades .available-shades__list .available-shades__elements.grid__item {
         width: calc((100% - 105px - 5rem) / 8);
+      }
+
+      .available-shades .available-shades__list .available-shades__elements.grid__item:first-of-type {
+        margin-left: 5rem!important;
       }
     }
 
     @media screen and (min-width: 990px) {
-      .available-shades__list .available-shades__elements.grid__item {
-        width: calc((100% - 135px - 5rem) / 10);
+      .available-shades .slider.slide-desktop-false{
+        justify-content:flex-start;
+      }
+
+      .available-shades .available-shades__list .available-shades__elements.grid__item {
+        width: calc((100% - 90px - 5rem) / 6);
+        flex-grow:0;
       }
     }
 
@@ -187,6 +204,43 @@
     .loading-overlay__spinner > svg{
       height: 50%;
     }
+
+    @media screen and (min-width:990px){
+      .page-width-different-size{
+        --page-width: 990px;
+      }
+
+      .available-shades{
+        display:flex;
+        padding:0 5rem;
+        row-gap:1.5rem;
+      }
+
+      .available-shades > *{
+        width:50%;
+        padding:0;
+      }
+
+      .available-shades .product-modal-card__image-wrapper{
+        width:45%;
+      }
+
+      .available-shades .available-shades__list{
+        row-gap:1.5rem;
+      }
+
+      .available-shades .product-modal-card{
+        margin:0 auto;
+        height:100%;
+        width:100%;
+        max-width:unset;
+      }
+
+      .product-modal-card .product-modal-card__text-wrapper :not(div){
+        font-size:1.8rem;
+      }
+
+    }
 </style>
 
 {% liquid
@@ -194,7 +248,7 @@
   assign first_product = collection.products.first
 
   assign swipe_on_mobile = section.settings.swipe_on_mobile | default: true
-  assign swipe_on_desktop = section.settings.swipe_on_desktop | default: true
+  assign swipe_on_desktop = section.settings.swipe_on_desktop | default: false
 
   assign columns_mobile_int = 6
   assign show_mobile_slider = false
@@ -202,20 +256,20 @@
     assign show_mobile_slider = true
   endif
 
-  assign columns_desktop_int = 10
+  assign columns_desktop_int = 6
   assign show_desktop_slider = false
   if swipe_on_desktop and collection.products.size > columns_desktop_int
     assign show_desktop_slider = true
   endif
 
   assign columns_tablet = 8
-  if collection.products.size > columns_tablet and swipe_on_desktop
+  if collection.products.size > columns_tablet and swipe_on_mobile
     assign show_tablet_slider = true
   endif
 %}
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div
-    class="page-width isolate no-heading no-mobile-link {{ section.settings.text_allignment }}"
+    class="page-width isolate no-heading no-mobile-link {{ section.settings.text_allignment }} page-width-different-size"
     style="padding:0!important;"
   >
     {%- unless section.settings.title == blank -%}
@@ -286,7 +340,7 @@
             {% endif %}
           {% endfor %}
           {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
-            <div class="slider-buttons slider-buttons-square no-js-hidden slider--{{ columns_desktop_int }}-col-desktop slider--{{ columns_mobile_int }}-col-tablet-down">
+            <div class="slider-buttons hidden slider-buttons-square no-js-hidden slider--{{ columns_desktop_int }}-col-desktop slider--{{ columns_mobile_int }}-col-tablet-down">
               <button
                 type="button"
                 class="slider-button slider-button--prev"
