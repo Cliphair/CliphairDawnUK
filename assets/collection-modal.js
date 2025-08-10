@@ -9,6 +9,10 @@ if (!customElements.get('collection-modal')) {
       }
 
       show(opener) {
+        console.log("Opener ", opener)
+        const loadingSpinner = opener.closest('modal-opener').querySelector('.loading-overlay__spinner');
+        if (loadingSpinner) loadingSpinner.classList.remove('hidden');
+        console.log("Spinner ", loadingSpinner)
         const collectionHandle = this.dataset.collectionHandle;
 
         const loadSelects = this.options.map(option =>
@@ -18,6 +22,8 @@ if (!customElements.get('collection-modal')) {
         Promise.all(loadSelects).then(() => {
           this.setupFilterListeners(collectionHandle);
           super.show(opener);
+
+          if (loadingSpinner) loadingSpinner.classList.add('hidden');
         });
       }
 

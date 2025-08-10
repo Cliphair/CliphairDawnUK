@@ -1,0 +1,251 @@
+/* =====================================
+   COLLECTION MODAL CARD (PREVIEW)
+===================================== */
+.collection-modal-card {
+  border: 1px solid;
+  margin-top: 1rem;
+  flex: 1;
+  position: relative;
+}
+
+.collection-modal-card .grid {
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+.collection-modal-card .collection-modal-card__image-wrapper {
+  width: 35%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.collection-modal-card .collection-modal-card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+}
+
+.collection-modal-card .collection-modal-card__text-wrapper {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.collection-modal-card .text-wrapper__top {
+  margin-bottom: 1.3rem;
+}
+
+.collection-modal-card .collection-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+}
+
+.collection-modal-card .collection-base-price {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+}
+
+.collection-modal-card .collection-cta.button {
+  font-size: 1rem;
+  line-height: 1.2em;
+  padding: 0.5rem;
+  width: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  min-width: unset;
+}
+
+
+
+/* =====================================
+   LOADING OVERLAY
+===================================== */
+.collection-modal-card .loading-overlay__spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, .7) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, 0);
+  z-index: 2;
+}
+
+.collection-modal-card .loading-overlay__spinner>svg {
+  height: 50%;
+}
+
+.collection-modal-card .loading-overlay__spinner .path {
+  stroke: rgb(var(--color-button-text));
+}
+
+/* =====================================
+   MODAL STRUCTURE
+===================================== */
+collection-modal.collection-popup-modal {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  background: rgba(var(--color-foreground), 0.2);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+collection-modal.collection-popup-modal[open] {
+  visibility: visible;
+  opacity: 1;
+  z-index: 101;
+}
+
+collection-modal .collection-popup-modal__dialog {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+collection-modal .collection-popup-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(var(--color-background));
+  border-radius: var(--popup-corner-radius);
+  border: var(--popup-border-width) solid rgba(var(--color-foreground), var(--popup-border-opacity));
+  box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  overflow: auto;
+  height: fit-content;
+  max-height: calc(100% - 3rem);
+  width: 100%;
+  max-width: calc(100% - 3rem);
+  padding: 0 1.5rem 1.5rem;
+  margin: 0 auto;
+}
+
+collection-modal .collection-popup-modal__toggle {
+  background-color: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border-radius: 50%;
+  color: rgba(var(--color-foreground), 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1.2rem;
+  width: 4rem;
+  margin: 0 0 0 auto;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 2;
+}
+
+collection-modal .collection-popup-modal__toggle .icon {
+  width: 2.2rem;
+  height: auto;
+  margin: 0;
+}
+
+/* =====================================
+   MODAL CONTENT
+===================================== */
+collection-modal .image-content {
+  width: 100%;
+}
+
+collection-modal .image-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+collection-modal .text-content {
+  flex: 1;
+}
+
+collection-modal .text-content__title {
+  margin-top: 0;
+}
+
+collection-modal .content-info__option-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+collection-modal .content-info__option-group+.content-info__option-group {
+  margin-top: 1.5rem;
+}
+
+collection-modal .content-info__option-group label {
+  flex-shrink: 0;
+}
+
+collection-modal .content-info__option-group .select {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  min-width: fit-content;
+  width: unset;
+}
+
+collection-modal .content-info__ctas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+
+collection-modal .content-info__ctas .button {
+  min-width: fit-content;
+  flex: 1;
+}
+
+/* =====================================
+   RESPONSIVE: max-width 350px
+===================================== */
+@media screen and (max-width: 350px) {
+  .collection-modal-card .collection-title {
+    font-size: 1rem;
+  }
+
+  .collection-modal-card .collection-base-price {
+    font-size: 1.2rem;
+  }
+
+  collection-modal .collection-modal-card__text-wrapper {
+    padding: 0.5rem;
+  }
+}
+
+/* =====================================
+   RESPONSIVE: min-width 750px
+===================================== */
+@media screen and (min-width: 750px) {
+  collection-modal .collection-popup-modal__content {
+    max-width: min(calc(100% - 10rem), 750px);
+  }
+
+  collection-modal .image-content {
+    width: 40%;
+  }
+}

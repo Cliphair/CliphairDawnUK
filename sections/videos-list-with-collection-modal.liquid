@@ -1,9 +1,27 @@
 {{ 'section-videos-list.css' | asset_url | stylesheet_tag }}
 {{ 'video-section.css' | asset_url | stylesheet_tag }}
 {{ 'component-collection-modal-card.css' | asset_url | stylesheet_tag }}
+{{ 'collection-modal-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign has_product_modal = false
+  for block in section.blocks
+    if block.settings.product_modal != blank
+      assign has_product_modal = true
+      break
+    endif
+  endfor
+%}
+{% if has_product_modal %}
+  {{ 'product-modal-card.css' | asset_url | stylesheet_tag }}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 
 {% style %}
   .section-{{ section.id }}-padding {
@@ -124,9 +142,14 @@
               title: block.settings.title,
               tracking: tracking_video
             %}
-            {% if block.settings.modal_collection and block.settings.modal_image %}
+            {% if block.settings.product_modal != blank %}
+              {% render 'product-quick-add-card',
+                title: block.settings.modal_title,
+                card_product: block.settings.product_modal
+              %}
+            {% elsif block.settings.collection_modal != blank %}
               {% render 'collection-modal-card',
-                collection: block.settings.modal_collection,
+                collection: block.settings.collection_modal,
                 title: block.settings.modal_title,
                 image: block.settings.modal_image,
                 index: forloop.index,
@@ -443,11 +466,6 @@
           "content": "Modal settings"
         },
         {
-          "type": "collection",
-          "id": "modal_collection",
-          "label": "Collection"
-        },
-        {
           "type": "inline_richtext",
           "id": "modal_title",
           "label": "Display title"
@@ -455,7 +473,19 @@
         {
           "type": "image_picker",
           "id": "modal_image",
-          "label": "Modal image"
+          "label": "Modal image",
+          "info": "Only used when collection modal"
+        },
+        {
+          "type": "collection",
+          "id": "collection_modal",
+          "label": "Collection"
+        },
+        {
+          "type": "product",
+          "id": "product_modal",
+          "label": "Product",
+          "info": "This fields replaces the above collection and shows a quick add modal"
         }
       ]
     }
