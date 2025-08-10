@@ -103,7 +103,7 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "top right",
+    "badge_position": "top left",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-69d57c77-dfa8-46c0-ae7f-75b47c0b9174",
     "sold_out_badge_color_scheme": "inverse",
@@ -206,18 +206,15 @@
         "disabled": false,
         "settings": {
           "storefront_layout_enabled": false,
-          "storefront_layout_type": "as-drawer",
           "storefront_layout_collection_enabled": false,
           "storefront_layout_primary_bg_color": "#000000",
           "storefront_layout_primary_text_color": "#ffffff",
           "storefront_layout_secondary_bg_color": "#f4f8fe",
           "storefront_layout_secondary_text_color": "#333333",
           "storefront_layout_ui_border_radius": 6,
-          "storefront_layout_notification_enabled_as_default": true,
           "storefront_layout_notification_position": "left",
           "storefront_layout_action_popup_position": "left",
           "storefront_layout_drawer_position": "left",
-          "storefront_layout_drawer_width": 400,
           "storefront_layout_as_section_page": ""
         }
       },
