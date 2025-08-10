@@ -125,7 +125,7 @@
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         ".videos-list {scroll-padding-left: calc((100vw - 232px) / 2); justify-content: flex-start;}",
-        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem));}",
+        ".videos-list__item.grid__item {min-width: min(232px, calc(100% - 3rem)); max-width: calc((1300px - 120px) / 4);}",
         ".collection-title,.collection-base-price {font-size: 13px; line-height: 1.3em; margin: 0; letter-spacing: 0;}",
         ".collection-cta {font-size: 12px; letter-spacing: 0;}"
       ],
