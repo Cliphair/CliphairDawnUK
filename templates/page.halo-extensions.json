@@ -12,7 +12,8 @@
     "custom_liquid_YkPTqW": {
       "type": "custom-liquid",
       "custom_css": [
-        "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}"
+        "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}",
+        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem; }}"
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
@@ -28,7 +29,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Heavenly hair in 3 different lengths and 15 \ngorgeous shades"
+            "text": "Heavenly hair in 3 different lengths and 15 gorgeous shades"
           }
         },
         "buttons": {
@@ -50,7 +51,8 @@
       "custom_css": [
         "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
-        "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}"
+        "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
+        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; } .button {font-size: 2.5rem; padding:2.5rem 4.5rem } .rich-text__buttons {margin-top: 3.2rem; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
