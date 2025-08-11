@@ -654,6 +654,7 @@
       ],
       "custom_css": [
         ".accordion {margin-top: 0;}",
+        ".collapsible-content__wrapper{width:100%;}",
         ".h2 {font-size: calc(var(--font-heading-scale) * 2.3rem); line-height: 1.5em; letter-spacing: -0.23px; font-weight: 500;}",
         "@media only screen and (min-width: 750px) {.h2 {font-size: calc(var(--font-heading-scale) * 2.7rem); }}"
       ],
