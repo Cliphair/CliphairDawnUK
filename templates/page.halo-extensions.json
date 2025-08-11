@@ -157,7 +157,7 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 20,
-        "trackable_name": "shoppable_video_carrousel"
+        "trackable_name": "transformation_video_carousel"
       }
     },
     "infographic": {
