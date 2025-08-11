@@ -13,7 +13,7 @@
       "type": "custom-liquid",
       "custom_css": [
         "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}",
-        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem;letter-spacing: -2.4px;line-height: 1.12em; }}"
+        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem; letter-spacing: -2.4px; line-height: 1.12em; }}"
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
@@ -52,7 +52,7 @@
         "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
         "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
-        "@media screen and (min-width: 990px) {p {font-size: 3.5rem;letter-spacing:-2.1px; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
+        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; letter-spacing: -2.1px; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -523,7 +523,7 @@
         ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem;}",
         ".text-container p {font-size: 18px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
         ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
-        "@media screen and (min-width:990px){.title-wrapper{margin-bottom:5.3rem;}.images-list-title {letter-spacing: -2.4px;}}"
+        "@media screen and (min-width: 990px) {.title-wrapper {margin-bottom: 5.3rem; } .images-list-title {letter-spacing: -2.4px; }}"
       ],
       "settings": {
         "title": "Why Cliphair?",
@@ -543,6 +543,7 @@
     },
     "shop-by-shade": {
       "type": "quick-add-by-shade",
+      "custom_css": [],
       "settings": {
         "title": "Select Your Halo Shade",
         "heading_size": "h2",
@@ -561,9 +562,7 @@
         "slider_visual": "counter",
         "padding_top": 44,
         "padding_bottom": 36
-      },
-      "custom_css": [
-      ]
+      }
     },
     "slideshow_image_link_kAgcJP": {
       "type": "slideshow-image-link",
@@ -579,6 +578,7 @@
       "block_order": [
         "slide_rHHRdD"
       ],
+      "disabled": true,
       "name": "Slideshow image link",
       "settings": {
         "layout": "grid",
@@ -588,6 +588,22 @@
         "change_slides_speed": 5,
         "show_text_below": true,
         "accessibility_info": "Colour matching banner"
+      }
+    },
+    "halo_colour_match_reviews_BgmxmE": {
+      "type": "halo-colour-match-reviews",
+      "name": "Colour Match & Review",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 1,
+        "swipe_on_desktop": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "image": "shopify://shop_images/halo-colour-matching.jpg",
+        "image_url": "shopify://pages/colour-matching-service",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "trackable_name": ""
       }
     },
     "collapsible_content_AaP6iD": {
@@ -675,6 +691,7 @@
     "why-cliphair",
     "shop-by-shade",
     "slideshow_image_link_kAgcJP",
+    "halo_colour_match_reviews_BgmxmE",
     "collapsible_content_AaP6iD"
   ]
 }
