@@ -49,29 +49,6 @@
     id="{{ section.id }}"
   {% endif %}
 >
-  {%- liquid
-    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
-    assign show_mobile_slider = false
-    if section.settings.swipe_on_mobile
-      assign show_mobile_slider = true
-    endif
-
-    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
-    assign show_desktop_slider = false
-    if section.settings.swipe_on_desktop
-      assign show_desktop_slider = true
-    endif
-
-    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
-    if section.settings.swipe_on_desktop
-      assign show_tablet_slider = true
-    endif
-
-    assign product_id = ''
-    if template.name == 'product'
-      assign product_id = product.id
-    endif
-  -%}
   <div class="banner-wrapper">
     {%- liquid
       assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
@@ -100,6 +77,30 @@
     </picture>
     {% if section.settings.image_url %}</a>{% endif %}
   </div>
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop
+      assign show_desktop_slider = true
+    endif
+
+    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+    if section.settings.swipe_on_desktop
+      assign show_tablet_slider = true
+    endif
+
+    assign product_id = ''
+    if template.name == 'product'
+      assign product_id = product.id
+    endif
+  -%}
+
   <yotpo-dynamic-reviews
     data-product-id="{{ product_id }}"
     data-section-id="{{ section.id }}"
