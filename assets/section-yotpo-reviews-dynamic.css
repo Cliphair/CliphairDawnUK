@@ -312,7 +312,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
   margin-top: auto;
 }
 
@@ -322,6 +322,11 @@
 
 .additional-information .yotpo-branding p {
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Modal layout with no image fallback */
@@ -345,6 +350,10 @@ modal-dialog.no-image .product-popup-modal__content-info {
       "image content"
       "additional additional";
     height: 100%;
+  }
+
+  .additional-information{
+    justify-content: flex-end;
   }
 
   .product-popup-modal__content-info>* {
