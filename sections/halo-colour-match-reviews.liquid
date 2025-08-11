@@ -16,16 +16,16 @@
 {% endstyle %}
 
 <style>
-  .main-wrapper {
+  .halo-banner-reviews .main-wrapper {
     display: flex;
     gap: 8rem;
   }
 
-  .banner-wrapper {
+  .halo-banner-reviews .banner-wrapper {
     width: calc(65% - 4rem);
   }
 
-  .banner-wrapper img {
+  .halo-banner-reviews .banner-wrapper img {
     width: 100%;
     height: auto;
     aspect_ratio: initial;
@@ -34,14 +34,23 @@
     display: block;
   }
 
-  .reviews-list-wrapper {
+  .halo-banner-reviews .reviews-list-wrapper {
     width: calc(35% - 4rem);
     padding:0;
+  }
+
+  @media screen and (min-width:990px){
+    .halo-banner-reviews .reviews-list__item {
+      margin: 0;
+      min-width: unset;
+      max-width: unset;
+      width: 100%;
+    }
   }
 </style>
 
 <div
-  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %} halo-banner-reviews"
   {% if section.settings.trackable_name != blank %}
     id="{{ section.settings.trackable_name | handleize }}"
     data-section-name="{{ section.settings.trackable_name | handleize }}"
