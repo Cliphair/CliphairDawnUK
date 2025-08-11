@@ -29,7 +29,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Get instant <em>volume</em> \n<em>& length</em> in less than 60 seconds. \n\nHeavenly hair in 3 different lengths and 15 \ngorgeous shades"
+            "text": "Get instant <em>volume</em> <em>& length</em> in less than 60 seconds. Heavenly hair in 3 different lengths and 15 gorgeous shades"
           }
         },
         "buttons": {
@@ -232,6 +232,16 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "trackable_name": ""
+      }
+    },
+    "custom_liquid_igbatT": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"HowTo\",\n  \"inLanguage\": \"en-GB\",\n  \"name\": \"How to Install Halo Hair Extensions\",\n  \"description\": \"A quick, three-step guide to installing halo hair extensions securely and naturally.\",\n  \"totalTime\": \"PT60S\",\n  \"image\": [\n    \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step1.jpg?v=1754568720\",\n    \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step2.jpg?v=1754568717\",\n    \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step3.jpg?v=1754568725\"\n  ],\n  \"step\": [\n    {\n      \"@type\": \"HowToStep\",\n      \"position\": 1,\n      \"name\": \"Section hair around crown\",\n      \"text\": \"Section hair around the crown. Clip the top section up, leaving two sections out at the front.\",\n      \"image\": \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step1.jpg?v=1754568720\",\n      \"url\": \"#how-to-install-step-1\"\n    },\n    {\n      \"@type\": \"HowToStep\",\n      \"position\": 2,\n      \"name\": \"Position and secure the halo\",\n      \"text\": \"Position the wire 1–2 inches from the hairline. Use the clips on the halo seam to secure it in place.\",\n      \"image\": \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step2.jpg?v=1754568717\",\n      \"url\": \"#how-to-install-step-2\"\n    },\n    {\n      \"@type\": \"HowToStep\",\n      \"position\": 3,\n      \"name\": \"Add side pieces\",\n      \"text\": \"Apply the small clip-in side pieces to fill out the front area of your hair.\",\n      \"image\": \"https://www.cliphair.co.uk/cdn/shop/files/how-to-install_step3.jpg?v=1754568725\",\n      \"url\": \"#how-to-install-step-3\"\n    }\n  ],\n  \"supply\": [\n    { \"@type\": \"HowToSupply\", \"name\": \"Halo hair extension\" }\n  ],\n  \"tool\": [\n    { \"@type\": \"HowToTool\", \"name\": \"Sectioning clip\" },\n    { \"@type\": \"HowToTool\", \"name\": \"Comb\" }\n  ]\n}\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "videos_list_with_collection_modal2": {
@@ -686,6 +696,7 @@
     "videos_list_with_collection_modal",
     "infographic",
     "how-to-install",
+    "custom_liquid_igbatT",
     "videos_list_with_collection_modal2",
     "videos_list",
     "image-scroll",
