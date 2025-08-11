@@ -36,6 +36,7 @@
 
   .reviews-list-wrapper {
     width: 35%;
+    padding:0;
   }
 </style>
 
@@ -49,129 +50,131 @@
     id="{{ section.id }}"
   {% endif %}
 >
-  <div class="banner-wrapper">
+  <div class='page-width'>
+    <div class="banner-wrapper">
+      {%- liquid
+        assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
+        if section.settings.image_behavior == 'ambient'
+          assign sizes = '120vw'
+          assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+        else
+          assign sizes = '100vw'
+          assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+        endif
+      -%}
+      {% if section.settings.image_url %}<a href="{{ section.settings.image_url }}">{% endif %}
+      <picture>
+        <source media="(max-width:768px)" srcset="{{ section.settings.image | image_url: width: 768 }}">
+        {% if section.settings.image_desktop %}
+          <source media="(min-width:769px)" srcset="{{ section.settings.image_desktop | image_url: width: 3840 }}">
+        {% endif %}
+        <img
+          src="{{ section.settings.image | image_url: width: 768 }}"
+          loading="lazy"
+          alt="{{ section.settings.image.alt }}"
+          width="{{ widths }}"
+          height="{{ height }}"
+          sizes="{{ sizes }}"
+        >
+      </picture>
+      {% if section.settings.image_url %}</a>{% endif %}
+    </div>
     {%- liquid
-      assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
-      if section.settings.image_behavior == 'ambient'
-        assign sizes = '120vw'
-        assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
-      else
-        assign sizes = '100vw'
-        assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+      assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+      assign show_mobile_slider = false
+      if section.settings.swipe_on_mobile
+        assign show_mobile_slider = true
+      endif
+
+      assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+      assign show_desktop_slider = false
+      if section.settings.swipe_on_desktop
+        assign show_desktop_slider = true
+      endif
+
+      assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
+      if section.settings.swipe_on_desktop
+        assign show_tablet_slider = true
+      endif
+
+      assign product_id = ''
+      if template.name == 'product'
+        assign product_id = product.id
       endif
     -%}
-    {% if section.settings.image_url %}<a href="{{ section.settings.image_url }}">{% endif %}
-    <picture>
-      <source media="(max-width:768px)" srcset="{{ section.settings.image | image_url: width: 768 }}">
-      {% if section.settings.image_desktop %}
-        <source media="(min-width:769px)" srcset="{{ section.settings.image_desktop | image_url: width: 3840 }}">
-      {% endif %}
-      <img
-        src="{{ section.settings.image | image_url: width: 768 }}"
-        loading="lazy"
-        alt="{{ section.settings.image.alt }}"
-        width="{{ widths }}"
-        height="{{ height }}"
-        sizes="{{ sizes }}"
-      >
-    </picture>
-    {% if section.settings.image_url %}</a>{% endif %}
-  </div>
-  {%- liquid
-    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
-    assign show_mobile_slider = false
-    if section.settings.swipe_on_mobile
-      assign show_mobile_slider = true
-    endif
 
-    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
-    assign show_desktop_slider = false
-    if section.settings.swipe_on_desktop
-      assign show_desktop_slider = true
-    endif
-
-    assign columns_tablet = columns_desktop_int | plus: columns_mobile_int | divided_by: 2 | ceil
-    if section.settings.swipe_on_desktop
-      assign show_tablet_slider = true
-    endif
-
-    assign product_id = ''
-    if template.name == 'product'
-      assign product_id = product.id
-    endif
-  -%}
-
-  <yotpo-dynamic-reviews
-    data-product-id="{{ product_id }}"
-    data-section-id="{{ section.id }}"
-    class="reviews-list-wrapper page-width isolate no-heading no-mobile-link"
-  >
-    <div id="reviews-loading" class="reviews-loading">
-      <div class="spinner"></div>
-    </div>
-
-    <slider-component
-      data-visual="counter"
-      class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    <yotpo-dynamic-reviews
+      data-product-id="{{ product_id }}"
+      data-section-id="{{ section.id }}"
+      class="reviews-list-wrapper page-width isolate no-heading no-mobile-link"
     >
-      <ul
-        class="reviews-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
-        id="Slider-{{ section.id }}"
-        role="list"
-        {% if section.settings.trackable_name != blank %}
-          data-horizontal-scroll
-        {% endif %}
+      <div id="reviews-loading" class="reviews-loading">
+        <div class="spinner"></div>
+      </div>
+
+      <slider-component
+        data-visual="counter"
+        class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
       >
-        {%- liquid
-          assign columns = section.blocks.size
-          if columns > 3
-            assign columns = 3
-          endif
-        -%}
-      </ul>
+        <ul
+          class="reviews-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} videos-list--{{ section.blocks.size }}-items slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }}"
+          id="Slider-{{ section.id }}"
+          role="list"
+          {% if section.settings.trackable_name != blank %}
+            data-horizontal-scroll
+          {% endif %}
+        >
+          {%- liquid
+            assign columns = section.blocks.size
+            if columns > 3
+              assign columns = 3
+            endif
+          -%}
+        </ul>
 
-      {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
-        <div class="slider-buttons slider-buttons-square no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
-          <button
-            type="button"
-            class="slider-button slider-button--prev"
-            name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-          >
-            {% render 'icon-caret' %}
-          </button>
+        {%- if show_mobile_slider or show_tablet_slider or show_desktop_slider -%}
+          <div class="slider-buttons slider-buttons-square no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
 
-          <div class="slider-counter caption visually-hidden">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            <div class="slider-counter caption visually-hidden">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
           </div>
-          <button
-            type="button"
-            class="slider-button slider-button--next"
-            name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-          >
-            {% render 'icon-caret' %}
-          </button>
-        </div>
-      {%- endif -%}
-    </slider-component>
+        {%- endif -%}
+      </slider-component>
 
-    <template id="base-review-template">
-      <li
-        id="Slide-{{ section.id }}-FORLOOP.INDEX"
-        class="reviews-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-        {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-          style="--animation-order: FORLOOP.INDEX;"
-        {% endif %}
-      >
-        {% render 'review-card-with-modal', section_id: section.id %}
-      </li>
-    </template>
-  </yotpo-dynamic-reviews>
+      <template id="base-review-template">
+        <li
+          id="Slide-{{ section.id }}-FORLOOP.INDEX"
+          class="reviews-list__item grid__item custom__slide{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: FORLOOP.INDEX;"
+          {% endif %}
+        >
+          {% render 'review-card-with-modal', section_id: section.id %}
+        </li>
+      </template>
+    </yotpo-dynamic-reviews>
+  </div>
 </div>
 
 <script src="{{ 'yotpo-dynamic-modal.js' | asset_url }}" defer></script>
