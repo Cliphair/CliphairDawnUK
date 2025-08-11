@@ -133,6 +133,16 @@
                     <ul class="list-unstyled" role="list">
                       <li>
                         <a
+                          id="HeaderMenu-clip-ins-clip-in-halo"
+                          href="/collections/halo-hair-extensions"
+                          class="mega-menu__link link{% if request.path == '/collections/halo-hair-extensions' %} mega-menu__link--active{% endif %}"
+                          {% if request.path == '/collections/halo-hair-extensions' %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          Halo Hair Extensions<span class="new-arrival"> NEW</span>
+                        </a>
+                        <a
                           id="HeaderMenu-clip-ins-clip-in-one-piece-top-up"
                           href="/collections/one-piece-top-up-hair-extensions"
                           class="mega-menu__link link{% if request.path == '/collections/one-piece-top-up-hair-extensions' %} mega-menu__link--active{% endif %}"
