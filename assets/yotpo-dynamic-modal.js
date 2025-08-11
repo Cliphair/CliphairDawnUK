@@ -155,7 +155,7 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
 
         const headingContainer = document.createElement('div');
         headingContainer.className = 'heading-container';
-        headingContainer.innerHTML = `<p class="center h1">${review.name}</p>`;
+        headingContainer.innerHTML = `<p class="center h1">${this.camelize(review.name)}</p>`;
 
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
@@ -263,6 +263,12 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
       hideSpinner() {
         const loading = this.querySelector('#reviews-loading');
         if (loading) loading.classList.add('hidden');
+      }
+
+      camelize(str) {
+        return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+          return index === 0 ? word.toLowerCase() : word.toUpperCase();
+        }).replace(/\s+/g, '');
       }
     }
   );
