@@ -12,12 +12,12 @@
     "custom_liquid_YkPTqW": {
       "type": "custom-liquid",
       "custom_css": [
-        "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}",
-        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem; letter-spacing: -2.4px; line-height: 1.12em; }}"
+        ".h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}",
+        "@media screen and (min-width: 990px) {.h2 {font-size: 4rem; margin-bottom: 1.2rem; letter-spacing: -2.4px; line-height: 1.12em; }}"
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'>Get instant <span><em>volume<br> & length</em></span> in less than 60 seconds</p></div>",
+        "custom_liquid": "<div class='page-width'><h1 class='h2 center'>Halo Hair Extensions</h1></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 0
@@ -29,7 +29,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Heavenly hair in 3 different lengths and 15 \ngorgeous shades"
+            "text": "Get instant <em>volume & length</em> in less than 60 seconds. Heavenly hair in 3 different lengths and 15 gorgeous shades"
           }
         },
         "buttons": {
@@ -654,7 +654,7 @@
       ],
       "custom_css": [
         ".accordion {margin-top: 0;}",
-        ".collapsible-content__wrapper{width:100%;}",
+        ".collapsible-content__wrapper {width: 100%;}",
         ".h2 {font-size: calc(var(--font-heading-scale) * 2.3rem); line-height: 1.5em; letter-spacing: -0.23px; font-weight: 500;}",
         "@media only screen and (min-width: 750px) {.h2 {font-size: calc(var(--font-heading-scale) * 2.7rem); }}"
       ],
