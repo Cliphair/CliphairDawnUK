@@ -108,7 +108,7 @@
   transform: translate(0, 0);
 }
 
-.product-modal-card .loading-overlay__spinner>svg {
+.product-modal-card .loading-overlay__spinner>svg.spinner {
   height: 50%;
   width:auto;
   aspect-ratio: 1/1;
