@@ -13,11 +13,11 @@
       "type": "custom-liquid",
       "custom_css": [
         "p.h2 {margin: 0; line-height: 1.17em; letter-spacing: -1.2px;}",
-        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem; }}"
+        "@media screen and (min-width: 990px) {p.h2 {font-size: 4rem; margin-bottom: 1.2rem;letter-spacing: -2.4px;line-height: 1.12em; }}"
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'>Get instant <b><em>volume<br> & length</em></b> in less than 60 seconds</p></div>",
+        "custom_liquid": "<div class='page-width'><p class='h2 center'>Get instant <span><em>volume<br> & length</em></span> in less than 60 seconds</p></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 0
@@ -29,7 +29,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Heavenly hair in 3 different lengths and 15 gorgeous shades"
+            "text": "Heavenly hair in 3 different lengths and 15 \ngorgeous shades"
           }
         },
         "buttons": {
@@ -52,7 +52,7 @@
         "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
         "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
-        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
+        "@media screen and (min-width: 990px) {p {font-size: 3.5rem;letter-spacing:-2.1px; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -88,7 +88,7 @@
             "description": "",
             "modal_title": "Halo Extensions",
             "collection_modal": "",
-            "product_modal": ""
+            "product_modal": "lightest-blonde-60-halo-hair-extensions"
           }
         },
         "video_ayXWCz": {
@@ -101,7 +101,7 @@
             "modal_title": "Halo Extensions",
             "modal_image": "shopify://shop_images/Featured_Image.jpg",
             "collection_modal": "",
-            "product_modal": ""
+            "product_modal": "medium-brown-4-halo-hair-extensions"
           }
         },
         "video_TfRk3t4": {
@@ -114,7 +114,7 @@
             "modal_title": "Halo Extensions",
             "modal_image": "shopify://shop_images/Blonde_Flower.jpg",
             "collection_modal": "",
-            "product_modal": ""
+            "product_modal": "off-natural-black-1b-halo-hair-extensions"
           }
         }
       },
@@ -333,7 +333,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 72,
-        "padding_bottom": 40,
+        "padding_bottom": 32,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -419,7 +419,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 72,
-        "padding_bottom": 40
+        "padding_bottom": 32
       }
     },
     "image-scroll": {
@@ -508,7 +508,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/heat-proof-for-hairstyling.jpg",
-            "text_label": "<p>Heat-proof for <br/>hairstyling</p>",
+            "text_label": "<p>Built-in clips for added hold and all-day security</p>",
             "link": ""
           }
         }
@@ -522,7 +522,8 @@
       "custom_css": [
         ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem;}",
         ".text-container p {font-size: 18px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
-        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}"
+        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
+        "@media screen and (min-width:990px){.title-wrapper{margin-bottom:5.3rem;}.images-list-title {letter-spacing: -2.4px;}}"
       ],
       "settings": {
         "title": "Why Cliphair?",
@@ -535,7 +536,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 48,
+        "padding_top": 44,
         "padding_bottom": 0,
         "trackable_name": ""
       }
@@ -558,9 +559,11 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
+        "padding_top": 44,
+        "padding_bottom": 36
+      },
+      "custom_css": [
+      ]
     },
     "slideshow_image_link_kAgcJP": {
       "type": "slideshow-image-link",
