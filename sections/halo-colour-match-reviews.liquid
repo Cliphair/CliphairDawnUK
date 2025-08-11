@@ -41,7 +41,7 @@
 </style>
 
 <div
-  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %} main-wrapper"
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding {% if section.settings.trackable_name != blank %}trackable-section{% endif %}"
   {% if section.settings.trackable_name != blank %}
     id="{{ section.settings.trackable_name | handleize }}"
     data-section-name="{{ section.settings.trackable_name | handleize }}"
@@ -50,7 +50,7 @@
     id="{{ section.id }}"
   {% endif %}
 >
-  <div class='page-width'>
+  <div class='page-width  main-wrapper'>
     <div class="banner-wrapper">
       {%- liquid
         assign height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio | round
