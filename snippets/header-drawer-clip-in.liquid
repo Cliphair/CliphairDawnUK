@@ -138,6 +138,20 @@
         tabindex="-1"
       >
         <li>
+          {% assign object = collections['halo-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-clip-ins-one-piece-top-up"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == object.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{ 'navbar.sub_level.clip_in.halo' | t }}<span class="new-arrival"> NEW</span>
+          </a>
+        </li>
+
+        <li>
           {% assign object = collections['one-piece-top-up-hair-extensions'] %}
           <a
             id="HeaderDrawer-clip-ins-one-piece-top-up"
