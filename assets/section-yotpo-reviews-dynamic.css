@@ -352,6 +352,10 @@ modal-dialog.no-image .product-popup-modal__content-info {
     height: 100%;
   }
 
+  .image-container {
+    padding:1.5rem;
+  }
+
   .additional-information{
     justify-content: flex-end;
   }
