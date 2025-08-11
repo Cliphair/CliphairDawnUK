@@ -444,7 +444,7 @@ modal-dialog.no-image .product-popup-modal__content-info {
   pointer-events: none;
 }
 
-.spinner {
+.section-reviews-list .spinner {
   width: 48px;
   height: 48px;
   margin: 0 auto;
