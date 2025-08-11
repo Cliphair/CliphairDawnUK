@@ -31,38 +31,37 @@
     </button>
   </modal-opener>
 </div>
-{% comment %}
-  <modal-dialog id="ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX" class="product-popup-modal">
-    <div
-      role="dialog"
-      aria-label="Review from ADD CUSTOMER NAME HERE"
-      aria-modal="true"
-      class="product-popup-modal__content"
-      tabindex="-1"
-    >
-      <button
-        id="ModalClose-{{ block.id }}"
-        type="button"
-        class="product-popup-modal__toggle"
-        aria-label="{{ 'accessibility.close' | t }}"
-      >
-        {% render 'icon-close' %}
-      </button>
 
-      <div class="product-popup-modal__content-info">
-        <div class="heading-container">
-          <p class="h2 center">CUSTOMER NAME</p>
-        </div>
-        <div class="image-container">IMAGE</div>
-        <div class="content-container">REVIEW CONTENT</div>
-        <div class="additional-information">
-          <div class="reviews-review-container">
-            {% for i in (1..5) %}
-              <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
-            {% endfor %}
-          </div>
+<modal-dialog id="ReviewCardPopupModal-{{ section_id }}-FORLOOP.INDEX" class="product-popup-modal">
+  <div
+    role="dialog"
+    aria-label="Review from ADD CUSTOMER NAME HERE"
+    aria-modal="true"
+    class="product-popup-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ block.id }}"
+      type="button"
+      class="product-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="product-popup-modal__content-info">
+      <div class="heading-container">
+        <p class="h2 center">CUSTOMER NAME</p>
+      </div>
+      <div class="image-container">IMAGE</div>
+      <div class="content-container">REVIEW CONTENT</div>
+      <div class="additional-information">
+        <div class="reviews-review-container">
+          {% for i in (1..5) %}
+            <span class="reviews__reviews-review grey">{% render 'icon-star' %}</span>
+          {% endfor %}
         </div>
       </div>
     </div>
-  </modal-dialog>
-{% endcomment %}
+  </div>
+</modal-dialog>
