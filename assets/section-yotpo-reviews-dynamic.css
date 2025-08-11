@@ -250,12 +250,12 @@
   gap: 1rem;
   padding: 1rem !important;
   grid-template-areas:
-
+    "heading"
     "image"
     "content"
 
     "additional"
-    "heading";
+    ;
 }
 
 .product-popup-modal__content-info>* {
