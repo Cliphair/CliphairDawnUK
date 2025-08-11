@@ -111,5 +111,5 @@
 .product-modal-card .loading-overlay__spinner>svg.spinner {
   height: 50%;
   width:auto!important;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
 }
