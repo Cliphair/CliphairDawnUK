@@ -356,6 +356,10 @@ modal-dialog.no-image .product-popup-modal__content-info {
     padding:1.5rem;
   }
 
+  .review-section_image {
+    max-width:130px;
+  }
+
   .additional-information{
     justify-content: flex-end;
   }
