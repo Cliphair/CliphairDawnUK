@@ -29,11 +29,12 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Get instant <em>volume</em> \n<em>& length</em> in less than 60 seconds."
+            "text": "Get instant length & volume in less than 60 seconds with Cliphairs Halo extensions. With different sized wires for all head shapes, 2 extra Clip-in pieces for the sides and added snap clips for security, its never been easier to switch up your style![read-more] Our heavenly real hair Halo extensions are available in 3 different lengths and 15 gorgeous shades for all hair types."
           }
         },
         "text_3GFVKz": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Heavenly hair in 3 different lengths and 15 \ngorgeous shades"
           }
