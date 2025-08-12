@@ -520,6 +520,12 @@
         "heading_4zfMGC",
         "text_ERhXke"
       ],
+      "custom_css": [
+        ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem;}",
+        ".rich-text__text {line-height: 1.2em; letter-spacing: -0.9px;}",
+        ".read-more__btn,.read-more__btn {text-transform: capitalize;}",
+        "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; }}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
