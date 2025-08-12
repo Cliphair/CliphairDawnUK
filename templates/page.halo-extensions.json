@@ -671,36 +671,54 @@
         "collapsible_row_PprJiX": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is it beginner‑friendly?",
+            "heading": "Is the Halo extensions hair human?",
             "icon": "none",
-            "row_content": "<p>Yes, our Halo Hair Extensions are completely beginner-friendly. They are applied using the simple clip in and wire system, making them ideal for those new to hair extensions and for quick, fuss-free styling. We also offer a step-by-step application video guide above if you’re in need of a tutorial!</p>",
+            "row_content": "<p>Yes, all of our hair extensions at Cliphair are made from 100%, Remy, human hair.</p>",
             "page": ""
           }
         },
         "collapsible_row_iGbTLK": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How long does it take to apply?",
+            "heading": "How long does it take to apply a halo hair extension?",
             "icon": "none",
-            "row_content": "<p>Cliphair Halo Hair Extensions can be applied in less than a minute. You just position and secure it to your natural hair and style it accordingly for a seamless, discreet blend.</p>",
+            "row_content": "<p>Halo hair extensions can be applied in under 60 seconds! Simply clip the top part of your hair up and sit the halo over the top.</p>",
             "page": ""
           }
         },
         "collapsible_row_ttW3hz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How do I remove it?",
+            "heading": "How do you remove Halo hair extensions?",
             "icon": "none",
-            "row_content": "<p>Removal is easy: simply unclip the piece gently from your natural hair, taking care to avoid snagging. Be sure to brush before removing to prevent any tangles.</p>",
+            "row_content": "<p>Simply undo the snap clips from the extension and gently pull the halo away from the hair in a downward motion. Store your halo hair extensions safely in our hanger and carrier.</p>",
             "page": ""
           }
         },
         "collapsible_row_wLAwRy": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What is the return policy?",
+            "heading": "How to curl halo extensions?",
             "icon": "none",
-            "row_content": "<p>Cliphair offers a generous return policy: you have 60 days from purchase to return an unused, unaltered item for a full refund. If you're in the UK, returns are free. For international returns, you’ll need to ship to our UK address. <strong>*Costs may vary</strong>. Note that the item must be in its original, unused condition (e.g. no dyeing, cutting, or styling) and any packaging should be intact.</p>",
+            "row_content": "<p>Unlike multipiece clip in hair extensions, its actually easier to curl your natural hair and halo extensions separately then blend them together with a wide toothed comb once they are applied.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gGE79G": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How to dye Halo hair extensions?",
+            "icon": "none",
+            "row_content": "<p>As the Halo hair extensions are made from human hair you can dye, wash, heat style and dry them as you would your natural hair. However, hair extensions should never be bleached or lightened, only toned or darkened using a semi permanent hair dye. See full dying instructions here.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C7bbCp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is Cliphairs return policy?",
+            "icon": "none",
+            "row_content": "<p>You have 60 days to return your Halo extensions providing they have not been used or customised. See our full returns policy here.</p>",
             "page": ""
           }
         }
@@ -709,7 +727,9 @@
         "collapsible_row_PprJiX",
         "collapsible_row_iGbTLK",
         "collapsible_row_ttW3hz",
-        "collapsible_row_wLAwRy"
+        "collapsible_row_wLAwRy",
+        "collapsible_row_gGE79G",
+        "collapsible_row_C7bbCp"
       ],
       "custom_css": [
         ".accordion {margin-top: 0;}",
