@@ -420,8 +420,8 @@
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}",
-        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
-        "@media screen and (min-width: 990px) {.images-list-title {letter-spacing: -2.4px; }}"
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
+        "@media screen and (min-width: 990px) {.v {letter-spacing: -2.4px; }}"
       ],
       "settings": {
         "title": "Halo Hair Extensions Before & After",
