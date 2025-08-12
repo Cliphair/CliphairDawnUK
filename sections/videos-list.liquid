@@ -55,7 +55,7 @@
           id="SectionHeading-{{ section.id }}"
           class="videos-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         >
-          {{ section.settings.title }}
+          {{ section.settings.title | newline_to_br }}
         </h2>
       </div>
     {%- endunless -%}
