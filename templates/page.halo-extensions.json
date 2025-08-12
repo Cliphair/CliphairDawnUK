@@ -420,7 +420,7 @@
       "custom_css": [
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}",
-        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px; font-size: 2.5rem;}",
         "@media screen and (min-width: 990px) {.videos-list-title {letter-spacing: -2.4px; }}"
       ],
       "settings": {
@@ -521,7 +521,7 @@
         "text_ERhXke"
       ],
       "custom_css": [
-        ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem;}",
+        ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem; font-size: 2.5rem;}",
         ".rich-text__text {line-height: 1.2em; letter-spacing: -0.9px;}",
         ".read-more__btn,.read-more__btn {text-transform: capitalize;}",
         "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; }}"
@@ -579,8 +579,8 @@
         "image4"
       ],
       "custom_css": [
-        ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem;}",
-        ".text-container p {font-size: 18px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
+        ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem; margin-top: 0;}",
+        ".text-container p {font-size: 15px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
         ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
         "@media screen and (min-width: 990px) {.title-wrapper {margin-bottom: 5.3rem; } .images-list-title {letter-spacing: -2.4px; }}"
       ],
