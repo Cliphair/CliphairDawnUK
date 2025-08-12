@@ -59,7 +59,7 @@
       "custom_css": [
         "p {margin: 0; line-height: 1.17em; letter-spacing: -0.9px;}",
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
-        ".read-more__btn,.read-more__btn{text-transform:capitalize;}",
+        ".read-more__btn,.read-more__btn {text-transform: capitalize;}",
         "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
         "@media screen and (min-width: 990px) {p {font-size: 3.5rem; letter-spacing: -2.1px; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
       ],
@@ -422,7 +422,7 @@
         ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}"
       ],
       "settings": {
-        "title": "",
+        "title": "Halo Hair Extensions Before & After",
         "heading_size": "h1",
         "introduction": "",
         "button_label": "",
