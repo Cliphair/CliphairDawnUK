@@ -498,6 +498,38 @@
         "trackable_name": ""
       }
     },
+    "rich_text_v2_jPJa6g": {
+      "type": "rich-text-v2",
+      "blocks": {
+        "heading_4zfMGC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Cliphair?",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text_ERhXke": {
+          "type": "text",
+          "settings": {
+            "text": "We’ve designed the ultimate halo hair extension using only the finest quality Remy human hair.[read-more] Unlike other brands, our halo comes with two bonus clips to add fullness at the sides, plus two discreet snap clips attached directly to the extension for extra security—reducing any risk of slipping. We’ve also included multiple wire lengths to perfectly fit any head size and shape, ensuring all-day comfort. If you’re searching for the best halo extensions, your search ends here!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4zfMGC",
+        "text_ERhXke"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 0
+      }
+    },
     "why-cliphair": {
       "type": "image-list",
       "blocks": {
@@ -547,7 +579,7 @@
         "@media screen and (min-width: 990px) {.title-wrapper {margin-bottom: 5.3rem; } .images-list-title {letter-spacing: -2.4px; }}"
       ],
       "settings": {
-        "title": "Why Cliphair?",
+        "title": "",
         "heading_size": "h1",
         "introduction": "",
         "text_allignment": "center",
@@ -711,6 +743,7 @@
     "videos_list_with_collection_modal2",
     "videos_list",
     "image-scroll",
+    "rich_text_v2_jPJa6g",
     "why-cliphair",
     "shop-by-shade",
     "slideshow_image_link_kAgcJP",
