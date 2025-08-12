@@ -17,7 +17,7 @@
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<style>\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset!important;\n  }\n}\n</style>\n<div class='page-width'><h1 class='h2 center'>Halo Hair Extensions</h1></div>",
+        "custom_liquid": "<style>\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: 990px!important;\n  }\n}\n</style>\n<div class='page-width'><h1 class='h2 center'>Halo Hair Extensions</h1></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 0
