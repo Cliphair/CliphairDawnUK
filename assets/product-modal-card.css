@@ -38,7 +38,6 @@
   object-fit: cover;
   margin: 0;
   display: block;
-  position: absolute;
 }
 
 .product-modal-card .product-modal-card__text-wrapper {
