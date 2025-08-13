@@ -31,6 +31,14 @@
   </style>
 {% endif %}
 
+{% liquid
+  assign author_obj = article.metafields.information.author.value
+  if author_obj == blank and article.author != blank
+    assign guessed_handle = article.author | handleize
+    assign author_obj = metaobjects.article_author[guessed_handle]
+  endif
+%}
+
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <article
     class="article-template section-{{ section.id }}-padding page-width {% if section.settings.enable_sidebar %}article-template-sidebar sidebar-{{ section.settings.sidebar_position }}{% endif %}"
@@ -124,7 +132,8 @@
                   itemscope
                   itemtype="http://schema.org/Person"
                 >
-                  Authored By <span itemprop="name">{{ article.author }}</span>
+                  Authored By
+                  <span itemprop="name">{{ article.author }}</span>
                 </span>
               {%- endif -%}
               {%- if block.settings.blog_show_date -%}
@@ -155,28 +164,11 @@
               {{ block.settings.text }}
             </div>
 
-            <div class="extra-block-wrapper" style="flex-wrap:wrap">
-              <div>
-                <span
-                  class="pipe-divider caption-with-letter-spacing"
-                >
-                  Authored By <span itemprop="name">{{ article.author }}</span>
-                </span>
-
-                <span class="caption-with-letter-spacing">
-                  {{- article.published_at | time_tag: format: 'date' -}}
-                </span>
+            {% if author_obj %}
+              <div id="articleAuthor">
+                {% render 'author-card', author_obj: author_obj %}
               </div>
-              {% if block.settings.enable_share %}
-                <div
-                  class="caption-with-letter-spacing article-template__social-sharing{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% assign share_url = request.origin | append: article.url %}
-                  {% render 'share-button', block: block, share_link: share_url %}
-                </div>
-              {% endif %}
-            </div>
+            {% endif %}
           {%- when 'faq' -%}
             {% liquid
               assign faqs = article.metafields.custom.faqs.value
