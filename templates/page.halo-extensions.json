@@ -709,7 +709,7 @@
           "settings": {
             "heading": "How to dye Halo hair extensions?",
             "icon": "none",
-            "row_content": "<p>As the Halo hair extensions are made from human hair you can dye, wash, heat style and dry them as you would your natural hair. However, hair extensions should never be bleached or lightened, only toned or darkened using a semi permanent hair dye. See full dying instructions here.  </p>",
+            "row_content": "<p>As the Halo hair extensions are made from human hair you can dye, wash, heat style and dry them as you would your natural hair. However, hair extensions should never be bleached or lightened, only toned or darkened using a semi permanent hair dye. See full dying instructions <a href=\"/pages/care-instructions\" title=\"Care Instructions\">here</a>.  </p>",
             "page": ""
           }
         },
