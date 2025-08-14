@@ -287,7 +287,7 @@
   margin: 0 auto;
 }
 
-.content-container {
+.product-popup-modal__content-info .content-container {
   grid-area: content;
   text-align: center;
   display: flex;
