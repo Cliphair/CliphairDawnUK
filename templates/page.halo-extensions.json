@@ -512,7 +512,7 @@
         "text_ERhXke": {
           "type": "text",
           "settings": {
-            "text": "We’ve designed the ultimate halo hair extension using only the finest quality Remy human hair.[read-more] Unlike other brands, our halo comes with two bonus clips to add fullness at the sides, plus two discreet snap clips attached directly to the extension for extra security—reducing any risk of slipping. We’ve also included multiple wire lengths to perfectly fit any head size and shape, ensuring all-day comfort. If you’re searching for the best halo extensions, your search ends here!"
+            "text": "We’ve designed the ultimate halo hair extension using only the finest quality Remy human hair.[read-more] Unlike other brands, our halo comes with two bonus clips to add fullness at the sides, plus two discreet snap clips attached directly to the extension for extra security, reducing any risk of slipping. We’ve also included multiple wire lengths to perfectly fit any head size and shape, ensuring all-day comfort. If you’re searching for the best halo extensions, your search ends here!"
           }
         }
       },
@@ -566,7 +566,7 @@
         "image4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/heat-proof-for-hairstyling.jpg",
+            "image": "shopify://shop_images/secure_all_day_1-min.jpg",
             "text_label": "<p>Built-in clips for added hold and all-day security</p>",
             "link": ""
           }
