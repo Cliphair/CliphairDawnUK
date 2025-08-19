@@ -37,9 +37,9 @@
         <form class="facets-vertical-form" id="FacetSortForm">
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
+              <p class="facet-filters__label caption-large text-body">
                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
+              </p>
               <div class="select">
                 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
                 <select
@@ -70,7 +70,7 @@
           </div>
 
           <div class="product-count-vertical light" role="status">
-            <h2 class="product-count__text text-body">
+            <p class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if collection.results_count -%}
                   {{
@@ -86,7 +86,7 @@
                   }}
                 {%- endif -%}
               </span>
-            </h2>
+            </p>
             <div class="loading-overlay__spinner">
               <svg
                 aria-hidden="true"
@@ -222,34 +222,34 @@
 {% assign collection_current_page = current_page %}
 {% assign global_index = collection_current_page | minus: 1 | times: paginate_by %}
 <script type="application/ld+json" id="collection-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": {{ collection.title | json }},
-  "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
-  "image": "{{ collection.image | img_url: "master" }}"{% endif %}
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
+    "image": "{{ collection.image | img_url: "master" }}"{% endif %}
+  }
 </script>
 
 {% if collection.products_count > 0 %}
-<script type="application/ld+json" id="item-list-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": {{ collection.title | json }},
-  "itemListOrder": "https://schema.org/ItemListOrderAscending",
-  "numberOfItems": {{ collection.products_count }},
-  "itemListElement": [
-    {% for product in collection.products %}
-      {
-        "@type": "ListItem",
-        "position": {{ global_index | plus: forloop.index }},
-        "url": "{{ shop.url }}{{ product.url | escape }}"
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
-</script>
+  <script type="application/ld+json" id="item-list-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": {{ collection.title | json }},
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": {{ collection.products_count }},
+      "itemListElement": [
+        {% for product in collection.products %}
+          {
+            "@type": "ListItem",
+            "position": {{ global_index | plus: forloop.index }},
+            "url": "{{ shop.url }}{{ product.url | escape }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
 {% endif %}
 
 <script>

@@ -107,6 +107,12 @@
               </div>
             {%- endif -%}
           {%- when 'title' -%}
+            {% liquid
+              assign published_date = article.published_at | date: '%s' | plus: 0
+              assign updated_date = article.updated_at | date: '%s' | plus: 0
+              assign five_days = 86400 | times: 5
+              assign diff_seconds = updated_date | minus: published_date
+            %}
             <header
               class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
               {{ block.shopify_attributes }}
@@ -117,6 +123,7 @@
               >
                 {{ article.title | escape }}
               </h1>
+
               {%- if block.settings.blog_show_author -%}
                 <span
                   class="pipe-divider caption-with-letter-spacing"
@@ -128,16 +135,21 @@
                 </span>
               {%- endif -%}
               {%- if block.settings.blog_show_date -%}
-                <span class="caption-with-letter-spacing" itemprop="dateCreated datePublished" datetime="{{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">
+                <span
+                  class="caption-with-letter-spacing"
+                  itemprop="dateCreated datePublished"
+                  datetime="{{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}"
+                >
                   {{- article.published_at | time_tag: format: 'date' -}}
                 </span>
               {%- endif -%}
-              {% liquid
-                assign published_date = article.published_at | date: "%s"
-                assign updated_date = article.updated_at | date: "%s"
-              %}
-              {% if updated_date > published_date %}
-                <p class="caption-with-letter-spacing">Last modified on <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">{{- article.updated_at | time_tag: format: 'date_at_time' -}}</span></p>
+              {% if diff_seconds >= five_days %}
+                <p class="caption-with-letter-spacing">
+                  Last modified on
+                  <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">
+                    {{- article.updated_at | time_tag: format: 'date' -}}
+                  </span>
+                </p>
               {% endif %}
             </header>
 
