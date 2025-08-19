@@ -1,0 +1,116 @@
+{{ 'section-table-of-content.css' | asset_url | stylesheet_tag }}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  {% if section.blocks.size > 0 %}
+    <menu-drawer>
+      <details class="mobile-facets__disclosure disclosure-has-popup">
+        <summary class="mobile-facets__open-wrapper focus-offset">
+          <span class="mobile-facets__open button button--secondary">
+            {% render 'icon-hamburger' %}
+          </span>
+          <span tabindex="0" class="mobile-facets__close mobile-facets__close--no-js">{%- render 'icon-close' -%}</span>
+        </summary>
+        <div class="table-of-contents">
+          <div class="table-of-contents__inner">
+            <div class="table-of-contents__header">
+              <div class="table-of-contents__header-inner">
+                <h2>Table Of Contents</h2>
+              </div>
+            </div>
+            <div class="table-of-contents__list">
+              <ul>
+                {% for block in section.blocks %}
+                  <li>
+                    <a href="#{{ block.settings.link_id }}" title="Go to {{ block.settings.label }}">
+                      {{- block.settings.label -}}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+              <div id="close-toc" class="close-toc">
+                <span class="button button--secondary">Close Menu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </menu-drawer>
+  {% endif %}
+  <div id="back-top-top" class="back-top-top visually-hidden">
+    <span class="button">
+      {% render 'icon-caret' %}
+    </span>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('back-top-top');
+    const closeToc = document.getElementById('close-toc');
+    if (button) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          button.classList.remove('visually-hidden');
+        } else {
+          button.classList.add('visually-hidden');
+        }
+      });
+
+      button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    if (closeToc) {
+      closeToc.addEventListener('click', (event) => {
+        const tocDetails = closeToc.closest('menu-drawer');
+        if (tocDetails) {
+          tocDetails.closeMenuDrawer(event);
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Table of contents",
+  "tag": "section",
+  "class": "section section-table-of-content",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "TOC Element",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Element label",
+          "id": "label"
+        },
+        {
+          "type": "text",
+          "id": "link_id",
+          "label": "Element id",
+          "info": "Id from the specific section you want to link send the customer to."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Table of contents"
+    }
+  ]
+}
+{% endschema %}

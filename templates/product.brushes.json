@@ -267,6 +267,9 @@
     },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
+      "custom_css": [
+        ".yotpo-main-reviews-widget > .yotpo-head {display: none !important;}"
+      ],
       "settings": {
         "title": "Verified Reviews: What People Are Saying",
         "heading_size": "h1",

@@ -1,0 +1,104 @@
+.is-empty #recommended-products-cart,
+.is-empty #recommended-products-cart-title {
+  display: none;
+}
+
+#recommended-products-cart,
+#recommended-products-cart-title {
+  padding: 2rem 1.5rem 1.5rem;
+  z-index: 5;
+}
+
+#recommended-products-cart {
+  padding-top: 0rem;
+}
+
+#recommended-products-cart-title {
+  position: sticky;
+  bottom: 0;
+}
+
+#recommended-products-cart-title .title-wrapper {
+  position: relative;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#recommended-products-cart-title .title-wrapper .icon {
+  height: 1rem;
+}
+
+#recommended-products-cart .grid {
+  --grid-mobile-horizontal-spacing: 1rem;
+  --grid-mobile-vertical-spacing: 1rem;
+  --grid-desktop-horizontal-spacing: 1rem;
+  --grid-desktop-vertical-spacing: 1rem;
+  margin-top: 0;
+}
+
+#recommended-products-cart .grid .grid__item {
+  min-width: 150px;
+}
+
+#recommended-products-cart .slider--desktop .slider__slide:first-child {
+  margin-left: 0;
+  scroll-margin-left: 0;
+}
+
+#recommended-products-cart .card__heading {
+  font-size: 1rem;
+}
+
+#recommended-products-cart .price {
+  font-size: 1.2rem;
+}
+
+#recommended-products-cart .card__information {
+  padding-bottom: 0;
+}
+
+#recommended-products-cart .yotpo-sr-bottom-line-summary>div {
+  margin-right: 0 !important;
+  height: 1.2rem !important;
+}
+
+#recommended-products-cart .yotpo-sr-bottom-line-right-panel {
+  display: none !important;
+}
+
+#recommended-products-cart .star-container {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/* slider buttons */
+#recommended-products-cart .slider-buttons>.slider-button {
+  background: var(--gradient-background);
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 22px);
+  right: 1.5rem;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  z-index: 2;
+}
+
+#recommended-products-cart .slider-buttons>.slider-button--prev {
+  left: 1.5rem;
+}
+
+#recommended-products-cart .slider-buttons>.slider-button--next {
+  right: 1.5rem;
+}
+
+#recommended-products-cart .slider-buttons>.slider-button .icon {
+  height: 1.2rem;
+}
+
+#recommended-products-cart .loading-overlay {
+  right: 0;
+  left: unset;
+  top: 50%;
+  transform: translate(0, -50%);
+}
