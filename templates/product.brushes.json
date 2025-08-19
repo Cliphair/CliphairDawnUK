@@ -268,7 +268,10 @@
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
-        "container_color_scheme": "",
+        "title": "Verified Reviews: What People Are Saying",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "container_color_scheme": "accent-4",
         "padding_top": 40,
         "padding_bottom": 40
       }
