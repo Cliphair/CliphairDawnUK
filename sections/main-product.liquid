@@ -2,6 +2,7 @@
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
+  data-page-title="{{ page_title }}"
 >
   {% assign delivery_threshold_block = section.blocks | where: 'type', 'delivery_threshold' %}
 
@@ -944,7 +945,12 @@
               </div>
             {% when 'available-shades' %}
               {% include 'collection-mapping', map_by: 'type' %}
-              {% render 'available-shades', product: product, collection: collection_mapped, block: block %}
+              {% render 'available-shades',
+                product: product,
+                collection: collection_mapped,
+                section_id: section.id,
+                block: block
+              %}
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">

@@ -20,6 +20,7 @@
 
   .available-shades__elements.selected {
     border: 1px solid black;
+    pointer-events: none;
   }
 
   .available-shades__elements .shade-snippet {
@@ -59,6 +60,39 @@
     transform: rotate(180deg);
     transition: transform 0.3s ease;
   }
+
+  /* Prevent scroll */
+  body.loader-open {
+    overflow: hidden;
+  }
+
+  /* Loader overlay */
+  .fullscreen-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Spinner */
+  .fullscreen-loader::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>
 
 {% liquid
@@ -68,16 +102,17 @@
   endif
   assign total_products = collection.all_products_count
 %}
-<div class="available-shades">
+<shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
   <p class="available-shades__title">Select shade</p>
   <ul class="available-shades__list">
+    {% comment %}Visible product shade snippet{% endcomment %}
     {% if first_row_counter == 6 %}
       {% liquid
         assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
         assign shade_image = images[image_handle]
       %}
-      {% if shade_image %}
-        <li class="available-shades__elements selected">
+      {% if shade_image != blank %}
+        <li class="available-shades__elements selected" data-product-url="{{ product.url }}">
           <img
             srcset="
               {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -90,7 +125,7 @@
             "
             src="{{ shade_image | image_url: width: 533 }}"
             sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-            alt=""
+            alt="{{ product.metafields.custom.colour_name }} shade snippet"
             class="motion-reduce shade-snippet"
             loading="lazy"
             width="{{ shade_image.width }}"
@@ -100,6 +135,7 @@
       {% endif %}
     {% endif %}
 
+    {% comment %}First row products shade snippet{% endcomment %}
     {% for product in collection.products %}
       {% if first_row_counter > 0 %}
         {% unless request.path contains product.handle %}
@@ -108,8 +144,8 @@
               assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
               assign shade_image = images[image_handle]
             %}
-            {% if shade_image %}
-              <li class="available-shades__elements">
+            {% if shade_image != blank %}
+              <li class="available-shades__elements" data-product-url="{{ product.url }}">
                 <img
                   srcset="
                     {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -122,7 +158,7 @@
                   "
                   src="{{ shade_image | image_url: width: 533 }}"
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                  alt=""
+                  alt="{{ product.metafields.custom.colour_name }} shade snippet"
                   class="motion-reduce shade-snippet"
                   loading="lazy"
                   width="{{ shade_image.width }}"
@@ -145,14 +181,18 @@
   </div>
   <div id="available-shades" class="hidden">
     <ul class="available-shades__list">
+      {% comment %}All products shade snippet{% endcomment %}
       {% for product in collection.products %}
         {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
           {% liquid
             assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
             assign shade_image = images[image_handle]
           %}
-          {% if shade_image %}
-            <li class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}">
+          {% if shade_image != blank %}
+            <li
+              class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
+              data-product-url="{{ product.url }}"
+            >
               <img
                 srcset="
                   {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -165,7 +205,7 @@
                 "
                 src="{{ shade_image | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                alt=""
+                alt="{{ product.metafields.custom.colour_name }} shade snippet"
                 class="motion-reduce shade-snippet"
                 loading="lazy"
                 width="{{ shade_image.width }}"
@@ -177,22 +217,25 @@
       {% endfor %}
     </ul>
   </div>
-</div>
+</shade-selector>
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const summary = document.querySelector('.available-shades__buttons summary');
+      const toggleTarget = document.getElementById('available-shades');
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const summary = document.querySelector('.available-shades__buttons summary');
-    const toggleTarget = document.getElementById('available-shades');
+      if (summary && toggleTarget) {
+        summary.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent native summary toggle if <details> is not used
 
-    if (summary && toggleTarget) {
-      summary.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent native summary toggle if <details> is not used
+          const isExpanded = summary.getAttribute('aria-expanded') === 'true';
 
-        const isExpanded = summary.getAttribute('aria-expanded') === 'true';
+          summary.setAttribute('aria-expanded', String(!isExpanded));
+          toggleTarget.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+{% endcomment %}
 
-        summary.setAttribute('aria-expanded', String(!isExpanded));
-        toggleTarget.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
+<script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
