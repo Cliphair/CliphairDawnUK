@@ -298,7 +298,7 @@
           <noscript class="small-hide medium-hide">
             {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
               <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+                <p class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</p>
                 <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
                   {%- for language in localization.available_languages -%}
                     <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
@@ -315,7 +315,7 @@
           <localization-form class="small-hide medium-hide no-js-hidden">
             {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
               <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                <p class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</p>
                 {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
               </div>
             {%- endform -%}

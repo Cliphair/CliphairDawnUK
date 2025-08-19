@@ -3279,7 +3279,7 @@
                 -%}
               </a>
             {%- endif -%}
-            <div class='grid' style='justify-content:space-between; flex-direction:row-reverse;'>
+            <div class="grid" style="justify-content:space-between; flex-direction:row-reverse;">
               <div class="menu-drawer__contact">
                 <a
                   href="/pages/contact-us"
@@ -3288,16 +3288,19 @@
                   Contact Us
                 </a>
               </div>
-              
+
               {%- if localization.available_countries or localization.available_languages -%}
                 <div class="menu-drawer__localization header-localization">
                   {%- if localization.available_countries and localization.available_countries.size > 1 -%}
                     <noscript>
-                      {%- form 'localization', id: 'HeaderCountryMobileFormNoScriptDrawer', class: 'localization-form' -%}
+                      {%- form 'localization',
+                        id: 'HeaderCountryMobileFormNoScriptDrawer',
+                        class: 'localization-form'
+                      -%}
                         <div class="localization-form__select">
-                          <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScriptDrawer">
+                          <p class="visually-hidden" id="HeaderCountryMobileLabelNoScriptDrawer">
                             {{ 'localization.country_label' | t }}
-                          </h2>
+                          </p>
                           <select
                             class="localization-selector link"
                             name="country_code"
@@ -3320,19 +3323,19 @@
                         <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
                       {%- endform -%}
                     </noscript>
-  
+
                     <localization-form class="no-js-hidden">
                       {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
                         <div>
-                          <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
+                          <p class="visually-hidden" id="HeaderCountryMobileLabel">
                             {{ 'localization.country_label' | t }}
-                          </h2>
+                          </p>
                           {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
                         </div>
                       {%- endform -%}
                     </localization-form>
                   {% endif %}
-  
+
                   {%- if localization.available_languages and localization.available_languages.size > 1 -%}
                     <noscript>
                       {%- form 'localization',
@@ -3365,7 +3368,7 @@
                         <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
                       {%- endform -%}
                     </noscript>
-  
+
                     <localization-form class="no-js-hidden">
                       {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
                         <div>
