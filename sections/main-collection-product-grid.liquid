@@ -30,12 +30,12 @@
 {%- endstyle -%}
 
 {% liquid
-  assign campaign_page = pages["halo-hair-extensions"]
-  assign campaign_image = images["halo-mini-collection-banner-min.jpg"]
-  assign paginate_by =  section.settings.products_per_page
+  assign campaign_page = pages['halo-hair-extensions']
+  assign campaign_image = images['halo-mini-collection-banner-min.jpg']
+  assign paginate_by = section.settings.products_per_page
 
   if campaign_image and campaign_page
-   assign paginate_by =  paginate_by | minus: 1
+    assign paginate_by = paginate_by | minus: 1
   endif
 %}
 
@@ -47,9 +47,9 @@
         <form class="facets-vertical-form" id="FacetSortForm">
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
+              <p class="facet-filters__label caption-large text-body">
                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
+              </p>
               <div class="select">
                 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
                 <select
@@ -80,7 +80,7 @@
           </div>
 
           <div class="product-count-vertical light" role="status">
-            <h2 class="product-count__text text-body">
+            <p class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if collection.results_count -%}
                   {{
@@ -96,7 +96,7 @@
                   }}
                 {%- endif -%}
               </span>
-            </h2>
+            </p>
             <div class="loading-overlay__spinner">
               <svg
                 aria-hidden="true"
@@ -172,7 +172,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                
+
                 {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} trackable-section"
@@ -182,19 +182,27 @@
                     {% endif %}
                     data-section-name="collection_mini_banner"
                   >
-
                     {% if campaign_image and campaign_page %}
-                      <a href='{{ campaign_page.url }}' title='{{ campaign_page.title }}'
-                          data-event-type="section_click"
-                          data-section-name="collection_campaign_banner"
-                          data-cta-label="click_summer_2025_mini_banner"  
+                      <a
+                        href="{{ campaign_page.url }}"
+                        title="{{ campaign_page.title }}"
+                        data-event-type="section_click"
+                        data-section-name="collection_campaign_banner"
+                        data-cta-label="click_summer_2025_mini_banner"
                       >
-                        <img loading='lazy' style='width:100%; height:100%; object-fit:cover; display:block;' src='{{ campaign_image | image_url }}' width='{{ campaign_image.width }}' height='{{ campaign_image.height }}' alt='{{ campaign_image.alt }}'>
+                        <img
+                          loading="lazy"
+                          style="width:100%; height:100%; object-fit:cover; display:block;"
+                          src="{{ campaign_image | image_url }}"
+                          width="{{ campaign_image.width }}"
+                          height="{{ campaign_image.height }}"
+                          alt="{{ campaign_image.alt }}"
+                        >
                       </a>
                     {% endif %}
                   </li>
                 {% endif %}
-                
+
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
@@ -254,34 +262,34 @@
 {% assign collection_current_page = current_page %}
 {% assign global_index = collection_current_page | minus: 1 | times: paginate_by %}
 <script type="application/ld+json" id="collection-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": {{ collection.title | json }},
-  "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
-  "image": "{{ collection.image | img_url: "master" }}"{% endif %}
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    "url": "{{ shop.url | append: collection.url }}"{% if collection.image %},
+    "image": "{{ collection.image | img_url: "master" }}"{% endif %}
+  }
 </script>
 
 {% if collection.products_count > 0 %}
-<script type="application/ld+json" id="item-list-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": {{ collection.title | json }},
-  "itemListOrder": "https://schema.org/ItemListOrderAscending",
-  "numberOfItems": {{ collection.products_count }},
-  "itemListElement": [
-    {% for product in collection.products %}
-      {
-        "@type": "ListItem",
-        "position": {{ global_index | plus: forloop.index }},
-        "url": "{{ shop.url }}{{ product.url | escape }}"
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
-</script>
+  <script type="application/ld+json" id="item-list-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": {{ collection.title | json }},
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": {{ collection.products_count }},
+      "itemListElement": [
+        {% for product in collection.products %}
+          {
+            "@type": "ListItem",
+            "position": {{ global_index | plus: forloop.index }},
+            "url": "{{ shop.url }}{{ product.url | escape }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
 {% endif %}
 
 <script>
