@@ -1,0 +1,122 @@
+pulldown-container .grid {
+  align-items: stretch;
+  --grid-mobile-horizontal-spacing: 10px;
+  --grid-mobile-vertical-spacing: 10px;
+  --grid-desktop-horizontal-spacing: 20px;
+  --grid-desktop-vertical-spacing: 20px;
+}
+
+pulldown-container .main-grid {
+  max-width: var(--page-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+pulldown-container .grid__item>* {
+  height: 100%;
+  cursor: pointer;
+}
+
+pulldown-container .grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+pulldown-container .grid__item--pulldown {
+  grid-column: 1 / -1;
+  animation: fadeIn 0.3s ease;
+  width: 100% !important;
+  max-width: unset !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+pulldown-container .pulldown-content__inner * {
+  letter-spacing: -5%;
+}
+
+pulldown-container .pulldown-content__inner .h2 {
+  margin: 2rem 0 0;
+}
+
+pulldown-container .pulldown-content__inner .grid:not(.slider) {
+  align-items: stretch;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+pulldown-container .pulldown-content__inner .pulldown__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid rgba(var(--color-foreground), 0.5);
+}
+
+pulldown-container .pulldown-content__inner .pulldown__card-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+pulldown-container .pulldown-content__inner .pulldown__card-bottom .h4 {
+  margin: 0;
+}
+
+pulldown-container .pulldown-content__inner .pulldown__card-bottom ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding: 0;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 990px) {
+  pulldown-container .pulldown-content__inner .pulldown__card-bottom ul {
+    font-size: 1.5rem;
+  }
+}
+
+pulldown-container .pulldown-content__inner .pulldown__card-bottom .button {
+  min-height: unset;
+  min-width: unset;
+  padding: 0.75rem 1rem;
+}
+
+pulldown-container .pulldown-content__inner .grid__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@media screen and (min-width: {
+      {
+      settings.page_width
+    }
+  }
+
+  px) {
+  pulldown-container .main-grid {
+    padding: 0 5rem;
+  }
+
+  pulldown-container .pulldown-content__inner.page-width {
+    padding: 0;
+  }
+}
