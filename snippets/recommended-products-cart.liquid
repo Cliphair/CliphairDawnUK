@@ -154,9 +154,9 @@
   onclick="scrollToBottomSmooth(this)"
 >
   <div class="title-wrapper title-wrapper--no-margin">
-    <h2 class="title inline-richtext h3">
+    <p class="title inline-richtext h3">
       {{ section.settings.title | default: 'You Might Also Like' }}
-    </h2>
+    </p>
     {% render 'icon-caret' %}
   </div>
 </div>
@@ -180,7 +180,7 @@
             id="Slide-recommended-products-cart-{{ forloop.index }}"
             class="grid__item slider__slide"
           >
-            {% render 'card-product',
+            {% render 'card-product-no-headings',
               card_product: product,
               media_aspect_ratio: 'square',
               show_rating: true,
