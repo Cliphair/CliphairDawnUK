@@ -741,7 +741,7 @@
         "duration_mobile": 40,
         "columns_desktop": 6,
         "scroll_desktop": true,
-        "duration_desktop": 40,
+        "duration_desktop": 60,
         "padding_top": 20,
         "padding_bottom": 20
       }

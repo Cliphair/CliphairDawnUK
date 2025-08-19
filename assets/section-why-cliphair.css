@@ -1,0 +1,44 @@
+.section-why-cliphair .images-list-title {
+  font-family: 'Libre Caslon Text', serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.section-why-cliphair .page-width {
+  --page-width: 637px;
+}
+
+.section-why-cliphair .images-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-why-cliphair .images-list__item img {
+  width: auto;
+  max-width: min(50%, 50px);
+  margin: 0 auto;
+}
+
+.section-why-cliphair .images-list__item .text-container {
+  font-size: 1rem;
+  letter-spacing: -4%;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .section-why-cliphair .images-list__item img {
+    max-width: 100%;
+  }
+
+  .section-why-cliphair .images-list__item .text-container {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  .section-why-cliphair .images-list {
+    --grid-mobile-horizontal-spacing: 0.5rem;
+  }
+}
