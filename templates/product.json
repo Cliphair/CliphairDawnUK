@@ -311,7 +311,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "featured_collection_Uj93ay": {
@@ -344,7 +344,7 @@
         "low_inventory": 5,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 40
       }
     },
@@ -370,7 +370,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "hair_extension_comparison_table_GpJ4WR": {
@@ -379,7 +379,7 @@
       "settings": {
         "color_scheme": "",
         "options": "all-hair-extensions-features",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 40
       }
     },
