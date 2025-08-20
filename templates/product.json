@@ -12,60 +12,14 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "information_videos_8BXc9p": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "accent-4"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "heading_size": "h2"
           }
         },
-        "a0b50969-ea33-4844-941d-db5577728e55": {
-          "type": "rating",
-          "settings": {}
-        },
-        "delivery-threshold": {
-          "type": "delivery_threshold",
-          "settings": {
-            "color_scheme": "accent-2"
-          }
-        },
-        "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
-          "type": "short-description",
-          "settings": {
-            "title": "Features"
-          }
-        },
-        "information_videos_MKNiNH": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "inverse"
-          }
-        },
         "price": {
           "type": "price",
-          "settings": {}
-        },
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
-          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "dropdown"
-          }
-        },
-        "quantity_selector_RERRjV": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "sc_back_in_stock_app_block_JKfDnH": {
-          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
         "buy_buttons": {
@@ -73,14 +27,13 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "color_scheme": "inverse"
+            "color_scheme": "inverse",
+            "picker_type": "dropdown"
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
+        "sc_back_in_stock_app_block_JKfDnH": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "settings": {}
         },
         "order_deadline_2_app_block_product_DHR7j6": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
@@ -93,11 +46,6 @@
             "placementTarget": "",
             "loadEventName": ""
           }
-        },
-        "order_deadline_67UiV7": {
-          "type": "order_deadline",
-          "disabled": true,
-          "settings": {}
         },
         "icon_with_text_AGQyTW": {
           "type": "icon-with-text",
@@ -114,6 +62,64 @@
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
+          "settings": {}
+        },
+        "available_shades_yt4HbK": {
+          "type": "available-shades",
+          "settings": {}
+        },
+        "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
+          "type": "short-description",
+          "settings": {
+            "title": "Features"
+          }
+        },
+        "information_videos_8BXc9p": {
+          "type": "information-videos",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "accent-4"
+          }
+        },
+        "a0b50969-ea33-4844-941d-db5577728e55": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "delivery-threshold": {
+          "type": "delivery_threshold",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "accent-2"
+          }
+        },
+        "information_videos_MKNiNH": {
+          "type": "information-videos",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "inverse"
+          }
+        },
+        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector_RERRjV": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "order_deadline_67UiV7": {
+          "type": "order_deadline",
+          "disabled": true,
           "settings": {}
         },
         "collapsible-row-0": {
@@ -165,31 +171,38 @@
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
-        "information_videos_8BXc9p",
         "title",
+        "price",
+        "buy_buttons",
+        "sc_back_in_stock_app_block_JKfDnH",
+        "order_deadline_2_app_block_product_DHR7j6",
+        "icon_with_text_AGQyTW",
+        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
+        "available_shades_yt4HbK",
+        "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
+        "information_videos_8BXc9p",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "delivery-threshold",
-        "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_MKNiNH",
-        "price",
         "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker",
         "variant_picker",
         "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
-        "buy_buttons",
-        "share",
-        "order_deadline_2_app_block_product_DHR7j6",
         "order_deadline_67UiV7",
-        "icon_with_text_AGQyTW",
-        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc"
+        "collapsible_tab_36Cgxc",
+        "share"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
