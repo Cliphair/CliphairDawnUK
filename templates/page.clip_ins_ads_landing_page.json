@@ -125,7 +125,7 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Jayde - Removal.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
             "modal_title": "<strong>Seamless Clip In</strong> Hair Extensions",
@@ -188,7 +188,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": false,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
