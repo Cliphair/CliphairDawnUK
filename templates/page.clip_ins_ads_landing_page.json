@@ -276,6 +276,64 @@
         "trackable_name": "colour match and quiz"
       }
     },
+    "why_cliphair_97NNxq": {
+      "type": "why-cliphair",
+      "blocks": {
+        "image_LaMMVP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10318.svg",
+            "text_label": "<p>100%<br/>REMY HAIR</p>",
+            "link": ""
+          }
+        },
+        "image_aCXK7F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_22692.svg",
+            "text_label": "<p>FREE COLOUR <br/>MATCH</p>",
+            "link": ""
+          }
+        },
+        "image_cnDWFx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10295.svg",
+            "text_label": "<p>WORLDWIDE<br/>SHIPPING</p>",
+            "link": ""
+          }
+        },
+        "image_nM7EUp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10293.svg",
+            "text_label": "<p>BUY NOW<br/>PAY LATER</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_LaMMVP",
+        "image_aCXK7F",
+        "image_cnDWFx",
+        "image_nM7EUp"
+      ],
+      "name": "Why Cliphair logos",
+      "settings": {
+        "title": "<strong>Why Cliphair?</strong>",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "4",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "videos_list_with_button_LFzwqE": {
       "type": "videos-list-with-button",
       "blocks": {
@@ -468,6 +526,7 @@
     "videos_list_with_collection_modal",
     "collection_carrousel_QhAGdA",
     "colour_match_quiz_grid",
+    "why_cliphair_97NNxq",
     "videos_list_with_button_LFzwqE",
     "custom_liquid_qznp7k",
     "featured_collection_HYViXD",
