@@ -115,7 +115,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 20,
+        "padding_bottom": 40,
         "trackable_name": "anchor_menu"
       }
     },
@@ -194,8 +194,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -238,8 +238,8 @@
         "columns_mobile": "4",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "trackable_name": "shop_by_shade"
       }
     },
@@ -271,8 +271,8 @@
       "name": "Colour Match & Quiz",
       "settings": {
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "trackable_name": "colour match and quiz"
       }
     },
@@ -330,9 +330,70 @@
         "columns_mobile": "4",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
+    },
+    "pulldown_info_grid_y7zgT4": {
+      "type": "pulldown-info-grid",
+      "blocks": {
+        "pulldown_87yzRf": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-collection.jpg",
+            "pulldown": "clip-in-collection"
+          }
+        },
+        "pulldown_MHyam3": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/professional-collection.jpg",
+            "pulldown": "professional-collection"
+          }
+        },
+        "pulldown_Whp6HL": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/brides.jpg",
+            "pulldown": "the-bridal-hair-extensions-shop"
+          }
+        },
+        "product_grid_PPEeeh": {
+          "type": "product-grid",
+          "settings": {
+            "image": "shopify://shop_images/haircare_52151ca3-d42b-4ea7-81ad-ae9187ad1b1f.jpg",
+            "title": "",
+            "introduction": "",
+            "collection": "hair-care",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "show_view_all": true,
+            "view_all_style": "solid",
+            "enable_desktop_slider": false,
+            "image_ratio": "adapt",
+            "image_shape": "default",
+            "show_secondary_image": false,
+            "colour_as_title": false,
+            "show_type": false,
+            "show_vendor": false,
+            "show_rating": false,
+            "enable_quick_add": false,
+            "badge_style": "float",
+            "display_low_inventory": false,
+            "low_inventory": 5,
+            "columns_mobile": "2",
+            "swipe_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "pulldown_87yzRf",
+        "pulldown_MHyam3",
+        "pulldown_Whp6HL",
+        "product_grid_PPEeeh"
+      ],
+      "name": "Pulldown info grid",
+      "settings": {}
     },
     "videos_list_with_button_LFzwqE": {
       "type": "videos-list-with-button",
@@ -442,8 +503,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "custom_liquid_qznp7k": {
@@ -455,7 +516,7 @@
       "settings": {
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
         "color_scheme": "",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -468,7 +529,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
+        "collection": "clip-in-hair-extensions",
         "products_to_show": 8,
         "columns_desktop": 5,
         "full_width": false,
@@ -516,6 +577,13 @@
         "padding_bottom": 20,
         "trackable_name": "interactive_table"
       }
+    },
+    "table_of_content_7Y86MV": {
+      "type": "table-of-content",
+      "name": "Table of contents",
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -527,10 +595,12 @@
     "collection_carrousel_QhAGdA",
     "colour_match_quiz_grid",
     "why_cliphair_97NNxq",
+    "pulldown_info_grid_y7zgT4",
     "videos_list_with_button_LFzwqE",
     "custom_liquid_qznp7k",
     "featured_collection_HYViXD",
     "custom_liquid_YkPTqW2",
-    "interactive-table"
+    "interactive-table",
+    "table_of_content_7Y86MV"
   ]
 }
