@@ -36,7 +36,7 @@
       ],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h1'>Copy to go,<br>here <b><em>please</em></b> thanks</p></div>",
+        "custom_liquid": "<div class='page-width'><p class='h1'><em>Clip In </em><br>Human Hair Extensions</p></div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 20
@@ -128,8 +128,9 @@
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<b>Fringe Clip In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
+            "modal_title": "<strong>Seamless Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "seamless-clip-in-hair-extensions-double-drawn-blondeme"
           }
         },
         "video_t8zGmx": {
@@ -138,8 +139,9 @@
             "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<b>Seamless Clip In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
+            "modal_title": "<strong>Ultra Volume Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "video_ayXWCz": {
@@ -148,8 +150,9 @@
             "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<b>Remy Tape In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "modal_title": "<strong>Double Weft Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "double-wefted-set-clip-in-hair-extensions-medium-brown-4"
           }
         },
         "video_TfRk3t4": {
@@ -158,28 +161,9 @@
             "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<b>Fringe Clip In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Blonde_Flower.jpg"
-          }
-        },
-        "video_t8zGmx5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "<b>Seamless Clip In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Beachy_Waves.jpg"
-          }
-        },
-        "video_ayXWCz6": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "<b>Remy Tape In</b> Hair Extensions",
-            "modal_image": "shopify://shop_images/Featured_Image.jpg"
+            "modal_title": "<strong>Full Head Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "full-head-set-clip-in-hair-extensions-brown-blonde-mix-14-22"
           }
         }
       },
@@ -187,9 +171,7 @@
         "video_TfRk3t",
         "video_t8zGmx",
         "video_ayXWCz",
-        "video_TfRk3t4",
-        "video_t8zGmx5",
-        "video_ayXWCz6"
+        "video_TfRk3t4"
       ],
       "custom_css": [
         ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
