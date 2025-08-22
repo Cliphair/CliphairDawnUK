@@ -49,49 +49,49 @@
           "type": "anchor",
           "settings": {
             "anchor_label": "Hair Quiz",
-            "anchor_id": "#colour-match-and-quiz"
+            "anchor_id": "colour-match-and-quiz"
           }
         },
         "anchor_PeyMrt": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Colour match",
-            "anchor_id": "#colour-match-and-quiz"
+            "anchor_id": "colour-match-and-quiz"
           }
         },
         "anchor_G94cWf": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Shop by shade",
-            "anchor_id": "#shop_by_shade"
+            "anchor_id": "shop_by_shade"
           }
         },
         "anchor_UjpA6L": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Best sellers",
-            "anchor_id": "#best_sellers"
+            "anchor_id": "best_sellers"
           }
         },
         "anchor_EQ6qR6": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Our collections",
-            "anchor_id": "#shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+            "anchor_id": "shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
           }
         },
         "anchor_nDBtWz": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Compare products",
-            "anchor_id": "#interactive_table"
+            "anchor_id": "interactive_table"
           }
         },
         "anchor_xF3T9q": {
           "type": "anchor",
           "settings": {
             "anchor_label": "Reviews",
-            "anchor_id": "#"
+            "anchor_id": ""
           }
         }
       },
