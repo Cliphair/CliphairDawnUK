@@ -1,0 +1,653 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page-font": {
+      "type": "page_font_ads",
+      "settings": {
+        "font-text-1": "inter_n4",
+        "font-btns": "inter_n4"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "heading_size": "h1",
+        "show_content": true,
+        "text_alignment": "left",
+        "color_scheme": "accent-4",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_YkPTqW": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h1 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h1'><em>Clip In </em><br>Human Hair Extensions</p></div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "anchor-menu": {
+      "type": "anchor-menu",
+      "blocks": {
+        "anchor_37ChwE": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Hair Quiz",
+            "anchor_id": "colour-match-and-quiz"
+          }
+        },
+        "anchor_PeyMrt": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Colour match",
+            "anchor_id": "colour-match-and-quiz"
+          }
+        },
+        "anchor_G94cWf": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Shop by shade",
+            "anchor_id": "shop_by_shade"
+          }
+        },
+        "anchor_UjpA6L": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Best sellers",
+            "anchor_id": "best_sellers"
+          }
+        },
+        "anchor_EQ6qR6": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Our collections",
+            "anchor_id": "shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+          }
+        },
+        "anchor_nDBtWz": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Compare products",
+            "anchor_id": "interactive_table"
+          }
+        },
+        "anchor_xF3T9q": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Reviews",
+            "anchor_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "anchor_37ChwE",
+        "anchor_PeyMrt",
+        "anchor_G94cWf",
+        "anchor_UjpA6L",
+        "anchor_EQ6qR6",
+        "anchor_nDBtWz",
+        "anchor_xF3T9q"
+      ],
+      "name": "Anchor menu",
+      "settings": {
+        "text_allignment": "left",
+        "button_secondary": false,
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "scheme-a84f2420-9b4e-4c74-be3c-064bbd6ce99d",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "trackable_name": "anchor_menu"
+      }
+    },
+    "table_of_content_7Y86MV": {
+      "type": "table-of-content",
+      "blocks": {
+        "link_dReCJe": {
+          "type": "link",
+          "settings": {
+            "label": "Hair Quiz",
+            "link_id": "colour-match-and-quiz"
+          }
+        },
+        "link_VcVJGF": {
+          "type": "link",
+          "settings": {
+            "label": "Colour match",
+            "link_id": "colour-match-and-quiz"
+          }
+        },
+        "link_HmLaye": {
+          "type": "link",
+          "settings": {
+            "label": "Shop by shade",
+            "link_id": "shop_by_shade"
+          }
+        },
+        "link_RPyMYV": {
+          "type": "link",
+          "settings": {
+            "label": "Best sellers",
+            "link_id": "best_sellers"
+          }
+        },
+        "link_TGYdQH": {
+          "type": "link",
+          "settings": {
+            "label": "Our collections",
+            "link_id": "shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+          }
+        },
+        "link_46emQy": {
+          "type": "link",
+          "settings": {
+            "label": "Compare products",
+            "link_id": "interactive_table"
+          }
+        },
+        "link_ckwGUy": {
+          "type": "link",
+          "settings": {
+            "label": "Reviews",
+            "link_id": "#"
+          }
+        }
+      },
+      "block_order": [
+        "link_dReCJe",
+        "link_VcVJGF",
+        "link_HmLaye",
+        "link_RPyMYV",
+        "link_TGYdQH",
+        "link_46emQy",
+        "link_ckwGUy"
+      ],
+      "name": "Table of contents",
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "videos_list_with_collection_modal": {
+      "type": "videos-list-with-collection-modal",
+      "blocks": {
+        "video_TfRk3t": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Jayde - Removal.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Seamless Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "seamless-clip-in-hair-extensions-double-drawn-blondeme"
+          }
+        },
+        "video_t8zGmx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Ultra Volume Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
+          }
+        },
+        "video_ayXWCz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Double Weft Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "double-wefted-set-clip-in-hair-extensions-medium-brown-4"
+          }
+        },
+        "video_TfRk3t4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Naomi+Price+Festival+Reel+18in+Full+Head+Iced+Cappuccino+.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Full Head Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "full-head-set-clip-in-hair-extensions-brown-blonde-mix-14-22"
+          }
+        }
+      },
+      "block_order": [
+        "video_TfRk3t",
+        "video_t8zGmx",
+        "video_ayXWCz",
+        "video_TfRk3t4"
+      ],
+      "custom_css": [
+        ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
+      ],
+      "name": "Videos with modal",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": false,
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": "shoppable_video_carrousel"
+      }
+    },
+    "collection_carrousel_QhAGdA": {
+      "type": "collection-carrousel",
+      "blocks": {
+        "collections_dTy7qE": {
+          "type": "collections",
+          "settings": {
+            "label": "",
+            "collection-list": "shop-by-shade",
+            "button_label": "Explore All",
+            "link": "shopify://pages/hair-extensions-by-colour",
+            "button_style_secondary": false,
+            "circle_images": true
+          }
+        }
+      },
+      "block_order": [
+        "collections_dTy7qE"
+      ],
+      "custom_css": [
+        "h3 {color: #414141;}",
+        ".button-wrapper a {font-weight: 500; max-width: unset; width: unset;}",
+        ".collection-carrousel {margin-bottom: 4rem;}",
+        ".collection-carrousel__item {min-width: unset;}",
+        "@media screen and (max-width: 420px) {.section-collection-carrousel .block-container {margin-top: 2rem; } .card__heading {font-size: 1.2rem; } .collection-carrousel {margin-bottom: 3rem; --grid-mobile-horizontal-spacing: 1.5rem; } .button-wrapper a {min-height: unset; padding: 1rem 1.5rem; font-size: 1.2rem; }}"
+      ],
+      "name": "Collection carrousel",
+      "settings": {
+        "title": "Shop by shade",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "hide_card_arrow": true,
+        "columns_desktop": 6,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "4",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "trackable_name": "shop_by_shade"
+      }
+    },
+    "colour_match_quiz_grid": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_XDLgfN": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/colour-matching-service"
+          }
+        },
+        "popup_pymxbP": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image.jpg",
+            "url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "link_XDLgfN",
+        "popup_pymxbP"
+      ],
+      "custom_css": [
+        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": "colour match and quiz"
+      }
+    },
+    "why_cliphair_97NNxq": {
+      "type": "why-cliphair",
+      "blocks": {
+        "image_LaMMVP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10318.svg",
+            "text_label": "<p>100%<br/>REMY HAIR</p>",
+            "link": ""
+          }
+        },
+        "image_aCXK7F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_22692.svg",
+            "text_label": "<p>FREE COLOUR <br/>MATCH</p>",
+            "link": ""
+          }
+        },
+        "image_cnDWFx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10295.svg",
+            "text_label": "<p>WORLDWIDE<br/>SHIPPING</p>",
+            "link": ""
+          }
+        },
+        "image_nM7EUp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_10293.svg",
+            "text_label": "<p>BUY NOW<br/>PAY LATER</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_LaMMVP",
+        "image_aCXK7F",
+        "image_cnDWFx",
+        "image_nM7EUp"
+      ],
+      "name": "Why Cliphair logos",
+      "settings": {
+        "title": "<strong>Why Cliphair?</strong>",
+        "heading_size": "h2",
+        "introduction": "",
+        "text_allignment": "center",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "4",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "pulldown_info_grid_y7zgT4": {
+      "type": "pulldown-info-grid",
+      "blocks": {
+        "pulldown_87yzRf": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-collection.jpg",
+            "pulldown": "clip-in-collection"
+          }
+        },
+        "pulldown_MHyam3": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/professional-collection.jpg",
+            "pulldown": "professional-collection"
+          }
+        },
+        "pulldown_Whp6HL": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/brides.jpg",
+            "pulldown": "the-bridal-hair-extensions-shop"
+          }
+        },
+        "product_grid_PPEeeh": {
+          "type": "product-grid",
+          "settings": {
+            "image": "shopify://shop_images/haircare_52151ca3-d42b-4ea7-81ad-ae9187ad1b1f.jpg",
+            "title": "",
+            "introduction": "",
+            "collection": "hair-care",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "show_view_all": true,
+            "view_all_style": "solid",
+            "enable_desktop_slider": false,
+            "image_ratio": "adapt",
+            "image_shape": "default",
+            "show_secondary_image": false,
+            "colour_as_title": false,
+            "show_type": false,
+            "show_vendor": false,
+            "show_rating": false,
+            "enable_quick_add": false,
+            "badge_style": "float",
+            "display_low_inventory": false,
+            "low_inventory": 5,
+            "columns_mobile": "2",
+            "swipe_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "pulldown_87yzRf",
+        "pulldown_MHyam3",
+        "pulldown_Whp6HL",
+        "product_grid_PPEeeh"
+      ],
+      "name": "Pulldown info grid",
+      "settings": {}
+    },
+    "videos_list_with_button_LFzwqE": {
+      "type": "videos-list-with-button",
+      "blocks": {
+        "video_cTH4ex": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_KfhrNN": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_cTH4ex4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
+            "button_text": "ULTRA VOLUME",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
+            "button_text": "DOUBLE WEFT",
+            "button_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "video_cTH4ex",
+        "video_XtAaKF",
+        "video_KfhrNN",
+        "video_cTH4ex4",
+        "video_XtAaKF5"
+      ],
+      "custom_css": [
+        "a.button {box-sizing: border-box; max-width: 100%;}",
+        ".grid__item {min-width: 180px;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
+        ".videos-list-wrapper {margin-top: 0;}"
+      ],
+      "name": "Videos list button",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": true,
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_liquid_qznp7k": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h2 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_HYViXD": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "clip-in-hair-extensions",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "best_sellers"
+      }
+    },
+    "custom_liquid_YkPTqW2": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h2 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "interactive-table": {
+      "type": "hair-extension-comparison-table",
+      "settings": {
+        "color_scheme": "",
+        "options": "temporary-hair-extensions-features",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "interactive_table"
+      }
+    }
+  },
+  "order": [
+    "page-font",
+    "main",
+    "custom_liquid_YkPTqW",
+    "anchor-menu",
+    "table_of_content_7Y86MV",
+    "videos_list_with_collection_modal",
+    "collection_carrousel_QhAGdA",
+    "colour_match_quiz_grid",
+    "why_cliphair_97NNxq",
+    "pulldown_info_grid_y7zgT4",
+    "videos_list_with_button_LFzwqE",
+    "custom_liquid_qznp7k",
+    "featured_collection_HYViXD",
+    "custom_liquid_YkPTqW2",
+    "interactive-table"
+  ]
+}
