@@ -119,6 +119,73 @@
         "trackable_name": "anchor_menu"
       }
     },
+    "table_of_content_7Y86MV": {
+      "type": "table-of-content",
+      "blocks": {
+        "link_dReCJe": {
+          "type": "link",
+          "settings": {
+            "label": "Hair Quiz",
+            "link_id": "#colour-match-and-quiz"
+          }
+        },
+        "link_VcVJGF": {
+          "type": "link",
+          "settings": {
+            "label": "Colour match",
+            "link_id": "#colour-match-and-quiz"
+          }
+        },
+        "link_HmLaye": {
+          "type": "link",
+          "settings": {
+            "label": "Shop by shade",
+            "link_id": "#shop_by_shade"
+          }
+        },
+        "link_RPyMYV": {
+          "type": "link",
+          "settings": {
+            "label": "Best sellers",
+            "link_id": "#best_sellers"
+          }
+        },
+        "link_TGYdQH": {
+          "type": "link",
+          "settings": {
+            "label": "Our collections",
+            "link_id": "#shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+          }
+        },
+        "link_46emQy": {
+          "type": "link",
+          "settings": {
+            "label": "Compare products",
+            "link_id": "#interactive_table"
+          }
+        },
+        "link_ckwGUy": {
+          "type": "link",
+          "settings": {
+            "label": "Reviews",
+            "link_id": "#"
+          }
+        }
+      },
+      "block_order": [
+        "link_dReCJe",
+        "link_VcVJGF",
+        "link_HmLaye",
+        "link_RPyMYV",
+        "link_TGYdQH",
+        "link_46emQy",
+        "link_ckwGUy"
+      ],
+      "name": "Table of contents",
+      "settings": {
+        "color_scheme": ""
+      }
+    },
     "videos_list_with_collection_modal": {
       "type": "videos-list-with-collection-modal",
       "blocks": {
@@ -564,13 +631,6 @@
         "padding_bottom": 20,
         "trackable_name": "interactive_table"
       }
-    },
-    "table_of_content_7Y86MV": {
-      "type": "table-of-content",
-      "name": "Table of contents",
-      "settings": {
-        "color_scheme": ""
-      }
     }
   },
   "order": [
@@ -578,6 +638,7 @@
     "main",
     "custom_liquid_YkPTqW",
     "anchor-menu",
+    "table_of_content_7Y86MV",
     "videos_list_with_collection_modal",
     "collection_carrousel_QhAGdA",
     "colour_match_quiz_grid",
@@ -587,7 +648,6 @@
     "custom_liquid_qznp7k",
     "featured_collection_HYViXD",
     "custom_liquid_YkPTqW2",
-    "interactive-table",
-    "table_of_content_7Y86MV"
+    "interactive-table"
   ]
 }
