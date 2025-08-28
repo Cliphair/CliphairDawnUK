@@ -1,75 +1,64 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "font":{
-      "type":"page_font_ads"
+    "font": {
+      "type": "page_font_ads",
+      "settings": {
+        "font-text-1": "libre_baskerville_n4",
+        "font-btns": "libre_baskerville_n4"
+      }
     },
-    // "main": {
-    //   "type": "main-page",
-    //   "settings": {
-    //     "show_title": true,
-    //     "heading_size": "h1",
-    //     "show_content": false,
-    //     "text_alignment": "center",
-    //     "color_scheme": "inverse",
-    //     "padding_top": 40,
-    //     "padding_bottom": 0
-    //   },
-    //   "custom_css": [
-    //     ".main-page-title{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}",
-    //   ]
-    // },
     "rich-text-header": {
       "type": "rich-text",
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment":"center",
-        "padding_top": 40,
-        "padding_bottom": 0
-      },
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
             "heading": "Free Colour Match",
-            "h1":true
+            "heading_size": "h1",
+            "h1": true
           }
-        },
+        }
       },
       "block_order": [
         "heading"
       ],
       "custom_css": [
-        ".rich-text__heading{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}"
-      ]
+        ".rich-text__heading {margin-bottom: 0; font-size: 2.5rem; letter-spacing: -2%; line-height: 1.16em;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
     },
     "rich-text-intro": {
       "type": "rich-text",
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment":"center",
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
-      "blocks":{
+      "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Find Your Perfect Shade<\/em>"
+            "heading": "<em>Find Your Perfect Shade</em>",
+            "heading_size": "h1",
+            "h1": false
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Submit three photos & receive your <br>bespoke match within 24 hours!<\/p>"
+            "text": "<p>Submit three photos & receive your <br>bespoke match within 24 hours!</p>",
+            "read-more_text": ""
           }
         }
       },
@@ -78,9 +67,17 @@
         "text"
       ],
       "custom_css": [
-        ".rich-text__heading{margin-bottom:0;font-size:2.5rem;letter-spacing:-2%;line-height:1.16em;}",
-        ".rich-text__text{margin-top:1.7rem;margin-bottom:2.1rem;line-height:1.2em;letter-spacing:0;}"
-      ]
+        ".rich-text__heading {margin-bottom: 0; font-size: 2.5rem; letter-spacing: -2%; line-height: 1.16em;}",
+        ".rich-text__text {margin-top: 1.7rem; margin-bottom: 2.1rem; line-height: 1.2em; letter-spacing: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "steps": {
       "type": "dos-donts-colour-match",
@@ -116,8 +113,8 @@
         "image3"
       ],
       "custom_css": [
-        ".images-list__item{background:#FAF7F5;}",
-        ".section-images-list .images-list__item img{height:65px; width: auto; margin:0 auto;max-width: 100%;}",
+        ".images-list__item {background: #faf7f5;}",
+        ".section-images-list .images-list__item img {height: 65px; width: auto; margin: 0 auto; max-width: 100%;}"
       ],
       "settings": {
         "title": "",
@@ -136,17 +133,12 @@
     },
     "rich-text-dos-donts": {
       "type": "rich-text",
-      "settings":{
-        "desktop_content_position": "center",
-        "content_alignment":"center",
-        "padding_top": 44,
-        "padding_bottom": 32
-      },
-      "blocks":{
+      "blocks": {
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Our do’s and dont’s<\/p>"
+            "text": "<p>Our do’s and dont’s</p>",
+            "read-more_text": ""
           }
         }
       },
@@ -154,8 +146,16 @@
         "text"
       ],
       "custom_css": [
-        ".rich-text__text{margin:0;line-height:1.2em;letter-spacing:0;}"
-      ]
+        ".rich-text__text {margin: 0; line-height: 1.2em; letter-spacing: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 32
+      }
     },
     "dos-images": {
       "type": "dos-donts-colour-match",
@@ -212,7 +212,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bad-image-1.jpg",
-            "text_label": "<p>No filters or edited photos<\/p>",
+            "text_label": "<p>No filters or edited photos</p>",
             "link": ""
           }
         },
@@ -220,7 +220,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bad-image-2.jpg",
-            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "text_label": "<p>No flash, or mirror pictures</p>",
             "link": ""
           }
         },
@@ -228,7 +228,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bad-image-3.jpg",
-            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "text_label": "<p>No flash, or mirror pictures</p>",
             "link": ""
           }
         },
@@ -236,7 +236,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bad-image-4.jpg",
-            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "text_label": "<p>No flash, or mirror pictures</p>",
             "link": ""
           }
         },
@@ -244,10 +244,10 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bad-image-5.jpg",
-            "text_label": "<p>No flash, or mirror pictures<\/p>",
+            "text_label": "<p>No flash, or mirror pictures</p>",
             "link": ""
           }
-        },
+        }
       },
       "block_order": [
         "image1",
@@ -312,25 +312,71 @@
     },
     "form_builder_KN33jz": {
       "type": "form-builder",
+      "custom_css": [
+        "iframe:focus-visible {outline: none; box-shadow: none;}"
+      ],
       "settings": {
         "id": "T9sl8Fd3_2jJ8Wv3j-MZWA",
         "max-width": "990",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "custom_css": [
-        "iframe:focus-visible{outline:none;box-shadow:none;}"
-      ]
+      }
     },
     "break-line": {
       "type": "break-line",
-      "settings": {
-        "bg_color": "#000"
-      },
       "custom_css": [
-        ".break-line{margin-top: -5rem;}"
-      ]
+        ".break-line {margin-top: -5rem;}"
+      ],
+      "settings": {
+        "bg_color": "#000000",
+        "max_width": "",
+        "height": 1,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "yotpo_reviews_dynamic_carrousel_RPPhYc": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "name": "Yotpo Reviews Carousel",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
+    "rich_text_Kixmyb": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Kxd7kk": {
+          "type": "button",
+          "settings": {
+            "button_label": "View All",
+            "button_link": "shopify://pages/testimonials",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Kxd7kk"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -343,6 +389,8 @@
     "donts-images",
     "banners",
     "form_builder_KN33jz",
-    "break-line"
+    "break-line",
+    "yotpo_reviews_dynamic_carrousel_RPPhYc",
+    "rich_text_Kixmyb"
   ]
 }
