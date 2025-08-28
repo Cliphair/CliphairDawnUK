@@ -157,8 +157,9 @@
         "product_grid_bACcbw",
         "url_g3FQwj"
       ],
+      "disabled": true,
       "custom_css": [
-        ".price-grid {justify-content: flex-start; margin-bottom:0;}"
+        ".price-grid {justify-content: flex-start; margin-bottom: 0;}"
       ],
       "name": "Pulldown info grid",
       "settings": {}
@@ -225,6 +226,7 @@
         "link_MDKmXH",
         "link_Y8AXTr"
       ],
+      "disabled": true,
       "name": "Table Of Contents",
       "settings": {}
     },
@@ -270,6 +272,7 @@
         "image_9DXKYm",
         "image_UDQNA6"
       ],
+      "disabled": true,
       "name": "Why Cliphair logos",
       "settings": {
         "title": "<strong>Why Cliphair?</strong>",
@@ -288,7 +291,6 @@
     },
     "yotpo_reviews_dynamic_carrousel_UeNWFY": {
       "type": "yotpo-reviews-dynamic-carrousel",
-      "disabled": true,
       "name": "Summer reviews",
       "settings": {
         "color_scheme": "background-1",
