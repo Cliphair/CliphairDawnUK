@@ -426,9 +426,9 @@
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
-        "caption": "FAQ's",
-        "heading": "",
-        "heading_size": "h1",
+        "caption": "",
+        "heading": "FAQ's",
+        "heading_size": "h2",
         "heading_alignment": "left",
         "layout": "none",
         "arrow_style": "half-arrow",
