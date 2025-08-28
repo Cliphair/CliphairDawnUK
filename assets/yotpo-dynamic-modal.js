@@ -155,7 +155,7 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
 
         const headingContainer = document.createElement('div');
         headingContainer.className = 'heading-container';
-        headingContainer.innerHTML = `<p class="center">${review.name}</p>`;
+        headingContainer.innerHTML = `<p class="center h1">${review.name}</p>`;
 
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
