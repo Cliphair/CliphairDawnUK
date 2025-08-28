@@ -384,8 +384,8 @@
         "collapsible_row_iMePXM": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
+            "heading": "Quality of our Hair Extensions",
+            "icon": "none",
             "row_content": "",
             "page": ""
           }
@@ -393,8 +393,8 @@
         "collapsible_row_baiDh6": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
+            "heading": "Clip In Hair Extensions",
+            "icon": "none",
             "row_content": "",
             "page": ""
           }
@@ -402,8 +402,8 @@
         "collapsible_row_cnzbXR": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
+            "heading": "Care And Usage",
+            "icon": "none",
             "row_content": "",
             "page": ""
           }
@@ -411,8 +411,8 @@
         "collapsible_row_AGEjtg": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
+            "heading": "Shipping And Returns",
+            "icon": "none",
             "row_content": "",
             "page": ""
           }
@@ -431,7 +431,7 @@
         "heading_size": "h1",
         "heading_alignment": "left",
         "layout": "none",
-        "arrow_style": "half-arrow",
+        "arrow_style": "full-arrow",
         "color_scheme": "",
         "container_color_scheme": "",
         "open_first_collapsible_row": false,
@@ -441,8 +441,8 @@
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
