@@ -163,24 +163,24 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/good-image-1.jpg",
-            "text_label": "<p>Selfie - hair down from root <br>to tip. In natural light</p>",
+            "image": "shopify://shop_images/do-image-1.jpg",
+            "text_label": "<p>Take a clear selfie, hair down, root to tip, in natural light.</p>",
             "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/good-image-2.jpg",
-            "text_label": "<p>Hair from the back. In <br>natural light</p>",
+            "image": "shopify://shop_images/do-image-2.jpg",
+            "text_label": "<p>Snap a shot of the side of your hair – no shadows, just strands.</p>",
             "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/good-image-3.jpg",
-            "text_label": "<p>Selfie - hair down from root <br>to tip. In natural light</p>",
+            "image": "shopify://shop_images/do-image-3.jpg",
+            "text_label": "<p>Show us the back too – we need all the angles!</p>",
             "link": ""
           }
         }
@@ -211,40 +211,49 @@
         "image1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bad-image-1.jpg",
-            "text_label": "<p>No filters or edited photos</p>",
+            "image": "shopify://shop_images/dont-image-1.jpg",
+            "text_label": "<p>Don’t add filters – we need the real you to get the perfect match!</p>",
             "link": ""
           }
         },
         "image2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bad-image-2.jpg",
-            "text_label": "<p>No flash, or mirror pictures</p>",
+            "image": "shopify://shop_images/dont-image-2.jpg",
+            "text_label": "<p>Don’t snap in the dark – good lighting makes great matches.</p>",
             "link": ""
           }
         },
         "image3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bad-image-3.jpg",
-            "text_label": "<p>No flash, or mirror pictures</p>",
+            "image": "shopify://shop_images/dont-image-3.jpg",
+            "text_label": "<p>Don’t blind us with light – soft, natural light works best.</p>",
             "link": ""
           }
         },
         "image4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bad-image-4.jpg",
-            "text_label": "<p>No flash, or mirror pictures</p>",
+            "image": "shopify://shop_images/dont-image-4.jpg",
+            "text_label": "<p>Don’t zoom in too close – we need to see ALL of your hair!</p>",
             "link": ""
           }
         },
         "image5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bad-image-5.jpg",
-            "text_label": "<p>No flash, or mirror pictures</p>",
+            "image": "shopify://shop_images/dont-image-5.jpg",
+            "text_label": "<p>Don’t bring the squad – solo shots only, please.</p>",
+            "link": ""
+          }
+        },
+        "image_ABq7Vr": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/dont-image-6.jpg",
+            "text_label": "<p>Don’t tie it up – we need your hair down and natural.</p>",
             "link": ""
           }
         }
@@ -254,7 +263,11 @@
         "image2",
         "image3",
         "image4",
-        "image5"
+        "image5",
+        "image_ABq7Vr"
+      ],
+      "custom_css": [
+        "img {aspect-ratio: 0.66; object-fit: cover;}"
       ],
       "settings": {
         "title": "",
@@ -269,6 +282,30 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 56
+      }
+    },
+    "rich_text_LFe63a": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jX8bJJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I understand that there could be a delay if the images provided are incorrect or if the dos and don'ts are not followed.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_jX8bJJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "banners": {
@@ -306,7 +343,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 0,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -454,6 +491,7 @@
     "rich-text-dos-donts",
     "dos-images",
     "donts-images",
+    "rich_text_LFe63a",
     "banners",
     "form_builder_KN33jz",
     "break-line",
