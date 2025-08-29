@@ -114,8 +114,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 40,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "anchor_menu"
       }
     },
@@ -192,53 +192,53 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Jayde - Removal.mp4",
+            "video": "shopify://files/videos/Lightest Blonde (60) Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<strong>Seamless Clip In</strong> Hair Extensions",
+            "modal_title": "<strong>Tape In</strong> Hair Extensions",
             "collection_modal": "",
-            "product_modal": "seamless-clip-in-hair-extensions-double-drawn-blondeme"
-          }
-        },
-        "video_t8zGmx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "<strong>Ultra Volume Clip In</strong> Hair Extensions",
-            "collection_modal": "",
-            "product_modal": "natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
+            "product_modal": "tape-in-remy-human-hair-extension-lightest-blonde-60"
           }
         },
         "video_ayXWCz": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video": "shopify://files/videos/Medium Brown (4) Nano Ring Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<strong>Double Weft Clip In</strong> Hair Extensions",
+            "modal_title": "<strong>Nano Ring</strong> Hair Extensions",
             "collection_modal": "",
-            "product_modal": "double-wefted-set-clip-in-hair-extensions-medium-brown-4"
+            "product_modal": "nano-ring-hair-extensions-double-drawn-medium-brown-4"
           }
         },
         "video_TfRk3t4": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Naomi+Price+Festival+Reel+18in+Full+Head+Iced+Cappuccino+.mp4",
+            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Invisible Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<strong>Full Head Clip In</strong> Hair Extensions",
+            "modal_title": "<strong>Invisible Tape In</strong> Hair Extensions",
             "collection_modal": "",
-            "product_modal": "full-head-set-clip-in-hair-extensions-brown-blonde-mix-14-22"
+            "product_modal": "remy-royale-invisible-tape-in-hair-extension-darkest-brown-2"
+          }
+        },
+        "video_t8zGmx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Remy Royale Double Drawn Human Hair Weft Weave Extensions - Ice Blonde.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Double Drawn Weave</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "remy-royale-double-drawn-human-hair-weft-weave-extensions-ice-blonde"
           }
         }
       },
       "block_order": [
         "video_TfRk3t",
-        "video_t8zGmx",
         "video_ayXWCz",
-        "video_TfRk3t4"
+        "video_TfRk3t4",
+        "video_t8zGmx"
       ],
       "custom_css": [
         ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
@@ -261,8 +261,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -305,8 +305,8 @@
         "columns_mobile": "4",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "shop_by_shade"
       }
     },
@@ -338,8 +338,8 @@
       "name": "Colour Match & Quiz",
       "settings": {
         "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "colour match and quiz"
       }
     },
@@ -397,7 +397,7 @@
         "columns_mobile": "4",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 40,
+        "padding_top": 20,
         "padding_bottom": 40
       }
     },
@@ -558,7 +558,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "custom_liquid_qznp7k": {
@@ -570,8 +570,8 @@
       "settings": {
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
         "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "featured_collection_HYViXD": {
@@ -604,7 +604,7 @@
         "low_inventory": 5,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 20,
         "trackable_name": "best_sellers"
       }
@@ -619,7 +619,7 @@
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
         "color_scheme": "background-1",
         "padding_top": 20,
-        "padding_bottom": 0
+        "padding_bottom": 20
       }
     },
     "interactive-table": {
@@ -627,7 +627,7 @@
       "settings": {
         "color_scheme": "",
         "options": "professional-hair-extensions-features",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 20,
         "trackable_name": "interactive_table"
       }
