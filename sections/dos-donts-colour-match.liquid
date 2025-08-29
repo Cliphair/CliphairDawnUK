@@ -76,6 +76,25 @@
       justify-content:center;
     }
   }
+
+  .dos-donts-icon{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .dos-donts-icon .icon{
+    width:20px;
+    height:20px;
+  }
+
+  .dos-donts-icon .icon-checkmark{
+    color:green;
+  }
+
+  .dos-donts-icon .icon-close{
+    color:red;
+  }
 </style>
 
 <div
@@ -162,6 +181,14 @@
               {% if block.settings.text_label != null %}
                 <div class="text-container h5">{{ block.settings.text_label }}</div>
               {%- endif -%}
+
+              <span class="dos-donts-icon">
+                {% if block.settings.dos_donts == 'do' -%}
+                  {%- render 'icon-checkmark' -%}
+                {%- elsif block.settings.dos_donts == 'dont' -%}
+                  {%- render 'icon-close' -%}
+                {%- endif %}
+              </span>
             {%- endif -%}
             {%- if block.settings.link != blank -%}
               </a>
@@ -233,9 +260,9 @@
 
 {% schema %}
 {
-  "name": "Images list",
+  "name": "Do's & Don'ts",
   "tag": "section",
-  "class": "section section-images-list",
+  "class": "section section-images-list section-dos-donts",
   "settings": [
     {
       "type": "inline_richtext",
@@ -403,6 +430,26 @@
           "id": "link",
           "label": "Link",
           "info": "Optional"
+        },
+        {
+          "type": "select",
+          "id": "dos_donts",
+          "label": "Do or Don't icon",
+          "options": [
+            {
+              "value": "do",
+              "label": "Do"
+            },
+            {
+              "value": "dont",
+              "label": "Don't"
+            },
+            {
+              "value": "none",
+              "label": "No icon"
+            }
+          ],
+          "default": "none"
         }
       ]
     }
