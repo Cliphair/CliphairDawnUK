@@ -468,60 +468,115 @@
         "video_cTH4ex": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Invisible Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
+            "button_url": "shopify://collections/tape-in-hair-extensions",
+            "button_text": "TAPE INS",
             "button_secondary": false
           }
         },
         "video_XtAaKF": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video": "shopify://files/videos/Medium Brown (4) Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
+            "button_url": "shopify://collections/tape-in-hair-extensions",
+            "button_text": "TAPE INS",
             "button_secondary": false
           }
         },
         "video_KfhrNN": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video": "shopify://files/videos/Ice Blonde Tape in Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
+            "button_url": "shopify://collections/tape-in-hair-extensions",
+            "button_text": "TAPE INS",
             "button_secondary": false
           }
         },
         "video_cTH4ex4": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
+            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Double Drawn Weave Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
-            "button_text": "ULTRA VOLUME",
+            "button_url": "shopify://collections/remy-royale-double-drawn-hair-weft-extensions",
+            "button_text": "WEAVE WEFT",
             "button_secondary": false
           }
         },
         "video_XtAaKF5": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video": "shopify://files/videos/BlondeMe (60SS) Nano Ring Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
-            "button_text": "DOUBLE WEFT",
+            "button_url": "shopify://collections/nano-rings-hair-extensions",
+            "button_text": "NANO RING",
+            "button_secondary": false
+          }
+        },
+        "video_ziLa4r": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "",
+            "button_text": "View",
+            "button_secondary": false
+          }
+        },
+        "video_cewVhd": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "",
+            "button_text": "View",
+            "button_secondary": false
+          }
+        },
+        "video_B3BDJX": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "",
+            "button_text": "View",
+            "button_secondary": false
+          }
+        },
+        "video_3cPb8C": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "",
+            "button_text": "View",
+            "button_secondary": false
+          }
+        },
+        "video_Yr7BhC": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "",
+            "button_text": "View",
             "button_secondary": false
           }
         }
@@ -531,7 +586,12 @@
         "video_XtAaKF",
         "video_KfhrNN",
         "video_cTH4ex4",
-        "video_XtAaKF5"
+        "video_XtAaKF5",
+        "video_ziLa4r",
+        "video_cewVhd",
+        "video_B3BDJX",
+        "video_3cPb8C",
+        "video_Yr7BhC"
       ],
       "custom_css": [
         "a.button {box-sizing: border-box; max-width: 100%;}",
