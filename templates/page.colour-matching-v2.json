@@ -87,7 +87,8 @@
           "settings": {
             "image": "shopify://shop_images/cm-step-1.jpg",
             "text_label": "",
-            "link": ""
+            "link": "",
+            "dos_donts": "none"
           }
         },
         "image2": {
@@ -95,7 +96,8 @@
           "settings": {
             "image": "shopify://shop_images/cm-step-2.jpg",
             "text_label": "",
-            "link": ""
+            "link": "",
+            "dos_donts": "none"
           }
         },
         "image3": {
@@ -103,7 +105,8 @@
           "settings": {
             "image": "shopify://shop_images/cm-step-3.jpg",
             "text_label": "",
-            "link": ""
+            "link": "",
+            "dos_donts": "none"
           }
         }
       },
@@ -165,7 +168,8 @@
           "settings": {
             "image": "shopify://shop_images/do-image-1.jpg",
             "text_label": "<p>Take a clear selfie, hair down, root to tip, in natural light.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "do"
           }
         },
         "image2": {
@@ -173,7 +177,8 @@
           "settings": {
             "image": "shopify://shop_images/do-image-2.jpg",
             "text_label": "<p>Snap a shot of the side of your hair – no shadows, just strands.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "do"
           }
         },
         "image3": {
@@ -181,7 +186,8 @@
           "settings": {
             "image": "shopify://shop_images/do-image-3.jpg",
             "text_label": "<p>Show us the back too – we need all the angles!</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "do"
           }
         }
       },
@@ -213,7 +219,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-1.jpg",
             "text_label": "<p>Don’t add filters – we need the real you to get the perfect match!</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         },
         "image2": {
@@ -221,7 +228,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-2.jpg",
             "text_label": "<p>Don’t snap in the dark – good lighting makes great matches.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         },
         "image3": {
@@ -229,7 +237,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-3.jpg",
             "text_label": "<p>Don’t blind us with light – soft, natural light works best.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         },
         "image4": {
@@ -237,7 +246,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-4.jpg",
             "text_label": "<p>Don’t zoom in too close – we need to see ALL of your hair!</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         },
         "image5": {
@@ -245,7 +255,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-5.jpg",
             "text_label": "<p>Don’t bring the squad – solo shots only, please.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         },
         "image_ABq7Vr": {
@@ -254,7 +265,8 @@
           "settings": {
             "image": "shopify://shop_images/dont-image-6.jpg",
             "text_label": "<p>Don’t tie it up – we need your hair down and natural.</p>",
-            "link": ""
+            "link": "",
+            "dos_donts": "dont"
           }
         }
       },
@@ -316,7 +328,8 @@
           "settings": {
             "image": "shopify://shop_images/cm-whatsapp-banner.jpg",
             "text_label": "",
-            "link": ""
+            "link": "",
+            "dos_donts": "none"
           }
         },
         "image2": {
@@ -324,7 +337,8 @@
           "settings": {
             "image": "shopify://shop_images/cm-form-banner.jpg",
             "text_label": "",
-            "link": ""
+            "link": "",
+            "dos_donts": "none"
           }
         }
       },
