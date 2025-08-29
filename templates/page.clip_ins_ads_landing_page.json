@@ -25,8 +25,8 @@
         "show_content": true,
         "text_alignment": "left",
         "color_scheme": "accent-4",
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_liquid_YkPTqW": {
@@ -114,8 +114,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 40,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "anchor_menu"
       }
     },
@@ -261,8 +261,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -305,8 +305,8 @@
         "columns_mobile": "4",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "shop_by_shade"
       }
     },
@@ -338,8 +338,8 @@
       "name": "Colour Match & Quiz",
       "settings": {
         "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "trackable_name": "colour match and quiz"
       }
     },
@@ -397,7 +397,7 @@
         "columns_mobile": "4",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 40,
+        "padding_top": 20,
         "padding_bottom": 40
       }
     },
@@ -558,7 +558,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "custom_liquid_qznp7k": {
@@ -570,7 +570,7 @@
       "settings": {
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
         "color_scheme": "",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
@@ -632,7 +632,7 @@
         "content_alignment": "center",
         "color_scheme": "accent-2",
         "full_width": true,
-        "padding_top": 32,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
@@ -767,7 +767,7 @@
         "color_scheme": "",
         "options": "temporary-hair-extensions-features",
         "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_bottom": 40,
         "trackable_name": "interactive_table"
       }
     }
