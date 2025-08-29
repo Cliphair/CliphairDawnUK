@@ -477,30 +477,6 @@
             "button_secondary": false
           }
         },
-        "video_XtAaKF": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Medium Brown (4) Tape In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/tape-in-hair-extensions",
-            "button_text": "TAPE INS",
-            "button_secondary": false
-          }
-        },
-        "video_KfhrNN": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Ice Blonde Tape in Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/tape-in-hair-extensions",
-            "button_text": "TAPE INS",
-            "button_secondary": false
-          }
-        },
         "video_cTH4ex4": {
           "type": "video",
           "settings": {
@@ -525,72 +501,101 @@
             "button_secondary": false
           }
         },
-        "video_ziLa4r": {
+        "video_3cPb8C": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Jet Black (1) Remy Royale Invisible Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "",
-            "button_text": "View",
+            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
+            "button_text": "INVISIBLE TAPE",
             "button_secondary": false
           }
         },
-        "video_cewVhd": {
+        "video_XtAaKF": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Medium Brown (4) Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "",
-            "button_text": "View",
+            "button_url": "shopify://collections/tape-in-hair-extensions",
+            "button_text": "TAPE INS",
+            "button_secondary": false
+          }
+        },
+        "video_ziLa4r": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Darkest Brown (2) Nano Ring Hair Extensions.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/nano-rings-hair-extensions",
+            "button_text": "NANO RING",
             "button_secondary": false
           }
         },
         "video_B3BDJX": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Iceblonde Remy Royale Invisible Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "",
-            "button_text": "View",
+            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
+            "button_text": "INVISIBLE TAPE",
             "button_secondary": false
           }
         },
-        "video_3cPb8C": {
+        "video_cewVhd": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Jet Black (1) Nano Ring Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "",
-            "button_text": "View",
+            "button_url": "shopify://collections/nano-rings-hair-extensions",
+            "button_text": "NANO RING",
+            "button_secondary": false
+          }
+        },
+        "video_KfhrNN": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Ice Blonde Tape in Hair Extensions.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/tape-in-hair-extensions",
+            "button_text": "TAPE INS",
             "button_secondary": false
           }
         },
         "video_Yr7BhC": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Medium Brown (4) Remy Royale Invisible Tape In Hair Extensions.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "",
-            "button_text": "View",
+            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
+            "button_text": "INVISIBLE TAPE",
             "button_secondary": false
           }
         }
       },
       "block_order": [
         "video_cTH4ex",
-        "video_XtAaKF",
-        "video_KfhrNN",
         "video_cTH4ex4",
         "video_XtAaKF5",
-        "video_ziLa4r",
-        "video_cewVhd",
-        "video_B3BDJX",
         "video_3cPb8C",
+        "video_XtAaKF",
+        "video_ziLa4r",
+        "video_B3BDJX",
+        "video_cewVhd",
+        "video_KfhrNN",
         "video_Yr7BhC"
       ],
       "custom_css": [
