@@ -385,6 +385,9 @@
         "image_cnDWFx",
         "image_nM7EUp"
       ],
+      "custom_css": [
+        ".section-images-list .images-list__item img {margin: 0 auto; width:auto; max-width:100%;}"
+      ],
       "name": "Why Cliphair logos",
       "settings": {
         "title": "<strong>Why Cliphair?</strong>",
