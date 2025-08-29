@@ -477,6 +477,18 @@
             "button_secondary": false
           }
         },
+        "video_XtAaKF5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
+            "button_text": "DOUBLE WEFT",
+            "button_secondary": false
+          }
+        },
         "video_XtAaKF": {
           "type": "video",
           "settings": {
@@ -486,6 +498,18 @@
             "description": "",
             "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
             "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_cTH4ex4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Jet Black (1) Ultra-Volume Clip In Full Head Set (240-300G).mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
+            "button_text": "ULTRA VOLUME",
             "button_secondary": false
           }
         },
@@ -500,38 +524,14 @@
             "button_text": "SEAMLESS",
             "button_secondary": false
           }
-        },
-        "video_cTH4ex4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-13.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
-            "button_text": "ULTRA VOLUME",
-            "button_secondary": false
-          }
-        },
-        "video_XtAaKF5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/reel-video-12.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
-            "button_text": "DOUBLE WEFT",
-            "button_secondary": false
-          }
         }
       },
       "block_order": [
         "video_cTH4ex",
+        "video_XtAaKF5",
         "video_XtAaKF",
-        "video_KfhrNN",
         "video_cTH4ex4",
-        "video_XtAaKF5"
+        "video_KfhrNN"
       ],
       "custom_css": [
         "a.button {box-sizing: border-box; max-width: 100%;}",
