@@ -114,8 +114,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 40,
         "trackable_name": "anchor_menu"
       }
     },
@@ -192,53 +192,53 @@
         "video_TfRk3t": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Lightest Blonde (60) Tape In Hair Extensions.mp4",
+            "video": "shopify://files/videos/Jayde - Removal.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<strong>Tape In</strong> Hair Extensions",
+            "modal_title": "<strong>Seamless Clip In</strong> Hair Extensions",
             "collection_modal": "",
-            "product_modal": "tape-in-remy-human-hair-extension-lightest-blonde-60"
-          }
-        },
-        "video_ayXWCz": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Medium Brown (4) Nano Ring Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "<strong>Nano Ring</strong> Hair Extensions",
-            "collection_modal": "",
-            "product_modal": "nano-ring-hair-extensions-double-drawn-medium-brown-4"
-          }
-        },
-        "video_TfRk3t4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Invisible Tape In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "modal_title": "<strong>Invisible Tape In</strong> Hair Extensions",
-            "collection_modal": "",
-            "product_modal": "remy-royale-invisible-tape-in-hair-extension-darkest-brown-2"
+            "product_modal": "seamless-clip-in-hair-extensions-double-drawn-blondeme"
           }
         },
         "video_t8zGmx": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Remy Royale Double Drawn Human Hair Weft Weave Extensions - Ice Blonde.mp4",
+            "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "description": "",
-            "modal_title": "<strong>Double Drawn Weave</strong> Hair Extensions",
+            "modal_title": "<strong>Ultra Volume Clip In</strong> Hair Extensions",
             "collection_modal": "",
-            "product_modal": "remy-royale-double-drawn-human-hair-weft-weave-extensions-ice-blonde"
+            "product_modal": "natural-off-black-1b-ultra-volume-clip-in-full-head-set-240-300g"
+          }
+        },
+        "video_ayXWCz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-11.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Double Weft Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "double-wefted-set-clip-in-hair-extensions-medium-brown-4"
+          }
+        },
+        "video_TfRk3t4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Naomi+Price+Festival+Reel+18in+Full+Head+Iced+Cappuccino+.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "modal_title": "<strong>Full Head Clip In</strong> Hair Extensions",
+            "collection_modal": "",
+            "product_modal": "full-head-set-clip-in-hair-extensions-brown-blonde-mix-14-22"
           }
         }
       },
       "block_order": [
         "video_TfRk3t",
+        "video_t8zGmx",
         "video_ayXWCz",
-        "video_TfRk3t4",
-        "video_t8zGmx"
+        "video_TfRk3t4"
       ],
       "custom_css": [
         ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
@@ -261,8 +261,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "trackable_name": "shoppable_video_carrousel"
       }
     },
@@ -305,8 +305,8 @@
         "columns_mobile": "4",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "trackable_name": "shop_by_shade"
       }
     },
@@ -338,8 +338,8 @@
       "name": "Colour Match & Quiz",
       "settings": {
         "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "trackable_name": "colour match and quiz"
       }
     },
@@ -385,9 +385,6 @@
         "image_cnDWFx",
         "image_nM7EUp"
       ],
-      "custom_css": [
-        ".section-images-list .images-list__item img {margin: 0 auto; width: auto; max-width: 100%;}"
-      ],
       "name": "Why Cliphair logos",
       "settings": {
         "title": "<strong>Why Cliphair?</strong>",
@@ -400,7 +397,7 @@
         "columns_mobile": "4",
         "swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 20,
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
@@ -471,135 +468,70 @@
         "video_cTH4ex": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Invisible Tape In Hair Extensions.mp4",
+            "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/tape-in-hair-extensions",
-            "button_text": "TAPE INS",
-            "button_secondary": false
-          }
-        },
-        "video_cTH4ex4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Darkest Brown (2) Remy Royale Double Drawn Weave Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/remy-royale-double-drawn-hair-weft-extensions",
-            "button_text": "WEAVE WEFT",
-            "button_secondary": false
-          }
-        },
-        "video_XtAaKF5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/BlondeMe (60SS) Nano Ring Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/nano-rings-hair-extensions",
-            "button_text": "NANO RING",
-            "button_secondary": false
-          }
-        },
-        "video_3cPb8C": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Jet Black (1) Remy Royale Invisible Tape In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
-            "button_text": "INVISIBLE TAPE",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
             "button_secondary": false
           }
         },
         "video_XtAaKF": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Medium Brown (4) Tape In Hair Extensions.mp4",
+            "video": "shopify://files/videos/reel-video-12.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/tape-in-hair-extensions",
-            "button_text": "TAPE INS",
-            "button_secondary": false
-          }
-        },
-        "video_ziLa4r": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Darkest Brown (2) Nano Ring Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/nano-rings-hair-extensions",
-            "button_text": "NANO RING",
-            "button_secondary": false
-          }
-        },
-        "video_B3BDJX": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Iceblonde Remy Royale Invisible Tape In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
-            "button_text": "INVISIBLE TAPE",
-            "button_secondary": false
-          }
-        },
-        "video_cewVhd": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Jet Black (1) Nano Ring Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/nano-rings-hair-extensions",
-            "button_text": "NANO RING",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
             "button_secondary": false
           }
         },
         "video_KfhrNN": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Ice Blonde Tape in Hair Extensions.mp4",
+            "video": "shopify://files/videos/reel-video-11.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/tape-in-hair-extensions",
-            "button_text": "TAPE INS",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
             "button_secondary": false
           }
         },
-        "video_Yr7BhC": {
+        "video_cTH4ex4": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Medium Brown (4) Remy Royale Invisible Tape In Hair Extensions.mp4",
+            "video": "shopify://files/videos/reel-video-13.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": "",
-            "button_url": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions",
-            "button_text": "INVISIBLE TAPE",
+            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
+            "button_text": "ULTRA VOLUME",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/reel-video-12.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
+            "button_text": "DOUBLE WEFT",
             "button_secondary": false
           }
         }
       },
       "block_order": [
         "video_cTH4ex",
-        "video_cTH4ex4",
-        "video_XtAaKF5",
-        "video_3cPb8C",
         "video_XtAaKF",
-        "video_ziLa4r",
-        "video_B3BDJX",
-        "video_cewVhd",
         "video_KfhrNN",
-        "video_Yr7BhC"
+        "video_cTH4ex4",
+        "video_XtAaKF5"
       ],
       "custom_css": [
         "a.button {box-sizing: border-box; max-width: 100%;}",
@@ -626,7 +558,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 20
+        "padding_bottom": 40
       }
     },
     "custom_liquid_qznp7k": {
@@ -638,8 +570,8 @@
       "settings": {
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
         "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_collection_HYViXD": {
@@ -672,9 +604,148 @@
         "low_inventory": 5,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 20,
         "trackable_name": "best_sellers"
+      }
+    },
+    "rich_text_XgpBnz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jitWDL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Featured In",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jitWDL"
+      ],
+      "custom_css": [
+        "h2 {color: #414141;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    },
+    "maquee_mnMgq6": {
+      "type": "maquee",
+      "blocks": {
+        "element_3Vf96V": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Grazia_Logo.webp",
+            "text_label": "",
+            "link": "https://graziadaily.co.uk/beauty-hair/hair/clip-in-ponytail-extensions-uk/"
+          }
+        },
+        "element_pM9XaE": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Marie_Claire_Logo.webp",
+            "text_label": "",
+            "link": "https://www.marieclaire.co.uk/promotional-feature/kate-middleton-ponytail-tips-cliphair-760263"
+          }
+        },
+        "element_8H4aiQ": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Cosmopolitan_Logo.webp",
+            "text_label": "",
+            "link": "https://www.cosmopolitan.com/uk/beauty-hair/hair/a44710529/best-clip-in-hair-extensions/"
+          }
+        },
+        "element_F6bbAV": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/The_Sun_Logo.webp",
+            "text_label": "",
+            "link": "https://www.thesun.co.uk/fabulous/18696203/hairstyle-according-to-star-sign/"
+          }
+        },
+        "element_WBBU3B": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Daily_Mail_Logo.webp",
+            "text_label": "",
+            "link": "https://www.dailymail.co.uk/femail/article-7553741/The-10-beauty-fashion-brands-NEED-know.html"
+          }
+        },
+        "element_dc3A6R": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Hair_Dresser_Journal_Logo_V3.png",
+            "text_label": "",
+            "link": "https://mag.hji.co.uk/articles/255164?article=51-1"
+          }
+        },
+        "element_KKmrXf": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Salon_Logo.webp",
+            "text_label": "",
+            "link": "https://thesalonmagazine.co.uk/cliphair-more-than-hair-extensions/"
+          }
+        },
+        "element_Q94Hw3": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Reader_s_Digest_Logo.webp",
+            "text_label": "",
+            "link": "https://www.readersdigest.co.uk/lifestyle/fashion-beauty/top-5-celebrity-ponytails-and-how-to-create-them"
+          }
+        },
+        "element_NaLGwh": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Independent_Logo.webp",
+            "text_label": "",
+            "link": "https://www.independent.co.uk/extras/indybest/fashion-beauty/best-clip-in-hair-extensions-b1891280.html"
+          }
+        },
+        "element_hBXMTc": {
+          "type": "element",
+          "settings": {
+            "image": "shopify://shop_images/Metro_Logo.webp",
+            "text_label": "",
+            "link": "https://metro.co.uk/2022/02/07/this-is-how-often-you-should-wash-your-hair-depending-on-hair-type-16061705/"
+          }
+        }
+      },
+      "block_order": [
+        "element_3Vf96V",
+        "element_pM9XaE",
+        "element_8H4aiQ",
+        "element_F6bbAV",
+        "element_WBBU3B",
+        "element_dc3A6R",
+        "element_KKmrXf",
+        "element_Q94Hw3",
+        "element_NaLGwh",
+        "element_hBXMTc"
+      ],
+      "custom_css": [
+        ".marquee__item {max-width: 200px;}"
+      ],
+      "settings": {
+        "text_size": "p",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "scroll_mobile": true,
+        "duration_mobile": 40,
+        "columns_desktop": 6,
+        "scroll_desktop": true,
+        "duration_desktop": 60,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "custom_liquid_YkPTqW2": {
@@ -687,7 +758,7 @@
         "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
         "color_scheme": "background-1",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "interactive-table": {
@@ -695,7 +766,7 @@
       "settings": {
         "color_scheme": "",
         "options": "professional-hair-extensions-features",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 20,
         "trackable_name": "interactive_table"
       }
@@ -715,6 +786,8 @@
     "videos_list_with_button_LFzwqE",
     "custom_liquid_qznp7k",
     "featured_collection_HYViXD",
+    "rich_text_XgpBnz",
+    "maquee_mnMgq6",
     "custom_liquid_YkPTqW2",
     "interactive-table"
   ]
