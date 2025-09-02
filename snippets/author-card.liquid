@@ -1,0 +1,70 @@
+{%- comment -%}
+  Inputs:
+    - author_obj: metaobject entry (author)
+  Renders a consistent author card.
+{%- endcomment -%}
+
+{%- assign a = author_obj -%}
+
+{%- if a -%}
+  <aside class="author-card grid">
+    {% liquid
+      assign image = images['logo-square-min.jpg']
+      if a.headshot
+        assign image = a.headshot
+      endif
+    %}
+
+    <div class="author-card__photo">
+      <img
+        class=""
+        src="{{ image | image_url: width: 300 }}"
+        width="150"
+        height="150"
+        alt="{{ a.name | escape }}"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="author-card__body">
+      <p class="author-card__name h2">{{ a.name }}</p>
+      {%- if a.role != blank -%}
+        <p class="author-card__role h5">{{ a.role }}</p>
+      {%- endif -%}
+      {%- if a.bio != blank -%}
+        <div class="author-card__bio h5 rte">{{ a.bio | metafield_tag }}</div>
+      {%- endif -%}
+      <div class="author-card__links grid">
+        {%- if a.email != blank -%}
+          <div>
+            <a href="mailto:{{ a.email }}" class="h5" rel="me noopener" target="_blank">{{ a.email }}</a>
+          </div>
+        {%- endif -%}
+        <div>
+          <ul class="grid">
+            {%- if a.instagram != blank -%}
+              <li>
+                <a href="{{ a.instagram }}" rel="me noopener" target="_blank">{% render 'icon-instagram' %}</a>
+              </li>
+            {%- endif -%}
+            {%- if a.tiktok != blank -%}
+              <li>
+                <a href="{{ a.tiktok }}" rel="me noopener" target="_blank">{% render 'icon-tiktok' %}</a>
+              </li>
+            {%- endif -%}
+            {%- if a.facebook != blank -%}
+              <li>
+                <a href="{{ a.facebook }}" rel="me noopener" target="_blank">{% render 'icon-facebook' %}</a>
+              </li>
+            {%- endif -%}
+            {%- if a.twitter != blank -%}
+              <li>
+                <a href="{{ a.twitter }}" rel="me noopener" target="_blank">{% render 'icon-twitter' %}</a>
+              </li>
+            {%- endif -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+{%- endif -%}
