@@ -331,8 +331,12 @@
   }
 }
 
+.article-main header details summary svg{
+  transition: transform 1s ease;
+}
+
 .article-main header details[open] summary svg{
-  transform: rotate(270deg);
+  transform: rotate(180deg);
 }
 
 .article-main header details .accordion__content{
