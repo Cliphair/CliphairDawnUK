@@ -331,6 +331,10 @@
   }
 }
 
+.article-template__content header details["open"] summary svg{
+  transform: rotate(270deg);
+}
+
 /* Author card */
 .author-card {
   justify-content: center;
