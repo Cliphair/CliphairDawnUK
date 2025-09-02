@@ -332,7 +332,7 @@
 }
 
 .article-main header details summary svg{
-  transition: transform 1s ease;
+  transition: transform .5s ease;
 }
 
 .article-main header details[open] summary svg{
