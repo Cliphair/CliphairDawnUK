@@ -17,7 +17,7 @@
       "settings": {
         "show_title": true,
         "heading_size": "h1",
-        "show_content": false,
+        "show_content": true,
         "text_alignment": "center",
         "color_scheme": "inverse",
         "padding_top": 28,

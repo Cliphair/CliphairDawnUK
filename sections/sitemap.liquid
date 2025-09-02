@@ -2,7 +2,7 @@
   if section.settings.limit and section.settings.limit != 0
     assign limit = section.settings.limit
   else
-    assign limit = 1000
+    assign limit = 30
   endif
 %}
 
@@ -23,53 +23,113 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="categories-container page-width section-{{ section.id }}-padding">
-    <div id="collections" class="category">
-      <h2 class="category-title">Collections</h2>
-      <ul>
-        {% for collection in collections limit: limit %}
-          <li class="sitemap-item">
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div id="products" class="category">
-      <h2 class="category-title">Products</h2>
-      <ul>
+    {% case request.path %}
+      {% when '/pages/all-collections-sitemap' %}
+        {%- paginate collections by limit -%}
+          <div id="collections" class="category">
+            <h2 class="category-title">Collections</h2>
+            <ol class="sitemap-list">
+              {% for collection in collections %}
+                <li class="sitemap-item">
+                  <a href="{{ collection.url }}">{{ collection.title }}</a>
+                </li>
+              {% endfor %}
+            </ol>
+            {%- if paginate.pages > 1 -%}
+              <div class="sitemap-pagination__load-more">
+                <button
+                  id="load-more"
+                  class="button load-more__button no-js-hidden"
+                  data-next-url="{{ paginate.next.url }}"
+                >
+                  Load More
+                </button>
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              </div>
+            {%- endif -%}
+          </div>
+        {% endpaginate %}
+      {% when '/pages/all-products-sitemap' %}
         {% paginate collections.all.products by limit %}
-          {% for product in collections.all.products limit: limit %}
-            <li class="sitemap-item">
-              <a href="{{ product.url }}">{{ product.title }}</a>
-            </li>
-          {% endfor %}
+          <div id="products" class="category">
+            <h2 class="category-title">Products</h2>
+            <ol class="sitemap-list">
+              {% for product in collections.all.products limit: limit %}
+                <li class="sitemap-item">
+                  <a href="{{ product.url }}">{{ product.title }}</a>
+                </li>
+              {% endfor %}
+            </ol>
+            {%- if paginate.pages > 1 -%}
+              <div class="sitemap-pagination__load-more">
+                <button
+                  id="load-more"
+                  class="button load-more__button no-js-hidden"
+                  data-next-url="{{ paginate.next.url }}"
+                >
+                  Load More
+                </button>
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              </div>
+            {%- endif -%}
+          </div>
         {% endpaginate %}
-      </ul>
-    </div>
-    <div id="blog-posts" class="category">
-      <h2 class="category-title">Blog Posts</h2>
-      <ul>
+      {% when '/pages/all-blog-posts-sitemap' %}
         {% paginate blogs['hair-blog'].articles by limit %}
-          {% for article in blogs['hair-blog'].articles limit: limit %}
-            <li class="sitemap-item">
-              <a href="{{ article.url }}">{{ article.title }}</a>
-            </li>
-          {% endfor %}
+          <div id="blog-posts" class="category">
+            <h2 class="category-title">Blog Posts</h2>
+            <ol class="sitemap-list">
+              {% for article in blogs['hair-blog'].articles limit: limit %}
+                <li class="sitemap-item">
+                  <a href="{{ article.url }}">{{ article.title }}</a>
+                </li>
+              {% endfor %}
+            </ol>
+            {%- if paginate.pages > 1 -%}
+              <div class="sitemap-pagination__load-more">
+                <button
+                  id="load-more"
+                  class="button load-more__button no-js-hidden"
+                  data-next-url="{{ paginate.next.url }}"
+                >
+                  Load More
+                </button>
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              </div>
+            {%- endif -%}
+          </div>
         {% endpaginate %}
-      </ul>
-    </div>
-    <div id="pages" class="category">
-      <h2 class="category-title">Pages</h2>
-      <ul>
-        {% for page in pages limit: limit %}
-          <li class="sitemap-item">
-            <a href="{{ page.url }}">{{ page.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+
+      {% comment %} {% when '/pages/all-pages-sitemap' %}
+        {% paginate pages by limit %}
+          <div id="pages" class="category">
+            <h2 class="category-title">Pages</h2>
+            <ol class="sitemap-list">
+              {% for page in pages limit: limit %}
+                <li class="sitemap-item">
+                  <a href="{{ page.url }}">{{ page.title }}</a>
+                </li>
+              {% endfor %}
+            </ol>
+            {%- if paginate.pages > 1 -%}
+              <div class="sitemap-pagination__load-more">
+                <button
+                  id="load-more"
+                  class="button load-more__button no-js-hidden"
+                  data-next-url="{{ paginate.next.url }}"
+                >
+                  Load More
+                </button>
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              </div>
+            {%- endif -%}
+          </div>
+        {% endpaginate %} {% endcomment %}
+    {% endcase %}
   </div>
 </div>
+
+<script src="{{ 'sitemap-load-more.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
