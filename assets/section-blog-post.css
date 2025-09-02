@@ -335,6 +335,10 @@
   transform: rotate(270deg);
 }
 
+.article-main header details .accordion__content{
+  margin-top:1.5rem;
+}
+
 /* Author card */
 .author-card {
   justify-content: center;
