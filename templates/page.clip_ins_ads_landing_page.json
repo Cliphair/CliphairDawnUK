@@ -393,7 +393,7 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "colour_match_quiz_grid": {
@@ -425,7 +425,7 @@
       "settings": {
         "color_scheme": "",
         "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_bottom": 40,
         "trackable_name": "colour match and quiz"
       }
     },
