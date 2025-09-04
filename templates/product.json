@@ -70,6 +70,12 @@
             "title": "Features"
           }
         },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
@@ -124,6 +130,7 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "description",
             "heading": "Description",
@@ -134,6 +141,7 @@
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "specification",
             "heading": "Details",
@@ -144,6 +152,7 @@
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "instructions",
             "heading": "How to Style",
@@ -154,6 +163,7 @@
         },
         "collapsible_tab_JGqU4U": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "custom",
             "heading": "Delivery Info",
@@ -164,18 +174,13 @@
         },
         "collapsible_tab_36Cgxc": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "custom",
             "heading": "Return Policy",
             "icon": "none",
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         }
       },
@@ -188,6 +193,7 @@
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
+        "share",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "information_videos_8BXc9p",
         "a0b50969-ea33-4844-941d-db5577728e55",
@@ -201,8 +207,7 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc",
-        "share"
+        "collapsible_tab_36Cgxc"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
