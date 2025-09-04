@@ -141,7 +141,7 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
         const closeBtn = document.createElement('button');
         closeBtn.type = 'button';
         closeBtn.id = `ModalClose-${sectionId}-${index}`;
-        closeBtn.className = 'product-popup-modal__toggle hidden';
+        closeBtn.className = 'product-popup-modal__toggle';
         closeBtn.setAttribute('aria-label', 'Close');
         closeBtn.innerHTML = `
           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close" fill="none" viewBox="0 0 18 17">
