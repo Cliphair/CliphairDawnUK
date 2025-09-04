@@ -464,7 +464,7 @@
             "columns_desktop": 4,
             "show_view_all": true,
             "view_all_style": "solid",
-            "enable_desktop_slider": false,
+            "enable_desktop_slider": true,
             "image_ratio": "square",
             "image_shape": "default",
             "show_secondary_image": false,
@@ -477,7 +477,7 @@
             "display_low_inventory": false,
             "low_inventory": 5,
             "columns_mobile": "2",
-            "swipe_on_mobile": false
+            "swipe_on_mobile": true
           }
         }
       },
