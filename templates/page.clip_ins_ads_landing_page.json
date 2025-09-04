@@ -335,39 +335,6 @@
         "trackable_name": "shop_by_shade"
       }
     },
-    "colour_match_quiz_grid": {
-      "type": "colour-match-quiz-grid",
-      "blocks": {
-        "link_XDLgfN": {
-          "type": "link",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image2.jpg",
-            "url": "shopify://pages/colour-matching-service"
-          }
-        },
-        "popup_pymxbP": {
-          "type": "popup",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image.jpg",
-            "url": "shopify://pages/journey"
-          }
-        }
-      },
-      "block_order": [
-        "link_XDLgfN",
-        "popup_pymxbP"
-      ],
-      "custom_css": [
-        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
-      ],
-      "name": "Colour Match & Quiz",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "trackable_name": "colour match and quiz"
-      }
-    },
     "why_cliphair_97NNxq": {
       "type": "why-cliphair",
       "blocks": {
@@ -427,6 +394,39 @@
         "slider_visual": "counter",
         "padding_top": 20,
         "padding_bottom": 40
+      }
+    },
+    "colour_match_quiz_grid": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_XDLgfN": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/colour-matching-service"
+          }
+        },
+        "popup_pymxbP": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image.jpg",
+            "url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "link_XDLgfN",
+        "popup_pymxbP"
+      ],
+      "custom_css": [
+        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "colour match and quiz"
       }
     },
     "pulldown_info_grid_y7zgT4": {
@@ -809,8 +809,8 @@
     "table_of_content_7Y86MV",
     "videos_list_with_collection_modal",
     "collection_carrousel_QhAGdA",
-    "colour_match_quiz_grid",
     "why_cliphair_97NNxq",
+    "colour_match_quiz_grid",
     "pulldown_info_grid_y7zgT4",
     "videos_list_with_button_LFzwqE",
     "custom_liquid_qznp7k",
