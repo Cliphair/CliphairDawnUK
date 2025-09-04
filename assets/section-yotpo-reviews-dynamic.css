@@ -253,9 +253,7 @@
     "heading"
     "image"
     "content"
-
-    "additional"
-    ;
+    "additional";
 }
 
 .product-popup-modal__content-info>* {
@@ -353,14 +351,14 @@ modal-dialog.no-image .product-popup-modal__content-info {
   }
 
   .image-container {
-    padding:1.5rem;
+    padding: 1.5rem;
   }
 
   .review-section_image {
-    max-width:130px;
+    max-width: 130px;
   }
 
-  .additional-information{
+  .additional-information {
     justify-content: flex-end;
   }
 
