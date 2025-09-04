@@ -541,7 +541,7 @@
         "content_alignment": "center",
         "color_scheme": "accent-2",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 8,
         "padding_bottom": 0
       }
     },
@@ -654,7 +654,7 @@
         "scroll_desktop": true,
         "duration_desktop": 60,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 8
       }
     },
     "videos_list_with_button_LFzwqE": {
@@ -752,8 +752,31 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
+        "padding_top": 40,
         "padding_bottom": 20
+      }
+    },
+    "custom_liquid_YkPTqW2": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h2 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "interactive-table": {
+      "type": "hair-extension-comparison-table",
+      "settings": {
+        "color_scheme": "",
+        "options": "temporary-hair-extensions-features",
+        "padding_top": 20,
+        "padding_bottom": 40,
+        "trackable_name": "interactive_table"
       }
     },
     "custom_liquid_qznp7k": {
@@ -802,29 +825,6 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "trackable_name": "best_sellers"
-      }
-    },
-    "custom_liquid_YkPTqW2": {
-      "type": "custom-liquid",
-      "custom_css": [
-        "p.h2 {margin: 0;}"
-      ],
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
-        "color_scheme": "background-1",
-        "padding_top": 20,
-        "padding_bottom": 0
-      }
-    },
-    "interactive-table": {
-      "type": "hair-extension-comparison-table",
-      "settings": {
-        "color_scheme": "",
-        "options": "temporary-hair-extensions-features",
-        "padding_top": 20,
-        "padding_bottom": 40,
-        "trackable_name": "interactive_table"
       }
     }
   },
