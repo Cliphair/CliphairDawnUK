@@ -518,153 +518,6 @@
       "name": "Pulldown info grid",
       "settings": {}
     },
-    "videos_list_with_button_LFzwqE": {
-      "type": "videos-list-with-button",
-      "blocks": {
-        "video_cTH4ex": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Darkest Brown (2) Double Drawn Seamless Clip In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
-            "button_secondary": false
-          }
-        },
-        "video_XtAaKF5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Double Wefted Full Head Remy Clip in Human Hair Extensions - Darkest Brown (2).mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
-            "button_text": "DOUBLE WEFT",
-            "button_secondary": false
-          }
-        },
-        "video_XtAaKF": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Medium Brown (4) Double Drawn Seamless Clip In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
-            "button_secondary": false
-          }
-        },
-        "video_cTH4ex4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Jet Black (1) Ultra-Volume Clip In Full Head Set (240-300G).mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
-            "button_text": "ULTRA VOLUME",
-            "button_secondary": false
-          }
-        },
-        "video_KfhrNN": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/NaturalOff Black (1B) Double Drawn Seamless Clip In Hair Extensions.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "title": "",
-            "description": "",
-            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
-            "button_text": "SEAMLESS",
-            "button_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "video_cTH4ex",
-        "video_XtAaKF5",
-        "video_XtAaKF",
-        "video_cTH4ex4",
-        "video_KfhrNN"
-      ],
-      "custom_css": [
-        "a.button {box-sizing: border-box; max-width: 100%;}",
-        ".grid__item {min-width: 180px;}",
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
-        ".videos-list-wrapper {margin-top: 0;}"
-      ],
-      "name": "Videos list button",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": true,
-        "columns_desktop": 5,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 40,
-        "padding_bottom": 20
-      }
-    },
-    "custom_liquid_qznp7k": {
-      "type": "custom-liquid",
-      "custom_css": [
-        "p.h2 {margin: 0;}"
-      ],
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection_HYViXD": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "clip-in-hair-extensions",
-        "products_to_show": 8,
-        "columns_desktop": 5,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "colour_as_title": false,
-        "show_type": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "badge_style": "float",
-        "display_low_inventory": false,
-        "low_inventory": 5,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "trackable_name": "best_sellers"
-      }
-    },
     "rich_text_XgpBnz": {
       "type": "rich-text",
       "blocks": {
@@ -688,7 +541,7 @@
         "content_alignment": "center",
         "color_scheme": "accent-2",
         "full_width": true,
-        "padding_top": 20,
+        "padding_top": 40,
         "padding_bottom": 0
       }
     },
@@ -804,6 +657,153 @@
         "padding_bottom": 20
       }
     },
+    "videos_list_with_button_LFzwqE": {
+      "type": "videos-list-with-button",
+      "blocks": {
+        "video_cTH4ex": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Darkest Brown (2) Double Drawn Seamless Clip In Hair Extensions.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Double Wefted Full Head Remy Clip in Human Hair Extensions - Darkest Brown (2).mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/double-wefted-clip-in-hair-extensions",
+            "button_text": "DOUBLE WEFT",
+            "button_secondary": false
+          }
+        },
+        "video_XtAaKF": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Medium Brown (4) Double Drawn Seamless Clip In Hair Extensions.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        },
+        "video_cTH4ex4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Jet Black (1) Ultra-Volume Clip In Full Head Set (240-300G).mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/ultra-clip-in-hair-extensions",
+            "button_text": "ULTRA VOLUME",
+            "button_secondary": false
+          }
+        },
+        "video_KfhrNN": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/NaturalOff Black (1B) Double Drawn Seamless Clip In Hair Extensions.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
+            "description": "",
+            "button_url": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+            "button_text": "SEAMLESS",
+            "button_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "video_cTH4ex",
+        "video_XtAaKF5",
+        "video_XtAaKF",
+        "video_cTH4ex4",
+        "video_KfhrNN"
+      ],
+      "custom_css": [
+        "a.button {box-sizing: border-box; max-width: 100%;}",
+        ".grid__item {min-width: 180px;}",
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
+        ".videos-list-wrapper {margin-top: 0;}"
+      ],
+      "name": "Videos list button",
+      "settings": {
+        "title": "Our Collections",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": true,
+        "columns_desktop": 5,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "custom_liquid_qznp7k": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h2 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Best Sellers</em></p></div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_HYViXD": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "clip-in-hair-extensions",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "best_sellers"
+      }
+    },
     "custom_liquid_YkPTqW2": {
       "type": "custom-liquid",
       "custom_css": [
@@ -840,12 +840,12 @@
     "why_cliphair_97NNxq",
     "colour_match_quiz_grid",
     "pulldown_info_grid_y7zgT4",
-    "videos_list_with_button_LFzwqE",
-    "custom_liquid_qznp7k",
-    "featured_collection_HYViXD",
     "rich_text_XgpBnz",
     "maquee_mnMgq6",
+    "videos_list_with_button_LFzwqE",
     "custom_liquid_YkPTqW2",
-    "interactive-table"
+    "interactive-table",
+    "custom_liquid_qznp7k",
+    "featured_collection_HYViXD"
   ]
 }
