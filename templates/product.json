@@ -72,6 +72,7 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
           }
@@ -306,7 +307,7 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -315,7 +316,8 @@
       "custom_css": [
         ".deferred-media__poster-button {color: white;}",
         ".video-section__poster img {object-position: top;}",
-        ".videos-list__item {flex-grow: 0;}"
+        ".videos-list__item {flex-grow: 0;}",
+        ".videos-list-title {display: none;}"
       ],
       "settings": {
         "title": "SEE IT IN REAL LIFE",
@@ -392,7 +394,7 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -436,7 +438,7 @@
         "heading_yJVNpJ": {
           "type": "heading",
           "settings": {
-            "heading": "Let's compare",
+            "heading": "<strong>Let's compare</strong>",
             "heading_size": "h2",
             "h1": false
           }
@@ -451,7 +453,7 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -469,7 +471,7 @@
       "type": "yotpo-review-app",
       "settings": {
         "container_color_scheme": "accent-4",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
