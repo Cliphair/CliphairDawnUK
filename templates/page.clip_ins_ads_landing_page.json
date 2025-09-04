@@ -448,9 +448,36 @@
         },
         "pulldown_Whp6HL": {
           "type": "pulldown",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/brides.jpg",
             "pulldown": "the-bridal-hair-extensions-shop"
+          }
+        },
+        "product_grid_mhdR46": {
+          "type": "product-grid",
+          "settings": {
+            "title": "",
+            "introduction": "",
+            "collection": "halo-hair-extensions",
+            "products_to_show": 8,
+            "columns_desktop": 4,
+            "show_view_all": true,
+            "view_all_style": "solid",
+            "enable_desktop_slider": true,
+            "image_ratio": "square",
+            "image_shape": "default",
+            "show_secondary_image": false,
+            "colour_as_title": false,
+            "show_type": false,
+            "show_vendor": false,
+            "show_rating": false,
+            "enable_quick_add": true,
+            "badge_style": "float",
+            "display_low_inventory": false,
+            "low_inventory": 5,
+            "columns_mobile": "2",
+            "swipe_on_mobile": true
           }
         },
         "product_grid_PPEeeh": {
@@ -485,6 +512,7 @@
         "pulldown_87yzRf",
         "pulldown_MHyam3",
         "pulldown_Whp6HL",
+        "product_grid_mhdR46",
         "product_grid_PPEeeh"
       ],
       "name": "Pulldown info grid",
