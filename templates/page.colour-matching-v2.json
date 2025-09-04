@@ -176,7 +176,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/do-image-2.jpg",
-            "text_label": "<p>Snap a shot of the side of your hair – no shadows, just strands.</p>",
+            "text_label": "<p>Show us the back too – we need all the angles!</p>",
             "link": "",
             "dos_donts": "do"
           }
@@ -185,7 +185,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/do-image-3.jpg",
-            "text_label": "<p>Show us the back too – we need all the angles!</p>",
+            "text_label": "<p>Snap a shot of the side of your hair – no shadows, just strands.</p>",
             "link": "",
             "dos_donts": "do"
           }
@@ -236,7 +236,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/dont-image-3.jpg",
-            "text_label": "<p>Don’t blind us with light – soft, natural light works best.</p>",
+            "text_label": "<p>Don't blind us with light - avoid direct sunshine</p>",
             "link": "",
             "dos_donts": "dont"
           }
@@ -302,7 +302,7 @@
         "text_jX8bJJ": {
           "type": "text",
           "settings": {
-            "text": "<p>I understand that there could be a delay if the images provided are incorrect or if the dos and don'ts are not followed.</p>",
+            "text": "<p>For the fastest & most accurate match, be sure to follow the do's & dont's provided!</p>",
             "read-more_text": ""
           }
         }
