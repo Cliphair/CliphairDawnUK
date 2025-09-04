@@ -57,6 +57,7 @@
         },
         "slide_nnGry6": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/summer-mobile-banner-longer.jpg",
             "image_desktop": "shopify://shop_images/summer-campaing-2025-homepage-desktop-banner.jpg",
