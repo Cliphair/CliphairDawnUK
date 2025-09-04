@@ -42,23 +42,34 @@
         "padding_bottom": 20
       }
     },
+    "rich_text_aeGtNg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6NxthM": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Jump To</em>",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6NxthM"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
     "anchor-menu": {
       "type": "anchor-menu",
       "blocks": {
-        "anchor_37ChwE": {
-          "type": "anchor",
-          "settings": {
-            "anchor_label": "Hair Quiz",
-            "anchor_id": "colour-match-and-quiz"
-          }
-        },
-        "anchor_PeyMrt": {
-          "type": "anchor",
-          "settings": {
-            "anchor_label": "Colour match",
-            "anchor_id": "colour-match-and-quiz"
-          }
-        },
         "anchor_G94cWf": {
           "type": "anchor",
           "settings": {
@@ -93,16 +104,30 @@
             "anchor_label": "Reviews",
             "anchor_id": ""
           }
+        },
+        "anchor_37ChwE": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Hair Quiz",
+            "anchor_id": "colour-match-and-quiz"
+          }
+        },
+        "anchor_PeyMrt": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Colour match",
+            "anchor_id": "colour-match-and-quiz"
+          }
         }
       },
       "block_order": [
-        "anchor_37ChwE",
-        "anchor_PeyMrt",
         "anchor_G94cWf",
         "anchor_UjpA6L",
         "anchor_EQ6qR6",
         "anchor_nDBtWz",
-        "anchor_xF3T9q"
+        "anchor_xF3T9q",
+        "anchor_37ChwE",
+        "anchor_PeyMrt"
       ],
       "name": "Anchor menu",
       "settings": {
@@ -122,20 +147,6 @@
     "table_of_content_7Y86MV": {
       "type": "table-of-content",
       "blocks": {
-        "link_dReCJe": {
-          "type": "link",
-          "settings": {
-            "label": "Hair Quiz",
-            "link_id": "colour-match-and-quiz"
-          }
-        },
-        "link_VcVJGF": {
-          "type": "link",
-          "settings": {
-            "label": "Colour match",
-            "link_id": "colour-match-and-quiz"
-          }
-        },
         "link_HmLaye": {
           "type": "link",
           "settings": {
@@ -170,16 +181,30 @@
             "label": "Reviews",
             "link_id": "#"
           }
+        },
+        "link_dReCJe": {
+          "type": "link",
+          "settings": {
+            "label": "Hair Quiz",
+            "link_id": "colour-match-and-quiz"
+          }
+        },
+        "link_VcVJGF": {
+          "type": "link",
+          "settings": {
+            "label": "Colour match",
+            "link_id": "colour-match-and-quiz"
+          }
         }
       },
       "block_order": [
-        "link_dReCJe",
-        "link_VcVJGF",
         "link_HmLaye",
         "link_RPyMYV",
         "link_TGYdQH",
         "link_46emQy",
-        "link_ckwGUy"
+        "link_ckwGUy",
+        "link_dReCJe",
+        "link_VcVJGF"
       ],
       "name": "Table of contents",
       "settings": {
@@ -310,39 +335,6 @@
         "trackable_name": "shop_by_shade"
       }
     },
-    "colour_match_quiz_grid": {
-      "type": "colour-match-quiz-grid",
-      "blocks": {
-        "link_XDLgfN": {
-          "type": "link",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image2.jpg",
-            "url": "shopify://pages/colour-matching-service"
-          }
-        },
-        "popup_pymxbP": {
-          "type": "popup",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image.jpg",
-            "url": "shopify://pages/journey"
-          }
-        }
-      },
-      "block_order": [
-        "link_XDLgfN",
-        "popup_pymxbP"
-      ],
-      "custom_css": [
-        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
-      ],
-      "name": "Colour Match & Quiz",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "trackable_name": "colour match and quiz"
-      }
-    },
     "why_cliphair_97NNxq": {
       "type": "why-cliphair",
       "blocks": {
@@ -401,19 +393,45 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 20
+      }
+    },
+    "colour_match_quiz_grid": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_XDLgfN": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/colour-matching-service"
+          }
+        },
+        "popup_pymxbP": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image.jpg",
+            "url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "link_XDLgfN",
+        "popup_pymxbP"
+      ],
+      "custom_css": [
+        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "colour match and quiz"
       }
     },
     "pulldown_info_grid_y7zgT4": {
       "type": "pulldown-info-grid",
       "blocks": {
-        "pulldown_87yzRf": {
-          "type": "pulldown",
-          "settings": {
-            "image": "shopify://shop_images/clip-in-collection.jpg",
-            "pulldown": "clip-in-collection"
-          }
-        },
         "pulldown_MHyam3": {
           "type": "pulldown",
           "settings": {
@@ -421,26 +439,33 @@
             "pulldown": "professional-collection"
           }
         },
+        "pulldown_87yzRf": {
+          "type": "pulldown",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-collection.jpg",
+            "pulldown": "clip-in-collection"
+          }
+        },
         "pulldown_Whp6HL": {
           "type": "pulldown",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/brides.jpg",
             "pulldown": "the-bridal-hair-extensions-shop"
           }
         },
-        "product_grid_PPEeeh": {
+        "product_grid_qB6Yk9": {
           "type": "product-grid",
           "settings": {
-            "image": "shopify://shop_images/haircare_52151ca3-d42b-4ea7-81ad-ae9187ad1b1f.jpg",
             "title": "",
             "introduction": "",
-            "collection": "hair-care",
-            "products_to_show": 4,
+            "collection": "halo-hair-extensions",
+            "products_to_show": 8,
             "columns_desktop": 4,
-            "show_view_all": true,
+            "show_view_all": false,
             "view_all_style": "solid",
-            "enable_desktop_slider": false,
-            "image_ratio": "adapt",
+            "enable_desktop_slider": true,
+            "image_ratio": "square",
             "image_shape": "default",
             "show_secondary_image": false,
             "colour_as_title": false,
@@ -452,18 +477,49 @@
             "display_low_inventory": false,
             "low_inventory": 5,
             "columns_mobile": "2",
-            "swipe_on_mobile": false
+            "swipe_on_mobile": true
+          }
+        },
+        "product_grid_PPEeeh": {
+          "type": "product-grid",
+          "settings": {
+            "image": "shopify://shop_images/haircare_52151ca3-d42b-4ea7-81ad-ae9187ad1b1f.jpg",
+            "title": "",
+            "introduction": "",
+            "collection": "hair-care",
+            "products_to_show": 8,
+            "columns_desktop": 4,
+            "show_view_all": true,
+            "view_all_style": "solid",
+            "enable_desktop_slider": false,
+            "image_ratio": "square",
+            "image_shape": "default",
+            "show_secondary_image": false,
+            "colour_as_title": false,
+            "show_type": false,
+            "show_vendor": false,
+            "show_rating": false,
+            "enable_quick_add": false,
+            "badge_style": "float",
+            "display_low_inventory": false,
+            "low_inventory": 5,
+            "columns_mobile": "2",
+            "swipe_on_mobile": true
           }
         }
       },
       "block_order": [
-        "pulldown_87yzRf",
         "pulldown_MHyam3",
+        "pulldown_87yzRf",
         "pulldown_Whp6HL",
+        "product_grid_qB6Yk9",
         "product_grid_PPEeeh"
       ],
       "name": "Pulldown info grid",
-      "settings": {}
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
     },
     "videos_list_with_button_LFzwqE": {
       "type": "videos-list-with-button",
@@ -844,12 +900,13 @@
     "page-font",
     "main",
     "custom_liquid_YkPTqW",
+    "rich_text_aeGtNg",
     "anchor-menu",
     "table_of_content_7Y86MV",
     "videos_list_with_collection_modal",
     "collection_carrousel_QhAGdA",
-    "colour_match_quiz_grid",
     "why_cliphair_97NNxq",
+    "colour_match_quiz_grid",
     "pulldown_info_grid_y7zgT4",
     "videos_list_with_button_LFzwqE",
     "custom_liquid_qznp7k",
