@@ -31,6 +31,10 @@
             "picker_type": "dropdown"
           }
         },
+        "available_shades_yt4HbK": {
+          "type": "available-shades",
+          "settings": {}
+        },
         "sc_back_in_stock_app_block_JKfDnH": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
@@ -60,19 +64,15 @@
             "heading_3": ""
           }
         },
-        "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
-          "type": "payment_services",
-          "settings": {}
-        },
-        "available_shades_yt4HbK": {
-          "type": "available-shades",
-          "settings": {}
-        },
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
           "type": "short-description",
           "settings": {
             "title": "Features"
           }
+        },
+        "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
+          "type": "payment_services",
+          "settings": {}
         },
         "information_videos_8BXc9p": {
           "type": "information-videos",
@@ -183,12 +183,12 @@
         "title",
         "price",
         "buy_buttons",
+        "available_shades_yt4HbK",
         "sc_back_in_stock_app_block_JKfDnH",
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
-        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
-        "available_shades_yt4HbK",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
+        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "information_videos_8BXc9p",
         "a0b50969-ea33-4844-941d-db5577728e55",
         "delivery-threshold",
