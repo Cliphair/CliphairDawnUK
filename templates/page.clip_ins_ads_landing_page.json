@@ -42,23 +42,34 @@
         "padding_bottom": 20
       }
     },
+    "rich_text_EAHNtK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E9RBnQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Jump To</em>",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_E9RBnQ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
     "anchor-menu": {
       "type": "anchor-menu",
       "blocks": {
-        "anchor_37ChwE": {
-          "type": "anchor",
-          "settings": {
-            "anchor_label": "Hair Quiz",
-            "anchor_id": "colour-match-and-quiz"
-          }
-        },
-        "anchor_PeyMrt": {
-          "type": "anchor",
-          "settings": {
-            "anchor_label": "Colour match",
-            "anchor_id": "colour-match-and-quiz"
-          }
-        },
         "anchor_G94cWf": {
           "type": "anchor",
           "settings": {
@@ -93,16 +104,30 @@
             "anchor_label": "Reviews",
             "anchor_id": ""
           }
+        },
+        "anchor_37ChwE": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Hair Quiz",
+            "anchor_id": "colour-match-and-quiz"
+          }
+        },
+        "anchor_PeyMrt": {
+          "type": "anchor",
+          "settings": {
+            "anchor_label": "Colour match",
+            "anchor_id": "colour-match-and-quiz"
+          }
         }
       },
       "block_order": [
-        "anchor_37ChwE",
-        "anchor_PeyMrt",
         "anchor_G94cWf",
         "anchor_UjpA6L",
         "anchor_EQ6qR6",
         "anchor_nDBtWz",
-        "anchor_xF3T9q"
+        "anchor_xF3T9q",
+        "anchor_37ChwE",
+        "anchor_PeyMrt"
       ],
       "name": "Anchor menu",
       "settings": {
@@ -114,7 +139,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 20,
         "trackable_name": "anchor_menu"
       }
@@ -122,20 +147,6 @@
     "table_of_content_7Y86MV": {
       "type": "table-of-content",
       "blocks": {
-        "link_dReCJe": {
-          "type": "link",
-          "settings": {
-            "label": "Hair Quiz",
-            "link_id": "colour-match-and-quiz"
-          }
-        },
-        "link_VcVJGF": {
-          "type": "link",
-          "settings": {
-            "label": "Colour match",
-            "link_id": "colour-match-and-quiz"
-          }
-        },
         "link_HmLaye": {
           "type": "link",
           "settings": {
@@ -170,16 +181,30 @@
             "label": "Reviews",
             "link_id": "#"
           }
+        },
+        "link_dReCJe": {
+          "type": "link",
+          "settings": {
+            "label": "Hair Quiz",
+            "link_id": "colour-match-and-quiz"
+          }
+        },
+        "link_VcVJGF": {
+          "type": "link",
+          "settings": {
+            "label": "Colour match",
+            "link_id": "colour-match-and-quiz"
+          }
         }
       },
       "block_order": [
-        "link_dReCJe",
-        "link_VcVJGF",
         "link_HmLaye",
         "link_RPyMYV",
         "link_TGYdQH",
         "link_46emQy",
-        "link_ckwGUy"
+        "link_ckwGUy",
+        "link_dReCJe",
+        "link_VcVJGF"
       ],
       "name": "Table of contents",
       "settings": {
@@ -386,7 +411,7 @@
         "image_nM7EUp"
       ],
       "custom_css": [
-        ".section-images-list .images-list__item img {margin: 0 auto; width:auto; max-width:100%;}"
+        ".section-images-list .images-list__item img {margin: 0 auto; width: auto; max-width: 100%;}"
       ],
       "name": "Why Cliphair logos",
       "settings": {
@@ -779,6 +804,7 @@
     "page-font",
     "main",
     "custom_liquid_YkPTqW",
+    "rich_text_EAHNtK",
     "anchor-menu",
     "table_of_content_7Y86MV",
     "videos_list_with_collection_modal",
