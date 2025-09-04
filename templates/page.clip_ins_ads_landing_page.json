@@ -738,7 +738,7 @@
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
         ".videos-list-wrapper {margin-top: 0;}",
         ".videos-list-title {margin-bottom: 2rem !important;}",
-        ".title-wrapper{margin-bottom:0;}"
+        ".title-wrapper {margin-bottom: 0;}"
       ],
       "name": "Videos list button",
       "settings": {
@@ -831,6 +831,30 @@
         "padding_bottom": 20,
         "trackable_name": "best_sellers"
       }
+    },
+    "custom_liquid_C6YF6K": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>What People Are Saying</em></p></div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "yotpo_reviews_dynamic_carrousel_9x8m6X": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "name": "Yotpo reviews carousel",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "trackable_name": "reviews"
+      }
     }
   },
   "order": [
@@ -851,6 +875,8 @@
     "custom_liquid_YkPTqW2",
     "interactive-table",
     "custom_liquid_qznp7k",
-    "featured_collection_HYViXD"
+    "featured_collection_HYViXD",
+    "custom_liquid_C6YF6K",
+    "yotpo_reviews_dynamic_carrousel_9x8m6X"
   ]
 }
