@@ -425,7 +425,7 @@
       "settings": {
         "color_scheme": "",
         "padding_top": 20,
-        "padding_bottom": 40,
+        "padding_bottom": 20,
         "trackable_name": "colour match and quiz"
       }
     },
@@ -516,7 +516,10 @@
         "product_grid_PPEeeh"
       ],
       "name": "Pulldown info grid",
-      "settings": {}
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
     },
     "rich_text_XgpBnz": {
       "type": "rich-text",
