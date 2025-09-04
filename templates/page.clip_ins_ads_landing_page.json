@@ -737,7 +737,8 @@
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
         ".videos-list-wrapper {margin-top: 0;}",
-        ".videos-list-title {margin-bottom: 2rem!important;}"
+        ".videos-list-title {margin-bottom: 2rem !important;}",
+        ".title-wrapper{margin-bottom:0;}"
       ],
       "name": "Videos list button",
       "settings": {
