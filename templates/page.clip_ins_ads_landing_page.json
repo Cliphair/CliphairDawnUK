@@ -457,6 +457,7 @@
         "product_grid_mhdR46": {
           "type": "product-grid",
           "settings": {
+            "image": "shopify://shop_images/Halo_Hair_Extensions.jpg",
             "title": "",
             "introduction": "",
             "collection": "halo-hair-extensions",
