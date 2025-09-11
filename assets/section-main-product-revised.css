@@ -1752,9 +1752,9 @@ a.product__text {
 }
 
 /* payment services block */
-.payment_services {
+/* .payment_services {
   margin: 3.4rem 0;
-}
+} */
 
 .payment_services~square-placement {
   margin-top: 15px !important;
