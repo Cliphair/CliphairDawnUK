@@ -1751,6 +1751,10 @@ a.product__text {
   margin-top: -1.5rem;
 }
 
+.yotpo-widget-instance .yotpo-head{
+  display:none;
+}
+
 /* payment services block */
 /* .payment_services {
   margin: 3.4rem 0;
