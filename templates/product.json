@@ -294,6 +294,9 @@
         "collapsible_row_TYp6we",
         "collapsible_row_V8NAXD"
       ],
+      "custom_css": [
+        ".accordion{margin-top:0;}"
+      ],
       "name": "Product collapsible content",
       "settings": {
         "caption": "",
