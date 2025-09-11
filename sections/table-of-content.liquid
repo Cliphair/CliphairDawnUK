@@ -47,6 +47,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('back-top-top');
     const closeToc = document.getElementById('close-toc');
+    const closeTop = documenbt.querySelector(".section-table-of-content .mobile-facets__close")
     if (button) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
@@ -64,6 +65,15 @@
     if (closeToc) {
       closeToc.addEventListener('click', (event) => {
         const tocDetails = closeToc.closest('menu-drawer');
+        if (tocDetails) {
+          tocDetails.closeMenuDrawer(event);
+        }
+      });
+    }
+
+    if (closeTop) {
+      closeTop.addEventListener('click', (event) => {
+        const tocDetails = closeTop.closest('menu-drawer');
         if (tocDetails) {
           tocDetails.closeMenuDrawer(event);
         }
