@@ -303,6 +303,12 @@ fieldset.product-form__input .form__label {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width:349px){
+  .product-form__submit {
+    padding: 0 1.5rem;
+  }
+}
+
 .no-js .product-form__submit.button--secondary {
   --color-button: inherit;
   --color-button-text: inherit;
