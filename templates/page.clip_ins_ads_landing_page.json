@@ -102,7 +102,7 @@
           "type": "anchor",
           "settings": {
             "anchor_label": "Reviews",
-            "anchor_id": ""
+            "anchor_id": "reviews"
           }
         },
         "anchor_37ChwE": {
@@ -179,7 +179,7 @@
           "type": "link",
           "settings": {
             "label": "Reviews",
-            "link_id": "#"
+            "link_id": "reviews"
           }
         },
         "link_dReCJe": {
