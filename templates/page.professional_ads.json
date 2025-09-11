@@ -267,7 +267,8 @@
       ],
       "custom_css": [
         ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}"
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        "@media screen and (max-width: 749px){.slider-buttons.small-hide {display: flex !important;}}"
       ],
       "name": "Videos with modal",
       "settings": {
@@ -804,7 +805,8 @@
         "@media screen and (max-width: 349px) {a.button {font-size: 1.2rem; min-height: unset; padding: 1rem 1.5rem; }}",
         ".videos-list-wrapper {margin-top: 0;}",
         ".videos-list-title {margin-bottom: 2rem !important;}",
-        ".title-wrapper {margin-bottom: 0;}"
+        ".title-wrapper {margin-bottom: 0;}",
+        "@media screen and (max-width: 749px) {.slider-buttons.small-hide {display: flex !important; }}"
       ],
       "name": "Videos list button",
       "settings": {
