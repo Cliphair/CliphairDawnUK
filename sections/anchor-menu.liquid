@@ -90,7 +90,7 @@
               {% if block %}
                 <div>
                   <a
-                    href="{{ request.path | append: "#" | append: block.settings.anchor_id }}"
+                    href="#{{ block.settings.anchor_id }}"
                     class="button {% if section.settings.button_secondary %}button--secondary{% endif %}"
                     {% if section.settings.trackable_name != blank %}
                       data-event-type="section_click"
