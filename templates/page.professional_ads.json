@@ -88,7 +88,7 @@
           "type": "anchor",
           "settings": {
             "anchor_label": "Our collections",
-            "anchor_id": "shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+            "anchor_id": "shopify-section-template--26000815161718__pulldown_info_grid_y7zgT4"
           }
         },
         "anchor_nDBtWz": {
@@ -165,7 +165,7 @@
           "type": "link",
           "settings": {
             "label": "Our collections",
-            "link_id": "shopify-section-template--25993888661878__pulldown_info_grid_y7zgT4"
+            "link_id": "shopify-section-template--26000815161718__pulldown_info_grid_y7zgT4"
           }
         },
         "link_46emQy": {
@@ -268,7 +268,7 @@
       "custom_css": [
         ".collection-modal-card__text-wrapper {text-align: left; display: flex; flex-direction: column; justify-content: center;}",
         ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        "@media screen and (max-width: 749px){.slider-buttons.small-hide {display: flex !important;}}"
+        "@media screen and (max-width: 749px) {.slider-buttons.small-hide {display: flex !important; }}"
       ],
       "name": "Videos with modal",
       "settings": {
