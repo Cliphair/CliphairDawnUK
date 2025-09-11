@@ -91,6 +91,7 @@
                 <div>
                   <a
                     href="#{{ block.settings.anchor_id }}"
+                    data-scroll-to="{{ block.settings.anchor_id }}"
                     class="button {% if section.settings.button_secondary %}button--secondary{% endif %}"
                     {% if section.settings.trackable_name != blank %}
                       data-event-type="section_click"
@@ -139,6 +140,46 @@
     </slider-component>
   </div>
 </div>
+
+<script>
+(function() {
+  // Get current header height
+  function getHeaderHeight() {
+    const header = document.querySelector('header'); // adjust selector if needed
+    return header ? header.offsetHeight : 0;
+  }
+
+  // Smooth scroll to target with offset
+  function scrollToTarget(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const headerHeight = getHeaderHeight();
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = targetPosition - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  // Attach listeners on DOM ready
+  document.addEventListener('DOMContentLoaded', function() {
+    const anchors = document.querySelectorAll('.anchor-menu__item a[data-scroll-to]');
+
+    anchors.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('data-scroll-to');
+        if (targetId) {
+          e.preventDefault();
+          scrollToTarget(targetId);
+        }
+      });
+    });
+  });
+})();
+</script>
 
 {% schema %}
 {
