@@ -230,7 +230,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "main_product_collapsible_content_TGKixq": {
@@ -293,9 +293,6 @@
         "collapsible_row_fLJMQU",
         "collapsible_row_TYp6we",
         "collapsible_row_V8NAXD"
-      ],
-      "custom_css": [
-        ".accordion{margin-top:0;}"
       ],
       "name": "Product collapsible content",
       "settings": {
