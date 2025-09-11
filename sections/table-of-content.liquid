@@ -21,7 +21,7 @@
               <ul>
                 {% for block in section.blocks %}
                   <li>
-                    <a href="#{{ block.settings.link_id }}" title="Go to {{ block.settings.label }}">
+                    <a href="#{{ block.settings.link_id }}" title="Go to {{ block.settings.label }}" data-scroll-to="{{ block.settings.link_id }}">
                       {{- block.settings.label -}}
                     </a>
                   </li>
@@ -70,6 +70,46 @@
       });
     }
   });
+</script>
+
+<script>
+(function() {
+  // Get current header height
+  function getHeaderHeight() {
+    const header = document.querySelector('header'); // adjust selector if needed
+    return header ? header.offsetHeight : 0;
+  }
+
+  // Smooth scroll to target with offset
+  function scrollToTarget(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const headerHeight = getHeaderHeight();
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = targetPosition - headerHeight - 50;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  // Attach listeners on DOM ready
+  document.addEventListener('DOMContentLoaded', function() {
+    const anchors = document.querySelectorAll('.table-of-contents__list a[data-scroll-to]');
+
+    anchors.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('data-scroll-to');
+        if (targetId) {
+          e.preventDefault();
+          scrollToTarget(targetId);
+        }
+      });
+    });
+  });
+})();
 </script>
 
 {% schema %}
