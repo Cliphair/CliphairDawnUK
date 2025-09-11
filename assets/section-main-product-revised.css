@@ -1752,7 +1752,7 @@ a.product__text {
 }
 
 .yotpo-widget-instance .yotpo-head{
-  display:none;
+  display:none!important;
 }
 
 /* payment services block */
