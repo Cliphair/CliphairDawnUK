@@ -1,28 +1,524 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "font": {
+      "type": "page_font_ads",
       "settings": {
-        "show_title": true,
+        "font-text-1": "libre_baskerville_n4",
+        "font-btns": "libre_baskerville_n4"
+      }
+    },
+    "rich-text-header": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Free Colour Match",
+            "heading_size": "h1",
+            "h1": true
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "custom_css": [
+        ".rich-text__heading {margin-bottom: 0; font-size: 2.5rem; letter-spacing: -2%; line-height: 1.16em;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "rich-text-intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Find Your Perfect Shade</em>",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Submit three photos & receive your <br>bespoke match within 24 hours!</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "custom_css": [
+        ".rich-text__heading {margin-bottom: 0; font-size: 2.5rem; letter-spacing: -2%; line-height: 1.16em;}",
+        ".rich-text__text {margin-top: 1.7rem; margin-bottom: 2.1rem; line-height: 1.2em; letter-spacing: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "steps": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-1.jpg",
+            "text_label": "",
+            "link": "",
+            "dos_donts": "none"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-2.jpg",
+            "text_label": "",
+            "link": "",
+            "dos_donts": "none"
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-step-3.jpg",
+            "text_label": "",
+            "link": "",
+            "dos_donts": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "custom_css": [
+        ".images-list__item {background: #faf7f5;}",
+        ".section-images-list .images-list__item img {height: 65px; width: auto; margin: 0 auto; max-width: 100%;}"
+      ],
+      "settings": {
+        "title": "",
         "heading_size": "h1",
-        "show_content": true,
-        "text_alignment": "left",
-        "color_scheme": "accent-4",
-        "padding_top": 28,
-        "padding_bottom": 28
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich-text-dos-donts": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our do’s and dont’s</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "custom_css": [
+        ".rich-text__text {margin: 0; line-height: 1.2em; letter-spacing: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 32
+      }
+    },
+    "dos-images": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/do-image-1.jpg",
+            "text_label": "<p>Take a clear selfie, hair down, root to tip, in natural light.</p>",
+            "link": "",
+            "dos_donts": "do"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/do-image-2.jpg",
+            "text_label": "<p>Show us the back too – we need all the angles!</p>",
+            "link": "",
+            "dos_donts": "do"
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/do-image-3.jpg",
+            "text_label": "<p>Snap a shot of the side of your hair – no shadows, just strands.</p>",
+            "link": "",
+            "dos_donts": "do"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "donts-images": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dont-image-1.jpg",
+            "text_label": "<p>Don’t add filters – we need the real you to get the perfect match!</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dont-image-2.jpg",
+            "text_label": "<p>Don’t snap in the dark – good lighting makes great matches.</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dont-image-3.jpg",
+            "text_label": "<p>Don't blind us with light - avoid direct sunshine</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        },
+        "image4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dont-image-4.jpg",
+            "text_label": "<p>Don’t zoom in too close – we need to see ALL of your hair!</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        },
+        "image5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dont-image-5.jpg",
+            "text_label": "<p>Don’t bring the squad – solo shots only, please.</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        },
+        "image_ABq7Vr": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/dont-image-6.jpg",
+            "text_label": "<p>Don’t tie it up – we need your hair down and natural.</p>",
+            "link": "",
+            "dos_donts": "dont"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3",
+        "image4",
+        "image5",
+        "image_ABq7Vr"
+      ],
+      "custom_css": [
+        "img {aspect-ratio: 0.66; object-fit: cover;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 56
+      }
+    },
+    "rich_text_LFe63a": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jX8bJJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For the fastest & most accurate match, be sure to follow the do's & dont's provided!</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_jX8bJJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banners": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-whatsapp-banner.jpg",
+            "text_label": "",
+            "link": "",
+            "dos_donts": "none"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-form-banner.jpg",
+            "text_label": "",
+            "link": "",
+            "dos_donts": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "form_builder_KN33jz": {
+      "type": "form-builder",
+      "custom_css": [
+        "iframe:focus-visible {outline: none; box-shadow: none;}"
+      ],
+      "settings": {
+        "id": "T9sl8Fd3_2jJ8Wv3j-MZWA",
+        "max-width": "990",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "break-line": {
+      "type": "break-line",
+      "custom_css": [
+        ".break-line {margin-top: -5rem;}"
+      ],
+      "settings": {
+        "bg_color": "#000000",
+        "max_width": "",
+        "height": 1
+      }
+    },
+    "yotpo_reviews_dynamic_carrousel_RPPhYc": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "name": "Yotpo Reviews Carousel",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
+    "rich_text_Kixmyb": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Kxd7kk": {
+          "type": "button",
+          "settings": {
+            "button_label": "View All",
+            "button_link": "shopify://pages/testimonials",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_Kxd7kk"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_TFtpeW": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_iMePXM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does the colour match service also help with product and length recommendations? ",
+            "icon": "none",
+            "row_content": "<p>Absolutely! Our friendly colour match team can also help you choose the best length and type of hair extensions as well as giving tailored advice on application and aftercare.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_baiDh6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if my hair colour is a balayage or has multiple shades?",
+            "icon": "none",
+            "row_content": "<p>We have a full range of ombre, balayage and highlighted hair extensions to match multitoned hair shades. In the unlikely event that we do not have a perfect match in our 65+ shades we will suggest the next closest shade and provide full instructions on how best to blend the extensions with your hair. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cnzbXR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if the colour suggested doesn't match my hair – can I return it?",
+            "icon": "none",
+            "row_content": "<p>You have 60 days to return or exchange your hair extensions from when you receive them providing they haven’t been customised and still have the hygiene bands intact. The hair extensions can be removed from the packaging and held against the hair to check the colour without needing to remove any of the hygiene bands.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AGEjtg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I exchange the hair extensions for a new colour if they do not match my hair?",
+            "icon": "none",
+            "row_content": "<p>Head to our <a href=\"/pages/returns-information\" title=\"Returns Information\">Returns & Exchange</a> page and follow the instructions to request a colour exchange. If you’d like the colour match teams help choosing a new colour, upload 2-3 images of the incorrect colour next to your hair. Next you will receive a shipping label to return the unwanted extensions and swap for a new set.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mhHpNm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will I have to wait for my free colour match?",
+            "icon": "none",
+            "row_content": "<p>We are super proud to boast the fastest responding customer service in the hair extensions market. After submitting your colour match request, you’ll receive your match in under 24 hours! We also offer 7 day, express shipping, even on Sundays – so you can receive your extensions within 2 days of sending your colour match in. For urgent requests call us on 03450 211 311.   </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_iMePXM",
+        "collapsible_row_baiDh6",
+        "collapsible_row_cnzbXR",
+        "collapsible_row_AGEjtg",
+        "collapsible_row_mhHpNm"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ's",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "arrow_style": "half-arrow",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "faq_schema": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "main"
+    "font",
+    "rich-text-header",
+    "rich-text-intro",
+    "steps",
+    "rich-text-dos-donts",
+    "dos-images",
+    "donts-images",
+    "rich_text_LFe63a",
+    "banners",
+    "form_builder_KN33jz",
+    "break-line",
+    "yotpo_reviews_dynamic_carrousel_RPPhYc",
+    "rich_text_Kixmyb",
+    "collapsible_content_TFtpeW"
   ]
 }
