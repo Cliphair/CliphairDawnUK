@@ -365,7 +365,7 @@ fieldset.product-form__input .form__label {
   margin: 2.5rem 0;
 }
 
-.variant-picker+.buy-buttons .product-form {
+.buy-buttons .product-form {
   margin-top: 0;
 }
 
@@ -1979,7 +1979,7 @@ square-placement {
 }
 
 /* buy buttons block */
-.product__info-container .buy-buttons>.product-form {
+.buy-buttons>.product-form {
   margin-bottom: 0;
   /* max-width: 44rem; */
 }
