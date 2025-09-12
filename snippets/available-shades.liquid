@@ -1,4 +1,4 @@
-{% if collection %}
+{% unless product.type == "Hair Care" or product.type == "Accessories" or product.type == "Gift Card" or product.type == "Bundles" %}
     {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
     {% liquid
@@ -126,4 +126,4 @@
     </shade-selector>
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
-{% endif %}
+{% endunless %}
