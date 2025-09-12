@@ -12,9 +12,11 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 <div class="grid variant-picker-and-buy-buttons {% if product.options_with_values.size > 1 %}multiple-options{% endif %}">
-  <div class="variant-picker">
-    {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-  </div>
+  {%- unless product.has_only_default_variant -%}
+    <div class="variant-picker">
+      {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+    </div>
+  {% endunless %}
   <div {{ block.shopify_attributes }} class="buy-buttons">
     {%- if product != blank -%}
       {%- liquid
