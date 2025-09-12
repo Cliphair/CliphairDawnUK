@@ -1,4 +1,4 @@
-{% unless product.type == "Hair Care" or product.type == "Accessories" or product.type == "Gift Card" or product.type == "Bundles" %}
+{% unless product.type == "Hair Care" or product.type == "Accessories" or product.type == "Gift Card" or product.type == "Bundle" or product.type == "Gift Set" %}
     {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
     {% liquid
