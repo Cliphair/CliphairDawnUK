@@ -1979,7 +1979,7 @@ square-placement {
 }
 
 /* buy buttons block */
-.buy-buttons>.product-form {
+.product__info-container .buy-buttons>.product-form {
   margin-bottom: 0;
   /* max-width: 44rem; */
 }
