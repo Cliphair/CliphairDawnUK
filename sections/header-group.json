@@ -137,6 +137,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Saturday_Guaranteed_Delivery_on_hair_extensions_from_clip_hair_extensions.gif",
             "text_alignment": "center",
