@@ -10,62 +10,16 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "main-product-v2",
       "blocks": {
-        "information_videos_8BXc9p": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "accent-4"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "heading_size": "h2"
           }
         },
-        "a0b50969-ea33-4844-941d-db5577728e55": {
-          "type": "rating",
-          "settings": {}
-        },
-        "delivery_threshold_d7hmim": {
-          "type": "delivery_threshold",
-          "settings": {
-            "color_scheme": "accent-2"
-          }
-        },
-        "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
-          "type": "short-description",
-          "settings": {
-            "title": "Features"
-          }
-        },
-        "information_videos_MKNiNH": {
-          "type": "information-videos",
-          "settings": {
-            "color_scheme": "inverse"
-          }
-        },
         "price": {
           "type": "price",
-          "settings": {}
-        },
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
-          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "dropdown"
-          }
-        },
-        "quantity_selector_RERRjV": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "sc_back_in_stock_app_block_JKfDnH": {
-          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
         "buy_buttons": {
@@ -73,10 +27,19 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
-            "color_scheme": "inverse"
+            "color_scheme": "inverse",
+            "picker_type": "dropdown"
           }
         },
-        "order_deadline_2_app_block_product_wa7Bmb": {
+        "available_shades_yt4HbK": {
+          "type": "available-shades",
+          "settings": {}
+        },
+        "sc_back_in_stock_app_block_JKfDnH": {
+          "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "settings": {}
+        },
+        "order_deadline_2_app_block_product_DHR7j6": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
           "settings": {
             "product": "{{product}}",
@@ -87,11 +50,6 @@
             "placementTarget": "",
             "loadEventName": ""
           }
-        },
-        "order_deadline_67UiV7": {
-          "type": "order_deadline",
-          "disabled": true,
-          "settings": {}
         },
         "icon_with_text_AGQyTW": {
           "type": "icon-with-text",
@@ -106,38 +64,74 @@
             "heading_3": ""
           }
         },
-        "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
-          "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
+        "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
+          "type": "short-description",
           "settings": {
-            "text_align": "inherit",
-            "margin_top": 16,
-            "margin_bottom": 16,
-            "color": "",
-            "size": "xs",
-            "intro_text": "Pay in",
-            "show_interest_free": true,
-            "payment_amount_is_bold": false,
-            "show_with": true,
-            "logo_type": "badge",
-            "logo_theme": "black-on-mint",
-            "modal_link_style": "circled-info-icon",
-            "modal_theme": "mint",
-            "breakpoint": 749,
-            "text_align_mobile": "inherit",
-            "margin_top_mobile": 16,
-            "margin_bottom_mobile": 16,
-            "show_lower_limit": true,
-            "show_upper_limit": true,
-            "show_if_outside_limits": true,
-            "product": "{{product}}"
+            "title": "Features"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
           }
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
         },
+        "information_videos_8BXc9p": {
+          "type": "information-videos",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "accent-4"
+          }
+        },
+        "a0b50969-ea33-4844-941d-db5577728e55": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "delivery-threshold": {
+          "type": "delivery_threshold",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "accent-2"
+          }
+        },
+        "information_videos_MKNiNH": {
+          "type": "information-videos",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "inverse"
+          }
+        },
+        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector_RERRjV": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "order_deadline_67UiV7": {
+          "type": "order_deadline",
+          "disabled": true,
+          "settings": {}
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "description",
             "heading": "Description",
@@ -148,6 +142,7 @@
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "specification",
             "heading": "Details",
@@ -158,6 +153,7 @@
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "instructions",
             "heading": "How to Style",
@@ -168,6 +164,7 @@
         },
         "collapsible_tab_JGqU4U": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "custom",
             "heading": "Delivery Info",
@@ -178,6 +175,7 @@
         },
         "collapsible_tab_36Cgxc": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "type": "custom",
             "heading": "Return Policy",
@@ -185,38 +183,32 @@
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "information_videos_8BXc9p",
         "title",
-        "a0b50969-ea33-4844-941d-db5577728e55",
-        "delivery_threshold_d7hmim",
-        "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
-        "information_videos_MKNiNH",
         "price",
+        "buy_buttons",
+        "available_shades_yt4HbK",
+        "sc_back_in_stock_app_block_JKfDnH",
+        "order_deadline_2_app_block_product_DHR7j6",
+        "icon_with_text_AGQyTW",
+        "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
+        "share",
+        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
+        "information_videos_8BXc9p",
+        "a0b50969-ea33-4844-941d-db5577728e55",
+        "delivery-threshold",
+        "information_videos_MKNiNH",
         "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker",
         "variant_picker",
         "quantity_selector_RERRjV",
-        "sc_back_in_stock_app_block_JKfDnH",
-        "buy_buttons",
-        "order_deadline_2_app_block_product_wa7Bmb",
         "order_deadline_67UiV7",
-        "icon_with_text_AGQyTW",
-        "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
-        "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_JGqU4U",
-        "collapsible_tab_36Cgxc",
-        "share"
+        "collapsible_tab_36Cgxc"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
@@ -238,6 +230,87 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main_product_collapsible_content_TGKixq": {
+      "type": "main-product-collapsible-content",
+      "blocks": {
+        "collapsible_row_yajDrt": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "description",
+            "heading": "Description",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_bLWEiA": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "specification",
+            "heading": "Details",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_fLJMQU": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "instructions",
+            "heading": "Aftercare",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_TYp6we": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "custom",
+            "heading": "Delivery Info",
+            "icon": "none",
+            "row_content": "<p><span style=\"text-decoration:underline\"><strong>UK</strong></span></p><ul><li>Economy Tracked: 3-5 Working Days - FREE on Orders over £30</li><li>Express Tracked: 1-2 Working Days - £3.99</li><li>Next Working Day Guaranteed (Order Before 4pm Mon-Thu) - £7.99</li><li>Next Working Day by 10.30 AM (Order Before 3pm Mon-Thu) - £11.99</li><li>Saturday Guaranteed (Order Before 4pm Friday) - £8.99</li><li>Sunday Guaranteed (Order Before 3pm Saturday) - £5.99</li><li>Monday Guaranteed (Order Before 3pm Sunday) - £7.99</li><li>Pickup at Nearby Shop (Order Before      3pm For Next Working Day) - £3.99</li></ul><p><span style=\"text-decoration:underline\"><strong>USA</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £9.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>Canada</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £12.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>IRELAND/EU</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – 11.49<br/><strong>(Taxes Paid by Customer on Delivery)</strong></li><li>Economy Tracked: (4-7 Working Days) - £25.00<br/><strong>(Inc. All Taxes & Duties. Nothing to pay on Delivery)</strong> </li></ul><p><span style=\"text-decoration:underline\"><strong>REST OF THE WORLD</strong></span></p><ul><li>Express Tracked: (2-4 Working Days) – 14.99</li></ul><p><strong>Please note you might have to pay duties which are not included in carriage.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_V8NAXD": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "custom",
+            "heading": "Return Policy",
+            "icon": "none",
+            "row_content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_yajDrt",
+        "collapsible_row_bLWEiA",
+        "collapsible_row_fLJMQU",
+        "collapsible_row_TYp6we",
+        "collapsible_row_V8NAXD"
+      ],
+      "custom_css": [
+        ".accordion{margin-top:0;}"
+      ],
+      "name": "Product collapsible content",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "arrow_style": "half-arrow",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -246,7 +319,8 @@
       "custom_css": [
         ".deferred-media__poster-button {color: white;}",
         ".video-section__poster img {object-position: top;}",
-        ".videos-list__item {flex-grow: 0;}"
+        ".videos-list__item {flex-grow: 0;}",
+        ".videos-list-title {display: none;}"
       ],
       "settings": {
         "title": "SEE IT IN REAL LIFE",
@@ -270,6 +344,7 @@
     },
     "506f6558-7efd-4e91-a56a-75b4a46d81cc": {
       "type": "frequently-bought-together-app",
+      "disabled": true,
       "settings": {
         "container_color_scheme": "background-2",
         "padding_top": 40,
@@ -278,6 +353,7 @@
     },
     "related-products": {
       "type": "related-products-by-colour",
+      "disabled": true,
       "settings": {
         "heading": "YOU MIGHT ALSO LIKE",
         "heading_size": "h1",
@@ -300,17 +376,105 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_mYyP7X": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NnyKnt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Haircare Essentials",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NnyKnt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_Uj93ay": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "hair-care",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_bJzHHY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yJVNpJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Let's compare</strong>",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yJVNpJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hair_extension_comparison_table_GpJ4WR": {
+      "type": "hair-extension-comparison-table",
+      "name": "Comparison Table",
+      "settings": {
+        "color_scheme": "",
+        "options": "all-hair-extensions-features",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
-      "custom_css": [
-        ".yotpo-main-reviews-widget > .yotpo-head {display: none !important;}"
-      ],
       "settings": {
-        "title": "Verified Reviews: What People Are Saying",
-        "heading_size": "h1",
-        "text_allignment": "center",
         "container_color_scheme": "accent-4",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
@@ -433,8 +597,7 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "trackable_name": ""
+        "padding_bottom": 40
       }
     },
     "custom_liquid_ExyY9Q": {
@@ -449,9 +612,14 @@
   },
   "order": [
     "main",
+    "main_product_collapsible_content_TGKixq",
     "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
+    "rich_text_mYyP7X",
+    "featured_collection_Uj93ay",
+    "rich_text_bJzHHY",
+    "hair_extension_comparison_table_GpJ4WR",
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26",
     "2ba62760-f7d7-46c5-ae93-8ade6e208816",
     "product_faq_NBzNDV",
