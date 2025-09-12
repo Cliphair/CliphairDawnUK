@@ -435,36 +435,45 @@
         "collapsible_row_iMePXM": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Quality of our Hair Extensions",
+            "heading": "Does the colour match service also help with product and length recommendations? ",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Absolutely! Our friendly colour match team can also help you choose the best length and type of hair extensions as well as giving tailored advice on application and aftercare.  </p>",
             "page": ""
           }
         },
         "collapsible_row_baiDh6": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Clip In Hair Extensions",
+            "heading": "What if my hair colour is a balayage or has multiple shades?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>We have a full range of ombre, balayage and highlighted hair extensions to match multitoned hair shades. In the unlikely event that we do not have a perfect match in our 65+ shades we will suggest the next closest shade and provide full instructions on how best to blend the extensions with your hair. </p>",
             "page": ""
           }
         },
         "collapsible_row_cnzbXR": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Care And Usage",
+            "heading": "What if the colour suggested doesn't match my hair – can I return it?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>You have 60 days to return or exchange your hair extensions from when you receive them providing they haven’t been customised and still have the hygiene bands intact. The hair extensions can be removed from the packaging and held against the hair to check the colour without needing to remove any of the hygiene bands.  </p>",
             "page": ""
           }
         },
         "collapsible_row_AGEjtg": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Shipping And Returns",
+            "heading": "How do I exchange the hair extensions for a new colour if they do not match my hair?",
             "icon": "none",
-            "row_content": "",
+            "row_content": "<p>Head to our <a href=\"/pages/returns-information\" title=\"Returns Information\">Returns & Exchange</a> page and follow the instructions to request a colour exchange. If you’d like the colour match teams help choosing a new colour, upload 2-3 images of the incorrect colour next to your hair. Next you will receive a shipping label to return the unwanted extensions and swap for a new set.  </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mhHpNm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will I have to wait for my free colour match?",
+            "icon": "none",
+            "row_content": "<p>We are super proud to boast the fastest responding customer service in the hair extensions market. After submitting your colour match request, you’ll receive your match in under 24 hours! We also offer 7 day, express shipping, even on Sundays – so you can receive your extensions within 2 days of sending your colour match in. For urgent requests call us on 03450 211 311.   </p>",
             "page": ""
           }
         }
@@ -473,7 +482,8 @@
         "collapsible_row_iMePXM",
         "collapsible_row_baiDh6",
         "collapsible_row_cnzbXR",
-        "collapsible_row_AGEjtg"
+        "collapsible_row_AGEjtg",
+        "collapsible_row_mhHpNm"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
