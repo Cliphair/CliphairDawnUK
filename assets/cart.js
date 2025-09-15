@@ -28,7 +28,7 @@ class CartRemoveButton extends HTMLElement {
 
     dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
     dataLayer.push({
-      event: "remove_from_cart",
+      event: "gtm_remove_from_cart",
       ecommerce: {
         currency: storeCurrency,
         value: value,
