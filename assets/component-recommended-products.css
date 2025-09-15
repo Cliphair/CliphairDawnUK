@@ -116,10 +116,9 @@
   text-decoration-thickness: 0.15rem;
 }
 
-/* #recommended-products-cart .quick-add__submit.button:before,
-#recommended-products-cart .quick-add__submit.button:after {
-  content: none;
-} */
+#recommended-products-cart .quick-add .swym-embed-pdp-btn-wrapper{
+  margin-bottom:0;
+}
 
 #recommended-products-cart .quick-add .swym-atw-button-container{
   display:none;
