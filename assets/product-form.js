@@ -173,7 +173,7 @@ if (!customElements.get('product-form')) {
 
         dataLayer.push({ 'ecommerce': null });
         dataLayer.push({
-          'event': 'add_to_cart',
+          'event': 'gtm_add_to_cart',
           'ecommerce': {
             'currency': storeCurrency,
             'value': value,
