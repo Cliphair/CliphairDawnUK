@@ -102,3 +102,22 @@
   top: 50%;
   transform: translate(0, -50%);
 }
+
+/* quick add to cart */
+#recommended-products-cart .quick-add__submit.button {
+  min-height: unset;
+  padding: 0;
+  text-align: left;
+  display: block;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+}
+
+#recommended-products-cart .quick-add__submit.button:hover {
+  text-decoration-thickness: 0.15rem;
+}
+
+#recommended-products-cart .quick-add__submit.button:before,
+#recommended-products-cart .quick-add__submit.button:after {
+  content: none;
+}
