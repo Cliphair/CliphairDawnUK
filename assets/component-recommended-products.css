@@ -122,3 +122,7 @@
 #recommended-products-cart .quick-add__submit.button:after {
   content: none;
 }
+
+#recommended-products-cart .quick-add .swym-atw-button-container{
+  display:none;
+}
