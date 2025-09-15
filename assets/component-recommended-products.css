@@ -106,10 +106,9 @@
 /* quick add to cart */
 #recommended-products-cart .quick-add__submit.button {
   min-height: unset;
-  padding: 0;
-  text-align: center;
-  display: block;
+  padding: .5rem;
   text-decoration: underline;
+  margin-top: 0.5rem;
   margin-top: 1rem;
   font-size:1.2rem;
 }
@@ -118,10 +117,10 @@
   text-decoration-thickness: 0.15rem;
 }
 
-#recommended-products-cart .quick-add__submit.button:before,
+/* #recommended-products-cart .quick-add__submit.button:before,
 #recommended-products-cart .quick-add__submit.button:after {
   content: none;
-}
+} */
 
 #recommended-products-cart .quick-add .swym-atw-button-container{
   display:none;
