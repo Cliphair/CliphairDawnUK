@@ -82,6 +82,7 @@
               card_product: product,
               media_aspect_ratio: 'square',
               show_rating: true,
+              show_quick_add: true,
               section_id: 'recommended-products-cart'
             %}
           </li>
@@ -128,7 +129,6 @@
 
     if (prevSibling) {
       const style = getComputedStyle(prevSibling);
-      console.log('marginBottom:', style.marginBottom);
       extraSpace = parseFloat(style.marginBottom) || 0;
     } else {
       console.log('No previous sibling found.');
