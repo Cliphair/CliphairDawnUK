@@ -3,6 +3,10 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
 {% liquid
   assign product_handles = 'quench-the-thirst-deep-moisture-shampoo,quench-the-thirst-deep-moisture-conditioner,quench-the-thirst-deep-conditioning-hair-mask,cliphair-silky-hair-spray,cliphair-heat-spray,hair-extension-hanger-and-carrier-bag,hair-extension-holder,detangling-hair-brush,wave-comb-and-pouch,pintail-comb,alligator-clips,'
   assign cart_product_handles = ''
