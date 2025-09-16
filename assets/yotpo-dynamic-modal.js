@@ -148,6 +148,9 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
             <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path>
           </svg>
         `;
+        closeBtn.addEventListener("click", () => {
+          modal.hide();
+        })
 
         // Content Info
         const info = document.createElement('div');
@@ -198,7 +201,6 @@ if (!customElements.get('yotpo-dynamic-reviews')) {
         contentWrapper.append(closeBtn, info);
         modal.appendChild(contentWrapper);
 
-        console.log("modal created:", modal);
         return modal;
       }
 
