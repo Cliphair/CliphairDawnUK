@@ -77,6 +77,32 @@
             "share_label": "Share"
           }
         },
+        "clearpay_on_site_messaging_payments_messaging_GX8HdW": {
+          "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
+          "settings": {
+            "text_align": "left",
+            "margin_top": 15,
+            "margin_bottom": 15,
+            "color": "",
+            "size": "sm",
+            "intro_text": "Pay in",
+            "show_interest_free": true,
+            "payment_amount_is_bold": true,
+            "show_with": true,
+            "logo_type": "badge",
+            "logo_theme": "black-on-mint",
+            "modal_link_style": "circled-info-icon",
+            "modal_theme": "mint",
+            "breakpoint": 749,
+            "text_align_mobile": "left",
+            "margin_top_mobile": 15,
+            "margin_bottom_mobile": 15,
+            "show_lower_limit": true,
+            "show_upper_limit": true,
+            "show_if_outside_limits": true,
+            "product": "{{product}}"
+          }
+        },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
@@ -195,6 +221,7 @@
         "icon_with_text_AGQyTW",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "share",
+        "clearpay_on_site_messaging_payments_messaging_GX8HdW",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "information_videos_8BXc9p",
         "a0b50969-ea33-4844-941d-db5577728e55",
@@ -295,7 +322,7 @@
         "collapsible_row_V8NAXD"
       ],
       "custom_css": [
-        ".accordion{margin-top:0;}"
+        ".accordion {margin-top: 0;}"
       ],
       "name": "Product collapsible content",
       "settings": {
@@ -432,7 +459,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "rich_text_bJzHHY": {
@@ -467,12 +495,16 @@
         "color_scheme": "",
         "options": "all-hair-extensions-features",
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "text_allignment": "left",
         "container_color_scheme": "accent-4",
         "padding_top": 0,
         "padding_bottom": 40
@@ -597,7 +629,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "custom_liquid_ExyY9Q": {
