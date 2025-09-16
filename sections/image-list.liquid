@@ -106,9 +106,15 @@
                 width="{{ block.settings.image.width }}"
                 height="{{ block.settings.image.height }}"
               >
-              {% if block.settings.text_label != null %}
-                <div class="text-container h5">{{ block.settings.text_label }}</div>
-              {%- endif -%}
+            {% elsif block.settings.img_url %}
+              <img
+                src="{{ block.settings.img_url }}"
+                alt="{{ block.settings.alt | escape }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+            {% if block.settings.text_label != null and block.settings.img_url or block.settings.image != blank%}
+              <div class="text-container h5">{{ block.settings.text_label }}</div>
             {%- endif -%}
             {%- if block.settings.link != blank -%}
               </a>
@@ -345,15 +351,28 @@
       "name": "Image",
       "settings": [
         {
+          "type": "header",
+          "content": "Shopify hosted"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Third part hosted"
         },
         {
           "type": "url",
           "id": "img_url",
           "label": "Image url",
           "info": "Optional. Only if you don't want to use a Shopify hosted image."
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text"
         },
         {
           "type": "richtext",
