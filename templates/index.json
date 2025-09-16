@@ -816,7 +816,8 @@
         "image_UJnFyW": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/sophie-turner-as-seen-on.webp",
+            "img_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/465063354_1246309533376847_5255723324710601841_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTgwMC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QGdYmktNhOJ12wyJ_BQC314PTy84sofKgEPznteBnY6m474Pb0mNtItTL54bOAmwFA&_nc_ohc=DsCXeBwOz-0Q7kNvwE-mMjA&_nc_gid=gAk-T7OE9r7iGV2Hn9x9vA&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzQ5MDE0MTM5MDI1ODAzMjg4Ng%3D%3D.3-ccb7-5&oh=00_Afa42izMQiUBBmUPRKyWyG1K3BGA1ROfHrYHltHmWPWo5Q&oe=68CDB242&_nc_sid=10d13b",
+            "alt": "@sophiet styled by @halleybrisker",
             "text_label": "<p>@sophiet styled by @halleybrisker</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">16\" Barbie Blonde Seamless Clip Ins</a></p>",
             "link": ""
           }
@@ -825,6 +826,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/ameliadimz.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@ameliadimz styled by @elliefoxhair <br/><br/><a href=\"/products/double-wefted-set-clip-in-hair-extensions-lightest-brown-18\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Lightest Brown (#18)\">20\" Lightest Brown (#18) Double Weft Clip Ins</a></p>",
             "link": ""
           }
@@ -833,6 +836,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/amyhartxo.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@amyhartxo Styled By @hairbyjaypinder<br/><br/><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">18\" Barbie Blonde (#16/60) Seamless Clip Ins</a></p>",
             "link": ""
           }
@@ -841,6 +846,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-9.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@nicolacoughlan styled by @halleybrisker for SKIMS</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">22\" Barbie Blonde Double Drawn Seamless Clip In Hair Extensions</a></p>",
             "link": ""
           }
@@ -849,6 +856,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/chloeburrows.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@chloeburrows styled by @hairbyjaypinder</p><p><a href=\"/products/blonde-mix-16-60-clip-in-ponytail-extensions\" title=\"Barbie Blonde (#16/60) Straight Up Wrap Around Ponytail Extension\">24\" Barbie Blonde Wrap Around Ponytail</a></p>",
             "link": ""
           }
@@ -857,6 +866,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/emthenutritionist.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@emthenutritionist styled by @hairbyjaypinder </p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">18” Lightest Blonde (#60) Seamless Clip Ins </a></p>",
             "link": ""
           }
@@ -865,6 +876,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-10.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@juliannemoore styled by @halleybrisker</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-light-auburn\" title=\"Light Auburn (#30) Double Drawn Seamless Clip In Hair Extensions\">22\" Light Auburn Double Drawn Seamless Clip In Hair Extenions</a></p>",
             "link": ""
           }
@@ -873,6 +886,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/fern-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Fern Mccann Styled By @hairbyjaypinder</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-medium-brown\" target=\"_blank\" title=\"Medium Brown (#4) Double Drawn Seamless Clip In Hair Extensions\">22\" Medium Brown (#4) Seamless Clip Ins</a></p>",
             "link": ""
           }
@@ -881,6 +896,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/kellyosbourne.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@kellyosbourne styled by @hairbyjaypinder</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" target=\"_blank\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">20\" Lightest Blonde (#60) Seamless Clip-In Extensions </a></p>",
             "link": ""
           }
@@ -889,6 +906,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/lottie-moss-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@lottiemossxo styled by @leahsmithhair_</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">24\" Barbie Blonde Double Drawn Seamless Clip Ins</a></p>",
             "link": ""
           }
@@ -898,6 +917,8 @@
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-11.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@ekinsuofficial styled by @leahsmithhair</p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-medium-brown-4\" title=\"Medium Brown (#4) Double Wefted Full Head Clip In Hair Extensions\">20\" Medium Brown Double Weft Clip In Hair Extensions</a></p>",
             "link": ""
           }
@@ -906,6 +927,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/kelsey-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@being_kelsey styled by @hairbyjaypinder</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" target=\"_blank\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">16\" Barbie Blonde (#16/60) Seamless Clip-In Extensions </a></p>",
             "link": ""
           }
@@ -914,6 +937,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/grace-rosa-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@gracexrosa styled by @ashleyleehair</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">24\" Lightest Blonde Double Drawn Seamless Clip In Hair Extensions</a></p>",
             "link": ""
           }
@@ -922,6 +947,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-12.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@poppydelevingne styled by @kjfowles</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">22\" Lightest Blonde Seamless Clip In Hair Extensions</a></p>",
             "link": ""
           }
@@ -930,6 +957,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bre-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@bre_tiesi styled by @hairbyjaypinder</p><p><a href=\"/products/jet-black-1-ultra-volume-clip-in-full-head-set-240-300g\" target=\"_blank\" title=\"Jet Black (#1) Ultra-Volume Clip In Full Head Set (240-300G)\">24\" Jet Black Ultra Volume Clip Ins </a></p>",
             "link": ""
           }
@@ -938,6 +967,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-13.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@ameliamarni styled by @leahsmithhair</p><p><a href=\"/products/remy-royale-seamless-clip-ins-dark-espresso-melt\" title=\"Espresso Melt Balayage Double Drawn Seamless Clip In Hair Extensions\">20\" Espresso Melt Balayage Double Drawn Seamless Clip In Hair Extensions</a></p>",
             "link": ""
           }
@@ -946,6 +977,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-1.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Courtney Love styled by @peteburkill</p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-bleach-blonde-613\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Bleach Blonde (#613)\">20\" Double Wefted Clip Ins in shade Bleach Blonde</a></p>",
             "link": ""
           }
@@ -954,6 +987,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-2.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@danielle_harold styled by @hairbyjaayyy</p><p><a href=\"/products/ice-blonde-ultra-volume-clip-in-full-head-set-240-300g\" title=\"Ice Blonde Ultra-Volume Clip In Full Head Set (240-300G)\">26” Ultra Volume Clip Ins in shade Ice Blonde</a></p>",
             "link": ""
           }
@@ -962,6 +997,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-3.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@chloegshore</p><p><a href=\"/products/nano-ring-hair-extensions-double-drawn-brown-blonde-mix-18-613\" title=\"Biscuit Blondey (#18/613) Nano Ring Hair Extensions\">24” Remy Royale Nano Rings in shade Biscuit Blondey</a></p>",
             "link": ""
           }
@@ -970,6 +1007,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-4.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@gracebeverley styled by @joekelllz</p><p><a href=\"/products/blonde-mix-16-60-clip-in-ponytail-extensions\" title=\"Barbie Blonde (#16/60) Straight Up Wrap Around Ponytail Extension\">20” Wrap Around Ponytailin shade Barbie Blonde</a></p>",
             "link": ""
           }
@@ -978,6 +1017,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-5.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@talliastormstyled by @leahsmithhair_</p><p><a href=\"/products/double-wefted-full-head-remy-clip-in-human-hair-extensions-barbie-blonde-16-60\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Barbie Blonde (#16/60)\">Double Wefted Clip Insin shade Barbie Blonde</a></p>",
             "link": ""
           }
@@ -986,6 +1027,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-6.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@lizziecundystyled by @kbhairextensions</p><p><a href=\"/collections/remy-royale-tape-in-extensions\" title=\"High Quality Remy Royale Tape In Hair Extensions\">20” Remy Royale Tapes in shade Hazelnut Brondie, Medium Brown & Light Brown</a></p>",
             "link": ""
           }
@@ -994,6 +1037,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-7.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@bellehassan</p><p><a href=\"/products/remy-royale-seamless-clip-ins-soft-bronze\" title=\"Soft Bronze Balayage Double Drawn Seamless Clip In Hair Extensions\">20” Seamless Clip Insin shade Soft Bronze Balayage</a></p>",
             "link": ""
           }
@@ -1002,6 +1047,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/as-seen-on-image-8.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>@harley_brash</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-blondeme\" title=\"BlondeMe (#60/SS) Double Drawn Seamless Clip In Hair Extensions\">22” Seamless Clip Ins in shadeBlonde Me</a></p>",
             "link": ""
           }
@@ -1166,6 +1213,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -1174,6 +1223,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -1182,6 +1233,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -1190,6 +1243,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -1198,6 +1253,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
