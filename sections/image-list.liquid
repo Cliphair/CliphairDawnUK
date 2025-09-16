@@ -106,14 +106,14 @@
                 width="{{ block.settings.image.width }}"
                 height="{{ block.settings.image.height }}"
               >
-            {% elsif block.settings.img_url %}
+            {% elsif block.settings.img_url != blank %}
               <img
                 src="{{ block.settings.img_url }}"
                 alt="{{ block.settings.alt | escape }}"
                 loading="lazy"
               >
             {%- endif -%}
-            {% if block.settings.text_label != null and block.settings.img_url or block.settings.image != blank%}
+            {% if block.settings.text_label != null and block.settings.img_url != blank or block.settings.image != blank%}
               <div class="text-container h5">{{ block.settings.text_label }}</div>
             {%- endif -%}
             {%- if block.settings.link != blank -%}
