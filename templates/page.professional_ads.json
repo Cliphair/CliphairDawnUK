@@ -292,6 +292,16 @@
         "trackable_name": "shoppable_video_carrousel"
       }
     },
+    "custom_liquid_BqeTei": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>What People Are Saying</em></p></div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "collection_carrousel_QhAGdA": {
       "type": "collection-carrousel",
       "blocks": {
@@ -900,16 +910,6 @@
         "trackable_name": "best_sellers"
       }
     },
-    "custom_liquid_BqeTei": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>What People Are Saying</em></p></div>",
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
     "yotpo_reviews_dynamic_carrousel_774wwM": {
       "type": "yotpo-reviews-dynamic-carrousel",
       "name": "Yotpo reviews carousel",
@@ -933,18 +933,18 @@
     "anchor-menu",
     "table_of_content_7Y86MV",
     "videos_list_with_collection_modal",
+    "custom_liquid_BqeTei",
+    "yotpo_reviews_dynamic_carrousel_774wwM",
     "collection_carrousel_QhAGdA",
-    "why_cliphair_97NNxq",
+    "custom_liquid_YkPTqW2",
+    "interactive-table",
     "colour_match_quiz_grid",
+    "why_cliphair_97NNxq",
     "pulldown_info_grid_y7zgT4",
     "rich_text_XgpBnz",
     "maquee_mnMgq6",
     "videos_list_with_button_LFzwqE",
-    "custom_liquid_YkPTqW2",
-    "interactive-table",
     "custom_liquid_qznp7k",
-    "featured_collection_HYViXD",
-    "custom_liquid_BqeTei",
-    "yotpo_reviews_dynamic_carrousel_774wwM"
+    "featured_collection_HYViXD"
   ]
 }
