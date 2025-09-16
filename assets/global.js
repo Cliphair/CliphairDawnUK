@@ -533,6 +533,7 @@ class ModalDialog extends HTMLElement {
   constructor() {
     super();
     const closeButton = this.querySelector('[id^="ModalClose-"]');
+    console.log(closeButton)
     if(closeButton) closeButton.addEventListener('click', this.hide.bind(this, false));
     
     this.addEventListener('keyup', (event) => {
