@@ -14,7 +14,8 @@
 }
 
 .available-shades__elements {
-	width: calc((100% - 60px) / 7);
+	width: calc((100% - 74px) / 7);
+	box-sizing:border-box;
 }
 
 .available-shades__elements.selected {
