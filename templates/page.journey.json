@@ -90,7 +90,7 @@
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Mid length hair (collar [break]bone to mid back)",
+            "answer": "Mid length hair [break](collar bone to mid back)",
             "answer_image": "shopify://shop_images/Avarage.jpg"
           }
         },
@@ -112,7 +112,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What is [break]<em>your hair length?</em>",
+        "question": "How long [break]<em>is your hair?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "portrait",
@@ -131,15 +131,15 @@
         "answer_jwdXWJ": {
           "type": "answer",
           "settings": {
-            "id": "longer",
-            "answer": "Add length"
+            "id": "a",
+            "answer": "Make my hair thicker only"
           }
         },
         "answer_BgKN9A": {
           "type": "answer",
           "settings": {
-            "id": "thicker",
-            "answer": "Add volume"
+            "id": "b",
+            "answer": "Make my hair longer & thicker"
           }
         },
         "answer_pKrFXz": {
@@ -158,7 +158,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What are your [break]<em>hair extension goals?</em>",
+        "question": "Wdy do you [break]<em>want hair extensions?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -177,16 +177,16 @@
         "answer_Nacie8": {
           "type": "answer",
           "settings": {
-            "id": "clipin",
-            "answer": "Clip-in extensions [break](DIY product)",
+            "id": "a",
+            "answer": "Clip-ins [break]applied by yourself and worn on a temporary basis",
             "answer_image": "shopify://shop_images/Clip_In_af2b4728-f605-44a7-83a7-543c895d4e9d.jpg"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
-            "id": "permanent",
-            "answer": "Permanent extensions [break](professional application)",
+            "id": "b",
+            "answer": "Permanent [break]applied by a professional and worn for several weeks",
             "answer_image": "shopify://shop_images/permanent_extensions_1df2bd0b-6854-40f9-8184-26400c592c9e.jpg"
           }
         }
@@ -201,7 +201,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "Do you want [break]<em>Clip-ins</em> or <em>Permanent</em> [break]extensions?",
+        "question": "Would you prefer [break]<em>Clip-ins</em> or <em>Permanent</em> [break]extensions?",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
