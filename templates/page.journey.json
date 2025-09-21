@@ -165,7 +165,7 @@
         "color_scheme": "",
         "button_style_secondary": true,
         "show_information": true,
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "columns_mobile": "1",
         "padding_top": 100,
         "padding_bottom": 100
@@ -178,7 +178,7 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Clip-ins [break]applied by yourself and worn on a temporary basis",
+            "answer": "Clip-ins [break](applied by yourself and worn on a temporary basis)",
             "answer_image": "shopify://shop_images/Clip_In_af2b4728-f605-44a7-83a7-543c895d4e9d.jpg"
           }
         },
@@ -186,7 +186,7 @@
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Permanent [break]applied by a professional and worn for several weeks",
+            "answer": "Permanent [break](applied by a professional and worn for several weeks)",
             "answer_image": "shopify://shop_images/permanent_extensions_1df2bd0b-6854-40f9-8184-26400c592c9e.jpg"
           }
         }
