@@ -35,21 +35,21 @@
         "answer_NtqBp8": {
           "type": "answer",
           "settings": {
-            "id": "thin",
-            "answer": "Thin / Fine"
+            "id": "a",
+            "answer": "Thin to fine"
           }
         },
         "answer_EmNq4A": {
           "type": "answer",
           "settings": {
-            "id": "medium",
-            "answer": "Medium / Average"
+            "id": "b",
+            "answer": "Medium to average"
           }
         },
         "answer_QrN6fM": {
           "type": "answer",
           "settings": {
-            "id": "thick",
+            "id": "c",
             "answer": "Thick to very thick"
           }
         }
@@ -62,7 +62,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What is [break]<em>your hair type?<\/em>",
+        "question": "What is [break]<em>your hair type?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -70,9 +70,7 @@
         "button_style_secondary": true,
         "show_information": false,
         "columns_desktop": 3,
-        "swipe_on_desktop": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -83,7 +81,7 @@
         "answer_9rK4RM": {
           "type": "answer",
           "settings": {
-            "id": "short",
+            "id": "a",
             "answer": "Short hair (above [break]your shoulders)",
             "answer_image": "shopify://shop_images/short_journey.jpg"
           }
@@ -91,16 +89,16 @@
         "answer_hCExC3": {
           "type": "answer",
           "settings": {
-            "id": "mid",
-            "answer": "Mid length hair [break](top of bra)",
+            "id": "b",
+            "answer": "Mid length hair (collar [break]bone to mid back)",
             "answer_image": "shopify://shop_images/Avarage.jpg"
           }
         },
         "answer_99rqHW": {
           "type": "answer",
           "settings": {
-            "id": "long",
-            "answer": "Long hair (middle [break]to lower back)",
+            "id": "c",
+            "answer": "Long hair (mid [break]to lower back)",
             "answer_image": "shopify://shop_images/Thick.jpg"
           }
         }
@@ -114,7 +112,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What is [break]<em>your hair length?<\/em>",
+        "question": "What is [break]<em>your hair length?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "portrait",
@@ -122,9 +120,7 @@
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 1,
-        "swipe_on_desktop": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -162,7 +158,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What are your [break]<em>hair extension goals?<\/em>",
+        "question": "What are your [break]<em>hair extension goals?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -170,9 +166,7 @@
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 3,
-        "swipe_on_desktop": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -201,13 +195,13 @@
         "answer_Nacie8",
         "answer_aCkDFB"
       ],
-      "custom_css":[
-        ".card__heading{font-size: 1.5rem; padding-right:2.1rem; padding-left:2.1rem;}"
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "Do you want [break]<em>Clip-ins<\/em> or <em>Permanent<\/em> [break]extensions?",
+        "question": "Do you want [break]<em>Clip-ins</em> or <em>Permanent</em> [break]extensions?",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -215,9 +209,7 @@
         "button_style_secondary": false,
         "show_information": true,
         "columns_desktop": 1,
-        "swipe_on_desktop": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -227,8 +219,7 @@
       "settings": {
         "visible": false,
         "id": "journey",
-        "title": "Your [break]<em>perfect match is...<\/em>",
-        "message": "If you need help choosing the correct shade, let us help you with our <a href=\"https://www.cliphair.co.uk/pages/colour-matching-service\" title=\"colour match\">free colour match</a> service.",
+        "title": "Your [break]<em>perfect match is...</em>",
         "accordion_header": "You could also use:",
         "heading_size": "h1",
         "text_allignment": "center",
