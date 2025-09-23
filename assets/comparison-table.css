@@ -16,13 +16,13 @@
   }
 }
 
-.interative-table-section table tr{
-  border: .1rem solid rgba(var(--color-foreground),.2);
+.interative-table-section table tr td{
+  border: 0;
+  box-shadow: 0 0 0 .1rem rgba(var(--color-foreground),.2);
 }
 
-.interative-table-section table tr.no-border,
 .interative-table-section table tr.no-border td{
-  border: 0;
+  box-shadow:0;
 }
 
 .interative-table-section tbody tr td:not(:first-of-type) {
