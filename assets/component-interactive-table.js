@@ -149,7 +149,7 @@ if (!customElements.get('interactive-table')) {
           const button = document.createElement('a');
           button.classList.add('button');
           button.href= value.url || "#"
-          button.textContent = value.label || "View Collection"
+          button.textContent = "View Collection"
 
           cell.appendChild(button);
         }
