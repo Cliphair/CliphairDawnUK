@@ -43,6 +43,20 @@
   padding: 0;
 }
 
+@media screen and (max-width:749px){
+  .interative-table-section table tr.no-border td{
+    padding: .5rem;
+  }
+
+  .interative-table-section table tr.no-border td a.button{
+    min-width:unset;
+    min-height:unset;
+    padding:1rem 2rem;
+    font-size:1rem;
+    max-width:100%;
+  }
+}
+
 /* Custom Select */
 .interative-table-section .custom-select {
   position: relative;
