@@ -17,7 +17,7 @@
 }
 
 .interative-table-section table tr td,
-.interative-table-section table thead{
+.interative-table-section table tr th{
   border: 0;
   box-shadow: 0 0 0 .1rem rgba(var(--color-foreground),.2);
 }
