@@ -1140,7 +1140,6 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
       this.updateKlarnaMessage();
-      reloadYotpoWidgets();
     }
   }
 
@@ -1286,9 +1285,9 @@ class VariantSelects extends HTMLElement {
         if (this.currentVariant.id !== requestedVariantId) return;
 
         const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const destination = document.getElementById(`price-${this.dataset.section}`);
-        const source = html.getElementById(
-          `price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        const destination = document.querySelector(`#price-${this.dataset.section} .price`);
+        const source = html.querySelector(
+          `#price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section} .price`
         );
         const skuSource = html.getElementById(
           `Sku-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
