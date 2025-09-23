@@ -3,6 +3,7 @@
   max-width: 768px;
   margin: 0 auto;
   font-size: 1rem;
+  box-shadow:none;
 }
 
 @media screen and (min-width: 750px) {
@@ -13,6 +14,15 @@
   .interative-table-section .custom-select__trigger {
     font-size: 1.3rem;
   }
+}
+
+.interative-table-section table tr{
+  border: .1rem solid rgba(var(--color-foreground),.2);
+}
+
+.interative-table-section table tr.no-border,
+.interative-table-section table tr.no-border td{
+  border: 0;
 }
 
 .interative-table-section tbody tr td:not(:first-of-type) {
