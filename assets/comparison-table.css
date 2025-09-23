@@ -83,6 +83,19 @@
   font-size: 1rem;
 }
 
+.interative-table-section .plain-text-select {
+  font-family: inherit;
+  width: 100%;
+  background-color: var(--gradient-background);
+  white-space: normal;
+  padding: 1em;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  color: inherit;
+  font-size: 1rem;
+}
+
 .interative-table-section .custom-select__trigger:hover::after,
 .interative-table-section .custom-select__trigger.clicked::after {
   content: "";
