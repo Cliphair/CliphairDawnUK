@@ -2,12 +2,15 @@
     {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
     {% liquid
-    assign first_row_counter = 7
-    if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
-        assign first_row_counter = 6
-    endif
-    assign total_products = collection.all_products_count
+        assign first_row_counter = 7
+        if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
+            assign first_row_counter = 6
+        endif
+        assign total_products = collection.all_products_count
+
+        echo metaobjects.shades_list.best-seller-group-and-shade
     %}
+    
     <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
     <p class="available-shades__title">Select shade</p>
     <ul class="available-shades__list">
