@@ -362,7 +362,7 @@ if (!customElements.get('interactive-table')) {
               const a = document.createElement('a');
               a.classList.add('button');
               a.href = btnData.url || '#';
-              a.textContent = btnData.label || 'View Collection';
+              a.textContent = 'View Collection';
               cell.appendChild(a);
             }
           }
