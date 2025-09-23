@@ -164,6 +164,14 @@ if (!customElements.get('interactive-table')) {
           }
           tableBody.appendChild(row);
         });
+
+        const buttonRow = document.createElement('tr');
+        buttonRow.classList.add('no-border');
+        for (let i = 0; i < columns; i++) {
+          const cell = document.createElement('td');
+          buttonRow.appendChild(cell);
+        }
+        tableBody.appendChild(buttonRow);
       }
 
       populateSelectOptions() {
