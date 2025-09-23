@@ -140,7 +140,7 @@ if (!customElements.get('interactive-table')) {
 
         const buttonCell = rows[rows.length - 1].querySelectorAll('td');
         for (let i = 0; i < selectedValues.length; i++) {
-          const cell = cells[i + 1]; // skip the first cell which is for features
+          const cell = buttonCell[i + 1]; // skip the first cell which is for features
           const value =
               this.options[selectedValues[i]].button[Object.keys(this.options[selectedValues[i]].button)[index]];
 
