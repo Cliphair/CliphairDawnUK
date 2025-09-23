@@ -144,6 +144,8 @@ if (!customElements.get('interactive-table')) {
           const value =
               this.options[selectedValues[i]].button[Object.keys(this.options[selectedValues[i]].button)[i]];
 
+          console.log(value);
+
           const button = document.createElement('a');
           button.classList.add('button');
           button.href= value.url || "#"
