@@ -134,6 +134,47 @@
         "padding_bottom": 0
       }
     },
+    "banners": {
+      "type": "dos-donts-colour-match",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-whatsapp-banner.jpg",
+            "text_label": "",
+            "link": "https://wa.me/message/6QDHMKVKM5HWC1",
+            "dos_donts": "none"
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cm-form-banner.jpg",
+            "text_label": "",
+            "link": "#T9sl8Fd3_2jJ8Wv3j-MZWA",
+            "dos_donts": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
     "rich-text-dos-donts": {
       "type": "rich-text",
       "blocks": {
@@ -293,7 +334,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 56
+        "padding_bottom": 0
       }
     },
     "rich_text_LFe63a": {
@@ -316,49 +357,8 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "banners": {
-      "type": "dos-donts-colour-match",
-      "blocks": {
-        "image1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/cm-whatsapp-banner.jpg",
-            "text_label": "",
-            "link": "https://wa.me/message/6QDHMKVKM5HWC1",
-            "dos_donts": "none"
-          }
-        },
-        "image2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/cm-form-banner.jpg",
-            "text_label": "",
-            "link": "#T9sl8Fd3_2jJ8Wv3j-MZWA",
-            "dos_donts": "none"
-          }
-        }
-      },
-      "block_order": [
-        "image1",
-        "image2"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "slider_visual": "counter",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "form_builder_KN33jz": {
@@ -512,11 +512,11 @@
     "rich-text-header",
     "rich-text-intro",
     "steps",
+    "banners",
     "rich-text-dos-donts",
     "dos-images",
     "donts-images",
     "rich_text_LFe63a",
-    "banners",
     "form_builder_KN33jz",
     "break-line",
     "yotpo_reviews_dynamic_carrousel_RPPhYc",
