@@ -275,7 +275,7 @@ if (!customElements.get('interactive-table')) {
         this.selects = this.querySelectorAll('custom-select');
         this.checkmarkIcon = this.querySelector('.check-mark-container');
 
-        // detect fixed option by URL
+        // detect fixed option
         this.fixedOptionKey = null;
         if (this.dataset.collectionUrl) {
           for (const [key, option] of Object.entries(this.options)) {
@@ -310,17 +310,17 @@ if (!customElements.get('interactive-table')) {
       }
 
       populateTable() {
-        let selectedValues = Array.from(this.selects).map(
+        const selectedValues = Array.from(this.selects).map(
           (select) => select.dataset.selected
         );
 
         if (this.fixedOptionKey) {
-          selectedValues.unshift(this.fixedOptionKey);
+          selectedValues[0] = this.fixedOptionKey;
         }
 
-        const rows = this.table.querySelectorAll("tbody tr");
+        const rows = this.table.querySelectorAll('tbody tr');
         rows.forEach((row, index) => {
-          const cells = row.querySelectorAll("td");
+          const cells = row.querySelectorAll('td');
           for (let i = 0; i < selectedValues.length; i++) {
             const key = selectedValues[i];
             const cell = cells[i + 1]; // skip features column
@@ -330,24 +330,24 @@ if (!customElements.get('interactive-table')) {
               ];
 
             if (this.checkmarkIcon) {
-              cell.innerHTML = value ? this.checkmarkIcon.innerHTML : "";
+              cell.innerHTML = value ? this.checkmarkIcon.innerHTML : '';
             } else {
-              cell.textContent = value || "";
+              cell.textContent = value || '';
             }
           }
         });
 
-        const buttonCell = rows[rows.length - 1].querySelectorAll("td");
+        const buttonCell = rows[rows.length - 1].querySelectorAll('td');
         for (let i = 0; i < selectedValues.length; i++) {
           const key = selectedValues[i];
           const cell = buttonCell[i + 1];
           const btnData = this.options[key].button;
 
-          cell.innerHTML = "";
-          const button = document.createElement("a");
-          button.classList.add("button");
-          button.href = btnData.url || "#";
-          button.textContent = btnData.label || "View Collection";
+          cell.innerHTML = '';
+          const button = document.createElement('a');
+          button.classList.add('button');
+          button.href = btnData.url || '#';
+          button.textContent = btnData.label || 'View Collection';
           cell.appendChild(button);
         }
       }
@@ -357,18 +357,18 @@ if (!customElements.get('interactive-table')) {
       }
 
       updateTableBody() {
-        const tableBody = this.table.querySelector("tbody");
-        const columns = this.fixedOptionKey ? this.selects.length + 2 : this.selects.length + 1;
+        const tableBody = this.table.querySelector('tbody');
+        const columns = this.selects.length + 1;
 
         const featuresObj = Object.values(this.options)[0].features;
         const features = Object.keys(featuresObj);
 
-        tableBody.innerHTML = "";
+        tableBody.innerHTML = '';
 
         features.forEach((feature) => {
-          const row = document.createElement("tr");
+          const row = document.createElement('tr');
           for (let i = 0; i < columns; i++) {
-            const cell = document.createElement("td");
+            const cell = document.createElement('td');
             if (i === 0) {
               cell.textContent = feature;
             }
@@ -377,10 +377,10 @@ if (!customElements.get('interactive-table')) {
           tableBody.appendChild(row);
         });
 
-        const buttonRow = document.createElement("tr");
-        buttonRow.classList.add("no-border");
+        const buttonRow = document.createElement('tr');
+        buttonRow.classList.add('no-border');
         for (let i = 0; i < columns; i++) {
-          const cell = document.createElement("td");
+          const cell = document.createElement('td');
           buttonRow.appendChild(cell);
         }
         tableBody.appendChild(buttonRow);
@@ -389,34 +389,18 @@ if (!customElements.get('interactive-table')) {
       populateSelectOptions() {
         const selectsOptions = this.getValuesAndNames();
 
-        if (this.fixedOptionKey) {
-          // Replace first select with plain text
-          const fixed = this.options[this.fixedOptionKey];
-          this.selects[0].outerHTML = `<div class="plain-text-select">${fixed.name}</div>`;
-
-          // Set the second select = first non-fixed option
-          if (this.selects[1]) {
-            const firstOther = selectsOptions.find(opt => opt.value !== this.fixedOptionKey);
-            if (firstOther) {
-              this.selects[1].populateOptions(
-                selectsOptions,
-                selectsOptions.indexOf(firstOther)
-              );
-            } else {
-              this.selects[1].populateOptions(selectsOptions, 0);
-            }
-          }
-
-          // Other selects run normally
-          for (let i = 2; i < this.selects.length; i++) {
-            this.selects[i].populateOptions(selectsOptions, i);
-          }
-        } else {
-          // Normal flow if no match found
-          this.selects.forEach((select, i) => {
+        this.selects.forEach((select, i) => {
+          if (i === 0 && this.fixedOptionKey) {
+            const fixed = this.options[this.fixedOptionKey];
+            select.populateOptions(
+              [{ value: this.fixedOptionKey, name: fixed.name }],
+              0
+            );
+            select.classList.add('is-locked');
+          } else {
             select.populateOptions(selectsOptions, i);
-          });
-        }
+          }
+        });
       }
 
       getValuesAndNames() {
@@ -431,19 +415,19 @@ if (!customElements.get('interactive-table')) {
       }
 
       renderSkeletonTable() {
-        const tableBody = this.table.querySelector("tbody");
-        const columns = this.fixedOptionKey ? this.selects.length + 2 : this.selects.length + 1;
+        const tableBody = this.table.querySelector('tbody');
+        const columns = this.selects.length + 1;
 
         const firstKey = Object.keys(this.options)[0];
         const features = Object.keys(this.options[firstKey].features);
 
-        tableBody.innerHTML = "";
+        tableBody.innerHTML = '';
 
         features.forEach(() => {
-          const row = document.createElement("tr");
+          const row = document.createElement('tr');
           for (let i = 0; i < columns; i++) {
-            const cell = document.createElement("td");
-            cell.classList.add("skeleton-cell");
+            const cell = document.createElement('td');
+            cell.classList.add('skeleton-cell');
             row.appendChild(cell);
           }
           tableBody.appendChild(row);
@@ -451,14 +435,13 @@ if (!customElements.get('interactive-table')) {
       }
 
       showLoading() {
-        this.setAttribute("aria-busy", "true");
+        this.setAttribute('aria-busy', 'true');
         this.renderSkeletonTable();
       }
 
       hideLoading() {
-        this.setAttribute("aria-busy", "false");
+        this.setAttribute('aria-busy', 'false');
       }
     }
   );
 }
-
