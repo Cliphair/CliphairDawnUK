@@ -275,7 +275,7 @@ if (!customElements.get('interactive-table')) {
         this.selects = this.querySelectorAll('custom-select');
         this.checkmarkIcon = this.querySelector('.check-mark-container');
 
-        // detect fixed option
+        // Detect fixed option by URL (if present)
         this.fixedOptionKey = null;
         if (this.dataset.collectionUrl) {
           for (const [key, option] of Object.entries(this.options)) {
@@ -292,13 +292,15 @@ if (!customElements.get('interactive-table')) {
       init() {
         this.showLoading();
 
-        this.createMainTable();
-        this.populateTable();
+        this.createMainTable();   // builds header + body skeleton
+        this.populateTable();     // fills initial content
 
-        this.selects.forEach((select) => {
-          select.addEventListener('selection-changed', () => {
-            this.populateTable();
-          });
+        // Re-bind listeners (after header is built)
+        this.selects = this.querySelectorAll('custom-select');
+        this.selects.forEach((select, idx) => {
+          // If first column is locked, ignore events for the first (hidden) select
+          if (this.fixedOptionKey && idx === 0) return;
+          select.addEventListener('selection-changed', () => this.populateTable());
         });
 
         this.hideLoading();
@@ -310,24 +312,34 @@ if (!customElements.get('interactive-table')) {
       }
 
       populateTable() {
-        const selectedValues = Array.from(this.selects).map(
-          (select) => select.dataset.selected
-        );
+        // Always read current selects from DOM
+        const selects = this.querySelectorAll('custom-select');
 
-        if (this.fixedOptionKey) {
+        // Build selected values from selects
+        const selectedValues = Array.from(selects).map((select) => select.dataset.selected || '');
+
+        // Force first column to the fixed key when applicable
+        if (this.fixedOptionKey && selectedValues.length > 0) {
           selectedValues[0] = this.fixedOptionKey;
         }
 
-        const rows = this.table.querySelectorAll('tbody tr');
-        rows.forEach((row, index) => {
+        const rows = Array.from(this.table.querySelectorAll('tbody tr'));
+        const featureRowCount = Math.max(rows.length - 1, 0); // exclude button row
+
+        // Fill feature rows
+        for (let r = 0; r < featureRowCount; r++) {
+          const row = rows[r];
           const cells = row.querySelectorAll('td');
-          for (let i = 0; i < selectedValues.length; i++) {
-            const key = selectedValues[i];
-            const cell = cells[i + 1]; // skip features column
-            const value =
-              this.options[key].features[
-                Object.keys(this.options[key].features)[index]
-              ];
+          for (let c = 0; c < selectedValues.length; c++) {
+            const key = selectedValues[c];
+            const cell = cells[c + 1]; // +1 to skip feature name column
+            let value = '';
+
+            if (key && this.options[key]) {
+              const featuresKeys = Object.keys(this.options[key].features);
+              const featureKey = featuresKeys[r];
+              value = this.options[key].features[featureKey];
+            }
 
             if (this.checkmarkIcon) {
               cell.innerHTML = value ? this.checkmarkIcon.innerHTML : '';
@@ -335,20 +347,25 @@ if (!customElements.get('interactive-table')) {
               cell.textContent = value || '';
             }
           }
-        });
+        }
 
-        const buttonCell = rows[rows.length - 1].querySelectorAll('td');
-        for (let i = 0; i < selectedValues.length; i++) {
-          const key = selectedValues[i];
-          const cell = buttonCell[i + 1];
-          const btnData = this.options[key].button;
+        // Fill button row
+        if (rows.length) {
+          const buttonCells = rows[rows.length - 1].querySelectorAll('td');
+          for (let c = 0; c < selectedValues.length; c++) {
+            const key = selectedValues[c];
+            const cell = buttonCells[c + 1]; // +1 to skip feature column
+            cell.innerHTML = '';
 
-          cell.innerHTML = '';
-          const button = document.createElement('a');
-          button.classList.add('button');
-          button.href = btnData.url || '#';
-          button.textContent = btnData.label || 'View Collection';
-          cell.appendChild(button);
+            if (key && this.options[key]?.button) {
+              const btnData = this.options[key].button;
+              const a = document.createElement('a');
+              a.classList.add('button');
+              a.href = btnData.url || '#';
+              a.textContent = btnData.label || 'View Collection';
+              cell.appendChild(a);
+            }
+          }
         }
       }
 
@@ -357,80 +374,108 @@ if (!customElements.get('interactive-table')) {
       }
 
       updateTableBody() {
-        const tableBody = this.table.querySelector('tbody');
-        const columns = this.selects.length + 1;
+        // Columns = 1 (feature names) + number of selects (we keep the locked select hidden but present)
+        const columns = this.querySelectorAll('custom-select').length + 1;
 
-        const featuresObj = Object.values(this.options)[0].features;
-        const features = Object.keys(featuresObj);
+        const tableBody = this.table.querySelector('tbody');
+        const firstKey = Object.keys(this.options)[0];
+        const features = Object.keys(this.options[firstKey].features);
 
         tableBody.innerHTML = '';
 
+        // Feature rows
         features.forEach((feature) => {
-          const row = document.createElement('tr');
+          const tr = document.createElement('tr');
           for (let i = 0; i < columns; i++) {
-            const cell = document.createElement('td');
-            if (i === 0) {
-              cell.textContent = feature;
-            }
-            row.appendChild(cell);
+            const td = document.createElement('td');
+            if (i === 0) td.textContent = feature;
+            tr.appendChild(td);
           }
-          tableBody.appendChild(row);
+          tableBody.appendChild(tr);
         });
 
+        // Button row
         const buttonRow = document.createElement('tr');
         buttonRow.classList.add('no-border');
         for (let i = 0; i < columns; i++) {
-          const cell = document.createElement('td');
-          buttonRow.appendChild(cell);
+          const td = document.createElement('td');
+          buttonRow.appendChild(td);
         }
         tableBody.appendChild(buttonRow);
       }
 
       populateSelectOptions() {
         const selectsOptions = this.getValuesAndNames();
+        // Ensure we have the latest NodeList
+        this.selects = this.querySelectorAll('custom-select');
 
-        this.selects.forEach((select, i) => {
-          if (i === 0 && this.fixedOptionKey) {
-            const fixed = this.options[this.fixedOptionKey];
-            select.populateOptions(
-              [{ value: this.fixedOptionKey, name: fixed.name }],
-              0
-            );
-            select.classList.add('is-locked');
-          } else {
-            select.populateOptions(selectsOptions, i);
+        if (this.fixedOptionKey && this.selects.length) {
+          // 1) Lock first select: populate with single fixed option, then hide; add plain text label
+          const fixedSelect = this.selects[0];
+          const fixed = this.options[this.fixedOptionKey];
+
+          fixedSelect.populateOptions([{ value: this.fixedOptionKey, name: fixed.name }], 0);
+          fixedSelect.setAttribute('data-selected', this.fixedOptionKey);
+
+          // Hide the select UI but keep it in DOM so counts stay consistent
+          const trigger = fixedSelect.querySelector('.custom-select__trigger');
+          if (trigger) trigger.setAttribute('disabled', 'true');
+          fixedSelect.style.display = 'none';
+          fixedSelect.setAttribute('aria-hidden', 'true');
+
+          // Ensure visible plain-text label exists in the same <th>
+          const th = fixedSelect.closest('th') || fixedSelect.parentElement;
+          if (th && !th.querySelector('.plain-text-select')) {
+            const div = document.createElement('div');
+            div.className = 'plain-text-select';
+            div.textContent = fixed.name;
+            th.insertBefore(div, th.firstChild);
+          } else if (th) {
+            th.querySelector('.plain-text-select').textContent = fixed.name;
           }
-        });
+
+          // 2) Second column defaults to first non-fixed option
+          if (this.selects[1]) {
+            const firstOtherIdx = selectsOptions.findIndex(opt => opt.value !== this.fixedOptionKey);
+            const idxToUse = firstOtherIdx >= 0 ? firstOtherIdx : 0;
+            this.selects[1].populateOptions(selectsOptions, idxToUse);
+          }
+
+          // 3) Remaining selects: normal population (index as-is for deterministic defaults)
+          for (let i = 2; i < this.selects.length; i++) {
+            this.selects[i].populateOptions(selectsOptions, i);
+          }
+        } else {
+          // No match -> normal behavior
+          this.selects.forEach((select, i) => select.populateOptions(selectsOptions, i));
+        }
       }
 
       getValuesAndNames() {
-        const selectsOptions = [];
+        const arr = [];
         for (const [key, value] of Object.entries(this.options)) {
-          selectsOptions.push({
-            value: key,
-            name: value.name,
-          });
+          arr.push({ value: key, name: value.name });
         }
-        return selectsOptions;
+        return arr;
       }
 
       renderSkeletonTable() {
-        const tableBody = this.table.querySelector('tbody');
-        const columns = this.selects.length + 1;
+        // Columns = feature column + number of selects (locked select is still counted)
+        const columns = this.querySelectorAll('custom-select').length + 1;
 
+        const tableBody = this.table.querySelector('tbody');
         const firstKey = Object.keys(this.options)[0];
         const features = Object.keys(this.options[firstKey].features);
 
         tableBody.innerHTML = '';
-
         features.forEach(() => {
-          const row = document.createElement('tr');
+          const tr = document.createElement('tr');
           for (let i = 0; i < columns; i++) {
-            const cell = document.createElement('td');
-            cell.classList.add('skeleton-cell');
-            row.appendChild(cell);
+            const td = document.createElement('td');
+            td.classList.add('skeleton-cell');
+            tr.appendChild(td);
           }
-          tableBody.appendChild(row);
+          tableBody.appendChild(tr);
         });
       }
 
@@ -445,3 +490,4 @@ if (!customElements.get('interactive-table')) {
     }
   );
 }
+
