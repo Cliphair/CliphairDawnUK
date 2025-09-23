@@ -1,5 +1,9 @@
 {{ 'comparison-table.css' | asset_url | stylesheet_tag }}
 
+{% if request.page_type == 'product' %}
+  {% include 'collection-mapping' %}
+{% endif %}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -27,7 +31,7 @@
   {% endif %}
 >
   <div class="page-width section-{{ section.id }}-padding page-width">
-    <interactive-table>
+    <interactive-table {% if collection_mapped %}data-collection-url='{{ collection_mapped.url }}'{% endif %}>
       <table>
         <thead>
           <tr>
