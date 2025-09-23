@@ -136,3 +136,8 @@
 .interative-table-section .custom-select__options li.selected {
   background-color: #f7f7f7;
 }
+
+custom-select.is-locked .custom-select__trigger {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

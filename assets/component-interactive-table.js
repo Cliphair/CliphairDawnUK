@@ -86,6 +86,184 @@ if (!customElements.get('custom-select')) {
   );
 }
 
+// if (!customElements.get('interactive-table')) {
+//   customElements.define(
+//     'interactive-table',
+//     class InteractiveTable extends HTMLElement {
+//       constructor() {
+//         super();
+//         this.options = JSON.parse(this.querySelector('script[type="application/json"]').textContent);
+//         this.table = this.querySelector('table');
+//         this.selects = this.querySelectorAll('custom-select');
+//         this.checkmarkIcon = this.querySelector('.check-mark-container');
+//         this.init();
+//       }
+
+//       init() {
+//         this.showLoading();
+
+//         this.createMainTable(); // updates header and body structure
+//         this.populateTable(); // fills table with actual content
+
+//         this.selects.forEach((select) => {
+//           select.addEventListener('selection-changed', (e) => {
+//             this.populateTable();
+//           });
+//         });
+
+//         this.hideLoading(); // skeleton disappears naturally
+//       }
+
+//       createMainTable() {
+//         this.updateTableHeader();
+//         this.updateTableBody();
+//       }
+
+//       populateTable() {
+//         const selectedValues = Array.from(this.selects).map((select) => select.dataset.selected);
+//         const rows = this.table.querySelectorAll('tbody tr');
+
+//         rows.forEach((row, index) => {
+//           const cells = row.querySelectorAll('td');
+//           for (let i = 0; i < selectedValues.length; i++) {
+//             const cell = cells[i + 1]; // skip the first cell which is for features
+//             const value =
+//               this.options[selectedValues[i]].features[Object.keys(this.options[selectedValues[i]].features)[index]];
+
+//             if (this.checkmarkIcon) {
+//               cell.innerHTML = value ? this.checkmarkIcon.innerHTML : '';
+//             } else {
+//               cell.textContent = value || ''; // set the cell content or empty if no value
+//             }
+//           }
+//         });
+
+//         const buttonCell = rows[rows.length - 1].querySelectorAll('td');
+//         for (let i = 0; i < selectedValues.length; i++) {
+//           const cell = buttonCell[i + 1]; // skip the first cell which is for features
+//           const value =
+//               this.options[selectedValues[i]].button;
+
+//           console.log(value);
+
+//           const button = document.createElement('a');
+//           button.classList.add('button');
+//           button.href= value.url || "#"
+//           button.textContent = "View Collection"
+
+//           cell.appendChild(button);
+//         }
+//       }
+
+//       updateTableHeader() {
+//         this.populateSelectOptions();
+//       }
+
+//       updateTableBody() {
+//         const tableBody = this.table.querySelector('tbody');
+//         const columns = this.selects.length + 1; // considering the fist column for features
+
+//         // features available in the first option
+//         const featuresObj = Object.values(this.options)[0].features;
+//         const features = Object.keys(featuresObj);
+
+//         tableBody.innerHTML = ''; // clear existing rows
+
+//         features.forEach((feature) => {
+//           const row = document.createElement('tr');
+//           for (let i = 0; i < columns; i++) {
+//             const cell = document.createElement('td');
+//             if (i == 0) {
+//               cell.textContent = feature; // first column is the feature name
+//             }
+//             row.appendChild(cell);
+//           }
+//           tableBody.appendChild(row);
+//         });
+
+//         const buttonRow = document.createElement('tr');
+//         buttonRow.classList.add('no-border');
+//         for (let i = 0; i < columns; i++) {
+//           const cell = document.createElement('td');
+//           buttonRow.appendChild(cell);
+//         }
+//         tableBody.appendChild(buttonRow);
+//       }
+
+//       populateSelectOptions() {
+//         const selectsOptions = this.getValuesAndNames();
+
+//         for (let i = 0; i < this.selects.length; i++) {
+//           this.selects[i].populateOptions(selectsOptions, i);
+//         }
+//       }
+
+//       getValuesAndNames() {
+//         const selectsOptions = [];
+//         for (const [key, value] of Object.entries(this.options)) {
+//           selectsOptions.push({
+//             value: key,
+//             name: value.name,
+//           });
+//         }
+
+//         return selectsOptions;
+//       }
+
+//       renderSkeletonTable() {
+//         const tableBody = this.table.querySelector('tbody');
+//         const columns = this.selects.length + 1; // +1 for the feature name column
+
+//         // Use first available option to infer number of rows
+//         const firstKey = Object.keys(this.options)[0];
+//         const features = Object.keys(this.options[firstKey].features);
+
+//         tableBody.innerHTML = ''; // Clear existing content
+
+//         features.forEach(() => {
+//           const row = document.createElement('tr');
+//           for (let i = 0; i < columns; i++) {
+//             const cell = document.createElement('td');
+//             cell.classList.add('skeleton-cell');
+//             row.appendChild(cell);
+//           }
+//           tableBody.appendChild(row);
+//         });
+//       }
+
+//       showLoading() {
+//         this.setAttribute('aria-busy', 'true');
+//         this.renderSkeletonTable();
+//       }
+
+//       hideLoading() {
+//         this.setAttribute('aria-busy', 'false');
+//       }
+
+//       selectElementClick(event) {
+//         const clickedElement = event.target;
+//         const parentElement = clickedElement.closest('custom-select');
+
+//         const selectLabel = parentElement.querySelector('.custom-select__label');
+//         const value = clickedElement.dataset.value;
+//         const text = clickedElement.textContent.trim();
+
+//         selectLabel.textContent = text;
+//         parentElement.dataset.selected = value;
+
+//         parentElement.querySelectorAll('li').forEach((li) => li.classList.remove('selected'));
+//         clickedElement.classList.add('selected');
+
+//         clickedElement.closest('.custom-select__options').hidden = true;
+//         parentElement.querySelector('.custom-select__trigger').setAttribute('aria-expanded', 'false');
+
+//         // Trigger external callback here if needed
+//         this.populateTable();
+//       }
+//     }
+//   );
+// }
+
 if (!customElements.get('interactive-table')) {
   customElements.define(
     'interactive-table',
@@ -96,22 +274,34 @@ if (!customElements.get('interactive-table')) {
         this.table = this.querySelector('table');
         this.selects = this.querySelectorAll('custom-select');
         this.checkmarkIcon = this.querySelector('.check-mark-container');
+
+        // detect fixed option
+        this.fixedOptionKey = null;
+        if (this.dataset.collectionUrl) {
+          for (const [key, option] of Object.entries(this.options)) {
+            if (option.button?.url === this.dataset.collectionUrl) {
+              this.fixedOptionKey = key;
+              break;
+            }
+          }
+        }
+
         this.init();
       }
 
       init() {
         this.showLoading();
 
-        this.createMainTable(); // updates header and body structure
-        this.populateTable(); // fills table with actual content
+        this.createMainTable();
+        this.populateTable();
 
         this.selects.forEach((select) => {
-          select.addEventListener('selection-changed', (e) => {
+          select.addEventListener('selection-changed', () => {
             this.populateTable();
           });
         });
 
-        this.hideLoading(); // skeleton disappears naturally
+        this.hideLoading();
       }
 
       createMainTable() {
@@ -120,37 +310,44 @@ if (!customElements.get('interactive-table')) {
       }
 
       populateTable() {
-        const selectedValues = Array.from(this.selects).map((select) => select.dataset.selected);
-        const rows = this.table.querySelectorAll('tbody tr');
+        const selectedValues = Array.from(this.selects).map(
+          (select) => select.dataset.selected
+        );
 
+        if (this.fixedOptionKey) {
+          selectedValues[0] = this.fixedOptionKey;
+        }
+
+        const rows = this.table.querySelectorAll('tbody tr');
         rows.forEach((row, index) => {
           const cells = row.querySelectorAll('td');
           for (let i = 0; i < selectedValues.length; i++) {
-            const cell = cells[i + 1]; // skip the first cell which is for features
+            const key = selectedValues[i];
+            const cell = cells[i + 1]; // skip features column
             const value =
-              this.options[selectedValues[i]].features[Object.keys(this.options[selectedValues[i]].features)[index]];
+              this.options[key].features[
+                Object.keys(this.options[key].features)[index]
+              ];
 
             if (this.checkmarkIcon) {
               cell.innerHTML = value ? this.checkmarkIcon.innerHTML : '';
             } else {
-              cell.textContent = value || ''; // set the cell content or empty if no value
+              cell.textContent = value || '';
             }
           }
         });
 
         const buttonCell = rows[rows.length - 1].querySelectorAll('td');
         for (let i = 0; i < selectedValues.length; i++) {
-          const cell = buttonCell[i + 1]; // skip the first cell which is for features
-          const value =
-              this.options[selectedValues[i]].button;
+          const key = selectedValues[i];
+          const cell = buttonCell[i + 1];
+          const btnData = this.options[key].button;
 
-          console.log(value);
-
+          cell.innerHTML = '';
           const button = document.createElement('a');
           button.classList.add('button');
-          button.href= value.url || "#"
-          button.textContent = "View Collection"
-
+          button.href = btnData.url || '#';
+          button.textContent = btnData.label || 'View Collection';
           cell.appendChild(button);
         }
       }
@@ -161,20 +358,19 @@ if (!customElements.get('interactive-table')) {
 
       updateTableBody() {
         const tableBody = this.table.querySelector('tbody');
-        const columns = this.selects.length + 1; // considering the fist column for features
+        const columns = this.selects.length + 1;
 
-        // features available in the first option
         const featuresObj = Object.values(this.options)[0].features;
         const features = Object.keys(featuresObj);
 
-        tableBody.innerHTML = ''; // clear existing rows
+        tableBody.innerHTML = '';
 
         features.forEach((feature) => {
           const row = document.createElement('tr');
           for (let i = 0; i < columns; i++) {
             const cell = document.createElement('td');
-            if (i == 0) {
-              cell.textContent = feature; // first column is the feature name
+            if (i === 0) {
+              cell.textContent = feature;
             }
             row.appendChild(cell);
           }
@@ -193,9 +389,18 @@ if (!customElements.get('interactive-table')) {
       populateSelectOptions() {
         const selectsOptions = this.getValuesAndNames();
 
-        for (let i = 0; i < this.selects.length; i++) {
-          this.selects[i].populateOptions(selectsOptions, i);
-        }
+        this.selects.forEach((select, i) => {
+          if (i === 0 && this.fixedOptionKey) {
+            const fixed = this.options[this.fixedOptionKey];
+            select.populateOptions(
+              [{ value: this.fixedOptionKey, name: fixed.name }],
+              0
+            );
+            select.classList.add('is-locked');
+          } else {
+            select.populateOptions(selectsOptions, i);
+          }
+        });
       }
 
       getValuesAndNames() {
@@ -206,19 +411,17 @@ if (!customElements.get('interactive-table')) {
             name: value.name,
           });
         }
-
         return selectsOptions;
       }
 
       renderSkeletonTable() {
         const tableBody = this.table.querySelector('tbody');
-        const columns = this.selects.length + 1; // +1 for the feature name column
+        const columns = this.selects.length + 1;
 
-        // Use first available option to infer number of rows
         const firstKey = Object.keys(this.options)[0];
         const features = Object.keys(this.options[firstKey].features);
 
-        tableBody.innerHTML = ''; // Clear existing content
+        tableBody.innerHTML = '';
 
         features.forEach(() => {
           const row = document.createElement('tr');
@@ -238,27 +441,6 @@ if (!customElements.get('interactive-table')) {
 
       hideLoading() {
         this.setAttribute('aria-busy', 'false');
-      }
-
-      selectElementClick(event) {
-        const clickedElement = event.target;
-        const parentElement = clickedElement.closest('custom-select');
-
-        const selectLabel = parentElement.querySelector('.custom-select__label');
-        const value = clickedElement.dataset.value;
-        const text = clickedElement.textContent.trim();
-
-        selectLabel.textContent = text;
-        parentElement.dataset.selected = value;
-
-        parentElement.querySelectorAll('li').forEach((li) => li.classList.remove('selected'));
-        clickedElement.classList.add('selected');
-
-        clickedElement.closest('.custom-select__options').hidden = true;
-        parentElement.querySelector('.custom-select__trigger').setAttribute('aria-expanded', 'false');
-
-        // Trigger external callback here if needed
-        this.populateTable();
       }
     }
   );
