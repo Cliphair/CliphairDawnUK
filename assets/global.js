@@ -153,7 +153,6 @@ function onKeyUpEscape(event) {
 }
 
 function reloadYotpoWidgets() {
-  console.log("Yotpo widget reload");
   yotpoWidgetsContainer.initWidgets(false);
 }
 
@@ -1141,6 +1140,7 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
       this.updateKlarnaMessage();
+      reloadYotpoWidgets();
     }
   }
 
@@ -1148,7 +1148,6 @@ class VariantSelects extends HTMLElement {
     let element = event.target;
     element.querySelector("option:disabled").selected = false;
     element.querySelector("option:disabled").value = "";
-
   }
 
   updateOptions() {
