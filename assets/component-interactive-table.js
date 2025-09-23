@@ -142,7 +142,7 @@ if (!customElements.get('interactive-table')) {
         for (let i = 0; i < selectedValues.length; i++) {
           const cell = buttonCell[i + 1]; // skip the first cell which is for features
           const value =
-              this.options[selectedValues[i]].button[Object.keys(this.options[selectedValues[i]].button)[index]];
+              this.options[selectedValues[i]].button[Object.keys(this.options[selectedValues[i]].button)[i]];
 
           const button = document.createElement('a');
           button.classList.add('button');
