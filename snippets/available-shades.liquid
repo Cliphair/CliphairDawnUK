@@ -40,7 +40,8 @@
               role="option"
               aria-selected="true"
             >
-              <img
+							{% render 'shade-snippet' shade_image: shade_image, shade: colour_name %}
+              {% comment %} <img
                 srcset="
                   {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
                   {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -57,7 +58,7 @@
                 loading="lazy"
                 width="{{ shade_image.width }}"
                 height="{{ shade_image.height }}"
-              >
+              > {% endcomment %}
             </li>
           {% endif %}
         {% endif %}
