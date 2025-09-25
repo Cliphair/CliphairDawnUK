@@ -140,7 +140,7 @@
     {%- comment -%}
     Build a lookup hash: shade_name → product
     {%- endcomment -%}
-    {% assign products_by_shade = {} %}
+    {% assign products_by_shade = '' %}
     {% for p in collection.products %}
       {% if p.metafields.custom.colour_name %}
         {% assign shade = p.metafields.custom.colour_name %}
