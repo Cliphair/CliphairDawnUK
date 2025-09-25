@@ -1,4 +1,4 @@
-{% unless product.type == 'Hair Care'
+{% comment %} {% unless product.type == 'Hair Care'
   or product.type == 'Accessories'
   or product.type == 'Gift Card'
   or product.type == 'Bundle'
@@ -110,6 +110,162 @@
         </ul>
       </div>
     </shade-selector>
+  {% endpaginate %}
+
+  <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
+{% endunless %} {% endcomment %}
+{% unless product.type == 'Hair Care'
+  or product.type == 'Accessories'
+  or product.type == 'Gift Card'
+  or product.type == 'Bundle'
+  or product.type == 'Gift Set'
+%}
+  {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
+
+  {% liquid
+    assign first_row_limit = 9
+    assign colour_name = product.metafields.custom.colour_name
+    assign colour_group = product.metafields.custom.colour_group
+
+    assign shades_root = metaobjects.shades_list['best-seller-group-and-shade']
+    if shades_root and shades_root.list and shades_root.list.value
+      assign shades_list = shades_root.list.value
+    endif
+
+    if colour_name != blank
+      assign first_row_limit = first_row_limit | minus: 1
+    endif
+
+    assign similar_shades = shades_list[colour_group]
+  %}
+
+  {%- paginate collection.products by collection.all_products_count -%}
+
+    {%- comment -%}
+      Build parallel “arrays” using delimiter-joined strings:
+      shade_names_str: "Shade A|Shade B|..."
+      urls_str:        "/products/x|/products/y|..."
+      handles_str:     "shade-a|shade-b|..."
+      We ensure uniqueness by shade name as we build.
+    {%- endcomment -%}
+    {% assign shade_names_str = '' %}
+    {% assign urls_str = '' %}
+    {% assign handles_str = '' %}
+
+    {% for p in collection.products %}
+      {% assign shade = p.metafields.custom.colour_name %}
+      {% if shade and shade != blank %}
+        {%- comment -%}Prevent duplicates per shade{%- endcomment -%}
+        {% assign guard = '|' | append: shade_names_str | append: '|' %}
+        {% assign token = '|' | append: shade | append: '|' %}
+        {% unless guard contains token %}
+          {% if shade_names_str == '' %}
+            {% assign shade_names_str = shade %}
+            {% assign urls_str = p.url %}
+            {% assign handles_str = p.handle %}
+          {% else %}
+            {% capture shade_names_str %}{{ shade_names_str }}|{{ shade }}{% endcapture %}
+            {% capture urls_str %}{{ urls_str }}|{{ p.url }}{% endcapture %}
+            {% capture handles_str %}{{ handles_str }}|{{ p.handle }}{% endcapture %}
+          {% endif %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+
+    {%- assign shade_names = shade_names_str | split: '|' -%}
+    {%- assign urls = urls_str | split: '|' -%}
+    {%- assign handles = handles_str | split: '|' -%}
+
+    <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
+      <p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
+
+      <ul class="available-shades__list available-shades__first-row">
+        {# Current product first #}
+        {% if colour_name %}
+          {% assign image_handle = colour_name | handle | append: '-snippet.webp' %}
+          {% assign shade_image = images[image_handle] %}
+          {% if shade_image %}
+            <li class="available-shades__elements selected"
+                data-product-url="{{ product.url }}"
+                role="option"
+                aria-selected="true">
+              {% render 'shade-snippet', shade_image: shade_image, shade: colour_name %}
+            </li>
+          {% endif %}
+        {% endif %}
+
+        {# Up to 8 other similar shades, looked up via the arrays #}
+        {% assign counter = first_row_limit %}
+        {% for s in similar_shades %}
+          {% if counter > 0 %}
+            {%- assign idx = blank -%}
+            {%- for name in shade_names -%}
+              {% if name == s %}
+                {% assign idx = forloop.index0 %}
+                {% break %}
+              {% endif %}
+            {%- endfor -%}
+            {% if idx != blank %}
+              {% assign p_url = urls[idx] %}
+              {% assign p_handle = handles[idx] %}
+              {% if p_handle != product.handle %}
+                {% assign image_handle = s | handle | append: '-snippet.webp' %}
+                {% assign shade_image = images[image_handle] %}
+                {% if shade_image %}
+                  <li class="available-shades__elements"
+                      data-product-url="{{ p_url }}"
+                      role="option">
+                    {% render 'shade-snippet', shade_image: shade_image, shade: s %}
+                  </li>
+                  {% assign counter = counter | minus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <div class="available-shades__buttons">
+        <summary aria-expanded="false" aria-controls="available-shades">
+          View All
+          {% render 'icon-caret' %}
+        </summary>
+        <a href="/pages/colour-matching-service">Free colour match service</a>
+      </div>
+
+      <div id="available-shades" hidden>
+        <ul class="available-shades__list">
+          {%- comment -%} Full list rendered in the order from shades_list {%- endcomment -%}
+          {% for group in shades_list %}
+            {% assign current_group = shades_list[group.first] %}
+            {% for s in current_group %}
+              {%- assign idx = blank -%}
+              {%- for name in shade_names -%}
+                {% if name == s %}
+                  {% assign idx = forloop.index0 %}
+                  {% break %}
+                {% endif %}
+              {%- endfor -%}
+              {% if idx != blank %}
+                {% assign p_url = urls[idx] %}
+                {% assign p_handle = handles[idx] %}
+                {% assign image_handle = s | handle | append: '-snippet.webp' %}
+                {% assign shade_image = images[image_handle] %}
+                {% if shade_image %}
+                  <li class="available-shades__elements {% if p_handle == product.handle %}selected{% endif %}"
+                      data-product-url="{{ p_url }}"
+                      role="option"
+                      {% if p_handle == product.handle %}aria-selected="true"{% endif %}>
+                    {% render 'shade-snippet', shade_image: shade_image, shade: s %}
+                  </li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    </shade-selector>
+
   {% endpaginate %}
 
   <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
