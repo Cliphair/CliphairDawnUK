@@ -4,11 +4,22 @@
   {% liquid
     assign first_row_counter = 7
 		if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
+			assign colour_name = product.metafields.custom.colour_name
 			assign first_row_counter = 6
 		endif
+
+		if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
+			assign colour_group = product.metafields.custom.colour_group
+		endif
+
     assign total_products = collection.all_products_count
 
     assign shades_list = metaobjects.shades_list.best-seller-group-and-shade.list.value
+	for group in shades_list
+		for shade in group
+			echo shade
+		endfor
+	endfor
   %}
     
 	<shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
@@ -17,7 +28,7 @@
 			{% comment %}Visible product shade snippet{% endcomment %}
 			{% if first_row_counter == 6 %}
 				{% liquid
-					assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+					assign image_handle = colour_name | handle | append: '-snippet.webp'
 					assign shade_image = images[image_handle]
 				%}
 				{% if shade_image != blank %}
@@ -46,15 +57,15 @@
 
 			{% comment %}First row products shade snippet{% endcomment %}
 			{% for product in collection.products %}
-			{% if first_row_counter > 0 %}
+				{% if first_row_counter > 0 %}
 					{% unless request.path contains product.handle %}
-					{% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
+						{% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
 							{% liquid
-							assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-							assign shade_image = images[image_handle]
+								assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+								assign shade_image = images[image_handle]
 							%}
 							{% if shade_image != blank %}
-							<li class="available-shades__elements" data-product-url="{{ product.url }}">
+								<li class="available-shades__elements" data-product-url="{{ product.url }}">
 									<img
 									srcset="
 											{%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -73,14 +84,15 @@
 									width="{{ shade_image.width }}"
 									height="{{ shade_image.height }}"
 									>
-							</li>
+								</li>
 							{% endif %}
 							{% assign first_row_counter = first_row_counter | minus: 1 %}
-					{% endif %}
+						{% endif %}
 					{% endunless %}
-			{% endif %}
+				{% endif %}
 			{% endfor %}
-	</ul>
+		</ul>
+
 	<div class="available-shades__buttons">
 			<summary aria-expanded="false" aria-controls="available-shades">
 			View All
