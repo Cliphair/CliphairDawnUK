@@ -15,7 +15,7 @@
 }
 
 .available-shades__elements {
-	width: calc((100% - 40px) / 9);
+	width: calc((100% - (0.5rem * 8)) / 9);
 	box-sizing:border-box;
 }
 
