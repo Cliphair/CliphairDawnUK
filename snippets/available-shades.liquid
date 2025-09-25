@@ -25,8 +25,8 @@
 
   <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
 		
-    <p class="available-shades__title">Select shade</p>
-		<p><b>Colour:</b> {{ colour_name }}</p>
+    {% comment %} <p class="available-shades__title">Select shade</p> {% endcomment %}
+		<p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
     <ul class="available-shades__list">
       {% comment %}Visible product shade snippet{% endcomment %}
       {% if first_row_counter == 6 %}
