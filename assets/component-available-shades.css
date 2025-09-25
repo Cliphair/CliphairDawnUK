@@ -19,6 +19,13 @@
 	box-sizing:border-box;
 }
 
+@media screen and (min-width:750px and max-width:989px){
+	.available-shades__elements {
+		width: calc((100% - 40px) / 5);
+		box-sizing:border-box;
+	}
+}
+
 .available-shades__elements.selected {
 	border: 1px solid black;
 	pointer-events: none;
