@@ -104,7 +104,7 @@
                 {% assign product_shade = p.metafields.custom.colour_name %}
                 {% if product_shade and product_shade != blank and product_shade == shade %}
                   {% liquid
-                    assign image_handle = p.metafields.custom.colour_name | handle | append: '-snippet.webp'
+                    assign image_handle = product_shade | handle | append: '-snippet.webp'
                     assign shade_image = images[image_handle]
                   %}
                   {% if shade_image != blank %}
@@ -116,7 +116,8 @@
                         aria-selected="true"
                       {% endif %}
                     >
-                      <img
+											{% render 'shade-snippet' shade_image: shade_image, shade: product_shade %}
+                      {% comment %} <img
                         srcset="
                           {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
                           {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -133,7 +134,7 @@
                         loading="lazy"
                         width="{{ shade_image.width }}"
                         height="{{ shade_image.height }}"
-                      >
+                      > {% endcomment %}
                     </li>
                   {% endif %}
                 {% endif %}
