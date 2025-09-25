@@ -20,8 +20,17 @@
 }
 
 @media screen and (min-width:750px) and (max-width:989px){
+	.available-shades__list {
+		gap: .5rem;
+	}
+
+	/* Select any child that is NOT one of the first 7 */
+	.available-shades__list:first-of-type > *:nth-child(n+8) {
+		display: none;
+	}
+
 	.available-shades__elements {
-		width: calc((100% - 40px) / 5);
+		width: calc((100% - 30px) / 7);
 		box-sizing:border-box;
 	}
 }
