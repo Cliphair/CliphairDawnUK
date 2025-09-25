@@ -155,6 +155,7 @@
                   assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
                   assign shade_image = images[image_handle]
                 %}
+																		<p class='hidden'>{{ image_handle }}</p>
                 {% if shade_image != blank %}
                   <li
                     class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
