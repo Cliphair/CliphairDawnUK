@@ -180,7 +180,7 @@
       <p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
 
       <ul class="available-shades__list available-shades__first-row">
-        {# Current product first #}
+        
         {% if colour_name %}
           {% assign image_handle = colour_name | handle | append: '-snippet.webp' %}
           {% assign shade_image = images[image_handle] %}
@@ -194,7 +194,7 @@
           {% endif %}
         {% endif %}
 
-        {# Up to 8 other similar shades, looked up via the arrays #}
+        
         {% assign counter = first_row_limit %}
         {% for s in similar_shades %}
           {% if counter > 0 %}
