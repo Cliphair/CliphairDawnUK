@@ -15,6 +15,7 @@
     assign total_products = collection.all_products_count
 
     assign shades_list = metaobjects.shades_list.best-seller-group-and-shade.list.value
+	 
 	echo shades_list["Browns"].first
 	for group in shades_list
 		echo group
@@ -55,6 +56,9 @@
 			{% endif %}
 
 			{% comment %}First row products shade snippet{% endcomment %}
+			{% for shade in sahdes_list[colour_group] %}
+				{{  shade }}
+			{% endfor %}
 			{% for product in collection.products %}
 				{% if first_row_counter > 0 %}
 					{% unless request.path contains product.handle %}
