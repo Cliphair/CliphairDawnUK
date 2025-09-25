@@ -10,7 +10,7 @@
     assign first_row_counter = 9
     if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
       assign colour_name = product.metafields.custom.colour_name
-      assign first_row_counter = 8
+      assign first_row_counter = first_row_counter | minus: 1
     endif
 
     if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
@@ -29,7 +29,7 @@
 		<p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
     <ul class="available-shades__list">
       {% comment %}Visible product shade snippet{% endcomment %}
-      {% if first_row_counter == 6 %}
+      {% if first_row_counter == 8 %}
         {% liquid
           assign image_handle = colour_name | handle | append: '-snippet.webp'
           assign shade_image = images[image_handle]
