@@ -14,23 +14,12 @@
 	justify-content:flex-start;
 }
 
-@media screen and (min-width:990px){
-	.available-shades__list {
-		padding: 0;
-		list-style: none;
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-		justify-content:flex-start;
-	}
-}
-
 .available-shades__elements {
-	width: calc((100% - 80px) / 9);
+	width: calc((100% - 40px) / 9);
 	box-sizing:border-box;
 }
 
-@media screen and (min-width:750px) and (max-width:1199px){
+@media screen and (min-width:750px) and (max-width:989px){
 	.available-shades__list {
 		gap: .5rem;
 	}
