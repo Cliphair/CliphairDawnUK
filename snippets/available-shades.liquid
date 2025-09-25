@@ -34,7 +34,7 @@
           assign shade_image = images[image_handle]
         %}
         {% if shade_image != blank %}
-          <li class="available-shades__elements selected" data-product-url="{{ product.url }}">
+          <li class="available-shades__elements selected" data-product-url="{{ product.url }}" role="option" aria-selected="true">
             <img
               srcset="
                 {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -69,7 +69,7 @@
                 assign shade_image = images[image_handle]
               %}
               {% if shade_image != blank %}
-                <li class="available-shades__elements" data-product-url="{{ product.url }}">
+                <li class="available-shades__elements" data-product-url="{{ product.url }}" role="option">
                   <img
                     srcset="
                       {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -111,17 +111,17 @@
           {% for group in shades_list %}
             {% assign current_group = shades_list[group.first] %}
             {% for shade in current_group %}
-              {% for product in collection.products %}
-                {% assign product_shade = product.metafields.custom.colour_name %}
+              {% for p in collection.products %}
+                {% assign product_shade = p.metafields.custom.colour_name %}
                 {% if product_shade and product_shade != blank and product_shade == shade %}
                   {% liquid
-                    assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+                    assign image_handle = p.metafields.custom.colour_name | handle | append: '-snippet.webp'
                     assign shade_image = images[image_handle]
                   %}
                   {% if shade_image != blank %}
                     <li
                       class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
-                      data-product-url="{{ product.url }}"
+                      data-product-url="{{ product.url }}" role="option" {% if request.path contains product.handle %}aria-selected="true"{% endif %}
                     >
                       <img
                         srcset="
