@@ -237,6 +237,7 @@
         <ul class="available-shades__list">
           {%- comment -%} Full list rendered in the order from shades_list {%- endcomment -%}
           {% for group in shades_list %}
+						{{ group }}
             {% assign current_group = shades_list[group.first] %}
 						{{ current_group }}
             {% for s in current_group %}
