@@ -145,7 +145,7 @@
       <ul class="available-shades__list">
         {% comment %}All products shade snippet{% endcomment %}
         {% for group in shades_list %}
-          {% assign current_group = shades_list[group] %}
+          {% assign current_group = shades_list[group.first] %}
 					{{ current_group }}
           {% comment %} {% for product in collection.products %}
             {% assign product_shade = product.metafields.custom.colour_name %}
