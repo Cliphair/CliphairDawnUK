@@ -27,7 +27,7 @@
 		
     {% comment %} <p class="available-shades__title">Select shade</p> {% endcomment %}
 		<p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
-    <ul class="available-shades__list">
+    <ul class="available-shades__list available-shades__first-row">
       {% comment %}Visible product shade snippet{% endcomment %}
       {% if first_row_counter == 8 %}
         {% liquid

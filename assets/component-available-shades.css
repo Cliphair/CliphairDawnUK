@@ -25,7 +25,7 @@
 	}
 
 	/* Select any child that is NOT one of the first 7 */
-	ul.available-shades__list:nth-of-type(1) > *:nth-child(n+8) {
+	.available-shades__first-row > *:nth-child(n+8) {
 		display: none;
 	}
 
