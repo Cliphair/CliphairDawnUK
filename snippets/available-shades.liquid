@@ -146,7 +146,8 @@
         {% comment %}All products shade snippet{% endcomment %}
         {% for group in shades_list %}
           {% assign current_group = shades_list[group] %}
-          {% for product in collection.products %}
+					{{ current_group }}
+          {% comment %} {% for product in collection.products %}
             {% assign product_shade = product.metafields.custom.colour_name %}
             {% if product_shade and product_shade != blank and current_group contains product_shade %}
               {% liquid
@@ -179,7 +180,7 @@
                 </li>
               {% endif %}
             {% endif %}
-          {% endfor %}
+          {% endfor %} {% endcomment %}
         {% endfor %}
         {% comment %}
           {% for product in collection.products %}
