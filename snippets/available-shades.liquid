@@ -65,7 +65,7 @@
             {% assign product_shade = p.metafields.custom.colour_name %}
             {% if product_shade and product_shade != blank and similar_shades contains product_shade %}
               {% liquid
-                assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+                assign image_handle = p.metafields.custom.colour_name | handle | append: '-snippet.webp'
                 assign shade_image = images[image_handle]
               %}
               {% if shade_image != blank %}
