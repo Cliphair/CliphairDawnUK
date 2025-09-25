@@ -120,7 +120,7 @@
                   %}
                   {% if shade_image != blank %}
                     <li
-                      class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
+                      class="available-shades__elements {% if request.path contains p.handle %}selected{% endif %}"
                       data-product-url="{{ product.url }}" role="option" {% if request.path contains product.handle %}aria-selected="true"{% endif %}
                     >
                       <img
