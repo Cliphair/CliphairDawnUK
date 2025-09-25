@@ -69,7 +69,7 @@
                 assign shade_image = images[image_handle]
               %}
               {% if shade_image != blank %}
-                <li class="available-shades__elements" data-product-url="{{ product.url }}" role="option">
+                <li class="available-shades__elements" data-product-url="{{ p.url }}" role="option">
                   <img
                     srcset="
                       {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -82,7 +82,7 @@
                     "
                     src="{{ shade_image | image_url: width: 533 }}"
                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                    alt="{{ product.metafields.custom.colour_name }} shade snippet"
+                    alt="{{ p.metafields.custom.colour_name }} shade snippet"
                     class="motion-reduce shade-snippet"
                     loading="lazy"
                     width="{{ shade_image.width }}"
@@ -121,7 +121,7 @@
                   {% if shade_image != blank %}
                     <li
                       class="available-shades__elements {% if request.path contains p.handle %}selected{% endif %}"
-                      data-product-url="{{ product.url }}" role="option" {% if request.path contains product.handle %}aria-selected="true"{% endif %}
+                      data-product-url="{{ p.url }}" role="option" {% if request.path contains p.handle %}aria-selected="true"{% endif %}
                     >
                       <img
                         srcset="
@@ -135,7 +135,7 @@
                         "
                         src="{{ shade_image | image_url: width: 533 }}"
                         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                        alt="{{ product.metafields.custom.colour_name }} shade snippet"
+                        alt="{{ p.metafields.custom.colour_name }} shade snippet"
                         class="motion-reduce shade-snippet"
                         loading="lazy"
                         width="{{ shade_image.width }}"
