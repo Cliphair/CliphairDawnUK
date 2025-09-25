@@ -36,13 +36,25 @@
 }
 
 @media screen and (max-width:749px){
-	/* Select any child that is NOT one of the first 7 */
+	/* Select any child that is NOT one of the first 8 */
 	.available-shades__first-row > *:nth-child(n+9) {
 		display: none;
 	}
 
 	.available-shades__elements {
 		width: calc((100% - (0.5rem * 7)) / 8);
+		box-sizing:border-box;
+	}
+}
+
+@media screen and (max-width:349px){
+	/* Select any child that is NOT one of the first 6 */
+	.available-shades__first-row > *:nth-child(n+7) {
+		display: none;
+	}
+
+	.available-shades__elements {
+		width: calc((100% - (0.5rem * 5)) / 6);
 		box-sizing:border-box;
 	}
 }
