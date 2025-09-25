@@ -7,10 +7,10 @@
   {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
   {% liquid
-    assign first_row_counter = 7
+    assign first_row_counter = 9
     if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
       assign colour_name = product.metafields.custom.colour_name
-      assign first_row_counter = 6
+      assign first_row_counter = 8
     endif
 
     if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
