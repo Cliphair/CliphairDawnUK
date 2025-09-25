@@ -226,14 +226,14 @@
       </ul>
 
       <div class="available-shades__buttons">
-        <summary aria-expanded="false" aria-controls="available-shades">
+        <summary aria-expanded="true" aria-controls="available-shades">
           View All
           {% render 'icon-caret' %}
         </summary>
         <a href="/pages/colour-matching-service">Free colour match service</a>
       </div>
 
-      <div id="available-shades" hidden>
+      <div id="available-shades" >
         <ul class="available-shades__list">
           {%- comment -%} Full list rendered in the order from shades_list {%- endcomment -%}
           {% for group in shades_list %}
