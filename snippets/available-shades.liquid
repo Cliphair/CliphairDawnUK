@@ -59,10 +59,10 @@
 
       {% comment %}First row products shade snippet{% endcomment %}
 
-      {% for shade_product in collection.products %}
+      {% for p in collection.products %}
         {% if first_row_counter > 0 %}
-          {% unless request.path contains shade_product.handle %}
-            {% assign product_shade = shade_product.metafields.custom.colour_name %}
+          {% unless request.path contains p.handle %}
+            {% assign product_shade = p.metafields.custom.colour_name %}
             {% if product_shade and product_shade != blank and similar_shades contains product_shade %}
               {% liquid
                 assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
