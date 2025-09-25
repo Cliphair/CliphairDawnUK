@@ -9,9 +9,20 @@
 	padding: 0;
 	list-style: none;
 	display: flex;
-	gap: 1rem;
+	gap: .5rem;
 	flex-wrap: wrap;
 	justify-content:flex-start;
+}
+
+@media screen and (min-width:990px){
+	.available-shades__list {
+		padding: 0;
+		list-style: none;
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+		justify-content:flex-start;
+	}
 }
 
 .available-shades__elements {
@@ -31,6 +42,18 @@
 
 	.available-shades__elements {
 		width: calc((100% - 30px) / 7);
+		box-sizing:border-box;
+	}
+}
+
+@media screen and (max-width:749px){
+	/* Select any child that is NOT one of the first 7 */
+	.available-shades__first-row > *:nth-child(n+9) {
+		display: none;
+	}
+
+	.available-shades__elements {
+		width: calc((100% - 35px) / 8);
 		box-sizing:border-box;
 	}
 }
