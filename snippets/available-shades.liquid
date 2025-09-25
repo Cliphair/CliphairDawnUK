@@ -1,145 +1,185 @@
-{% unless product.type == "Hair Care" or product.type == "Accessories" or product.type == "Gift Card" or product.type == "Bundle" or product.type == "Gift Set" %}
+{% unless product.type == 'Hair Care'
+  or product.type == 'Accessories'
+  or product.type == 'Gift Card'
+  or product.type == 'Bundle'
+  or product.type == 'Gift Set'
+%}
   {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
   {% liquid
     assign first_row_counter = 7
-		if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
-			assign colour_name = product.metafields.custom.colour_name
-			assign first_row_counter = 6
-		endif
+    if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
+      assign colour_name = product.metafields.custom.colour_name
+      assign first_row_counter = 6
+    endif
 
-		if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
-			assign colour_group = product.metafields.custom.colour_group
-		endif
+    if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
+      assign colour_group = product.metafields.custom.colour_group
+    endif
 
     assign total_products = collection.all_products_count
 
-    assign shades_list = metaobjects.shades_list.best-seller-group-and-shade.list.value
-	 
-	for group in shades_list
-	endfor
+    assign shades_list = metaobjects.shades_list['best-seller-group-and-shade'].list.value
+		assign similar_shades = shades_list[colour_group]
   %}
-    
-	<shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
-		<p class="available-shades__title">Select shade</p>
-		<ul class="available-shades__list">
-			{% comment %}Visible product shade snippet{% endcomment %}
-			{% if first_row_counter == 6 %}
-				{% liquid
-					assign image_handle = colour_name | handle | append: '-snippet.webp'
-					assign shade_image = images[image_handle]
-				%}
-				{% if shade_image != blank %}
-					<li class="available-shades__elements selected" data-product-url="{{ product.url }}">
-						<img
-							srcset="
-							{%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-							{%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-							{%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-							{%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-							{%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-							{%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-							{{ shade_image | image_url }} {{ shade_image.width }}w
-							"
-							src="{{ shade_image | image_url: width: 533 }}"
-							sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-							alt="{{ product.metafields.custom.colour_name }} shade snippet"
-							class="motion-reduce shade-snippet"
-							loading="lazy"
-							width="{{ shade_image.width }}"
-							height="{{ shade_image.height }}"
-						>
-					</li>
-				{% endif %}
-			{% endif %}
 
-			{% comment %}First row products shade snippet{% endcomment %}
-			{% for shade in shades_list[colour_group] %}
-				{{  shade }}
-			{% endfor %}
-			{% for product in collection.products %}
-				{% if first_row_counter > 0 %}
-					{% unless request.path contains product.handle %}
-						{% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
-							{% liquid
-								assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-								assign shade_image = images[image_handle]
-							%}
-							{% if shade_image != blank %}
-								<li class="available-shades__elements" data-product-url="{{ product.url }}">
-									<img
-									srcset="
-											{%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-											{%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-											{%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-											{%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-											{%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-											{%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-											{{ shade_image | image_url }} {{ shade_image.width }}w
-									"
-									src="{{ shade_image | image_url: width: 533 }}"
-									sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-									alt="{{ product.metafields.custom.colour_name }} shade snippet"
-									class="motion-reduce shade-snippet"
-									loading="lazy"
-									width="{{ shade_image.width }}"
-									height="{{ shade_image.height }}"
-									>
-								</li>
-							{% endif %}
-							{% assign first_row_counter = first_row_counter | minus: 1 %}
-						{% endif %}
-					{% endunless %}
-				{% endif %}
-			{% endfor %}
-		</ul>
+  <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
+    <p class="available-shades__title">Select shade</p>
+    <ul class="available-shades__list">
+      {% comment %}Visible product shade snippet{% endcomment %}
+      {% if first_row_counter == 6 %}
+        {% liquid
+          assign image_handle = colour_name | handle | append: '-snippet.webp'
+          assign shade_image = images[image_handle]
+        %}
+        {% if shade_image != blank %}
+          <li class="available-shades__elements selected" data-product-url="{{ product.url }}">
+            <img
+              srcset="
+                {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                {{ shade_image | image_url }} {{ shade_image.width }}w
+              "
+              src="{{ shade_image | image_url: width: 533 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+              alt="{{ product.metafields.custom.colour_name }} shade snippet"
+              class="motion-reduce shade-snippet"
+              loading="lazy"
+              width="{{ shade_image.width }}"
+              height="{{ shade_image.height }}"
+            >
+          </li>
+        {% endif %}
+      {% endif %}
 
-	<div class="available-shades__buttons">
-			<summary aria-expanded="false" aria-controls="available-shades">
-			View All
-			{% render 'icon-caret' %}
-			</summary>
-			<a href="/pages/colour-matching-service">Free colour match service</a>
-	</div>
-	<div id="available-shades" class="hidden">
-			<ul class="available-shades__list">
-			{% comment %}All products shade snippet{% endcomment %}
-			{% for product in collection.products %}
-					{% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
-					{% liquid
-							assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-							assign shade_image = images[image_handle]
-					%}
-					{% if shade_image != blank %}
-							<li
-							class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
-							data-product-url="{{ product.url }}"
-							>
-							<img
-									srcset="
-									{%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-									{%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-									{%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-									{%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-									{%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-									{%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-									{{ shade_image | image_url }} {{ shade_image.width }}w
-									"
-									src="{{ shade_image | image_url: width: 533 }}"
-									sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-									alt="{{ product.metafields.custom.colour_name }} shade snippet"
-									class="motion-reduce shade-snippet"
-									loading="lazy"
-									width="{{ shade_image.width }}"
-									height="{{ shade_image.height }}"
-							>
-							</li>
-					{% endif %}
-					{% endif %}
-			{% endfor %}
-			</ul>
-	</div>
-	</shade-selector>
+      {% comment %}First row products shade snippet{% endcomment %}
 
-	<script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
+        {% for product in collection.products %}
+          {% if first_row_counter > 0 %}
+            {% unless request.path contains product.handle %}
+							{% assign product_shade = product.metafields.custom.colour_name %}
+              {% if product_shade and product_shade != blank and similar_shades contains product_shade %}
+                {% liquid
+                  assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+                  assign shade_image = images[image_handle]
+                %}
+                {% if shade_image != blank %}
+                  <li class="available-shades__elements" data-product-url="{{ product.url }}">
+                    <img
+                      srcset="
+                        {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ shade_image | image_url }} {{ shade_image.width }}w
+                      "
+                      src="{{ shade_image | image_url: width: 533 }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+                      alt="{{ product.metafields.custom.colour_name }} shade snippet"
+                      class="motion-reduce shade-snippet"
+                      loading="lazy"
+                      width="{{ shade_image.width }}"
+                      height="{{ shade_image.height }}"
+                    >
+                  </li>
+                {% endif %}
+                {% assign first_row_counter = first_row_counter | minus: 1 %}
+              {% endif %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+
+      {% comment %}
+        {% for product in collection.products %}
+        	{% if first_row_counter > 0 %}
+        		{% unless request.path contains product.handle %}
+        			{% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
+        				{% liquid
+        					assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+        					assign shade_image = images[image_handle]
+        				%}
+        				{% if shade_image != blank %}
+        					<li class="available-shades__elements" data-product-url="{{ product.url }}">
+        						<img
+        						srcset="
+        								{%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+        								{%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+        								{%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+        								{%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+        								{%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+        								{%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+        								{{ shade_image | image_url }} {{ shade_image.width }}w
+        						"
+        						src="{{ shade_image | image_url: width: 533 }}"
+        						sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+        						alt="{{ product.metafields.custom.colour_name }} shade snippet"
+        						class="motion-reduce shade-snippet"
+        						loading="lazy"
+        						width="{{ shade_image.width }}"
+        						height="{{ shade_image.height }}"
+        						>
+        					</li>
+        				{% endif %}
+        				{% assign first_row_counter = first_row_counter | minus: 1 %}
+        			{% endif %}
+        		{% endunless %}
+        	{% endif %}
+        {% endfor %}
+      {% endcomment %}
+    </ul>
+
+    <div class="available-shades__buttons">
+      <summary aria-expanded="false" aria-controls="available-shades">
+        View All
+        {% render 'icon-caret' %}
+      </summary>
+      <a href="/pages/colour-matching-service">Free colour match service</a>
+    </div>
+    <div id="available-shades" class="hidden">
+      <ul class="available-shades__list">
+        {% comment %}All products shade snippet{% endcomment %}
+        {% for product in collection.products %}
+          {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
+            {% liquid
+              assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
+              assign shade_image = images[image_handle]
+            %}
+            {% if shade_image != blank %}
+              <li
+                class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
+                data-product-url="{{ product.url }}"
+              >
+                <img
+                  srcset="
+                    {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ shade_image | image_url }} {{ shade_image.width }}w
+                  "
+                  src="{{ shade_image | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
+                  alt="{{ product.metafields.custom.colour_name }} shade snippet"
+                  class="motion-reduce shade-snippet"
+                  loading="lazy"
+                  width="{{ shade_image.width }}"
+                  height="{{ shade_image.height }}"
+                >
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </shade-selector>
+
+  <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
 {% endunless %}
