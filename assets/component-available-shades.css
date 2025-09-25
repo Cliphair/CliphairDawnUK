@@ -30,7 +30,7 @@
 	box-sizing:border-box;
 }
 
-@media screen and (min-width:750px) and (max-width:989px){
+@media screen and (min-width:750px) and (max-width:1199px){
 	.available-shades__list {
 		gap: .5rem;
 	}
