@@ -366,7 +366,7 @@
   margin:0;
 }
 
-.table-of-content__header button{
+.table-of-content__header .table-of-content__toggle{
   background: none;
   border: 0;
   padding: 0;
@@ -376,16 +376,16 @@
   cursor:pointer;
 }
 
-.table-of-content__header button .icon{
+.table-of-content__header .table-of-content__toggle .icon{
   width:1.2rem;
   transition: transform 0.5s ease;
 }
 
-.table-of-content__header.open button .icon{
+.table-of-content__header.open .table-of-content__toggle .icon{
   transform:rotate(180deg);
 }
 
-.table-of-content__header button span{
+.table-of-content__header .table-of-content__toggle span{
   text-decoration:underline;
   margin:0.2rem;
 }
