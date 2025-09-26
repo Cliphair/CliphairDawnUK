@@ -48,9 +48,6 @@ function addTitlesToIndex(titlesList, indexElement) {
       anchorElement.innerText = title.innerText.trim();
       anchorElement.title = "Go to " + title.innerText.trim();
 
-      {% comment %} anchorElement.innerText = cleanTitle(title.innerText.trim());
-      anchorElement.title = "Go to " + cleanTitle(title.innerText.trim()); {% endcomment %}
-
       anchorElement.addEventListener('click', (e) => {
         e.preventDefault();
         scrollToId(id); // pass stable id
