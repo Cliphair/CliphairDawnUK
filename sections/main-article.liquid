@@ -9,6 +9,8 @@
   {{ 'component-category-card.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
+{% assign toc = section.blocks | where: 'type', 'table-of-content' %}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -116,8 +118,8 @@
             {%- endif -%}
           {%- when 'title' -%}
             {% liquid
-              assign published_date = article.published_at | date: "%s" | plus: 0
-              assign updated_date = article.updated_at | date: "%s" | plus: 0
+              assign published_date = article.published_at | date: '%s' | plus: 0
+              assign updated_date = article.updated_at | date: '%s' | plus: 0
               assign five_days = 86400 | times: 5
               assign diff_seconds = updated_date | minus: published_date
             %}
@@ -132,69 +134,35 @@
                 {{ article.title | escape }}
               </h1>
 
-              {% comment %} {%- if block.settings.blog_show_author -%}
+              <div>
                 <span
-                  class="pipe-divider caption-with-letter-spacing"
+                  class="circle-divider caption-with-letter-spacing"
                   itemprop="author"
                   itemscope
                   itemtype="http://schema.org/Person"
+                  >By <span itemprop="name">{{ article.author }}</span></span
                 >
-                  Authored By <span itemprop="name">{{ article.author }}</span>
-                </span>
-              {%- endif -%}
-              {%- if block.settings.blog_show_date -%}
-                <span
-                  class="caption-with-letter-spacing"
-                  itemprop="dateCreated datePublished"
-                  datetime="{{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}"
-                >
-                  {{- article.published_at | time_tag: format: 'date' -}}
-                </span>
-              {%- endif -%}
-              {% if diff_seconds >= five_days %}
-                <p class="caption-with-letter-spacing">
-                  Last modified on
-                  <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">
-                    {{- article.updated_at | time_tag: format: 'date' -}}
-                  </span>
-                </p>
-              {% endif %} {% endcomment %}
-              <details
-                id="Details-{{ block.id }}-{{ section.id }}"
-              >
-                <summary id="Summary-{{ block.id }}-{{ section.id }}">
-                  <p class="accordion__title inline-richtext h4">
-                    Blog details
-                  </p>
-                  {% render 'icon-caret' %}
-                </summary>
-                <div
-                  class="accordion__content rte"
-                  id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
-                  role="region"
-                  aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
-                >
-                  <p
-                    class="caption-with-letter-spacing"
-                    itemprop="author pipe-divider "
-                    itemscope
-                    itemtype="http://schema.org/Person"
+                {%- if article.metafields.information.reviewed_by
+                  and article.metafields.information.reviewed_by != blank
+                -%}
+                  <span class="caption-with-letter-spacing"
+                    >Reviewed By <span>{{ article.metafields.information.reviewed_by }}</span></span
                   >
-                    Authored By <span itemprop="name">{{ article.author }}</span>
-                  </p>
-                  {% if article.metafields.information.reviewed_by and article.metafields.information.reviewed_by!= blank %}
-                    <p
-                      class=" caption-with-letter-spacing"
-                    >
-                      Reviewed By <span>{{ article.metafields.information.reviewed_by }}</span>
-                    </p>
-                  {% endif %}
-                  <p class="caption-with-letter-spacing">
-                    Published at <span itemprop="dateCreated datePublished" datetime="{{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">{{- article.published_at | time_tag: format: 'date' -}}</span>
-                  </p>
-                  {% if diff_seconds >= five_days %}<p class="caption-with-letter-spacing">Updated on <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">{{- article.updated_at | time_tag: format: 'date' -}}</span></p>{% endif %}
-                </div>
-              </details>
+                {%- endif %}
+              </div>
+              <div style="margin-top:1rem;">
+                <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
+                  {{- article.published_at | time_tag: format: 'abbreviated_date' -}}
+                </span>
+                {%- if diff_seconds >= five_days -%}
+                  <span class="caption-with-letter-spacing"
+                    >Last modified on
+                    <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">
+                      {{- article.updated_at | time_tag: format: 'abbreviated_date' -}}
+                    </span></span
+                  >
+                {%- endif %}
+              </div>
             </header>
 
           {%- when 'content' -%}
@@ -218,28 +186,6 @@
               {{ block.settings.text }}
             </div>
 
-            {% comment %} <div class="extra-block-wrapper" style="flex-wrap:wrap">
-              <div>
-                <span
-                  class="pipe-divider caption-with-letter-spacing"
-                >
-                  Authored By <span itemprop="name">{{ article.author }}</span>
-                </span>
-
-                <span class="caption-with-letter-spacing">
-                  {{- article.published_at | time_tag: format: 'date' -}}
-                </span>
-              </div>
-              {% if block.settings.enable_share %}
-                <div
-                  class="caption-with-letter-spacing article-template__social-sharing{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% assign share_url = request.origin | append: article.url %}
-                  {% render 'share-button', block: block, share_link: share_url %}
-                </div>
-              {% endif %}
-            </div> {% endcomment %}
             {% if author_obj %}
               <div
                 id="articleAuthor"
@@ -350,6 +296,14 @@
                   {% render 'share-button', block: block, share_link: share_url %}
                 </div>
               {% endif %}
+            </div>
+          {% when 'table-of-content' %}
+            <div class="no-js-hidden table-of-content color-{{ block.settings.color_scheme }} gradient">
+              <div class="table-of-content__header">
+                <p class="h4">Table of Contents</p>
+                <button class="table-of-content__toggle">{% render 'icon-caret' %}</button>
+              </div>
+              <div class="table-of-content__list hidden"></div>
             </div>
         {%- endcase -%}
       {%- endfor -%}
@@ -612,6 +566,10 @@
     }
   }
 </script>
+
+{% if toc != empty %}
+  <script src="{{ 'article-table-of-contents.js' | asset_url }}" defer></script>
+{% endif %}
 
 {% schema %}
 {
