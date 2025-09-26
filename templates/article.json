@@ -37,6 +37,12 @@
             "font_weight": "bold"
           }
         },
+        "table_of_content_WVtcAm": {
+          "type": "table-of-content",
+          "settings": {
+            "color_scheme": "background-2"
+          }
+        },
         "content": {
           "type": "content",
           "settings": {}
@@ -60,6 +66,7 @@
         "featured_image",
         "extra_iKiWex",
         "title",
+        "table_of_content_WVtcAm",
         "content",
         "faq_4pTbgj",
         "footer_LgHUFf"
@@ -83,6 +90,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -91,6 +100,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -99,6 +110,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -107,6 +120,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -115,6 +130,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -143,7 +160,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 36,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     }
   },
