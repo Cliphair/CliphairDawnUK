@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    {% comment %} makeTitleToNewStyle(titles); {% endcomment %}
     tocToggleClick(tocList, tocToggle);
   } else {
     const toc = document.querySelector('.table-of-content');
@@ -22,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function tocToggleClick(toc, toggleButton) {
-  {% comment %} const currentStatusElement = toggleButton.querySelector('span');
-  currentStatusElement.innerText = currentStatusElement.innerText === 'Hide' ? 'Show' : 'Hide'; {% endcomment %}
+
   toggleButton.classList.toggle('open')
   toc.classList.toggle('hidden');
 }
