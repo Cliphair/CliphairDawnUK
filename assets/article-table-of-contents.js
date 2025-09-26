@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  let titles = document.querySelectorAll('.section-main-article .article-template__content h2');
+  let titles = document.querySelectorAll('.section-main-article .article-main h2');
   let tocList = document.querySelector('.table-of-content__list');
   let tocToggle = document.querySelector('.table-of-content__header');
 
