@@ -133,6 +133,242 @@
         "trackable_name": ""
       }
     },
+    "videos_list": {
+      "type": "videos-list",
+      "blocks": {
+        "video_TfRk3t": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Timed Application for Halo - Long Version ( 60 second )-2-2.mov",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/halo-application-thumbnail.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_t8zGmx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Halo Removal - Duo.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/halo-extension-removal-duo-thumbnail.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_ayXWCz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Tyla - Removal.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-tyla-thumbnail.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_TfRk3t4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Halo Removal - Hevillin.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-habellin-thumbnail.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_t8zGmx5": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Jayde - Removal.mp4",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "cover_image": "shopify://shop_images/removal-jayde-thumbnail.jpg",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_TfRk3t",
+        "video_t8zGmx",
+        "video_ayXWCz",
+        "video_TfRk3t4",
+        "video_t8zGmx5"
+      ],
+      "custom_css": [
+        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
+        ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}",
+        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px; font-size: 2.5rem;}",
+        "@media screen and (min-width: 990px) {.videos-list-title {letter-spacing: -2.4px; font-size: 4rem; }}"
+      ],
+      "settings": {
+        "title": "Halo Hair Extensions \nBefore & After",
+        "heading_size": "h1",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "portrait",
+        "hide_card_arrow": false,
+        "columns_desktop": 3,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 72,
+        "padding_bottom": 32
+      }
+    },
+    "shop-by-shade": {
+      "type": "quick-add-by-shade",
+      "custom_css": [],
+      "settings": {
+        "title": "Select Your Halo Shade & Length",
+        "heading_size": "h2",
+        "introduction": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "hide_card_arrow": false,
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_v2_jPJa6g": {
+      "type": "rich-text-v2",
+      "blocks": {
+        "heading_4zfMGC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Cliphair?",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text_ERhXke": {
+          "type": "text",
+          "settings": {
+            "text": "We’ve designed the ultimate halo hair extension using only the finest quality Remy human hair.[read-more] Unlike other brands, our halo comes with two bonus clips to add fullness at the sides, plus two discreet snap clips attached directly to the extension for extra security, reducing any risk of slipping. We’ve also included multiple wire lengths to perfectly fit any head size and shape, ensuring all-day comfort. If you’re searching for the best halo extensions, your search ends here!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4zfMGC",
+        "text_ERhXke"
+      ],
+      "custom_css": [
+        ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem; font-size: 2.5rem;}",
+        ".rich-text__text {line-height: 1.2em; letter-spacing: -0.9px;}",
+        ".read-more__btn,.read-less__btn {text-transform: capitalize;}",
+        "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; font-size: 4rem; } .rich-text__text {font-size: 3.5rem; letter-spacing: -2.1px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 0
+      }
+    },
+    "why-cliphair": {
+      "type": "image-list",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/halo-side-clips.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>2 bonus side clip-ins</p>",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/halo-thickness.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Luxurious thickness</p>",
+            "link": ""
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/halo-wire.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Custom fit with <br>versatile sizes</p>",
+            "link": ""
+          }
+        },
+        "image4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/secure_all_day_1-min.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Built-in clips for added hold and all-day security</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3",
+        "image4"
+      ],
+      "custom_css": [
+        ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem; margin-top: 0;}",
+        ".text-container p {font-size: 15px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
+        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
+        "@media screen and (min-width: 990px) {.title-wrapper {margin-bottom: 5.3rem; } .images-list-title {letter-spacing: -2.4px; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "center",
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 44,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
+    "halo_colour_match_reviews_BgmxmE": {
+      "type": "halo-colour-match-reviews",
+      "name": "Colour Match & Review",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 1,
+        "swipe_on_desktop": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "image": "shopify://shop_images/halo-colour-matching.jpg",
+        "image_url": "shopify://pages/colour-matching-service",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "trackable_name": ""
+      }
+    },
     "videos_list_with_collection_modal": {
       "type": "videos-list-with-collection-modal",
       "blocks": {
@@ -423,226 +659,6 @@
         "trackable_name": "shoppable_video_carrousel"
       }
     },
-    "videos_list": {
-      "type": "videos-list",
-      "blocks": {
-        "video_TfRk3t": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Timed Application for Halo - Long Version ( 60 second )-2-2.mov",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/halo-application-thumbnail.jpg",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_t8zGmx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Halo Removal - Duo.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/halo-extension-removal-duo-thumbnail.jpg",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_ayXWCz": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Tyla - Removal.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/removal-tyla-thumbnail.jpg",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_TfRk3t4": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Halo Removal - Hevillin.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/removal-habellin-thumbnail.jpg",
-            "title": "",
-            "description": ""
-          }
-        },
-        "video_t8zGmx5": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Jayde - Removal.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/removal-jayde-thumbnail.jpg",
-            "title": "",
-            "description": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_TfRk3t",
-        "video_t8zGmx",
-        "video_ayXWCz",
-        "video_TfRk3t4",
-        "video_t8zGmx5"
-      ],
-      "custom_css": [
-        ".deferred-media__poster-button {color: rgba(255, 255, 255, 0.75);}",
-        ".videos-list__item.grid__item {max-width: calc((1300px - 120px) / 4);}",
-        ".videos-list-title {line-height: 1.16em; letter-spacing: -1.8px; font-size: 2.5rem;}",
-        "@media screen and (min-width: 990px) {.videos-list-title {letter-spacing: -2.4px; font-size: 4rem; }}"
-      ],
-      "settings": {
-        "title": "Halo Hair Extensions \nBefore & After",
-        "heading_size": "h1",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "portrait",
-        "hide_card_arrow": false,
-        "columns_desktop": 3,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 72,
-        "padding_bottom": 32
-      }
-    },
-    "rich_text_v2_jPJa6g": {
-      "type": "rich-text-v2",
-      "blocks": {
-        "heading_4zfMGC": {
-          "type": "heading",
-          "settings": {
-            "heading": "Why Cliphair?",
-            "heading_size": "h1",
-            "h1": false
-          }
-        },
-        "text_ERhXke": {
-          "type": "text",
-          "settings": {
-            "text": "We’ve designed the ultimate halo hair extension using only the finest quality Remy human hair.[read-more] Unlike other brands, our halo comes with two bonus clips to add fullness at the sides, plus two discreet snap clips attached directly to the extension for extra security, reducing any risk of slipping. We’ve also included multiple wire lengths to perfectly fit any head size and shape, ensuring all-day comfort. If you’re searching for the best halo extensions, your search ends here!"
-          }
-        }
-      },
-      "block_order": [
-        "heading_4zfMGC",
-        "text_ERhXke"
-      ],
-      "custom_css": [
-        ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem; font-size: 2.5rem;}",
-        ".rich-text__text {line-height: 1.2em; letter-spacing: -0.9px;}",
-        ".read-more__btn,.read-less__btn {text-transform: capitalize;}",
-        "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; font-size: 4rem; } .rich-text__text {font-size: 3.5rem; letter-spacing: -2.1px; }}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 44,
-        "padding_bottom": 0
-      }
-    },
-    "why-cliphair": {
-      "type": "image-list",
-      "blocks": {
-        "image1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/halo-side-clips.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>2 bonus side clip-ins</p>",
-            "link": ""
-          }
-        },
-        "image2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/halo-thickness.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Luxurious thickness</p>",
-            "link": ""
-          }
-        },
-        "image3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/halo-wire.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Custom fit with <br>versatile sizes</p>",
-            "link": ""
-          }
-        },
-        "image4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/secure_all_day_1-min.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Built-in clips for added hold and all-day security</p>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image1",
-        "image2",
-        "image3",
-        "image4"
-      ],
-      "custom_css": [
-        ".images-list {--grid-desktop-horizontal-spacing: 1rem; --grid-desktop-vertical-spacing: 1rem; --grid-mobile-horizontal-spacing: 1rem; --grid-mobile-vertical-spacing: 1rem; margin-top: 0;}",
-        ".text-container p {font-size: 15px; letter-spacing: -1.08px; line-height: 1em; margin: 2rem 0 1.5rem;}",
-        ".images-list-title {line-height: 1.16em; letter-spacing: -1.8px;}",
-        "@media screen and (min-width: 990px) {.title-wrapper {margin-bottom: 5.3rem; } .images-list-title {letter-spacing: -2.4px; }}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "center",
-        "columns_desktop": 4,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "slider_visual": "counter",
-        "padding_top": 44,
-        "padding_bottom": 0,
-        "trackable_name": ""
-      }
-    },
-    "shop-by-shade": {
-      "type": "quick-add-by-shade",
-      "custom_css": [],
-      "settings": {
-        "title": "Select Your Halo Shade",
-        "heading_size": "h2",
-        "introduction": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "text_allignment": "center",
-        "image_ratio": "square",
-        "hide_card_arrow": false,
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "slider_visual": "counter",
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "slideshow_image_link_kAgcJP": {
       "type": "slideshow-image-link",
       "blocks": {
@@ -667,22 +683,6 @@
         "change_slides_speed": 5,
         "show_text_below": true,
         "accessibility_info": "Colour matching banner"
-      }
-    },
-    "halo_colour_match_reviews_BgmxmE": {
-      "type": "halo-colour-match-reviews",
-      "name": "Colour Match & Review",
-      "settings": {
-        "color_scheme": "",
-        "columns_desktop": 1,
-        "swipe_on_desktop": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "image": "shopify://shop_images/halo-colour-matching.jpg",
-        "image_url": "shopify://pages/colour-matching-service",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "trackable_name": ""
       }
     },
     "collapsible_content_AaP6iD": {
