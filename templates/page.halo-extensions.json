@@ -29,7 +29,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Get instant length & volume in less than 60 seconds with Cliphair's Halo extensions. With different sized wires for all head shapes, 2 extra Clip-in pieces for the sides and added snap clips for security, its never been easier to switch up your style![read-more] Our heavenly real hair Halo extensions are available in 3 different lengths and 15 gorgeous shades for all hair types."
+            "text": "Get instant length & volume in less than 60 seconds with Cliphair's Halo extensions.[read-more] With different sized wires for all head shapes, 2 extra Clip-in pieces for the sides and added snap clips for security, its never been easier to switch up your style! Our heavenly real hair Halo extensions are available in 3 different lengths and 15 gorgeous shades for all hair types."
           }
         },
         "text_3GFVKz": {
@@ -195,6 +195,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step1.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Step 1</p><p>Section hair around crown. Clip top section up, leaving 2 sections out the front.</p>",
             "link": ""
           }
@@ -203,6 +205,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step2.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Step 2</p><p>Position wire 1-2\" from hairline. Use Clips on halo seam to secure in place</p>",
             "link": ""
           }
@@ -211,6 +215,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/how-to-install_step3.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Step 3</p><p>Apply the small clip-in side pieces to fill out front area of your hair</p>",
             "link": ""
           }
@@ -450,6 +456,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/pros-halo-extensions-1.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Apply in lessthan 60 seconds for a comfortable & custom fit</p>",
             "link": ""
           }
@@ -458,6 +466,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/pros-halo-extensions-2.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Discreet & invisible wire fora secure all-day hold</p>",
             "link": ""
           }
@@ -466,6 +476,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/pros-halo-extensions-3.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Seamless built-inclips. No glue, no fuss.</p>",
             "link": ""
           }
@@ -543,6 +555,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/halo-side-clips.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>2 bonus side clip-ins</p>",
             "link": ""
           }
@@ -551,6 +565,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/halo-thickness.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Luxurious thickness</p>",
             "link": ""
           }
@@ -559,6 +575,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/halo-wire.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Custom fit with <br>versatile sizes</p>",
             "link": ""
           }
@@ -567,6 +585,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/secure_all_day_1-min.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Built-in clips for added hold and all-day security</p>",
             "link": ""
           }
