@@ -9,6 +9,89 @@
  */
 {
   "sections": {
+    "table_of_content_HEYLRf": {
+      "type": "table-of-content",
+      "blocks": {
+        "link_7kidEg": {
+          "type": "link",
+          "settings": {
+            "label": "Benefits Of Hale Hair Extensions",
+            "link_id": "benefits"
+          }
+        },
+        "link_wwBqCh": {
+          "type": "link",
+          "settings": {
+            "label": "Before & After Videos",
+            "link_id": "#shopify-section-template--25893475778934__videos_list"
+          }
+        },
+        "link_4FhQVe": {
+          "type": "link",
+          "settings": {
+            "label": "Select Your Shade & Length",
+            "link_id": "#shopify-section-template--25893475778934__shop-by-shade"
+          }
+        },
+        "link_XYKDRK": {
+          "type": "link",
+          "settings": {
+            "label": "Why Cliphair?",
+            "link_id": "why-cliphair"
+          }
+        },
+        "link_47YnyA": {
+          "type": "link",
+          "settings": {
+            "label": "Colour Matching Service",
+            "link_id": "cm-reviews"
+          }
+        },
+        "link_AfwRLq": {
+          "type": "link",
+          "settings": {
+            "label": "Cliphair Reviews",
+            "link_id": "cm-reviews"
+          }
+        },
+        "link_kB3ahB": {
+          "type": "link",
+          "settings": {
+            "label": "Transformation Videos",
+            "link_id": "transformation_video_carousel"
+          }
+        },
+        "link_mHF6ap": {
+          "type": "link",
+          "settings": {
+            "label": "How To Apply Halo Hair Extensions",
+            "link_id": "hot-to-apply"
+          }
+        },
+        "link_hrCrFx": {
+          "type": "link",
+          "settings": {
+            "label": "FAQ's",
+            "link_id": "shopify-section-template--25893475778934__collapsible_content_AaP6iD"
+          }
+        }
+      },
+      "block_order": [
+        "link_7kidEg",
+        "link_wwBqCh",
+        "link_4FhQVe",
+        "link_XYKDRK",
+        "link_47YnyA",
+        "link_AfwRLq",
+        "link_kB3ahB",
+        "link_mHF6ap",
+        "link_hrCrFx"
+      ],
+      "name": "Table of contents",
+      "settings": {
+        "color_scheme": ""
+      }
+    },
     "custom_liquid_YkPTqW": {
       "type": "custom-liquid",
       "custom_css": [
@@ -130,7 +213,7 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0,
-        "trackable_name": ""
+        "trackable_name": "benefits"
       }
     },
     "videos_list": {
@@ -201,7 +284,7 @@
         "@media screen and (min-width: 990px) {.videos-list-title {letter-spacing: -2.4px; font-size: 4rem; }}"
       ],
       "settings": {
-        "title": "Halo Hair Extensions \nBefore & After",
+        "title": "Halo Hair Extensions Before & After",
         "heading_size": "h1",
         "introduction": "",
         "button_label": "",
@@ -350,7 +433,7 @@
         "slider_visual": "counter",
         "padding_top": 44,
         "padding_bottom": 0,
-        "trackable_name": ""
+        "trackable_name": "why-cliphair"
       }
     },
     "halo_colour_match_reviews_BgmxmE": {
@@ -366,7 +449,7 @@
         "image_url": "shopify://pages/colour-matching-service",
         "padding_top": 36,
         "padding_bottom": 36,
-        "trackable_name": ""
+        "trackable_name": "cm-reviews"
       }
     },
     "videos_list_with_collection_modal": {
@@ -543,7 +626,7 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0,
-        "trackable_name": ""
+        "trackable_name": "hot-to-apply"
       }
     },
     "custom_liquid_igbatT": {
@@ -780,6 +863,7 @@
     }
   },
   "order": [
+    "table_of_content_HEYLRf",
     "custom_liquid_YkPTqW",
     "rich-text-intro",
     "image-scroll",
