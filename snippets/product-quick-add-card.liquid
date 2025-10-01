@@ -33,7 +33,7 @@
       </div>
       <div class="text-wrapper__bottom">
         <p class="">
-          {{ cart.currency.symbol -}}
+          From {{ cart.currency.symbol -}}
           <span class="product_price">{{ card_product.price_min | money_without_currency }}</span>
         </p>
 
@@ -56,7 +56,7 @@
                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                 data-product-url="{{ card_product.url }}"
               >
-                Add To Bag
+                Select Length
                 <div class="loading-overlay__spinner hidden">
                   <svg
                     aria-hidden="true"
