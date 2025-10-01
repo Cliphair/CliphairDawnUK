@@ -144,7 +144,7 @@
         ".button {min-height: 0; padding: 1rem 2.2rem; font-size: 1.3rem; line-height: 1.47em; letter-spacing: -0.65px; flex-grow: 0; min-width: 117px;}",
         ".read-more__btn,.read-less__btn {text-transform: capitalize;}",
         "@media screen and (min-width: 750px) {.button {font-size: 1.5rem; }}",
-        "@media screen and (min-width: 990px) {p {font-size: 3.5rem; letter-spacing: -2.1px; } .button {font-size: 2.5rem; padding: 2rem 4.5rem; min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
+        "@media screen and (min-width: 990px) {p {font-size: 2.5rem; letter-spacing: -2.1px; } .button {font-size: 1.5rem; /* padding: 2rem 4.5rem; */ min-width: 236px; } .rich-text__buttons {margin-top: 5rem; max-width: unset; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -352,7 +352,7 @@
         ".rich-text__heading {line-height: 1.16em; letter-spacing: -1.8px; margin-bottom: 1.8rem; font-size: 2.5rem;}",
         ".rich-text__text {line-height: 1.2em; letter-spacing: -0.9px;}",
         ".read-more__btn,.read-less__btn {text-transform: capitalize;}",
-        "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; font-size: 4rem; } .rich-text__text {font-size: 3.5rem; letter-spacing: -2.1px; }}"
+        "@media screen and (min-width: 990px) {.rich-text__heading {letter-spacing: -2.4px; font-size: 4rem; } .rich-text__text {font-size: 2.5rem; letter-spacing: -2.1px; }}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
