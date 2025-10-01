@@ -72,6 +72,67 @@
         "padding_bottom": 44
       }
     },
+    "image-scroll": {
+      "type": "image-list",
+      "blocks": {
+        "image1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pros-halo-extensions-1.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Apply in lessthan 60 seconds for a comfortable & custom fit</p>",
+            "link": ""
+          }
+        },
+        "image2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pros-halo-extensions-2.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Discreet & invisible wire fora secure all-day hold</p>",
+            "link": ""
+          }
+        },
+        "image3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pros-halo-extensions-3.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Seamless built-inclips. No glue, no fuss.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "custom_css": [
+        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
+        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
+        ".text-container {position: absolute; top: 0; z-index: -1;}",
+        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
     "videos_list_with_collection_modal": {
       "type": "videos-list-with-collection-modal",
       "blocks": {
@@ -449,67 +510,6 @@
         "padding_bottom": 32
       }
     },
-    "image-scroll": {
-      "type": "image-list",
-      "blocks": {
-        "image1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/pros-halo-extensions-1.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Apply in lessthan 60 seconds for a comfortable & custom fit</p>",
-            "link": ""
-          }
-        },
-        "image2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/pros-halo-extensions-2.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Discreet & invisible wire fora secure all-day hold</p>",
-            "link": ""
-          }
-        },
-        "image3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/pros-halo-extensions-3.jpg",
-            "img_url": "",
-            "alt": "",
-            "text_label": "<p>Seamless built-inclips. No glue, no fuss.</p>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image1",
-        "image2",
-        "image3"
-      ],
-      "custom_css": [
-        ".grid {--grid-mobile-horizontal-spacing: 1.5rem; --grid-desktop-horizontal-spacing: 1.5rem; margin-top: 0;}",
-        "@media screen and (max-width: 749px) {.grid__item {width: calc(100% - 3rem) !important; } .small-hide {display: flex !important; }}",
-        ".text-container {position: absolute; top: 0; z-index: -1;}",
-        "@media screen and (min-width: 750px) {.grid__item {max-width: calc((100% - 13rem) / 3) !important; } .grid__item:first-of-type {margin-left: 5rem; } .slider--tablet::after {padding-left: 5rem; } .slider-buttons {display: none; }}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
-        "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "trackable_name": ""
-      }
-    },
     "rich_text_v2_jPJa6g": {
       "type": "rich-text-v2",
       "blocks": {
@@ -782,18 +782,18 @@
   "order": [
     "custom_liquid_YkPTqW",
     "rich-text-intro",
+    "image-scroll",
+    "videos_list",
+    "shop-by-shade",
+    "rich_text_v2_jPJa6g",
+    "why-cliphair",
+    "halo_colour_match_reviews_BgmxmE",
     "videos_list_with_collection_modal",
     "infographic",
     "how-to-install",
     "custom_liquid_igbatT",
     "videos_list_with_collection_modal2",
-    "videos_list",
-    "image-scroll",
-    "rich_text_v2_jPJa6g",
-    "why-cliphair",
-    "shop-by-shade",
     "slideshow_image_link_kAgcJP",
-    "halo_colour_match_reviews_BgmxmE",
     "collapsible_content_AaP6iD"
   ]
 }
