@@ -15,7 +15,7 @@
         "link_7kidEg": {
           "type": "link",
           "settings": {
-            "label": "Benefits Of Hale Hair Extensions",
+            "label": "Benefits Of Halo Hair Extensions",
             "link_id": "benefits"
           }
         },
@@ -23,14 +23,14 @@
           "type": "link",
           "settings": {
             "label": "Before & After Videos",
-            "link_id": "#shopify-section-template--25893475778934__videos_list"
+            "link_id": "shopify-section-template--25893475778934__videos_list"
           }
         },
         "link_4FhQVe": {
           "type": "link",
           "settings": {
             "label": "Select Your Shade & Length",
-            "link_id": "#shopify-section-template--25893475778934__shop-by-shade"
+            "link_id": "shopify-section-template--25893475778934__shop-by-shade"
           }
         },
         "link_XYKDRK": {
@@ -65,7 +65,7 @@
           "type": "link",
           "settings": {
             "label": "How To Apply Halo Hair Extensions",
-            "link_id": "hot-to-apply"
+            "link_id": "how-to-apply"
           }
         },
         "link_hrCrFx": {
@@ -626,7 +626,7 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 0,
-        "trackable_name": "hot-to-apply"
+        "trackable_name": "how-to-apply"
       }
     },
     "custom_liquid_igbatT": {
