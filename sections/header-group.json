@@ -137,9 +137,8 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Offer_Ticker_77.gif",
+            "image": "shopify://shop_images/Free_Saturday_Guaranteed_Delivery-Optimized.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": "shopify://pages/hair-extensions-by-colour"
