@@ -57,7 +57,6 @@
         },
         "slide_nnGry6": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Sat_Delivery_Banner_Mobile_Banner.jpg",
             "image_desktop": "shopify://shop_images/Free_Sat_Delivery_Banner_Desktop_Banner.jpg",
