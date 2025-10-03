@@ -36,6 +36,7 @@
       "blocks": {
         "slide_xF3FDX": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/halo-mobile-banner.jpg",
             "image_desktop": "shopify://shop_images/halo-desktop-banner.jpg",
