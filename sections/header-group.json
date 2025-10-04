@@ -138,7 +138,7 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "settings": {
-            "image": "shopify://shop_images/Free_Sunday_Monday_Delivery_Ticker_100_Order.gif",
+            "image": "shopify://shop_images/free_monday.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": "shopify://pages/hair-extensions-by-colour"
