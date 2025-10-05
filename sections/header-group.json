@@ -137,6 +137,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/free_monday.gif",
             "text_alignment": "center",
