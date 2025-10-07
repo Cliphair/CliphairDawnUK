@@ -44,8 +44,6 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <article
     class="article-template section-{{ section.id }}-padding page-width {% if section.settings.enable_sidebar %}article-template-sidebar sidebar-{{ section.settings.sidebar_position }}{% endif %}"
-    itemscope
-    itemtype="http://schema.org/BlogPosting"
   >
     {% if section.settings.enable_sidebar and section.settings.sidebar_position == 'left' %}
       <div class="article-sidebar mobile-hidden">
@@ -92,7 +90,6 @@
               >
                 <div
                   class="article-template__hero-{{ block.settings.image_height }} media"
-                  itemprop="image"
                   style="padding-bottom: {{ 1 | divided_by: aspect_ratio | times: 100 }}%;"
                 >
                   <img
@@ -129,7 +126,6 @@
             >
               <h1
                 class="article-template__title {{ block.settings.heading_size }} {{ block.settings.font_weight }}"
-                itemprop="headline"
               >
                 {{ article.title | escape }}
               </h1>
@@ -137,9 +133,6 @@
               <div>
                 <span
                   class="circle-divider caption-with-letter-spacing"
-                  itemprop="author"
-                  itemscope
-                  itemtype="http://schema.org/Person"
                   >By <span itemprop="name">{{ article.author }}</span></span
                 >
                 {%- if article.metafields.information.reviewed_by
@@ -151,13 +144,13 @@
                 {%- endif %}
               </div>
               <div style="margin-top:1rem;">
-                <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
+                <span class="circle-divider caption-with-letter-spacing">
                   {{- article.published_at | time_tag: format: 'abbreviated_date' -}}
                 </span>
                 {%- if diff_seconds >= five_days -%}
                   <span class="caption-with-letter-spacing"
                     >Last modified on
-                    <span itemprop="dateModified" datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}">
+                    <span>
                       {{- article.updated_at | time_tag: format: 'abbreviated_date' -}}
                     </span></span
                   >
@@ -168,7 +161,6 @@
           {%- when 'content' -%}
             <div
               class="article-template__content rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              itemprop="articleBody"
               {{ block.shopify_attributes }}
             >
               {% comment %}Cleaning old content{% endcomment %}
