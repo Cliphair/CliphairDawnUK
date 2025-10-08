@@ -162,57 +162,62 @@
     {% endpaginate %}
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const tooltip = document.getElementById('shade-tooltip');
   if (!tooltip) return;
 
-  // Move tooltip to <body> to escape any transformed containers
+  // ✅ Move the tooltip into <body> at runtime
   if (tooltip.parentNode !== document.body) {
     document.body.appendChild(tooltip);
   }
 
-  const items = document.querySelectorAll('.available-shades__elements');
-  if (!items.length) return;
+  const offsetX = 12; // right offset
+  const offsetY = 24; // above offset
 
-  items.forEach(item => {
+  document.querySelectorAll('.available-shades__elements').forEach(item => {
     item.addEventListener('mouseenter', () => {
-      const shade = item.dataset.shade;
-      if (!shade) return;
-      tooltip.textContent = shade;
-      tooltip.classList.add('show');
+      tooltip.textContent = item.dataset.shade || '';
+      tooltip.style.opacity = '1';
+      tooltip.style.visibility = 'visible';
     });
 
     item.addEventListener('mousemove', e => {
-      const offsetX = 12;  // distance right of cursor
-      const offsetY = 24;  // distance above cursor
+      // Start position
+      let x = e.pageX + offsetX;
+      let y = e.pageY - offsetY;
 
-      // get tooltip size after content set
+      // Now that it's visible we can measure
       const rect = tooltip.getBoundingClientRect();
       const vw = window.innerWidth;
       const vh = window.innerHeight;
 
-      let x = e.clientX + offsetX;
-      let y = e.clientY - offsetY;
-
-      // --- Horizontal boundaries ---
-      if (x + rect.width > vw) x = e.clientX - rect.width - offsetX;
+      // --- Horizontal boundary ---
+      if (x + rect.width > window.scrollX + vw) {
+        x = e.pageX - rect.width - offsetX; // flip to left if overflow
+      }
       if (x < 0) x = 0;
 
-      // --- Vertical boundaries ---
-      if (y < 0) y = e.clientY + offsetY; // flip below if too high
-      if (y + rect.height > vh) y = vh - rect.height;
+      // --- Vertical boundary ---
+      if (y < window.scrollY) {             // above top
+        y = e.pageY + offsetY;              // place below
+      }
+      if (y + rect.height > window.scrollY + vh) {
+        y = window.scrollY + vh - rect.height;
+      }
 
       tooltip.style.left = `${x}px`;
-      tooltip.style.top = `${y}px`;
+      tooltip.style.top  = `${y}px`;
     });
 
     item.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('show');
+      tooltip.style.opacity = '0';
+      tooltip.style.visibility = 'hidden';
     });
   });
 });
 </script>
+
 
 
   {% endunless %}
