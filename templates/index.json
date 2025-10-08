@@ -92,6 +92,7 @@
     },
     "yotpo_reviews_dynamic_carrousel_UeNWFY": {
       "type": "yotpo-reviews-dynamic-carrousel",
+      "disabled": true,
       "name": "Summer reviews",
       "settings": {
         "color_scheme": "background-1",
@@ -200,6 +201,7 @@
         "element_NaLGwh",
         "element_hBXMTc"
       ],
+      "disabled": true,
       "custom_css": [
         ".marquee__item {max-width: 200px;}"
       ],
@@ -274,6 +276,40 @@
         "slider_visual": "dots",
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "featured_collection_kqRjtt": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Choose By Best Sellers",
+        "heading_size": "h1",
+        "description": "<p>Browse over <strong>70+ stunning shades</strong>, including a wide range of single colours, highlights, balayage and ombre, and our funky shade collection.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "cliphair-best-sellers",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "inverse",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "badge_style": "fixed",
+        "display_low_inventory": true,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "slideshow_image_link_QyBpYz": {
@@ -646,6 +682,7 @@
     "maquee_mnMgq6",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
+    "featured_collection_kqRjtt",
     "slideshow_image_link_QyBpYz",
     "collection_carrousel_fb6cDE",
     "rich_text_ez6FdW",
