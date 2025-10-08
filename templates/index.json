@@ -301,7 +301,7 @@
         "colour_as_title": false,
         "show_type": false,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "enable_quick_add": false,
         "badge_style": "fixed",
         "display_low_inventory": true,
