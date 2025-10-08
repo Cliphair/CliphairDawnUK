@@ -53,7 +53,7 @@ if (!customElements.get('shade-selector')) {
             window.yotpoWidgetsContainer.initWidgets();
           }
           this.stopLoading();
-          // ⭐ Tell tooltip to re-bind to the canonical node
+
           document.dispatchEvent(new Event('shades:updated'));
         }
       }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.__shadeTooltipInit = true;
 
   const SELECTOR = '.available-shades__elements';
-  const OFFSET_Y = 16;   // below cursor (centered horizontally)
+  const OFFSET_Y = 24;   // below cursor (centered horizontally)
   const LERP     = 0.25; // easing
 
   function ensureTooltip() {
@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return el;
   }
 
-  // ⭐ make this reassignable so we can point at the kept node after swaps
   let tooltip = ensureTooltip();
 
   // LERP state
@@ -175,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!li) return;
     current = li;
 
-    // ⭐ if a swap inserted another #shade-tooltip, grab the canonical one
     tooltip = ensureTooltip();
 
     const shade = li.getAttribute('data-shade')
@@ -204,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltip.classList.remove('is-visible');
   }, { passive: true });
 
-  // ⭐ When your component finishes swapping, point `tooltip` at the kept node
   document.addEventListener('shades:updated', () => {
     tooltip = ensureTooltip();
     // reset any stale hover from removed nodes
@@ -212,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltip.classList.remove('is-visible');
   });
 
-  // ⭐ Safety net for wholesale DOM edits
   const mo = new MutationObserver(() => {
     tooltip = ensureTooltip();
   });
