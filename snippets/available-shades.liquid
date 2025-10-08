@@ -163,6 +163,123 @@
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
     <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Avoid double-binding if this script is executed again after swaps
+  if (window.__shadeTooltipInit) return;
+  window.__shadeTooltipInit = true;
+
+  const SELECTOR = '.available-shades__elements';
+  const OFFSET_Y = 16;   // distance BELOW the cursor
+  const LERP     = 0.25; // easing for buttery motion
+
+  // Ensure there is a single tooltip under <body>; remove duplicates after swaps
+  function ensureTooltip() {
+    const all = Array.from(document.querySelectorAll('#shade-tooltip'));
+    let el = all[0];
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'shade-tooltip';
+      document.body.appendChild(el);
+    } else if (el.parentNode !== document.body) {
+      document.body.appendChild(el);
+    }
+    // remove any dupes that AJAX may have injected
+    for (let i = 1; i < all.length; i++) all[i].remove();
+
+    // minimal hardening to resist theme rules (keep your main CSS as-is)
+    el.style.pointerEvents = 'none';
+    el.style.position = 'absolute';
+    el.style.left = '0px';
+    el.style.top  = '0px';
+    el.style.zIndex = '2147483647';
+    return el;
+  }
+
+  const tooltip = ensureTooltip();
+
+  // LERP state
+  let targetX = 0, targetY = 0;
+  let curX = 0, curY = 0;
+  let current = null;
+
+  function clampBelowCentered(pageX, pageY) {
+    const w  = tooltip.offsetWidth || 0;
+    const h  = tooltip.offsetHeight || 0;
+    const sx = window.scrollX || 0;
+    const sy = window.scrollY || 0;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    // centered horizontally under the cursor, placed below
+    let x = pageX - (w / 2);
+    let y = pageY + OFFSET_Y;
+
+    // horizontal clamps
+    if (x < sx) x = sx;
+    if (x + w > sx + vw) x = sx + vw - w;
+
+    // if bottom overflows, flip above the cursor
+    if (y + h > sy + vh) y = pageY - h - OFFSET_Y;
+    if (y < sy) y = sy;
+
+    return [x, y];
+  }
+
+  function setTarget(pageX, pageY) {
+    const [x, y] = clampBelowCentered(pageX, pageY);
+    targetX = x; targetY = y;
+  }
+
+  function tick() {
+    curX += (targetX - curX) * LERP;
+    curY += (targetY - curY) * LERP;
+    tooltip.style.setProperty('--x', curX + 'px');
+    tooltip.style.setProperty('--y', curY + 'px');
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // -------- Delegated events: survive AJAX re-renders --------
+  document.addEventListener('mouseover', (e) => {
+    const li = e.target.closest(SELECTOR);
+    if (!li) return;
+    current = li;
+    ensureTooltip(); // make sure we're using the one under <body> (and dedupe)
+    const shade = li.getAttribute('data-shade')
+      || li.getAttribute('aria-label')
+      || (li.textContent || '').trim();
+    tooltip.textContent = shade || '';
+    tooltip.classList.add('is-visible');
+
+    // seed position so first frame is correct
+    setTarget(e.pageX, e.pageY);
+    curX = targetX; curY = targetY;
+    tooltip.style.setProperty('--x', curX + 'px');
+    tooltip.style.setProperty('--y', curY + 'px');
+  }, { passive: true });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!current) return;
+    setTarget(e.pageX, e.pageY);
+  }, { passive: true });
+
+  document.addEventListener('mouseout', (e) => {
+    if (!current) return;
+    const to = e.relatedTarget;
+    if (to && (to === current || (to.closest && to.closest(SELECTOR) === current))) return;
+    current = null;
+    tooltip.classList.remove('is-visible');
+  }, { passive: true });
+
+  // Watch for DOM swaps and keep tooltip singular + under <body>
+  const mo = new MutationObserver(() => ensureTooltip());
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+
+  // Optional: call this after your swap if you like (not required)
+  document.addEventListener('shades:updated', ensureTooltip);
+});
+</script>
+    {% comment %} <script>
       document.addEventListener('DOMContentLoaded', () => {
         const tooltip = document.getElementById('shade-tooltip');
         if (!tooltip) return;
@@ -173,7 +290,7 @@
         }
 
         const offsetX = 0;   // px to the right of the cursor
-        const offsetY = -24;   // px above the cursor
+        const offsetY = -24;   // px below the cursor
         const lerp   = 0.25;  // easing factor for buttery motion
 
         // Target vs current position (page coordinates)
@@ -246,7 +363,7 @@
           });
         });
       });
-      </script>
+    </script> {% endcomment %}
 
   {% endunless %}
 {% endif %}
