@@ -430,8 +430,14 @@ a.product__text {
   margin-top: 0;
 }
 
-.product__accordion .accordion__content {
+.specification .accordion__content {
   padding: 0 1rem;
+}
+
+@media screen and (max-width:399px){
+  .specification .accordion__content {
+    padding: 0 0.2rem;
+  }
 }
 
 .product .price--on-sale .price__sale {
@@ -2067,6 +2073,12 @@ square-placement {
   width: 100%;
   margin-bottom: 10px;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width:399px){
+  .specification table {
+    font-size: 1rem;
+  }
 }
 
 .specification table tr:nth-child(2n) {
