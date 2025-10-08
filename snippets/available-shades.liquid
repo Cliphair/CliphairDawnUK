@@ -158,67 +158,64 @@
           </ul>
         </div>
       </shade-selector>
-      <div id="shade-tooltip" class="shade-tooltip" hidden></div>
+      <div id="shade-tooltip" class="shade-tooltip"></div>
     {% endpaginate %}
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltip = document.getElementById('shade-tooltip');
-  if (!tooltip) return;
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tooltip = document.getElementById('shade-tooltip');
+        if (!tooltip) return;
 
-  // ✅ Move the tooltip into <body> at runtime
-  if (tooltip.parentNode !== document.body) {
-    document.body.appendChild(tooltip);
-  }
+        // ✅ Move the tooltip into <body> at runtime
+        if (tooltip.parentNode !== document.body) {
+          document.body.appendChild(tooltip);
+        }
 
-  const offsetX = 12; // right offset
-  const offsetY = 24; // above offset
+        const offsetX = 12; // right offset
+        const offsetY = 24; // above offset
 
-  document.querySelectorAll('.available-shades__elements').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      tooltip.textContent = item.dataset.shade || '';
-      tooltip.style.opacity = '1';
-      tooltip.style.visibility = 'visible';
-    });
+        document.querySelectorAll('.available-shades__elements').forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            tooltip.textContent = item.dataset.shade || '';
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+          });
 
-    item.addEventListener('mousemove', e => {
-      // Start position
-      let x = e.pageX + offsetX;
-      let y = e.pageY - offsetY;
+          item.addEventListener('mousemove', e => {
+            // Start position
+            let x = e.pageX + offsetX;
+            let y = e.pageY - offsetY;
 
-      // Now that it's visible we can measure
-      const rect = tooltip.getBoundingClientRect();
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
+            // Now that it's visible we can measure
+            const rect = tooltip.getBoundingClientRect();
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
 
-      // --- Horizontal boundary ---
-      if (x + rect.width > window.scrollX + vw) {
-        x = e.pageX - rect.width - offsetX; // flip to left if overflow
-      }
-      if (x < 0) x = 0;
+            // --- Horizontal boundary ---
+            if (x + rect.width > window.scrollX + vw) {
+              x = e.pageX - rect.width - offsetX; // flip to left if overflow
+            }
+            if (x < 0) x = 0;
 
-      // --- Vertical boundary ---
-      if (y < window.scrollY) {             // above top
-        y = e.pageY + offsetY;              // place below
-      }
-      if (y + rect.height > window.scrollY + vh) {
-        y = window.scrollY + vh - rect.height;
-      }
+            // --- Vertical boundary ---
+            if (y < window.scrollY) {             // above top
+              y = e.pageY + offsetY;              // place below
+            }
+            if (y + rect.height > window.scrollY + vh) {
+              y = window.scrollY + vh - rect.height;
+            }
 
-      tooltip.style.left = `${x}px`;
-      tooltip.style.top  = `${y}px`;
-    });
+            tooltip.style.left = `${x}px`;
+            tooltip.style.top  = `${y}px`;
+          });
 
-    item.addEventListener('mouseleave', () => {
-      tooltip.style.opacity = '0';
-      tooltip.style.visibility = 'hidden';
-    });
-  });
-});
-</script>
-
-
-
+          item.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            tooltip.style.visibility = 'hidden';
+          });
+        });
+      });
+    </script>
   {% endunless %}
 {% endif %}

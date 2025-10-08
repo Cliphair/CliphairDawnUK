@@ -135,11 +135,10 @@ body.loader-open {
 	}
 }
 
-/* Tooltip base style */
 #shade-tooltip {
-  position: fixed;                /* anchored to viewport */
-  pointer-events: none;           /* never steals hover */
-  z-index: 999999;                /* above everything */
+  position: absolute !important;    /* relative to whole page */
+  pointer-events: none;
+  z-index: 999999;
   background: #000;
   color: #fff;
   padding: 6px 10px;
@@ -149,12 +148,6 @@ body.loader-open {
   opacity: 0;
   visibility: hidden;
   transition: opacity .15s ease;
-}
-
-/* Visible state */
-#shade-tooltip.show {
-  opacity: 1;
-  visibility: visible;
 }
 
 
