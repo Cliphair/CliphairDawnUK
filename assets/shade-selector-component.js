@@ -126,29 +126,3 @@ if (!customElements.get('shade-selector')) {
     }
   );
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltip = document.getElementById('shade-tooltip');
-  const shadeItems = document.querySelectorAll('.available-shades__elements');
-
-  shadeItems.forEach(item => {
-    item.addEventListener('mouseenter', e => {
-      const shade = item.dataset.shade;
-      if (!shade) return;
-      tooltip.textContent = shade;
-      tooltip.hidden = false;
-      tooltip.classList.add('show');
-    });
-    item.addEventListener('mousemove', e => {
-      tooltip.style.left = `${e.clientX}px`;
-      tooltip.style.top = `${e.clientY}px`;
-    });
-    item.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('show');
-      tooltip.hidden = true;
-    });
-  });
-});
-
-
