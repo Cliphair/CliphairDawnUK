@@ -170,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
       tooltip.textContent = item.dataset.shade || 'No shade';
       tooltip.classList.add('show');
     });
+    item.addEventListener('mousemove', e => {
+  tooltip.style.left = e.clientX + 12 + 'px';   // 12px to the right
+  tooltip.style.top  = e.clientY - 24 + 'px';   // 24px above cursor
+});
     item.addEventListener('mouseleave', () => {
       tooltip.classList.remove('show');
     });
