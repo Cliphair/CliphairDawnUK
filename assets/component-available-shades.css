@@ -135,11 +135,11 @@ body.loader-open {
 	}
 }
 
-/* Tooltip base */
+/* Tooltip base style */
 #shade-tooltip {
-  position: fixed;              /* sits relative to viewport */
-  pointer-events: none;         /* never steals hover */
-  z-index: 999999;              /* always on top */
+  position: fixed;                /* anchored to viewport */
+  pointer-events: none;           /* never steals hover */
+  z-index: 999999;                /* above everything */
   background: #000;
   color: #fff;
   padding: 6px 10px;
@@ -149,7 +149,6 @@ body.loader-open {
   opacity: 0;
   visibility: hidden;
   transition: opacity .15s ease;
-  transform: none;              /* avoid double shifting */
 }
 
 /* Visible state */
@@ -157,4 +156,5 @@ body.loader-open {
   opacity: 1;
   visibility: visible;
 }
+
 

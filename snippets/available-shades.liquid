@@ -163,38 +163,57 @@
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
     <script>
-      (function() {
-        function initShadeTooltip() {
-          const tooltip = document.getElementById('shade-tooltip');
-          if (!tooltip) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const tooltip = document.getElementById('shade-tooltip');
+  if (!tooltip) return;
 
-          const items = document.querySelectorAll('.available-shades__elements');
-          if (!items.length) return;
+  // Move tooltip to <body> to escape any transformed containers
+  if (tooltip.parentNode !== document.body) {
+    document.body.appendChild(tooltip);
+  }
 
-          items.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-              const shade = item.dataset.shade;
-              if (!shade) return;
-              tooltip.textContent = shade;
-              tooltip.classList.add('show');
-            });
+  const items = document.querySelectorAll('.available-shades__elements');
+  if (!items.length) return;
 
-            item.addEventListener('mousemove', e => {
-              // offset: 12px right, 24px above cursor
-              tooltip.style.left = (e.clientX + 12) + 'px';
-              tooltip.style.top  = (e.clientY - 24) + 'px';
-            });
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const shade = item.dataset.shade;
+      if (!shade) return;
+      tooltip.textContent = shade;
+      tooltip.classList.add('show');
+    });
 
-            item.addEventListener('mouseleave', () => {
-              tooltip.classList.remove('show');
-            });
-          });
-        }
+    item.addEventListener('mousemove', e => {
+      const offsetX = 12;  // distance right of cursor
+      const offsetY = 24;  // distance above cursor
 
-        document.addEventListener('DOMContentLoaded', initShadeTooltip);
-        document.addEventListener('shopify:section:load', initShadeTooltip);
-      })();
-      </script>
+      // get tooltip size after content set
+      const rect = tooltip.getBoundingClientRect();
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      let x = e.clientX + offsetX;
+      let y = e.clientY - offsetY;
+
+      // --- Horizontal boundaries ---
+      if (x + rect.width > vw) x = e.clientX - rect.width - offsetX;
+      if (x < 0) x = 0;
+
+      // --- Vertical boundaries ---
+      if (y < 0) y = e.clientY + offsetY; // flip below if too high
+      if (y + rect.height > vh) y = vh - rect.height;
+
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y}px`;
+    });
+
+    item.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('show');
+    });
+  });
+});
+</script>
+
 
   {% endunless %}
 {% endif %}
