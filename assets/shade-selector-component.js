@@ -119,15 +119,15 @@ if (!customElements.get('shade-selector')) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Prevent double-binding if this script is executed again
+  // prevent double bind if the script runs again
   if (window.__shadeTooltipInit) return;
   window.__shadeTooltipInit = true;
 
   const SELECTOR = '.available-shades__elements';
-  const OFFSET_Y = 16;     // distance BELOW cursor (centered horizontally)
-  const LERP     = 0.25;   // easing for buttery follow
+  const OFFSET_Y = 16;   // below cursor (centered horizontally)
+  const LERP     = 0.25; // easing for smooth follow
 
-  // Ensure single tooltip in <body>, dedupe any duplicates from swapped HTML
+  // Ensure a single tooltip under <body>; remove duplicates inserted by swaps
   function ensureTooltip() {
     const all = Array.from(document.querySelectorAll('#shade-tooltip'));
     let el = all[0];
@@ -138,25 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (el.parentNode !== document.body) {
       document.body.appendChild(el);
     }
-    // remove dupes
-    for (let i = 1; i < all.length; i++) all[i].remove();
+    for (let i = 1; i < all.length; i++) all[i].remove(); // dedupe
 
-    // a touch of hardening (your main CSS still styles it)
-    el.style.pointerEvents = 'none';
+    // minimal hardening (your CSS still styles it)
     el.style.position = 'absolute';
     el.style.left = '0px';
     el.style.top  = '0px';
+    el.style.pointerEvents = 'none';
     el.style.zIndex = '2147483647';
     return el;
   }
 
   const tooltip = ensureTooltip();
 
-  // Lerp state
+  // LERP state
   let targetX = 0, targetY = 0;
   let curX = 0, curY = 0;
   let current = null;
 
+  // Centered-below placement with viewport clamping
   function clampBelowCentered(pageX, pageY) {
     const w  = tooltip.offsetWidth || 0;
     const h  = tooltip.offsetHeight || 0;
@@ -165,15 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    // Center horizontally under the cursor; place below
+    // centered under the cursor
     let x = pageX - (w / 2);
     let y = pageY + OFFSET_Y;
 
-    // Left/right clamps
+    // horizontal clamps
     if (x < sx) x = sx;
     if (x + w > sx + vw) x = sx + vw - w;
 
-    // If bottom would overflow, flip above cursor
+    // flip above if bottom overflows
     if (y + h > sy + vh) y = pageY - h - OFFSET_Y;
     if (y < sy) y = sy;
 
@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     targetX = x; targetY = y;
   }
 
+  // RAF loop to update CSS vars your CSS reads (translate3d(var(--x), var(--y)))
   function tick() {
     curX += (targetX - curX) * LERP;
     curY += (targetY - curY) * LERP;
@@ -194,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   requestAnimationFrame(tick);
 
-  // -------- Delegated listeners (survive AJAX DOM swaps) --------
+  // ---------- Delegated events (survive swaps) ----------
   document.addEventListener('mouseover', (e) => {
     const li = e.target.closest(SELECTOR);
     if (!li) return;
@@ -206,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltip.textContent = shade || '';
     tooltip.classList.add('is-visible');
 
-    // seed initial position
+    // seed initial position and snap first frame
     setTarget(e.pageX, e.pageY);
-    curX = targetX; curY = targetY; // snap on first frame
+    curX = targetX; curY = targetY;
     tooltip.style.setProperty('--x', curX + 'px');
     tooltip.style.setProperty('--y', curY + 'px');
   }, { passive: true });
@@ -221,16 +222,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('mouseout', (e) => {
     if (!current) return;
     const to = e.relatedTarget;
-    // if still within the same shade element, ignore
     if (to && (to === current || (to.closest && to.closest(SELECTOR) === current))) return;
     current = null;
     tooltip.classList.remove('is-visible');
   }, { passive: true });
 
-  // Re-ensure tooltip after your component swaps sections
+  // When your component finishes swapping sections, re-ensure the tooltip
   document.addEventListener('shades:updated', ensureTooltip);
 
-  // Safety net: observe DOM for full replacements and keep tooltip unique
+  // Safety net: if the DOM is replaced wholesale, keep tooltip unique/under <body>
   const mo = new MutationObserver(() => ensureTooltip());
   mo.observe(document.documentElement, { childList: true, subtree: true });
 });
