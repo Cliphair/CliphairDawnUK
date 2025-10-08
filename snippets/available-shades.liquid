@@ -163,23 +163,38 @@
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const tooltip = document.getElementById('shade-tooltip');
-  document.querySelectorAll('.available-shades__elements').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      tooltip.textContent = item.dataset.shade || 'No shade';
-      tooltip.classList.add('show');
-    });
-    item.addEventListener('mousemove', e => {
-  tooltip.style.left = e.clientX + 12 + 'px';   // 12px to the right
-  tooltip.style.top  = e.clientY - 24 + 'px';   // 24px above cursor
-});
-    item.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('show');
-    });
-  });
-});
-</script>
+      (function() {
+        function initShadeTooltip() {
+          const tooltip = document.getElementById('shade-tooltip');
+          if (!tooltip) return;
+
+          const items = document.querySelectorAll('.available-shades__elements');
+          if (!items.length) return;
+
+          items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+              const shade = item.dataset.shade;
+              if (!shade) return;
+              tooltip.textContent = shade;
+              tooltip.classList.add('show');
+            });
+
+            item.addEventListener('mousemove', e => {
+              // offset: 12px right, 24px above cursor
+              tooltip.style.left = (e.clientX + 12) + 'px';
+              tooltip.style.top  = (e.clientY - 24) + 'px';
+            });
+
+            item.addEventListener('mouseleave', () => {
+              tooltip.classList.remove('show');
+            });
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', initShadeTooltip);
+        document.addEventListener('shopify:section:load', initShadeTooltip);
+      })();
+      </script>
 
   {% endunless %}
 {% endif %}
