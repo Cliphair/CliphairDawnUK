@@ -17,6 +17,7 @@
 .available-shades__elements {
 	width: calc((100% - (0.5rem * 8)) / 9);
 	box-sizing:border-box;
+	cursor:pointer;
 }
 
 @media screen and (min-width:750px) and (max-width:989px){
@@ -62,6 +63,7 @@
 .available-shades__elements.selected,
 .available-shades__elements:hover {
 	border: 1px solid black;
+	cursor:initial;
 }
 
 .available-shades__elements .shade-snippet {
@@ -71,7 +73,8 @@
 	display: block;
 }
 
-.available-shades__elements.selected .shade-snippet {
+.available-shades__elements.selected .shade-snippet,
+.available-shades__elements:hover .shade-snippet {
 	border: 2px solid white;
 }
 
