@@ -168,21 +168,19 @@
         const shadeItems = document.querySelectorAll('.available-shades__elements');
 
         shadeItems.forEach(item => {
-          item.addEventListener('mouseenter', () => {
+          item.addEventListener('mouseenter', e => {
             const shade = item.dataset.shade;
             if (!shade) return;
             tooltip.textContent = shade;
-            tooltip.removeAttribute('hidden');   // make sure [hidden] is gone
-            tooltip.style.display = 'block';     // force visible
+            tooltip.removeAttribute('hidden');   // <- instead of tooltip.hidden = false
+            tooltip.style.display = 'block';     // <- ensures display resets
             tooltip.classList.add('show');
           });
-
           // ✅ This is the part that moves the tooltip with the cursor
           item.addEventListener('mousemove', e => {
             tooltip.style.left = `${e.pageX}px`;
             tooltip.style.top = `${e.pageY - 20}px`; // sits 20px above cursor
           });
-
           item.addEventListener('mouseleave', () => {
             tooltip.classList.remove('show');
             tooltip.style.display = 'none';
@@ -190,6 +188,5 @@
         });
       });
       </script>
-
   {% endunless %}
 {% endif %}
