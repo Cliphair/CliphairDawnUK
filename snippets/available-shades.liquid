@@ -169,17 +169,17 @@
 
         shadeItems.forEach(item => {
           item.addEventListener('mouseenter', e => {
-  const shade = item.dataset.shade;
-  if (!shade) return;
-  tooltip.textContent = shade;
-  tooltip.removeAttribute('hidden');   // <- instead of tooltip.hidden = false
-  tooltip.style.display = 'block';     // <- ensures display resets
-  tooltip.classList.add('show');
-});
-item.addEventListener('mouseleave', () => {
-  tooltip.classList.remove('show');
-  tooltip.style.display = 'none';
-});
+            const shade = item.dataset.shade;
+            if (!shade) return;
+            tooltip.textContent = shade;
+            tooltip.removeAttribute('hidden');   // <- instead of tooltip.hidden = false
+            tooltip.style.display = 'block';     // <- ensures display resets
+            tooltip.classList.add('show');
+          });
+          item.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('show');
+            tooltip.style.display = 'none';
+          });
         });
       });
       </script>
