@@ -135,22 +135,24 @@ body.loader-open {
 	}
 }
 
+/* Tooltip base */
 #shade-tooltip {
-  position: fixed !important;
-  top: 100px;
-  left: 100px;
-  z-index: 999999 !important;
-  pointer-events: none !important;
-  background: black;
-  color: white;
+  position: fixed;              /* sits relative to viewport */
+  pointer-events: none;         /* never steals hover */
+  z-index: 999999;              /* always on top */
+  background: #000;
+  color: #fff;
   padding: 6px 10px;
   border-radius: 4px;
   white-space: nowrap;
   font-size: 14px;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .15s ease;
+  transform: none;              /* avoid double shifting */
 }
+
+/* Visible state */
 #shade-tooltip.show {
   opacity: 1;
   visibility: visible;
