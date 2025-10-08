@@ -136,25 +136,22 @@ body.loader-open {
 }
 
 #shade-tooltip {
-  display: block; /* will be controlled via JS */
-}
-#shade-tooltip[hidden] {
-  display: none !important; /* only matters when actually hidden */
-}
-.shade-tooltip {
-  position: fixed;
-  pointer-events: none;
-  padding: 4px 8px;
+  position: fixed !important; /* takes it out of any container flow */
+  left: 0; top: 0;
+  z-index: 999999 !important;
+  pointer-events: none !important;
   background: #000;
   color: #fff;
-  font-size: 12px;
+  padding: 4px 8px;
   border-radius: 4px;
   white-space: nowrap;
-  z-index: 99999;
-  transform: translate(-50%, -150%);
   opacity: 0;
-  transition: opacity 0.15s ease;
+  visibility: hidden;
+  transition: opacity .12s ease;
+  display: block !important; /* never let theme hide it */
 }
-.shade-tooltip.show {
+#shade-tooltip.show {
   opacity: 1;
+  visibility: visible;
 }
+

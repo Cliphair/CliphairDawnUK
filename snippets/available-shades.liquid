@@ -168,21 +168,25 @@
         const shadeItems = document.querySelectorAll('.available-shades__elements');
 
         shadeItems.forEach(item => {
-          item.addEventListener('mouseenter', e => {
+          item.addEventListener('mouseenter', () => {
             const shade = item.dataset.shade;
             if (!shade) return;
             tooltip.textContent = shade;
-            tooltip.removeAttribute('hidden');   // <- instead of tooltip.hidden = false
-            tooltip.style.display = 'block';     // <- ensures display resets
             tooltip.classList.add('show');
           });
-          
+
+          item.addEventListener('mousemove', e => {
+            // Use clientX/clientY because position is fixed
+            tooltip.style.left = e.clientX + 'px';
+            tooltip.style.top  = e.clientY - 20 + 'px'; // offset above pointer
+          });
+
           item.addEventListener('mouseleave', () => {
             tooltip.classList.remove('show');
-            tooltip.style.display = 'none';
           });
         });
       });
       </script>
+
   {% endunless %}
 {% endif %}
