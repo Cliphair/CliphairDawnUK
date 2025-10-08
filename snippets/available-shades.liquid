@@ -172,7 +172,7 @@
             const shade = item.dataset.shade;
             if (!shade) return;
             tooltip.textContent = shade;
-            tooltip.hidden = false;
+            tooltip.removeAttribute('hidden');
             tooltip.classList.add('show');
           });
           item.addEventListener('mousemove', e => {
