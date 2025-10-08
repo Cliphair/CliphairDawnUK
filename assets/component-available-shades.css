@@ -134,3 +134,22 @@ body.loader-open {
 		transform: rotate(360deg);
 	}
 }
+
+.shade-tooltip {
+  position: fixed;
+  pointer-events: none;
+  padding: 4px 8px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 9999;
+  transform: translate(-50%, -150%);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.shade-tooltip.show {
+  opacity: 1;
+}

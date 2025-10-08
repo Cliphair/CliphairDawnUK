@@ -1,121 +1,3 @@
-{% comment %}
-  {% unless product.type == 'Hair Care'
-    or product.type == 'Accessories'
-    or product.type == 'Gift Card'
-    or product.type == 'Bundle'
-    or product.type == 'Gift Set'
-  %}
-    {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
-
-    {% liquid
-      assign first_row_counter = 9
-      if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
-        assign colour_name = product.metafields.custom.colour_name
-        assign first_row_counter = first_row_counter | minus: 1
-      endif
-
-      if product.metafields.custom.colour_group and product.metafields.custom.colour_group != blank
-        assign colour_group = product.metafields.custom.colour_group
-      endif
-
-      assign total_products = collection.all_products_count
-
-      assign shades_list = metaobjects.shades_list['best-seller-group-and-shade'].list.value
-      assign similar_shades = shades_list[colour_group]
-    %}
-    {%- paginate collection.products by total_products -%}
-      <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
-        {% comment %} <p class="available-shades__title">Select shade</p> {% endcomment %}
-        <p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
-        <ul class="available-shades__list available-shades__first-row">
-          {% comment %}Visible product shade snippet{% endcomment %}
-          {% if first_row_counter == 8 %}
-            {% liquid
-              assign image_handle = colour_name | handle | append: '-snippet.webp'
-              assign shade_image = images[image_handle]
-            %}
-            {% if shade_image != blank %}
-              <li
-                class="available-shades__elements selected"
-                data-product-url="{{ product.url }}"
-                role="option"
-                aria-selected="true"
-              >
-  							{% render 'shade-snippet' shade_image: shade_image, shade: colour_name %}
-              </li>
-            {% endif %}
-          {% endif %}
-
-          {% comment %}First row products shade snippet{% endcomment %}
-
-          {% for p in collection.products %}
-            {% if first_row_counter > 0 %}
-              {% unless request.path contains p.handle %}
-                {% assign product_shade = p.metafields.custom.colour_name %}
-                {% if product_shade and product_shade != blank and similar_shades contains product_shade %}
-                  {% liquid
-                    assign image_handle = product_shade | handle | append: '-snippet.webp'
-                    assign shade_image = images[image_handle]
-                  %}
-                  {% if shade_image != blank %}
-                    <li class="available-shades__elements" data-product-url="{{ p.url }}" role="option">
-  										{% render 'shade-snippet' shade_image: shade_image, shade: product_shade %}
-
-                    </li>
-                  {% endif %}
-                  {% assign first_row_counter = first_row_counter | minus: 1 %}
-                {% endif %}
-              {% endunless %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-
-        <div class="available-shades__buttons">
-          <summary aria-expanded="true" aria-controls="available-shades">
-            View All
-            {% render 'icon-caret' %}
-          </summary>
-          <a href="/pages/colour-matching-service">Free colour match service</a>
-        </div>
-        <div id="available-shades" class="">
-          <ul class="available-shades__list">
-            {% comment %}All products shade snippet{% endcomment %}
-
-            {% for group in shades_list %}
-              {% assign current_group = shades_list[group.first] %}
-              {% for shade in current_group %}
-                {% for p in collection.products %}
-                  {% assign product_shade = p.metafields.custom.colour_name %}
-                  {% if product_shade and product_shade != blank and product_shade == shade %}
-                    {% liquid
-                      assign image_handle = product_shade | handle | append: '-snippet.webp'
-                      assign shade_image = images[image_handle]
-                    %}
-                    {% if shade_image != blank %}
-                      <li
-                        class="available-shades__elements {% if request.path contains p.handle %}selected{% endif %}"
-                        data-product-url="{{ p.url }}"
-                        role="option"
-                        {% if request.path contains p.handle %}
-                          aria-selected="true"
-                        {% endif %}
-                      >
-  											{% render 'shade-snippet' shade_image: shade_image, shade: product_shade %}
-
-                      </li>
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}
-              {% endfor %}
-            {% endfor %}
-          </ul>
-        </div>
-      </shade-selector>
-    {% endpaginate %}
-
-    <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
-  {% endunless %}
-{% endcomment %}
 {% if product and collection %}
   {% unless product.type == 'Hair Care'
     or product.type == 'Accessories'
@@ -189,6 +71,7 @@
               <li
                 class="available-shades__elements selected"
                 data-product-url="{{ product.url }}"
+                data-shade="{{ s }}"
                 role="option"
                 aria-selected="true"
               >
@@ -217,6 +100,7 @@
                     <li
                       class="available-shades__elements"
                       data-product-url="{{ p_url }}"
+                      data-shade="{{ s }}"
                       role="option"
                     >
                       {% render 'shade-snippet', shade_image: shade_image, shade: s %}
@@ -259,6 +143,7 @@
                     <li
                       class="available-shades__elements {% if p_handle == product.handle %}selected{% endif %}"
                       data-product-url="{{ p_url }}"
+                      data-shade="{{ s }}"
                       role="option"
                       {% if p_handle == product.handle %}
                         aria-selected="true"
@@ -273,6 +158,7 @@
           </ul>
         </div>
       </shade-selector>
+      <div id="shade-tooltip" class="shade-tooltip" hidden></div>
     {% endpaginate %}
 
     <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
