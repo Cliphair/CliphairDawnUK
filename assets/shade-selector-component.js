@@ -17,26 +17,19 @@ if (!customElements.get('shade-selector')) {
       onClick(e) {
         const li = e.target.closest('.available-shades__elements');
         if (!li || !this.contains(li)) return;
-
         const url = li.dataset.productUrl;
         if (!url) return;
-
-        // No-op if clicking the selected one
         if (li.classList.contains('selected')) return;
-
         this.swapShade(url);
       }
 
       async swapShade(productUrl) {
         this.startLoading();
-
-        // Cancel any in-flight request
         try { this.controller?.abort(); } catch (_) {}
         this.controller = new AbortController();
 
         const params = new URLSearchParams();
         params.set('sections', this.sections.join(','));
-
         const fetchUrl = `${productUrl}${productUrl.includes('?') ? '&' : '?'}${params.toString()}`;
 
         try {
@@ -44,32 +37,23 @@ if (!customElements.get('shade-selector')) {
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const payload = await res.json();
 
-          // Swap each section payload into the DOM
           this.sections.forEach((key) => {
             const target = document.querySelector(`[data-section="${key}"]`);
             const html = payload[key];
             if (!target || !html) return;
-
             target.innerHTML = html;
 
-            // Update URL + title without reload
             const pageTitle = this.getPageTitleFromPayload(html) || document.title;
             this.updateHistory(productUrl, pageTitle);
           });
-
         } catch (err) {
-          if (err.name !== 'AbortError') {
-            console.error('[ShadeSelector] swap error:', err);
-          }
+          if (err.name !== 'AbortError') console.error('[ShadeSelector] swap error:', err);
         } finally {
-          // Refresh Yotpo widgets if needed
           if (window.yotpoWidgetsContainer?.initWidgets) {
             window.yotpoWidgetsContainer.initWidgets();
           }
-
           this.stopLoading();
-
-          // 🔔 Tell the tooltip logic that sections were replaced
+          // ⭐ Tell tooltip to re-bind to the canonical node
           document.dispatchEvent(new Event('shades:updated'));
         }
       }
@@ -93,9 +77,7 @@ if (!customElements.get('shade-selector')) {
         if (!payload || typeof payload !== 'string') return null;
         const doc = new DOMParser().parseFromString(payload, 'text/html');
         const sectionElement = doc.querySelector('[data-page-title]');
-        if (sectionElement?.dataset?.pageTitle) {
-          return sectionElement.dataset.pageTitle.trim();
-        }
+        if (sectionElement?.dataset?.pageTitle) return sectionElement.dataset.pageTitle.trim();
         return null;
       }
 
@@ -119,15 +101,13 @@ if (!customElements.get('shade-selector')) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // prevent double bind if the script runs again
   if (window.__shadeTooltipInit) return;
   window.__shadeTooltipInit = true;
 
   const SELECTOR = '.available-shades__elements';
   const OFFSET_Y = 16;   // below cursor (centered horizontally)
-  const LERP     = 0.25; // easing for smooth follow
+  const LERP     = 0.25; // easing
 
-  // Ensure a single tooltip under <body>; remove duplicates inserted by swaps
   function ensureTooltip() {
     const all = Array.from(document.querySelectorAll('#shade-tooltip'));
     let el = all[0];
@@ -138,9 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (el.parentNode !== document.body) {
       document.body.appendChild(el);
     }
-    for (let i = 1; i < all.length; i++) all[i].remove(); // dedupe
-
-    // minimal hardening (your CSS still styles it)
+    for (let i = 1; i < all.length; i++) all[i].remove();
     el.style.position = 'absolute';
     el.style.left = '0px';
     el.style.top  = '0px';
@@ -149,14 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return el;
   }
 
-  const tooltip = ensureTooltip();
+  // ⭐ make this reassignable so we can point at the kept node after swaps
+  let tooltip = ensureTooltip();
 
   // LERP state
   let targetX = 0, targetY = 0;
   let curX = 0, curY = 0;
   let current = null;
 
-  // Centered-below placement with viewport clamping
   function clampBelowCentered(pageX, pageY) {
     const w  = tooltip.offsetWidth || 0;
     const h  = tooltip.offsetHeight || 0;
@@ -165,16 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    // centered under the cursor
     let x = pageX - (w / 2);
     let y = pageY + OFFSET_Y;
 
-    // horizontal clamps
     if (x < sx) x = sx;
     if (x + w > sx + vw) x = sx + vw - w;
-
-    // flip above if bottom overflows
-    if (y + h > sy + vh) y = pageY - h - OFFSET_Y;
+    if (y + h > sy + vh) y = pageY - h - OFFSET_Y; // flip above if needed
     if (y < sy) y = sy;
 
     return [x, y];
@@ -185,31 +159,34 @@ document.addEventListener('DOMContentLoaded', () => {
     targetX = x; targetY = y;
   }
 
-  // RAF loop to update CSS vars your CSS reads (translate3d(var(--x), var(--y)))
   function tick() {
     curX += (targetX - curX) * LERP;
     curY += (targetY - curY) * LERP;
+    // uses your CSS vars → transform: translate3d(var(--x), var(--y), 0)
     tooltip.style.setProperty('--x', curX + 'px');
     tooltip.style.setProperty('--y', curY + 'px');
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 
-  // ---------- Delegated events (survive swaps) ----------
+  // Delegated listeners
   document.addEventListener('mouseover', (e) => {
     const li = e.target.closest(SELECTOR);
     if (!li) return;
     current = li;
-    ensureTooltip(); // keep the right node in <body> and dedupe
+
+    // ⭐ if a swap inserted another #shade-tooltip, grab the canonical one
+    tooltip = ensureTooltip();
+
     const shade = li.getAttribute('data-shade')
       || li.getAttribute('aria-label')
       || (li.textContent || '').trim();
+
     tooltip.textContent = shade || '';
     tooltip.classList.add('is-visible');
 
-    // seed initial position and snap first frame
     setTarget(e.pageX, e.pageY);
-    curX = targetX; curY = targetY;
+    curX = targetX; curY = targetY; // snap first frame
     tooltip.style.setProperty('--x', curX + 'px');
     tooltip.style.setProperty('--y', curY + 'px');
   }, { passive: true });
@@ -227,10 +204,17 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltip.classList.remove('is-visible');
   }, { passive: true });
 
-  // When your component finishes swapping sections, re-ensure the tooltip
-  document.addEventListener('shades:updated', ensureTooltip);
+  // ⭐ When your component finishes swapping, point `tooltip` at the kept node
+  document.addEventListener('shades:updated', () => {
+    tooltip = ensureTooltip();
+    // reset any stale hover from removed nodes
+    current = null;
+    tooltip.classList.remove('is-visible');
+  });
 
-  // Safety net: if the DOM is replaced wholesale, keep tooltip unique/under <body>
-  const mo = new MutationObserver(() => ensureTooltip());
+  // ⭐ Safety net for wholesale DOM edits
+  const mo = new MutationObserver(() => {
+    tooltip = ensureTooltip();
+  });
   mo.observe(document.documentElement, { childList: true, subtree: true });
 });
