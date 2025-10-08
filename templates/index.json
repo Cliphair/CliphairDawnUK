@@ -280,6 +280,9 @@
     },
     "featured_collection_kqRjtt": {
       "type": "featured-collection",
+      "custom_css": [
+        ".yotpo-widget-instance {display: none;}"
+      ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Choose By Best Sellers",
@@ -301,7 +304,7 @@
         "colour_as_title": false,
         "show_type": false,
         "show_vendor": false,
-        "show_rating": true,
+        "show_rating": false,
         "enable_quick_add": false,
         "badge_style": "fixed",
         "display_low_inventory": true,
