@@ -71,7 +71,7 @@
               <li
                 class="available-shades__elements selected"
                 data-product-url="{{ product.url }}"
-                data-shade="{{ s }}"
+                data-shade="{{ colour_name }}"
                 role="option"
                 aria-selected="true"
               >
@@ -167,55 +167,86 @@
         const tooltip = document.getElementById('shade-tooltip');
         if (!tooltip) return;
 
-        // ✅ Move the tooltip into <body> at runtime
+        // Ensure tooltip lives under <body> (escapes transforms/overflow in sections)
         if (tooltip.parentNode !== document.body) {
           document.body.appendChild(tooltip);
         }
 
-        const offsetX = 12; // right offset
-        const offsetY = 24; // above offset
+        const offsetX = 12;   // px to the right of the cursor
+        const offsetY = 24;   // px above the cursor
+        const lerp   = 0.25;  // easing factor for buttery motion
 
+        // Target vs current position (page coordinates)
+        let targetX = 0, targetY = 0;
+        let curX = 0, curY = 0;
+
+        function clampToViewport(x, y) {
+          const w  = tooltip.offsetWidth || 0;
+          const h  = tooltip.offsetHeight || 0;
+          const sx = window.scrollX || 0;
+          const sy = window.scrollY || 0;
+          const vw = window.innerWidth;
+          const vh = window.innerHeight;
+
+          let nx = x, ny = y;
+
+          // Right edge → flip to left
+          if (nx + w > sx + vw) nx = Math.max(sx, x - w - (offsetX * 2));
+          // Left clamp
+          if (nx < sx) nx = sx;
+
+          // Above top → place below
+          if (ny < sy) ny = y + (offsetY * 2);
+          // Bottom clamp
+          if (ny + h > sy + vh) ny = sy + vh - h;
+
+          return [nx, ny];
+        }
+
+        function setTarget(pageX, pageY) {
+          // base desired position
+          let x = pageX + offsetX;
+          let y = pageY - offsetY;
+
+          // measure after showing so size is real
+          const [nx, ny] = clampToViewport(x, y);
+          targetX = nx;
+          targetY = ny;
+        }
+
+        // animation loop for smooth motion
+        function tick() {
+          curX += (targetX - curX) * lerp;
+          curY += (targetY - curY) * lerp;
+          tooltip.style.setProperty('--x', curX + 'px');
+          tooltip.style.setProperty('--y', curY + 'px');
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+
+        // Bind per-item events
         document.querySelectorAll('.available-shades__elements').forEach(item => {
-          item.addEventListener('mouseenter', () => {
-            tooltip.textContent = item.dataset.shade || '';
-            tooltip.style.opacity = '1';
-            tooltip.style.visibility = 'visible';
+          item.addEventListener('mouseenter', (e) => {
+            const shade = item.getAttribute('data-shade') || '';
+            tooltip.textContent = shade;
+            tooltip.classList.add('is-visible');
+            // seed target so first frame isn't far away
+            setTarget(e.pageX, e.pageY);
+            curX = targetX; curY = targetY; // snap on first show
+            tooltip.style.setProperty('--x', curX + 'px');
+            tooltip.style.setProperty('--y', curY + 'px');
           });
 
-          item.addEventListener('mousemove', e => {
-            // Start position
-            let x = e.pageX + offsetX;
-            let y = e.pageY - offsetY;
-
-            // Now that it's visible we can measure
-            const rect = tooltip.getBoundingClientRect();
-            const vw = window.innerWidth;
-            const vh = window.innerHeight;
-
-            // --- Horizontal boundary ---
-            if (x + rect.width > window.scrollX + vw) {
-              x = e.pageX - rect.width - offsetX; // flip to left if overflow
-            }
-            if (x < 0) x = 0;
-
-            // --- Vertical boundary ---
-            if (y < window.scrollY) {             // above top
-              y = e.pageY + offsetY;              // place below
-            }
-            if (y + rect.height > window.scrollY + vh) {
-              y = window.scrollY + vh - rect.height;
-            }
-
-            tooltip.style.left = `${x}px`;
-            tooltip.style.top  = `${y}px`;
+          item.addEventListener('mousemove', (e) => {
+            setTarget(e.pageX, e.pageY);
           });
 
           item.addEventListener('mouseleave', () => {
-            tooltip.style.opacity = '0';
-            tooltip.style.visibility = 'hidden';
+            tooltip.classList.remove('is-visible');
           });
         });
       });
-    </script>
+      </script>
+
   {% endunless %}
 {% endif %}
