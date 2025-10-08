@@ -138,6 +138,7 @@ body.loader-open {
 	}
 }
 
+/* Tooltip */
 #shade-tooltip {
   position: absolute !important;  /* positioned against the page (not containers) */
   left: 0; top: 0;                /* we'll move it with CSS vars */
