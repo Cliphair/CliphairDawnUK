@@ -59,7 +59,8 @@
 	}
 }
 
-.available-shades__elements.selected {
+.available-shades__elements.selected,
+.available-shades__elements:hover {
 	border: 1px solid black;
 	pointer-events: none;
 }
