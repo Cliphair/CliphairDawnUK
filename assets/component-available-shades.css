@@ -135,6 +135,12 @@ body.loader-open {
 	}
 }
 
+#shade-tooltip {
+  display: block; /* will be controlled via JS */
+}
+#shade-tooltip[hidden] {
+  display: none !important; /* only matters when actually hidden */
+}
 .shade-tooltip {
   position: fixed;
   pointer-events: none;
@@ -144,12 +150,11 @@ body.loader-open {
   font-size: 12px;
   border-radius: 4px;
   white-space: nowrap;
-  z-index: 9999;
+  z-index: 99999;
   transform: translate(-50%, -150%);
   opacity: 0;
   transition: opacity 0.15s ease;
 }
-
 .shade-tooltip.show {
   opacity: 1;
 }
