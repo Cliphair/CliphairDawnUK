@@ -176,11 +176,7 @@
             tooltip.style.display = 'block';     // <- ensures display resets
             tooltip.classList.add('show');
           });
-          // ✅ This is the part that moves the tooltip with the cursor
-          item.addEventListener('mousemove', e => {
-            tooltip.style.left = `${e.pageX}px`;
-            tooltip.style.top = `${e.pageY - 20}px`; // sits 20px above cursor
-          });
+          
           item.addEventListener('mouseleave', () => {
             tooltip.classList.remove('show');
             tooltip.style.display = 'none';
