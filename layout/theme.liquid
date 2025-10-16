@@ -1,48 +1,35 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-    <!-- Google Consent Mode V2 Consentmo -->
-    {% render 'gcm-integration-script' %}
-
+    {% comment %}Document metadata{% endcomment %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="theme-color" content="#FFFFFF">
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
+    {% comment %}Performance Hints{% endcomment %}
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
 
+    {% comment %}SEO{% endcomment %}
     {% render 'meta-title' %}
     {% render 'meta-description' %}
     {% render 'meta-tags' %}
 
-    <meta name="referrer" content="no-referrer-when-downgrade">
-
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
-
-    {{ content_for_header }}
-
-    <!-- Manual hreflang between UK and US sites -->
-    {% render 'hreflang' %}
-    <!-- End manual hreflang between UK and US sites -->
-
+    {% comment %}Theme style variables{% endcomment %}
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
-
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -57,24 +44,24 @@
         {%- endif %}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient != empty %}
-          --gradient-background: {{ scheme.settings.background_gradient }};
-        {% else %}
-          --gradient-background: {{ scheme.settings.background }};
-        {% endif %}
-        --color-main-headers: {{ scheme.settings.headers.red }},{{ scheme.settings.headers.green }},{{ scheme.settings.headers.blue }};
-        --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
-        --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }};
-        --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
-        --color-secondary-button: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-link: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-badge-border: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
-      }
+          {% if scheme.settings.background_gradient != empty %}
+            --gradient-background: {{ scheme.settings.background_gradient }};
+          {% else %}
+            --gradient-background: {{ scheme.settings.background }};
+          {% endif %}
+          --color-main-headers: {{ scheme.settings.headers.red }},{{ scheme.settings.headers.green }},{{ scheme.settings.headers.blue }};
+          --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+          --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
+          --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }};
+          --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
+          --color-secondary-button: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+          --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
+          --color-link: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
+          --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+          --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+          --color-badge-border: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+          --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
+        }
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
@@ -213,53 +200,9 @@
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
-
-      html {
-        box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 62.5%);
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.6 / var(--font-body-scale));
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-      }
-
-      @media screen and (min-width: 750px) {
-        body {
-          font-size: 1.6rem;
-        }
-      }
     {% endstyle %}
 
-    {% assign display_chat_pages = '/account/login;/account/register;/pages/contact-us;/pages/shipping-information;/pages/returns-information;/pages/about-us;/pages/trade-enquiries;/pages/secure-transactions;/pages/faqs;/pages/testimonials;/pages/rewards;/blogs/hair-blog;/pages/hair-extensions-by-colour;/pages/types-of-hair-extensions;/pages/video-guides;/pages/product-quality;/pages/video-guides;/pages/colour-matching-service;/pages/care-instructions;/pages/klarna-faqs;/pages/clearpay-hair-extensions;/pages/blue-light-card;/pages/journey;/blogs/hair-blog/how-to-look-after-hair-extensions-ultimate-care-guide;/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary' %}
-    {% assign display_chat_pages = display_chat_pages | split: ';' %}
-    {% unless display_chat_pages contains request.path %}
-      <style>
-        #gorgias-chat-container {
-          display: none;
-        }
-      </style>
-    {% endunless %}
-
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'cliphair.css' | asset_url | stylesheet_tag }}
-
+    {% comment %}Custom fonts{% endcomment %}
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -267,11 +210,17 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
+    {% comment %}Stylesheets{% endcomment %}
+    {{ 'theme-base.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+
+    {% comment %}Localization{% endcomment %}
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {% comment %}Predictive search{% endcomment %}
     {%- if settings.predictive_search_enabled -%}
       <link
         rel="stylesheet"
@@ -281,14 +230,37 @@
       >
     {%- endif -%}
 
+    {% comment %}Javascript{% endcomment %}
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.animations_reveal_on_scroll -%}
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <script>
+      if (window.location.href.indexOf('https://www.cliphair.co.uk/hair-extensions-news/wp-content/uploads/') === 0) {
+        location.replace(
+          window.location.href.replace(
+            'https://www.cliphair.co.uk/hair-extensions-news/wp-content/uploads/',
+            'https://cdn.shopify.com/s/files/1/0069/6470/7389/files/'
+          )
+        );
+      }
+    </script>
 
-    <!-- Google Tag Manager -->
+    {% comment %}Shopify header{% endcomment %}
+    {{ content_for_header }}
+
+    {% comment %}Manual hreflang{% endcomment %}
+    {% render 'hreflang' %}
+
+    {% comment %}GTM{% endcomment %}
     <script>
       window.dataLayer = window.dataLayer || [];
     </script>
@@ -304,74 +276,25 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-M2K9MPB');
     </script>
-    <!-- End Google Tag Manager -->
 
-    <!-- Global site tag (gtag.js) - Google AdWords: 1042639650 -->
+    {% comment %}Google Search Console{% endcomment %}
+    <meta name="google-site-verification" content="HvAqHHuAuJHeEcYJApy0_ntuJ3siwlX4pstL0cHorNc">
+    <meta name="google-site-verification" content="JoPHbiizYu_xo-uwJW6PG-hXqbFGGkdCtN-FLT_9Tq4">
+
+    {% comment %}Google AdWords: 1042639650{% endcomment %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1042639650"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', 'AW-1042639650', { ' allow_enhanced_conversions': true });
+      gtag('config', 'AW-1042639650', { allow_enhanced_conversions: true });
     </script>
 
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="HvAqHHuAuJHeEcYJApy0_ntuJ3siwlX4pstL0cHorNc">
-    <meta name="google-site-verification" content="JoPHbiizYu_xo-uwJW6PG-hXqbFGGkdCtN-FLT_9Tq4">
-    <!-- End Google Search Console -->
-
-    {% comment %} <!-- Tradedoubler tracking code -->
-    <!-- Sales Script -->
-    <script language="JavaScript">
-      (function (i, s, o, g, r, a, m) {
-        i['TDConversionObject'] = r;
-        (i[r] =
-          i[r] ||
-          function () {
-            (i[r].q = i[r].q || []).push(arguments);
-          }),
-          (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(window, document, 'script', 'https://svht.tradedoubler.com/tr_sdk.js', 'tdconv');
-    </script>
-    <script type="text/javascript" src="https://wrap.tradedoubler.com/wrap?id=26269"></script>
-    <!-- End Tradedoubler tag --> {% endcomment %}
-
-    <!-- Start Pinterest Verification -->
+    {% comment %}Pinterest{% endcomment %}
     <meta name="p:domain_verify" content="7b7b3e0692bc917536cfa7850940d593">
-    <!-- End Pinterest Verification -->
 
-    <!-- Yotpo -->
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/Sddq5b54LKByO9MIWYhSzw" async></script>
-    <script
-      src="https://cdn-widgetsrepository.yotpo.com/v1/loader/aMREVTSJZfbqjVqxLsKxYMHAmpb94LftONho8TDm"
-      async
-    ></script>
-    <!-- End Yotpo -->
-
-    <!-- Klear influencer form -->
-    <script
-      async
-      src="https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524"
-    ></script>
-
-    <script>
-      if (window.location.pathname == 'https://www.cliphair.co.uk/hair-extensions-news/wp-content/uploads/') {
-        location.replace(
-          window.location.pathname.replace(
-            'https://www.cliphair.co.uk/hair-extensions-news/wp-content/uploads/',
-            'https://cdn.shopify.com/s/files/1/0069/6470/7389/files/'
-          )
-        );
-      }
-    </script>
-
-    <!-- Intelligems scripts -->
+    {% comment %}Intelligems{% endcomment %}
     <script>
       window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
       window._template = {
@@ -387,14 +310,14 @@
       src="https://cdn.intelligems.io/esm/a815b85d9315/bundle.js"
       async
     ></script>
-
-    {% include 'pagefly-app-header' %}
   </head>
 
+  {% assign display_chat_pages = '/account/login;/account/register;/pages/contact-us;/pages/shipping-information;/pages/returns-information;/pages/about-us;/pages/trade-enquiries;/pages/secure-transactions;/pages/faqs;/pages/testimonials;/pages/rewards;/blogs/hair-blog;/pages/hair-extensions-by-colour;/pages/types-of-hair-extensions;/pages/video-guides;/pages/product-quality;/pages/video-guides;/pages/colour-matching-service;/pages/care-instructions;/pages/klarna-faqs;/pages/clearpay-hair-extensions;/pages/blue-light-card;/pages/journey;/blogs/hair-blog/how-to-look-after-hair-extensions-ultimate-care-guide;/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary' %}
   <body
     class="
       {% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}
-      {% if request.page_type == 'index' %}home{% endif %}
+      {% if request.page_type == 'index' %} home{% endif %}
+      {% unless display_chat_pages contains request.path %} hide-gorgias-chat{% endunless %}
     "
   >
     <!-- Klarna message -->
@@ -483,6 +406,11 @@
       window.KlarnaThemeGlobals={};{%case template.name%} {%when"product"%} window.KlarnaThemeGlobals.data_purchase_amount={{product.first_available_variant.price}};window.KlarnaThemeGlobals.productVariants={{product.variants|json}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%when"cart"%} window.KlarnaThemeGlobals.data_purchase_amount={{cart.total_price}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%endcase%}
     </script>
     <!-- End Klarna -->
+    <!-- Klear influencer form -->
+    <script
+      async
+      src="https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524"
+    ></script>
   </body>
 </html>
 {% comment %}
