@@ -165,7 +165,10 @@
             </div>
 
             {% if author_obj %}
-              <div id="articleAuthor">
+              <div
+                id="articleAuthor"
+                class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              >
                 {% render 'author-card', author_obj: author_obj %}
               </div>
             {% endif %}

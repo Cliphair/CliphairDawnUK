@@ -22,7 +22,7 @@ if (!customElements.get('product-form')) {
 
         this.handleErrorMessage();
 
-        const selectBoxes = [...document.querySelectorAll(".select__select")];
+        const selectBoxes = [...this.querySelectorAll(".select__select")];
         let formIsValid = true;
 
         for (const selectBox of selectBoxes) {

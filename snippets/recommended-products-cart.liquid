@@ -2,6 +2,10 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
 {% liquid
   assign product_handles = 'quench-the-thirst-deep-moisture-shampoo,quench-the-thirst-deep-moisture-conditioner,quench-the-thirst-deep-conditioning-hair-mask,cliphair-silky-hair-spray,cliphair-heat-spray,hair-extension-hanger-and-carrier-bag,hair-extension-holder,detangling-hair-brush,wave-comb-and-pouch,pintail-comb,alligator-clips,'
   assign cart_product_handles = ''
@@ -148,6 +152,24 @@
   }
 </style>
 
+<style>
+  #recommended-products-cart .quick-add__submit.button {
+    min-height: unset;
+    padding: .5rem;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+  }
+
+  #recommended-products-cart .quick-add__submit.button:hover {
+    text-decoration-thickness: 0.15rem;
+  }
+
+  {% comment %} #recommended-products-cart .quick-add__submit.button:before,
+  #recommended-products-cart .quick-add__submit.button:after {
+    content: none;
+  } {% endcomment %}
+</style>
+
 <div
   id="recommended-products-cart-title"
   class="color-{{ color_scheme }} gradient scroll-to-bottom"
@@ -205,12 +227,14 @@
               card_product: product,
               media_aspect_ratio: 'square',
               show_rating: true,
+              show_quick_add: true,
               section_id: 'recommended-products-cart'
             %}
           </li>
         {% endif %}
       {%- endfor -%}
     </ul>
+
     {%- if show_mobile_slider or show_desktop_slider -%}
       <div class="slider-buttons no-js-hidden">
         <button

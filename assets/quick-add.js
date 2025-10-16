@@ -46,6 +46,7 @@ if (!customElements.get('quick-add-modal')) {
             opener.removeAttribute('aria-disabled');
             opener.classList.remove('loading');
             opener.querySelector('.loading-overlay__spinner').classList.add('hidden');
+            this.closeCartDrawer();
           });
       }
 
@@ -129,6 +130,11 @@ if (!customElements.get('quick-add-modal')) {
 
         headingContainer.innerHTML = "";
         headingContainer.appendChild(newHeading);
+      }
+
+      closeCartDrawer() {
+        const cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer) cartDrawer.close();
       }
     }
   );

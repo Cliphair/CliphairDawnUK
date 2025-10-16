@@ -71,8 +71,8 @@
         "show_information": false,
         "columns_desktop": 3,
         "columns_mobile": "1",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "quiz_question_6XeMep": {
@@ -121,8 +121,8 @@
         "show_information": true,
         "columns_desktop": 1,
         "columns_mobile": "1",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "quiz_question_4agX9E": {
@@ -141,34 +141,26 @@
             "id": "b",
             "answer": "Make my hair longer & thicker"
           }
-        },
-        "answer_pKrFXz": {
-          "type": "answer",
-          "settings": {
-            "id": "l&t",
-            "answer": "Add length & volume"
-          }
         }
       },
       "block_order": [
         "answer_jwdXWJ",
-        "answer_BgKN9A",
-        "answer_pKrFXz"
+        "answer_BgKN9A"
       ],
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "Wdy do you [break]<em>want hair extensions?</em>",
+        "question": "Why do you [break]<em>want hair extensions?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
         "color_scheme": "",
         "button_style_secondary": true,
         "show_information": true,
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "columns_mobile": "1",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "quiz_question_nHUaJd": {
@@ -206,12 +198,365 @@
         "text_allignment": "center",
         "image_ratio": "square",
         "color_scheme": "",
-        "button_style_secondary": false,
+        "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 1,
         "columns_mobile": "1",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_5": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "An 8 piece set that comes with different sized Clip-In pieces for better flexibility",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "One 10 inch wide Clip-In piece applied from ear to ear for speed",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "Would you prefer [break]<em>more or less pieces</em>?",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_6": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Very curly or coiled curls",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Straight to wavy",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "What is your [break]<em>hair texture</em>?",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_7": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "I mostly wear my hair down or in low styles",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "I like to wear my hair up (high ponytails, buns) and down",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "How do you [break]<em>like to style your hair?</em>",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_8": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Glued in - ultra secure",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Sewn in - quick & easy removal",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "Would you prefer to [break]have <em>sewn<\/em> in or <em>glued in<\/em> [break]extensions?",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_9": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Cheaper hair extensions that [break]only last 3-6 months",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Pay a little bit more for hair extensions that can [break]last 6-12 months",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "What would you prefer [break]<em>in terms of budget?<\/em>",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_10": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Natural volume",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "c",
+            "answer": "Medium volume",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFBs": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Lots of volume",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB",
+        "answer_aCkDFBs"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "What kind of [break]<em>volume do you like?<\/em>",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_11": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Applied & removed without heat, needs to be adjusted [break]every 6-8 weeks",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Applied & removed with heat, no adjustments needed [break]untill 12 weeks",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "What is your preference [break]for <em>application<\/em> & <em>maintinance?<\/em>",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "quiz_question_12": {
+      "type": "quiz-question",
+      "blocks": {
+        "answer_Nacie8": {
+          "type": "answer",
+          "settings": {
+            "id": "a",
+            "answer": "Slower to apply but more discreet",
+            "answer_image": ""
+          }
+        },
+        "answer_aCkDFB": {
+          "type": "answer",
+          "settings": {
+            "id": "b",
+            "answer": "Faster to apply but slightly less discreet",
+            "answer_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "answer_Nacie8",
+        "answer_aCkDFB"
+      ],
+      "custom_css": [
+        ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
+      ],
+      "settings": {
+        "id": "journey",
+        "page": "journey",
+        "question": "What <em>would you prefer?<\/em>",
+        "heading_size": "h1",
+        "text_allignment": "center",
+        "image_ratio": "square",
+        "color_scheme": "",
+        "button_style_secondary": true,
+        "show_information": true,
+        "columns_desktop": 2,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "quiz_answer_YPArwe": {
@@ -254,6 +599,14 @@
     "quiz_question_6XeMep",
     "quiz_question_4agX9E",
     "quiz_question_nHUaJd",
+    "quiz_question_5",
+    "quiz_question_6",
+    "quiz_question_7",
+    "quiz_question_8",
+    "quiz_question_9",
+    "quiz_question_10",
+    "quiz_question_11",
+    "quiz_question_12",
     "quiz_answer_YPArwe",
     "trustpilot_carrousel_rLCEP3"
   ]

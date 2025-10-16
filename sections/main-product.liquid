@@ -143,6 +143,175 @@
                   </ul>
                 </div>
               </div>
+              {% comment %}
+                {% liquid
+                  assign value-3x = product.selected_or_first_available_variant.price | divided_by: 3
+                  assign value-4x = product.selected_or_first_available_variant.price | divided_by: 4
+
+                  assign klarna-logo = images['klarna-logo-product-page.png']
+                  assign clearpay-logo = images['clearpay-logo-product-page.png']
+                  assign shoppay-logo = images['shop-pay-logo-product-page.png']
+                %}
+                <style>
+                  .payment-method {
+                    display: flex;
+                    gap: 15px;
+                    padding: 1.8rem 0;
+                  }
+
+                  @media screen and (min-width: 750px) {
+                    .payment-method {
+                      gap: 20px;
+                    }
+                  }
+
+                  .payment-method .logo,
+                  .payment-method .cta-button {
+                    flex-shrink: 0;
+                  }
+
+                  .payment-method img {
+                    width: auto;
+                    height: 40px;
+                    display: block;
+                    margin: 0;
+                  }
+
+                  .payment-method .message-wrapper,
+                  .payment-method .logo,
+                  .payment-method .cta-button {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  }
+
+                  .payment-method .cta-button {
+                    justify-content: flex-end;
+                  }
+
+                  .payment-method .message,
+                  .payment-method .button {
+                    font-size: 1.2rem;
+                    line-height: 1.2em;
+                    margin: 0;
+                  }
+
+                  .cta-button .button {
+                    padding: 0;
+                    margin: 0;
+                    min-width: 0;
+                    min-height: 0;
+                    border: none;
+                    box-shadow: none;
+                    background: none;
+                    color: var(--color-primary);
+                  }
+
+                  .cta-button .button::before,
+                  .cta-button .button::after {
+                    content: none;
+                  }
+
+                  .shop-pay .logo-bg {
+                    background: #5a31f4;
+                  }
+
+                  .klarna .logo-bg {
+                    background: #ffa8cd;
+                  }
+
+                  .clearpay .logo-bg {
+                    background: #b2fce4;
+                  }
+
+                  .payment-method.clearpay .logo-bg {
+                    padding: 7px 0;
+                  }
+
+                  .payment-method.clearpay img {
+                    width: 120px;
+                    height: auto;
+                  }
+                </style>
+                <div class="payment_services">
+                  <div class="payment-method shop-pay">
+                    <div class="logo">
+                      <div class="logo-bg">
+                        <img
+                          src="{{ shoppay-logo | image_url: width: 120 }}"
+                          height="{{ shoppay-logo.height }}"
+                          width="{{ shoppay-logo.width }}"
+                          alt="{{ shoppay-logo.alt | default: "Shop Pay logo" }}"
+                          loading="lazy"
+                        >
+                      </div>
+                    </div>
+                    <div class="message-wrapper">
+                      <p class="message">
+                        Make 3 interest-free payments of
+                        <span class="value 3x-value">{{ value-3x | money }}</span>
+                      </p>
+                    </div>
+                    <div class="cta-button"><a href="#" class="learn-more-link button">Learn More</a></div>
+                  </div>
+
+                  <div class="payment-method klarna">
+                    <div class="logo">
+                      <div class="logo-bg">
+                        <img
+                          src="{{ klarna-logo | image_url: width: 120 }}"
+                          height="{{ klarna-logo.height }}"
+                          width="{{ klarna-logo.width }}"
+                          alt="{{ klarna-logo.alt | default: "Klarna logo" }}"
+                          loading="lazy"
+                        >
+                      </div>
+                    </div>
+                    <div class="message-wrapper">
+                      <p class="message">
+                        Make 3 interest-free payments of
+                        <span class="value 3x-value">{{ value-3x | money }}</span>
+                      </p>
+                    </div>
+                    <div class="cta-button"><button class="learn-more-button button">Learn More</button></div>
+                  </div>
+
+                  <div class="payment-method clearpay">
+                    <div class="logo">
+                      <div class="logo-bg">
+                        <img
+                          src="{{ clearpay-logo | image_url: width: 120 }}"
+                          height="{{ clearpay-logo.height }}"
+                          width="{{ clearpay-logo.width }}"
+                          alt="{{ clearpay-logo.alt | default: "Clearpay logo" }}"
+                          loading="lazy"
+                        >
+                      </div>
+                    </div>
+                    <div class="message-wrapper">
+                      <p class="message">
+                        Make 4 interest-free payments of
+                        <span class="value 4x-value">{{ value-4x | money }}</span>
+                      </p>
+                    </div>
+                    <div class="cta-button"><button class="learn-more-button button">Learn More</button></div>
+                  </div>
+
+                  <div class="payment-methods-flags">
+                    <ul>
+                      {% assign enabled_payment_types = 'master,visa,paypal,apple_pay,shopify_pay,google_pay,american_express'
+                        | remove: ' '
+                        | split: ','
+                      %}
+                      {%- for type in enabled_payment_types -%}
+                        <li class="list-payment__item">
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </div>
+              {% endcomment %}
             {%- when 'order_deadline' -%}
               <div id="order-deadline" class="quick-add-hidden"></div>
             {%- when 'sc-out-of-stock_placement' -%}

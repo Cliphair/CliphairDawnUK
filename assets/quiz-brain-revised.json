@@ -1,0 +1,4124 @@
+{
+  "brain": [
+    {
+      "when": {
+        "Q1": "a"
+      },
+      "next": "Q2"
+    },
+    {
+      "when": {
+        "Q1": "b"
+      },
+      "next": "Q2"
+    },
+    {
+      "when": {
+        "Q1": "c"
+      },
+      "next": "Q2"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c"
+      },
+      "next": "Q3"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "a"
+      },
+      "next": null,
+      "answer": "Unfortunetelly there is no match for this asnwers"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b"
+      },
+      "next": "Q4"
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a"
+      },
+      "next": "Q5",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b"
+      },
+      "next": "Q7",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "14\" Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "12\" Classic Full Head Clip-Ins",
+        "collection-url": "/collections/full-head-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Fullhead_2d53d7bc-71e8-4c78-a87e-d2b82e6581c9.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "12\" Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Full Head Clip-Ins",
+        "collection-url": "/collections/full-head-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Fullhead_2d53d7bc-71e8-4c78-a87e-d2b82e6581c9.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "One Piece Top Up",
+        "collection-url": "/collections/one-piece-top-up-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/top-up.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9":"a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9":"b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "One Piece Top Up",
+        "collection-url": "/collections/one-piece-top-up-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/top-up.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "a",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "a",
+        "Q6": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Full Head Clip-Ins",
+        "collection-url": "/collections/full-head-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Fullhead_2d53d7bc-71e8-4c78-a87e-d2b82e6581c9.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": "Q12",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "One Piece Top Up",
+        "collection-url": "/collections/one-piece-top-up-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/top-up.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Quad Weft Piece Volumiser",
+        "collection-url": "/collections/quad-weft-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Quad_Weft_09cd042e-4776-482b-9f04-923de45ac91b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": "Q12",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": "Q12",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "One Piece Top Up",
+        "collection-url": "/collections/one-piece-top-up-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/top-up.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Quad Weft Piece Volumiser",
+        "collection-url": "/collections/quad-weft-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Quad_Weft_09cd042e-4776-482b-9f04-923de45ac91b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": "Q12",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a",
+        "Q12": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "b",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Nano Rings",
+        "collection-url": "/collections/nano-rings-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+        "extra-collections": [
+          {
+            "title": "Nano Bonds",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/4_3_69531594-608b-4836-b086-e8c4f8f00307.jpg",
+            "collection-url": "/collections/nano-rings-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "2 packs of Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "a",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Quad Weft Piece Volumiser",
+        "collection-url": "/collections/quad-weft-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Quad_Weft_09cd042e-4776-482b-9f04-923de45ac91b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b",
+        "Q10": "c"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Halo Hair Extensions",
+        "collection-url": "/collections/halo-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/heat-proof-for-hairstyling.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "b",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a"
+      },
+      "next": "Q6",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "a",
+        "Q5": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Quad Weft Piece Volumiser",
+        "collection-url": "/collections/quad-weft-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Quad_Weft_09cd042e-4776-482b-9f04-923de45ac91b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "a",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Curly Full Head Clip-Ins",
+        "collection-url": "/collections/curly-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Curly_78ae2d31-2ab2-4627-8bb8-9a3b53804233.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "a"
+      },
+      "next": "Q10",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Double Weft Clip-Ins",
+        "collection-url": "/collections/double-wefted-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Double_Weft_823c16d0-a4dc-41bd-82e4-f50954cd00dd.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "a",
+        "Q10": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Ultra-Volume Clip-Ins",
+        "collection-url": "/collections/ultra-clip-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/3_1e78880a-e617-4c67-b4bd-58e167208433.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "a",
+        "Q6": "b",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Seamless Full Head Clip-Ins",
+        "collection-url": "/collections/seamless-clip-in-hair-extensions-double-drawn-hair",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/1_4_a09e43e6-a358-4db4-baa4-13a51fa4451b.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a"
+      },
+      "next": "Q8",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a"
+      },
+      "next": "Q9",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "Classic Tape Ins",
+        "collection-url": "/collections/tape-in-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/MediumBrownHairExtensionshumanhair_1_x450_f5c3f83d-b643-4074-be36-aea68083a577.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "a",
+        "Q9": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Tape Ins",
+        "collection-url": "/collections/remy-royale-tape-in-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/60-ss-rtp_website-cropped.webp",
+        "extra-collections": [
+          {
+            "title": "Invisible Tapes",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rvt_website-cropped.webp",
+            "collection-url": "/collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "a",
+        "Q8": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Remy Royale Hair Weft",
+        "collection-url": "/collections/remy-royale-double-drawn-hair-weft-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/double_drawn_remy_human_hair_extensions_hair_wefts_b83a7053-ab46-4f8b-80b2-a2a228cf481f.jpg",
+        "extra-collections": [
+          {
+            "title": "Flat Weft",
+            "image-url": "//www.cliphair.co.uk/cdn/shop/collections/18-613-rfw_website-attachemnt.webp",
+            "collection-url": "/collections/flat-weft-hair-extensions"
+          }
+        ]
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b"
+      },
+      "next": "Q11",
+      "answer": null
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "a"
+      },
+      "next": null,
+      "answer": {
+        "title": "I-Tip Extensions",
+        "collection-url": "/collections/i-tip-straight-pre-bonded-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/Pre_Bonded_295988ab-cdf1-4bb3-b1c1-9c2b8a80065d.jpg"
+      }
+    },
+    {
+      "when": {
+        "Q1": "c",
+        "Q2": "c",
+        "Q3": "b",
+        "Q4": "b",
+        "Q7": "b",
+        "Q11": "b"
+      },
+      "next": null,
+      "answer": {
+        "title": "Flat Tip Extensions",
+        "collection-url": "/collections/flat-tip-hair-extensions",
+        "image-url": "//www.cliphair.co.uk/cdn/shop/collections/16-60-rft_website-attachment.webp"
+      }
+    }
+  ]
+}

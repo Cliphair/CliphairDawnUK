@@ -72,6 +72,7 @@
   max-width: unset;
   box-sizing: border-box;
   margin-top: 0;
+  text-align: left;
 }
 
 .section-quiz-question .answer-card h3:hover {
@@ -260,6 +261,10 @@ quiz-answer .title {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.answer .card__heading .icon-arrow {
+  flex-shrink: 0;
 }
 
 .answer__image-text .card__heading .icon-arrow {
