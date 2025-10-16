@@ -287,11 +287,11 @@
       "settings": {
         "title": "Choose By Best Sellers",
         "heading_size": "h1",
-        "description": "<p>Browse over <strong>70+ stunning shades</strong>, including a wide range of single colours, highlights, balayage and ombre, and our funky shade collection.</p>",
+        "description": "<p>Discover our best sellers — from clip-in and professional hair extensions to essential care products and styling accessories.</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "cliphair-best-sellers",
-        "products_to_show": 10,
+        "products_to_show": 20,
         "columns_desktop": 5,
         "full_width": true,
         "show_view_all": true,
