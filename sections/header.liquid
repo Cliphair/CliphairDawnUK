@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 {%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="{{ 'component-mega-menu.css' | asset_url }}" onload="this.rel='stylesheet'">
   <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 
@@ -31,23 +31,12 @@
 {{ 'trade-website-modal.css' | asset_url | stylesheet_tag }}
 
 <style>
-  {% comment %} .home header.header{
-    margin-bottom:-80px;
-  }
-
-  @media screen and (min-width:990px){
-    .home header.header{
-      margin-bottom:-120px;
-    }
-  } {% endcomment %}
-
   .home .scrolled-past-header header.header{
     margin-bottom:0;
   }
   
   header-drawer {
     justify-self: start;
-    {% comment %} margin-left: -1.2rem; {% endcomment %}
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
@@ -118,6 +107,17 @@
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+    min-height: var(--header-height);
+  }
+
+  .header__heading-logo-wrapper {
+    transition: width 180ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header__heading-logo-wrapper {
+      transition: none;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -130,6 +130,13 @@
     .header {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header, .header__heading-logo-wrapper, .header-wrapper {
+      transition: none !important;
+      animation: none !important;
     }
   }
 {%- endstyle -%}
@@ -341,7 +348,7 @@
         -%}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
-          <div class="cart-count-bubble">
+          <div class="cart-count-bubble" aria-live="polite">
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
@@ -408,7 +415,7 @@
       this.hideHeaderOnScrollUp = () => this.preventReveal = true;
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
-      window.addEventListener('scroll', this.onScrollHandler, false);
+      window.addEventListener('scroll', this.onScrollHandler, { passive: true });
 
       this.createObserver();
     }
@@ -486,13 +493,13 @@
     }
 
     closeMenuDisclosure() {
-      this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
-      this.disclosures.forEach(disclosure => disclosure.close());
+      this.disclosures = this.disclosures || this.header?.querySelectorAll?.('header-menu') || [];
+      this.disclosures.forEach((d) => d?.close?.());
     }
 
     closeSearchModal() {
-      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+      this.searchModal = this.searchModal || this.header?.querySelector?.('details-modal');
+      this.searchModal?.close?.(false);
     }
   }
 
@@ -500,20 +507,43 @@
 {% endjavascript %}
 
 <script>
-  let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-  
-  items.forEach(item => {
-    item.addEventListener("mouseover", () => {
-      item.setAttribute("open", true);
-      item.querySelector("ul").addEventListener("mouseleave", () => {
-          item.removeAttribute("open");
-      });
-      item.addEventListener("mouseleave", () => {
-          item.removeAttribute("open");
+  (() => {
+    const inlineMenu = document.querySelector('.header__inline-menu');
+    if (!inlineMenu) return;
+
+    const items = inlineMenu.querySelectorAll('details');
+
+    // Open on hover only on devices that actually hover
+    const canHover = matchMedia('(hover:hover)').matches && matchMedia('(pointer:fine)').matches;
+
+    items.forEach((item) => {
+      let openTimer, closeTimer;
+
+      const open = () => {
+        clearTimeout(closeTimer);
+        openTimer = setTimeout(() => item.setAttribute('open', ''), 80); // small intent delay
+      };
+
+      const close = () => {
+        clearTimeout(openTimer);
+        closeTimer = setTimeout(() => item.removeAttribute('open'), 120);
+      };
+
+      if (canHover) {
+        item.addEventListener('pointerenter', open, { passive: true });
+        item.addEventListener('pointerleave', close, { passive: true });
+      }
+
+      // Keyboard accessibility: open on focus within; close on blur out
+      item.addEventListener('focusin', open);
+      item.addEventListener('focusout', (e) => {
+        // If focus leaves the details entirely, close it
+        if (!item.contains(e.relatedTarget)) close();
       });
     });
-  });
+  })();
 </script>
+
 
 <script type="application/ld+json">
   {
