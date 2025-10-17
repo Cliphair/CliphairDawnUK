@@ -287,9 +287,15 @@ slider-component-custom.slider-component-full-width {
   }
 }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   .slider {
     scroll-behavior: auto;
+  }
+
+  .slideshow__autoplay .icon,
+  .slider-counter__link--dots .dot,
+  .slider-button .icon {
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -461,6 +467,12 @@ slider-component-custom.slider-component-full-width {
 
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) scale(1.1);
+}
+
+.slider-button:focus-visible,
+.slider-counter__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .slideshow__controls {

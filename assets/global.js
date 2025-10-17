@@ -532,8 +532,8 @@ class ModalDialog extends HTMLElement {
   constructor() {
     super();
     const closeButton = this.querySelector('[id^="ModalClose-"]');
-    if(closeButton) closeButton.addEventListener('click', this.hide.bind(this, false));
-    
+    if (closeButton) closeButton.addEventListener('click', this.hide.bind(this, false));
+
     this.addEventListener('keyup', (event) => {
       if (event.code.toUpperCase() === 'ESCAPE') this.hide();
     });
@@ -828,7 +828,7 @@ class SliderComponentCustom extends SliderComponent {
       link.removeAttribute('aria-current');
     });
     this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
-    this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
+    this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', 'page');
 
     this.sliderControlLinksArray = Array.from(this.sliderControlButtons);
     this.sliderControlLinksArray.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
@@ -856,8 +856,9 @@ class SliderComponentCustom extends SliderComponent {
     for (let i = 0; i < this.totalPages; i++) {
       const button = document.createElement('button');
       button.classList.add("slider-counter__link", `slider-counter__link--${this.sliderVisual}`, "link");
-      button.ariaLabel = `Load page ${i + 1} of ${this.totalPages}`;
-      button.ariaControls = this.firstChild.id;
+      button.setAttribute('aria-label', `Load page ${i + 1} of ${this.totalPages}`);
+      button.setAttribute('aria-controls', this.slider.id);
+      button.type = 'button';
 
       if (this.sliderVisual === 'dots') {
         button.innerHTML = '<span class="dot"></span>';
@@ -978,7 +979,7 @@ class SlideshowComponent extends SliderComponent {
       link.removeAttribute('aria-current');
     });
     this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
-    this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
+    this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', 'page');
   }
 
   autoPlayToggle() {
