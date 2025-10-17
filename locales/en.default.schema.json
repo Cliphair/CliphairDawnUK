@@ -507,6 +507,39 @@
         "name": "Announcement bar"
       }
     },
+    "countdown": {
+      "name": "Countdown",
+      "settings": {
+        "inline_richtext": {
+          "label": "Countdown message"
+        },
+        "inline_richtext_timer": {
+          "label": "Timer message",
+          "default": "Ends In:"
+        },
+        "header__1": {
+          "content": "End date",
+        },
+        "number_year": {
+          "label": "Year"
+        },
+        "select_month": {
+          "label": "Month"
+        },
+        "range_day": {
+          "label": "Day",
+        },
+        "range_hour": {
+          "label": "Hour"
+        },
+        "range_minute": {
+          "label": "Minute"
+        }
+      },
+      "presets": {
+        "name": "Countdown"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {
