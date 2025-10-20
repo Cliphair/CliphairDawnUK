@@ -152,7 +152,7 @@
         "announcement_image_Q3tyyb"
       ],
       "custom_css": [
-        "img {height: auto; max-width:600px!important;}"
+        "img {height: auto; max-width: min(600px, 100%)!important; }"
       ],
       "settings": {}
     },
