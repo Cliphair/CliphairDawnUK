@@ -26,6 +26,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/clip-in-bundle-2-square.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Clip-In Extension Bundles</p>",
             "link": "/collections/hair-extensions-bundle/clip-in-bundle"
           }
@@ -33,7 +35,9 @@
         "image_jfB4Rz": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/permanent-bundle-square.webp",
+            "image": "shopify://shop_images/10_Sept_2025-115_1.jpg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Permanent Extension Bundles</p>",
             "link": "/collections/hair-extensions-bundle/professional-bundle"
           }
@@ -42,6 +46,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/hair-care-accessories-bundle-square.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Haircare & Accessories Bundles</p>",
             "link": "/collections/hair-extensions-bundle/hair-care-accessories-bundle"
           }
@@ -68,7 +74,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 12,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "product-grid": {
@@ -133,6 +140,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -141,6 +150,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -149,6 +160,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -157,6 +170,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -165,6 +180,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -194,7 +211,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     }
   },
