@@ -42,7 +42,7 @@
 {% liquid
   assign price_filtered = false
   for filter in collection.filters
-    if filter.active_values.size > 0 and template.suffix == "by-type-with-filter-price"
+    if filter.active_values.size > 0
       assign price_filtered = true
     endif
   endfor
