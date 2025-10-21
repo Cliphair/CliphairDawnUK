@@ -341,6 +341,31 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_bJzHHY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yJVNpJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Let's compare</strong>",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yJVNpJ"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "hair_extension_comparison_table_GpJ4WR": {
       "type": "hair-extension-comparison-table",
       "name": "Comparison Table",
@@ -448,7 +473,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "hair-care",
+        "collection": "hair-extension-care-accessories",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
@@ -472,31 +497,6 @@
         "padding_top": 20,
         "padding_bottom": 40,
         "trackable_name": ""
-      }
-    },
-    "rich_text_bJzHHY": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_yJVNpJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Let's compare</strong>",
-            "heading_size": "h2",
-            "h1": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_yJVNpJ"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
