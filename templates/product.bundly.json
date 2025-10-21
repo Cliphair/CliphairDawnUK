@@ -9,6 +9,38 @@
  */
 {
   "sections": {
+    "1761055680e59fae3b": {
+      "type": "apps",
+      "blocks": {
+        "bundly_bundle_information_36YmPd": {
+          "type": "shopify://apps/bundly/blocks/bundle_information/1cabc354-c7f9-42e9-8322-7655396b33b7",
+          "settings": {
+            "show_bundle_images": true,
+            "show_vendor": false,
+            "show_title": true,
+            "show_discount_type": false,
+            "show_original_price": true,
+            "show_new_price": true,
+            "show_component_images": true,
+            "show_component_prices": true,
+            "show_component_unit_prices": false,
+            "product_click_action": "show_dialog",
+            "page_size": 12,
+            "redirect_to_cart": true,
+            "custom_data_metafield": "",
+            "liquid": "",
+            "theme": "minimal",
+            "css": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundly_bundle_information_36YmPd"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -218,6 +250,7 @@
         "collapsible_tab_36Cgxc",
         "share"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
         "@media screen and (min-width: 750px) {.information-videos:has(~ .information-videos) {display: none; }}",
@@ -372,6 +405,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -380,6 +415,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -388,6 +425,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -396,6 +435,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -404,6 +445,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -448,6 +491,7 @@
     }
   },
   "order": [
+    "1761055680e59fae3b",
     "main",
     "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
