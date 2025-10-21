@@ -19,6 +19,26 @@
         "color_scheme": "accent-4"
       }
     },
+    "collection_filter_circle_YUDjy3": {
+      "type": "collection-filter-circle",
+      "settings": {
+        "filter_type": "colour-group",
+        "heading": "",
+        "heading_size": "h2",
+        "text_allignment": "left",
+        "image_ratio": "adapt",
+        "circle_image": true,
+        "show_title": true,
+        "columns_desktop": 6,
+        "swipe_on_desktop": true,
+        "color_scheme": "accent-4",
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "slider_visual": "dots",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -40,10 +60,10 @@
         "low_inventory": 5,
         "enable_filtering": true,
         "filter_type": "drawer",
-        "remove_filters": "Length,Discount Amount",
+        "remove_filters": "Discount Amount",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -81,6 +101,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -89,6 +111,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -97,6 +121,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -105,6 +131,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -113,6 +141,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -142,12 +172,14 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     }
   },
   "order": [
     "banner",
+    "collection_filter_circle_YUDjy3",
     "product-grid",
     "db22f337-3a12-4ced-9dd2-bf58688d855a",
     "b400924f-2211-460e-841c-e909605faf8f",
