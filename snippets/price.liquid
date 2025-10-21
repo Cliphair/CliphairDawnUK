@@ -34,6 +34,8 @@
 
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  elsif use_variant and product.price_varies and price < price_max
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
 -%}
 
