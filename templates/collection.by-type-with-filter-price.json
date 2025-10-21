@@ -40,7 +40,7 @@
       }
     },
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "main-collection-product-grid-filter-price-test",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
