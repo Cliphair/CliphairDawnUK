@@ -41,11 +41,13 @@
 
 {% liquid
   assign price_filtered = false
-  for filter in collection.filters
-    if filter.active_values.size > 0
-      assign price_filtered = true
-    endif
-  endfor
+  if template.suffix contains "with-filter-price"
+    for filter in collection.filters
+      if filter.active_values.size > 0
+        assign price_filtered = true
+      endif
+    endfor
+  endif
 %}
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
