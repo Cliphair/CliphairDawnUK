@@ -39,17 +39,6 @@
   endif
 %}
 
-{% liquid
-  assign price_filtered = false
-  if template.suffix contains "with-filter-price"
-    for filter in collection.filters
-      if filter.active_values.size > 0
-        assign price_filtered = true
-      endif
-    endfor
-  endif
-%}
-
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   {%- paginate collection.products by paginate_by -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -239,8 +228,7 @@
                     display_low_inventory: section.settings.display_low_inventory,
                     low_inventory: section.settings.low_inventory | times: 1,
                     display_type_image: section.settings.display_type_image,
-                    type_image_src: section.settings.type_image_src,
-                    price_filtered: price_filtered
+                    type_image_src: section.settings.type_image_src
                   %}
                 </li>
               {%- endfor -%}
