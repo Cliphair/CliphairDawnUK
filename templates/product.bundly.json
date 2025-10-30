@@ -30,7 +30,7 @@
             "custom_data_metafield": "",
             "liquid": "",
             "theme": "minimal",
-            "css": ".bundly__variant_radio+label {\n  font-size: 12px;\n}\n\n.bundly__choose_options_button,\n.bundly__add_to_bundle_button {\n  padding: 0.5rem 1rem;\n}\n\n.bundly__dynamic .bundly__component_grid_item .bundly__component_image img {\n  aspect-ratio: 1/1;\n  object-fit: contain;\n}\n\n.bundly__product_modal .bundly__product_title {\n  font-size: 20px;\n}\n\n.bundly__product_modal .bundly__product_title a {\n  display: block;\n}\n\n@media screen and (min-width: 750px) {\n  .bundly__product_modal {\n    max-width: 768px;\n  }\n}\n\n@media screen and (max-width:374px) {\n  .bundly__choose_options_button,\n  .bundly__add_to_bundle_button {\n    font-size: 12px;\n  }\n}"
+            "css": ".bundly__variant_radio+label {\n  font-size: 12px;\n}\n\n.bundly__choose_options_button,\n.bundly__add_to_bundle_button {\n  padding: 0.5rem 1rem;\n}\n\n.bundly__dynamic .bundly__component_grid_item .bundly__component_image img {\n  aspect-ratio: 1/1;\n  object-fit: contain;\n}\n\n.bundly__product_modal .bundly__product_title {\n  font-size: 20px;\n}\n\n.bundly__product_modal .bundly__product_title a {\n  display: block;\n}\n\n@media screen and (min-width: 750px) {\n  .bundly__product_modal {\n    max-width: 768px;\n  }\n}\n\n@media screen and (max-width:374px) {\n\n  .bundly__choose_options_button,\n  .bundly__add_to_bundle_button {\n    font-size: 12px;\n  }\n}\n\n@media screen and (max-width:749px) {\n  .bundly__product_modal .bundly__product_title {\n    margin: 0;\n  }\n}"
           }
         }
       },
