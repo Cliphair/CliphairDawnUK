@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
 main#MainContent {
-  --page-width: 1400px;
+  --page-width: 1920px;
 }
 
 main#MainContent h1,
