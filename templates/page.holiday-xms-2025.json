@@ -312,6 +312,9 @@
     },
     "featured_collection_tqThHB": {
       "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.collection--full-width {padding-right: 0; padding-left: 0; } .slider-buttons {display: none; }}"
+      ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "",
