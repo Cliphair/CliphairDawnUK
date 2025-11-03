@@ -45,7 +45,6 @@
           "type": "collection",
           "settings": {
             "collection": "hair-extensions-gift-sets",
-            "custom_image": "shopify://shop_images/Group_18935-min.png",
             "custom_title": "Giftsets"
           }
         },
@@ -729,9 +728,8 @@
         "video_hBEkNY": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Tasmyn.mp4",
+            "video": "shopify://files/videos/Sienna - 22 Seamless Clip Ins in Iced Cappuccino.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/holiday-xmas-2024-video-1.webp",
             "title": "",
             "description": ""
           }
@@ -739,9 +737,8 @@
         "video_4LHgzt": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/Style Red Balayage.mp4",
+            "video": "shopify://files/videos/Sahar - 18 Seamless Clip Ins in Medium Brown.mp4",
             "video_url": "",
-            "cover_image": "shopify://shop_images/holiday-xmas-2024-video-2.webp",
             "title": "",
             "description": ""
           }
@@ -749,9 +746,8 @@
         "video_cNtLWM": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/@naomipricee Iced Cappuccino Seamless 16inch 1 .mov",
+            "video": "shopify://files/videos/Luna - 22 Seamless Clip Ins  in Light Auburn.mov",
             "video_url": "",
-            "cover_image": "shopify://shop_images/holiday-xmas-2024-video-3.webp",
             "title": "",
             "description": ""
           }
@@ -759,6 +755,7 @@
         "video_AyrBhC": {
           "type": "video",
           "settings": {
+            "video": "shopify://files/videos/Diana - 18 Seamless Clip Ins in Barbie Blonde.mp4",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "title": "",
             "description": ""
@@ -787,7 +784,7 @@
         "text_allignment": "center",
         "image_ratio": "portrait",
         "hide_card_arrow": true,
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
@@ -838,7 +835,7 @@
         ".article-card {background: #fdf6ff;}",
         ".card__content {padding-right: 0; padding-left: 0;}",
         ".h5 {color: #5c5c5c;}",
-        "@media screen and (max-width:749px){.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item {max-width: 240px;}}"
+        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item {max-width: 240px; }}"
       ],
       "settings": {
         "heading": "",
