@@ -81,7 +81,8 @@
         "collection_hLceke"
       ],
       "custom_css": [
-        ".grid--peek .grid__item {min-width: unset;}"
+        ".grid--peek .grid__item {min-width: unset;}",
+        ".collection-carrousel-wrapper {--page-width: 1400px;}"
       ],
       "settings": {
         "title": "",
