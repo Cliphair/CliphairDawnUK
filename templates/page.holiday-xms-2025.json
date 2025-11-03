@@ -45,6 +45,7 @@
           "type": "collection",
           "settings": {
             "collection": "hair-extensions-gift-sets",
+            "custom_image": "shopify://shop_images/giftsets.png",
             "custom_title": "Giftsets"
           }
         },
