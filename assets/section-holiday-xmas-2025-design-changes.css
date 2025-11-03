@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* main#MainContent {
-  --page-width: 1400px;
-} */
 
 main#MainContent h1,
 main#MainContent .h1,
@@ -59,12 +56,6 @@ main#MainContent .rte+.rte {
 }
 
 @media screen and (min-width:990px) {
-  /* main#MainContent h1,
-  main#MainContent .h1,
-  main#MainContent h2,
-  main#MainContent .h2 {
-    font-size: 5rem;
-  } */
 
   main#MainContent p {
     font-size: 20px;
