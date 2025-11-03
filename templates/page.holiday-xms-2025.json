@@ -147,7 +147,7 @@
         "video": "shopify://files/videos/xmas-page-hero-video.mp4",
         "video_url": "",
         "description": "",
-        "full_width": false,
+        "full_width": true,
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
