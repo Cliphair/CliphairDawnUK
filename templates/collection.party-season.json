@@ -26,15 +26,23 @@
           "type": "collection",
           "settings": {
             "collection": "clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-clip-ins.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-clip-ins.jpg",
             "custom_title": "Clip Ins"
+          }
+        },
+        "collection_D4CmpX": {
+          "type": "collection",
+          "settings": {
+            "collection": "halo-hair-extensions",
+            "custom_image": "shopify://shop_images/holiday-xms-25-halo.jpg",
+            "custom_title": "Halo"
           }
         },
         "collection_g68yJk": {
           "type": "collection",
           "settings": {
             "collection": "clip-in-ponytail-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-ponytail.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-ponytails.jpg",
             "custom_title": "Ponytails"
           }
         },
@@ -42,7 +50,7 @@
           "type": "collection",
           "settings": {
             "collection": "one-piece-clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-volumisers.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-volumisers.jpg",
             "custom_title": "Volumisers"
           }
         },
@@ -50,13 +58,14 @@
           "type": "collection",
           "settings": {
             "collection": "fringe-clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-fring.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-fringes.jpg",
             "custom_title": "Fringes"
           }
         }
       },
       "block_order": [
         "collection_J6yqAm",
+        "collection_D4CmpX",
         "collection_g68yJk",
         "collection_MzQph6",
         "collection_tpgf7q"
@@ -144,6 +153,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -152,6 +163,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -160,6 +173,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -168,6 +183,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -176,6 +193,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -205,7 +224,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     }
   },
