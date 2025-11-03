@@ -313,7 +313,7 @@
     "featured_collection_tqThHB": {
       "type": "featured-collection",
       "custom_css": [
-        ".collection--full-width {padding-right: 0; padding-left: 0;}",
+        ".collection {padding-right: 0; padding-left: 0;}",
         "@media screen and (max-width: 749px) {.slider-buttons {display: none; }}"
       ],
       "name": "t:sections.featured-collection.presets.name",
