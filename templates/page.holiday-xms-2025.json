@@ -837,7 +837,8 @@
       "custom_css": [
         ".article-card {background: #fdf6ff;}",
         ".card__content {padding-right: 0; padding-left: 0;}",
-        ".h5 {color: #5c5c5c;}"
+        ".h5 {color: #5c5c5c;}",
+        "@media screen and (max-width:749px){.slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item {max-width: 240px;}}"
       ],
       "settings": {
         "heading": "",
