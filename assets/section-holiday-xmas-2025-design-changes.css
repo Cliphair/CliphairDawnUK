@@ -85,7 +85,7 @@ main#MainContent .rte+.rte {
 
 @media screen and (min-width:1400px){
   #shopify-section-template--26653000368502__collection_carrousel_9gAxkJ .page-width{
-    padding-right:5rem;
-    padding-left:5rem;
+    padding-right:5rem!important;
+    padding-left:5rem!important;
   }
 }
