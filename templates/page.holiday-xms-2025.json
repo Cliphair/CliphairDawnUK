@@ -329,7 +329,7 @@
         "products_to_show": 11,
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "",
@@ -496,7 +496,7 @@
         "text_3cG8tN"
       ],
       "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
+        ".rich-text__wrapper {width: 100%; max-width: 1400px;}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -601,7 +601,7 @@
         "text_gPzQpm"
       ],
       "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
+        ".rich-text__wrapper {width: 100%; max-width: 1400px;}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -711,7 +711,7 @@
         "text_KiCAJx"
       ],
       "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
+        ".rich-text__wrapper {width: 100%; max-width: 1400px;}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -820,7 +820,7 @@
         "text_ynQBg7"
       ],
       "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
+        ".rich-text__wrapper {width: 100%; max-width: 1400px;}"
       ],
       "settings": {
         "desktop_content_position": "center",
