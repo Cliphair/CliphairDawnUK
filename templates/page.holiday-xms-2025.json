@@ -82,7 +82,8 @@
       ],
       "custom_css": [
         ".grid--peek .grid__item {min-width: unset;}",
-        ".collection-carrousel-wrapper {--page-width: 1400px;}"
+        ".collection-carrousel-wrapper {--page-width: 1400px;}",
+        "@media screen and (min-width:1401px){.section-template--26653000368502__collection_carrousel_mit7eT-padding{padding-bottom:80px; }}"
       ],
       "settings": {
         "title": "",
