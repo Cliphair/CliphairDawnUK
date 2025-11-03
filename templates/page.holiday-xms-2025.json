@@ -313,7 +313,8 @@
     "featured_collection_tqThHB": {
       "type": "featured-collection",
       "custom_css": [
-        "@media screen and (max-width: 749px) {.collection--full-width {padding-right: 0; padding-left: 0; } .slider-buttons {display: none; }}"
+        ".collection--full-width {padding-right: 0; padding-left: 0;}",
+        "@media screen and (max-width: 749px) {.slider-buttons {display: none; }}"
       ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
@@ -325,7 +326,7 @@
         "collection": "hair-extensions-gift-sets",
         "products_to_show": 11,
         "columns_desktop": 4,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
