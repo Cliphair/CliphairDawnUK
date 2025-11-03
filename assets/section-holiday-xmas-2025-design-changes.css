@@ -89,3 +89,12 @@ main#MainContent .rte+.rte {
     padding-left:5rem!important;
   }
 }
+
+main#MainContent .review-section_text p{
+  font-size:1.4rem!important;
+  line-height:1.2em!important;
+}
+
+main#MainContent .review-section_text .review-button{
+  font-size:1.2rem;
+}
