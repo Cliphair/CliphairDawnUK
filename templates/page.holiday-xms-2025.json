@@ -45,6 +45,7 @@
           "type": "collection",
           "settings": {
             "collection": "hair-extensions-gift-sets",
+            "custom_image": "shopify://shop_images/Group_18935-min.png",
             "custom_title": "Giftsets"
           }
         },
@@ -90,7 +91,7 @@
         "image_ratio": "square",
         "circle_images": false,
         "hide_card_arrow": true,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "2",
@@ -309,6 +310,41 @@
         "trackable_name": ""
       }
     },
+    "featured_collection_tqThHB": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "hair-extensions-gift-sets",
+        "products_to_show": 11,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "badge_style": "float",
+        "display_low_inventory": false,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "trackable_name": ""
+      }
+    },
     "collection_carrousel_xBRm4U": {
       "type": "collection-carrousel-by-block",
       "blocks": {
@@ -378,6 +414,7 @@
         "collection_Bk9zCh",
         "collection_LBFefJ"
       ],
+      "disabled": true,
       "custom_css": [
         ".h4 {color: #5c5c5c; font-weight: 300;}",
         ".collection-carrousel {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px;}",
@@ -460,7 +497,7 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 80,
+        "padding_top": 40,
         "padding_bottom": 0,
         "trackable_name": ""
       }
@@ -522,7 +559,7 @@
         "image_ratio": "square",
         "circle_images": true,
         "hide_card_arrow": true,
-        "columns_desktop": 6,
+        "columns_desktop": 5,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "3",
@@ -751,7 +788,7 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 80
+        "padding_bottom": 40
       }
     },
     "rich_text_J7TrQM": {
@@ -856,6 +893,7 @@
     "rich_text_Th7kaQ",
     "collection_carrousel_9gAxkJ",
     "rich_text_ifRWQV",
+    "featured_collection_tqThHB",
     "collection_carrousel_xBRm4U",
     "slideshow_image_link_t9FAMJ",
     "rich_text_RGBdab",
