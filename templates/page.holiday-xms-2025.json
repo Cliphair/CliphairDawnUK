@@ -197,7 +197,7 @@
           "type": "collection",
           "settings": {
             "collection": "clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-clip-ins.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-clip-ins.jpg",
             "custom_title": "CLIP INS"
           }
         },
@@ -205,6 +205,7 @@
           "type": "collection",
           "settings": {
             "collection": "halo-hair-extensions",
+            "custom_image": "shopify://shop_images/holiday-xms-25-halo.jpg",
             "custom_title": "HALO EXTENSIONS"
           }
         },
@@ -212,7 +213,7 @@
           "type": "collection",
           "settings": {
             "collection": "clip-in-ponytail-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-ponytail.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-ponytails.jpg",
             "custom_title": "PONYTAILS"
           }
         },
@@ -220,7 +221,7 @@
           "type": "collection",
           "settings": {
             "collection": "one-piece-clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-volumisers.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-volumisers.jpg",
             "custom_title": "VOLUMISERS"
           }
         },
@@ -228,7 +229,7 @@
           "type": "collection",
           "settings": {
             "collection": "fringe-clip-in-hair-extensions",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-fring.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-fringes.jpg",
             "custom_title": "FRINGES"
           }
         },
@@ -236,7 +237,7 @@
           "type": "collection",
           "settings": {
             "collection": "party-season-essentials",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-party-season.webp",
+            "custom_image": "shopify://shop_images/holiday-xms-25-party-season.jpg",
             "custom_title": "ALL PARTY SEASON"
           }
         }
@@ -539,6 +540,13 @@
             "custom_title": "Hair Weft"
           }
         },
+        "collection_4UXM9P": {
+          "type": "collection",
+          "settings": {
+            "collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
+            "custom_title": "Seamless"
+          }
+        },
         "collection_PWKdhx": {
           "type": "collection",
           "settings": {
@@ -552,6 +560,7 @@
         "collection_nxiGih",
         "collection_9QLRVM",
         "collection_yCKEDX",
+        "collection_4UXM9P",
         "collection_PWKdhx"
       ],
       "custom_css": [
@@ -565,7 +574,7 @@
         "image_ratio": "square",
         "circle_images": true,
         "hide_card_arrow": true,
-        "columns_desktop": 5,
+        "columns_desktop": 6,
         "swipe_on_desktop": true,
         "color_scheme": "",
         "columns_mobile": "3",
