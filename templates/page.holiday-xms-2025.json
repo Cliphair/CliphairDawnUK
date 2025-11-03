@@ -637,7 +637,7 @@
           "type": "element",
           "settings": {
             "url": "shopify://pages/colour-matching-service",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-colour-match.webp",
+            "custom_image": "shopify://shop_images/holiday-xmas-25-cm.jpg",
             "custom_title": "Colour Matching"
           }
         },
@@ -661,7 +661,7 @@
           "type": "element",
           "settings": {
             "url": "shopify://pages/lookbook",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-lookbook.webp",
+            "custom_image": "shopify://shop_images/holiday-xmas-25-lookbook.jpg",
             "custom_title": "Lookbook"
           }
         }
