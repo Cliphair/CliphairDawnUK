@@ -36,6 +36,9 @@
 .review-section_image {
   max-width: 95px;
   margin: 0 auto;
+  aspect-ratio:1/1;
+  border-radius:50%;
+  overflow:hidden;
 }
 
 .review-section_image>img {
@@ -43,10 +46,10 @@
   height: auto;
   object-fit: cover;
   display: block;
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
 }
 
-.review-section_image.square>img {
+/* .review-section_image.square>img {
   aspect-ratio: 1 / 1;
 }
 
@@ -56,10 +59,10 @@
 
 .review-section_image.landscape>img {
   aspect-ratio: 16 / 9;
-}
+} */
 
 .review-section_image.circle img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   object-position: top;
 }
 
