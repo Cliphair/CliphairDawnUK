@@ -82,3 +82,10 @@ main#MainContent .rte+.rte {
     font-size: 24px;
   }
 }
+
+@media screen and (min-width:1400px){
+  #shopify-section-template--26653000368502__collection_carrousel_9gAxkJ .page-width{
+    padding-right:5rem;
+    padding-left:5rem;
+  }
+}
