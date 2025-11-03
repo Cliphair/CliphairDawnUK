@@ -352,9 +352,43 @@
         "trackable_name": ""
       }
     },
+    "rich_text_fRiq7Gsd": {
+      "type": "rich-text-sales",
+      "blocks": {
+        "heading_aaUGWN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Your Wishes, Granted</h2>",
+            "heading_size": "h1"
+          }
+        },
+        "text_aTAHBR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Real customers. Real transformations. See how Cliphair brings everyday hair wishes to life.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_aaUGWN",
+        "text_aTAHBR"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%; max-width: 1400px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
     "yotpo_reviews_dynamic_carrousel_QP4FFN": {
       "type": "yotpo-reviews-dynamic-carrousel",
-      "disabled": true,
       "name": "Yotpo reviews carousel",
       "settings": {
         "color_scheme": "",
@@ -365,15 +399,6 @@
         "padding_top": 40,
         "padding_bottom": 40,
         "trackable_name": ""
-      }
-    },
-    "yotpo_review_carrousel_U7CTGQ": {
-      "type": "yotpo-review-carrousel",
-      "name": "Yotpo review carrousel",
-      "settings": {
-        "container_color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "slideshow_image_link_t9FAMJ": {
@@ -835,8 +860,8 @@
     "collection_carrousel_9gAxkJ",
     "rich_text_ifRWQV",
     "featured_collection_tqThHB",
+    "rich_text_fRiq7Gsd",
     "yotpo_reviews_dynamic_carrousel_QP4FFN",
-    "yotpo_review_carrousel_U7CTGQ",
     "slideshow_image_link_t9FAMJ",
     "rich_text_RGBdab",
     "collection_carrousel_qRk4ye",
