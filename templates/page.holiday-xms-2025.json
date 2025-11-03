@@ -97,7 +97,7 @@
         "columns_mobile": "3",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
-        "padding_top": 40,
+        "padding_top": 20,
         "padding_bottom": 40,
         "button_label": "",
         "link": "",
