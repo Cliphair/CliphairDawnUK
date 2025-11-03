@@ -166,8 +166,8 @@
         "text_gk8m9Q": {
           "type": "text",
           "settings": {
-            "text": "<p>It’s time to level up your locks this Christmas! Our luxury Remy hair extensions are the perfect way to add instant beauty and drama to your look.</p>",
-            "read-more_text": "<p>Whether you’re a first-time extension wearer or just looking for a brand-new style, we have everything you need. From our easy, zero commitment clip in extensions, to hydrating haircare and must-have accessories, we’re here help you become the star at the top of the tree! </p>"
+            "text": "<p>The secret to party-perfect hair? A touch of Cliphair magic. Whether you’re trying hair extensions for the first time or crafting your next signature look, our party-season essentials are here to grant every glam wish — no fuss required.</p>",
+            "read-more_text": ""
           }
         }
       },
@@ -196,7 +196,14 @@
           "settings": {
             "collection": "clip-in-hair-extensions",
             "custom_image": "shopify://shop_images/holiday-xmas-2024-clip-ins.webp",
-            "custom_title": "Clip Ins"
+            "custom_title": "CLIP INS"
+          }
+        },
+        "collection_Q6WiHE": {
+          "type": "collection",
+          "settings": {
+            "collection": "halo-hair-extensions",
+            "custom_title": "HALO EXTENSIONS"
           }
         },
         "collection_WcMBJJ": {
@@ -204,7 +211,7 @@
           "settings": {
             "collection": "clip-in-ponytail-extensions",
             "custom_image": "shopify://shop_images/holiday-xmas-2024-ponytail.webp",
-            "custom_title": "Ponytails"
+            "custom_title": "PONYTAILS"
           }
         },
         "collection_mKtg6A": {
@@ -212,7 +219,7 @@
           "settings": {
             "collection": "one-piece-clip-in-hair-extensions",
             "custom_image": "shopify://shop_images/holiday-xmas-2024-volumisers.webp",
-            "custom_title": "Volumisers"
+            "custom_title": "VOLUMISERS"
           }
         },
         "collection_Th64RC": {
@@ -220,7 +227,7 @@
           "settings": {
             "collection": "fringe-clip-in-hair-extensions",
             "custom_image": "shopify://shop_images/holiday-xmas-2024-fring.webp",
-            "custom_title": "Fringes"
+            "custom_title": "FRINGES"
           }
         },
         "collection_Xma9JV": {
@@ -228,12 +235,13 @@
           "settings": {
             "collection": "party-season-essentials",
             "custom_image": "shopify://shop_images/holiday-xmas-2024-party-season.webp",
-            "custom_title": "All Party Season Extensions"
+            "custom_title": "ALL PARTY SEASON"
           }
         }
       },
       "block_order": [
         "collection_DnV88C",
+        "collection_Q6WiHE",
         "collection_WcMBJJ",
         "collection_mKtg6A",
         "collection_Th64RC",
@@ -256,11 +264,11 @@
         "columns_desktop": 3,
         "swipe_on_desktop": true,
         "color_scheme": "",
-        "columns_mobile": "3",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 80,
+        "padding_bottom": 40,
         "button_label": "",
         "link": "",
         "button_style_secondary": false
@@ -272,14 +280,14 @@
         "heading_gYwx6F": {
           "type": "heading",
           "settings": {
-            "heading": "<h2><em>Gifting Glamour</em></h2>",
+            "heading": "<h2><em>Grant a Little Glam</em></h2>",
             "heading_size": "h1"
           }
         },
         "text_EbbKE9": {
           "type": "text",
           "settings": {
-            "text": "<p>Unlock a treasure trove of glamorous stocking stuffers, gifts for your loved ones or to add to your own wish list! From luxurious hair extensions to essential accessories and styling kits, we've got everything to make this Christmas truly unforgettable.</p>",
+            "text": "<p>Treat your loved ones (or yourself — we won’t tell) to a little Cliphair magic. From luxe extensions to must-have accessories, these fairy-approved gifts are made to grant every hair wish.</p>",
             "read-more_text": ""
           }
         }
@@ -387,11 +395,11 @@
         "columns_desktop": 4,
         "swipe_on_desktop": true,
         "color_scheme": "",
-        "columns_mobile": "3",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 80,
+        "padding_bottom": 40,
         "button_label": "",
         "link": "",
         "button_style_secondary": false
@@ -403,8 +411,8 @@
         "slide_Fc4Wij": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/holiday-xmas-2024-gift-card.webp",
-            "image_desktop": "shopify://shop_images/holiday-xmas-2024-gift-card.webp",
+            "image": "shopify://shop_images/xmas-page-25-mobile-git-card.jpg",
+            "image_desktop": "shopify://shop_images/xmas-page-25-desktop-git-card.jpg",
             "image_url": "shopify://products/cliphair-e-gift-card"
           }
         }
@@ -491,8 +499,8 @@
         "collection_PWKdhx": {
           "type": "collection",
           "settings": {
-            "collection": "seamless-clip-in-hair-extensions-double-drawn-hair",
-            "custom_title": "Seamless"
+            "collection": "halo-hair-extensions",
+            "custom_title": "Halo"
           }
         }
       },
@@ -521,7 +529,117 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 80,
+        "padding_bottom": 40,
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false
+      }
+    },
+    "rich_text_cWMNia": {
+      "type": "rich-text-sales",
+      "blocks": {
+        "heading_UxVKRb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Need A Hand?</h2>",
+            "heading_size": "h1"
+          }
+        },
+        "text_gPzQpm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not sure where to start? From colour matching to finding your perfect length, we’re here to help you make the right choice — no magic wand required.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_UxVKRb",
+        "text_gPzQpm"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
+    "multicolumn_bXze6k": {
+      "type": "link-carrousel-by-block",
+      "blocks": {
+        "element_NgpEhp": {
+          "type": "element",
+          "settings": {
+            "url": "shopify://blogs/hair-blog/the-ultimate-hair-extension-length-guide",
+            "custom_image": "shopify://shop_images/holiday-xmas-2024-length-guide.webp",
+            "custom_title": "Length Guide"
+          }
+        },
+        "element_BPhFRG": {
+          "type": "element",
+          "settings": {
+            "url": "shopify://pages/colour-matching-service",
+            "custom_image": "shopify://shop_images/holiday-xmas-2024-colour-match.webp",
+            "custom_title": "Colour Matching"
+          }
+        },
+        "element_4yXjmF": {
+          "type": "element",
+          "settings": {
+            "url": "shopify://pages/journey",
+            "custom_image": "shopify://shop_images/holiday-xmas-2024-hair-quiz.webp",
+            "custom_title": "Hair Quiz"
+          }
+        },
+        "element_cifD4U": {
+          "type": "element",
+          "settings": {
+            "url": "shopify://pages/contact-us",
+            "custom_image": "shopify://shop_images/holiday-xmas-2024-contact-us.webp",
+            "custom_title": "Contact Us"
+          }
+        },
+        "element_RtEXQE": {
+          "type": "element",
+          "settings": {
+            "url": "shopify://pages/lookbook",
+            "custom_image": "shopify://shop_images/holiday-xmas-2024-lookbook.webp",
+            "custom_title": "Lookbook"
+          }
+        }
+      },
+      "block_order": [
+        "element_NgpEhp",
+        "element_BPhFRG",
+        "element_4yXjmF",
+        "element_cifD4U",
+        "element_RtEXQE"
+      ],
+      "custom_css": [
+        ".grid--peek .grid__item {min-width: unset;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "image_ratio": "square",
+        "circle_images": false,
+        "hide_card_arrow": true,
+        "columns_desktop": 4,
+        "swipe_on_desktop": true,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40,
         "button_label": "",
         "link": "",
         "button_style_secondary": false
@@ -533,14 +651,14 @@
         "heading_A9imR9": {
           "type": "heading",
           "settings": {
-            "heading": "<h2><em><strong>Party Season</strong></em> Inspiration</h2>",
+            "heading": "<h2><em><strong>Party Season</strong></em> Inspo</h2>",
             "heading_size": "h1"
           }
         },
         "text_KiCAJx": {
           "type": "text",
           "settings": {
-            "text": "<p>Get inspired this party season by our favourite looks from our Christmas campaign shoot! Celebrity hairstylist Halley Brisker shares the magic behind how to recreate each look at home with our seamless clip in extensions.</p>",
+            "text": "<p>From subtle glow-ups to full-on glam, see how Cliphair turns party hair wishes into reality.</p>",
             "read-more_text": ""
           }
         }
@@ -571,7 +689,7 @@
             "video": "shopify://files/videos/Tasmyn.mp4",
             "video_url": "",
             "cover_image": "shopify://shop_images/holiday-xmas-2024-video-1.webp",
-            "title": "This big, bouncy blowout with soft, bevelled ends will have you channelling your inner diva.",
+            "title": "",
             "description": ""
           }
         },
@@ -581,7 +699,7 @@
             "video": "shopify://files/videos/Style Red Balayage.mp4",
             "video_url": "",
             "cover_image": "shopify://shop_images/holiday-xmas-2024-video-2.webp",
-            "title": "Featuring voluminous waves, flicked ends and feathery bangs, this hairstyle takes inspiration from the chic styles of the 1970s.",
+            "title": "",
             "description": ""
           }
         },
@@ -591,7 +709,15 @@
             "video": "shopify://files/videos/@naomipricee Iced Cappuccino Seamless 16inch 1 .mov",
             "video_url": "",
             "cover_image": "shopify://shop_images/holiday-xmas-2024-video-3.webp",
-            "title": "A 60s inspired half up, half down look with a baby beehive fit for a cocktail party!",
+            "title": "",
+            "description": ""
+          }
+        },
+        "video_AyrBhC": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "title": "",
             "description": ""
           }
         }
@@ -599,7 +725,8 @@
       "block_order": [
         "video_hBEkNY",
         "video_4LHgzt",
-        "video_cNtLWM"
+        "video_cNtLWM",
+        "video_AyrBhC"
       ],
       "custom_css": [
         ".h5 {margin-bottom: 0; max-width: 85%; margin-right: auto; margin-left: auto;}",
@@ -633,14 +760,14 @@
         "heading_Qxx36G": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>A Spot Of <strong>Festive Reading</strong></h2>",
+            "heading": "<h2>Inside the <strong>Glam Guide</strong></h2>",
             "heading_size": "h1"
           }
         },
         "text_ynQBg7": {
           "type": "text",
           "settings": {
-            "text": "<p>Explore our favourite festive blogs and discover never-before-seen styling inspo, hair extension do’s and don’ts, plus quick and easy maintenance tips to keep your locks thriving throughout the colder weather!</p>",
+            "text": "<p>Discover styling tips, trend inspo, and behind-the-scenes secrets to keep your hair looking its festive best.</p>",
             "read-more_text": ""
           }
         }
@@ -671,7 +798,7 @@
       ],
       "settings": {
         "heading": "",
-        "trending-list": "red-head-blogs",
+        "trending-list": "holiday-xmas-2024-blogs",
         "heading_size": "h1",
         "heading_alignment": "left",
         "color_scheme": "accent-2",
@@ -718,116 +845,6 @@
         "padding_bottom": 40,
         "trackable_name": ""
       }
-    },
-    "rich_text_cWMNia": {
-      "type": "rich-text-sales",
-      "blocks": {
-        "heading_UxVKRb": {
-          "type": "heading",
-          "settings": {
-            "heading": "<h2>Need A Hand?</h2>",
-            "heading_size": "h1"
-          }
-        },
-        "text_gPzQpm": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our team of hair experts are here to help you untangle any holiday hair dilemmas! Whether you need advice on choosing hair extensions, a colour match or styling tips throughout the season, we’re just one click away.</p>",
-            "read-more_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_UxVKRb",
-        "text_gPzQpm"
-      ],
-      "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 1730px;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 80,
-        "padding_bottom": 0,
-        "trackable_name": ""
-      }
-    },
-    "multicolumn_bXze6k": {
-      "type": "link-carrousel-by-block",
-      "blocks": {
-        "element_BPhFRG": {
-          "type": "element",
-          "settings": {
-            "url": "shopify://pages/colour-matching-service",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-colour-match.webp",
-            "custom_title": "Colour Matching"
-          }
-        },
-        "element_NgpEhp": {
-          "type": "element",
-          "settings": {
-            "url": "shopify://blogs/hair-blog/the-ultimate-hair-extension-length-guide",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-length-guide.webp",
-            "custom_title": "Length Guide"
-          }
-        },
-        "element_RtEXQE": {
-          "type": "element",
-          "settings": {
-            "url": "shopify://pages/lookbook",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-lookbook.webp",
-            "custom_title": "Lookbook"
-          }
-        },
-        "element_cifD4U": {
-          "type": "element",
-          "settings": {
-            "url": "shopify://pages/contact-us",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-contact-us.webp",
-            "custom_title": "Contact Us"
-          }
-        },
-        "element_4yXjmF": {
-          "type": "element",
-          "settings": {
-            "url": "shopify://pages/journey",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-hair-quiz.webp",
-            "custom_title": "Hair Quiz"
-          }
-        }
-      },
-      "block_order": [
-        "element_BPhFRG",
-        "element_NgpEhp",
-        "element_RtEXQE",
-        "element_cifD4U",
-        "element_4yXjmF"
-      ],
-      "custom_css": [
-        ".grid--peek .grid__item {min-width: unset;}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
-        "image_ratio": "square",
-        "circle_images": false,
-        "hide_card_arrow": true,
-        "columns_desktop": 4,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "slider_visual": "counter",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false
-      }
     }
   },
   "order": [
@@ -843,12 +860,12 @@
     "slideshow_image_link_t9FAMJ",
     "rich_text_RGBdab",
     "collection_carrousel_qRk4ye",
+    "rich_text_cWMNia",
+    "multicolumn_bXze6k",
     "rich_text_DGPaKx",
     "videos_list_LrmHHX",
     "rich_text_J7TrQM",
     "article_trending_hqNhpg",
-    "rich_text_FCFgTi",
-    "rich_text_cWMNia",
-    "multicolumn_bXze6k"
+    "rich_text_FCFgTi"
   ]
 }
