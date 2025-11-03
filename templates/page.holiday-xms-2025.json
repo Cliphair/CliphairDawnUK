@@ -352,101 +352,31 @@
         "trackable_name": ""
       }
     },
-    "collection_carrousel_xBRm4U": {
-      "type": "collection-carrousel-by-block",
-      "blocks": {
-        "collection_knXnRf": {
-          "type": "collection",
-          "settings": {
-            "collection": "under-15-gift-guide",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-gift-sets-2.webp",
-            "custom_title": "Gift Sets"
-          }
-        },
-        "collection_ryjCLL": {
-          "type": "collection",
-          "settings": {
-            "collection": "stocking-stuffers",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-stocking-stuffers-2.webp",
-            "custom_title": "Stocking Stuffers"
-          }
-        },
-        "collection_VrwD6f": {
-          "type": "collection",
-          "settings": {
-            "collection": "under-15-gift-guide",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-under-15-2.webp",
-            "custom_title": "Under £15"
-          }
-        },
-        "collection_bhWaMe": {
-          "type": "collection",
-          "settings": {
-            "collection": "under-30",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-under-30-2.webp",
-            "custom_title": "Under £30"
-          }
-        },
-        "collection_wmq8pL": {
-          "type": "collection",
-          "settings": {
-            "collection": "hair-extensions-bundle",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-bundle-2.webp",
-            "custom_title": "Bundle deals"
-          }
-        },
-        "collection_Bk9zCh": {
-          "type": "collection",
-          "settings": {
-            "collection": "under-50",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-under-50-2.webp",
-            "custom_title": "Under £50"
-          }
-        },
-        "collection_LBFefJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "under-100",
-            "custom_image": "shopify://shop_images/holiday-xmas-2024-under-100-2.webp",
-            "custom_title": "Under £100"
-          }
-        }
-      },
-      "block_order": [
-        "collection_knXnRf",
-        "collection_ryjCLL",
-        "collection_VrwD6f",
-        "collection_bhWaMe",
-        "collection_wmq8pL",
-        "collection_Bk9zCh",
-        "collection_LBFefJ"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".h4 {color: #5c5c5c; font-weight: 300;}",
-        ".collection-carrousel {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px;}",
-        ".slider--tablet.grid--peek .grid__item:first-of-type {margin-left: 0 !important;}",
-        "@media screen and (min-width: 750px) and (max-width: 989px) {.slider--tablet.grid--peek.grid--3-col-tablet .grid__item {width: calc((100% - 10rem) / 3); }}"
-      ],
+    "yotpo_review_app_DtXpdn": {
+      "type": "yotpo-review-app",
+      "name": "Yotpo review app",
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "introduction": "",
         "text_allignment": "left",
-        "image_ratio": "square",
-        "circle_images": false,
-        "hide_card_arrow": true,
-        "columns_desktop": 4,
-        "swipe_on_desktop": true,
+        "container_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "yotpo_reviews_dynamic_carrousel_QP4FFN": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "disabled": true,
+      "name": "Yotpo reviews carousel",
+      "settings": {
         "color_scheme": "",
-        "columns_mobile": "2",
+        "columns_desktop": 1,
+        "swipe_on_desktop": true,
+        "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "slider_visual": "counter",
         "padding_top": 40,
         "padding_bottom": 40,
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false
+        "trackable_name": ""
       }
     },
     "slideshow_image_link_t9FAMJ": {
@@ -908,7 +838,8 @@
     "collection_carrousel_9gAxkJ",
     "rich_text_ifRWQV",
     "featured_collection_tqThHB",
-    "collection_carrousel_xBRm4U",
+    "yotpo_review_app_DtXpdn",
+    "yotpo_reviews_dynamic_carrousel_QP4FFN",
     "slideshow_image_link_t9FAMJ",
     "rich_text_RGBdab",
     "collection_carrousel_qRk4ye",
