@@ -52,6 +52,19 @@
     endunless
   %}
 
+  {% liquid
+    if card_product.tags contains "bundly-app"
+      for tag in card_product.tags
+        if tag contains "discount:"
+          assign discount_percentage = tag | replace: "discount:", "-"
+        endif
+      endfor
+      assign display_low_inventory = false
+      assign bundle_app = true
+      assign show_rating = false
+    endif
+  %}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -217,6 +230,13 @@
                 -}}
                 %
               </span>
+            {%- elsif bundle_app -%}
+              <span
+                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+              >
+                {{ discount_percentage }}
+              </span>
             {% elsif card_product.tags contains 'New Arrivals' and badge_style != 'fixed' %}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
@@ -226,14 +246,26 @@
               </span>
             {%- endif -%}
           </div>
-          {% if badge_style == 'fixed' and card_product.tags contains 'New Arrivals' %}
+          {% if badge_style == 'fixed' %}
             <div class="card__badge {{ settings.badge_position }} float">
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                NEW
-              </span>
+              {%- if card_product.selected_or_first_available_variant.compare_at_price
+                > card_product.selected_or_first_available_variant.price
+                and card_product.available
+              -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                >
+                  SALE
+                </span>
+              {% elsif card_product.tags contains "New Arrivals" %}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                >
+                  NEW
+                </span>
+              {% endif %}
             </div>
           {% endif %}
         </div>
@@ -321,7 +353,11 @@
               ></div>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {% if bundle_app %}
+              <a href='{{ card_product.url }}' class='button' style='color:white'>Build now</a>
+            {% endif %}
+
+            {% unless bundle_app %}{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}{% endunless %}
             {% assign hidden_message_types = 'Nano Ring Hair Extensions,Remy Royale Flat Tip,Remy Royale I-Tips,Remy Royale Invisible Tape,Remy Royale Nano Bonds,Remy Royale Tape ins'
               | split: ','
             %}
