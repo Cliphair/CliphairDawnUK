@@ -88,6 +88,30 @@
               {% render block %}
             {% when 'delivery_threshold' %}
               {% render 'delivery-threshold', color_scheme: block.settings.color_scheme %}
+            {%- when 'banner' -%}
+              <style>
+                .product__image-block{
+                  background-color:{{ block.settings.color }};
+                }
+
+                .product__image-block > img{
+                  width:100%;
+                  height: auto;
+                  max-width: 768px;
+                  margin:0 auto;
+                  object-fit:cover;
+                  display:block;
+                }
+              </style>
+              <div class="product__image-block">
+                <img
+                  src="{{ block.settings.image | image_url: width: 768 }}"
+                  loading="lazy"
+                  height="{{ block.settings.image.height }}"
+                  width="{{ block.settings.image.width }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </div>
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -1448,6 +1472,22 @@
           "id": "color_scheme",
           "label": "t:sections.all.colors.label",
           "default": "background-1"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Background color"
         }
       ]
     },
