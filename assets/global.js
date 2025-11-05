@@ -1491,27 +1491,30 @@ class Countdown extends HTMLElement {
   }
 
   init() {
-    let endDay = this.dataset.endDay;
-    endDay = endDay <= 9 ? `0${endDay}` : endDay;
-    let endMonth = this.dataset.endMonth;
-    endMonth = endMonth <= 9 ? `0${endMonth}` : endMonth;
-    let endYear = this.dataset.endYear;
-    let endHour = this.dataset.endHour;
-    endHour = endHour <= 9 ? `0${endHour}` : endHour;
-    let endMinute = this.dataset.endMinute;
-    endMinute = endMinute <= 9 ? `0${endMinute}` : endMinute;
+    const endDay = String(this.dataset.endDay).padStart(2, '0');
+    const endMonth = String(this.dataset.endMonth).padStart(2, '0');
+    const endYear = String(this.dataset.endYear);
+    const endHour = String(this.dataset.endHour).padStart(2, '0');
+    const endMinute = String(this.dataset.endMinute).padStart(2, '0');
 
-    const endTimestamp = `${endYear}-${endMonth}-${endDay}T${endHour}:${endMinute}:00`;
-    this.endDate = new Date(endTimestamp).getTime();
+    this.endDate = this.londonWallTimeToUTCTimestamp(
+      Number(endYear), Number(endMonth), Number(endDay),
+      Number(endHour), Number(endMinute)
+    );
 
-    this.counter = setInterval(() => {
-      this.updateCountdown();
-    }, this.second);
+    this.$daysWrap = this.querySelector('.countdown__days')?.parentElement;
+
+    this.counter = setInterval(() => this.updateCountdown(), this.second);
+    this.updateCountdown();
+  }
+
+  disconnectedCallback() {
+    if (this.counter) clearInterval(this.counter);
   }
 
   updateCountdown() {
-    const currentTime = this.getCurrentDateTimeInLondon();
-    const diff = this.endDate - currentTime;
+    const nowUtcMs = Date.now();
+    const diff = this.endDate - nowUtcMs;
 
     if (diff > 0) {
       const days = Math.floor(diff / this.day);
@@ -1519,48 +1522,59 @@ class Countdown extends HTMLElement {
       const minutes = Math.floor((diff % this.hour) / this.minute);
       const seconds = Math.floor((diff % this.minute) / this.second);
 
-      if (days > 0) {
-        this.querySelector('.countdown__days').innerText = days <= 9 ? `0${days}` : days;
-        this.querySelector('.countdown__days').parentElement.classList.remove('hidden')
-      } else {
-        this.querySelector('.countdown__days').parentElement.classList.add('hidden')
+      if (this.$daysWrap) {
+        if (days > 0) {
+          this.setText('.countdown__days', String(days).padStart(2, '0'));
+          this.$daysWrap.classList.remove('hidden');
+        } else {
+          this.$daysWrap.classList.add('hidden');
+        }
       }
-      this.querySelector('.countdown__hours').innerText = hours <= 9 ? `0${hours}` : hours;
-      this.querySelector('.countdown__minutes').innerText = minutes <= 9 ? `0${minutes}` : minutes;
-      this.querySelector('.countdown__seconds').innerText = seconds <= 9 ? `0${seconds}` : seconds;
+
+      this.setText('.countdown__hours', String(hours).padStart(2, '0'));
+      this.setText('.countdown__minutes', String(minutes).padStart(2, '0'));
+      this.setText('.countdown__seconds', String(seconds).padStart(2, '0'));
     } else {
-      this.querySelector('.countdown__days').innerText = '00';
-      this.querySelector('.countdown__hours').innerText = '00';
-      this.querySelector('.countdown__minutes').innerText = '00';
-      this.querySelector('.countdown__seconds').innerText = '00';
-      this.closest(".section-countdown-container").classList.add('hidden');
+      this.setText('.countdown__days', '00');
+      this.setText('.countdown__hours', '00');
+      this.setText('.countdown__minutes', '00');
+      this.setText('.countdown__seconds', '00');
+      const hostSection = this.closest('.section-countdown-container');
+      hostSection && hostSection.classList.add('hidden');
       clearInterval(this.counter);
     }
   }
 
-  getCurrentDateTimeInLondon() {
-    // Create a new Date object for the current time
-    const date = new Date();
+  setText(sel, val) {
+    const el = this.querySelector(sel);
+    if (el) el.textContent = val;
+  }
 
-    // Convert the date to London time string
-    const londonTimeString = date.toLocaleString('en-GB', {
+  londonWallTimeToUTCTimestamp(y, m, d, hh, mm) {
+    const approxUtc = Date.UTC(y, m - 1, d, hh, mm, 0);
+
+    const fmt = new Intl.DateTimeFormat('en-GB', {
       timeZone: 'Europe/London',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false, // 24-hour format
+      timeZoneName: 'shortOffset',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false
     });
+    const tzPart = fmt.formatToParts(new Date(approxUtc))
+      .find(p => p.type === 'timeZoneName')?.value || 'GMT+00:00';
 
-    // Parse the London time string back to a Date object
-    const [day, month, year, hour, minute, second] = londonTimeString.split(/\/|, |:/);
-    const londonTime = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`);
+    const offsetMs = this.parseGmtOffsetToMs(tzPart);
 
-    // Now you can use getTime() on the londonTime Date object
-    const londonTimestamp = londonTime.getTime();
-    return londonTime;
+    return approxUtc - offsetMs;
+  }
+
+  parseGmtOffsetToMs(gmtString) {
+    const m = gmtString.match(/([+-])(\d{2}):?(\d{2})/);
+    if (!m) return 0;
+    const sign = m[1] === '-' ? -1 : 1;
+    const hours = parseInt(m[2], 10);
+    const mins = parseInt(m[3], 10);
+    return sign * (hours * 60 + mins) * 60 * 1000;
   }
 }
 

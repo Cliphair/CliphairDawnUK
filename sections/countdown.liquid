@@ -25,25 +25,29 @@
         data-end-year="{{ section.settings.year }}"
         data-end-hour="{{ section.settings.hour }}"
         data-end-minute="{{ section.settings.minute }}"
+        role="timer"
+        aria-live="polite"
+        aria-atomic="true"
       >
+        <p class="section-text h5 center">{{ section.settings.timer_text }}</p>
         <div class="countdown__container">
           <span class="countdown__days h2">00</span>
-          <span class="countdown__label h5">days</span>
+          <span class="countdown__label h5">d</span>
         </div>
 
         <div class="countdown__container">
           <span class="countdown__hours h2">00</span>
-          <span class="countdown__label h5">hours</span>
+          <span class="countdown__label h5">h</span>
         </div>
 
         <div class="countdown__container">
           <span class="countdown__minutes h2">00</span>
-          <span class="countdown__label h5">minutes</span>
+          <span class="countdown__label h5">m</span>
         </div>
 
         <div class="countdown__container">
           <span class="countdown__seconds h2">00</span>
-          <span class="countdown__label h5">seconds</span>
+          <span class="countdown__label h5">s</span>
         </div>
       </custom-countdown>
     </div>
@@ -52,14 +56,20 @@
 
 {% schema %}
 {
-  "name": "Countdown",
+  "name": "t:sections.countdown.name",
   "tag": "section",
   "class": "section section-countdown-container",
   "settings": [
     {
       "type": "inline_richtext",
       "id": "text",
-      "label": "Text"
+      "label": "t:sections.countdown.settings.inline_richtext.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "timer_text",
+      "label": "t:sections.countdown.settings.inline_richtext_timer.label",
+      "default": "t:sections.countdown.settings.inline_richtext_timer.default"
     },
     {
       "type": "color_scheme",
@@ -69,18 +79,18 @@
     },
     {
       "type": "header",
-      "content": "End date"
+      "content": "t:sections.countdown.settings.header__1.content"
     },
     {
       "type": "number",
       "id": "year",
-      "label": "Year",
+      "label": "t:sections.countdown.settings.number_year.label",
       "default": 2024
     },
     {
       "type": "select",
       "id": "month",
-      "label": "Month",
+      "label": "t:sections.countdown.settings.select_month.label",
       "options": [
         { "value": "1", "label": "January" },
         { "value": "2", "label": "February" },
@@ -100,7 +110,7 @@
     {
       "type": "range",
       "id": "day",
-      "label": "Day",
+      "label": "t:sections.countdown.settings.range_day.label",
       "min": 1,
       "max": 31,
       "step": 1,
@@ -109,7 +119,7 @@
     {
       "type": "range",
       "id": "hour",
-      "label": "Hour",
+      "label": "t:sections.countdown.settings.range_hour.label",
       "min": 0,
       "max": 23,
       "step": 1,
@@ -118,7 +128,7 @@
     {
       "type": "range",
       "id": "minute",
-      "label": "Minute",
+      "label": "t:sections.countdown.settings.range_minute.label",
       "min": 0,
       "max": 59,
       "step": 1,
@@ -151,14 +161,8 @@
   ],
   "presets": [
     {
-      "name": "Countdown"
+      "name": "t:sections.countdown.presets.name"
     }
   ]
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
