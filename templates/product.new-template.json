@@ -31,6 +31,13 @@
             "picker_type": "dropdown"
           }
         },
+        "banner_tmNYwa": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "color": "#f6f4ef"
+          }
+        },
         "available_shades_yt4HbK": {
           "type": "available-shades",
           "settings": {}
@@ -215,6 +222,7 @@
         "title",
         "price",
         "buy_buttons",
+        "banner_tmNYwa",
         "available_shades_yt4HbK",
         "sc_back_in_stock_app_block_JKfDnH",
         "order_deadline_2_app_block_product_DHR7j6",

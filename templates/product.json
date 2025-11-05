@@ -50,6 +50,13 @@
           "type": "price",
           "settings": {}
         },
+        "banner_tmNYwa": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "color": "#f6f4ef"
+          }
+        },
         "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {}
@@ -201,11 +208,12 @@
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_MKNiNH",
         "price",
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker",
+        "banner_tmNYwa",
         "variant_picker",
         "quantity_selector_RERRjV",
         "sc_back_in_stock_app_block_JKfDnH",
         "buy_buttons",
+        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker",
         "order_deadline_2_app_block_product_wa7Bmb",
         "order_deadline_67UiV7",
         "icon_with_text_AGQyTW",

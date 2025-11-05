@@ -32,6 +32,13 @@
           "type": "price",
           "settings": {}
         },
+        "banner_tmNYwa": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "color": "#f6f4ef"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -102,6 +109,7 @@
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "price",
+        "banner_tmNYwa",
         "variant_picker",
         "quantity_selector_jRL7p9",
         "buy_buttons",
