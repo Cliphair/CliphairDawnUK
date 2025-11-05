@@ -37,9 +37,9 @@
         "slide_xF3FDX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/halo-mobile-banner.jpg",
-            "image_desktop": "shopify://shop_images/halo-desktop-banner.jpg",
-            "image_url": "shopify://pages/halo-hair-extensions",
+            "image": "shopify://shop_images/holiday-xms-banner-mobile.jpg",
+            "image_desktop": "shopify://shop_images/holiday-xms-banner-desktop.jpg",
+            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
