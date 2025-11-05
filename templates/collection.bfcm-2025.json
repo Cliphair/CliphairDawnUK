@@ -13,7 +13,7 @@
       "type": "main-collection-banner",
       "settings": {
         "heading_size": "h2",
-        "show_collection_description": true,
+        "show_collection_description": false,
         "text_alignment": "left",
         "show_collection_image": false,
         "color_scheme": "accent-4"
@@ -21,6 +21,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -45,6 +46,59 @@
         "columns_mobile": "2",
         "padding_top": 20,
         "padding_bottom": 0
+      }
+    },
+    "custom_liquid_zDAzE8": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "h2 {margin-top: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width' style='max-width:990px'>\n<h2 class='center h3'><strong>Be the First to Know When the Black Friday Sale Drops!</strong></h2>\n<div class='rte collection-hero__description' style='margin-bottom:1.5rem;'>\n<p class='center'>Our biggest deals of the year are coming soon. Sign up now to get early access, exclusive offers, and insider updates — straight to your inbox.</p>\n</div>\n<div class=\"klaviyo-form-UK8MXJ\"></div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection_aDizri": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center;}",
+        ".yotpo-reviews-star-ratings-widget {justify-content: left !important;}",
+        ".section-featured-collection .grid__item {min-width: unset;}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Can’t Wait for the Sale? Shop Our Best Sellers Now!",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "cliphair-best-sellers",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "accent-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "colour_as_title": false,
+        "show_type": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "badge_style": "fixed",
+        "display_low_inventory": true,
+        "low_inventory": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "db22f337-3a12-4ced-9dd2-bf58688d855a": {
@@ -81,6 +135,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -89,6 +145,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -97,6 +155,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -105,6 +165,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -113,6 +175,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -142,13 +206,16 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
+    "custom_liquid_zDAzE8",
+    "featured_collection_aDizri",
     "db22f337-3a12-4ced-9dd2-bf58688d855a",
     "b400924f-2211-460e-841c-e909605faf8f",
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b"
