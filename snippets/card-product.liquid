@@ -56,7 +56,7 @@
     if card_product.tags contains "bundly-app"
       for tag in card_product.tags
         if tag contains "discount:"
-          assign discount_percentage = tag | replace: "discount: ", ""
+          assign discount_percentage = tag | replace: "discount:", ""
         endif
       endfor
       assign display_low_inventory = false
