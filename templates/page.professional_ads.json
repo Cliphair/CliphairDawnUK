@@ -88,7 +88,7 @@
           "type": "anchor",
           "settings": {
             "anchor_label": "Our collections",
-            "anchor_id": "shopify-section-template--26000815161718__pulldown_info_grid_y7zgT4"
+            "anchor_id": "shopify-section-template--26727593804150__pulldown_info_grid_y7zgT4"
           }
         },
         "anchor_nDBtWz": {
@@ -165,7 +165,7 @@
           "type": "link",
           "settings": {
             "label": "Our collections",
-            "link_id": "shopify-section-template--26000815161718__pulldown_info_grid_y7zgT4"
+            "link_id": "shopify-section-template--26727593804150__pulldown_info_grid_y7zgT4"
           }
         },
         "link_46emQy": {
@@ -302,6 +302,20 @@
         "padding_bottom": 20
       }
     },
+    "yotpo_reviews_dynamic_carrousel_774wwM": {
+      "type": "yotpo-reviews-dynamic-carrousel",
+      "name": "Yotpo reviews carousel",
+      "settings": {
+        "color_scheme": "",
+        "columns_desktop": 3,
+        "swipe_on_desktop": true,
+        "columns_mobile": "3",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "trackable_name": "reviews"
+      }
+    },
     "collection_carrousel_QhAGdA": {
       "type": "collection-carrousel",
       "blocks": {
@@ -344,6 +358,62 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "trackable_name": "shop_by_shade"
+      }
+    },
+    "custom_liquid_YkPTqW2": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p.h2 {margin: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "interactive-table": {
+      "type": "hair-extension-comparison-table",
+      "settings": {
+        "color_scheme": "",
+        "options": "professional-hair-extensions-features",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "trackable_name": "interactive_table"
+      }
+    },
+    "colour_match_quiz_grid": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_XDLgfN": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/colour-matching-service"
+          }
+        },
+        "popup_pymxbP": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image.jpg",
+            "url": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "link_XDLgfN",
+        "popup_pymxbP"
+      ],
+      "custom_css": [
+        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "trackable_name": "colour match and quiz"
       }
     },
     "why_cliphair_97NNxq": {
@@ -405,39 +475,6 @@
         "slider_visual": "counter",
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "colour_match_quiz_grid": {
-      "type": "colour-match-quiz-grid",
-      "blocks": {
-        "link_XDLgfN": {
-          "type": "link",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image2.jpg",
-            "url": "shopify://pages/colour-matching-service"
-          }
-        },
-        "popup_pymxbP": {
-          "type": "popup",
-          "settings": {
-            "image_mobile": "shopify://shop_images/test-image.jpg",
-            "url": "shopify://pages/journey"
-          }
-        }
-      },
-      "block_order": [
-        "link_XDLgfN",
-        "popup_pymxbP"
-      ],
-      "custom_css": [
-        "div.gradient > div {max-width: 768px; margin: 0 auto;}"
-      ],
-      "name": "Colour Match & Quiz",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "trackable_name": "colour match and quiz"
       }
     },
     "pulldown_info_grid_y7zgT4": {
@@ -839,29 +876,6 @@
         "padding_bottom": 20
       }
     },
-    "custom_liquid_YkPTqW2": {
-      "type": "custom-liquid",
-      "custom_css": [
-        "p.h2 {margin: 0;}"
-      ],
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class='page-width'><p class='h2 center'><em>Let’s compare</em></p></div>",
-        "color_scheme": "background-1",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
-    "interactive-table": {
-      "type": "hair-extension-comparison-table",
-      "settings": {
-        "color_scheme": "",
-        "options": "professional-hair-extensions-features",
-        "padding_top": 0,
-        "padding_bottom": 20,
-        "trackable_name": "interactive_table"
-      }
-    },
     "custom_liquid_qznp7k": {
       "type": "custom-liquid",
       "custom_css": [
@@ -908,20 +922,6 @@
         "padding_top": 0,
         "padding_bottom": 20,
         "trackable_name": "best_sellers"
-      }
-    },
-    "yotpo_reviews_dynamic_carrousel_774wwM": {
-      "type": "yotpo-reviews-dynamic-carrousel",
-      "name": "Yotpo reviews carousel",
-      "settings": {
-        "color_scheme": "",
-        "columns_desktop": 3,
-        "swipe_on_desktop": true,
-        "columns_mobile": "3",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "trackable_name": "reviews"
       }
     }
   },
