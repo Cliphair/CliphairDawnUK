@@ -532,7 +532,7 @@
         "unavailable": "Unavailable",
         "on_sale": "Sale",
         "quantity": "Quantity",
-        "add_to_cart": "Add to Cart",
+        "add_to_cart": "Add to cart",
         "back_to_collection": "Back to {{ title }}",
         "view_details": "View details"
       }
