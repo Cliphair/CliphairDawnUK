@@ -34,7 +34,9 @@
 
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
-  elsif use_variant and product.price_varies and price < price_max
+  endif
+
+  if template.name == 'collection' and use_variant and price < price_max
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
 -%}
@@ -84,7 +86,16 @@
               {{- 'products.product.price.regular_price' | t -}}
             </span>
             <span>
-              <s class="price-item price-item--regular variant-item__old-price" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+              <s
+                class="price-item price-item--regular variant-item__old-price"
+                data-
+                {% if use_variant %}
+                  variant
+                {% else %}
+                  product
+                {% endif -%}
+                -id="{{ target.id }}"
+              >
                 {% if settings.currency_code_enabled %}
                   {{ compare_at_price | money_with_currency }}
                 {% else %}
@@ -95,12 +106,30 @@
           {%- endunless -%}
         {%- endif -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+        <span
+          class="price-item price-item--regular"
+          data-
+          {% if use_variant %}
+            variant
+          {% else %}
+            product
+          {% endif -%}
+          -id="{{ target.id }}"
+        >
           {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
         </span>
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular{%- unless compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endunless %}" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+        <span
+          class="price-item price-item--regular{%- unless compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endunless %}"
+          data-
+          {% if use_variant %}
+            variant
+          {% else %}
+            product
+          {% endif -%}
+          -id="{{ target.id }}"
+        >
           {{ money_price }}
         </span>
       {%- endif -%}
@@ -109,7 +138,16 @@
       {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span class="price-item price-item--regular" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+          <span
+            class="price-item price-item--regular"
+            data-
+            {% if use_variant %}
+              variant
+            {% else %}
+              product
+            {% endif -%}
+            -id="{{ target.id }}"
+          >
             <s>
               {% if settings.currency_code_enabled %}
                 {{ compare_at_price | money_with_currency }}
@@ -122,13 +160,31 @@
       {% endif %}
 
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last{%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endif %}" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+      <span
+        class="price-item price-item--sale price-item--last{%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} final-price{% endif %}"
+        data-
+        {% if use_variant %}
+          variant
+        {% else %}
+          product
+        {% endif -%}
+        -id="{{ target.id }}"
+      >
         {{ money_price }}
       </span>
 
       {% if template.name == 'product' %}
         {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %}
-          <span class="price-item price-item--regular price-item--message" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+          <span
+            class="price-item price-item--regular price-item--message"
+            data-
+            {% if use_variant %}
+              variant
+            {% else %}
+              product
+            {% endif -%}
+            -id="{{ target.id }}"
+          >
             <span>
               {% if settings.currency_code_enabled %}
                 {{ compare_at_price | minus: price | money_with_currency | prepend: 'SAVE ' }}
@@ -141,7 +197,16 @@
           {% liquid
             assign sale_percentage = discount_object.percentage | divided_by: 100.00
           %}
-          <span class="price-item price-item--regular price-item--message" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+          <span
+            class="price-item price-item--regular price-item--message"
+            data-
+            {% if use_variant %}
+              variant
+            {% else %}
+              product
+            {% endif -%}
+            -id="{{ target.id }}"
+          >
             <span>
               {% if settings.currency_code_enabled %}
                 <span class="price-item--message-save">SAVE </span>
@@ -153,9 +218,30 @@
                   | append: discount_object.message
                 }}
               {% else %}
-                <span class="price-item--message-save" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}" data-price-multiplier="{{ sale_percentage }}">SAVE </span>
-                <span class="igPrice" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}" data-price-multiplier="{{ sale_percentage }}">
-                  {{ price | times: sale_percentage | money  | append: ' ' }}
+                <span
+                  class="price-item--message-save"
+                  data-
+                  {% if use_variant %}
+                    variant
+                  {% else %}
+                    product
+                  {% endif -%}
+                  -id="{{ target.id }}"
+                  data-price-multiplier="{{ sale_percentage }}"
+                  >SAVE
+                </span>
+                <span
+                  class="igPrice"
+                  data-
+                  {% if use_variant %}
+                    variant
+                  {% else %}
+                    product
+                  {% endif -%}
+                  -id="{{ target.id }}"
+                  data-price-multiplier="{{ sale_percentage }}"
+                >
+                  {{ price | times: sale_percentage | money | append: ' ' }}
                 </span>
                 {{ discount_object.message }}
               {% endif %}
@@ -166,7 +252,16 @@
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-      <span class="price-item price-item--last" data-{% if use_variant %}variant{% else %}product{% endif %}-id="{{ target.id }}">
+      <span
+        class="price-item price-item--last"
+        data-
+        {% if use_variant %}
+          variant
+        {% else %}
+          product
+        {% endif -%}
+        -id="{{ target.id }}"
+      >
         <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
         <span aria-hidden="true">/</span>
         <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>

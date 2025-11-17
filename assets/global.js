@@ -532,8 +532,8 @@ class ModalDialog extends HTMLElement {
   constructor() {
     super();
     const closeButton = this.querySelector('[id^="ModalClose-"]');
-    if(closeButton) closeButton.addEventListener('click', this.hide.bind(this, false));
-    
+    if (closeButton) closeButton.addEventListener('click', this.hide.bind(this, false));
+
     this.addEventListener('keyup', (event) => {
       if (event.code.toUpperCase() === 'ESCAPE') this.hide();
     });
@@ -1312,7 +1312,11 @@ class VariantSelects extends HTMLElement {
         if (volumePricingDestination) volumePricingDestination.classList.remove('hidden');
         if (qtyRules) qtyRules.classList.remove('hidden');
 
-        if (source && destination) destination.innerHTML = source.innerHTML;
+        if (source && destination) {
+          destination.removeAttribute('class');
+          destination.classList.add(...source.classList);
+          destination.innerHTML = source.innerHTML;
+        }
         if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;
         if (skuSource && skuDestination) {
           skuDestination.innerHTML = skuSource.innerHTML;
