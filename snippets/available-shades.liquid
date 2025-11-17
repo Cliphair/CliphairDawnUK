@@ -1,241 +1,166 @@
-<style>
-  .available-shades__title {
-    font-size: 1.7rem;
-    line-height: 1.4em;
-    letter-spacing: -2%;
-    margin-bottom: 1.2rem;
-  }
+{% if product and collection %}
+  {% unless product.type == 'Hair Care'
+    or product.type == 'Accessories'
+    or product.type == 'Gift Card'
+    or product.type == 'Bundle'
+    or product.type == 'Gift Set'
+  %}
+    {{ 'component-available-shades.css' | asset_url | stylesheet_tag }}
 
-  .available-shades__list {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+    {% liquid
+      assign first_row_limit = 9
+      assign colour_name = product.metafields.custom.colour_name
+      assign colour_group = product.metafields.custom.colour_group
 
-  .available-shades__elements {
-    width: calc((100% - 60px) / 7);
-  }
+      assign shades_root = metaobjects.shades_list['best-seller-group-and-shade']
+      if shades_root and shades_root.list and shades_root.list.value
+        assign shades_list = shades_root.list.value
+      endif
 
-  .available-shades__elements.selected {
-    border: 1px solid black;
-    pointer-events: none;
-  }
+      if colour_name != blank
+        assign first_row_limit = first_row_limit | minus: 1
+      endif
 
-  .available-shades__elements .shade-snippet {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
-    display: block;
-  }
+      assign similar_shades = shades_list[colour_group]
+    %}
 
-  .available-shades__elements.selected .shade-snippet {
-    border: 3px solid white;
-  }
+    {%- paginate collection.products by collection.all_products_count -%}
+      {%- comment -%}
+        Build parallel “arrays” using delimiter-joined strings:
+        shade_names_str: "Shade A|Shade B|..."
+        urls_str:        "/products/x|/products/y|..."
+        handles_str:     "shade-a|shade-b|..."
+        We ensure uniqueness by shade name as we build.
+      {%- endcomment -%}
+      {% assign shade_names_str = '' %}
+      {% assign urls_str = '' %}
+      {% assign handles_str = '' %}
 
-  .available-shades__buttons {
-    margin-top: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .available-shades__buttons > * {
-    line-height: 1.4em;
-    letter-spacing: -2%;
-    font-size: 1.2rem;
-    color: inherit;
-    text-underline-offset: 0.3rem;
-    text-decoration: underline;
-  }
-
-  .available-shades__buttons > summary svg {
-    right: -2.25rem;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
-  }
-
-  .available-shades__buttons > summary[aria-expanded='true'] svg {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-  }
-
-  /* Prevent scroll */
-  body.loader-open {
-    overflow: hidden;
-  }
-
-  /* Loader overlay */
-  .fullscreen-loader {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.8); /* semi-transparent white */
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Spinner */
-  .fullscreen-loader::after {
-    content: '';
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ccc;
-    border-top-color: #000;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-</style>
-
-{% liquid
-  assign first_row_counter = 7
-  if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank
-    assign first_row_counter = 6
-  endif
-  assign total_products = collection.all_products_count
-%}
-<shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
-  <p class="available-shades__title">Select shade</p>
-  <ul class="available-shades__list">
-    {% comment %}Visible product shade snippet{% endcomment %}
-    {% if first_row_counter == 6 %}
-      {% liquid
-        assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-        assign shade_image = images[image_handle]
-      %}
-      {% if shade_image != blank %}
-        <li class="available-shades__elements selected" data-product-url="{{ product.url }}">
-          <img
-            srcset="
-              {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-              {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-              {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-              {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-              {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-              {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-              {{ shade_image | image_url }} {{ shade_image.width }}w
-            "
-            src="{{ shade_image | image_url: width: 533 }}"
-            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-            alt="{{ product.metafields.custom.colour_name }} shade snippet"
-            class="motion-reduce shade-snippet"
-            loading="lazy"
-            width="{{ shade_image.width }}"
-            height="{{ shade_image.height }}"
-          >
-        </li>
-      {% endif %}
-    {% endif %}
-
-    {% comment %}First row products shade snippet{% endcomment %}
-    {% for product in collection.products %}
-      {% if first_row_counter > 0 %}
-        {% unless request.path contains product.handle %}
-          {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
-            {% liquid
-              assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-              assign shade_image = images[image_handle]
-            %}
-            {% if shade_image != blank %}
-              <li class="available-shades__elements" data-product-url="{{ product.url }}">
-                <img
-                  srcset="
-                    {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ shade_image | image_url }} {{ shade_image.width }}w
-                  "
-                  src="{{ shade_image | image_url: width: 533 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                  alt="{{ product.metafields.custom.colour_name }} shade snippet"
-                  class="motion-reduce shade-snippet"
-                  loading="lazy"
-                  width="{{ shade_image.width }}"
-                  height="{{ shade_image.height }}"
-                >
-              </li>
+      {% for p in collection.products %}
+        {% assign shade = p.metafields.custom.colour_name %}
+        {% if shade and shade != blank %}
+          {%- comment -%}Prevent duplicates per shade{%- endcomment -%}
+          {% assign guard = '|' | append: shade_names_str | append: '|' %}
+          {% assign token = '|' | append: shade | append: '|' %}
+          {% unless guard contains token %}
+            {% if shade_names_str == '' %}
+              {% assign shade_names_str = shade %}
+              {% assign urls_str = p.url %}
+              {% assign handles_str = p.handle %}
+            {% else %}
+              {% capture shade_names_str %}{{ shade_names_str }}|{{ shade }}{% endcapture %}
+              {% capture urls_str %}{{ urls_str }}|{{ p.url }}{% endcapture %}
+              {% capture handles_str %}{{ handles_str }}|{{ p.handle }}{% endcapture %}
             {% endif %}
-            {% assign first_row_counter = first_row_counter | minus: 1 %}
-          {% endif %}
-        {% endunless %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="available-shades__buttons">
-    <summary aria-expanded="false" aria-controls="available-shades">
-      View All
-      {% render 'icon-caret' %}
-    </summary>
-    <a href="#">Free colour match service</a>
-  </div>
-  <div id="available-shades" class="hidden">
-    <ul class="available-shades__list">
-      {% comment %}All products shade snippet{% endcomment %}
-      {% for product in collection.products %}
-        {% if product.metafields.custom.colour_name and product.metafields.custom.colour_name != blank %}
-          {% liquid
-            assign image_handle = product.metafields.custom.colour_name | handle | append: '-snippet.webp'
-            assign shade_image = images[image_handle]
-          %}
-          {% if shade_image != blank %}
-            <li
-              class="available-shades__elements {% if request.path contains product.handle %}selected{% endif %}"
-              data-product-url="{{ product.url }}"
-            >
-              <img
-                srcset="
-                  {%- if shade_image.width >= 165 -%}{{ shade_image | image_url: width: 165 }} 165w,{%- endif -%}
-                  {%- if shade_image.width >= 360 -%}{{ shade_image | image_url: width: 360 }} 360w,{%- endif -%}
-                  {%- if shade_image.width >= 533 -%}{{ shade_image | image_url: width: 533 }} 533w,{%- endif -%}
-                  {%- if shade_image.width >= 720 -%}{{ shade_image | image_url: width: 720 }} 720w,{%- endif -%}
-                  {%- if shade_image.width >= 940 -%}{{ shade_image | image_url: width: 940 }} 940w,{%- endif -%}
-                  {%- if shade_image.width >= 1066 -%}{{ shade_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                  {{ shade_image | image_url }} {{ shade_image.width }}w
-                "
-                src="{{ shade_image | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 | times: 0.4 }}px, (min-width: 990px) calc((100vw - 130px) / 4 * 0.4), (min-width: 750px) calc((100vw - 120px) / 3 * 0.4), calc((100vw - 35px) / 2 * 0.4)"
-                alt="{{ product.metafields.custom.colour_name }} shade snippet"
-                class="motion-reduce shade-snippet"
-                loading="lazy"
-                width="{{ shade_image.width }}"
-                height="{{ shade_image.height }}"
-              >
-            </li>
-          {% endif %}
+          {% endunless %}
         {% endif %}
       {% endfor %}
-    </ul>
-  </div>
-</shade-selector>
-{% comment %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const summary = document.querySelector('.available-shades__buttons summary');
-      const toggleTarget = document.getElementById('available-shades');
 
-      if (summary && toggleTarget) {
-        summary.addEventListener('click', function (e) {
-          e.preventDefault(); // Prevent native summary toggle if <details> is not used
+      {%- assign shade_names = shade_names_str | split: '|' -%}
+      {%- assign urls = urls_str | split: '|' -%}
+      {%- assign handles = handles_str | split: '|' -%}
 
-          const isExpanded = summary.getAttribute('aria-expanded') === 'true';
+      <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
+        <p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
 
-          summary.setAttribute('aria-expanded', String(!isExpanded));
-          toggleTarget.classList.toggle('hidden');
-        });
-      }
-    });
-  </script>
-{% endcomment %}
+        <ul class="available-shades__list available-shades__first-row">
+          {% if colour_name %}
+            {% assign image_handle = colour_name | handle | append: '-snippet.webp' %}
+            {% assign shade_image = images[image_handle] %}
+            {% if shade_image %}
+              <li
+                class="available-shades__elements selected"
+                data-product-url="{{ product.url }}"
+                data-shade="{{ colour_name }}"
+                role="option"
+                aria-selected="true"
+              >
+                {% render 'shade-snippet', shade_image: shade_image, shade: colour_name %}
+              </li>
+            {% endif %}
+          {% endif %}
 
-<script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
+          {% assign counter = first_row_limit %}
+          {% for s in similar_shades %}
+            {% if counter > 0 %}
+              {%- assign idx = blank -%}
+              {%- for name in shade_names -%}
+                {% if name == s %}
+                  {% assign idx = forloop.index0 %}
+                  {% break %}
+                {% endif %}
+              {%- endfor -%}
+              {% if idx != blank %}
+                {% assign p_url = urls[idx] %}
+                {% assign p_handle = handles[idx] %}
+                {% if p_handle != product.handle %}
+                  {% assign image_handle = s | handle | append: '-snippet.webp' %}
+                  {% assign shade_image = images[image_handle] %}
+                  {% if shade_image %}
+                    <li
+                      class="available-shades__elements"
+                      data-product-url="{{ p_url }}"
+                      data-shade="{{ s }}"
+                      role="option"
+                    >
+                      {% render 'shade-snippet', shade_image: shade_image, shade: s %}
+                    </li>
+                    {% assign counter = counter | minus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <div class="available-shades__buttons">
+          <summary aria-expanded="true" aria-controls="available-shades">
+            View All Available Shades
+            {% render 'icon-caret' %}
+          </summary>
+          <a href="/pages/colour-matching-service">Free colour match service</a>
+        </div>
+
+        <div id="available-shades">
+          <ul class="available-shades__list">
+            {%- comment -%} Full list rendered in the order from shades_list {%- endcomment -%}
+            {% for group in shades_list %}
+              {% assign current_group = shades_list[group.first] %}
+              {% for s in current_group %}
+                {%- assign idx = blank -%}
+                {%- for name in shade_names -%}
+                  {% if name == s %}
+                    {% assign idx = forloop.index0 %}
+                    {% break %}
+                  {% endif %}
+                {%- endfor -%}
+                {% if idx != blank %}
+                  {% assign p_url = urls[idx] %}
+                  {% assign p_handle = handles[idx] %}
+                  {% assign image_handle = s | handle | append: '-snippet.webp' %}
+                  {% assign shade_image = images[image_handle] %}
+                  {% if shade_image %}
+                    <li
+                      class="available-shades__elements {% if p_handle == product.handle %}selected{% endif %}"
+                      data-product-url="{{ p_url }}"
+                      data-shade="{{ s }}"
+                      role="option"
+                      {% if p_handle == product.handle %}
+                        aria-selected="true"
+                      {% endif %}
+                    >
+                      {% render 'shade-snippet', shade_image: shade_image, shade: s %}
+                    </li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+      </shade-selector>
+      <div id="shade-tooltip" class="shade-tooltip"></div>
+    {% endpaginate %}
+
+    <script src="{{ 'shade-selector-component.js' | asset_url }}" defer></script>
+  {% endunless %}
+{% endif %}
