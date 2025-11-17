@@ -71,6 +71,7 @@
       "disabled": true,
       "settings": {
         "text": "Free Sunday Delivery Order In",
+        "timer_text": "Ends In:",
         "color_scheme": "accent-2",
         "year": 2024,
         "month": "10",
@@ -137,7 +138,6 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/free-express-and-ship-to-shop.gif",
             "text_alignment": "center",
