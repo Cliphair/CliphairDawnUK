@@ -140,7 +140,7 @@
               data-product-id="{{ target.id }}"
             {% endif -%}
           >
-            <s>
+            <s class="compare-at-price">
               {% if settings.currency_code_enabled %}
                 {{ compare_at_price | money_with_currency }}
               {% else %}
@@ -187,11 +187,11 @@
           %}
           <span
             class="price-item price-item--regular price-item--message"
-          {% if use_variant %}
-            data-variant-id="{{ target.id }}"
-          {% else %}
-            data-product-id="{{ target.id }}"
-          {% endif -%}
+            {% if use_variant %}
+              data-variant-id="{{ target.id }}"
+            {% else %}
+              data-product-id="{{ target.id }}"
+            {% endif -%}
           >
             <span>
               {% if settings.currency_code_enabled %}
@@ -206,25 +206,21 @@
               {% else %}
                 <span
                   class="price-item--message-save"
-                  data-
                   {% if use_variant %}
-                    variant
+                    data-variant-id="{{ target.id }}"
                   {% else %}
-                    product
+                    data-product-id="{{ target.id }}"
                   {% endif -%}
-                  -id="{{ target.id }}"
                   data-price-multiplier="{{ sale_percentage }}"
                   >SAVE
                 </span>
                 <span
                   class="igPrice"
-                  data-
                   {% if use_variant %}
-                    variant
+                    data-variant-id="{{ target.id }}"
                   {% else %}
-                    product
+                    data-product-id="{{ target.id }}"
                   {% endif -%}
-                  -id="{{ target.id }}"
                   data-price-multiplier="{{ sale_percentage }}"
                 >
                   {{ price | times: sale_percentage | money | append: ' ' }}
