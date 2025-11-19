@@ -4,17 +4,29 @@ if (!customElements.get('shade-selector')) {
     class ShadeSelector extends HTMLElement {
       constructor() {
         super();
-        this.sections = (this.dataset.sections || '').split(',').map(s => s.trim()).filter(Boolean);
+        this.sections = (this.dataset.sections || '')
+          .split(',')
+          .map(s => s.trim())
+          .filter(Boolean);
 
         this.controller = null;
         this.onclick = this.onClick.bind(this);
 
         this.summaryButton = this.querySelector('.available-shades__buttons summary');
-        this.summaryTarget  = this.querySelector('#available-shades');
+        this.summaryTarget = this.querySelector('#available-shades');
         this.initSummaryClick();
       }
 
       onClick(e) {
+        // Handle filter clicks
+        const filter = e.target.closest('.filters li');
+        if (filter && this.contains(filter)) {
+          e.preventDefault();
+          this.onFilterClick(filter);
+          return;
+        }
+
+        // Handle shade clicks
         const li = e.target.closest('.available-shades__elements');
         if (!li || !this.contains(li)) return;
         const url = li.dataset.productUrl;
@@ -23,9 +35,43 @@ if (!customElements.get('shade-selector')) {
         this.swapShade(url);
       }
 
+      onFilterClick(filterEl) {
+        const group = filterEl.dataset.group;
+        const items = this.querySelectorAll('.available-shades__elements');
+
+        // Show/hide shades based on data-group
+        items.forEach((item) => {
+          const itemGroup = item.dataset.group;
+          const showAll = !group || group === 'All';
+          const shouldShow = showAll || itemGroup === group;
+          item.hidden = !shouldShow;
+        });
+
+        // Update selected class on filters
+        const filtersContainer = filterEl.parentElement;
+        if (!filtersContainer) return;
+
+        filtersContainer.querySelectorAll('li').forEach((li) => {
+          li.classList.add('button--secondary');
+        });
+        filterEl.classList.remove('button--secondary');
+
+        const isExpanded = this.summaryButton.getAttribute('aria-expanded') === 'true';
+        if (!isExpanded) {
+          this.summaryButton.setAttribute('aria-expanded', "true");
+          this.summaryTarget.classList.toggle('hidden');
+        }
+
+        // // Move clicked filter to second position (keep "All" as first)
+        // const first = filtersContainer.firstElementChild;
+        // if (first && filterEl !== first) {
+        //   filtersContainer.insertBefore(filterEl, first.nextElementSibling);
+        // }
+      }
+
       async swapShade(productUrl) {
         this.startLoading();
-        try { this.controller?.abort(); } catch (_) {}
+        try { this.controller?.abort(); } catch (_) { }
         this.controller = new AbortController();
 
         const params = new URLSearchParams();
@@ -100,13 +146,14 @@ if (!customElements.get('shade-selector')) {
   );
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.__shadeTooltipInit) return;
   window.__shadeTooltipInit = true;
 
   const SELECTOR = '.available-shades__elements';
   const OFFSET_Y = 24;   // below cursor (centered horizontally)
-  const LERP     = 0.25; // easing
+  const LERP = 0.25; // easing
 
   function ensureTooltip() {
     const all = Array.from(document.querySelectorAll('#shade-tooltip'));
@@ -121,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i < all.length; i++) all[i].remove();
     el.style.position = 'absolute';
     el.style.left = '0px';
-    el.style.top  = '0px';
+    el.style.top = '0px';
     el.style.pointerEvents = 'none';
     el.style.zIndex = '2147483647';
     return el;
@@ -135,8 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let current = null;
 
   function clampBelowCentered(pageX, pageY) {
-    const w  = tooltip.offsetWidth || 0;
-    const h  = tooltip.offsetHeight || 0;
+    const w = tooltip.offsetWidth || 0;
+    const h = tooltip.offsetHeight || 0;
     const sx = window.scrollX || 0;
     const sy = window.scrollY || 0;
     const vw = window.innerWidth;

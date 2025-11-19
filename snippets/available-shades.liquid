@@ -35,9 +35,12 @@
       {% assign shade_names_str = '' %}
       {% assign urls_str = '' %}
       {% assign handles_str = '' %}
+      {% assign available_groups_str = '' %}
 
       {% for p in collection.products %}
         {% assign shade = p.metafields.custom.colour_name %}
+        {% assign group = p.metafields.custom.colour_group %}
+
         {% if shade and shade != blank %}
           {%- comment -%}Prevent duplicates per shade{%- endcomment -%}
           {% assign guard = '|' | append: shade_names_str | append: '|' %}
@@ -54,68 +57,116 @@
             {% endif %}
           {% endunless %}
         {% endif %}
+
+        {% if group and group != blank %}
+          {% assign group_guard = '|' | append: available_groups_str | append: '|' %}
+          {% assign group_str = '|' | append: group | append: '|' %}
+          {% unless group_guard contains group_str %}
+            {% if available_groups_str == '' %}
+              {% assign available_groups_str = group %}
+            {% else %}
+              {% capture available_groups_str %}{{ available_groups_str }}|{{ group }}{% endcapture %}
+            {% endif %}
+          {% endunless %}
+        {% endif %}
       {% endfor %}
 
       {%- assign shade_names = shade_names_str | split: '|' -%}
       {%- assign urls = urls_str | split: '|' -%}
       {%- assign handles = handles_str | split: '|' -%}
+      {%- assign groups = available_groups_str | split: '|' -%}
 
       <shade-selector class="available-shades" data-sections="{{ section_id }},yotpo-review-app">
         <p class="available-shades__title"><b>Colour:</b> {{ colour_name }}</p>
 
-        <ul class="available-shades__list available-shades__first-row">
-          {% if colour_name %}
-            {% assign image_handle = colour_name | handle | append: '-snippet.webp' %}
-            {% assign shade_image = images[image_handle] %}
-            {% if shade_image %}
-              <li
-                class="available-shades__elements selected"
-                data-product-url="{{ product.url }}"
-                data-shade="{{ colour_name }}"
-                role="option"
-                aria-selected="true"
-              >
-                {% render 'shade-snippet', shade_image: shade_image, shade: colour_name %}
-              </li>
-            {% endif %}
-          {% endif %}
+        <slider-component
+          class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          data-visual="{{ section.settings.slider_visual }}"
+        >
+          {%- liquid
+            assign columns_mobile_int = 3
+            assign show_mobile_slider = false
+            assign groups_size = groups.size | plus: 1
+            if groups_size > columns_mobile_int
+              assign show_mobile_slider = true
+            endif
 
-          {% assign counter = first_row_limit %}
-          {% for s in similar_shades %}
-            {% if counter > 0 %}
-              {%- assign idx = blank -%}
-              {%- for name in shade_names -%}
-                {% if name == s %}
-                  {% assign idx = forloop.index0 %}
-                  {% break %}
-                {% endif %}
-              {%- endfor -%}
-              {% if idx != blank %}
-                {% assign p_url = urls[idx] %}
-                {% assign p_handle = handles[idx] %}
-                {% if p_handle != product.handle %}
-                  {% assign image_handle = s | handle | append: '-snippet.webp' %}
-                  {% assign shade_image = images[image_handle] %}
-                  {% if shade_image %}
-                    <li
-                      class="available-shades__elements"
-                      data-product-url="{{ p_url }}"
-                      data-shade="{{ s }}"
-                      role="option"
-                    >
-                      {% render 'shade-snippet', shade_image: shade_image, shade: s %}
-                    </li>
-                    {% assign counter = counter | minus: 1 %}
-                  {% endif %}
-                {% endif %}
+            assign columns_desktop_int = 3
+            assign show_desktop_slider = false
+            if groups_size > columns_desktop_int
+              assign show_desktop_slider = true
+            endif
+
+            assign columns_tablet = 3
+            assign show_tablet_slider = false
+            if groups_size > columns_tablet
+              assign show_tablet_slider = true
+            endif
+          -%}
+          <ul
+            class="grid--{{ columns_desktop_int }}-col-desktop grid--{{ columns_tablet }}-col-tablet grid--{{ columns_mobile_int }}-col-tablet-down filters grid slide-mobile-{{ show_mobile_slider }} slide-tablet-{{ show_tablet_slider }} slide-desktop-{{ show_desktop_slider }} slider grid--peek slider--tablet slider--desktop filter-circle--{{ filter.values.size }}-items"
+            id="Slider-shade-groups"
+            role="list"
+          >
+            <li
+              id="Slide-shade-groups-1"
+              class="button grid__item custom__slide slider__slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
               {% endif %}
-            {% endif %}
-          {% endfor %}
-        </ul>
+              data-group="All"
+            >
+              All
+            </li>
+            {% for group in groups %}
+              <li
+                id="Slide-shade-groups-{{ forloop.index | plus: 1 }}"
+                class="button button--secondary grid__item custom__slide slider__slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index | plus: 1 }};"
+                {% endif %}
+                data-group="{{ group }}"
+              >
+                {{ group }}
+              </li>
+            {% endfor %}
+          </ul>
+
+          {%- if show_mobile_slider or show_desktop_slider -%}
+            <div class="slider-buttons small-hide medium-hide no-js-hidden slider--{{ columns_desktop_int }}-col-desktop grid--{{ columns_tablet }}-col-tablet slider--{{ columns_mobile_int }}-col-tablet-down">
+              <button
+                type="button"
+                class="slider-button slider-button--prev"
+                name="previous"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+
+              <div class="slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">{{ groups_size }}</span>
+              </div>
+
+              <button
+                type="button"
+                class="slider-button slider-button--next"
+                name="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+            </div>
+          {% endif %}
+        </slider-component>
 
         <div class="available-shades__buttons">
           <summary aria-expanded="true" aria-controls="available-shades">
-            View All Available Shades
+            View All
             {% render 'icon-caret' %}
           </summary>
           <a href="/pages/colour-matching-service">Free colour match service</a>
@@ -144,6 +195,7 @@
                       class="available-shades__elements {% if p_handle == product.handle %}selected{% endif %}"
                       data-product-url="{{ p_url }}"
                       data-shade="{{ s }}"
+                      data-group="{{ group.first }}"
                       role="option"
                       {% if p_handle == product.handle %}
                         aria-selected="true"
