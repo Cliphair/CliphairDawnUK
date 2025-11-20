@@ -138,6 +138,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Express_Ship_To_Shop_Delivery_Ticker_75.gif",
             "text_alignment": "center",
