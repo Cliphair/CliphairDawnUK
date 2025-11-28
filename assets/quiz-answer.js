@@ -23,19 +23,37 @@ if (!customElements.get('quiz-answer')) {
         sessionStorage.setItem(`${this.quizId}-history`, JSON.stringify([]));
       }
 
-      // backButton(event) {
-      //   const parent = event.currentTarget.closest('quiz-answer');
+      /**
+       * Build a Shopify-style srcset string using the ?width= param.
+       */
+      buildShopifySrcset(baseUrl, widths = [320, 480, 768, 1024, 1440]) {
+        const hasQuery = baseUrl.includes('?');
+        return widths
+          .map((w) => `${baseUrl}${hasQuery ? '&' : '?'}width=${w} ${w}w`)
+          .join(', ');
+      }
 
-      //   const lastQuestion = document.querySelectorAll(`.section-quiz-question [data-quiz-id="${this.quizId}"]`).length;
-      //   console.log(lastQuestion)
-      //   const previousQuestionElement = document
-      //     .querySelector(`quiz-question[data-quiz-id="${parent.quizId}"][data-question-number="${lastQuestion}"]`);
-      //   console.log(previousQuestionElement)
-      //   if (previousQuestionElement) {
-      //     this.hideContainer(parent.closest('.quiz'))
-      //     this.showContainer(previousQuestionElement.closest('.quiz'))
-      //   }
-      // }
+      /**
+       * Update an <img> element with responsive src/srcset/sizes.
+       */
+      updateResponsiveImage(imageEl, baseUrl) {
+        if (!imageEl || !baseUrl) return;
+
+        const hasQuery = baseUrl.includes('?');
+        const defaultWidth = 768;
+
+        const src = `${baseUrl}${hasQuery ? '&' : '?'}width=${defaultWidth}`;
+        const srcset = this.buildShopifySrcset(baseUrl);
+
+        imageEl.src = src;
+        imageEl.srcset = srcset;
+        imageEl.sizes = '(min-width: 990px) 768px, 100vw';
+
+        // Optional: ensure lazy loading if not already set
+        if (!imageEl.loading) {
+          imageEl.loading = 'lazy';
+        }
+      }
 
       updateFinalElement(answer) {
         const image = this.querySelector('.answer-wrapper .answer-image');
@@ -44,10 +62,17 @@ if (!customElements.get('quiz-answer')) {
         const button = this.querySelector('.answer-wrapper .button-wrapper .button');
         const accordion = this.querySelector('.answer-wrapper .answer-accordion');
 
+        console.log(answer);
+
         if (answer) {
           if (image) {
-            image.src = answer['image-url'];
-            image.parentElement.classList.remove('visually-hidden');
+            const imageUrl = answer['image-url'];
+            if (imageUrl) {
+              this.updateResponsiveImage(image, imageUrl);
+              image.parentElement.classList.remove('visually-hidden');
+            } else {
+              image.parentElement.classList.add('visually-hidden');
+            }
           }
 
           if (header) {
@@ -66,17 +91,29 @@ if (!customElements.get('quiz-answer')) {
           }
 
           if (accordion) {
-            if (answer.accordion) {
-              accordion.innerHTML = answer.accordion;
+            let extraCollections = answer['extra-collections'] || [];
+            if (extraCollections.length > 0) {
+              accordion.innerHTML = '';
+              extraCollections.forEach((collection) => {
+                accordion.innerHTML += `<p class='bold'><a href="${collection['collection-url']}">${collection.title}</a></p>`;
+              });
+              // If you still want to inject extra content from answer.accordion:
+              if (answer.accordion) {
+                accordion.innerHTML += answer.accordion;
+              }
               accordion.closest('.collapsible-content__grid').classList.remove('visually-hidden');
             } else {
               accordion.closest('.collapsible-content__grid').classList.add('visually-hidden');
             }
           }
         } else {
-          header.innerText = 'Sorry';
-          header.disabled = true;
-          content.innerHTML = `<p>No match found for your answers.</p>`;
+          if (header) {
+            header.innerText = 'Sorry';
+            header.disabled = true;
+          }
+          if (content) {
+            content.innerHTML = `<p>No match found for your answers.</p>`;
+          }
           if (button) button.disabled = true;
           if (accordion) accordion.closest('.collapsible-content__grid').classList.add('visually-hidden');
         }
@@ -119,5 +156,5 @@ if (!customElements.get('quiz-answer')) {
         return prev;
       }
     }
-  )
+  );
 }

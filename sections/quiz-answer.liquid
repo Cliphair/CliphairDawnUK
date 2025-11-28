@@ -21,7 +21,7 @@
   }
 </style>
 {% if section.settings.id != blank %}
-  <div class="color-{{ section.settings.color_scheme }} gradient {% if section.settings.visible %}visible{% endif %}">
+  <div class="color-{{ section.settings.color_scheme }} gradient {% if section.settings.visible %}visible{% endif %} visible">
     <quiz-answer data-quiz-id="{{ section.settings.id }}">
       {% liquid
         assign ratio = 1
@@ -41,7 +41,7 @@
           </div>
         {% endif %}
 
-        <div class="title-wrapper {{ section.settings.text_allignment }}">
+        <div class="title-wrapper {{ section.settings.text_allignment }} medium-hide large-hide">
           <h2
             id="SectionHeading-{{ section.id }}"
             class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -77,9 +77,24 @@
           </div>
 
           <div class="text-wrapper center">
+            <h2
+              id="SectionHeading-{{ section.id }}"
+              class="title small-hide inline-richtext {{ section.settings.heading_size }}"
+            >
+              {{ section.settings.title | replace: '[break]', ' ' }}
+            </h2>
+
             <h3 class="answer-title"><a href="#">Placeholder</a></h3>
             <div class="answer-content">
-              Placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu rutrum urna. Mauris sit amet neque
+                euismod, lacinia sapien eu, venenatis lacus. Ut viverra massa at tempor ullamcorper.
+              </p>
+              <p>
+                Quisque euismod cursus est efficitur gravida. Nam auctor velit a quam sollicitudin facilisis. Curabitur
+                nec viverra est, at dictum nisl. Phasellus ut nisi vel risus blandit venenatis. Pellentesque urna odio,
+                dignissim ac nunc quis, placerat tempor nibh.
+              </p>
             </div>
             <div class="button-wrapper">
               <a
@@ -91,6 +106,36 @@
             </div>
           </div>
 
+          <div
+            class="grid grid--1-col grid--2-col-tablet collapsible-content__grid"
+            style="width:100%; margin-top:2rem;"
+          >
+            <div class="grid__item">
+              <div
+                class="accordion"
+              >
+                <details
+                  id="Details-{{ section.id }}"
+                >
+                  <summary id="Summary-1-{{ section.id }}">
+                    <h4 class="accordion__title inline-richtext h4">{{ section.settings.accordion_header }}</h4>
+                    {% render 'icon-caret' %}
+                  </summary>
+                  <div
+                    class="accordion__content rte answer-accordion"
+                    id="CollapsibleAccordion-1-{{ section.id }}"
+                    role="region"
+                    aria-labelledby="Summary-1-{{ section.id }}"
+                  >
+                    <p>Bla bla bla</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-footer">
           <div class="custom-banner">
             {% if section.settings.image_url %}
               <a href="{{ section.settings.image_url }}">
@@ -148,36 +193,15 @@
               </div>
             {% endif %}
           </div>
-
-          <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-            <div class="grid__item">
-              <div
-                class="accordion"
-              >
-                <details
-                  id="Details-{{ section.id }}"
-                >
-                  <summary id="Summary-1-{{ section.id }}">
-                    <h4 class="accordion__title inline-richtext h4">{{ section.settings.accordion_header }}</h4>
-                    {% render 'icon-caret' %}
-                  </summary>
-                  <div
-                    class="accordion__content rte answer-accordion"
-                    id="CollapsibleAccordion-1-{{ section.id }}"
-                    role="region"
-                    aria-labelledby="Summary-1-{{ section.id }}"
-                  >
-                    <p>Bla bla bla</p>
-                  </div>
-                </details>
-              </div>
-            </div>
-          </div>
+          {% render 'hair-care-collection-carrousel' %}
         </div>
       </div>
-      <script type="application/json" id="{{ section.settings.id }}-answers" defer>
-        {{ page.metafields.quiz.quiz_answers }}
-      </script>
+      {% comment %} {% render 'hair-care-collection-carrousel' %} {% endcomment %}
+      {% comment %}
+        <script type="application/json" id="{{ section.settings.id }}-answers" defer>
+          {{ page.metafields.quiz.quiz_answers }}
+        </script>
+      {% endcomment %}
     </quiz-answer>
   </div>
 
