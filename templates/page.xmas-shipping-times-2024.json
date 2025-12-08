@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "custom_liquid_efqNqe": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n#PostalDates table{\nbackground:#F1EBF3;\nborder-spacing:0;\ntext-align:left;\nfont-size:1.1rem;\ntext-align:center;\n}\n\n@media screen and (min-width:750px){\n#PostalDates table{\n\nfont-size:1.3rem;\n}\n}\n\n#PostalDates td{\npadding: 2rem 1rem;\nborder-top: 1px solid #9D9D9D;\nborder-right:1px solid #9D9D9D;\n}\n\n#PostalDates td:last-of-type{\nborder-right:none;\n}\n\n#PostalDates .table-heading{\nbackground: #F1EBF3;\ntext-align: center;\nmargin: 0;\npadding:2rem 0.5rem;\n}\n\n#PostalDates .table-shipping-times td{\nwidth:calc(100% / 3);}\n\n#PostalDates .table-opening-hours td{\nwidth:40%;}\n\n#PostalDates .table-opening-hours td~td{\nwidth:60%;}\n\n#PostalDates .xmas-button{\n--color-button:172,144,193;\ncolor:white!important;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "rich_text_dPHXte": {
       "type": "rich-text",
       "settings": {
@@ -56,6 +66,7 @@
     }
   },
   "order": [
+    "custom_liquid_efqNqe",
     "rich_text_dPHXte",
     "font",
     "custom_banner_FtcqjF",
