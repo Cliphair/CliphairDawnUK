@@ -35,7 +35,8 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
-            "color": "#f6f4ef"
+            "color": "#f6f4ef",
+            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign"
           }
         },
         "available_shades_yt4HbK": {
