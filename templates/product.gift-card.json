@@ -36,7 +36,8 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
-            "color": "#f6f4ef"
+            "color": "#f6f4ef",
+            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign"
           }
         },
         "variant_picker": {
@@ -223,6 +224,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -231,6 +234,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -239,6 +244,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -247,6 +254,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -255,6 +264,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
