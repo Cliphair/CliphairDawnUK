@@ -94,7 +94,12 @@
                   background-color:{{ block.settings.color }};
                 }
 
-                .product__image-block > img{
+                .product__image-block a{
+                  display:block;
+                  width:100%;
+                }
+
+                .product__image-block img{
                   width:100%;
                   height: auto;
                   max-width: 768px;
@@ -104,13 +109,15 @@
                 }
               </style>
               <div class="product__image-block">
-                <img
-                  src="{{ block.settings.image | image_url: width: 768 }}"
-                  loading="lazy"
-                  height="{{ block.settings.image.height }}"
-                  width="{{ block.settings.image.width }}"
-                  alt="{{ block.settings.image.alt }}"
-                >
+                {% if block.settings.image_url %}<a href='{{ block.settings.image_url }}'>{% endif %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 768 }}"
+                    loading="lazy"
+                    height="{{ block.settings.image.height }}"
+                    width="{{ block.settings.image.width }}"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                {% if block.settings.image_url %}</a>{% endif %}
               </div>
             {%- when 'text' -%}
               <p
@@ -1488,6 +1495,11 @@
           "type": "color",
           "id": "color",
           "label": "Background color"
+        },
+        {
+          "type": "url",
+          "id": "image_url",
+          "label": "Url"
         }
       ]
     },
