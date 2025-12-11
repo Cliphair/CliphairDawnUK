@@ -224,7 +224,7 @@
       },
       "10143366368840476756": {
         "type": "shopify://apps/christmas-calendar-sale-boost/blocks/snowfall/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "snowfall_pages": "all"
         }
