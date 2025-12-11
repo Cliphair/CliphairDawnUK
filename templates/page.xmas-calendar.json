@@ -22,6 +22,27 @@
         "padding_bottom": 28
       }
     },
+    "17654622848cf05dc6": {
+      "type": "apps",
+      "blocks": {
+        "christmas_calendar_sale_boost_christmas_calendar_U3QzGh": {
+          "type": "shopify://apps/christmas-calendar-sale-boost/blocks/christmas-calendar/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
+          "settings": {
+            "max_width": 750,
+            "space_top": 40,
+            "space_bottom": 40,
+            "test_mode": false,
+            "open_door": "1"
+          }
+        }
+      },
+      "block_order": [
+        "christmas_calendar_sale_boost_christmas_calendar_U3QzGh"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "rich_text_37Pdpz": {
       "type": "rich-text",
       "blocks": {
@@ -44,7 +65,7 @@
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
-        "color_scheme": "accent-2",
+        "color_scheme": "background-collection-titles",
         "full_width": true,
         "padding_top": 20,
         "padding_bottom": 0
@@ -60,80 +81,16 @@
       "settings": {
         "id": "ER70LrpKekonQqaW-tJpAw",
         "max-width": "750",
-        "color_scheme": "accent-2",
+        "color_scheme": "background-collection-titles",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "1765462291ca68b299": {
-      "type": "apps",
-      "blocks": {
-        "hulk_form_builder_form_block_keAqk8": {
-          "type": "shopify://apps/hulk-form-builder/blocks/form-block/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-          "settings": {
-            "form_uuid": "ER70LrpKekonQqaW-tJpAw",
-            "form_settings": true,
-            "font_color": "#000000",
-            "size": 14,
-            "input_background_color": "#ffffff",
-            "input_background_color_focus": "#f4dada",
-            "input_border_radius": 1,
-            "input_border_color": "#ebe9e9",
-            "input_border_color_focus": "#2d2727",
-            "input_font_color": "#3d3131",
-            "input_size": 14,
-            "border_color": "#121212",
-            "border_radius": 2,
-            "border": 1,
-            "fill_color": "#ebe9e9",
-            "padding": 0,
-            "form_width": 750,
-            "btn_text": "Submit",
-            "sub_btn_txt_color": "#f3f3f3",
-            "sub_btn_bg_color": "#3f3333",
-            "sub_btn_font_size": 14,
-            "sub_btn_bdr_color": "#ffffff",
-            "sub_btn_bdr_rad": 3,
-            "sub_btn_bdr_width": 1,
-            "fonts": "Arial"
-          }
-        }
-      },
-      "block_order": [
-        "hulk_form_builder_form_block_keAqk8"
-      ],
-      "disabled": true,
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "17654622848cf05dc6": {
-      "type": "apps",
-      "blocks": {
-        "christmas_calendar_sale_boost_christmas_calendar_U3QzGh": {
-          "type": "shopify://apps/christmas-calendar-sale-boost/blocks/christmas-calendar/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
-          "settings": {
-            "max_width": 750,
-            "space_top": 40,
-            "space_bottom": 40,
-            "test_mode": false,
-            "open_door": "1"
-          }
-        }
-      },
-      "block_order": [
-        "christmas_calendar_sale_boost_christmas_calendar_U3QzGh"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },
   "order": [
     "main",
+    "17654622848cf05dc6",
     "rich_text_37Pdpz",
-    "form_builder_WeyiXy",
-    "1765462291ca68b299",
-    "17654622848cf05dc6"
+    "form_builder_WeyiXy"
   ]
 }
