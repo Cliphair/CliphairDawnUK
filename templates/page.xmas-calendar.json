@@ -48,12 +48,15 @@
       "block_order": [
         "text_wEjY7A"
       ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%; max-width: 750px;}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": false,
+        "color_scheme": "accent-1",
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
@@ -106,7 +109,7 @@
           "type": "shopify://apps/christmas-calendar-sale-boost/blocks/christmas-calendar/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
           "settings": {
             "max_width": 750,
-            "space_top": 50,
+            "space_top": 20,
             "space_bottom": 50,
             "test_mode": false,
             "open_door": "1"
