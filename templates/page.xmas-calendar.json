@@ -53,6 +53,7 @@
     "form_builder_WeyiXy": {
       "type": "form-builder",
       "custom_css": [
+        ".gradient > div{min-height:100px;}",
         "@media screen and (min-width: 780px) {.gradient > div {padding: 0 !important; }}"
       ],
       "name": "Form builder app",
