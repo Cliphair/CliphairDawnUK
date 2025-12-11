@@ -34,6 +34,30 @@
         "padding_bottom": 0
       }
     },
+    "rich_text_37Pdpz": {
+      "type": "rich-text",
+      "blocks": {
+        "text_wEjY7A": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sign up to receive a daily reminder:</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_wEjY7A"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "1765462291ca68b299": {
       "type": "apps",
       "blocks": {
@@ -44,24 +68,24 @@
             "form_settings": true,
             "font_color": "#000000",
             "size": 14,
-            "input_background_color": "#FFF",
-            "input_background_color_focus": "#F4DADA",
+            "input_background_color": "#ffffff",
+            "input_background_color_focus": "#f4dada",
             "input_border_radius": 1,
             "input_border_color": "#ebe9e9",
-            "input_border_color_focus": "#2D2727",
-            "input_font_color": "#3D3131",
+            "input_border_color_focus": "#2d2727",
+            "input_font_color": "#3d3131",
             "input_size": 14,
             "border_color": "#121212",
             "border_radius": 2,
             "border": 1,
-            "fill_color": "#EBE9E9",
+            "fill_color": "#ebe9e9",
             "padding": 0,
             "form_width": 750,
             "btn_text": "Submit",
-            "sub_btn_txt_color": "#F3F3F3",
-            "sub_btn_bg_color": "#3F3333",
+            "sub_btn_txt_color": "#f3f3f3",
+            "sub_btn_bg_color": "#3f3333",
             "sub_btn_font_size": 14,
-            "sub_btn_bdr_color": "#FFFFFF",
+            "sub_btn_bdr_color": "#ffffff",
             "sub_btn_bdr_rad": 3,
             "sub_btn_bdr_width": 1,
             "fonts": "Arial"
@@ -100,6 +124,7 @@
   "order": [
     "main",
     "form_builder_WeyiXy",
+    "rich_text_37Pdpz",
     "1765462291ca68b299",
     "17654622848cf05dc6"
   ]
