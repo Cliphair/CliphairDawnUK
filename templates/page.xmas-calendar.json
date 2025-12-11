@@ -37,7 +37,8 @@
         "text_wEjY7A"
       ],
       "custom_css": [
-        ".rich-text__wrapper {width: 100%; max-width: 750px; padding: 0 !important;}"
+        ".rich-text__wrapper {width: 100%; max-width: 750px;}",
+        "@media screen and (min-width: 780px) {.rich-text__wrapper {padding: 0 !important; }}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -52,7 +53,7 @@
     "form_builder_WeyiXy": {
       "type": "form-builder",
       "custom_css": [
-        "@media screen and (min-width: 780px) {.gradient >div{padding:0!important; }}"
+        "@media screen and (min-width: 780px) {.gradient > div {padding: 0 !important; }}"
       ],
       "name": "Form builder app",
       "settings": {
