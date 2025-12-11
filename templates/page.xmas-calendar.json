@@ -46,14 +46,14 @@
         "content_alignment": "left",
         "color_scheme": "accent-2",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
     "form_builder_WeyiXy": {
       "type": "form-builder",
       "custom_css": [
-        ".gradient > div{min-height:100px;}",
+        ".gradient > div {min-height: 100px;}",
         "@media screen and (min-width: 780px) {.gradient > div {padding: 0 !important; }}"
       ],
       "name": "Form builder app",
@@ -114,8 +114,8 @@
           "type": "shopify://apps/christmas-calendar-sale-boost/blocks/christmas-calendar/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
           "settings": {
             "max_width": 750,
-            "space_top": 20,
-            "space_bottom": 50,
+            "space_top": 40,
+            "space_bottom": 40,
             "test_mode": false,
             "open_door": "1"
           }
