@@ -222,11 +222,11 @@
         "disabled": false,
         "settings": {}
       },
-      "1530068250781986104": {
-        "type": "shopify://apps/fbp-fast-bundle/blocks/fast_bundle/9e87fbe2-9041-4c23-acf5-322413994cef",
-        "disabled": true,
+      "10143366368840476756": {
+        "type": "shopify://apps/christmas-calendar-sale-boost/blocks/snowfall/cf73da4a-c532-4125-9ffa-b205bf1d75c4",
+        "disabled": false,
         "settings": {
-          "home": false
+          "snowfall_pages": "all"
         }
       }
     },
