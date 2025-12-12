@@ -36,18 +36,27 @@
         "text_wEjY7A": {
           "type": "text",
           "settings": {
-            "text": "<p>Don't want to miss out on daily offers? Sign up for reminders!<br/>Tap today's date to reveal your exclusive gift...</p>",
+            "text": "<p>Don't want to miss out on daily offers? Sign up for reminders!</p>",
+            "read-more_text": ""
+          }
+        },
+        "text_kVJW6p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tap today's date to reveal your exclusive gift...</p>",
             "read-more_text": ""
           }
         }
       },
       "block_order": [
         "heading_YMkPdn",
-        "text_wEjY7A"
+        "text_wEjY7A",
+        "text_kVJW6p"
       ],
       "custom_css": [
         ".rich-text__wrapper {width: 100%; max-width: 750px;}",
-        "@media screen and (min-width: 780px) {.rich-text__wrapper {padding: 0 !important; }}"
+        "@media screen and (min-width: 780px) {.rich-text__wrapper {padding: 0 !important; }}",
+        ".rich-text__text p {font-size: 1.4rem;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
