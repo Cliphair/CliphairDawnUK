@@ -56,7 +56,8 @@
       "custom_css": [
         ".rich-text__wrapper {width: 100%; max-width: 750px;}",
         "@media screen and (min-width: 780px) {.rich-text__wrapper {padding: 0 !important; }}",
-        ".rich-text__text p {font-size: 1.4rem; line-height: 1em;}"
+        ".rich-text__text p {font-size: 1.2rem; line-height: 1em;}",
+        ".rich-text__blocks>*+* {margin-top: 1rem;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
