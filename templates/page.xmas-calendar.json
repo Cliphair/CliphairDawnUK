@@ -63,7 +63,7 @@
       "type": "form-builder",
       "custom_css": [
         ".gradient > div {min-height: 100px;}",
-        "@media screen and (min-width: 780px) {.gradient > div {padding: 0 !important; }}"
+        "@media screen and (min-width: 780px) {.gradient > div {padding-right: 0 !important; padding-left: 0 !important; }}"
       ],
       "name": "Form builder app",
       "settings": {
