@@ -73,7 +73,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<style>\n.event__content{\npadding:0 3rem!important;\n}\n</style>\n<div style='max-width:750px margin:0 auto;'class=\"klaviyo-form-WMp23w\"></div>",
+        "custom_liquid": "<style>\n.event__content{\npadding:0 3rem!important;\n}\n</style>\n<div style='width:100%; max-width:750px margin:0 auto;'><div class=\"klaviyo-form-WMp23w\"></div></div>",
         "color_scheme": "accent-3",
         "padding_top": 0,
         "padding_bottom": 0
