@@ -51,12 +51,12 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "accent-3",
         "full_width": true,
         "padding_top": 20,
-        "padding_bottom": 0
+        "padding_bottom": 12
       }
     },
     "form_builder_WeyiXy": {
