@@ -56,7 +56,7 @@
         "color_scheme": "accent-3",
         "full_width": true,
         "padding_top": 20,
-        "padding_bottom": 12
+        "padding_bottom": 8
       }
     },
     "form_builder_WeyiXy": {
@@ -70,7 +70,7 @@
         "id": "ER70LrpKekonQqaW-tJpAw",
         "max-width": "750",
         "color_scheme": "accent-3",
-        "padding_top": 0,
+        "padding_top": 8,
         "padding_bottom": 0
       }
     },
