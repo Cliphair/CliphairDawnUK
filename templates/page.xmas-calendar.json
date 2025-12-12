@@ -33,25 +33,25 @@
             "h1": true
           }
         },
-        "text_wEjY7A": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Don't want to miss out on daily offers? Sign up for reminders!</p>",
-            "read-more_text": ""
-          }
-        },
         "text_kVJW6p": {
           "type": "text",
           "settings": {
             "text": "<p>Tap today's date to reveal your exclusive gift...</p>",
             "read-more_text": ""
           }
+        },
+        "text_wEjY7A": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Don't want to miss out on daily offers? Sign up for reminders!</p>",
+            "read-more_text": ""
+          }
         }
       },
       "block_order": [
         "heading_YMkPdn",
-        "text_wEjY7A",
-        "text_kVJW6p"
+        "text_kVJW6p",
+        "text_wEjY7A"
       ],
       "custom_css": [
         ".rich-text__wrapper {width: 100%; max-width: 750px;}",
