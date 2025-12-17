@@ -17,6 +17,40 @@ if (!customElements.get('shade-selector')) {
         this.initSummaryClick();
       }
 
+      connectedCallback() {
+        this.restoreLastGroup();
+      }
+
+      restoreLastGroup() {
+        let lastGroup = null;
+
+        if (typeof window !== 'undefined') {
+          lastGroup = window.__shadeLastGroup || null;
+          try {
+            if (!lastGroup && window.localStorage) {
+              lastGroup = window.localStorage.getItem('shadeLastGroup');
+            }
+          } catch (e) {
+            console.log(e);
+          }
+        }
+
+        if (!lastGroup || lastGroup === 'All') {
+          // Default state is already "All", nothing to do
+          return;
+        }
+
+        const filtersContainer = this.querySelector('.filters');
+        if (!filtersContainer) return;
+
+        const filterEl = Array.from(filtersContainer.querySelectorAll('li'))
+          .find(li => li.dataset.group === lastGroup);
+
+        if (!filterEl) return;
+
+        this.onFilterClick(filterEl);
+      }
+
       onClick(e) {
         // Handle filter clicks
         const filter = e.target.closest('.filters li');
@@ -32,11 +66,20 @@ if (!customElements.get('shade-selector')) {
         const url = li.dataset.productUrl;
         if (!url) return;
         if (li.classList.contains('selected')) return;
+
         this.swapShade(url);
       }
 
       onFilterClick(filterEl) {
         const group = filterEl.dataset.group;
+
+        window.__shadeLastGroup = group;
+        try {
+          window.localStorage.setItem('shadeLastGroup', group);
+        } catch (e) {
+          console.log(e);
+        }
+
         const items = this.querySelectorAll('.available-shades__elements');
 
         // Show/hide shades based on data-group
