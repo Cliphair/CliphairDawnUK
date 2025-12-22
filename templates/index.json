@@ -34,14 +34,15 @@
     "slideshow_3tCMjU": {
       "type": "slideshow",
       "blocks": {
-        "slide_xF3FDX": {
+        "slide_cnhnUM": {
           "type": "slide",
+          "name": "Shop By Shade",
           "settings": {
-            "image": "shopify://shop_images/holiday-xms-banner-mobile.jpg",
-            "image_desktop": "shopify://shop_images/holiday-xms-banner-desktop.jpg",
-            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign",
+            "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
+            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
+            "image_url": "shopify://pages/hair-extensions-by-colour",
             "heading": "",
-            "heading_size": "h1",
+            "heading_size": "h2",
             "subheading": "",
             "button_label": "",
             "link": "",
@@ -52,7 +53,7 @@
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "banner_id": "halo hair extensions launch"
+            "banner_id": "main"
           }
         },
         "slide_nnGry6": {
@@ -77,14 +78,15 @@
             "banner_id": "summer campaign 2025"
           }
         },
-        "slide_cnhnUM": {
+        "slide_xF3FDX": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
-            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
-            "image_url": "shopify://pages/hair-extensions-by-colour",
+            "image": "shopify://shop_images/holiday-xms-banner-mobile.jpg",
+            "image_desktop": "shopify://shop_images/holiday-xms-banner-desktop.jpg",
+            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign",
             "heading": "",
-            "heading_size": "h2",
+            "heading_size": "h1",
             "subheading": "",
             "button_label": "",
             "link": "",
@@ -95,14 +97,14 @@
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "banner_id": "main"
+            "banner_id": "halo hair extensions launch"
           }
         }
       },
       "block_order": [
-        "slide_xF3FDX",
+        "slide_cnhnUM",
         "slide_nnGry6",
-        "slide_cnhnUM"
+        "slide_xF3FDX"
       ],
       "settings": {
         "layout": "full_bleed",
