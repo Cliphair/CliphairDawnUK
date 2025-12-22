@@ -30,10 +30,11 @@
 {%- endstyle -%}
 
 {% liquid
+  comment
   assign campaign_page = pages['wish-for-cliphair-holiday-campaign']
-  assign campaign_image = images['']
+  assign campaign_image = images['holiday-xms-banner-collection.jpg']
   assign paginate_by = section.settings.products_per_page
-
+  endcomment
   if campaign_image and campaign_page
     assign paginate_by = paginate_by | minus: 1
   endif
