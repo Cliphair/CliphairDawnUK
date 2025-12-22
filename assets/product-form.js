@@ -22,7 +22,8 @@ if (!customElements.get('product-form')) {
 
         this.handleErrorMessage();
 
-        const selectBoxes = [...this.querySelectorAll(".select__select")];
+        const sectionId = this.dataset.sectionId;
+        const selectBoxes = [...document.querySelectorAll(`section[data-section='${sectionId}'] .select__select`)];
         let formIsValid = true;
 
         for (const selectBox of selectBoxes) {
