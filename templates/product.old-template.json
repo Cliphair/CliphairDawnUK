@@ -52,14 +52,12 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
-            "color": "#f6f4ef"
+            "color": "#f6f4ef",
+            "image_url": ""
           }
-        },
-        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
-          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -82,6 +80,10 @@
             "show_gift_card_recipient": true,
             "color_scheme": "inverse"
           }
+        },
+        "yotpo_loyalty_rewards_product_points_module_app_block_bJ9ker": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "settings": {}
         },
         "order_deadline_2_app_block_product_wa7Bmb": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
@@ -380,6 +382,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -388,6 +392,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -396,6 +402,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -404,6 +412,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -412,6 +422,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
