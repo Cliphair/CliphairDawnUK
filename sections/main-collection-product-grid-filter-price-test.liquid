@@ -31,9 +31,9 @@
 
 {% liquid
   comment
-  assign campaign_page = pages['wish-for-cliphair-holiday-campaign']
-  assign campaign_image = images['holiday-xms-banner-collection.jpg']
-  assign paginate_by = section.settings.products_per_page
+    assign campaign_page = pages['wish-for-cliphair-holiday-campaign']
+    assign campaign_image = images['holiday-xms-banner-collection.jpg']
+    assign paginate_by = section.settings.products_per_page
   endcomment
   if campaign_image and campaign_page
     assign paginate_by = paginate_by | minus: 1
@@ -43,12 +43,11 @@
 {% liquid
   assign price_filtered = false
 
-    for filter in collection.filters
-      if filter.active_values.size > 0
-        assign price_filtered = true
-      endif
-    endfor
-
+  for filter in collection.filters
+    if filter.active_values.size > 0
+      assign price_filtered = true
+    endif
+  endfor
 %}
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
@@ -185,7 +184,7 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
 
-                {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
+                {% if campaign_image and campaign_page and forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} trackable-section"
                     {% if settings.animations_reveal_on_scroll %}
@@ -194,24 +193,22 @@
                     {% endif %}
                     data-section-name="collection_mini_banner"
                   >
-                    {% if campaign_image and campaign_page %}
-                      <a
-                        href="{{ campaign_page.url }}"
-                        title="{{ campaign_page.title }}"
-                        data-event-type="section_click"
-                        data-section-name="collection_campaign_banner"
-                        data-cta-label="click_summer_2025_mini_banner"
+                    <a
+                      href="{{ campaign_page.url }}"
+                      title="{{ campaign_page.title }}"
+                      data-event-type="section_click"
+                      data-section-name="collection_campaign_banner"
+                      data-cta-label="click_summer_2025_mini_banner"
+                    >
+                      <img
+                        loading="lazy"
+                        style="width:100%; height:100%; object-fit:cover; display:block;"
+                        src="{{ campaign_image | image_url }}"
+                        width="{{ campaign_image.width }}"
+                        height="{{ campaign_image.height }}"
+                        alt="{{ campaign_image.alt }}"
                       >
-                        <img
-                          loading="lazy"
-                          style="width:100%; height:100%; object-fit:cover; display:block;"
-                          src="{{ campaign_image | image_url }}"
-                          width="{{ campaign_image.width }}"
-                          height="{{ campaign_image.height }}"
-                          alt="{{ campaign_image.alt }}"
-                        >
-                      </a>
-                    {% endif %}
+                    </a>
                   </li>
                 {% endif %}
 
