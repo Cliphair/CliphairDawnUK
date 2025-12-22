@@ -55,56 +55,10 @@
             "text_alignment_mobile": "center",
             "banner_id": "main"
           }
-        },
-        "slide_nnGry6": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Free_Sat_Delivery_Banner_Mobile_Banner.jpg",
-            "image_desktop": "shopify://shop_images/Free_Sat_Delivery_Banner_Desktop_Banner.jpg",
-            "image_url": "shopify://pages/hair-extensions-by-colour",
-            "heading": "",
-            "heading_size": "h2",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center",
-            "banner_id": "summer campaign 2025"
-          }
-        },
-        "slide_xF3FDX": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/holiday-xms-banner-mobile.jpg",
-            "image_desktop": "shopify://shop_images/holiday-xms-banner-desktop.jpg",
-            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign",
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "banner_id": "halo hair extensions launch"
-          }
         }
       },
       "block_order": [
-        "slide_cnhnUM",
-        "slide_nnGry6",
-        "slide_xF3FDX"
+        "slide_cnhnUM"
       ],
       "settings": {
         "layout": "full_bleed",

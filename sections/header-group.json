@@ -14,26 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_nNPD4X": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Please note: Due to the bank holiday, orders placed from Saturday to Monday will be dispatched on Tuesday.",
-            "link": ""
-          }
-        },
-        "countdown_jYezpK": {
-          "type": "countdown",
-          "disabled": true,
-          "settings": {
-            "text": "Guaranteed Delivery Before Easter Sunday, Order Within:",
-            "year": 2025,
-            "month": "4",
-            "day": 17,
-            "hour": 16,
-            "minute": 0
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -50,8 +30,6 @@
         }
       },
       "block_order": [
-        "announcement_nNPD4X",
-        "countdown_jYezpK",
         "announcement-bar-0",
         "announcement-bar-1"
       ],
@@ -128,6 +106,7 @@
         },
         "announcement_image_8amwCN": {
           "type": "announcement-image",
+          "name": "Monday Delivery",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Hair_Extensions_Monday_Delivery.gif",
