@@ -117,6 +117,7 @@
         },
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
+          "name": "Sale",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Saturday_Ticker_75_Version.gif",
