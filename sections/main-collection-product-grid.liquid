@@ -176,7 +176,7 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
 
-                {% if forloop.index == 5 or forloop.index < 5 and forloop.last %}
+                {% if campaign_image and campaign_page and forloop.index == 5 or forloop.index < 5 and forloop.last %}
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} trackable-section"
                     {% if settings.animations_reveal_on_scroll %}
