@@ -52,6 +52,7 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
             "color": "#f6f4ef",
