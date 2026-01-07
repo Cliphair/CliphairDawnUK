@@ -1,45 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const loadMoreButton = document.querySelector(".load-more__button");
-  const loadingContainer = document.querySelector("#ProductGridContainer > .collection");
-  const productGrid = document.querySelector('#product-grid');
-  const paginationList = document.querySelector('.pagination__list');
+  const getEls = () => ({
+    loadingContainer: document.querySelector("#ProductGridContainer > .collection"),
+    productGrid: document.querySelector("#product-grid"),
+    paginationList: document.querySelector(".pagination__list"),
+  });
 
-  if (!loadMoreButton) return;
+  const setLoading = (btn, container, isLoading) => {
+    if (btn) btn.disabled = isLoading;
+    if (container) container.classList.toggle("loading", isLoading);
+  };
 
-  loadMoreButton.addEventListener("click", (event) => {
+  const safeInitYotpo = () => {
+    try {
+      if (window.yotpoWidgetsContainer?.initWidgets) window.yotpoWidgetsContainer.initWidgets();
+    } catch (e) { }
+  };
+
+  document.addEventListener("click", async (event) => {
+    const button = event.target.closest(".load-more__button");
+    if (!button) return;
+
     event.preventDefault();
 
-    const nextPageUrl = loadMoreButton.dataset.nextUrl.trim();
+    const { loadingContainer, productGrid, paginationList } = getEls();
+    const nextPageUrl = (button.dataset.nextUrl || "").trim();
+    if (!nextPageUrl || !productGrid) return;
 
-    loadMoreButton.disabled = true;
-    loadingContainer.classList.add("loading");
+    setLoading(button, loadingContainer, true);
 
-    if (!nextPageUrl) return;
+    try {
+      const response = await fetch(nextPageUrl, { credentials: "same-origin" });
+      const responseText = await response.text();
+      const html = new DOMParser().parseFromString(responseText, "text/html");
 
-    fetch(nextPageUrl)
-      .then((response) => response.text())
-      .then((responseText) => {
+      html.querySelectorAll("#product-grid > .grid__item").forEach((item) => {
+        productGrid.appendChild(item);
+      });
 
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const loadedProducts = html.querySelectorAll('#product-grid > .grid__item');
-        const loadedNextPageUrl = html.querySelector(".load-more__button").dataset.nextUrl.trim();
+      const newPaginationList = html.querySelector(".pagination__list");
+      if (paginationList && newPaginationList) {
+        paginationList.innerHTML = newPaginationList.innerHTML;
+      }
 
-        for (let product of loadedProducts) {
-          productGrid.appendChild(product);
-        }
+      const newButton = html.querySelector(".load-more__button");
+      const newNextUrl = (newButton?.dataset?.nextUrl || "").trim();
 
-        if (paginationList) {
-          paginationList.innerHTML = html.querySelector('.pagination__list').innerHTML;
-        }
+      if (!newNextUrl) {
+        button.remove();
+      } else {
+        button.dataset.nextUrl = newNextUrl;
+        button.disabled = false;
+      }
 
-        loadMoreButton.dataset.nextUrl = loadedNextPageUrl;
-
-        if (loadedNextPageUrl) {
-          loadMoreButton.disabled = false;
-        }
-        yotpoWidgetsContainer.initWidgets();
-        loadingContainer.classList.remove("loading");
-      })
-
-  })
-})
+      safeInitYotpo();
+    } catch (err) {
+      console.error("Load more failed:", err);
+      button.disabled = false;
+    } finally {
+      if (loadingContainer) loadingContainer.classList.remove("loading");
+    }
+  });
+});

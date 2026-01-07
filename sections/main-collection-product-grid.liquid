@@ -238,13 +238,16 @@
 
             {%- if paginate.pages > 1 -%}
               <div class="product-grid__footer">
-                <button
-                  id="load-more"
-                  class="button load-more__button no-js-hidden"
-                  data-next-url="{{ paginate.next.url }}"
-                >
-                  Load More
-                </button>
+                {% if paginate.next %}
+                  <button
+                    id="load-more"
+                    class="button load-more__button no-js-hidden"
+                    data-next-url="{{ paginate.next.url }}"
+                    type="button"
+                  >
+                    Load More
+                  </button>
+                {% endif %}
                 {% render 'pagination', paginate: paginate, anchor: '' %}
               </div>
             {%- endif -%}
