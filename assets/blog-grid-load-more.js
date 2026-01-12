@@ -50,6 +50,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btn) btn.disabled = isLoading;
   };
 
+  const syncRelLinksToHeadFromFetchedDoc = (fetchedDoc) => {
+    const prevHref = (fetchedDoc.querySelector('link[rel="prev"]')?.getAttribute("href") || "").trim();
+    const nextHref = (fetchedDoc.querySelector('link[rel="next"]')?.getAttribute("href") || "").trim();
+
+    const upsert = (rel, href) => {
+      let el = document.head.querySelector(`link[rel="${rel}"]`);
+      if (!href) {
+        el?.remove();
+        return;
+      }
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("href", href);
+    };
+
+    upsert("prev", prevHref);
+    upsert("next", nextHref);
+  };
+
   document.addEventListener("click", async (event) => {
     const button = event.target.closest(".load-more__button");
     if (!button) return;
@@ -66,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(nextPageUrl, { credentials: "same-origin" });
       const responseText = await response.text();
       const html = new DOMParser().parseFromString(responseText, "text/html");
+
+      syncRelLinksToHeadFromFetchedDoc(html);
 
       html.querySelectorAll(".blog-articles > .blog-articles__article").forEach((item) => {
         articlesGrid.appendChild(item);

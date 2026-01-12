@@ -12,14 +12,16 @@
 {% endcomment %}
 
 {{ 'component-pagination.css' | asset_url | stylesheet_tag }}
-{%- if paginate.pages > 1 -%}
-  {%- if paginate.previous -%}
-    <link rel="prev" href="{{ paginate.previous.url }}">
+{% comment %}
+  {%- if paginate.pages > 1 -%}
+    {%- if paginate.previous -%}
+      <link rel="prev" href="{{ paginate.previous.url }}">
+    {%- endif -%}
+    {%- if paginate.next -%}
+      <link rel="next" href="{{ paginate.next.url }}">
+    {%- endif -%}
   {%- endif -%}
-  {%- if paginate.next -%}
-    <link rel="next" href="{{ paginate.next.url }}">
-  {%- endif -%}
-{%- endif -%}
+{% endcomment %}
 
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper visually-hidden">
