@@ -1,0 +1,286 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-custom-page.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .page-video-wrapper {
+    margin-bottom: 2rem;
+    text-align:center;
+  }
+
+  .page-video-wrapper.landscape .page-video {
+    max-width: 768px;
+    width: 100%;
+    height: auto;
+  }
+
+  .page-video-wrapper.portrait .page-video {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+{% assign seo_video = page.metafields.seo.video_file.value %}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <h1 class="main-page-title page-title {{ section.settings.heading_size }} {{ section.settings.title_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}{% unless section.settings.show_title %} visually-hidden{% endunless %}">
+      {{ page.title | escape }}
+    </h1>
+    <div class="content">
+      {% if section.settings.show_content %}
+        <div class="main-content rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {{ section.settings.text_alignment }}">
+          {% if seo_video %}
+            {% if seo_video.video.aspect_ratio < 1 %}
+              {% assign orientation = 'landscape' %}
+            {% else %}
+              {% assign orientation = 'portrait' %}
+            {% endif %}
+            <div class="page-video-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} {{ orientation }}">
+              <video
+                id="page-main-video"
+                class="page-video"
+                src="{{ seo_video.video | file_url }}"
+                {% if seo_video.thumbnail %}
+                  poster="{{ seo_video.thumbnail | image_url: width: 1600 }}"
+                {% endif %}
+                controls
+                playsinline
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          {% endif %}
+          {{ page.content }}
+        </div>
+      {% endif %}
+      <div class="sidebar">
+        <div class="sidebar-links">
+          <ul>
+            {% for link in section.settings.list.links %}
+              <li>
+                {{ link.title | link_to: link.url }}
+                {% if link.links.size > 0 %}
+                  <ul>
+                    {% for child_link in link.links %}
+                      <li>{{ child_link.title | link_to: link.url }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if section.settings.blog != blank %}
+          <div class="sidebar-blogs">
+            <h3 class="h2">RECENTE ARTICLES</h3>
+            <div class="blogs-wrapper">
+              {% assign limit = section.settings.limit_articles | times: 1 %}
+              {% for article in section.settings.blog.articles limit: limit %}
+                {% render 'article-card',
+                  blog: section.settings.blog,
+                  article: article,
+                  media_aspect_ratio: 1,
+                  show_image: true,
+                  show_date: false,
+                  show_author: true,
+                  show_excerpt: false
+                %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if seo_video %}
+  {% assign publisher_name = shop.name %}
+  {% assign publisher_logo = settings.logo | default: settings.header_logo %}
+  {% assign publisher_logo_url = publisher_logo | image_url: width: 600 %}
+  {% assign video_url = seo_video.video | file_url %}
+  {% assign thumbnail_url = seo_video.thumbnail | image_url: width: 800 %}
+  {% assign canonical_url = request.origin | append: request.path %}
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "{{ canonical_url | append: '#page-main-video' }}",
+    "name": {{ page.title | json }},
+    "description": {{ page.content | strip_html | strip_newlines | truncate: 500 | json }},
+    "thumbnailUrl": {{ thumbnail_url | json }},
+    "uploadDate": "{{ seo_video.published_date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+    "duration": "PT{{ seo_video.duration }}S",
+    "contentUrl": {{ video_url | json }},
+    "embedUrl": {{ canonical_url | json }},
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ publisher_name | json }}{% if publisher_logo_url != blank %},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ publisher_logo_url | json }}
+      }{% endif %}
+    }{% if seo_video.transcript != blank %},
+    "transcript": {{ seo_video.transcript | strip_html | strip_newlines | json }}{% endif %}
+  }
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "SEO video page",
+  "tag": "section",
+  "class": "section section-custom-page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "default": true,
+      "label": "Show title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "default": true,
+      "label": "Show content"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Sidebar Settings"
+    },
+    {
+      "type": "link_list",
+      "id": "list",
+      "label": "Sidebar list"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "limit_articles",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "un",
+      "label": "Limit articles",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "SEO video page"
+    }
+  ]
+}
+{% endschema %}
