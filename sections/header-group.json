@@ -96,7 +96,6 @@
         "announcement_image_FmKiMd": {
           "type": "announcement-image",
           "name": "Sunday Delivery",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Sunday_delivery_hair_extensions_blackfriday_sale.gif",
             "text_alignment": "center",
@@ -118,6 +117,7 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "name": "Sale",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Express_Delivery_Black_Ticker.gif",
             "text_alignment": "center",
