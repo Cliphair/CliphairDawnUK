@@ -218,6 +218,26 @@
         "padding_bottom": 20
       }
     },
+    "before_after_slider_LzidFw": {
+      "type": "before-after-slider",
+      "name": "Before/After Slider",
+      "settings": {
+        "images_source": "settings",
+        "before_label": "Before",
+        "after_label": "After",
+        "show_labels": true,
+        "aspect_ratio": "21:9",
+        "initial_position": 50,
+        "handle_color": "#fff",
+        "handle_border": "#1a1a1a",
+        "line_color": "#fff",
+        "label_bg": "#1a1a1a",
+        "label_color": "#fff",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "accessibility_info": "Image comparison slider"
+      }
+    },
     "visual_menu_66DUPMN": {
       "type": "visual-menu",
       "custom_css": [
@@ -321,8 +341,8 @@
         "add_instagram_feed_tagembed_app_block_gWrwNY": {
           "type": "shopify://apps/add-instagram-feed-tagembed/blocks/app-block/087f3315-479f-4a46-9a8d-6edf602a4af7",
           "settings": {
+            "tagembed_feed_website_id": "",
             "tagembed_feed": "2199486",
-            "tagembed_feed_position": "center",
             "tagembed_feed_width": 100
           }
         }
@@ -702,6 +722,7 @@
     "slideshow_3tCMjU",
     "yotpo_reviews_dynamic_carrousel_UeNWFY",
     "maquee_mnMgq6",
+    "before_after_slider_LzidFw",
     "visual_menu_66DUPMN",
     "753975ec-3602-477e-b65e-6d089a9053cb",
     "featured_collection_kqRjtt",
