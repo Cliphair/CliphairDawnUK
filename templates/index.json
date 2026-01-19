@@ -226,7 +226,7 @@
         "before_label": "Before",
         "after_label": "After",
         "show_labels": true,
-        "aspect_ratio": "1:1",
+        "aspect_ratio": "21:9",
         "initial_position": 50,
         "handle_color": "#ffffff",
         "handle_border": "#1a1a1a",
