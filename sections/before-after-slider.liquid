@@ -1,0 +1,287 @@
+{{ 'before-after.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .ba-slider {
+    --ba-handle-size: 48px;
+    --ba-handle-color: {{ section.settings.handle_color}};
+    --ba-handle-border: {{ section.settings.handle_border }};
+    --ba-line-width: 3px;
+    --ba-line-color: {{ section.settings.line_color }};
+    --ba-label-bg: {{ section.settings.label_bg }};
+    --ba-label-color: {{  section.settings.label_color}};
+    --ba-label-font-size: 14px;
+    --ba-border-radius: 12px;
+    --ba-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.25);
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% liquid
+  assign before_image = section.settings.before_image
+  assign after_image = section.settings.after_image
+  case section.settings.images_source
+    when 'product'
+      if product and product.metafields.visual_content.before_after
+        assign ba = product.metafields.visual_content.before_after.value
+        assign before_image = ba.before_image | default: before_image
+        assign after_image = ba.after_image | default: after_image
+      endif
+
+    when 'collection'
+      assign ba_value = null
+
+      if template.name == 'product' and product
+        for c in product.collections
+          if c.metafields.visual_content.before_after
+            assign ba_value = c.metafields.visual_content.before_after.value
+            break
+          endif
+        endfor
+      elsif template.name == 'collection' and collection and collection.metafields.visual_content.before_after
+        assign ba_value = collection.metafields.visual_content.before_after.value
+      endif
+
+      if ba_value
+        assign before_image = ba_value.before_image | default: before_image
+        assign after_image = ba_value.after_image | default: after_image
+      endif
+  endcase
+%}
+
+<div class="section-{{ section.id }}-padding color-background-1 gradient">
+  <div class="page-width">
+    <div
+      class="ba-slider is-loading no-js-hidden"
+      data-before-after-slider
+      data-aspect="{{ section.settings.aspect_ratio }}"
+      data-initial="{{ section.settings.initial_position }}"
+      tabindex="0"
+      role="slider"
+      aria-label="{{ section.settings.accessibility_info }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="{{ section.settings.initial_position }}"
+    >
+      <div class="ba-slider__skeleton" aria-hidden="true"></div>
+
+      {% if after_image and after_image != null %}
+        <img
+          src="{{ after_image | image_url: width: 1200 }}"
+          alt="{{ after_image.alt }}"
+          class="ba-slider__image"
+          loading="lazy"
+          decoding="async"
+          data-after-image
+          width="{{ after_image.width }}"
+          height="{{ after_image.height }}"
+        >
+      {% else %}
+        {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg ba-slider__image' }}
+      {% endif %}
+
+      <div class="ba-slider__before-wrapper" data-before-wrapper>
+        {% if before_image and before_image != null %}
+          <img
+            src="{{ before_image | image_url: width: 1200 }}"
+            alt="{{ before_image.alt }}"
+            class="ba-slider__image"
+            loading="lazy"
+            decoding="async"
+            data-before-image
+            width="{{ before_image.width }}"
+            height="{{ before_image.height }}"
+          >
+        {% else %}
+          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg ba-slider__image' }}
+        {% endif %}
+      </div>
+
+      <div class="ba-slider__handle" data-handle aria-hidden="true">
+        <div class="ba-slider__line"></div>
+        <div class="ba-slider__button">
+          <svg class="ba-slider__arrow" viewBox="0 0 8 12">
+            <path d="M7 1L2 6L7 11"/>
+          </svg>
+          <svg class="ba-slider__arrow" viewBox="0 0 8 12">
+            <path d="M1 1L6 6L1 11"/>
+          </svg>
+        </div>
+      </div>
+
+      {% if section.settings.show_labels %}
+        <span class="ba-slider__label ba-slider__label--before" data-label-before>
+          {{ section.settings.before_label }}
+        </span>
+        <span class="ba-slider__label ba-slider__label--after" data-label-after>
+          {{ section.settings.after_label }}
+        </span>
+      {% endif %}
+
+      <span class="ba-sr-only" data-sr-text></span>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'before-after.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Before & After Slider",
+  "tag": "section",
+  "class": "section before-after-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "images_source",
+      "label": "Images source",
+      "options": [
+        {
+          "value": "product",
+          "label": "Product metafield"
+        },
+        {
+          "value": "collection",
+          "label": "Collection metafield"
+        },
+        {
+          "value": "settings",
+          "label": "Section settings"
+        }
+      ],
+      "default": "settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After Image"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before Label",
+      "default": "Before"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After Label",
+      "default": "After"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_labels",
+      "label": "Show Labels",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect Ratio",
+      "default": "16:9",
+      "options": [
+        { "value": "16:9", "label": "16:9 (Widescreen)" },
+        { "value": "4:3", "label": "4:3 (Standard)" },
+        { "value": "1:1", "label": "1:1 (Square)" },
+        { "value": "3:2", "label": "3:2 (Photo)" },
+        { "value": "21:9", "label": "21:9 (Ultra Wide)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "initial_position",
+      "label": "Initial Slider Position",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 50,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Section Colours"
+    },
+    {
+      "type": "color",
+      "id": "handle_color",
+      "label": "Handle color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "handle_border",
+      "label": "Handle border",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Line colour",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "label_bg",
+      "label": "Label background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label colour",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "accessibility_info",
+      "label": "Before & after description",
+      "info": "Describe the before & after for customers using screen readers.",
+      "default": "Image comparison slider"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before/After Slider"
+    }
+  ]
+}
+{% endschema %}
