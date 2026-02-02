@@ -80,3 +80,7 @@ a.pagination__item:hover::after {
 .pagination__item-arrow:hover::after {
   display: none;
 }
+
+.product-grid__footer .load-more__button{
+  margin-bottom:4rem;
+}
