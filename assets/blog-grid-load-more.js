@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // -------- click "load more" --------
   const loadNextPage = async ({ buttonOverride = null } = {}) => {
-    const { productGrid, paginationList, loadMoreButton } = getEls();
+    const { loadingContainer, productGrid, paginationList, loadMoreButton } = getEls();
     const button = buttonOverride || loadMoreButton;
 
     const nextPageUrl = (button?.dataset?.nextUrl || "").trim();
