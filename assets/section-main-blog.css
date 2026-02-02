@@ -117,6 +117,10 @@
   }
 }
 
+#main-blog-section{
+  position:relative;
+}
+
 #main-blog-section .loading-overlay {
   top: -10px;
   right: 0;
