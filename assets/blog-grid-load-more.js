@@ -5,7 +5,7 @@ if ("scrollRestoration" in history) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const getEls = () => ({
-    // loadingContainer: document.querySelector("#ProductGridContainer > .collection"),
+    loadingContainer: document.querySelector("#main-blog-section"),
     productGrid: document.querySelector(".blog-articles"),
     paginationList: document.querySelector(".pagination__list"),
     loadMoreButton: document.querySelector(".load-more__button"),
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextPageUrl = (button?.dataset?.nextUrl || "").trim();
     if (!nextPageUrl || !productGrid) return;
 
-    // setLoading(button, loadingContainer, true);
+    setLoading(button, loadingContainer, true);
 
     try {
       const response = await fetch(nextPageUrl, { credentials: "same-origin" });
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Keep the user at the top experience (prevents the "pushed below grid" issue)
     window.scrollTo(0, 0);
 
-    // setLoading(loadMoreButton, loadingContainer, true);
+    setLoading(loadMoreButton, loadingContainer, true);
 
     // Fetch in reverse: N-1 ... 1 and prepend each page as a block
     for (let p = targetPage - 1; p >= 1; p--) {
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // safeInitYotpo();
 
-    // if (loadingContainer) loadingContainer.classList.remove("loading");
+    if (loadingContainer) loadingContainer.classList.remove("loading");
     if (loadMoreButton) loadMoreButton.disabled = false;
 
     // After preloading, lock the viewport to the top of the grid (consistent on landing + reload)

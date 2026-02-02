@@ -1,4 +1,5 @@
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
 
@@ -17,6 +18,7 @@
 {%- endstyle -%}
 
 <div id="main-blog-section" class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="loading-overlay gradient"></div>
   {%- paginate blog.articles by 12 -%}
     <div class="main-blog page-width section-{{ section.id }}-padding">
       {% if section.settings.show_page_title %}
