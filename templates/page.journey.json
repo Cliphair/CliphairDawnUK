@@ -16,19 +16,6 @@
         "font-btns": "inter_n4"
       }
     },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "show_title": true,
-        "heading_size": "h2",
-        "show_content": true,
-        "text_alignment": "center",
-        "color_scheme": "",
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
     "quiz_question_jkayw4": {
       "type": "quiz-question",
       "blocks": {
@@ -149,6 +136,7 @@
         "answer_jwdXWJ",
         "answer_BgKN9A"
       ],
+      "name": "3. Why do you want hair extensions",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -156,7 +144,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 3,
@@ -192,6 +180,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "4. Would you prefer Clip-ins or Permanentextensions?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -199,7 +188,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 1,
@@ -233,6 +222,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "5. Would you prefer more or less pieces?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -240,7 +230,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -274,6 +264,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "6. What is your hair texture?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -281,7 +272,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -315,6 +306,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "7. How do you like to style your hair?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -322,7 +314,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -356,6 +348,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "8. Would you prefer to have sewn in or glued in extensions?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -363,7 +356,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -397,6 +390,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "9. What would you prefer in terms of budget?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -404,7 +398,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -446,6 +440,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "10. What kind of volume do you like?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -453,7 +448,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 3,
@@ -487,6 +482,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "11. What is your preference for application & maintinance?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -494,7 +490,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -528,6 +524,7 @@
       "custom_css": [
         ".card__heading {font-size: 1.5rem; padding-right: 2.1rem; padding-left: 2.1rem;}"
       ],
+      "name": "12. What would you prefer?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -535,7 +532,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 2,
@@ -546,6 +543,7 @@
     },
     "quiz_answer_YPArwe": {
       "type": "quiz-answer",
+      "name": "Final answer",
       "settings": {
         "visible": false,
         "id": "journey",
@@ -554,7 +552,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": false,
         "show_information": true,
         "image": "shopify://shop_images/colour-matching-mobile-banner.jpg",
@@ -579,7 +577,6 @@
   },
   "order": [
     "page-font",
-    "main",
     "quiz_question_jkayw4",
     "quiz_question_6XeMep",
     "quiz_question_4agX9E",
