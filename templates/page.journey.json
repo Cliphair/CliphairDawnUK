@@ -21,6 +21,7 @@
       "blocks": {
         "answer_NtqBp8": {
           "type": "answer",
+          "name": "a. Thin to fine",
           "settings": {
             "id": "a",
             "answer": "Thin to fine"
@@ -28,6 +29,7 @@
         },
         "answer_EmNq4A": {
           "type": "answer",
+          "name": "b. Medium to average",
           "settings": {
             "id": "b",
             "answer": "Medium to average"
@@ -35,6 +37,7 @@
         },
         "answer_QrN6fM": {
           "type": "answer",
+          "name": "c. Thick to very thick",
           "settings": {
             "id": "c",
             "answer": "Thick to very thick"
@@ -68,6 +71,7 @@
       "blocks": {
         "answer_9rK4RM": {
           "type": "answer",
+          "name": "a. Short hair",
           "settings": {
             "id": "a",
             "answer": "Short hair (above [break]your shoulders)",
@@ -76,6 +80,7 @@
         },
         "answer_hCExC3": {
           "type": "answer",
+          "name": "b. Mid length hair",
           "settings": {
             "id": "b",
             "answer": "Mid length hair [break](collar bone to mid back)",
@@ -84,6 +89,7 @@
         },
         "answer_99rqHW": {
           "type": "answer",
+          "name": "c. Long hair",
           "settings": {
             "id": "c",
             "answer": "Long hair (mid [break]to lower back)",
@@ -119,6 +125,7 @@
       "blocks": {
         "answer_jwdXWJ": {
           "type": "answer",
+          "name": "a. Make my hair thicker only",
           "settings": {
             "id": "a",
             "answer": "Make my hair thicker only"
@@ -126,6 +133,7 @@
         },
         "answer_BgKN9A": {
           "type": "answer",
+          "name": "b. Make my hair longer & thicker",
           "settings": {
             "id": "b",
             "answer": "Make my hair longer & thicker"
@@ -158,6 +166,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Clip-ins",
           "settings": {
             "id": "a",
             "answer": "Clip-ins [break](applied by yourself and worn on a temporary basis)",
@@ -166,6 +175,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Permanent",
           "settings": {
             "id": "b",
             "answer": "Permanent [break](applied by a professional and worn for several weeks)",
@@ -202,6 +212,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. An 8 piece set",
           "settings": {
             "id": "a",
             "answer": "An 8 piece set that comes with different sized Clip-In pieces for better flexibility"
@@ -209,6 +220,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. One 10 inch wide",
           "settings": {
             "id": "b",
             "answer": "One 10 inch wide Clip-In piece applied from ear to ear for speed"
@@ -244,6 +256,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Very curly or coiled curls",
           "settings": {
             "id": "a",
             "answer": "Very curly or coiled curls"
@@ -251,6 +264,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Straight to wavy",
           "settings": {
             "id": "b",
             "answer": "Straight to wavy"
@@ -286,6 +300,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. I mostly wear my hair down or in low styles",
           "settings": {
             "id": "a",
             "answer": "I mostly wear my hair down or in low styles"
@@ -293,6 +308,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. I like to wear my hair up (high ponytails, buns) and down",
           "settings": {
             "id": "b",
             "answer": "I like to wear my hair up (high ponytails, buns) and down"
@@ -328,6 +344,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Glued in - ultra secure",
           "settings": {
             "id": "a",
             "answer": "Glued in - ultra secure"
@@ -335,6 +352,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Sewn in - quick & easy removal",
           "settings": {
             "id": "b",
             "answer": "Sewn in - quick & easy removal"
@@ -370,6 +388,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Cheaper hair extensions",
           "settings": {
             "id": "a",
             "answer": "Cheaper hair extensions that [break]only last 3-6 months"
@@ -377,6 +396,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Pay a little bit more",
           "settings": {
             "id": "b",
             "answer": "Pay a little bit more for hair extensions that can [break]last 6-12 months"
@@ -412,6 +432,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Natural volume",
           "settings": {
             "id": "a",
             "answer": "Natural volume"
@@ -419,6 +440,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "c. Medium volume",
           "settings": {
             "id": "c",
             "answer": "Medium volume"
@@ -426,6 +448,7 @@
         },
         "answer_aCkDFBs": {
           "type": "answer",
+          "name": "b. Lots of volume",
           "settings": {
             "id": "b",
             "answer": "Lots of volume"
@@ -462,6 +485,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Applied & removed without heat",
           "settings": {
             "id": "a",
             "answer": "Applied & removed without heat, needs to be adjusted [break]every 6-8 weeks"
@@ -469,6 +493,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Applied & removed with heat",
           "settings": {
             "id": "b",
             "answer": "Applied & removed with heat, no adjustments needed [break]untill 12 weeks"
@@ -504,6 +529,7 @@
       "blocks": {
         "answer_Nacie8": {
           "type": "answer",
+          "name": "a. Slower to apply but more discreet",
           "settings": {
             "id": "a",
             "answer": "Slower to apply but more discreet"
@@ -511,6 +537,7 @@
         },
         "answer_aCkDFB": {
           "type": "answer",
+          "name": "b. Faster to apply but slightly less discreet",
           "settings": {
             "id": "b",
             "answer": "Faster to apply but slightly less discreet"
