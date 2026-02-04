@@ -59,6 +59,7 @@
         "answer_EmNq4A",
         "answer_QrN6fM"
       ],
+      "name": "1. What is your hair type?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -66,7 +67,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": false,
         "columns_desktop": 3,
@@ -109,6 +110,7 @@
         "answer_99rqHW"
       ],
       "custom_css": [],
+      "name": "2. How long is your hair?",
       "settings": {
         "id": "journey",
         "page": "journey",
@@ -116,7 +118,7 @@
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "portrait",
-        "color_scheme": "",
+        "color_scheme": "scheme-ca202cb4-84ef-4a81-b804-5673826a3748",
         "button_style_secondary": true,
         "show_information": true,
         "columns_desktop": 1,
@@ -213,16 +215,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "An 8 piece set that comes with different sized Clip-In pieces for better flexibility",
-            "answer_image": ""
+            "answer": "An 8 piece set that comes with different sized Clip-In pieces for better flexibility"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "One 10 inch wide Clip-In piece applied from ear to ear for speed",
-            "answer_image": ""
+            "answer": "One 10 inch wide Clip-In piece applied from ear to ear for speed"
           }
         }
       },
@@ -256,16 +256,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Very curly or coiled curls",
-            "answer_image": ""
+            "answer": "Very curly or coiled curls"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Straight to wavy",
-            "answer_image": ""
+            "answer": "Straight to wavy"
           }
         }
       },
@@ -299,16 +297,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "I mostly wear my hair down or in low styles",
-            "answer_image": ""
+            "answer": "I mostly wear my hair down or in low styles"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "I like to wear my hair up (high ponytails, buns) and down",
-            "answer_image": ""
+            "answer": "I like to wear my hair up (high ponytails, buns) and down"
           }
         }
       },
@@ -342,16 +338,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Glued in - ultra secure",
-            "answer_image": ""
+            "answer": "Glued in - ultra secure"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Sewn in - quick & easy removal",
-            "answer_image": ""
+            "answer": "Sewn in - quick & easy removal"
           }
         }
       },
@@ -365,7 +359,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "Would you prefer to [break]have <em>sewn<\/em> in or <em>glued in<\/em> [break]extensions?",
+        "question": "Would you prefer to [break]have <em>sewn</em> in or <em>glued in</em> [break]extensions?",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -385,16 +379,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Cheaper hair extensions that [break]only last 3-6 months",
-            "answer_image": ""
+            "answer": "Cheaper hair extensions that [break]only last 3-6 months"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Pay a little bit more for hair extensions that can [break]last 6-12 months",
-            "answer_image": ""
+            "answer": "Pay a little bit more for hair extensions that can [break]last 6-12 months"
           }
         }
       },
@@ -408,7 +400,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What would you prefer [break]<em>in terms of budget?<\/em>",
+        "question": "What would you prefer [break]<em>in terms of budget?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -428,24 +420,21 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Natural volume",
-            "answer_image": ""
+            "answer": "Natural volume"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "c",
-            "answer": "Medium volume",
-            "answer_image": ""
+            "answer": "Medium volume"
           }
         },
         "answer_aCkDFBs": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Lots of volume",
-            "answer_image": ""
+            "answer": "Lots of volume"
           }
         }
       },
@@ -460,7 +449,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What kind of [break]<em>volume do you like?<\/em>",
+        "question": "What kind of [break]<em>volume do you like?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -480,16 +469,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Applied & removed without heat, needs to be adjusted [break]every 6-8 weeks",
-            "answer_image": ""
+            "answer": "Applied & removed without heat, needs to be adjusted [break]every 6-8 weeks"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Applied & removed with heat, no adjustments needed [break]untill 12 weeks",
-            "answer_image": ""
+            "answer": "Applied & removed with heat, no adjustments needed [break]untill 12 weeks"
           }
         }
       },
@@ -503,7 +490,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What is your preference [break]for <em>application<\/em> & <em>maintinance?<\/em>",
+        "question": "What is your preference [break]for <em>application</em> & <em>maintinance?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
@@ -523,16 +510,14 @@
           "type": "answer",
           "settings": {
             "id": "a",
-            "answer": "Slower to apply but more discreet",
-            "answer_image": ""
+            "answer": "Slower to apply but more discreet"
           }
         },
         "answer_aCkDFB": {
           "type": "answer",
           "settings": {
             "id": "b",
-            "answer": "Faster to apply but slightly less discreet",
-            "answer_image": ""
+            "answer": "Faster to apply but slightly less discreet"
           }
         }
       },
@@ -546,7 +531,7 @@
       "settings": {
         "id": "journey",
         "page": "journey",
-        "question": "What <em>would you prefer?<\/em>",
+        "question": "What <em>would you prefer?</em>",
         "heading_size": "h1",
         "text_allignment": "center",
         "image_ratio": "square",
