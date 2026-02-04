@@ -11,9 +11,9 @@ function quizSlugify(str = '') {
 }
 
 function quizDataLayerPush(payload) {
-  // window.dataLayer = window.dataLayer || [];
-  // window.dataLayer.push(payload);
-  console.log(payload);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
+  // console.log(payload);
 }
 
 function quizGetAnswers(quizId) {
