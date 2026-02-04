@@ -1,7 +1,82 @@
 /* ======================================================
+   QUIZ TRACKING HELPERS (GA4 via GTM / dataLayer)
+   ====================================================== */
+function quizSlugify(str = '') {
+  return String(str)
+    .toLowerCase()
+    .trim()
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function quizDataLayerPush(payload) {
+  // window.dataLayer = window.dataLayer || [];
+  // window.dataLayer.push(payload);
+  console.log(payload);
+}
+
+function quizGetAnswers(quizId) {
+  return JSON.parse(sessionStorage.getItem(`${quizId}-answers`)) || {};
+}
+
+/**
+ * Build a stable path from answers ONLY:
+ * Q1:c|Q2:a|Q3:b
+ */
+function quizBuildAnswersPath(quizId) {
+  const answers = quizGetAnswers(quizId);
+  return Object.entries(answers)
+    .sort(([a], [b]) => {
+      const na = parseInt(String(a).replace(/\D+/g, ''), 10) || 0;
+      const nb = parseInt(String(b).replace(/\D+/g, ''), 10) || 0;
+      return na - nb;
+    })
+    .map(([qid, val]) => `${qid}:${val}`)
+    .join('|');
+}
+
+function quizGetStepsCompleted(quizId) {
+  return Object.keys(quizGetAnswers(quizId)).length;
+}
+
+function quizGetTimeSpentMs(quizId) {
+  const startTs = parseInt(sessionStorage.getItem(`${quizId}-startTs`) || '0', 10);
+  return startTs ? Math.max(0, Date.now() - startTs) : 0;
+}
+
+/**
+ * Prefer collection handle from /collections/<handle>
+ * Fallback to slugified URL or title.
+ */
+function quizGetResultId(answer) {
+  const url = answer?.['collection-url'] || '';
+  const m = url.match(/\/collections\/([^/?#]+)/);
+  if (m?.[1]) return m[1];
+  if (url) return quizSlugify(url);
+  return quizSlugify(answer?.title || 'unknown');
+}
+
+/**
+ * Abandon guard: only fire if quiz started AND not completed.
+ */
+function quizShouldAbandon(quizId) {
+  const started = !!sessionStorage.getItem(`${quizId}-startTs`);
+  const completed = sessionStorage.getItem(`${quizId}-completed`) === '1';
+  const fired = sessionStorage.getItem(`${quizId}-abandonFired`) === '1';
+  return started && !completed && !fired;
+}
+
+/**
+ * Try to derive last question from most recent click storage.
+ */
+function quizGetLastQuestionId(quizId) {
+  return sessionStorage.getItem(`${quizId}-lastQuestionId`) || '';
+}
+
+/* ======================================================
    QUIZ QUESTION CUSTOM ELEMENT
    ====================================================== */
-
 let brainPromise = null; // shared fetch promise
 
 if (!customElements.get('quiz-question')) {
@@ -21,12 +96,16 @@ if (!customElements.get('quiz-question')) {
         this.counterCurrentWrapper = this.querySelector('.current-question');
         this.counterTotalWrapper = this.querySelector('.total-questions');
         this.brain = null;
+
+        // Bind once for global abandon handlers
+        this._boundAbandonHandler = this._handlePotentialAbandon.bind(this);
       }
 
       connectedCallback() {
         this.initBrain();
         this.bindEvents();
         this.initState();
+        this.initAbandonTracking();
       }
 
       bindEvents() {
@@ -54,19 +133,11 @@ if (!customElements.get('quiz-question')) {
         this.nextQuestionNumber =
           questionNumber < questionsArray.length ? questionNumber + 1 : 'final';
 
-        if (this.backButtonElement) {
-          const history =
-            JSON.parse(sessionStorage.getItem(`${this.quizId}-history`)) || [];
-          this.backButtonElement.disabled = history.length === 0;
-        }
-
         const counterElement = this.querySelector('.information-wrapper p');
-        const history =
-          JSON.parse(sessionStorage.getItem(`${this.quizId}-history`)) || [];
         if (this.counterTotalWrapper)
-          this.counterTotalWrapper.innerText = history.length + 1;
+          this.counterTotalWrapper.innerText = questionsArray.length;
         if (this.counterCurrentWrapper)
-          this.counterCurrentWrapper.innerText = history.length + 1;
+          this.counterCurrentWrapper.innerText = questionNumber;
         if (counterElement) counterElement.classList.remove('visually-hidden');
 
         this.dataset.questionNumber = questionNumber;
@@ -74,6 +145,38 @@ if (!customElements.get('quiz-question')) {
         if (questionNumber === 1) {
           this.closest('.section-quiz-question')?.classList.remove('hidden');
         }
+      }
+
+      /* ------------------------------
+         TRACKING: abandon (global)
+         ------------------------------ */
+      initAbandonTracking() {
+        // Avoid registering multiple handlers (each question element connects)
+        const key = `${this.quizId}-abandonHandlersRegistered`;
+        if (sessionStorage.getItem(key) === '1') return;
+        sessionStorage.setItem(key, '1');
+
+        // Fires reliably on navigation away / tab close on mobile more than beforeunload.
+        window.addEventListener('pagehide', this._boundAbandonHandler);
+        document.addEventListener('visibilitychange', this._boundAbandonHandler);
+      }
+
+      _handlePotentialAbandon() {
+        // Only fire if the page is being hidden OR pagehide triggered
+        if (document.visibilityState && document.visibilityState !== 'hidden') return;
+
+        if (!quizShouldAbandon(this.quizId)) return;
+
+        sessionStorage.setItem(`${this.quizId}-abandonFired`, '1');
+
+        quizDataLayerPush({
+          event: 'quiz_abandon',
+          quiz_id: this.quizId,
+          last_question_id: quizGetLastQuestionId(this.quizId),
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
       }
 
       clickAnswer(event) {
@@ -84,6 +187,22 @@ if (!customElements.get('quiz-question')) {
         const answer = clickedAnswerElement.dataset.answerId;
         const mainParentElement = clickedAnswerElement.closest('quiz-question');
         const questionId = mainParentElement.dataset.questionId;
+
+        // Track last known position for abandon event
+        sessionStorage.setItem(`${this.quizId}-lastQuestionId`, questionId);
+        sessionStorage.setItem(`${this.quizId}-lastAnswerId`, answer);
+
+        // TRACKING: quiz_start (only once)
+        const startKey = `${this.quizId}-startTs`;
+        if (!sessionStorage.getItem(startKey)) {
+          sessionStorage.setItem(startKey, String(Date.now()));
+
+          quizDataLayerPush({
+            event: 'quiz_start',
+            quiz_id: this.quizId,
+            entry_question_id: questionId || 'Q1'
+          });
+        }
 
         this.updateAnswers(questionId, answer);
         this.nextQuestion();
@@ -134,34 +253,76 @@ if (!customElements.get('quiz-question')) {
         const rule = this.findRule(answers);
         console.log('Next question rule:', rule);
 
+        // Always push history once the user has answered this question
+        this.pushHistory(this.dataset.questionId);
+
+        const answerElement = document.querySelector(
+          `quiz-answer[data-quiz-id="${this.quizId}"]`
+        );
+
+        const showSorry = () => {
+          // If quiz-answer exists, show it with the "Sorry" state.
+          // updateFinalElement(null) triggers your fallback UI.
+          answerElement?.updateFinalElement(null);
+          this.hideContainer(this.closest('.quiz'));
+          this.showContainer(answerElement?.closest('.quiz'));
+        };
+
+        // 1) No rule found => show Sorry answer state
         if (!rule) {
-          this.redirectToFinalPage();
+          showSorry();
           return;
         }
 
-        this.pushHistory(this.dataset.questionId);
-
+        // 2) Rule says "next question"
         if (rule.next) {
           const nextQuestionElement = document.querySelector(
             `quiz-question[data-quiz-id="${this.quizId}"][data-question-id="${rule.next}"]`
           );
+
           if (nextQuestionElement) {
             this.hideContainer(this.closest('.quiz'));
             this.showContainer(nextQuestionElement.closest('.quiz'));
+            return;
           }
-        } else if (rule.answer) {
-          const answerElement = document.querySelector(
-            `quiz-answer[data-quiz-id="${this.quizId}"]`
-          );
+
+          // next was specified but not found in DOM => Sorry state
+          showSorry();
+          return;
+        }
+
+        // 3) Rule gives an answer
+        if (rule.answer) {
           answerElement?.updateFinalElement(rule.answer);
           this.hideContainer(this.closest('.quiz'));
-          this.showContainer(answerElement.closest('.quiz'));
+          this.showContainer(answerElement?.closest('.quiz'));
+          return;
         }
+
+        // 4) Rule exists but has neither next nor answer => Sorry state
+        showSorry();
       }
 
       backButton(event) {
         const parent = event.currentTarget.closest('quiz-question');
         const prevId = this.popHistory();
+
+        // TRACKING: quiz_back
+        // "from" is current visible question, "to" is prevId (if any)
+        const fromId = parent?.dataset?.questionId || '';
+        const toId = prevId || '';
+
+        quizDataLayerPush({
+          event: 'quiz_back',
+          quiz_id: this.quizId,
+          from_question_id: fromId,
+          to_question_id: toId,
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
+
+        this.removeSpecificAnswer(prevId);
 
         if (prevId) {
           const prevQuestionElement = document.querySelector(
@@ -206,6 +367,16 @@ if (!customElements.get('quiz-question')) {
         const prev = history.pop();
         sessionStorage.setItem(`${this.quizId}-history`, JSON.stringify(history));
         return prev;
+      }
+
+      removeSpecificAnswer(questionId) {
+        let answers = this.getUserAnswers();
+        delete answers[questionId];
+
+        sessionStorage.setItem(
+          `${this.quizId}-answers`,
+          JSON.stringify(answers)
+        );
       }
 
       async loadBrain() {

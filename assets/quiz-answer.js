@@ -18,6 +18,60 @@ if (!customElements.get('quiz-answer')) {
         }
       }
 
+      connectedCallback() {
+        // Delegated click tracking on the answer page
+        this.addEventListener('click', (e) => {
+          const a = e.target.closest('a');
+          if (!a) return;
+
+          const href = a.getAttribute('href') || '';
+          if (!href || href.startsWith('#')) return;
+
+          const resultType = this.dataset.resultType || 'unknown';
+          const resultId = this.dataset.resultId || 'unknown';
+
+          // Prefer explicit markup override if you add it:
+          // <a data-quiz-click-type="colour_match_banner" ...>
+          const explicitType = a.getAttribute('data-quiz-click-type');
+          let clickType = explicitType || 'unknown';
+
+          // Auto-classify based on current structure (best effort)
+          if (!explicitType) {
+            if (a.closest('.answer-wrapper .answer-title')) clickType = 'result_title';
+            else if (a.closest('.answer-wrapper .button-wrapper')) clickType = 'result_cta';
+            else if (a.closest('.answer-wrapper .answer-accordion')) clickType = 'extra_result';
+            else if (a.closest('.colour-match-banner')) clickType = 'colour_match_banner';
+            else if (a.closest('.product-carousel, .carousel')) clickType = 'carousel_product';
+          }
+
+          const extraResultId =
+            clickType === 'extra_result' ? quizSlugify(a.textContent || '') : undefined;
+
+          const productId =
+            clickType === 'carousel_product'
+              ? (a.getAttribute('data-product-handle') || a.getAttribute('data-product-id') || undefined)
+              : undefined;
+
+          const posEl = a.closest('[data-position]');
+          const productPosition =
+            clickType === 'carousel_product' && posEl
+              ? parseInt(posEl.getAttribute('data-position'), 10)
+              : undefined;
+
+          quizDataLayerPush({
+            event: 'quiz_result_click',
+            quiz_id: this.quizId,
+            result_type: resultType,
+            result_id: resultId,
+            click_type: clickType,
+            destination_url: href,
+            ...(extraResultId ? { extra_result_id: extraResultId } : {}),
+            ...(productId ? { product_id: productId } : {}),
+            ...(Number.isFinite(productPosition) ? { product_position: productPosition } : {})
+          });
+        });
+      }
+
       clearUserAnswers() {
         sessionStorage.setItem(`${this.quizId}-answers`, JSON.stringify({}));
         sessionStorage.setItem(`${this.quizId}-history`, JSON.stringify([]));
@@ -64,6 +118,10 @@ if (!customElements.get('quiz-answer')) {
 
         console.log(answer);
 
+        // Store result context for click tracking
+        this.dataset.resultType = answer ? 'match' : 'no_match';
+        this.dataset.resultId = answer ? quizGetResultId(answer) : 'no_match';
+
         if (answer) {
           if (image) {
             const imageUrl = answer['image-url'];
@@ -95,7 +153,7 @@ if (!customElements.get('quiz-answer')) {
             if (extraCollections.length > 0) {
               accordion.innerHTML = '';
               extraCollections.forEach((collection) => {
-                accordion.innerHTML += `<p class='bold'><a href="${collection['collection-url']}">${collection.title}</a></p>`;
+                accordion.innerHTML += `<p><a class='bold' href="${collection['collection-url']}">${collection.title}</a></p> ${collection.message}`;
               });
               // If you still want to inject extra content from answer.accordion:
               if (answer.accordion) {
@@ -117,11 +175,32 @@ if (!customElements.get('quiz-answer')) {
           if (button) button.disabled = true;
           if (accordion) accordion.closest('.collapsible-content__grid').classList.add('visually-hidden');
         }
+
+        // TRACKING: quiz_complete (fire each time answer renders)
+        // If you only want it once per session, keep the fired guard.
+        const completeKey = `${this.quizId}-completed`;
+        sessionStorage.setItem(completeKey, '1');
+
+        if (sessionStorage.getItem(`${this.quizId}-completeFired`) !== '1') {
+          sessionStorage.setItem(`${this.quizId}-completeFired`, '1');
+
+          quizDataLayerPush({
+            event: 'quiz_complete',
+            quiz_id: this.quizId,
+            result_type: this.dataset.resultType,
+            result_id: this.dataset.resultId,
+            answers_path: quizBuildAnswersPath(this.quizId),
+            steps_completed: quizGetStepsCompleted(this.quizId),
+            time_spent_ms: quizGetTimeSpentMs(this.quizId)
+          });
+        }
       }
 
       backButton(event) {
         const parent = event.currentTarget.closest('quiz-answer');
         const prevId = this.popHistory();
+
+        this.removeSpecificAnswer(prevId);
 
         if (prevId) {
           const prevQuestionElement = document.querySelector(
@@ -145,6 +224,15 @@ if (!customElements.get('quiz-answer')) {
       }
 
       resetQuizButton() {
+        quizDataLayerPush({
+          event: 'quiz_restart',
+          quiz_id: this.quizId,
+          result_type: this.dataset.resultType || 'unknown',
+          result_id: this.dataset.resultId || 'unknown',
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
         this.clearUserAnswers();
         location.reload();
       }
@@ -154,6 +242,25 @@ if (!customElements.get('quiz-answer')) {
         const prev = history.pop();
         sessionStorage.setItem(`${this.quizId}-history`, JSON.stringify(history));
         return prev;
+      }
+
+      getUserAnswers() {
+        return (
+          JSON.parse(sessionStorage.getItem(`${this.quizId}-answers`)) || {}
+        );
+      }
+
+      removeSpecificAnswer(questionId) {
+        let answers = this.getUserAnswers();
+        delete answers[questionId];
+
+        let answersStorage =
+          JSON.parse(sessionStorage.getItem(`${this.quizId}-answers`)) || {};
+        answersStorage = answers;
+        sessionStorage.setItem(
+          `${this.quizId}-answers`,
+          JSON.stringify(answers)
+        );
       }
     }
   );

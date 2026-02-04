@@ -46,18 +46,6 @@
       %}
 
       <div class="quiz-question-wrapper page-width {{ section.settings.text_allignment }}  section-{{ section.id }}-padding">
-        {% if section.settings.show_information %}
-          <div class="information-wrapper">
-            <button type="button" name="back" class="">
-              {% render 'icon-arrow' %}
-              Back
-            </button>
-            <p class="visually-hidden">
-              <span class="current-question">0</span> of <span class="total-questions">0</span>
-            </p>
-          </div>
-        {% endif %}
-
         <div class="question-wrapper">
           <h2
             id="SectionHeading-{{ section.id }}"
@@ -94,8 +82,8 @@
                 >
                   <div class="answer answer-card card-wrapper{% if block.settings.answer_image %} answer__image-text{% else %} answer__text-only{% endif %}">
                     <div
-                      class="card card-standard"
-                      style="--ratio-percentage: {{ 1 | divided_by: ratio | times: 100 }}%;"
+                      class="card card-standard button button--primary"
+                      style="--ratio-percentage: {{ 1 | divided_by: ratio | times: 100 }}%;{% if section.settings.button_style_secondary %}--border-opacity:0.5;{% endif %}padding:0;"
                     >
                       {% if block.settings.answer_image %}
                         <div
@@ -126,7 +114,7 @@
                       {% endif %}
                       <div class="card__content">
                         <div class="card__information button-wrapper">
-                          <h3 class="card__heading button h4 {% if section.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">
+                          <h3 class="card__heading h4">
                             {{ block.settings.answer | replace: '[break]', '<br>' }}
                             {% render 'icon-arrow' %}
                           </h3>
@@ -165,6 +153,18 @@
             </div>
           {%- endif -%}
         </slider-component>
+
+        {% if section.settings.show_information %}
+          <div class="information-wrapper">
+            <button type="button" name="back" class="">
+              {% comment %} {% render 'icon-arrow' %} {% endcomment %}
+              Back
+            </button>
+            <p class="visually-hidden">
+              <span class="current-question">0</span> / <span class="total-questions">0</span>
+            </p>
+          </div>
+        {% endif %}
       </div>
     </quiz-question>
   </div>

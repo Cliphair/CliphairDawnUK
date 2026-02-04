@@ -21,7 +21,7 @@
   }
 </style>
 {% if section.settings.id != blank %}
-  <div class="color-{{ section.settings.color_scheme }} gradient {% if section.settings.visible %}visible{% endif %} visible">
+  <div class="color-{{ section.settings.color_scheme }} gradient {% if section.settings.visible %}visible{% endif %}">
     <quiz-answer data-quiz-id="{{ section.settings.id }}">
       {% liquid
         assign ratio = 1
@@ -31,17 +31,7 @@
       %}
 
       <div class="quiz-question-wrapper page-width section-{{ section.id }}-padding">
-        {% if section.settings.show_information %}
-          <div class="information-wrapper">
-            <button type="button" name="back" class="">
-              {% render 'icon-arrow' %}
-              Back
-            </button>
-            <button type="button" name="reset" class="">Restart Quiz</button>
-          </div>
-        {% endif %}
-
-        <div class="title-wrapper {{ section.settings.text_allignment }} medium-hide large-hide">
+        <div class="title-wrapper {{ section.settings.text_allignment }} large-up-hide">
           <h2
             id="SectionHeading-{{ section.id }}"
             class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -79,7 +69,7 @@
           <div class="text-wrapper center">
             <h2
               id="SectionHeading-{{ section.id }}"
-              class="title small-hide inline-richtext {{ section.settings.heading_size }}"
+              class="title small-hide medium-hide inline-richtext {{ section.settings.heading_size }}"
             >
               {{ section.settings.title | replace: '[break]', ' ' }}
             </h2>
@@ -195,6 +185,16 @@
           </div>
           {% render 'hair-care-collection-carrousel' %}
         </div>
+
+        {% if section.settings.show_information %}
+          <div class="information-wrapper">
+            <button type="button" name="back" class="">
+              {% comment %} {% render 'icon-arrow' %} {% endcomment %}
+              Back
+            </button>
+            <button type="button" name="reset" class="">Restart Quiz</button>
+          </div>
+        {% endif %}
       </div>
       {% comment %} {% render 'hair-care-collection-carrousel' %} {% endcomment %}
       {% comment %}
