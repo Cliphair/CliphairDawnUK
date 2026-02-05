@@ -74,9 +74,7 @@ if (!customElements.get('quiz-answer')) {
         sessionStorage.removeItem(`${this.quizId}-abandonFired`);
         sessionStorage.removeItem(`${this.quizId}-lastQuestionId`);
         sessionStorage.removeItem(`${this.quizId}-lastAnswerId`);
-
-        // future: if you add trail
-        // sessionStorage.removeItem(`${this.quizId}-trail`);
+        sessionStorage.removeItem(`${this.quizId}-trailQuestions`);
       }
 
       /**
@@ -197,7 +195,8 @@ if (!customElements.get('quiz-answer')) {
           result_id: this.dataset.resultId,
           answers_path: quizBuildAnswersPath(this.quizId),
           steps_completed: quizGetStepsCompleted(this.quizId),
-          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+          time_spent_ms: quizGetTimeSpentMs(this.quizId),
+          trail_questions: quizGetQuestionTrailString(this.quizId)
         });
         
       }

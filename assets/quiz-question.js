@@ -73,6 +73,25 @@ function quizGetLastQuestionId(quizId) {
   return sessionStorage.getItem(`${quizId}-lastQuestionId`) || '';
 }
 
+// Append-only question trail (allows repeats)
+function quizAppendQuestionTrail(quizId, questionId, max = 50) {
+  const key = `${quizId}-trailQuestions`;
+  const trail = JSON.parse(sessionStorage.getItem(key)) || [];
+
+  trail.push(String(questionId || ''));
+
+  // Cap length so it can't grow forever
+  if (trail.length > max) trail.splice(0, trail.length - max);
+
+  sessionStorage.setItem(key, JSON.stringify(trail));
+}
+
+function quizGetQuestionTrailString(quizId, maxItems = 50) {
+  const key = `${quizId}-trailQuestions`;
+  const trail = (JSON.parse(sessionStorage.getItem(key)) || []).slice(-maxItems);
+  return trail.filter(Boolean).join('>');
+}
+
 /* ======================================================
    QUIZ QUESTION CUSTOM ELEMENT
    ====================================================== */
@@ -170,7 +189,8 @@ if (!customElements.get('quiz-question')) {
           last_question_id: quizGetLastQuestionId(this.quizId),
           answers_path: quizBuildAnswersPath(this.quizId),
           steps_completed: quizGetStepsCompleted(this.quizId),
-          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+          time_spent_ms: quizGetTimeSpentMs(this.quizId),
+          trail_questions: quizGetQuestionTrailString(this.quizId)
         });
       }
 
@@ -182,6 +202,8 @@ if (!customElements.get('quiz-question')) {
         const answer = clickedAnswerElement.dataset.answerId;
         const mainParentElement = clickedAnswerElement.closest('quiz-question');
         const questionId = mainParentElement.dataset.questionId;
+
+        quizAppendQuestionTrail(this.quizId, questionId);
 
         // Track last known position for abandon event
         sessionStorage.setItem(`${this.quizId}-lastQuestionId`, questionId);
