@@ -41,22 +41,11 @@ if (!customElements.get('quiz-answer')) {
             else if (a.closest('.answer-wrapper .button-wrapper')) clickType = 'result_cta';
             else if (a.closest('.answer-wrapper .answer-accordion')) clickType = 'extra_result';
             else if (a.closest('.colour-match-banner')) clickType = 'colour_match_banner';
-            else if (a.closest('.product-carousel, .carousel')) clickType = 'carousel_product';
+            else if (a.closest('.product-card-wrapper')) clickType = 'carousel_product';
           }
 
           const extraResultId =
             clickType === 'extra_result' ? quizSlugify(a.textContent || '') : undefined;
-
-          const productId =
-            clickType === 'carousel_product'
-              ? (a.getAttribute('data-product-handle') || a.getAttribute('data-product-id') || undefined)
-              : undefined;
-
-          const posEl = a.closest('[data-position]');
-          const productPosition =
-            clickType === 'carousel_product' && posEl
-              ? parseInt(posEl.getAttribute('data-position'), 10)
-              : undefined;
 
           quizDataLayerPush({
             event: 'quiz_result_click',
@@ -65,16 +54,26 @@ if (!customElements.get('quiz-answer')) {
             result_id: resultId,
             click_type: clickType,
             destination_url: href,
-            ...(extraResultId ? { extra_result_id: extraResultId } : {}),
-            ...(productId ? { product_id: productId } : {}),
-            ...(Number.isFinite(productPosition) ? { product_position: productPosition } : {})
+            ...(extraResultId ? { extra_result_id: extraResultId } : {})
           });
         });
       }
 
       clearUserAnswers() {
+        // quiz state
         sessionStorage.setItem(`${this.quizId}-answers`, JSON.stringify({}));
         sessionStorage.setItem(`${this.quizId}-history`, JSON.stringify([]));
+
+        // tracking state (so restart behaves like a new session)
+        sessionStorage.removeItem(`${this.quizId}-startTs`);
+        sessionStorage.removeItem(`${this.quizId}-completed`);
+        sessionStorage.removeItem(`${this.quizId}-completeFired`);
+        sessionStorage.removeItem(`${this.quizId}-abandonFired`);
+        sessionStorage.removeItem(`${this.quizId}-lastQuestionId`);
+        sessionStorage.removeItem(`${this.quizId}-lastAnswerId`);
+
+        // future: if you add trail
+        // sessionStorage.removeItem(`${this.quizId}-trail`);
       }
 
       /**
@@ -177,28 +176,43 @@ if (!customElements.get('quiz-answer')) {
         }
 
         // TRACKING: quiz_complete (fire each time answer renders)
-        // If you only want it once per session, keep the fired guard.
-        const completeKey = `${this.quizId}-completed`;
-        sessionStorage.setItem(completeKey, '1');
+        // Prevent accidental double-fire for the exact same render/result
+        const sig = `${this.resultType}:${this.resultId}:${quizBuildAnswersPath(this.quizId)}`;
+        if (this._lastCompleteSig === sig) return;
+        this._lastCompleteSig = sig;
 
-        if (sessionStorage.getItem(`${this.quizId}-completeFired`) !== '1') {
-          sessionStorage.setItem(`${this.quizId}-completeFired`, '1');
+        sessionStorage.setItem(`${this.quizId}-completed`, '1');
 
-          quizDataLayerPush({
-            event: 'quiz_complete',
-            quiz_id: this.quizId,
-            result_type: this.dataset.resultType,
-            result_id: this.dataset.resultId,
-            answers_path: quizBuildAnswersPath(this.quizId),
-            steps_completed: quizGetStepsCompleted(this.quizId),
-            time_spent_ms: quizGetTimeSpentMs(this.quizId)
-          });
-        }
+        quizDataLayerPush({
+          event: 'quiz_complete',
+          quiz_id: this.quizId,
+          result_type: this.dataset.resultType,
+          result_id: this.dataset.resultId,
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
+        
       }
 
       backButton(event) {
         const parent = event.currentTarget.closest('quiz-answer');
         const prevId = this.popHistory();
+
+        // TRACKING: quiz_back
+        // "from" is current visible question, "to" is prevId (if any)
+        const fromId = parent?.dataset?.questionId || '';
+        const toId = prevId || '';
+
+        quizDataLayerPush({
+          event: 'quiz_back',
+          quiz_id: this.quizId,
+          from_question_id: fromId,
+          to_question_id: toId,
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
 
         this.removeSpecificAnswer(prevId);
 
