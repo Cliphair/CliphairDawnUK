@@ -157,23 +157,22 @@ if (!customElements.get('quiz-question')) {
 
         // Fires reliably on navigation away / tab close on mobile more than beforeunload.
         window.addEventListener('pagehide', this._boundAbandonHandler);
-        // document.addEventListener('visibilitychange', this._boundAbandonHandler);
       }
 
       _handlePotentialAbandon() {
-  if (!quizShouldAbandon(this.quizId)) return;
+        if (!quizShouldAbandon(this.quizId)) return;
 
-  sessionStorage.setItem(`${this.quizId}-abandonFired`, '1');
+        sessionStorage.setItem(`${this.quizId}-abandonFired`, '1');
 
-  quizDataLayerPush({
-    event: 'quiz_abandon',
-    quiz_id: this.quizId,
-    last_question_id: quizGetLastQuestionId(this.quizId),
-    answers_path: quizBuildAnswersPath(this.quizId),
-    steps_completed: quizGetStepsCompleted(this.quizId),
-    time_spent_ms: quizGetTimeSpentMs(this.quizId)
-  });
-}
+        quizDataLayerPush({
+          event: 'quiz_abandon',
+          quiz_id: this.quizId,
+          last_question_id: quizGetLastQuestionId(this.quizId),
+          answers_path: quizBuildAnswersPath(this.quizId),
+          steps_completed: quizGetStepsCompleted(this.quizId),
+          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+        });
+      }
 
       clickAnswer(event) {
         event.preventDefault();
