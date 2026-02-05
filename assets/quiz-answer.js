@@ -19,6 +19,9 @@ if (!customElements.get('quiz-answer')) {
       }
 
       connectedCallback() {
+        if (this._clickTrackingBound) return;
+        this._clickTrackingBound = true;
+
         // Delegated click tracking on the answer page
         this.addEventListener('click', (e) => {
           const a = e.target.closest('a');
@@ -166,18 +169,22 @@ if (!customElements.get('quiz-answer')) {
         } else {
           if (header) {
             header.innerText = 'Sorry';
-            header.disabled = true;
+            header.removeAttribute('href');
+            header.setAttribute('aria-disabled', 'true');
           }
           if (content) {
             content.innerHTML = `<p>No match found for your answers.</p>`;
           }
-          if (button) button.disabled = true;
+          if (button) {
+            button.removeAttribute('href');
+            button.setAttribute('aria-disabled', 'true');
+          }
           if (accordion) accordion.closest('.collapsible-content__grid').classList.add('visually-hidden');
         }
 
         // TRACKING: quiz_complete (fire each time answer renders)
         // Prevent accidental double-fire for the exact same render/result
-        const sig = `${this.resultType}:${this.resultId}:${quizBuildAnswersPath(this.quizId)}`;
+        const sig = `${this.dataset.resultType}:${this.dataset.resultId}:${quizBuildAnswersPath(this.quizId)}`;
         if (this._lastCompleteSig === sig) return;
         this._lastCompleteSig = sig;
 
@@ -201,8 +208,11 @@ if (!customElements.get('quiz-answer')) {
 
         // TRACKING: quiz_back
         // "from" is current visible question, "to" is prevId (if any)
-        const fromId = parent?.dataset?.questionId || '';
+        const fromId = 'answer';
         const toId = prevId || '';
+
+        sessionStorage.removeItem(`${this.quizId}-completed`);
+        sessionStorage.removeItem(`${this.quizId}-abandonFired`);
 
         quizDataLayerPush({
           event: 'quiz_back',
@@ -242,10 +252,7 @@ if (!customElements.get('quiz-answer')) {
           event: 'quiz_restart',
           quiz_id: this.quizId,
           result_type: this.dataset.resultType || 'unknown',
-          result_id: this.dataset.resultId || 'unknown',
-          answers_path: quizBuildAnswersPath(this.quizId),
-          steps_completed: quizGetStepsCompleted(this.quizId),
-          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+          result_id: this.dataset.resultId || 'unknown'
         });
         this.clearUserAnswers();
         location.reload();
