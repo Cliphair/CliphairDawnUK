@@ -251,7 +251,8 @@ if (!customElements.get('quiz-answer')) {
           event: 'quiz_restart',
           quiz_id: this.quizId,
           result_type: this.dataset.resultType || 'unknown',
-          result_id: this.dataset.resultId || 'unknown'
+          result_id: this.dataset.resultId || 'unknown',
+          trail_questions: quizGetQuestionTrailString(this.quizId)
         });
         this.clearUserAnswers();
         location.reload();
