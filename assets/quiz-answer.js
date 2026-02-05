@@ -43,7 +43,7 @@ if (!customElements.get('quiz-answer')) {
             if (a.closest('.answer-wrapper .answer-title')) clickType = 'result_title';
             else if (a.closest('.answer-wrapper .button-wrapper')) clickType = 'result_cta';
             else if (a.closest('.answer-wrapper .answer-accordion')) clickType = 'extra_result';
-            else if (a.closest('.colour-match-banner')) clickType = 'colour_match_banner';
+            else if (a.closest('.custom-banner')) clickType = 'colour_match_banner';
             else if (a.closest('.product-card-wrapper')) clickType = 'carousel_product';
           }
 
