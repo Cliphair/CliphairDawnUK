@@ -33,6 +33,7 @@
         "announcement-bar-0",
         "announcement-bar-1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "show_line_separator": false,
@@ -46,16 +47,15 @@
     },
     "countdown_DwXXJA": {
       "type": "countdown",
-      "disabled": true,
       "settings": {
-        "text": "Free Sunday Delivery Order In",
+        "text": "Double Loyalty Points. Earn 2 points for every £1 spent.",
         "timer_text": "Ends In:",
-        "color_scheme": "accent-2",
-        "year": 2024,
-        "month": "10",
-        "day": 5,
-        "hour": 11,
-        "minute": 29,
+        "color_scheme": "accent-3",
+        "year": 2026,
+        "month": "2",
+        "day": 8,
+        "hour": 23,
+        "minute": 59,
         "padding_top": 8,
         "padding_bottom": 8
       }
@@ -118,9 +118,8 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "name": "Sale",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Free_Monday_Delivery_75.gif",
+            "image": "shopify://shop_images/Free_Sunday_Delivery_1.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": "shopify://pages/hair-extensions-by-colour"
