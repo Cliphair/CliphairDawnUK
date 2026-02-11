@@ -92,14 +92,18 @@ function quizGetQuestionTrailString(quizId, maxItems = 50) {
   return trail.filter(Boolean).join('>');
 }
 
-function quizWasReload() {
-  // Modern browsers
+function quizWasReloadOrBfCacheRestore() {
+  // Detect back/forward using Navigation Timing Level 2
   const nav = performance.getEntriesByType?.('navigation')?.[0];
-  if (nav?.type) return nav.type === 'reload';
+  if (nav?.type === 'reload' || nav?.type === 'back_forward') return true;
 
-  // Fallback (older)
-  // 1 = reload in the old API
-  return performance?.navigation?.type === 1;
+  // Fallbacks
+  if (performance?.navigation) {
+    // 1 = reload, 2 = back/forward
+    return performance.navigation.type === 1 || performance.navigation.type === 2;
+  }
+
+  return false;
 }
 
 function quizClearSession(quizId) {
@@ -117,9 +121,33 @@ function quizClearSession(quizId) {
     'trailQuestions',
     'abandonHandlersRegistered'
   ];
-
   keys.forEach((k) => sessionStorage.removeItem(`${quizId}-${k}`));
 }
+
+function quizRegisterResetOnPageShow(quizId) {
+  const key = `${quizId}-resetHandlersRegistered`;
+  if (sessionStorage.getItem(key) === '1') return;
+  sessionStorage.setItem(key, '1');
+
+  // pageshow fires on normal load AND when restoring from bfcache
+  window.addEventListener('pageshow', (e) => {
+    // e.persisted === true means bfcache restore
+    if (e.persisted || quizWasReloadOrBfCacheRestore()) {
+      quizClearSession(quizId);
+
+      // Optional: ensure UI goes back to first question
+      // (If your first question is always visible by default after initState, you may not need this.)
+      try {
+        // hide any visible quiz containers (question/answer)
+        document.querySelectorAll('.section.quiz.visible').forEach((el) => {
+          el.classList.remove('visible');
+          el.classList.add('hidden');
+        });
+      } catch {}
+    }
+  });
+}
+
 
 /* ======================================================
    QUIZ QUESTION CUSTOM ELEMENT
@@ -149,7 +177,10 @@ if (!customElements.get('quiz-question')) {
       }
 
       connectedCallback() {
-        if (quizWasReload()) {
+        quizRegisterResetOnPageShow(this.quizId);
+
+        // If it was an actual reload/back-forward, clear immediately too
+        if (quizWasReloadOrBfCacheRestore()) {
           quizClearSession(this.quizId);
         }
 
