@@ -203,11 +203,11 @@ quiz-answer .title {
   margin-bottom: 3.8rem;
 }
 
-quiz-answer .title .match .no-match-header {
+quiz-answer .title.match .no-match-header {
   display:none;
 }
 
-quiz-answer .title .no-match .match-header {
+quiz-answer .title.no-match .match-header {
   display:none;
 }
 
