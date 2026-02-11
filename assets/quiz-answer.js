@@ -145,6 +145,7 @@ if (!customElements.get('quiz-answer')) {
 
           if (button) {
             button.href = answer['collection-url'] || '#';
+            button.innerText = 'Explore';
             button.disabled = false;
           }
 
@@ -166,13 +167,20 @@ if (!customElements.get('quiz-answer')) {
           }
         } else {
           if (header) {
-            header.innerText = 'Sorry';
+            header.innerText = 'We\'d love to help you choose';
             header.disabled = true;
           }
           if (content) {
-            content.innerHTML = `<p>No match found for your answers.</p>`;
+            content.innerHTML = `<p>Based on what you\'ve told us so far, we\'d like to take a closer look and make a personalised recommendation. Message our Customer Support team and we\'ll help you find the best option.</p>`;
           }
-          if (button) button.disabled = true;
+          if (button) {
+            button.href = '/pages/contact-us';
+            button.innerText = 'Contact Customer Support';
+            button.disabled = false;
+          }
+          if (image) {
+            image.parentElement.classList.add('visually-hidden');
+          }
           if (accordion) accordion.closest('.collapsible-content__grid').classList.add('visually-hidden');
         }
 
