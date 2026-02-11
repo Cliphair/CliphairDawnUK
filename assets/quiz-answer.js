@@ -19,7 +19,10 @@ if (!customElements.get('quiz-answer')) {
       }
 
       connectedCallback() {
-        if (quizWasReload()) {
+        quizRegisterResetOnPageShow(this.quizId);
+
+        // If it was an actual reload/back-forward, clear immediately too
+        if (quizWasReloadOrBfCacheRestore()) {
           quizClearSession(this.quizId);
         }
 
