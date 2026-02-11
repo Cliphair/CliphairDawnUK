@@ -122,12 +122,23 @@ if (!customElements.get('quiz-answer')) {
         const content = this.querySelector('.answer-wrapper .answer-content');
         const button = this.querySelector('.answer-wrapper .button-wrapper .button');
         const accordion = this.querySelector('.answer-wrapper .answer-accordion');
+        const mainTitles = this.querySelectorAll('.answer-wrapper h2.title');
 
         console.log(answer);
 
         // Store result context for click tracking
         this.dataset.resultType = answer ? 'match' : 'no_match';
         this.dataset.resultId = answer ? quizGetResultId(answer) : 'no_match';
+        
+        mainTitles.forEach(el => {
+          if (this.dataset.resultId == 'match'){
+            el.classList.remove('no-match');
+            el.classList.add('match');
+          } else {
+            el.classList.add('no-match');
+            el.classList.remove('match');
+          }
+        });
 
         if (answer) {
           if (image) {
@@ -144,6 +155,7 @@ if (!customElements.get('quiz-answer')) {
             header.href = answer['collection-url'] || '#';
             header.innerText = answer.title || 'Result';
             header.disabled = false;
+            header.classList.remove('visually-hidden');
           }
 
           if (content) {
@@ -173,9 +185,6 @@ if (!customElements.get('quiz-answer')) {
             }
           }
         } else {
-          document.querySelectorAll('.answer-wrapper h2.title').forEach(el => {
-            el.innerHTML = '<em>We\'d love to help you choose</em>'
-          });
           if (header) {
             header.classList.add('visually-hidden');
           }
