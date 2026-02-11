@@ -19,6 +19,10 @@ if (!customElements.get('quiz-answer')) {
       }
 
       connectedCallback() {
+        if (quizWasReload()) {
+          quizClearSession(this.quizId);
+        }
+
         if (this._clickTrackingBound) return;
         this._clickTrackingBound = true;
 
@@ -166,10 +170,11 @@ if (!customElements.get('quiz-answer')) {
             }
           }
         } else {
+          document.querySelectorAll('.answer-wrapper h2.title').forEach(el => {
+            el.innerHTML = '<em>We\'d love to help you choose</em>'
+          });
           if (header) {
-            header.innerText = 'We\'d love to help you choose';
-            header.removeAttribute('href');
-            header.setAttribute('aria-disabled', 'true');
+            header.classList.add('visually-hidden');
           }
           if (content) {
             content.innerHTML = `<p>Based on what you\'ve told us so far, we\'d like to take a closer look and make a personalised recommendation. Message our Customer Support team and we\'ll help you find the best option.</p>`;

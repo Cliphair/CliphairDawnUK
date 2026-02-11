@@ -92,6 +92,35 @@ function quizGetQuestionTrailString(quizId, maxItems = 50) {
   return trail.filter(Boolean).join('>');
 }
 
+function quizWasReload() {
+  // Modern browsers
+  const nav = performance.getEntriesByType?.('navigation')?.[0];
+  if (nav?.type) return nav.type === 'reload';
+
+  // Fallback (older)
+  // 1 = reload in the old API
+  return performance?.navigation?.type === 1;
+}
+
+function quizClearSession(quizId) {
+  const keys = [
+    'answers',
+    'history',
+    'startTs',
+    'completed',
+    'completeTs',
+    'completeSig',
+    'completeFired',
+    'abandonFired',
+    'lastQuestionId',
+    'lastAnswerId',
+    'trailQuestions',
+    'abandonHandlersRegistered'
+  ];
+
+  keys.forEach((k) => sessionStorage.removeItem(`${quizId}-${k}`));
+}
+
 /* ======================================================
    QUIZ QUESTION CUSTOM ELEMENT
    ====================================================== */
@@ -120,6 +149,10 @@ if (!customElements.get('quiz-question')) {
       }
 
       connectedCallback() {
+        if (quizWasReload()) {
+          quizClearSession(this.quizId);
+        }
+
         this.initBrain();
         this.bindEvents();
         this.initState();
