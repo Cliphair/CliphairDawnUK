@@ -131,7 +131,7 @@ if (!customElements.get('quiz-answer')) {
         this.dataset.resultId = answer ? quizGetResultId(answer) : 'no_match';
         
         mainTitles.forEach(el => {
-          if (this.dataset.resultId == 'match'){
+          if (this.dataset.resultType == 'match'){
             el.classList.remove('no-match');
             el.classList.add('match');
           } else {
