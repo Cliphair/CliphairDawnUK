@@ -122,7 +122,7 @@ if (!customElements.get('quiz-answer')) {
         const content = this.querySelector('.answer-wrapper .answer-content');
         const button = this.querySelector('.answer-wrapper .button-wrapper .button');
         const accordion = this.querySelector('.answer-wrapper .answer-accordion');
-        const mainTitles = this.querySelectorAll('.answer-wrapper h2.title');
+        const mainTitles = this.querySelectorAll('h2.title');
 
         console.log(answer);
 
