@@ -11,9 +11,8 @@ function quizSlugify(str = '') {
 }
 
 function quizDataLayerPush(payload) {
-  // window.dataLayer = window.dataLayer || [];
-  // window.dataLayer.push(payload);
-  console.log(payload);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
 }
 
 function quizGetAnswers(quizId) {
@@ -72,6 +71,25 @@ function quizShouldAbandon(quizId) {
  */
 function quizGetLastQuestionId(quizId) {
   return sessionStorage.getItem(`${quizId}-lastQuestionId`) || '';
+}
+
+// Append-only question trail (allows repeats)
+function quizAppendQuestionTrail(quizId, questionId, max = 50) {
+  const key = `${quizId}-trailQuestions`;
+  const trail = JSON.parse(sessionStorage.getItem(key)) || [];
+
+  trail.push(String(questionId || ''));
+
+  // Cap length so it can't grow forever
+  if (trail.length > max) trail.splice(0, trail.length - max);
+
+  sessionStorage.setItem(key, JSON.stringify(trail));
+}
+
+function quizGetQuestionTrailString(quizId, maxItems = 50) {
+  const key = `${quizId}-trailQuestions`;
+  const trail = (JSON.parse(sessionStorage.getItem(key)) || []).slice(-maxItems);
+  return trail.filter(Boolean).join('>');
 }
 
 /* ======================================================
@@ -158,13 +176,9 @@ if (!customElements.get('quiz-question')) {
 
         // Fires reliably on navigation away / tab close on mobile more than beforeunload.
         window.addEventListener('pagehide', this._boundAbandonHandler);
-        document.addEventListener('visibilitychange', this._boundAbandonHandler);
       }
 
       _handlePotentialAbandon() {
-        // Only fire if the page is being hidden OR pagehide triggered
-        if (document.visibilityState && document.visibilityState !== 'hidden') return;
-
         if (!quizShouldAbandon(this.quizId)) return;
 
         sessionStorage.setItem(`${this.quizId}-abandonFired`, '1');
@@ -175,7 +189,8 @@ if (!customElements.get('quiz-question')) {
           last_question_id: quizGetLastQuestionId(this.quizId),
           answers_path: quizBuildAnswersPath(this.quizId),
           steps_completed: quizGetStepsCompleted(this.quizId),
-          time_spent_ms: quizGetTimeSpentMs(this.quizId)
+          time_spent_ms: quizGetTimeSpentMs(this.quizId),
+          trail_questions: quizGetQuestionTrailString(this.quizId)
         });
       }
 
@@ -187,6 +202,8 @@ if (!customElements.get('quiz-question')) {
         const answer = clickedAnswerElement.dataset.answerId;
         const mainParentElement = clickedAnswerElement.closest('quiz-question');
         const questionId = mainParentElement.dataset.questionId;
+
+        quizAppendQuestionTrail(this.quizId, questionId);
 
         // Track last known position for abandon event
         sessionStorage.setItem(`${this.quizId}-lastQuestionId`, questionId);
