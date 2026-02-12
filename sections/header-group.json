@@ -85,7 +85,6 @@
         "announcement_image_zkJVKU": {
           "type": "announcement-image",
           "name": "Saturday Delivery",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Saturday_Guaranteed_Delivery_-blue_-hair_extensions.gif",
             "text_alignment": "center",
@@ -118,6 +117,7 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "name": "Sale",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
             "text_alignment": "center",
