@@ -90,6 +90,35 @@
         "accessibility_info": "Cliphair slideshow banners"
       }
     },
+    "colour_match_quiz_grid_bBJLge": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "popup_bnEKe8": {
+          "type": "popup",
+          "settings": {
+            "image_mobile": "shopify://shop_images/test-image2.jpg",
+            "image_desktop": "shopify://shop_images/test-image2.jpg",
+            "url": "shopify://pages/journey"
+          }
+        },
+        "link_mrXdjW": {
+          "type": "link",
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "popup_bnEKe8",
+        "link_mrXdjW"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "yotpo_reviews_dynamic_carrousel_UeNWFY": {
       "type": "yotpo-reviews-dynamic-carrousel",
       "disabled": true,
@@ -720,6 +749,7 @@
   },
   "order": [
     "slideshow_3tCMjU",
+    "colour_match_quiz_grid_bBJLge",
     "yotpo_reviews_dynamic_carrousel_UeNWFY",
     "maquee_mnMgq6",
     "before_after_slider_LzidFw",
