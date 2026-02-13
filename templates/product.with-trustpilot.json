@@ -89,7 +89,7 @@
         "custom_liquid_EqgHLU": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<!-- TrustBox script -->\n<script type=\"text/javascript\" src=\"//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js\" async></script>\n<!-- End TrustBox script -->\n<!-- TrustBox widget - Micro Star -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"5419b732fbfb950b10de65e5\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"20px\" data-style-width=\"218px\" data-token=\"62371725-8799-428e-b154-1242563882fb\" data-font-family=\"Lato\" data-text-color=\"#414141\" data-style-alignment=\"left\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
+            "custom_liquid": "<!-- TrustBox script -->\n<script type=\"text/javascript\" src=\"//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js\" async></script>\n<!-- End TrustBox script -->\n<!-- TrustBox widget - Flex -->\n<div class=\"trustpilot-widget\" data-locale=\"en-US\" data-template-id=\"54197383fd9dceac42a68694\" data-businessunit-id=\"4c4c36a300006400050d7196\"  data-style-width=\"100%\" data-style-size=\"S\" data-token=\"11f0bb29-45ba-4989-9f69-6bcbd151a5e1\" data-text-color=\"dark\" data-headline=\"star\" data-support-text=\"review-number\" data-background=\"none\" data-external-elements-color=\"dark\">\n  <a href=\"https://www.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
           }
         },
         "clearpay_on_site_messaging_payments_messaging_GX8HdW": {
