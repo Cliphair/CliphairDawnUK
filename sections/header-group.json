@@ -107,6 +107,7 @@
         "announcement_image_8amwCN": {
           "type": "announcement-image",
           "name": "Monday Delivery",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Hair_Extensions_Monday_Delivery.gif",
             "text_alignment": "center",
