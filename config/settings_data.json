@@ -231,7 +231,7 @@
       },
       "16357531335331704164": {
         "type": "shopify://apps/wheelify-spin-wheel-email-pop/blocks/wheelify/505ff42c-abce-4466-9558-7e1d3b2cfcd7",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
