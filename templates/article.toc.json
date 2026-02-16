@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-article",
+      "type": "main-article-v2",
       "blocks": {
         "featured_image": {
           "type": "featured_image",
