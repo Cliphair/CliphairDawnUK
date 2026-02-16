@@ -1,0 +1,172 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_src": "metafield",
+            "image_height": "squared"
+          }
+        },
+        "extra_iKiWex": {
+          "type": "extra",
+          "settings": {
+            "enable_share": true,
+            "share_label": "Share",
+            "enable_reading-time": true,
+            "reading-time_label": "Article Read Time -"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true,
+            "heading_size": "h1",
+            "font_weight": "bold"
+          }
+        },
+        "table_of_content_WVtcAm": {
+          "type": "table-of-content",
+          "settings": {
+            "color_scheme": "background-2"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "faq_4pTbgj": {
+          "type": "faq",
+          "settings": {
+            "heading": "FAQs"
+          }
+        },
+        "footer_LgHUFf": {
+          "type": "footer",
+          "settings": {
+            "text": "<p>Looking for flawless, salon-worthy hair without breaking the bank? At Cliphair, we’ve got you covered with luxurious <a href=\"/collections/clip-in-hair-extensions\" target=\"_blank\" title=\"Clip In Hair Extensions\">clip in hair extensions</a> for quick transformations and <a href=\"/collections/permanent-extensions\" target=\"_blank\" title=\"Professional Hair Extensions\">permanent hair extensions</a> for long-lasting glam. Extensions require special care and maintenance to preserve their quality, which is why we have all the  <a href=\"/collections/hair-care\" target=\"_blank\" title=\"Hair Extensions Care & Maintenance Products\">top-notch hydrating haircare products</a> needed to keep your style on point.</p><p>Need the perfect shade? Browse our full range of human hair extensions in over 70 rich, silky shades or check out our <a href=\"/pages/colour-matching-service\" target=\"_blank\" title=\"Colour Matching Service\">FREE Express Colour Match Service</a> to ensure a seamless blend every time.  </p>",
+            "enable_share": true,
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "extra_iKiWex",
+        "title",
+        "table_of_content_WVtcAm",
+        "content",
+        "faq_4pTbgj",
+        "footer_LgHUFf"
+      ],
+      "settings": {
+        "max-width": "1000",
+        "color_scheme": "accent-4",
+        "enable_sidebar": true,
+        "sidebar_position": "right",
+        "enable_categories": true,
+        "enable_articles": true,
+        "limit": 4,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2e1934dd-28b9-4bbb-b01e-0576cbadc4b2": {
+      "type": "image-list",
+      "blocks": {
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Ethically<br>Sourced</p>",
+            "link": ""
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Outstanding<br>Reviews</p>",
+            "link": "shopify://pages/testimonials"
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Cliphair<br>Rewards</p>",
+            "link": "shopify://pages/rewards"
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Free Delivery<br>& Returns</p>",
+            "link": ""
+          }
+        },
+        "cbdbff03-f013-487f-8288-6c9a46426bc6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Buy Now<br>Pay Later</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4",
+        "cbdbff03-f013-487f-8288-6c9a46426bc6"
+      ],
+      "custom_css": [
+        "img {max-height: 70px;}",
+        "a {text-decoration: none;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "background-collection-titles",
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 52,
+        "trackable_name": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2e1934dd-28b9-4bbb-b01e-0576cbadc4b2"
+  ]
+}
