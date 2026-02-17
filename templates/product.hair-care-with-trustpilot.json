@@ -32,6 +32,14 @@
           "type": "price",
           "settings": {}
         },
+        "banner_tmNYwa": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/tape-sale-feb26-pdp.jpg",
+            "color": "#f6f4ef",
+            "image_url": "shopify://collections/tape-in-hair-extensions"
+          }
+        },
         "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {}
@@ -84,6 +92,12 @@
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
           "type": "payment_services",
           "settings": {}
+        },
+        "custom_liquid_pcG8WC": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- TrustBox script -->\n<script type=\"text/javascript\" src=\"//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js\" async></script>\n<!-- End TrustBox script -->\n<!-- TrustBox widget - Flex -->\n<div style='margin:2rem 0 0;' class=\"trustpilot-widget\" data-locale=\"en-US\" data-template-id=\"54197383fd9dceac42a68694\" data-businessunit-id=\"4c4c36a300006400050d7196\"  data-style-width=\"100%\" data-style-size=\"S\" data-token=\"404435c1-7476-46c9-8ad2-64d8244cfa0b\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\" data-text-color=\"dark\" data-use-review-snippets=\"true\" data-review-snippets-limit=\"4\" data-review-snippets-topic=\"quality\" data-background=\"none\" data-external-elements-color=\"dark\">\n  <a href=\"https://www.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
+          }
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
@@ -141,6 +155,7 @@
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "price",
+        "banner_tmNYwa",
         "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6",
         "variant_picker",
         "quantity_selector_6HELXY",
@@ -150,6 +165,7 @@
         "order_deadline_67UiV7",
         "icon_with_text_pnGjNt",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
+        "custom_liquid_pcG8WC",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -179,6 +195,7 @@
     },
     "trustpilot_carrousel_xcFh7r": {
       "type": "trustpilot-carrousel",
+      "disabled": true,
       "settings": {
         "title": "See What People Say on Trustpilot!",
         "heading_size": "h2",
@@ -249,6 +266,9 @@
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "text_allignment": "left",
         "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
@@ -312,6 +332,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -320,6 +342,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -328,6 +352,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -336,6 +362,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -344,6 +372,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -373,7 +403,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "custom_liquid_xewEWJ": {
