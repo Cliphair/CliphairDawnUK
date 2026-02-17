@@ -33,11 +33,10 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "image": "shopify://shop_images/tape-sale-feb26-pdp.jpg",
             "color": "#f6f4ef",
-            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign"
+            "image_url": "shopify://collections/tape-in-hair-extensions"
           }
         },
         "available_shades_yt4HbK": {
