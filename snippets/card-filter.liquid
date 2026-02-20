@@ -38,6 +38,13 @@
     assign card_color_scheme = settings.collection_card_color_scheme
     assign card_style = settings.collection_card_style
   endif
+
+  assign render_new_bagde = false
+  assign new_shade = "Ash Bronde Balayage,Natural Mocha Melt,Toasted Chestnut Melt" | split: ","
+  if new_sahdes contains card_title
+    assign render_new_badge = true
+  endif
+
 -%}
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
@@ -95,6 +102,14 @@
             </span>
           </h3>
         </div>
+        {% if render_new_badge %}
+          <span
+            id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+            class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+          >
+            NEW
+          </span>
+        {%- endif -%}
       </div>
     </div>
     {%- if card_style == 'card' or card_image -%}
