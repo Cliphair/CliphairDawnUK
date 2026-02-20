@@ -30,14 +30,81 @@
 {%- endstyle -%}
 
 {% liquid
-  comment
-    assign campaign_page = pages['wish-for-cliphair-holiday-campaign']
-    assign campaign_image = images['holiday-xms-banner-collection.jpg']
-    assign paginate_by = section.settings.products_per_page
-  endcomment
+  assign campaing_live = false
+  
+  assign campaign_page = collections['balayage-hair-extensions']
+  assign campaign_image = images['lived-in-colour-collection.jpg']
+
+  assign campaign_page_v2 = collections['tape-in-hair-extensions']
+  assign campaign_image_v2 = images['tape-sale-feb26-collection.jpg']
+  
   assign paginate_by = section.settings.products_per_page
 
   if campaign_image and campaign_page
+    assign campaing_live = true
+    if collection.url == campaign_page.url
+      unless campaign_page_v2 and campaign_image_v2 and campaign_page_v2.url != collection.url
+        assign campaing_live = false
+      endunless
+      assign campaign_page = campaign_page_v2
+      assign campaign_image = campaign_image_v2
+    endif
+  endif
+
+  if campaing_live
+    assign paginate_by = section.settings.products_per_page | minus: 1
+  endif
+
+  if campaign_image_v2 and campaign_page_v2
+    assign multiple_images = true
+  endif 
+%}
+
+{% liquid
+  assign campaign_live = false
+  assign multiple_images = false
+
+  assign v1_page  = collections['balayage-hair-extensions']
+  assign v1_image = images['lived-in-colour-collection.jpg']
+
+  assign v2_page  = collections['tape-in-hair-extensions']
+  assign v2_image = images['tape-sale-feb26-collection.jpg']
+
+  if v1_page and v1_image
+    assign has_v1 = true
+  endif
+
+  if v2_page and v2_image
+    assign has_v2 = true
+  endif
+
+  assign multiple_images = has_v2
+
+  if has_v1
+    assign campaign_live = true
+  endif
+
+  comment
+    Decide which campaign to show *for this page*:
+    - Default is v1
+    - If we are on v1 collection page AND v2 exists, show v2 instead (avoid linking to current collection)
+  endcomment
+
+  assign active_page  = v1_page
+  assign active_image = v1_image
+
+  if campaign_live and collection and v1_page and collection.url == v1_page.url
+    if has_v2 and v2_page.url != collection.url
+      assign active_page  = v2_page
+      assign active_image = v2_image
+      assign multiple_images = false
+    else
+      assign campaign_live = false
+    endif
+  endif
+
+  assign paginate_by = section.settings.products_per_page
+  if campaign_live
     assign paginate_by = paginate_by | minus: 1
   endif
 %}
@@ -171,12 +238,44 @@
               "
             >
               {%- for product in collection.products -%}
+                {%- liquid
+                  comment
+                    Banner insertion rule:
+                    - If live: insert at index 5
+                    - If fewer than 5 items and last item: insert at end
+                  endcomment
+
+                  assign is_insert_slot = false
+                  if campaign_live and forloop.index == 5
+                    assign is_insert_slot = true
+                  elsif forloop.index < 5 and forloop.last
+                    assign is_insert_slot = true
+                  endif
+                -%}
+                
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
 
-                {% if campaign_image and campaign_page and forloop.index == 5 or forloop.index < 5 and forloop.last %}
+                {% if is_insert_slot %}
+                  {%- liquid
+                    assign sale_link  = active_page
+                    assign sale_image = active_image
+
+                    if multiple_images
+                      assign page_modulo = paginate.current_page | minus: 1 | modulo: 2
+
+                      if page_modulo == 1
+                        assign sale_link  = v2_page
+                        assign sale_image = v2_image
+                      else
+                        assign sale_link  = v1_page
+                        assign sale_image = v1_image
+                      endif
+                    endif
+                  -%}
+
                   <li
                     class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} trackable-section"
                     {% if settings.animations_reveal_on_scroll %}
@@ -186,8 +285,8 @@
                     data-section-name="collection_mini_banner"
                   >
                     <a
-                      href="{{ campaign_page.url }}"
-                      title="{{ campaign_page.title }}"
+                      href="{{ sale_link.url }}"
+                      title="{{ sale_link.title }}"
                       data-event-type="section_click"
                       data-section-name="collection_campaign_banner"
                       data-cta-label="click_summer_2025_mini_banner"
@@ -195,10 +294,10 @@
                       <img
                         loading="lazy"
                         style="width:100%; height:100%; object-fit:cover; display:block;"
-                        src="{{ campaign_image | image_url }}"
-                        width="{{ campaign_image.width }}"
-                        height="{{ campaign_image.height }}"
-                        alt="{{ campaign_image.alt }}"
+                        src="{{ sale_image | image_url }}"
+                        width="{{ sale_image.width }}"
+                        height="{{ sale_image.height }}"
+                        alt="{{ sale_image.alt }}"
                       >
                     </a>
                   </li>
