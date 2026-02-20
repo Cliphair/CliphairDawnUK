@@ -28,12 +28,6 @@
           "type": "rating",
           "settings": {}
         },
-        "delivery_threshold_d7hmim": {
-          "type": "delivery_threshold",
-          "settings": {
-            "color_scheme": "accent-2"
-          }
-        },
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86": {
           "type": "short-description",
           "settings": {
@@ -52,12 +46,15 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
             "color": "#f6f4ef",
-            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign"
+            "image_url": "shopify://collections/balayage-hair-extensions"
           }
+        },
+        "yotpo_loyalty_rewards_product_points_module_app_block_HkT7PU": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -69,10 +66,11 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "sc_back_in_stock_app_block_DL8wre": {
+        "sc_back_in_stock_app_block_j9ghrP": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
+        
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -81,23 +79,17 @@
             "color_scheme": "background-2"
           }
         },
-        "yotpo_loyalty_rewards_product_points_module_app_block_e8QX7W": {
-          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-          "settings": {}
-        },
-        "order_deadline_67UiV7": {
-          "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
+        "share": {
+          "type": "share",
           "settings": {
-            "product": "{{product}}",
-            "style": "timeline",
-            "margintop": 0,
-            "marginbottom": 0,
-            "placementRelativity": "before",
-            "placementTarget": "",
-            "loadEventName": ""
+            "share_label": "Share"
           }
         },
-        "icon_with_text_HWPKmz": {
+        "order_deadline_67UiV7": {
+          "type": "order_deadline",
+          "settings": {}
+        },
+        "icon_with_text_px67KP": {
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
@@ -108,32 +100,6 @@
             "heading_2": "",
             "icon_3": "none",
             "heading_3": ""
-          }
-        },
-        "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
-          "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
-          "settings": {
-            "text_align": "inherit",
-            "margin_top": 16,
-            "margin_bottom": 16,
-            "color": "",
-            "size": "xs",
-            "intro_text": "Pay in",
-            "show_interest_free": true,
-            "payment_amount_is_bold": false,
-            "show_with": true,
-            "logo_type": "badge",
-            "logo_theme": "black-on-mint",
-            "modal_link_style": "circled-info-icon",
-            "modal_theme": "mint",
-            "breakpoint": 749,
-            "text_align_mobile": "inherit",
-            "margin_top_mobile": 16,
-            "margin_bottom_mobile": 16,
-            "show_lower_limit": true,
-            "show_upper_limit": true,
-            "show_if_outside_limits": true,
-            "product": "{{product}}"
           }
         },
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4": {
@@ -189,38 +155,30 @@
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
         "information_videos_pdRffm",
         "title",
         "a0b50969-ea33-4844-941d-db5577728e55",
-        "delivery_threshold_d7hmim",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "information_videos_Fw8h3V",
         "price",
         "banner_tmNYwa",
+        "yotpo_loyalty_rewards_product_points_module_app_block_HkT7PU",
         "variant_picker",
         "quantity_selector_J8hgHX",
-        "sc_back_in_stock_app_block_DL8wre",
+        "sc_back_in_stock_app_block_j9ghrP",
         "buy_buttons",
-        "yotpo_loyalty_rewards_product_points_module_app_block_e8QX7W",
+        "share",
         "order_deadline_67UiV7",
-        "icon_with_text_HWPKmz",
-        "clearpay_on_site_messaging_payments_messaging_pLyzBQ",
+        "icon_with_text_px67KP",
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_L8wRzX",
-        "collapsible_tab_NUa6HR",
-        "share"
+        "collapsible_tab_NUa6HR"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
@@ -232,7 +190,7 @@
       "settings": {
         "enable_sticky_info": true,
         "image_ratio": "square",
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -242,6 +200,18 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "trustpilot_carrousel_xcFh7r": {
+      "type": "trustpilot-carrousel",
+      "settings": {
+        "title": "See What People Say on Trustpilot!",
+        "heading_size": "h2",
+        "text_allignment": "center",
+        "color_scheme": "inverse",
+        "carousel_code": "<!-- TrustBox widget - Slider -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"54ad5defc6454f065c28af8b\" data-businessunit-id=\"4c4c36a300006400050d7196\" data-style-height=\"240px\" data-style-width=\"100%\" data-tags=\"QUALITY-SHIPPING\" data-stars=\"1,2,3,4,5\" data-review-languages=\"en\">\n  <a href=\"https://uk.trustpilot.com/review/cliphair.co.uk\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->",
+        "padding_top": 40,
         "padding_bottom": 40
       }
     },
@@ -304,14 +274,8 @@
     },
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
-      "custom_css": [
-        ".yotpo-main-reviews-widget > .yotpo-head {display: none !important;}"
-      ],
       "settings": {
-        "title": "Verified Reviews: What People Are Saying",
-        "heading_size": "h1",
-        "text_allignment": "center",
-        "container_color_scheme": "accent-4",
+        "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -374,8 +338,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
-            "img_url": "",
-            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -384,8 +346,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
-            "img_url": "",
-            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -394,8 +354,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
-            "img_url": "",
-            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -404,8 +362,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
-            "img_url": "",
-            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -414,8 +370,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
-            "img_url": "",
-            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -445,8 +399,7 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "trackable_name": ""
+        "padding_bottom": 40
       }
     },
     "reviews-modal": {
@@ -524,6 +477,7 @@
   },
   "order": [
     "main",
+    "trustpilot_carrousel_xcFh7r",
     "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
