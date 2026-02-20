@@ -32,6 +32,14 @@
           "type": "price",
           "settings": {}
         },
+        "banner_tmNYwa": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
+            "color": "#f6f4ef",
+            "image_url": "shopify://collections/balayage-hair-extensions"
+          }
+        },
         "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {}
@@ -141,6 +149,7 @@
         "a0b50969-ea33-4844-941d-db5577728e55",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
         "price",
+        "banner_tmNYwa",
         "yotpo_loyalty_rewards_product_points_module_app_block_nrtNR6",
         "variant_picker",
         "quantity_selector_6HELXY",
