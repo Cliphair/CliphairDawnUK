@@ -34,6 +34,27 @@
     "slideshow_3tCMjU": {
       "type": "slideshow",
       "blocks": {
+        "slide_TpRyJJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/lived-in-colour-mobile-v1.jpg",
+            "image_desktop": "shopify://shop_images/lived-in-colour-desktop-v1.jpg",
+            "image_url": "shopify://collections/balayage-hair-extensions",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "banner_id": ""
+          }
+        },
         "slide_cnhnUM": {
           "type": "slide",
           "name": "Shop By Shade",
@@ -58,6 +79,7 @@
         }
       },
       "block_order": [
+        "slide_TpRyJJ",
         "slide_cnhnUM"
       ],
       "settings": {
