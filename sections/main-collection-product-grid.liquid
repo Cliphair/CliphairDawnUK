@@ -30,47 +30,19 @@
 {%- endstyle -%}
 
 {% liquid
-  assign campaing_live = false
-  
-  assign campaign_page = collections['balayage-hair-extensions']
-  assign campaign_image = images['lived-in-colour-collection.jpg']
-
-  comment 
-  assign campaign_page_v2 = collections['tape-in-hair-extensions']
-  assign campaign_image_v2 = images['tape-sale-feb26-collection.jpg'] 
-  endcomment
-  
-  assign paginate_by = section.settings.products_per_page
-
-  if campaign_image and campaign_page
-    assign campaing_live = true
-    if collection.url == campaign_page.url
-      unless campaign_page_v2 and campaign_image_v2 and campaign_page_v2.url != collection.url
-        assign campaing_live = false
-      endunless
-      assign campaign_page = campaign_page_v2
-      assign campaign_image = campaign_image_v2
-    endif
-  endif
-
-  if campaing_live
-    assign paginate_by = section.settings.products_per_page | minus: 1
-  endif
-
-  if campaign_image_v2 and campaign_page_v2
-    assign multiple_images = true
-  endif 
-%}
-
-{% liquid
   assign campaign_live = false
   assign multiple_images = false
 
   assign v1_page  = collections['balayage-hair-extensions']
   assign v1_image = images['lived-in-colour-collection.jpg']
-
+  
+  comment
   assign v2_page  = collections['tape-in-hair-extensions']
   assign v2_image = images['tape-sale-feb26-collection.jpg']
+  endcomment
+
+  assign v2_page  = nil
+  assign v2_image = nil
 
   if v1_page and v1_image
     assign has_v1 = true
