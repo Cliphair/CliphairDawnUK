@@ -574,6 +574,21 @@
           </a>
         </li>
 
+        {% comment %} <li>
+          {% assign object = collections['arctic-blonde-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-shop-by-shade-blonde-iceblonde"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == 'object.url' %}
+              aria-current="page"
+            {% endif %}
+          >
+            {% render 'header-drawer-shade-snippet', colour_name: 'Arctic Blonde', collection_object: object %}
+            {{ 'navbar.sub_level.shades.highlights.arctic_blonde' | t }}<span class="new-arrival"> NEW</span>
+          </a>
+        </li> {% endcomment %}
+
         <li>
           {% assign object = collections['blonde-mix-hair-extensions-27-613'] %}
           <a
@@ -830,6 +845,21 @@
             {{ 'navbar.sub_level.shades.balayages.ash_black_balayage' | t }}
           </a>
         </li>
+        
+        <li>
+          {% assign object = collections['ash-bronde-balayage-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-shop-by-shade-balayage-ash-bronde"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == object.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            {% render 'header-drawer-shade-snippet', colour_name: 'Ash Bronde Balayage', collection_object: object %}
+            {{ 'navbar.sub_level.shades.balayages.ash_bronde_balayage' | t }}<span class="new-arrival"> NEW</span>
+          </a>
+        </li>
 
         <li>
           {% assign object = collections['silver-shadow-balayage-hair-extensions'] %}
@@ -846,6 +876,7 @@
           </a>
         </li>
 
+
         <li>
           {% assign object = collections['dark-espresso-melt-balayage-hair-extensions'] %}
           <a
@@ -858,6 +889,36 @@
           >
             {% render 'header-drawer-shade-snippet', colour_name: 'Espresso Melt Balayage', collection_object: object %}
             {{ 'navbar.sub_level.shades.balayages.espresso_melt_balayage' | t }}
+          </a>
+        </li>
+
+        <li>
+          {% assign object = collections['natural-mocha-melt-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-shop-by-shade-balayage-natural-mocha"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == object.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            {% render 'header-drawer-shade-snippet', colour_name: 'Natural Mocha Melt', collection_object: object %}
+            {{ 'navbar.sub_level.shades.balayages.natural_mocha_melt' | t }}<span class="new-arrival"> NEW</span>
+          </a>
+        </li>
+
+        <li>
+          {% assign object = collections['toasted-chestnut-melt-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-shop-by-shade-balayage-toasted-chestnur"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == object.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            {% render 'header-drawer-shade-snippet', colour_name: 'Toasted Chestnut Melt', collection_object: object %}
+            {{ 'navbar.sub_level.shades.balayages.toasted_chestnut_melt' | t }}<span class="new-arrival"> NEW</span>
           </a>
         </li>
 
