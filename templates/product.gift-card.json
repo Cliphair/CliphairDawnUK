@@ -34,11 +34,10 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/holiday-xms-banner-product.jpg",
+            "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
             "color": "#f6f4ef",
-            "image_url": "shopify://pages/wish-for-cliphair-holiday-campaign"
+            "image_url": "shopify://collections/balayage-hair-extensions"
           }
         },
         "variant_picker": {
