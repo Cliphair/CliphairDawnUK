@@ -1,6 +1,6 @@
 {{ 'section-breadcrumbs.css' | asset_url | stylesheet_tag }}
 
-{% unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' %}
+{% unless template.name == 'index' or template.name == 'cart' or template.name == 'list-collections' or template.name == '404' %}
   {% assign t = template | split: '.' | first %}
   <section id="section-{{ section.id }}" class="page-width">
     <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
