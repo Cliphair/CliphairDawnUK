@@ -1132,7 +1132,7 @@
                       Biscuit Blondey (#18/613)
                     </a>
                   </li>
-                  <li>
+                  {% comment %} <li>
                     <a
                       id="HeaderMenu-shop-by-shade-mixed-22-613"
                       href="/collections/blonde-mix-hair-extensions-22-613"
@@ -1143,7 +1143,7 @@
                     >
                       Creamy Blonde (#22/613)
                     </a>
-                  </li>
+                  </li> {% endcomment %}
                   <li>
                     <a
                       id="HeaderMenu-shop-by-shade-mixed-60-ss"
@@ -1168,6 +1168,18 @@
                       Platinum BlondeMe
                     </a>
                   </li>
+                  {% comment %} <li>
+                    <a
+                      id="HeaderMenu-shop-by-shade-mixed-platinum-blondeme"
+                      href="/collections/arctic-blonde-hair-extensions"
+                      class="mega-menu__link link{% if request.path == '/collections/arctic-blonde-hair-extensions' %} mega-menu__link--active{% endif %}"
+                      {% if request.path == '/collections/arctic-blonde-hair-extensions' %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      Arctic Blonde<span class="new-arrival"> NEW</span>
+                    </a>
+                  </li> {% endcomment %}
                   <li>
                     <a
                       id="HeaderMenu-shop-by-shade-mixed-27-613"
@@ -1340,6 +1352,18 @@
                   </li>
                   <li>
                     <a
+                      id="HeaderMenu-shop-by-shade-balayages-ash-black"
+                      href="/collections/ash-bronde-balayage-hair-extensions"
+                      class="mega-menu__link link{% if request.path == '/collections/ash-bronde-balayage-hair-extensions' %} mega-menu__link--active{% endif %}"
+                      {% if request.path == '/collections/ash-bronde-balayage-hair-extensions' %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      Ash Bronde Balayage<span class="new-arrival"> NEW</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       id="HeaderMenu-shop-by-shade-balayages-silver-shadow"
                       href="/collections/silver-shadow-balayage-hair-extensions"
                       class="mega-menu__link link{% if request.path == '/collections/silver-shadow-balayage-hair-extensions' %} mega-menu__link--active{% endif %}"
@@ -1360,6 +1384,30 @@
                       {% endif %}
                     >
                       Espresso Melt Balayage
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      id="HeaderMenu-shop-by-shade-balayages-natural-mocha"
+                      href="/collections/natural-mocha-melt-hair-extensions"
+                      class="mega-menu__link link{% if request.path == '/collections/natural-mocha-melt-hair-extensions' %} mega-menu__link--active{% endif %}"
+                      {% if request.path == '/collections/natural-mocha-melt-hair-extensions' %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      Natural Mocha Melt<span class="new-arrival"> NEW</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      id="HeaderMenu-shop-by-shade-balayages-toasted-chestnut"
+                      href="/collections/toasted-chestnut-melt-hair-extensions"
+                      class="mega-menu__link link{% if request.path == '/collections/toasted-chestnut-melt-hair-extensions' %} mega-menu__link--active{% endif %}"
+                      {% if request.path == '/collections/toasted-chestnut-melt-hair-extensions' %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      Toasted Chestnut Melt<span class="new-arrival"> NEW</span>
                     </a>
                   </li>
                   <li>
