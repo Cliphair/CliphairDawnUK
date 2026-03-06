@@ -3381,6 +3381,8 @@ details-disclosure>details {
 
 .rte blockquote {
   display: inline-flex;
+  margin-block-start:0;
+  margin-block-end:0;
 }
 
 .rte blockquote>* {
