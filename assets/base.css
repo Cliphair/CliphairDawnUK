@@ -3916,3 +3916,21 @@ swym-storefront-layout-as-drawer .swym-storefront-layout-body{
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+/* Spin To Win */
+.wheelify-wrapper-spinner .wheelify-text-heading{
+	color: #7b604e;
+}
+
+#wheelify-spin-trigger-cc > span{
+	color: #7b604e!important;
+}
+
+.wheelify-wrapper-spinner .wheelify-text-description,
+.wheelify-wrapper-spinner #cc-spin-a-sale-consent-text{
+	color: #3b3838;
+}
+
+.wheelify-wrapper-spinner #wheelify-cc-spin-a-sale-already-used-spin-quota p{
+	color:red;
+}
