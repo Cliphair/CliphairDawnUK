@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -26,7 +26,7 @@
       "type": "apps",
       "blocks": {
         "yotpo_loyalty_rewards_rewards_module_app_block_J7d6Cp": {
-          "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/rewards-module-app-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/rewards-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {
             "instance_placeholder_id": "639527"
           }
@@ -35,16 +35,57 @@
       "block_order": [
         "yotpo_loyalty_rewards_rewards_module_app_block_J7d6Cp"
       ],
-      "custom_css": [
-
-      ],
+      "disabled": true,
+      "custom_css": [],
       "settings": {
         "include_margins": false
+      }
+    },
+    "rich_text_ahhLL7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BngQW7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>We're making your rewards even better.</strong>",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text_hndGy3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Cliphair Collective is getting a little refresh behind the scenes. We'll be back shortly - with something worth waiting for.</p>",
+            "read-more_text": ""
+          }
+        },
+        "text_ab6YHF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You can still redeem your points at the checkout.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_BngQW7",
+        "text_hndGy3",
+        "text_ab6YHF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "17225938647d9bece6"
+    "17225938647d9bece6",
+    "rich_text_ahhLL7"
   ]
 }
