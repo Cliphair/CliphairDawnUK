@@ -143,6 +143,8 @@
                             <p>Update is in progress</p>
                           {% endif %}
                         {% endif %}
+                      {% when 'rewards' %}
+                        {% render 'rewards-banner' %}
                       {% when 'custom' -%}
                         {{ block.settings.row_content }}
                         {{ block.settings.page.content }}
@@ -383,6 +385,10 @@
             {
               "value": "instructions",
               "label": "Instructions"
+            },
+            {
+              "value": "rewards",
+              "label": "Rewards"
             },
             {
               "value": "object",
