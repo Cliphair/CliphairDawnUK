@@ -28,14 +28,13 @@
         "yotpo_loyalty_rewards_rewards_module_app_block_J7d6Cp": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/rewards-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
           "settings": {
-            "instance_placeholder_id": "639527"
+            "instance_placeholder_id": "1292553"
           }
         }
       },
       "block_order": [
         "yotpo_loyalty_rewards_rewards_module_app_block_J7d6Cp"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "include_margins": false
@@ -73,6 +72,7 @@
         "text_hndGy3",
         "text_ab6YHF"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
