@@ -378,6 +378,8 @@
                             <p>Update is in progress</p>
                           {% endif %}
                         {% endif %}
+                      {% when 'rewards' %}
+                        {% render 'rewards-banner' mobile_only:true %}
                       {% when 'custom' -%}
                         {{ block.settings.content }}
                         {{ block.settings.page.content }}
