@@ -61,6 +61,7 @@
         },
         "text_ab6YHF": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>You can still redeem your points at the checkout.</p>",
             "read-more_text": ""
