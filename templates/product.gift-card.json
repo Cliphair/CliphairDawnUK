@@ -104,6 +104,16 @@
             "page": ""
           }
         },
+        "collapsible_tab_bbE7UD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "type": "rewards",
+            "heading": "Cliphair Rewards",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -124,6 +134,7 @@
         "79f2f247-84e6-4366-a5bf-6f17746c4cb4",
         "custom_liquid_XrhthN",
         "collapsible-row-0",
+        "collapsible_tab_bbE7UD",
         "share"
       ],
       "settings": {
