@@ -70,7 +70,6 @@
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
         },
-        
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -161,6 +160,16 @@
             "content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
+        },
+        "collapsible_tab_N8daEF": {
+          "type": "collapsible_tab",
+          "settings": {
+            "type": "rewards",
+            "heading": "Cliphair Rewards",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -185,7 +194,8 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible_tab_L8wRzX",
-        "collapsible_tab_NUa6HR"
+        "collapsible_tab_NUa6HR",
+        "collapsible_tab_N8daEF"
       ],
       "custom_css": [
         "@media screen and (max-width: 749px) {.information-videos ~ .information-videos {display: none; }}",
@@ -282,6 +292,9 @@
     "cb0bf916-3e7b-44a5-bee5-ef9302e54a26": {
       "type": "yotpo-review-app",
       "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "text_allignment": "left",
         "container_color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40
@@ -345,6 +358,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -353,6 +368,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -361,6 +378,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -369,6 +388,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -377,6 +398,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -406,7 +429,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "reviews-modal": {
