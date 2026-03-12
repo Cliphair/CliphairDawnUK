@@ -328,6 +328,16 @@
             "row_content": "<p><strong>60 DAYS REFUND OR EXCHANGE</strong></p><p>At Cliphair, our goal is to ensure complete satisfaction with your purchase. We strive to provide expert guidance to help you choose the best possible products for your needs. However, if for whatever reason you are dissatisfied with your purchase on arrival or have a change of heart before opening, you can return the product for a refund or exchange within 60 days of delivery.</p><p>Please note that returns will only be accepted if the seal is still intact on the product. If the seal is removed and the product has been used, we will not be able to authorise the return. Toning or dying our hair extensions, even with our own products, voids the return policy. Therefore, please carefully follow all instructions provided to ensure correct use of products.</p><p>View full returns policy and instructions <a href=\"/pages/returns-information\" title=\"Returns Information\">here</a>.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_xhGpyE": {
+          "type": "collapsible_row",
+          "settings": {
+            "type": "rewards",
+            "heading": "Rewards Program",
+            "icon": "none",
+            "row_content": "",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -335,7 +345,8 @@
         "collapsible_row_bLWEiA",
         "collapsible_row_fLJMQU",
         "collapsible_row_TYp6we",
-        "collapsible_row_V8NAXD"
+        "collapsible_row_V8NAXD",
+        "collapsible_row_xhGpyE"
       ],
       "custom_css": [
         ".accordion {margin-top: 0;}"
