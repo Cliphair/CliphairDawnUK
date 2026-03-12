@@ -1810,6 +1810,7 @@
             <ul
               class="mega-menu__list"
               role="list"
+              style='justify-content: space-between;'
             >
               <li style="width:calc(100% / 1);">
                 <a
@@ -1919,8 +1920,42 @@
                   Ultimate Hair Extensions Buying Guide
                 </a>
               </li>
-
               <li
+                class="scroll-trigger animate--slide-in"
+                style="--animation-order: 1;"
+              >
+                <div style='display:flex;gap:10px;'>
+                  <div style='width:155px; height:241px;background-position: center;background-size: cover;padding: 16px;display: flex;justify-content: center;align-items: center;flex-direction: column;background-image: url("https://cdn.shopify.com/s/files/1/0069/6470/7389/files/loyalty-desktop-menu.jpg?v=1773275629");'>
+                    <p style='margin: 0;font-size: 20px;line-height: 1;color: #fff;font-weight: 400;'>Cliphair <br>Rewards</p>
+                    <p style='margin: 10px 0 20px;font-size: 15px;color: white;line-height: 14px;'>Earn points, & <br>unlock perks</p>
+                    <a href='/pages/rewards' id='yotpo-pdp-banner-join' title='Create an account' target='_blank' class='yotpo-button button' style='font-size: 12px;min-width: 90px;min-height: 30px;padding: 0;--color-button: 128,110,176;color: #fff;border:1px solid white;'>Join</a>
+                  </div>
+                  {% liquid
+                    assign menu_image = images['help-me-choose-navbar.jpg']
+                  %}
+                  <img
+                    style='width:251px; height:100%;'
+                    srcset="
+                      {%- if menu_image.width >= 165 -%}{{ menu_image | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if menu_image.width >= 360 -%}{{ menu_image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if menu_image.width >= 535 -%}{{ menu_image | image_url: width: 535 }} 535w,{%- endif -%}
+                      {%- if menu_image.width >= 750 -%}{{ menu_image | image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if menu_image.width >= 1070 -%}{{ menu_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                      {%- if menu_image.width >= 1500 -%}{{ menu_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ menu_image | image_url }} {{ menu_image.width }}w
+                    "
+                    src="{{ menu_image | image_url: width: 480 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) 480px"
+                    alt="{{ menu_image.alt }}"
+                    width="{{ menu_image.width }}"
+                    height="{{ menu_image.height }}"
+                    loading="lazy"
+                    class="motion-reduce"
+                  >
+                </div>
+              </li>
+
+              {% comment %} <li
                 class="scroll-trigger animate--slide-in"
                 style="--animation-order: 1;"
               >
@@ -1945,7 +1980,7 @@
                   loading="lazy"
                   class="motion-reduce"
                 >
-              </li>
+              </li> {% endcomment %}
             </ul>
           </div>
         </details>
