@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_89cGFt": {
+          "type": "announcement",
+          "settings": {
+            "text": "Earn points on every order – join The Cliphair Collective today!",
+            "link": "shopify://pages/rewards"
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -30,6 +37,7 @@
         }
       },
       "block_order": [
+        "announcement_89cGFt",
         "announcement-bar-0",
         "announcement-bar-1"
       ],
