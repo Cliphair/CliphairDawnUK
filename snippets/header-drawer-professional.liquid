@@ -42,7 +42,7 @@
           {% assign object = collections['nano-rings-hair-extensions'] %}
           <a
             id="HeaderDrawer-professional-nano-ring-nano-ring"
-            href="{{ object.url | append: '?filter.p.product_type=Nano+Ring+Hair+Extensions' }}"
+            href="{{ object.url }}"
             class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
             {% if request.path == object.url %}
               aria-current="page"
@@ -53,9 +53,11 @@
         </li>
 
         <li>
+          {% assign object = collections['nano-bond-hair-extensions'] %}
+          
           <a
             id="HeaderDrawer-professional-nano-ring-nano-bond"
-            href="{{ object.url | append: '?filter.p.product_type=Remy+Royale+Nano+Bonds' }}"
+            href="{{ object.url }}"
             class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
             {% if request.path == object.url %}
               aria-current="page"
