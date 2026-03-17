@@ -41,9 +41,9 @@
         "banner_tmNYwa": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
+            "image": "shopify://shop_images/perm10-pdp-banner.jpg",
             "color": "#f6f4ef",
-            "image_url": "shopify://collections/balayage-hair-extensions"
+            "image_url": "shopify://collections/permanent-extensions"
           }
         },
         "variant_picker": {
@@ -149,7 +149,7 @@
             "type": "custom",
             "heading": "Delivery Info",
             "icon": "none",
-            "content": "<p><span style=\"text-decoration:underline\"><strong>UK</strong></span></p><ul><li>Economy Tracked: 3-5 Working Days - FREE on Orders over £30</li><li>Express Tracked: 1-2 Working Days - £3.99</li><li>Next Working Day Guaranteed (Order Before 4pm Mon-Thu) - £7.99</li><li>Next Working Day by 10.30 AM (Order Before 3pm Mon-Thu) - £11.99</li><li>Saturday Guaranteed (Order Before 4pm Friday) - £8.99</li><li>Sunday Guaranteed (Order Before 3pm Saturday) - £5.99</li><li>Monday Guaranteed (Order Before 3pm Sunday) - £7.99</li><li>Pickup at Nearby Shop (Order Before      3pm For Next Working Day) - £3.99</li></ul><p><span style=\"text-decoration:underline\"><strong>USA</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £9.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>Canada</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £150, Otherwise £12.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>IRELAND/EU</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – 11.49<br/><strong>(Taxes Paid by Customer on Delivery)</strong></li><li>Economy Tracked: (4-7 Working Days) - £25.00<br/><strong>(Inc. All Taxes & Duties. Nothing to pay on Delivery)</strong> </li></ul><p><span style=\"text-decoration:underline\"><strong>REST OF THE WORLD</strong></span></p><ul><li>Express Tracked: (2-4 Working Days) – 14.99</li></ul><p><strong>Please note you might have to pay duties which are not included in carriage.</strong></p>",
+            "content": "<p><span style=\"text-decoration:underline\"><strong>UK</strong></span></p><ul><li>Economy Tracked: 3-5 Working Days - FREE on Orders over £30</li><li>Express Tracked: 1-2 Working Days - £3.99</li><li>Next Working Day Guaranteed (Order Before 4pm Mon-Thu) - £7.99</li><li>Next Working Day by 10.30 AM (Order Before 3pm Mon-Thu) - £11.99</li><li>Saturday Guaranteed (Order Before 4pm Friday) - £8.99</li><li>Sunday Guaranteed (Order Before 3pm Saturday) - £5.99</li><li>Monday Guaranteed (Order Before 3pm Sunday) - £7.99</li><li>Pickup at Nearby Shop (Order Before      3pm For Next Working Day) - £3.99</li></ul><p><span style=\"text-decoration:underline\"><strong>USA</strong></span></p><ul><li>Express Tracked: (1-2 Business Days) – FREE<br/>(Min. Order £150, Otherwise £9.99)<br/><strong>(Customer Pays All Duties And Taxes)</strong></li></ul><p><span style=\"text-decoration:underline\"><strong>Canada / Australia / New Zeland</strong></span></p><ul><li>Express Tracked: (2-4 Working Days) – FREE<br/>(Min. Order £150, Otherwise £12.99)</li></ul><p><span style=\"text-decoration:underline\"><strong>IRELAND/EU</strong></span></p><ul><li>Express Tracked: (1-2 Working Days) – FREE<br/>(Min. Order £200, Otherwise £11.49)<br/><strong>(Taxes Paid by Customer on Delivery)</strong></li></ul><p><span style=\"text-decoration:underline\"><strong>REST OF THE WORLD</strong></span></p><ul><li>Express Tracked: (2-4 Working Days) – 14.99</li></ul><p><strong>Please note you might have to pay duties which are not included in carriage.</strong></p>",
             "page": ""
           }
         },
