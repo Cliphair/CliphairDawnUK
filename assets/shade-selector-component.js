@@ -141,6 +141,9 @@ if (!customElements.get('shade-selector')) {
           if (window.yotpoWidgetsContainer?.initWidgets) {
             window.yotpoWidgetsContainer.initWidgets();
           }
+          if (window.Trustpilot?.loadFromElement){
+            window.Trustpilot.loadFromElement(document.querySelector('.trustpilot-widget'));
+          }
           this.stopLoading();
 
           document.dispatchEvent(new Event('shades:updated'));
