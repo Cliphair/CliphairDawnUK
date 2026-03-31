@@ -10,12 +10,6 @@
 {%- endstyle -%}
 
 {% liquid
-  if collection.metafields.visual_content.image_carrousel
-    assign location_class = collection.metafields.visual_content.image_carrousel.value.location
-    assign images = collection.metafields.visual_content.image_carrousel.value.images
-    assign element = '<div class="' | append: location_class | append: '"></div>'
-  endif
-  
   assign description = collection.description
   if description contains '<!-- split -->'
     assign description = description | split: '<!-- split -->' | first
@@ -39,11 +33,59 @@
 
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte {{ section.settings.text_alignment }}">
-          {% if description contains element %}
-            {% assign parts = description | split: element %}
-            {{ parts.first }}
-            {% render 'carrousel-images-with-caption-object' image_list:images %}
-            {{ parts.last }}
+          {%- assign description_html = description -%}
+          {% if description_html contains '[[pc:' %}
+            {%- assign chunks = description_html | split: '[[pc:' -%}
+
+            {%- for chunk in chunks offset: 1 -%}
+              {%- assign parts = chunk | split: ']]' -%}
+              {%- assign raw_url = parts.first | strip -%}
+              {%- assign after_text = parts | slice: 1, parts.size | join: ']]' -%}
+
+              {%- comment %}
+                Extract collection handle from:
+                - /collections/handle
+                - https://domain/collections/handle?x=y
+              {%- endcomment %}
+
+              {%- assign handle = raw_url -%}
+
+              {%- if handle contains '/collections/' -%}
+                {%- assign handle = handle | split: '/collections/' | last -%}
+              {%- endif -%}
+
+              {%- if handle contains '?' -%}
+                {%- assign handle = handle | split: '?' | first -%}
+              {%- endif -%}
+
+              {%- if handle contains '#' -%}
+                {%- assign handle = handle | split: '#' | first -%}
+              {%- endif -%}
+
+              {%- comment %}
+                all_collections limit: Shopify restricts how many unique handles you can access per page.
+                Keep placeholders modest (or use metaobject references for large-scale usage).
+              {%- endcomment %}
+
+              {%- assign target_collection = all_collections[handle] -%}
+
+              {%- if target_collection != blank -%}
+                {% render 'product-carousel',
+                  title: target_collection.title,
+                  products: target_collection.products,
+                  limit: 12,
+                  cta_url: target_collection.url,
+                  cta_label: 'Shop all'
+                %}
+              {%- else -%}
+                {%- comment %}
+                  Fallback: if someone mistypes the handle/URL, just omit the carousel silently.
+                  (Or output a small admin-only note if you prefer.)
+                {%- endcomment %}
+              {%- endif -%}
+
+              {{ after_text }}
+            {%- endfor -%}
           {% else %}
             {{ description }}
           {% endif %}

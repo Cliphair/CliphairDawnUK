@@ -33,16 +33,16 @@
   assign campaign_live = false
   assign multiple_images = false
 
-  assign v1_page  = collections['balayage-hair-extensions']
+  assign v1_page = collections['balayage-hair-extensions']
   assign v1_image = images['lived-in-colour-collection.jpg']
-  
+
   comment
-  assign v2_page  = collections['tape-in-hair-extensions']
-  assign v2_image = images['tape-sale-feb26-collection.jpg']
+    assign v2_page  = collections['tape-in-hair-extensions']
+    assign v2_image = images['tape-sale-feb26-collection.jpg']
   endcomment
 
-  assign v2_page  = nil
-  assign v2_image = nil
+  assign v2_page = null
+  assign v2_image = null
 
   if v1_page and v1_image
     assign has_v1 = true
@@ -64,12 +64,12 @@
     - If we are on v1 collection page AND v2 exists, show v2 instead (avoid linking to current collection)
   endcomment
 
-  assign active_page  = v1_page
+  assign active_page = v1_page
   assign active_image = v1_image
 
   if campaign_live and collection and v1_page and collection.url == v1_page.url
     if has_v2 and v2_page.url != collection.url
-      assign active_page  = v2_page
+      assign active_page = v2_page
       assign active_image = v2_image
       assign multiple_images = false
     else
@@ -226,25 +226,28 @@
                     assign is_insert_slot = true
                   endif
                 -%}
-                
+
                 {% assign lazy_load = false %}
+                {% assign is_lcp = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
+                {%- elsif forloop.index == 1 and section.settings.prioritise_lcp -%}
+                  {%- assign is_lcp = true -%}
                 {%- endif -%}
 
                 {% if is_insert_slot %}
                   {%- liquid
-                    assign sale_link  = active_page
+                    assign sale_link = active_page
                     assign sale_image = active_image
 
                     if multiple_images
                       assign page_modulo = paginate.current_page | minus: 1 | modulo: 2
 
                       if page_modulo == 1
-                        assign sale_link  = v2_page
+                        assign sale_link = v2_page
                         assign sale_image = v2_image
                       else
-                        assign sale_link  = v1_page
+                        assign sale_link = v1_page
                         assign sale_image = v1_image
                       endif
                     endif
@@ -294,6 +297,7 @@
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
+                    is_lcp: is_lcp,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id,
                     colour_as_title: section.settings.colour_as_title,
@@ -508,6 +512,13 @@
       "id": "enable_quick_add",
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "default": true,
+      "label": "Mark first product as LCP image",
+      "info": "Adds fetchpriority=high to the first product image. Disable if a hero banner or slideshow appears above this grid on the page."
     },
     {
       "type": "header",

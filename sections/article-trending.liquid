@@ -168,6 +168,15 @@
 
           {% for link in section.settings['trending-list'].links %}
             {% if link.type == 'article_link' %}
+              {%- liquid
+                if forloop.first
+                  assign card_lazy_load = false
+                  assign card_fetchpriority = 'high'
+                else
+                  assign card_lazy_load = true
+                  assign card_fetchpriority = ''
+                endif
+              -%}
               <li
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
                 class="articles-list__item grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -186,7 +195,9 @@
                   show_author: section.settings.show_author,
                   show_excerpt: false,
                   custom_style: 'card',
-                  image_src: 'metafields'
+                  image_src: 'metafields',
+                  lazy_load: card_lazy_load,
+                  fetchpriority: card_fetchpriority
                 %}
               </li>
             {% endif %}

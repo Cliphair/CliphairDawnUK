@@ -2,6 +2,32 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
+{% comment %}theme-check-disable{% endcomment %}
+{%- comment -%}
+  Manual <link rel="preload"> is intentional — we need the hint at the top of the section,
+  separate from the <img> rendered inside the slide loop. Using image_tag with preload: true
+  would output both the preload link and a duplicate <img> tag, which is not appropriate here.
+{%- endcomment -%}
+{%- if section.settings.prioritise_lcp and section.blocks.first.settings.image != blank -%}
+  <link
+    rel="preload"
+    as="image"
+    href="{{ section.blocks.first.settings.image | image_url: width: 768 }}"
+    imagesrcset="
+      {{ section.blocks.first.settings.image | image_url: width: 375 }} 375w,
+      {{ section.blocks.first.settings.image | image_url: width: 550 }} 550w,
+      {{ section.blocks.first.settings.image | image_url: width: 768 }} 768w
+      {%- if section.blocks.first.settings.image_desktop -%}
+        , {{ section.blocks.first.settings.image_desktop | image_url: width: 1100 }} 1100w,
+        {{ section.blocks.first.settings.image_desktop | image_url: width: 1500 }} 1500w,
+        {{ section.blocks.first.settings.image_desktop | image_url: width: 2000 }} 2000w
+      {%- endif -%}
+    "
+    imagesizes="100vw"
+  >
+{%- endif -%}
+{% comment %}theme-check-enable{% endcomment %}
+
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
@@ -170,26 +196,28 @@
         {%- if block.settings.image -%}
           {%- liquid
             assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
-            if section.settings.image_behavior == 'ambient'
-              assign sizes = '120vw'
-              assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
-            else
-              assign sizes = '100vw'
-              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-            endif
           -%}
           <picture>
             <source media="(max-width:768px)" srcset="{{ block.settings.image | image_url: width: 768 }}">
             {% if block.settings.image_desktop %}
-              <source media="(min-width:769px)" srcset="{{ block.settings.image_desktop | image_url: width: 3840 }}">
+              <source
+                media="(min-width:769px)"
+                srcset="
+                  {{ block.settings.image_desktop | image_url: width: 1100 }} 1100w,
+                  {{ block.settings.image_desktop | image_url: width: 1500 }} 1500w,
+                  {{ block.settings.image_desktop | image_url: width: 2000 }} 2000w,
+                  {{ block.settings.image_desktop | image_url: width: 3840 }} 3840w
+                "
+                sizes="100vw"
+              >
             {% endif %}
             <img
               src="{{ block.settings.image | image_url: width: 768 }}"
-              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-              alt="{{ section.settings.image.alt }}"
-              width="{{ widths }}"
+              loading="{% if section.settings.prioritise_lcp and forloop.first %}eager{% else %}lazy{% endif %}"
+              {% if section.settings.prioritise_lcp and forloop.first %}fetchpriority="high"{% endif %}
+              alt="{{ block.settings.image.alt | escape }}"
+              width="{{ block.settings.image.width }}"
               height="{{ height }}"
-              sizes="{{ sizes }}"
             >
           </picture>
         {%- else -%}
@@ -383,6 +411,13 @@
       ],
       "default": "counter",
       "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "label": "Prioritise as LCP image",
+      "info": "Enable when this slideshow is the first visible image on the page. Adds eager loading and fetch priority for better Core Web Vitals. Leave off if placed below the fold.",
+      "default": false
     },
     {
       "type": "checkbox",

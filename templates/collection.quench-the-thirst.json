@@ -20,6 +20,7 @@
         "desktop-image": "shopify://shop_images/deep-moisture-hair-care-range-desktop.webp",
         "mobile-image": "shopify://shop_images/deep-moisture-hair-care-range-mobile.webp",
         "url": "",
+        "prioritise_lcp": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -48,6 +49,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": false,
+        "enable_lcp_priority": false,
         "display_type_image": true,
         "type_image_src": "second",
         "badge_style": "fixed",

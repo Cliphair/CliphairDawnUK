@@ -159,6 +159,7 @@
                 <img
                   src="{{ block.settings.image | image_url: width: 768 }}"
                   loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  {% if forloop.first %}fetchpriority="high"{% endif %}
                   alt="{{ section.settings.image.alt }}"
                   width="{{ widths }}"
                   height="{{ height }}"

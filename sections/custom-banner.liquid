@@ -37,10 +37,32 @@
       {% endunless %}
     >
       <picture>
-        <source media="(max-width:768px)" srcset="{{ section.settings.mobile-image | image_url }}">
+        {%- if section.settings.mobile-image -%}
+          <source
+            media="(max-width:768px)"
+            srcset="
+              {%- if section.settings.mobile-image.width >= 375 -%}{{ section.settings.mobile-image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if section.settings.mobile-image.width >= 550 -%}{{ section.settings.mobile-image | image_url: width: 550 }} 550w,{%- endif -%}
+              {%- if section.settings.mobile-image.width >= 750 -%}{{ section.settings.mobile-image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if section.settings.mobile-image.width >= 1100 -%}{{ section.settings.mobile-image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {{ section.settings.mobile-image | image_url }} {{ section.settings.mobile-image.width }}w
+            "
+            sizes="100vw"
+          >
+        {%- endif -%}
         <img
-          src="{{ section.settings.desktop-image | image_url }}"
-          loading="lazy"
+          srcset="
+            {%- if section.settings.desktop-image.width >= 750 -%}{{ section.settings.desktop-image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if section.settings.desktop-image.width >= 1100 -%}{{ section.settings.desktop-image | image_url: width: 1100 }} 1100w,{%- endif -%}
+            {%- if section.settings.desktop-image.width >= 1500 -%}{{ section.settings.desktop-image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {%- if section.settings.desktop-image.width >= 2000 -%}{{ section.settings.desktop-image | image_url: width: 2000 }} 2000w,{%- endif -%}
+            {%- if section.settings.desktop-image.width >= 3000 -%}{{ section.settings.desktop-image | image_url: width: 3000 }} 3000w,{%- endif -%}
+            {{ section.settings.desktop-image | image_url }} {{ section.settings.desktop-image.width }}w
+          "
+          src="{{ section.settings.desktop-image | image_url: width: 1500 }}"
+          sizes="100vw"
+          loading="{% if section.settings.prioritise_lcp %}eager{% else %}lazy{% endif %}"
+          {% if section.settings.prioritise_lcp %}fetchpriority="high"{% endif %}
           alt="{{ section.settings.desktop-image.alt }}"
           width="{{ section.settings.desktop-image.width }}"
           height="{{ section.settings.desktop-image.height }}"
@@ -83,6 +105,13 @@
       "type": "url",
       "id": "url",
       "label": "Image link"
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "label": "Prioritise image loading",
+      "info": "Enable when this banner is the first large image on the page (LCP). Adds eager loading and fetchpriority=high.",
+      "default": false
     },
     {
       "type": "header",

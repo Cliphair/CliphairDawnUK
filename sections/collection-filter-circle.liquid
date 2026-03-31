@@ -117,7 +117,8 @@
                         card_image: card_image,
                         media_aspect_ratio: section.settings.image_ratio,
                         circle_image: section.settings.circle_image,
-                        show_title: section.settings.show_title
+                        show_title: section.settings.show_title,
+                        lazy_load: forloop.index > 6
                       %}
                       {% comment %} <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span> {% endcomment %}
                       <span class="visually-hidden">

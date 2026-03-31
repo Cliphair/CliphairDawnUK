@@ -159,8 +159,11 @@
             >
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
+                {% assign is_lcp = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
+                {%- elsif forloop.index == 1 and section.settings.prioritise_lcp -%}
+                  {%- assign is_lcp = true -%}
                 {%- endif -%}
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -179,6 +182,7 @@
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
+                    is_lcp: is_lcp,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id,
                     colour_as_title: section.settings.colour_as_title,
@@ -400,6 +404,13 @@
       "id": "enable_quick_add",
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "default": true,
+      "label": "Mark first product as LCP image",
+      "info": "Adds fetchpriority=high to the first product image. Disable if a hero banner or slideshow appears above this grid on the page."
     },
     {
       "type": "header",

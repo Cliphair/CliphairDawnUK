@@ -30,6 +30,7 @@
         "desktop-image": "shopify://shop_images/outlet-desktop-banner.webp",
         "mobile-image": "shopify://shop_images/outlet-mobile-banner.webp",
         "url": "",
+        "prioritise_lcp": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -52,6 +53,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": false,
+        "enable_lcp_priority": false,
         "display_type_image": false,
         "type_image_src": "shade",
         "badge_style": "fixed",

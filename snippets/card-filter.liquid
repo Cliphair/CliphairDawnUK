@@ -86,7 +86,7 @@
               alt=""
               height="{{ card_image.height }}"
               width="{{ card_image.width }}"
-              loading="lazy"
+              loading="{% if lazy_load == false %}eager{% else %}lazy{% endif %}"
               class="motion-reduce"
             >
           </div>

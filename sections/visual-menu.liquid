@@ -68,13 +68,20 @@
                 {% endif %}
               >
                 {% assign collection_object = link.object %}
+                {%- liquid
+                  assign card_lazy_load = true
+                  if section.settings.prioritise_lcp and forloop.index <= 3
+                    assign card_lazy_load = false
+                  endif
+                -%}
                 {% render 'card-collection-text-small',
                   card_collection: collection_object,
                   media_aspect_ratio: section.settings.image_ratio,
                   columns: columns,
                   custom_title: link.title,
                   circle_image: section.settings.circle_images,
-                  hide_arrow: section.settings.hide_card_arrow
+                  hide_arrow: section.settings.hide_card_arrow,
+                  lazy_load: card_lazy_load
                 %}
               </li>
             {% endif %}
@@ -155,6 +162,13 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "label": "Eager load visible images",
+      "info": "Enable when this section is above the fold. Removes lazy loading from the first 3 carousel items — the rest remain lazy. Leave off if placed below the fold.",
+      "default": false
+    },
     {
       "type": "link_list",
       "id": "collection-list",

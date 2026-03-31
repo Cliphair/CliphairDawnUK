@@ -69,6 +69,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": false,
+        "prioritise_lcp": false,
         "display_type_image": false,
         "type_image_src": "shade",
         "badge_style": "fixed",
