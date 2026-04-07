@@ -2367,25 +2367,26 @@ product-info .loading-overlay:not(.hidden)~*,
 }
 
 .announcement-bar__message {
+  --announcement-font-size: 1.6rem;
   text-align: center;
   padding: 15px 0;
   margin: 0;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: var(--announcement-font-size);
   line-height: 1em;
-  letter-spacing: calc(1.6rem * 0.03 * -1);
+  letter-spacing: calc(var(--announcement-font-size) * 0.03 * -1);
 }
 
 .announcement-bar__message>* {
   font-size: inherit;
 }
 
-/* @media screen and (min-width:768px) {
+@media screen and (min-width:1200px) {
   .announcement-bar__message {
-    font-size: 1.2rem;
-    padding: 1rem 0;
+    --announcement-font-size: 2rem;
+    padding: 20px 0;
   }
-} */
+}
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
 .announcement-bar-slider--fade-in-previous .announcement-bar__message,
