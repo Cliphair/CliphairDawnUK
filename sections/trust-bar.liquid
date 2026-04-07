@@ -1,0 +1,244 @@
+{{ 'section-trust-bar.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="trust-bar color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="trust-bar__grid list-unstyled" role="list">
+        {%- for block in section.blocks -%}
+          <li class="trust-bar__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="trust-bar__item-inner trust-bar__item-inner--link">
+            {%- else -%}
+              <span class="trust-bar__item-inner">
+            {%- endif -%}
+
+            <span class="trust-bar__icon" aria-hidden="true">
+              {%- if block.settings.image != blank -%}
+                {{-
+                  block.settings.image
+                  | image_url: width: 48
+                  | image_tag: loading: 'lazy', widths: '24, 48', sizes: '24px', alt: block.settings.label
+                -}}
+              {%- else -%}
+                {%- case block.settings.icon -%}
+                  {%- when 'check' -%}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  {%- when 'returns' -%}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="9 14 4 9 9 4"></polyline>
+                      <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+                    </svg>
+                  {%- when 'colour-match' -%}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  {%- when 'dispatch' -%}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M16.5 9.4 7.55 4.24"></path>
+                      <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                      <line x1="12" y1="22" x2="12" y2="12"></line>
+                      <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"></path>
+                    </svg>
+                  {%- when 'truck' -%}
+                    {%- render 'icon-truck' -%}
+                  {%- when 'heart' -%}
+                    {%- render 'icon-heart' -%}
+                  {%- when 'star' -%}
+                    {%- render 'icon-star' -%}
+                  {%- when 'padlock' -%}
+                    {%- render 'icon-padlock' -%}
+                {%- endcase -%}
+              {%- endif -%}
+            </span>
+
+            {%- if block.settings.label != blank -%}
+              <span class="trust-bar__label">{{ block.settings.label | escape }}</span>
+            {%- endif -%}
+
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- else -%}
+              </span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust bar",
+  "tag": "section",
+  "class": "section section-trust-bar",
+  "max_blocks": 8,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Trust badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom icon image",
+          "info": "Upload a custom icon. If set, this overrides the built-in icon selection below."
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Built-in icon",
+          "info": "Used when no custom image is uploaded.",
+          "options": [
+            { "value": "check", "label": "Checkmark" },
+            { "value": "returns", "label": "Returns arrow" },
+            { "value": "colour-match", "label": "Colour match (person)" },
+            { "value": "dispatch", "label": "Dispatch (box)" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "star", "label": "Star" },
+            { "value": "padlock", "label": "Padlock" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Trust point"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional. Makes the badge clickable."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust bar",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "check",
+            "label": "100% Human hair",
+            "link": "/"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "colour-match",
+            "label": "Free colour match"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "returns",
+            "label": "Free returns"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "dispatch",
+            "label": "7-day dispatch"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

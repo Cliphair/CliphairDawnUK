@@ -9,3 +9,10 @@ ehthumbs.db
 Thumbs.db
 
 .shopify
+
+# Claude Code agents and config
+.github/agents/
+.claude/
+CLAUDE.md
+
+.prds/
