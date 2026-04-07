@@ -14,8 +14,16 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_Ew7Waa": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Express Delivery Over £75 + Double Loyalty Points",
+            "link": "shopify://pages/rewards"
+          }
+        },
         "announcement_89cGFt": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Earn points on every order – join The Cliphair Collective today!",
             "link": "shopify://pages/rewards"
@@ -37,6 +45,7 @@
         }
       },
       "block_order": [
+        "announcement_Ew7Waa",
         "announcement_89cGFt",
         "announcement-bar-0",
         "announcement-bar-1"
@@ -126,6 +135,7 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "name": "Sale",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
             "text_alignment": "center",
