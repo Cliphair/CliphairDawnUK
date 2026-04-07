@@ -16,7 +16,7 @@
     "heading_scale": 100,
     "type_body_font": "inter_n3",
     "body_scale": 100,
-    "page_width": 1400,
+    "page_width": 1600,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 40,
     "spacing_grid_vertical": 40,
@@ -438,6 +438,18 @@
           "button_label": "#414141",
           "secondary_button_label": "#414141",
           "shadow": "#414141"
+        }
+      },
+      "scheme-b8f8b2a0-bdc3-4a09-b004-a9f17fd5df06": {
+        "settings": {
+          "background": "#faf2e5",
+          "background_gradient": "",
+          "headers": "#3a3838",
+          "text": "#414141",
+          "button": "#faf2e5",
+          "button_label": "#414141",
+          "secondary_button_label": "#3a3838",
+          "shadow": "#3a3838"
         }
       }
     }
