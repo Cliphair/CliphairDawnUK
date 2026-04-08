@@ -59,7 +59,7 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 54.5rem;
+  max-width: 60rem;
 }
 
 @media screen and (min-width: 1400px) {

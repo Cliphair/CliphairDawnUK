@@ -162,11 +162,18 @@
   >
     {%- for block in section.blocks -%}
       {%- style -%}
+        {%- assign heading_font_italic = block.settings.heading_custom_font | font_modify: 'style', 'italic' -%}
         {{ block.settings.heading_custom_font | font_face: font_display: 'swap' }}
-        .section-slideshow #Slide-{{ section.id }}-{{ forloop.index }} .banner__heading{
-          --custom-font-heading-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
-          --custom-font-heading-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
-          --custom-font-heading-style: {{ block.settings.heading_custom_font.style | default: 'normal' }};
+        {%- if heading_font_italic -%}{{ heading_font_italic | font_face: font_display: 'swap' }}{%- endif -%}
+        .section-slideshow #Slide-{{ section.id }}-{{ forloop.index }} .banner__heading {
+          --font-heading-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
+          --font-heading-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
+          --font-heading-style: normal;
+        }
+        .section-slideshow #Slide-{{ section.id }}-{{ forloop.index }} .banner__heading em {
+          font-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
+          font-style: italic;
+          font-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
         }
 
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {

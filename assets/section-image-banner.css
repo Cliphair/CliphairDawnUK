@@ -392,12 +392,6 @@
   letter-spacing: -0.04em;
 }
 
-.banner__heading em {
-  font-family: var(--custom-font-heading-family);
-  font-style: var(--custom-font-heading-style);
-  font-weight: var(--custom-font-heading-weight);
-}
-
 @media screen and (max-width: 399px) {
   .banner__heading {
     font-size: 2rem;
