@@ -104,6 +104,50 @@
         "trackable_name": "homepage banners"
       }
     },
+    "multicolumn_xiMcd8": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_8bEG7q": {
+          "type": "column",
+          "settings": {
+            "title": "Colour Match",
+            "text": "<p>Find your perfect shade, matched by our hair experts</p>",
+            "link_label": "Match Me",
+            "link": "shopify://pages/colour-matching-service"
+          }
+        },
+        "column_66qVcU": {
+          "type": "column",
+          "settings": {
+            "title": "Quiz",
+            "text": "<p>New to extensions? We’ll walk you through it in 30 seconds</p>",
+            "link_label": "Take Quiz",
+            "link": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "column_8bEG7q",
+        "column_66qVcU"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "maquee_bdNYHF": {
       "type": "maquee",
       "blocks": {
@@ -1282,6 +1326,7 @@
   "order": [
     "trust_bar_wQaLCk",
     "slideshow_3tCMjU",
+    "multicolumn_xiMcd8",
     "maquee_bdNYHF",
     "fef9cc49-05dc-468b-82e4-1520264647b6",
     "visual_menu_66DUPMN",
