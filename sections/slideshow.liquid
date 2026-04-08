@@ -1,6 +1,34 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 1 %}
+  {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% comment %}theme-check-disable{% endcomment %}
+{%- comment -%}
+  Manual <link rel="preload"> is intentional — we need the hint at the top of the section,
+  separate from the <img> rendered inside the slide loop. Using image_tag with preload: true
+  would output both the preload link and a duplicate <img> tag, which is not appropriate here.
+{%- endcomment -%}
+{%- if section.settings.prioritise_lcp and section.blocks.first.settings.image != blank -%}
+  <link
+    rel="preload"
+    as="image"
+    href="{{ section.blocks.first.settings.image | image_url: width: 768 }}"
+    imagesrcset="
+      {{ section.blocks.first.settings.image | image_url: width: 750 }} 750w,
+      {{ section.blocks.first.settings.image | image_url: width: 1080 }} 1080w,
+      {{ section.blocks.first.settings.image | image_url: width: 1400 }} 1400w
+      {%- if section.blocks.first.settings.image_desktop -%}
+        , {{ section.blocks.first.settings.image_desktop | image_url: width: 1100 }} 1100w,
+        {{ section.blocks.first.settings.image_desktop | image_url: width: 1500 }} 1500w,
+        {{ section.blocks.first.settings.image_desktop | image_url: width: 2000 }} 2000w
+      {%- endif -%}
+    "
+    imagesizes="100vw"
+  >
+{%- endif -%}
+{% comment %}theme-check-enable{% endcomment %}
 
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
   {%- style -%}
@@ -24,7 +52,7 @@
     }
 
     {% if section.blocks.first.settings.image_desktop %}
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 950px) {
       #Slider-{{ section.id }}::before,
       #Slider-{{ section.id }} .media::before {
         padding-bottom: {{ 1 | divided_by: section.blocks.first.settings.image_desktop.aspect_ratio | times: 100 }}%;
@@ -128,14 +156,23 @@
     aria-atomic="true"
     data-autoplay="{{ section.settings.auto_rotate }}"
     data-speed="{{ section.settings.change_slides_speed }}"
-    {% if section.settings.trackable_name != blank %}data-horizontal-scroll{% endif %}
+    {% if section.settings.trackable_name != blank %}
+      data-horizontal-scroll
+    {% endif %}
   >
     {%- for block in section.blocks -%}
-      <style>
+      {%- style -%}
+        {{ block.settings.heading_custom_font | font_face: font_display: 'swap' }}
+        .section-slideshow #Slide-{{ section.id }}-{{ forloop.index }} .banner__heading{
+          --custom-font-heading-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
+          --custom-font-heading-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
+          --custom-font-heading-style: {{ block.settings.heading_custom_font.style | default: 'normal' }};
+        }
+
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
-      </style>
+      {%- endstyle -%}
       {% if block.settings.image_url %}
         <a
           href="{{ block.settings.image_url }}"
@@ -147,7 +184,7 @@
           aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
           tabindex="-1"
           {% if section.settings.trackable_name != blank %}
-            data-event-type="section_click" 
+            data-event-type="section_click"
             data-cta-label="click_banner_{{ block.settings.banner_id | handleize | replace: "-", "_" }}"
           {% endif %}
         >
@@ -161,7 +198,7 @@
           aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
           tabindex="-1"
           {% if section.settings.trackable_name != blank %}
-            data-event-type="section_click" 
+            data-event-type="section_click"
             data-cta-label="click_banner_{{ block.settings.banner_id | handleize | replace: "-", "_" }}"
           {% endif %}
         >
@@ -170,26 +207,38 @@
         {%- if block.settings.image -%}
           {%- liquid
             assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
-            if section.settings.image_behavior == 'ambient'
-              assign sizes = '120vw'
-              assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
-            else
-              assign sizes = '100vw'
-              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-            endif
           -%}
           <picture>
-            <source media="(max-width:768px)" srcset="{{ block.settings.image | image_url: width: 768 }}">
+            <source
+              media="(max-width:949px)"
+              srcset="
+                {{ block.settings.image | image_url: width: 750 }} 750w,
+                {{ block.settings.image | image_url: width: 1080 }} 1080w,
+                {{ block.settings.image | image_url: width: 1400 }} 1400w
+              "
+              sizes="100vw"
+            >
             {% if block.settings.image_desktop %}
-              <source media="(min-width:769px)" srcset="{{ block.settings.image_desktop | image_url: width: 3840 }}">
+              <source
+                media="(min-width:950px)"
+                srcset="
+                  {{ block.settings.image_desktop | image_url: width: 1100 }} 1100w,
+                  {{ block.settings.image_desktop | image_url: width: 1500 }} 1500w,
+                  {{ block.settings.image_desktop | image_url: width: 2000 }} 2000w,
+                  {{ block.settings.image_desktop | image_url: width: 3840 }} 3840w
+                "
+                sizes="100vw"
+              >
             {% endif %}
             <img
               src="{{ block.settings.image | image_url: width: 768 }}"
-              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-              alt="{{ section.settings.image.alt }}"
-              width="{{ widths }}"
+              loading="{% if section.settings.prioritise_lcp and forloop.first %}eager{% else %}lazy{% endif %}"
+              {% if section.settings.prioritise_lcp and forloop.first %}
+                fetchpriority="high"
+              {% endif %}
+              alt="{{ block.settings.image.alt | escape }}"
+              width="{{ block.settings.image.width }}"
               height="{{ height }}"
-              sizes="{{ sizes }}"
             >
           </picture>
         {%- else -%}
@@ -205,7 +254,7 @@
         <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
           {%- if block.settings.heading != blank -%}
             <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
-              {{ block.settings.heading }}
+              {{ block.settings.heading | replace: '\n', '<br>' }}
             </h2>
           {%- endif -%}
           {%- if block.settings.subheading != blank -%}
@@ -319,7 +368,7 @@
 {
   "name": "t:sections.slideshow.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section-slideshow",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -383,6 +432,13 @@
       ],
       "default": "counter",
       "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "label": "Prioritise as LCP image",
+      "info": "Enable when this slideshow is the first visible image on the page. Adds eager loading and fetch priority for better Core Web Vitals. Leave off if placed below the fold.",
+      "default": false
     },
     {
       "type": "checkbox",
@@ -499,6 +555,12 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "font_picker",
+          "id": "heading_custom_font",
+          "label": "Heading custom font",
+          "default": "inter_n3"
         },
         {
           "type": "inline_richtext",
