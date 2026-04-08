@@ -9,26 +9,57 @@
  */
 {
   "sections": {
-    "visual_menu_66DUPM": {
-      "type": "visual-menu",
-      "custom_css": [
-        ".grid--peek .grid__item {min-width: unset;}",
-        "@media screen and (max-width: 749px) {.slider--tablet.grid--peek.grid--3-col-tablet-down .grid__item {width: calc( (100% - 1.5rem - var(--grid-mobile-horizontal-spacing) * 5) / 3 ); }}",
-        "@media screen and (min-width: 1400px) {.section-visual-menu {display: none; }}"
+    "trust_bar_wQaLCk": {
+      "type": "trust-bar",
+      "blocks": {
+        "badge_rQKpXd": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/checkmark-icon.svg",
+            "icon": "check",
+            "label": "100% Human hair",
+            "link": "/"
+          }
+        },
+        "badge_Nhtimr": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/colour-match-icon.svg",
+            "icon": "colour-match",
+            "label": "Free colour match",
+            "link": ""
+          }
+        },
+        "badge_P636gk": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/return-icon.svg",
+            "icon": "returns",
+            "label": "Free returns",
+            "link": ""
+          }
+        },
+        "badge_W73pFR": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/dispatch-icon.svg",
+            "icon": "dispatch",
+            "label": "7-day dispatch",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge_rQKpXd",
+        "badge_Nhtimr",
+        "badge_P636gk",
+        "badge_W73pFR"
       ],
+      "name": "Trust bar",
       "settings": {
-        "collection-list": "visual-menu",
-        "image_ratio": "square",
-        "circle_images": true,
-        "hide_card_arrow": true,
-        "columns_desktop": 6,
-        "swipe_on_desktop": true,
-        "color_scheme": "",
-        "columns_mobile": "3",
-        "swipe_on_mobile": true,
-        "slider_visual": "dots",
-        "padding_top": 12,
-        "padding_bottom": 0
+        "color_scheme": "scheme-6f6266cc-f4f4-49f3-8a1c-4031f84b9827",
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "slideshow_3tCMjU": {
@@ -147,6 +178,7 @@
         "element_zx3LNE",
         "element_PzXtwm"
       ],
+      "disabled": true,
       "custom_css": [
         "a {color: inherit; text-decoration: none;}",
         "a:hover {text-decoration: underline;}"
@@ -1292,7 +1324,7 @@
     }
   },
   "order": [
-    "visual_menu_66DUPM",
+    "trust_bar_wQaLCk",
     "slideshow_3tCMjU",
     "maquee_bdNYHF",
     "fef9cc49-05dc-468b-82e4-1520264647b6",
