@@ -68,77 +68,31 @@
         "slide_H7gM9z": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/homepage-banner-rewards-mobile.jpg",
-            "image_desktop": "shopify://shop_images/homepage-banner-rewards-desktop.jpg",
-            "image_url": "shopify://pages/rewards",
-            "heading": "",
+            "image": "shopify://shop_images/new-homepage-banner-mobile.jpg",
+            "image_desktop": "shopify://shop_images/new-homepage-banner-desktop.jpg",
+            "image_url": "",
+            "heading": "<em>Created for confidence. </em>Volume, length, colour & so much more...",
             "heading_size": "h1",
             "subheading": "",
-            "button_label": "",
-            "link": "",
+            "button_label": "SHOP NOW",
+            "link": "/",
             "button_style_secondary": false,
-            "box_align": "middle-center",
+            "box_align": "middle-right",
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "banner_id": "rewards"
-          }
-        },
-        "slide_TpRyJJ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/lived-in-colour-mobile-v2.jpg",
-            "image_desktop": "shopify://shop_images/lived-in-colour-desktop-v1.jpg",
-            "image_url": "shopify://collections/balayage-hair-extensions",
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "banner_id": "lived-in-colour"
-          }
-        },
-        "slide_cnhnUM": {
-          "type": "slide",
-          "name": "Shop By Shade",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
-            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
-            "image_url": "shopify://pages/hair-extensions-by-colour",
-            "heading": "",
-            "heading_size": "h2",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center",
-            "banner_id": "main"
+            "banner_id": "shop-by-shade"
           }
         }
       },
       "block_order": [
-        "slide_H7gM9z",
-        "slide_TpRyJJ",
-        "slide_cnhnUM"
+        "slide_H7gM9z"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "adapt_image",
+        "slide_height": "small",
         "slider_visual": "dots",
         "auto_rotate": true,
         "change_slides_speed": 5,
