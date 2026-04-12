@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_Ew7Waa": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free Monday Guaranteed Delivery Over £75 + Double Points",
             "link": "shopify://pages/rewards"
