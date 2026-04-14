@@ -63,22 +63,6 @@
         "enable_language_selector": false
       }
     },
-    "countdown_DwXXJA": {
-      "type": "countdown",
-      "disabled": true,
-      "settings": {
-        "text": "Double Loyalty Points. Earn 2 points for every £1 spent.",
-        "timer_text": "Ends In:",
-        "color_scheme": "accent-3",
-        "year": 2026,
-        "month": "2",
-        "day": 8,
-        "hour": 23,
-        "minute": 59,
-        "padding_top": 8,
-        "padding_bottom": 8
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -98,65 +82,6 @@
         "padding_bottom": 0
       }
     },
-    "image_ticker_fpd48x": {
-      "type": "image-ticker",
-      "blocks": {
-        "announcement_image_zkJVKU": {
-          "type": "announcement-image",
-          "name": "Saturday Delivery",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Saturday_Guaranteed_Delivery_-blue_-hair_extensions.gif",
-            "text_alignment": "center",
-            "color_scheme": "accent-1",
-            "link": "shopify://pages/hair-extensions-by-colour"
-          }
-        },
-        "announcement_image_FmKiMd": {
-          "type": "announcement-image",
-          "name": "Sunday Delivery",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Sunday_delivery_hair_extensions_blackfriday_sale.gif",
-            "text_alignment": "center",
-            "color_scheme": "accent-1",
-            "link": ""
-          }
-        },
-        "announcement_image_8amwCN": {
-          "type": "announcement-image",
-          "name": "Monday Delivery",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Hair_Extensions_Monday_Delivery.gif",
-            "text_alignment": "center",
-            "color_scheme": "accent-1",
-            "link": ""
-          }
-        },
-        "announcement_image_Q3tyyb": {
-          "type": "announcement-image",
-          "name": "Sale",
-          "settings": {
-            "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
-            "text_alignment": "center",
-            "color_scheme": "accent-1",
-            "link": "shopify://pages/hair-extensions-by-colour"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_image_zkJVKU",
-        "announcement_image_FmKiMd",
-        "announcement_image_8amwCN",
-        "announcement_image_Q3tyyb"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "img {height: auto; max-width: min(600px, 100%) !important; margin: 0 auto;}"
-      ],
-      "settings": {}
-    },
     "breadcrumbs": {
       "type": "breadcrumbs",
       "settings": {}
@@ -164,9 +89,7 @@
   },
   "order": [
     "announcement-bar",
-    "countdown_DwXXJA",
     "header",
-    "image_ticker_fpd48x",
     "breadcrumbs"
   ]
 }
