@@ -104,6 +104,43 @@
         "trackable_name": "homepage banners"
       }
     },
+    "image_cta_columns_EDYpn7": {
+      "type": "image-cta-columns",
+      "blocks": {
+        "card_zaA44y": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/cm-banner-new-homepage-mobile_1.jpg",
+            "image_desktop": "shopify://shop_images/cm-banner-new-homepage-desktop_1.jpg",
+            "heading": "Colour Match",
+            "text": "Find your perfect shade, matched by our hair experts",
+            "button_label": "Match Me",
+            "button_link": "shopify://pages/colour-matching-service"
+          }
+        },
+        "card_F9ebhR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/quiz-banner-new-homepage-mobile_1.jpg",
+            "image_desktop": "shopify://shop_images/quiz-banner-new-homepage-desktop_1.jpg",
+            "heading": "Quiz",
+            "text": "New to extensions? We'll walk you through it in 30 seconds",
+            "button_label": "Take Quiz",
+            "button_link": "shopify://pages/journey"
+          }
+        }
+      },
+      "block_order": [
+        "card_zaA44y",
+        "card_F9ebhR"
+      ],
+      "name": "Image CTA columns",
+      "settings": {
+        "color_scheme": "scheme-bd7e857b-d873-4ead-bec3-573f1a9145e5",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "multicolumn_xiMcd8": {
       "type": "multicolumn",
       "blocks": {
@@ -130,6 +167,7 @@
         "column_8bEG7q",
         "column_66qVcU"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
@@ -1326,6 +1364,7 @@
   "order": [
     "trust_bar_wQaLCk",
     "slideshow_3tCMjU",
+    "image_cta_columns_EDYpn7",
     "multicolumn_xiMcd8",
     "maquee_bdNYHF",
     "fef9cc49-05dc-468b-82e4-1520264647b6",
