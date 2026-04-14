@@ -346,14 +346,14 @@
       },
       "background-faded-pink": {
         "settings": {
-          "background": "#ba69a1",
-          "background_gradient": "linear-gradient(-45deg, #fff, #fbcfe830, #fff)",
-          "headers": "#121212",
-          "text": "#4a4a4a",
-          "button": "#ba69a1",
+          "background": "#ffffff",
+          "background_gradient": "",
+          "headers": "#000000",
+          "text": "#000000",
+          "button": "#000000",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "secondary_button_label": "#000000",
+          "shadow": "#000000"
         }
       },
       "background-faded-blue": {
