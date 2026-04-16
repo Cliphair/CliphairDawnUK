@@ -1,0 +1,264 @@
+{{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-hair-goal-cards-grid.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'hair-goal-cards.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- unless section.settings.title == blank -%}
+      <h2 class="hair-goal-cards-grid__heading">{{ section.settings.title }}</h2>
+    {%- endunless -%}
+
+    {%- unless section.settings.introduction == blank -%}
+      <div class="rte hair-goal-cards-grid__introduction">{{ section.settings.introduction }}</div>
+    {%- endunless -%}
+
+    {%- if section.blocks.size > 0 -%}
+      {%- liquid
+        assign col_desktop = section.settings.columns_desktop | plus: 0
+        assign col_tablet = col_desktop | minus: 1
+        if col_tablet < 2
+          assign col_tablet = 2
+        endif
+        assign col_mobile = section.settings.columns_mobile
+        assign initial_visible = section.settings.initial_visible
+        assign show_more = false
+        if section.blocks.size > initial_visible
+          assign show_more = true
+        endif
+        assign image_sizes = '(min-width: 990px) calc((100vw - 10rem) / ' | append: col_desktop | append: '), (min-width: 750px) calc((100vw - 3rem) / ' | append: col_tablet | append: '), calc((100vw - 3rem) / ' | append: col_mobile | append: ')'
+      -%}
+
+      <hair-goal-grid data-initial-visible="{{ initial_visible }}">
+        <ul
+          id="Grid-{{ section.id }}"
+          class="grid grid--{{ col_desktop }}-col-desktop grid--{{ col_tablet }}-col-tablet grid--{{ col_mobile }}-col-tablet-down"
+          role="list"
+        >
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign card_priority = false
+              if forloop.first and section.settings.enable_lcp_priority
+                assign card_priority = true
+              endif
+            -%}
+            {%- render 'hair-goal-card',
+              block: block,
+              card_mode: 'grid',
+              section_id: section.id,
+              index: forloop.index,
+              image_ratio: section.settings.image_ratio,
+              image_sizes: image_sizes,
+              initial_visible: initial_visible,
+              enable_priority: card_priority
+            -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if show_more and section.settings.show_more_label != blank -%}
+          <div class="hair-goal-cards-grid__more">
+            <button type="button" class="button button--primary" data-show-more>
+              {{- section.settings.show_more_label | escape -}}
+            </button>
+          </div>
+          {%- if section.settings.show_less_label != blank -%}
+            <div class="hair-goal-cards-grid__less" hidden>
+              <button type="button" class="button button--secondary" data-show-less>
+                {{- section.settings.show_less_label | escape -}}
+              </button>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </hair-goal-grid>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hair Goal — Grid",
+  "tag": "section",
+  "class": "section section-hair-goal-cards-grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction text"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "options": [
+        { "value": "portrait", "label": "Portrait (3:4)" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lcp_priority",
+      "label": "Prioritise first card image (LCP)",
+      "info": "Enable only when this section is the first visible content on the page.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Columns"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "header",
+      "content": "View More"
+    },
+    {
+      "type": "range",
+      "id": "initial_visible",
+      "label": "Cards visible before View More",
+      "info": "Leave Show More label blank to always show all cards.",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "show_more_label",
+      "label": "View More button label",
+      "info": "Leave blank to show all cards.",
+      "default": "View More"
+    },
+    {
+      "type": "text",
+      "id": "show_less_label",
+      "label": "View Less button label",
+      "info": "Leave blank to hide the View Less button.",
+      "default": "View Less"
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "info": "Short label overlaid on the image — e.g. BEGINNER"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Max Volume"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Thick, full, head-turning"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hair Goal — Grid",
+      "settings": {
+        "title": "Which extensions are right for you?",
+        "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
+        "image_ratio": "square",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "initial_visible": 4,
+        "show_more_label": "View More"
+      },
+      "blocks": [{ "type": "card" }, { "type": "card" }, { "type": "card" }, { "type": "card" }]
+    }
+  ]
+}
+{% endschema %}

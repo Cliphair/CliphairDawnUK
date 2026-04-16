@@ -1,0 +1,199 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-hair-goal-cards-carousel.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- unless section.settings.title == blank -%}
+    <div class="page-width">
+      <h2 class="hair-goal-cards-carousel__heading">
+        {{- section.settings.title -}}
+      </h2>
+    </div>
+  {%- endunless -%}
+
+  {%- if section.blocks.size > 0 -%}
+    {%- liquid
+      assign show_controls = false
+      if section.blocks.size > 1
+        assign show_controls = true
+      endif
+      assign image_sizes = '(min-width: 990px) 24vw, (min-width: 750px) 38vw, 60vw'
+    -%}
+
+    <slider-component-custom
+      id="slider-{{ section.id }}"
+      class="hair-goal-cards-carousel__slider"
+      data-visual="dots"
+    >
+      <ul
+        id="Slider-{{ section.id }}"
+        class="hair-goal-cards-carousel__list grid grid--peek slider slider--tablet slider--desktop"
+        role="list"
+        aria-label="{{ section.settings.title | strip_html | escape }}"
+      >
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign card_priority = false
+            if forloop.first and section.settings.enable_lcp_priority
+              assign card_priority = true
+            endif
+          -%}
+          {%- render 'hair-goal-card',
+            block: block,
+            card_mode: 'carousel',
+            section_id: section.id,
+            index: forloop.index,
+            is_slide: true,
+            image_ratio: section.settings.image_ratio,
+            image_sizes: image_sizes,
+            enable_priority: card_priority
+          -%}
+        {%- endfor -%}
+      </ul>
+
+      {%- if show_controls -%}
+        <div class="slider-buttons hair-goal-cards-carousel__footer no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {%- render 'icon-caret' -%}
+          </button>
+          <div class="slideshow__control-wrapper slider-counter slider-counter--dots"></div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {%- render 'icon-caret' -%}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component-custom>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Hair Goal — Carousel",
+  "tag": "section",
+  "class": "section section-hair-goal-cards-carousel",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop by your hair goal"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "options": [
+        { "value": "portrait", "label": "Portrait (3:4)" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lcp_priority",
+      "label": "Prioritise first card image (LCP)",
+      "info": "Enable only when this section is the first visible content on the page.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Max Volume"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Thick, full, head-turning"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hair Goal — Carousel",
+      "settings": {
+        "title": "Shop by your hair goal",
+        "image_ratio": "portrait"
+      },
+      "blocks": [{ "type": "card" }, { "type": "card" }, { "type": "card" }, { "type": "card" }]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,82 @@
+{% comment %}
+  Renders a single hair goal card.
+
+  Accepts:
+  - block        {Object}  Section block — required
+  - card_mode    {String}  'carousel' or 'grid' — default: 'carousel'
+  - section_id   {String}  Section ID — required
+  - index        {Number}  forloop.index — required
+  - image_ratio  {String}  'portrait', 'square', or 'landscape' — default: 'portrait'
+  - image_sizes  {String}  Responsive sizes attribute — required
+  - is_slide        {Boolean} Whether to add slider__slide class — default: false
+  - initial_visible  {Number}  Cards visible before View More (grid, mobile only) — default: 999
+  - enable_priority  {Boolean} Set fetchpriority=high and loading=eager on this card's image — default: false
+{% endcomment %}
+
+{%- liquid
+  assign card_alt = block.settings.title | strip_html | escape
+  unless card_mode == 'grid'
+    assign card_mode = 'carousel'
+  endunless
+  unless image_ratio == 'square' or image_ratio == 'landscape'
+    assign image_ratio = 'portrait'
+  endunless
+  unless initial_visible
+    assign initial_visible = 999
+  endunless
+  assign loading_attr = 'lazy'
+  assign fetchpriority_attr = 'auto'
+  if enable_priority
+    assign loading_attr = 'eager'
+    assign fetchpriority_attr = 'high'
+  endif
+-%}
+
+<li
+  id="Slide-{{ section_id }}-{{ index }}"
+  class="hair-goal-card hair-goal-card--{{ card_mode }} grid__item custom__slide{% if is_slide %} slider__slide{% endif %}{% if card_mode == 'grid' and index > initial_visible %} hair-goal-card--hidden{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.link != blank -%}
+    <a href="{{ block.settings.link }}" class="hair-goal-card__link">
+  {%- else -%}
+    <div class="hair-goal-card__link">
+  {%- endif -%}
+
+  <div class="hair-goal-card__media hair-goal-card__media--{{ image_ratio }}">
+    {%- unless block.settings.badge == blank -%}
+      <span class="hair-goal-card__badge">{{ block.settings.badge | escape }}</span>
+    {%- endunless -%}
+
+    {%- if block.settings.image != blank -%}
+      {{
+        block.settings.image
+        | image_url: width: 900
+        | image_tag:
+          loading: loading_attr,
+          fetchpriority: fetchpriority_attr,
+          widths: '225, 450, 675, 900',
+          sizes: image_sizes,
+          class: 'hair-goal-card__image',
+          alt: card_alt
+      }}
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'hair-goal-card__image placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="hair-goal-card__text">
+    {%- unless block.settings.title == blank -%}
+      <span class="hair-goal-card__name">{{ block.settings.title }}</span>
+    {%- endunless -%}
+    {%- unless block.settings.subtitle == blank -%}
+      <span class="hair-goal-card__desc">{{ block.settings.subtitle }}</span>
+    {%- endunless -%}
+  </div>
+
+  {%- if block.settings.link != blank -%}
+    </a>
+  {%- else -%}
+    </div>
+  {%- endif -%}
+</li>

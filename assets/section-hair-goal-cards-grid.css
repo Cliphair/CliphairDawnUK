@@ -1,0 +1,155 @@
+/* ============================================
+   Hair Goal Cards — Grid Section
+   ============================================ */
+
+@media screen and (min-width:350px) {
+  .section-hair-goal-cards-grid .page-width {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width:750px) {
+  .section-hair-goal-cards-grid .page-width {
+    padding: 0 5rem;
+  }
+}
+
+/* ---------- Section heading ---------- */
+
+.hair-goal-cards-grid__heading {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.hair-goal-cards-grid__introduction {
+  margin-top: 1.2rem;
+}
+
+.hair-goal-cards-grid__introduction p {
+  font-size: 2rem;
+  line-height: 1.1em;
+  letter-spacing: -.04em;
+}
+
+@media screen and (min-width: 990px) {
+  .hair-goal-cards-grid__heading {
+    margin-inline: auto;
+    font-size: 2.6rem;
+  }
+
+  .hair-goal-cards-grid__introduction {
+    margin-top: 1.9rem;
+  }
+
+  .hair-goal-cards-grid__introduction p {
+    font-size: 2.3rem;
+    line-height: 1em;
+  }
+}
+
+.section-hair-goal-cards-grid .grid {
+  --grid-mobile-horizontal-spacing: 1.5rem;
+  --grid-mobile-vertrical-spacing: 1.5rem;
+  --grid-desktop-horizontal-spacing: 1.5rem;
+  --grid-desktop-vertical-spacing: 1.5rem;
+  margin-top: 2.4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .section-hair-goal-cards-grid .grid {
+    margin-top: 4rem;
+  }
+}
+
+/* ---------- Grid card text ---------- */
+.section-hair-goal-cards-grid .hair-goal-card__text {
+  text-align: left;
+  padding: 1.2rem;
+}
+
+.section-hair-goal-cards-grid .hair-goal-card__name {
+  letter-spacing: -.03em;
+}
+
+.section-hair-goal-cards-grid .hair-goal-card__desc {
+  letter-spacing: -.05em;
+}
+
+@media screen and (max-width:350px) {
+  .section-hair-goal-cards-grid .hair-goal-card__text {
+    padding: .7rem;
+  }
+
+  .section-hair-goal-cards-grid .hair-goal-card__name {
+    font-size: 1.4rem;
+  }
+
+  .section-hair-goal-cards-grid .hair-goal-card__desc {
+    font-size: 1.2rem;
+  }
+}
+
+/* .hair-goal-card--grid .hair-goal-card__text {
+  padding: 0.8rem 0 0;
+}
+
+.hair-goal-card--grid .hair-goal-card__name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hair-goal-card--grid .hair-goal-card__desc {
+  margin-top: 0.3rem;
+  font-size: 1.3rem;
+} */
+
+/* ---------- Hide cards beyond initial_visible (all screen sizes) ---------- */
+
+.hair-goal-card--hidden {
+  display: none;
+}
+
+/* ---------- View More / View Less buttons ---------- */
+
+.hair-goal-cards-grid__more,
+.hair-goal-cards-grid__less {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+/* Enforce hidden attribute — overrides display: flex above */
+.hair-goal-cards-grid__more[hidden],
+.hair-goal-cards-grid__less[hidden] {
+  display: none;
+}
+
+/* ---------- Card reveal / conceal animations ---------- */
+
+/* Reveal: reuses the theme's slideIn keyframe */
+.hair-goal-card--reveal {
+  opacity: 0.01;
+  animation: slideIn var(--duration-extra-long, 600ms) var(--ease-out-slow, cubic-bezier(0, 0, 0.3, 1)) forwards;
+  animation-delay: calc(var(--animation-order, 0) * 40ms);
+}
+
+/* Conceal: slide down and fade out before display:none is applied */
+@keyframes hair-goal-conceal {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0.01;
+    transform: translateY(1.5rem);
+  }
+}
+
+.hair-goal-card--conceal {
+  animation: hair-goal-conceal 220ms ease-in forwards;
+}
