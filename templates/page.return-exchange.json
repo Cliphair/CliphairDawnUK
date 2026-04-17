@@ -38,7 +38,7 @@
           "settings": {
             "heading": "How To Request A Return Or Exchange",
             "icon": "none",
-            "row_content": "<p>Returning an item to get a refund or swapping it over with something else is easy. Follow these steps for a seamless return experience!</p><h3>Step 1: Request Return</h3><p>Go on our <a href=\"https://cliphair-uk.myshopify.com/apps/return_prime\" title=\"https://cliphair-uk.myshopify.com/apps/return_prime\">Return & Exchange page</a> and fill in the form.</p><p></p><h3>Step 2: Take A Picture</h3><p>Take 2-3 photographs of your items in the exact conditions they are being returned in.</p><p></p><h3>Step 3: Wait For Our Team To Contact You</h3><p>You will receive an email when your request has been sent, and another one when it’s been approved or rejected. This can take up to 2-3 working days.</p><p></p><h3>Step 4: Print Your Shipping Label</h3><p>If your request has been approved, you will receive an approval email which will include a link to your unique shipping label that you <strong>must</strong> generate and attach to your parcel. You can also take this generated shipping label to the Post Office who will then assist you further by printing off the shipping label.</p><p></p><h3>Step 5: Return Approved: You’re All Set!</h3><p>Once your request has been approved and your parcel has been scanned and in our system, your refund process will be automatically initiated. You can sit back, and relax! </p><p></p><h3>Step 5b: Exchanged Approved: Let Us Know About Your Choice…</h3><p>If you have sent an exchange request and it’s been approved, don’t forget to get in touch with our team to arrange a payment or refund in case there is a difference in price between your selected product and your returned item.</p>",
+            "row_content": "<p>Returning an item to get a refund or swapping it over with something else is easy. Follow these steps for a seamless return experience!</p><h3>Step 1: Request Return</h3><p>Go on our <a href=\"https://cliphair-uk.myshopify.com/apps/return_prime\" title=\"https://cliphair-uk.myshopify.com/apps/return_prime\">Return & Exchange page</a> and fill in the form.</p><p></p><h3>Step 2: Take A Picture</h3><p>Take 2-3 photographs of your items in the exact conditions they are being returned in.</p><p></p><h3>Step 3: Wait For Our Team To Contact You</h3><p>You will receive an email when your request has been sent, and another one when it’s been approved or rejected. This can take up to 2-3 working days.</p><p></p><h3>Step 4: Print Your Shipping Label</h3><p>If your request has been approved, you will receive an approval email which will include aDPDlink to your unique shipping label that you must generate and attach to your parcel. Then drop your parcel to the nearest DPD Drop of Location.</p><p></p><h3>Step 5: Return Approved: You’re All Set!</h3><p>Once your request has been approved and your parcel has been scanned and in our system, your refund process will be automatically initiated. You can sit back, and relax! </p><p></p><h3>Step 5b: Exchanged Approved: Let Us Know About Your Choice…</h3><p>If you have sent an exchange request and it’s been approved, don’t forget to get in touch with our team to arrange a payment or refund in case there is a difference in price between your selected product and your returned item.</p>",
             "page": ""
           }
         },
@@ -177,6 +177,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Ethically<br>Sourced</p>",
             "link": ""
           }
@@ -185,6 +187,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Outstanding<br>Reviews</p>",
             "link": "shopify://pages/testimonials"
           }
@@ -193,6 +197,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Cliphair<br>Rewards</p>",
             "link": "shopify://pages/rewards"
           }
@@ -201,6 +207,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Free Delivery<br>& Returns</p>",
             "link": ""
           }
@@ -209,6 +217,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
             "text_label": "<p>Buy Now<br>Pay Later</p>",
             "link": ""
           }
@@ -237,7 +247,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 36,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     }
   },
