@@ -182,6 +182,138 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "hair_goal_cards_carousel_i7waLK": {
+      "type": "hair-goal-cards-carousel",
+      "blocks": {
+        "card_GcmGkr": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-model-1.jpg",
+            "title": "Max Volume",
+            "subtitle": "Double Weft",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
+          }
+        },
+        "card_pqPm3g": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-model-2.jpg",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": "/"
+          }
+        },
+        "card_z4nQaT": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-model-3.jpg",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": "shopify://collections/clip-in-hair-extensions"
+          }
+        },
+        "card_UncrVm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-model-1.jpg",
+            "title": "Max Volume",
+            "subtitle": "Double Weft",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
+          }
+        },
+        "card_q4b9dA": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-model-2.jpg",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": "/"
+          }
+        }
+      },
+      "block_order": [
+        "card_GcmGkr",
+        "card_pqPm3g",
+        "card_z4nQaT",
+        "card_UncrVm",
+        "card_q4b9dA"
+      ],
+      "name": "Hair Goal — Carousel",
+      "settings": {
+        "title": "Shop by your hair goal",
+        "image_ratio": "portrait",
+        "enable_lcp_priority": false,
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "hair_goal_cards_grid_GxXgbq": {
+      "type": "hair-goal-cards-grid",
+      "blocks": {
+        "card_j9qWpP": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-clip-ins.jpg",
+            "badge": "BEGINNER",
+            "title": "Clip-In Extensions",
+            "subtitle": "The easiest way to start. On in minutes, off whenever.",
+            "link": ""
+          }
+        },
+        "card_pwtpqk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-tapes.jpg",
+            "badge": "SEMI-PERMANENT",
+            "title": "Tape-In Extensions",
+            "subtitle": "Lightweight & long-lasting. Fitted by your hair stylist.",
+            "link": ""
+          }
+        },
+        "card_Vjf7Ab": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-seamless.jpg",
+            "badge": "MAX VOLUME",
+            "title": "Double Weft",
+            "subtitle": "Max fullness, fewer pieces. Best for average to thick hair.",
+            "link": ""
+          }
+        },
+        "card_8ffBPb": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/new-homepage-placeholder.jpg",
+            "badge": "QUICK TO APPLY",
+            "title": "Halo Extensions",
+            "subtitle": "No clips, no tape, no glue. Our halo goes on in seconds",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_j9qWpP",
+        "card_pwtpqk",
+        "card_Vjf7Ab",
+        "card_8ffBPb"
+      ],
+      "name": "Hair Goal — Grid",
+      "settings": {
+        "title": "Which extensions are right for you?",
+        "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
+        "image_ratio": "square",
+        "enable_lcp_priority": false,
+        "columns_mobile": "2",
+        "columns_desktop": "4",
+        "initial_visible": 4,
+        "show_more_label": "View More",
+        "show_less_label": "View Less",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -189,6 +321,8 @@
     "slideshow_3tCMjU",
     "image_cta_columns_EDYpn7",
     "fef9cc49-05dc-468b-82e4-1520264647b6",
-    "custom_liquid_FeaaFh"
+    "custom_liquid_FeaaFh",
+    "hair_goal_cards_carousel_i7waLK",
+    "hair_goal_cards_grid_GxXgbq"
   ]
 }
