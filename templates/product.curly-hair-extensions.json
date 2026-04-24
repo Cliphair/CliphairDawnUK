@@ -33,6 +33,7 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
             "color": "#f6f4ef",
@@ -46,6 +47,12 @@
         "sc_back_in_stock_app_block_JKfDnH": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
           "settings": {}
+        },
+        "information_videos_i7EUgA": {
+          "type": "information-videos",
+          "settings": {
+            "color_scheme": "background-1"
+          }
         },
         "order_deadline_2_app_block_product_DHR7j6": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
@@ -232,6 +239,7 @@
         "banner_tmNYwa",
         "available_shades_yt4HbK",
         "sc_back_in_stock_app_block_JKfDnH",
+        "information_videos_i7EUgA",
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
@@ -683,9 +691,9 @@
   "order": [
     "main",
     "main_product_collapsible_content_TGKixq",
+    "video_list_metafields_UqTJAJ",
     "rich_text_bJzHHY",
     "hair_extension_comparison_table_GpJ4WR",
-    "video_list_metafields_UqTJAJ",
     "506f6558-7efd-4e91-a56a-75b4a46d81cc",
     "related-products",
     "rich_text_mYyP7X",
