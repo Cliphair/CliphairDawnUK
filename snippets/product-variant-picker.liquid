@@ -66,7 +66,7 @@
                 disabled
                 class="option-name placeholder"
               >
-                Select Your {{ option.name | remove: 'Select ' }}
+                Select {{ option.name | remove: 'Select ' }}
               </option>
               {% render 'product-variant-options', product: product, option: option, block: block %}
             </select>
