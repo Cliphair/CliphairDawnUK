@@ -33,6 +33,7 @@
         },
         "banner_tmNYwa": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/lived-in-colour-pdp-v1.jpg",
             "color": "#f6f4ef",
@@ -42,6 +43,12 @@
         "available_shades_yt4HbK": {
           "type": "available-shades",
           "settings": {}
+        },
+        "information_videos_aV8VLF": {
+          "type": "information-videos",
+          "settings": {
+            "color_scheme": "background-1"
+          }
         },
         "sc_back_in_stock_app_block_JKfDnH": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
@@ -231,6 +238,7 @@
         "buy_buttons",
         "banner_tmNYwa",
         "available_shades_yt4HbK",
+        "information_videos_aV8VLF",
         "sc_back_in_stock_app_block_JKfDnH",
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
