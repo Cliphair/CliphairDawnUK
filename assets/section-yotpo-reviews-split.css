@@ -1,0 +1,354 @@
+/* ============================================
+   Reviews Split Section
+   sections/yotpo-reviews-split.liquid
+============================================ */
+
+/* Custom element base */
+yotpo-reviews-split {
+    display: block;
+}
+
+/* ----------------------------------------
+   Layout: intro left, carousel right
+---------------------------------------- */
+.reviews-split__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+@media screen and (min-width: 990px) {
+    .reviews-split__layout {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .reviews-split__intro {
+        flex: 0 0 45%;
+    }
+
+    .reviews-split__carousel-wrapper {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* ----------------------------------------
+   Intro: heading + subheading
+---------------------------------------- */
+.reviews-split__heading {
+    margin: 0 0 1rem;
+    font-size: 2.3rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+}
+
+.reviews-split__subheading {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (max-width:989px) {
+    .reviews-split__subheading {
+        max-width: 347px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .reviews-split__heading {
+        margin: 0 0 1.3rem;
+        font-size: 2.6rem;
+    }
+
+    .reviews-split__subheading {
+        font-size: 2.3rem;
+        line-height: 1;
+    }
+}
+
+/* ----------------------------------------
+   Carousel wrapper
+---------------------------------------- */
+.reviews-split__carousel-wrapper {
+    position: relative;
+}
+
+/* Position prev/next arrows to overlay the carousel */
+.section-reviews-split slider-component {
+    position: relative;
+}
+
+.section-reviews-split .slider-buttons>.slider-button {
+    background: var(--gradient-background);
+    border-radius: 50%;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    position: absolute;
+    top: calc(50% - 2.2rem);
+    z-index: 2;
+}
+
+.section-reviews-split .slider-button--prev {
+    left: 0.5rem;
+}
+
+.section-reviews-split .slider-button--next {
+    right: 0.5rem;
+}
+
+.section-reviews-split .slider-button .icon {
+    height: 1.2rem;
+}
+
+/* Hide buttons when list is empty (API mode before load) */
+.reviews-split__list:empty~.slider-buttons {
+    display: none;
+}
+
+/* ----------------------------------------
+   Slide list
+---------------------------------------- */
+.reviews-split__list {
+    margin: 0;
+    padding: 0;
+    --grid-desktop-vertical-spacing: 4rem;
+    --grid-desktop-horizontal-spacing: 4rem;
+    --grid-mobile-vertical-spacing: 1rem;
+    --grid-mobile-horizontal-spacing: 1rem;
+}
+
+.reviews-split__item {
+    padding: 0 !important;
+}
+
+/* ----------------------------------------
+   Review card
+---------------------------------------- */
+.reviews-split__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.4rem;
+    height: 100%;
+    box-sizing: border-box;
+    background: rgb(var(--color-background));
+}
+
+/* Avatar — large circle, vertically centred beside content */
+.reviews-split__avatar {
+    flex-shrink: 0;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    overflow: hidden;
+    align-self: center;
+}
+
+/* Initials fallback — shown when no photo is available (API mode) */
+.reviews-split__avatar--initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-foreground), 0.08);
+}
+
+.reviews-split__avatar-initials {
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: rgb(var(--color-foreground));
+    text-transform: uppercase;
+    user-select: none;
+}
+
+/* Content column: header (name + stars) + body text */
+.reviews-split__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Card header: just meta now (no avatar) */
+.reviews-split__card-header {
+    display: flex;
+    align-items: center;
+}
+
+.reviews-split__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+/* Name + stars side by side */
+.reviews-split__meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    min-width: 0;
+}
+
+.reviews-split__name {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -.06em;
+}
+
+@media screen and (min-width:1200px) {
+    .reviews-split__name {
+        font-size: 2.3rem;
+    }
+}
+
+/* Stars row — override global .reviews-review-container defaults */
+.reviews-split__stars {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+    max-width: none;
+}
+
+.reviews-split__stars .reviews__reviews-review svg {
+    height: 1.4rem;
+    fill: var(--reviews-star-color, #ffe100);
+}
+
+/* ----------------------------------------
+   Review body: text + read more
+---------------------------------------- */
+.reviews-split__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.reviews-split__text {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    letter-spacing: -.06em;
+}
+
+@media screen and (min-width:1200px) {
+    .reviews-split__text {
+        font-size: 2rem;
+    }
+}
+
+.reviews-split__read-more,
+.reviews-split__read-less {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.2rem;
+    text-align: left;
+    align-self: flex-start;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.reviews-split__read-more:hover,
+.reviews-split__read-less:hover {
+    opacity: 0.7;
+}
+
+.reviews-split__read-more:focus-visible,
+.reviews-split__read-less:focus-visible {
+    outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+    outline-offset: 0.2rem;
+}
+
+.reviews-split__read-more[hidden],
+.reviews-split__read-less[hidden] {
+    display: none;
+}
+
+/* ----------------------------------------
+   Loading spinner
+---------------------------------------- */
+.reviews-split__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 16rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.reviews-split__loading.hidden {
+    display: none;
+}
+
+/* Reuse existing spinner keyframes via section-yotpo-reviews-dynamic.css,
+   but define here as a fallback if that sheet is not loaded on this page */
+.section-reviews-split .spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 0.3rem solid rgba(var(--color-foreground), 0.1);
+    border-top-color: rgba(var(--color-foreground), 0.6);
+    border-radius: 50%;
+    animation: reviews-split-spin 0.9s linear infinite;
+    display: block;
+}
+
+@keyframes reviews-split-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ----------------------------------------
+   Dot navigation
+---------------------------------------- */
+.reviews-split__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    padding: 0;
+}
+
+.reviews-split__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.2);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.reviews-split__dot--active {
+    background: rgba(var(--color-foreground), 0.8);
+}
+
+.reviews-split__dot:focus-visible {
+    outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+    outline-offset: 0.2rem;
+}
+
+/* ----------------------------------------
+   Empty state
+---------------------------------------- */
+.reviews-split__empty {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
