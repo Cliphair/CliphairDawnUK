@@ -20,7 +20,7 @@
       "type": "page-header",
       "settings": {
         "show_title": false,
-        "custom_title": "Wedding Hair Extensions - Bridal Campaign 2025",
+        "custom_title": "Wedding Hair Extensions - Bridal Campaign 2026",
         "heading_size": "h3",
         "text_alignment": "center",
         "color_scheme": "",
@@ -48,7 +48,8 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "text_alignment_mobile": "center",
+            "banner_id": ""
           }
         }
       },
@@ -63,7 +64,8 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Cliphair slideshow banners"
+        "accessibility_info": "Cliphair slideshow banners",
+        "trackable_name": ""
       }
     },
     "rich-text-intro": {
@@ -101,7 +103,8 @@
         "color_scheme": "background-sale",
         "full_width": false,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "bridal_video_image_KijGWR": {
@@ -180,7 +183,8 @@
         "color_scheme": "background-sale",
         "full_width": false,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "1664746053df8a22c8": {
@@ -262,7 +266,8 @@
         "color_scheme": "background-sale",
         "full_width": false,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "1664746053df8a22c8-2": {
@@ -461,7 +466,8 @@
         "color_scheme": "background-sale",
         "full_width": true,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "bridal-must-haves": {
@@ -471,6 +477,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Seamless_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Seamless</h3>",
             "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
@@ -479,6 +487,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Double_Weft_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Double Weft</h3>",
             "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
@@ -487,6 +497,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Ultra_Volume_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Ultra Volume</h3>",
             "link": "shopify://collections/ultra-clip-in-hair-extensions"
           }
@@ -495,6 +507,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Classic_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Classic</h3>",
             "link": "shopify://collections/full-head-clip-in-hair-extensions"
           }
@@ -503,6 +517,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Quad_Weft_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Quad Weft</h3>",
             "link": "shopify://collections/quad-weft-hair-extensions"
           }
@@ -511,6 +527,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Top_Up_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Top Up</h3>",
             "link": "shopify://collections/one-piece-top-up-hair-extensions"
           }
@@ -519,6 +537,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Curly_Must_Have.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "<h3>Curly</h3>",
             "link": "shopify://collections/curly-clip-in-hair-extensions"
           }
@@ -553,7 +573,8 @@
         "swipe_on_mobile": true,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "rich-text-vidoes": {
@@ -591,7 +612,8 @@
         "color_scheme": "background-sale",
         "full_width": false,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "1664746053df8a22c": {
@@ -737,7 +759,8 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 80,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "bridal-wear-cliphair": {
@@ -921,7 +944,8 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": ""
       }
     },
     "custom_banner_d9rTna": {
@@ -973,7 +997,8 @@
         "color_scheme": "background-sale",
         "full_width": true,
         "padding_top": 80,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "bridal-bundle": {
@@ -983,6 +1008,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Bridal_Hair_Extension_Styling_Set.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "",
             "link": "shopify://products/clip-in-styling-starter-kit"
           }
@@ -991,6 +1018,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Bridal_Haircare_Essentials.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "",
             "link": "shopify://products/ultimate-haircare-bundle"
           }
@@ -999,6 +1028,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Brides_Wear_Cliphair.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "",
             "link": "shopify://products/signature-cliphair-styling-kit"
           }
@@ -1007,6 +1038,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Pro_Bridal_Hairstyling_Kit.webp",
+            "img_url": "",
+            "alt": "",
             "text_label": "",
             "link": "shopify://products/pro-hairstyling-kit"
           }
@@ -1036,7 +1069,8 @@
         "swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     },
     "rich-text-insta": {
@@ -1073,7 +1107,8 @@
         "color_scheme": "background-sale",
         "full_width": true,
         "padding_top": 52,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "trackable_name": ""
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2691": {
