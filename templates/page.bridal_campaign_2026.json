@@ -57,10 +57,10 @@
         "slide_nnGry6"
       ],
       "settings": {
-        "layout": "full_bleed",
+        "layout": "grid",
         "slide_height": "adapt_image",
         "slider_visual": "dots",
-        "auto_rotate": true,
+        "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
@@ -139,6 +139,7 @@
         "image_BRGHM7",
         "video_J9gyw9"
       ],
+      "disabled": true,
       "custom_css": [
         ".gradient {background: rgba(229, 228, 241, 0.4);}",
         ".deferred-media__poster-button {color: white;}"
@@ -171,6 +172,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -221,6 +223,7 @@
         "2e266794-9043-4fd6-bd27-340aec4d2029",
         "145755f4-4d91-4e80-8bb6-52a475d8285a"
       ],
+      "disabled": true,
       "custom_css": [
         ".gradient {background: rgba(229, 228, 241, 0.4);}",
         ".deferred-media__poster-button {color: white;}",
@@ -253,6 +256,7 @@
       "block_order": [
         "heading"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -318,6 +322,7 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da"
       ],
+      "disabled": true,
       "custom_css": [
         ".gradient {background: rgba(229, 228, 241, 0.4);}",
         ".deferred-media__poster-button {color: white;}",
@@ -414,6 +419,7 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3da"
       ],
+      "disabled": true,
       "custom_css": [
         ".gradient {background: rgba(229, 228, 241, 0.4);}",
         ".deferred-media__poster-button {color: white;}",
@@ -454,6 +460,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -553,6 +560,7 @@
         "image6",
         "image7"
       ],
+      "disabled": true,
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 10px; --grid-desktop-horizontal-spacing: 10px; margin-top: 0;}",
         ".images-list__item {min-width: unset;}",
@@ -599,6 +607,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -691,6 +700,7 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d",
         "video_V9wxX3"
       ],
+      "disabled": true,
       "custom_css": [
         ".videos-list {--grid-mobile-horizontal-spacing: 10px; --grid-desktop-horizontal-spacing: 10px;}",
         ".videos-list__item {min-width: unset;}",
@@ -711,6 +721,7 @@
     },
     "custom_banner_j6XPmV": {
       "type": "custom-banner",
+      "disabled": true,
       "custom_css": [
         "div > div {max-width: unset; padding-right: 0; padding-left: 0;}"
       ],
@@ -746,6 +757,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1, 7em;}",
@@ -879,6 +891,7 @@
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d9",
         "bdc998d1-815a-46f8-9f36-e62f96eb4b3d10"
       ],
+      "disabled": true,
       "custom_css": [
         ".grid--peek.slider .grid__item:first-of-type {margin-left: 0;}",
         ".reviews-list-wrapper {padding: 0 !important;}",
@@ -931,6 +944,7 @@
         "text_bkExxV",
         "button_QnVrac"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1, 7em;}",
@@ -950,6 +964,7 @@
     },
     "custom_banner_d9rTna": {
       "type": "custom-banner",
+      "disabled": true,
       "custom_css": [
         "div > div {max-width: unset; padding-right: 0; padding-left: 0;}"
       ],
@@ -985,6 +1000,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -1051,6 +1067,7 @@
         "image3",
         "image4"
       ],
+      "disabled": true,
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px; --grid-mobile-vertical-spacing: 5px; --grid-desktop-vertical-spacing: 5px; margin-top: 0;}",
         ".images-list__item img {object-fit: cover;}",
@@ -1095,6 +1112,7 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__heading + .rich-text__text {margin-top: 1.5rem;}",
         ".rich-text__heading > * > em {font-size: 1.7em;}",
@@ -1437,6 +1455,7 @@
         "item_nTxwVY28",
         "item_nTxwVY29"
       ],
+      "disabled": true,
       "custom_css": [
         ".images-list {--grid-mobile-horizontal-spacing: 5px; --grid-desktop-horizontal-spacing: 5px; --grid-mobile-vertical-spacing: 5px; --grid-desktop-vertical-spacing: 5px; margin-top: 0;}",
         ".images-list__item {min-width: unset;}",
