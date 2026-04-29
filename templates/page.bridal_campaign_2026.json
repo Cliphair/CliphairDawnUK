@@ -37,9 +37,9 @@
             "image": "shopify://shop_images/bridal-landing-page-high-res-test-mobile.jpg",
             "image_desktop": "shopify://shop_images/bridal-landing-page-high-res-test.jpg",
             "image_url": "",
-            "heading": "",
-            "heading_size": "h2",
-            "subheading": "",
+            "heading": "Wedding Shop",
+            "heading_size": "h0",
+            "subheading": "<a href=\"/\" target=\"_blank\" title=\"/\">SHOP THE COLLECTION</a>",
             "button_label": "",
             "link": "",
             "button_style_secondary": false,
@@ -47,7 +47,7 @@
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "color_scheme": "",
+            "color_scheme": "accent-3",
             "text_alignment_mobile": "center",
             "banner_id": ""
           }
