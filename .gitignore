@@ -15,4 +15,6 @@ Thumbs.db
 .claude/
 CLAUDE.md
 
-.prds/
+prds/
+prds/*
+to-build/*

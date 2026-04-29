@@ -1,0 +1,365 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-split-banner-shade.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="split-banner-shade__outer">
+    <div class="split-banner-shade__grid page-width" style="padding-right:0; padding-left:0;">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'shade_slider' -%}
+            {%- liquid
+              assign menu = linklists[block.settings.menu]
+              assign shade_count = 0
+              for link in menu.links
+                if link.type == 'collection_link'
+                  assign shade_count = shade_count | plus: 1
+                endif
+              endfor
+              assign show_controls = false
+              if shade_count > 1
+                assign show_controls = true
+              endif
+              assign image_ratio = block.settings.image_ratio | default: 'portrait'
+            -%}
+            <div
+              class="split-banner-shade__column split-banner-shade__column--shades color-{{ block.settings.color_scheme }} gradient"
+              {{ block.shopify_attributes }}
+            >
+              {%- unless block.settings.heading == blank -%}
+                <h2 class="split-banner-shade__heading">{{ block.settings.heading | escape }}</h2>
+              {%- endunless -%}
+
+              {%- if shade_count > 0 -%}
+                <slider-component-custom
+                  id="shade-slider-{{ section.id }}"
+                  class="split-banner-shade__slider"
+                  data-visual="dots"
+                >
+                  <ul
+                    id="ShadeSlider-{{ section.id }}"
+                    class="split-banner-shade__shade-list grid grid--peek slider slider--tablet slider--desktop"
+                    role="list"
+                    aria-label="{{ block.settings.heading | strip_html | escape }}"
+                  >
+                    {%- assign is_first = true -%}
+                    {%- for link in menu.links -%}
+                      {%- if link.type == 'collection_link' -%}
+                        {%- assign col = link.object -%}
+                        {%- assign loading_attr = 'lazy' -%}
+                        {%- assign fetchpriority_attr = 'auto' -%}
+                        {%- if is_first and block.settings.enable_lcp_priority -%}
+                          {%- assign loading_attr = 'eager' -%}
+                          {%- assign fetchpriority_attr = 'high' -%}
+                        {%- endif -%}
+                        {%- assign is_first = false -%}
+                        <li
+                          id="Shade-{{ section.id }}-{{ forloop.index }}"
+                          class="split-banner-shade__shade-item hair-goal-card hair-goal-card--carousel grid__item custom__slide slider__slide"
+                        >
+                          <a href="{{ link.url }}" class="hair-goal-card__link">
+                            <div class="hair-goal-card__media hair-goal-card__media--{{ image_ratio }}">
+                              {%- if col.featured_image != blank -%}
+                                {{
+                                  col.featured_image
+                                  | image_url: width: 900
+                                  | image_tag:
+                                    loading: loading_attr,
+                                    fetchpriority: fetchpriority_attr,
+                                    widths: '225, 450, 675, 900',
+                                    sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 55vw',
+                                    class: 'hair-goal-card__image',
+                                    alt: col.title
+                                  | escape
+                                }}
+                              {%- else -%}
+                                {{ 'image' | placeholder_svg_tag: 'hair-goal-card__image placeholder' }}
+                              {%- endif -%}
+                            </div>
+                            <div class="hair-goal-card__text">
+                              <span class="hair-goal-card__name">{{ link.title | escape }}</span>
+                            </div>
+                          </a>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+
+                  {%- if show_controls -%}
+                    <div class="slider-buttons split-banner-shade__slider-footer no-js-hidden">
+                      <button
+                        type="button"
+                        class="slider-button slider-button--prev"
+                        name="previous"
+                        aria-label="{{ 'general.slider.previous_slide' | t }}"
+                      >
+                        {%- render 'icon-caret' -%}
+                      </button>
+                      <div class="slideshow__control-wrapper slider-counter slider-counter--dots"></div>
+                      <button
+                        type="button"
+                        class="slider-button slider-button--next"
+                        name="next"
+                        aria-label="{{ 'general.slider.next_slide' | t }}"
+                      >
+                        {%- render 'icon-caret' -%}
+                      </button>
+                    </div>
+                  {%- endif -%}
+                </slider-component-custom>
+              {%- else -%}
+                <p class="split-banner-shade__empty">No shades found. Add collection links to the selected menu.</p>
+              {%- endif -%}
+            </div>
+
+          {%- when 'banner' -%}
+            <div
+              class="split-banner-shade__column split-banner-shade__column--banner color-{{ block.settings.color_scheme }} gradient"
+              {{ block.shopify_attributes }}
+            >
+              {%- liquid
+                assign banner_image = block.settings.image_desktop
+                assign banner_image_mobile = block.settings.image_mobile
+                if banner_image == blank
+                  assign banner_image = banner_image_mobile
+                endif
+              -%}
+
+              <div class="split-banner-shade__banner-inner split-banner-shade__banner-inner--{{ block.settings.content_position }}">
+                {%- if banner_image != blank -%}
+                  <div class="split-banner-shade__banner-media">
+                    {%- comment -%} Desktop image {%- endcomment -%}
+                    {{
+                      banner_image
+                      | image_url: width: 1500
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '375, 550, 750, 1000, 1200, 1500',
+                        sizes: '(min-width: 990px) 50vw, 100vw',
+                        class: 'split-banner-shade__banner-img split-banner-shade__banner-img--desktop',
+                        alt: block.settings.title
+                      | strip_html
+                      | escape
+                    }}
+                    {%- if banner_image_mobile != blank and banner_image_mobile != banner_image -%}
+                      {{
+                        banner_image_mobile
+                        | image_url: width: 800
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '375, 550, 750, 800',
+                          sizes: '100vw',
+                          class: 'split-banner-shade__banner-img split-banner-shade__banner-img--mobile',
+                          alt: block.settings.title
+                        | strip_html
+                        | escape
+                      }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+
+                <div class="split-banner-shade__banner-content" style="color: {{ block.settings.text_color }};">
+                  {%- unless block.settings.title == blank -%}
+                    <h2 class="split-banner-shade__banner-title">{{ block.settings.title }}</h2>
+                  {%- endunless -%}
+                  {%- unless block.settings.text == blank -%}
+                    <div class="split-banner-shade__banner-text rte">{{ block.settings.text }}</div>
+                  {%- endunless -%}
+                  {%- if block.settings.button_label != blank and block.settings.button_url != blank -%}
+                    <a
+                      href="{{ block.settings.button_url }}"
+                      class="button{% if block.settings.button_style == 'secondary' %} button--secondary{% elsif block.settings.button_style == 'tertiary' %} button--tertiary{% else %} button--primary{% endif %}"
+                    >
+                      {{ block.settings.button_label | escape }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Split — Banner & Shades",
+  "tag": "section",
+  "class": "section section-split-banner-shade",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "shade_slider",
+      "name": "Shop by Shade",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Colour scheme",
+          "default": "scheme-1"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Or shop by shade..."
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Shade menu",
+          "info": "Create a navigation menu whose links all point to shade collections. Non-collection links are ignored.",
+          "default": "main-menu"
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "label": "Image ratio",
+          "options": [
+            { "value": "portrait", "label": "Portrait (3:4)" },
+            { "value": "square", "label": "Square (1:1)" },
+            { "value": "landscape", "label": "Landscape (4:3)" }
+          ],
+          "default": "square"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_lcp_priority",
+          "label": "Prioritise first shade image (LCP)",
+          "info": "Enable only when this section is the first visible content on the page.",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Colour scheme",
+          "default": "scheme-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image",
+          "info": "Displayed on screens narrower than 750px. Falls back to desktop image if not set."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Heading",
+          "default": "We've given our rewards <em>a glow-up!</em>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Join Now"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "tertiary", "label": "Tertiary" }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+            { "value": "top-left", "label": "Top left" },
+            { "value": "top-center", "label": "Top centre" },
+            { "value": "middle-left", "label": "Middle left" },
+            { "value": "middle-center", "label": "Middle centre" },
+            { "value": "bottom-left", "label": "Bottom left" },
+            { "value": "bottom-center", "label": "Bottom centre" }
+          ],
+          "default": "bottom-left"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text colour",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Split — Banner & Shade Slider",
+      "blocks": [{ "type": "shade_slider" }, { "type": "banner" }]
+    }
+  ]
+}
+{% endschema %}

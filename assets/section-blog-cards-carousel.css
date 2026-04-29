@@ -1,0 +1,324 @@
+/* ============================================
+   Blog Cards Carousel Section
+   ============================================ */
+
+/* --- Page-width padding to match theme pattern --- */
+
+@media screen and (min-width: 350px) {
+  .section-blog-cards-carousel .page-width {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .section-blog-cards-carousel .page-width {
+    padding: 0 5rem;
+  }
+}
+
+/* --- Header --- */
+
+.blog-cards__header {
+  margin-bottom: 2rem;
+}
+
+.blog-cards__heading {
+  margin: 0 0 0.6rem;
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  color: rgb(var(--color-foreground));
+}
+
+.blog-cards__subtitle {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+@media screen and (min-width: 990px) {
+  .blog-cards__header {
+    margin-bottom: 2.8rem;
+  }
+
+  .blog-cards__heading {
+    font-size: 2.8rem;
+  }
+
+  .blog-cards__subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+/* --- Track wrapper (position anchor for nav buttons) --- */
+
+.blog-cards__track-wrapper {
+  position: relative;
+}
+
+/* --- Scrollable list ---
+   Mobile: 2-row grid flowing column-first so cards 1+2 form column 1,
+   cards 3+4 form column 2, etc. The JS reads item[2].offsetLeft to get
+   the real column width, which works because grid-auto-flow:column places
+   item[0] and item[1] at the same x-position.
+   Tablet+: single-row layout, same column-flow scroll.
+--------------------------------------------------------------- */
+
+.blog-cards__list {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% / (var(--cols-mobile, 1) + 0.3));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 1.5rem;
+  scroll-padding-left: 1.5rem;
+  gap: 0.8rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blog-cards__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Trailing spacer — spans all rows to form a full-height end column */
+.blog-cards__list::after {
+  content: '';
+  display: block;
+  grid-row: 1 / -1;
+  width: 0;
+  padding-left: 1.5rem;
+}
+
+@media screen and (min-width: 350px) {
+  .blog-cards__list {
+    padding-left: 3rem;
+    scroll-padding-left: 3rem;
+  }
+
+  .blog-cards__list::after {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .blog-cards__list {
+    grid-template-rows: auto;
+    grid-auto-columns: calc(100% / (var(--cols-tablet, 3) + 0.3));
+    padding-left: 5rem;
+    scroll-padding-left: 5rem;
+  }
+
+  .blog-cards__list::after {
+    padding-left: 5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .blog-cards__list {
+    grid-auto-columns: calc(100% / (var(--cols-desktop, 4) + 0.3));
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .blog-cards__list {
+    padding-left: calc((100vw - 1600px + 10rem) / 2);
+    scroll-padding-left: calc((100vw - 1600px + 10rem) / 2);
+  }
+
+  .blog-cards__list::after {
+    padding-left: calc((100vw - 1600px + 10rem) / 2);
+  }
+}
+
+/* --- Scroll snap ---
+   Mobile (2-row column-flow): odd-indexed items are first in their column —
+   snap only those for column-level scroll.
+   Tablet+: single row — every item snaps.
+--------------------------------------------------------------- */
+
+.blog-cards__item {
+  scroll-snap-align: none;
+  min-width: 0;
+}
+
+.blog-cards__item:nth-child(odd) {
+  scroll-snap-align: start;
+}
+
+@media screen and (min-width: 750px) {
+  .blog-cards__item,
+  .blog-cards__item:nth-child(odd) {
+    scroll-snap-align: start;
+  }
+}
+
+/* --- Card --- */
+
+.blog-cards__card {
+  display: flex;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  height: 100%;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.blog-cards__image-wrapper {
+  flex-shrink: 0;
+  width: 42%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.06);
+}
+
+.blog-cards__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-cards__card:hover .blog-cards__image {
+  transform: scale(1.04);
+}
+
+.blog-cards__card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  min-width: 0;
+}
+
+.blog-cards__card-title {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: rgb(var(--color-foreground));
+}
+
+@media screen and (min-width: 990px) {
+  .blog-cards__card-title {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-cards__card-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: rgba(var(--color-foreground), 0.5);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-cards__card-arrow .icon-arrow {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.blog-cards__card:hover .blog-cards__card-arrow {
+  color: rgb(var(--color-foreground));
+  transform: translateX(0.2rem);
+}
+
+/* --- Nav buttons (prev/next) ---
+   Absolutely positioned relative to .blog-cards__track-wrapper,
+   vertically centred on the card row.
+   Mirrors the hair-goal-cards-carousel pattern.
+--------------------------------------------------------------- */
+
+blog-cards-slider {
+  display: block;
+  position: relative;
+}
+
+.blog-cards__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-background), 0.9);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-radius: 50%;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-cards__nav-btn:hover:not([disabled]) {
+  background: rgb(var(--color-background));
+  border-color: rgba(var(--color-foreground), 0.3);
+}
+
+.blog-cards__nav-btn[disabled] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.slider-button--prev.blog-cards__nav-btn {
+  left: 0.8rem;
+}
+
+.slider-button--next.blog-cards__nav-btn {
+  right: 0.8rem;
+}
+
+.blog-cards__nav-btn .icon-caret {
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* icon-caret rotation: component-slider.css handles .slider-button--prev .icon,
+   but icon-caret uses .icon-caret not .icon — scope overrides to this section. */
+
+.blog-cards__nav-btn.slider-button--prev .icon-caret {
+  transform: rotate(90deg);
+}
+
+.blog-cards__nav-btn.slider-button--next .icon-caret {
+  transform: rotate(-90deg);
+}
+
+.blog-cards__nav-btn:hover:not([disabled]).slider-button--prev .icon-caret {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.blog-cards__nav-btn:hover:not([disabled]).slider-button--next .icon-caret {
+  transform: rotate(-90deg) scale(1.1);
+}
+
+/* --- Dots footer ---
+   Dot appearance (size, colour, active/hover states) is handled by
+   component-slider.css via .slider-counter__link--dots and .dot classes.
+   Only layout needed here.
+--------------------------------------------------------------- */
+
+.blog-cards__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.6rem;
+}
+
+.section-blog-cards-carousel .slideshow__control-wrapper {
+  display: flex;
+  align-items: center;
+}

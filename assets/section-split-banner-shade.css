@@ -1,0 +1,399 @@
+/* ============================================
+   Split — Banner & Shade Slider
+   Two-column layout: shade carousel + banner
+   ============================================ */
+
+/* ---------- Outer wrapper ---------- */
+
+.split-banner-shade__outer {
+    /* When NOT using page-width the section bleeds edge-to-edge */
+    width: 100%;
+}
+
+/* ---------- Grid — stacked on mobile, side-by-side on desktop ---------- */
+
+.split-banner-shade__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+}
+
+@media screen and (min-width: 990px) {
+    .split-banner-shade__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: stretch;
+    }
+
+    /* Dividing line between the two columns */
+    .split-banner-shade__column+.split-banner-shade__column {
+        border-left: 0.1rem solid rgba(var(--color-foreground), 0.1);
+    }
+}
+
+/* ---------- Shared column ---------- */
+
+.split-banner-shade__column {
+    min-width: 0;
+    /* prevent grid blowout */
+}
+
+/* ============================================
+   SHADE SLIDER COLUMN
+   ============================================ */
+
+.split-banner-shade__column--shades {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 0;
+}
+
+@media screen and (min-width: 990px) {
+    .split-banner-shade__column--shades {
+        padding: 3.2rem 0;
+    }
+}
+
+/* Heading */
+.split-banner-shade__heading {
+    margin: 0 0 2rem 0;
+    padding-inline: 1.5rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+@media screen and (min-width: 350px) {
+    .split-banner-shade__heading {
+        padding-inline: 3rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .split-banner-shade__heading {
+        padding-inline: 5rem;
+        font-size: 2.3rem;
+    }
+}
+
+/* Slider container */
+.split-banner-shade__slider {
+    --desktop-margin-left-first-item: max(5rem,
+            calc((100% - var(--page-width, 1600px) + 10rem) / 2));
+    position: relative;
+    display: block;
+    flex: 1;
+}
+
+/* Shade list — 2-row horizontal scroll on desktop, single-row on mobile */
+.split-banner-shade__shade-list {
+    margin-bottom: 0;
+    --grid-mobile-horizontal-spacing: 1rem;
+    --grid-desktop-horizontal-spacing: 1rem;
+}
+
+/* Desktop: 2×2 CSS grid, auto-flow by column, horizontal scroll */
+@media screen and (min-width: 990px) {
+    .split-banner-shade__shade-list {
+        display: grid !important;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 5rem - var(--grid-desktop-horizontal-spacing)) / 2.4);
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-left: 3.2rem;
+        padding-right: 3.2rem;
+        gap: var(--grid-desktop-horizontal-spacing);
+        /* reset slider classes that force flex */
+        flex-wrap: unset;
+    }
+
+    .split-banner-shade__shade-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .split-banner-shade__shade-list .split-banner-shade__shade-item {
+        width: auto !important;
+        min-width: auto !important;
+        scroll-snap-align: start;
+        margin-left: 0 !important;
+    }
+}
+
+/* Scroll snap padding — aligns first item with page heading */
+@media screen and (min-width: 350px) and (max-width: 749px) {
+    .split-banner-shade__shade-list.slider {
+        scroll-padding-left: 3rem;
+    }
+
+    .split-banner-shade__shade-list.slider::after {
+        padding-left: 3rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .split-banner-shade__shade-list.slider {
+        scroll-padding-left: 5rem;
+    }
+
+    .split-banner-shade__shade-list.slider::after {
+        padding-left: 5rem;
+    }
+}
+
+/* First item left margin to match heading indent */
+@media screen and (max-width: 349px) {
+    .split-banner-shade__shade-list.slider .split-banner-shade__shade-item:first-of-type {
+        margin-left: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 749px) {
+    .split-banner-shade__shade-list.slider .split-banner-shade__shade-item:first-of-type {
+        margin-left: 3rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .split-banner-shade__shade-list.slider .split-banner-shade__shade-item:first-of-type {
+        margin-left: 5rem;
+    }
+}
+
+/* Card widths — 2 cards visible + peek on mobile */
+@media screen and (max-width: 349px) {
+    .split-banner-shade__shade-list.grid--peek .split-banner-shade__shade-item {
+        width: 65%;
+        min-width: 65%;
+        scroll-snap-align: start;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 749px) {
+    .split-banner-shade__shade-list.grid--peek .split-banner-shade__shade-item {
+        width: calc((100% - 3rem - var(--grid-mobile-horizontal-spacing)) / 2.3);
+        min-width: calc((100% - 3rem - var(--grid-mobile-horizontal-spacing)) / 2.3);
+        scroll-snap-align: start;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+    .split-banner-shade__shade-list.grid--peek .split-banner-shade__shade-item {
+        width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 2)) / 2.5);
+        min-width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 2)) / 2.5);
+    }
+}
+
+/* Desktop: 2 cards + right peek within a 50vw column */
+@media screen and (min-width: 990px) {
+    .split-banner-shade__shade-list.grid--peek .split-banner-shade__shade-item {
+        width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 2)) / 2.4);
+        min-width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 2)) / 2.4);
+    }
+}
+
+/* ---------- Slider prev/next buttons ---------- */
+
+/* Desktop: next/prev buttons — position relative to the grid area, not the full column height */
+@media screen and (min-width: 990px) {
+    .split-banner-shade__slider .slider-button {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.split-banner-shade__slider .slider-button {
+    position: absolute;
+    top: calc(50% - 2.4rem - 1.8rem);
+    /* vertically centre within image area */
+    z-index: 2;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-background), 0.9);
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    border-radius: 50%;
+    color: rgb(var(--color-foreground));
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.split-banner-shade__slider .slider-button:hover:not([disabled]) {
+    background: rgb(var(--color-background));
+    border-color: rgba(var(--color-foreground), 0.3);
+}
+
+.split-banner-shade__slider .slider-button[disabled] {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.split-banner-shade__slider .slider-button--prev {
+    left: 0.8rem;
+}
+
+.split-banner-shade__slider .slider-button--next {
+    right: 0.8rem;
+}
+
+.split-banner-shade__slider .slider-button .icon-caret {
+    height: 1.2rem;
+    flex-shrink: 0;
+}
+
+.split-banner-shade__slider .slider-button--prev .icon-caret {
+    transform: rotate(90deg);
+}
+
+.split-banner-shade__slider .slider-button--next .icon-caret {
+    transform: rotate(270deg);
+}
+
+/* ---------- Dots footer ---------- */
+
+.split-banner-shade__slider-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.6rem;
+}
+
+.split-banner-shade__slider .slideshow__control-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ---------- Empty state ---------- */
+
+.split-banner-shade__empty {
+    padding: 2rem;
+    font-size: 1.4rem;
+    color: rgba(var(--color-foreground), 0.5);
+}
+
+/* ============================================
+   BANNER COLUMN
+   ============================================ */
+
+.split-banner-shade__column--banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 30rem;
+    /* fallback if no image */
+}
+
+.split-banner-shade__banner-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    min-height: inherit;
+}
+
+/* Image fills column completely */
+.split-banner-shade__banner-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.split-banner-shade__banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile/desktop image switching */
+.split-banner-shade__banner-img--mobile {
+    display: block;
+}
+
+.split-banner-shade__banner-img--desktop {
+    display: none;
+}
+
+@media screen and (min-width: 750px) {
+    .split-banner-shade__banner-img--mobile {
+        display: none;
+    }
+
+    .split-banner-shade__banner-img--desktop {
+        display: block;
+    }
+}
+
+/* Content overlay */
+.split-banner-shade__banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 3.2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+    /* Overlay gradient for legibility */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+}
+
+@media screen and (min-width: 750px) {
+    .split-banner-shade__banner-content {
+        padding: 4rem 3.2rem;
+    }
+}
+
+/* Content position variants */
+.split-banner-shade__banner-inner--top-left .split-banner-shade__banner-content,
+.split-banner-shade__banner-inner--top-center .split-banner-shade__banner-content {
+    justify-content: flex-start;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+}
+
+.split-banner-shade__banner-inner--middle-left .split-banner-shade__banner-content,
+.split-banner-shade__banner-inner--middle-center .split-banner-shade__banner-content {
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.split-banner-shade__banner-inner--bottom-left .split-banner-shade__banner-content,
+.split-banner-shade__banner-inner--bottom-center .split-banner-shade__banner-content {
+    justify-content: flex-end;
+}
+
+.split-banner-shade__banner-inner--top-center .split-banner-shade__banner-content,
+.split-banner-shade__banner-inner--middle-center .split-banner-shade__banner-content,
+.split-banner-shade__banner-inner--bottom-center .split-banner-shade__banner-content {
+    align-items: center;
+    text-align: center;
+}
+
+/* Banner typography */
+.split-banner-shade__banner-title {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (min-width: 990px) {
+    .split-banner-shade__banner-title {
+        font-size: 3.6rem;
+    }
+}
+
+.split-banner-shade__banner-text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.split-banner-shade__banner-text p {
+    margin: 0;
+}

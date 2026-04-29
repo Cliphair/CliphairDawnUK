@@ -1,0 +1,234 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-blog-cards-carousel.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-blog-cards-carousel.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  #BlogCards-{{ section.id }} {
+    --cols-mobile: {{ section.settings.columns_mobile }};
+    --cols-tablet: {{ section.settings.columns_desktop | minus: 1 }};
+    --cols-desktop: {{ section.settings.columns_desktop }};
+  }
+{%- endstyle -%}
+
+<blog-cards-slider
+  id="BlogCards-{{ section.id }}"
+  class="section-blog-cards-carousel color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  data-visual="dots"
+  data-section-id="{{ section.id }}"
+>
+  {%- unless section.settings.title == blank and section.settings.subtitle == blank -%}
+    <div class="page-width blog-cards__header">
+      {%- unless section.settings.title == blank -%}
+        <h2 class="blog-cards__heading">{{ section.settings.title }}</h2>
+      {%- endunless -%}
+      {%- unless section.settings.subtitle == blank -%}
+        <p class="blog-cards__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endunless -%}
+    </div>
+  {%- endunless -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="blog-cards__track-wrapper">
+      <ul
+        id="Slider-{{ section.id }}"
+        class="blog-cards__list"
+        role="list"
+        aria-label="{{ section.settings.title | strip_html | escape | default: 'Blog articles' }}"
+      >
+        {%- for block in section.blocks -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="blog-cards__item"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="blog-cards__card">
+            {%- else -%}
+              <div class="blog-cards__card">
+            {%- endif -%}
+            <div class="blog-cards__image-wrapper">
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '200, 300, 400, 600',
+                    sizes: '(min-width: 990px) 15vw, 25vw',
+                    class: 'blog-cards__image',
+                    alt: block.settings.image.alt
+                  | escape
+                }}
+              {%- endif -%}
+            </div>
+            <div class="blog-cards__card-body">
+              {%- unless block.settings.title == blank -%}
+                <span class="blog-cards__card-title">{{ block.settings.title }}</span>
+              {%- endunless -%}
+              <span class="blog-cards__card-arrow" aria-hidden="true">
+                {%- render 'icon-arrow' -%}
+              </span>
+            </div>
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <button
+        type="button"
+        class="slider-button slider-button--prev blog-cards__nav-btn"
+        name="previous"
+        aria-label="{{ 'general.slider.previous_slide' | t }}"
+      >
+        {%- render 'icon-caret' -%}
+      </button>
+      <button
+        type="button"
+        class="slider-button slider-button--next blog-cards__nav-btn"
+        name="next"
+        aria-label="{{ 'general.slider.next_slide' | t }}"
+      >
+        {%- render 'icon-caret' -%}
+      </button>
+    </div>
+
+    <div class="blog-cards__footer no-js-hidden">
+      <div class="slideshow__control-wrapper slider-counter slider-counter--dots"></div>
+    </div>
+  {%- endif -%}
+</blog-cards-slider>
+
+{% schema %}
+{
+  "name": "Blog Cards Carousel",
+  "tag": "section",
+  "class": "section section-blog-cards-carousel",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "The blog spot"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Something here to say we want to educate our customers & help"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Columns on mobile",
+      "info": "Each column shows 2 cards stacked. A partial next column is always shown.",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Columns on desktop",
+      "info": "Tablet shows one fewer column. A partial next column is always shown.",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Beginner's guide to extensions"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Cards Carousel",
+      "settings": {
+        "title": "The blog spot",
+        "subtitle": "Something here to say we want to educate our customers & help"
+      },
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
