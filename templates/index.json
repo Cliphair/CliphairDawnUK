@@ -431,6 +431,7 @@
         "card_yfy6cJ": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/The_Hair_Extensions_Bible.png",
             "title": "Beginner's guide to extensions",
             "link": ""
           }
@@ -438,27 +439,31 @@
         "card_B6LzFk": {
           "type": "card",
           "settings": {
-            "title": "Beginner's guide to extensions",
+            "image": "shopify://shop_images/haircare-tips.webp",
+            "title": "How to master haircare at home",
             "link": ""
           }
         },
         "card_Hhzmdb": {
           "type": "card",
           "settings": {
-            "title": "Beginner's guide to extensions",
+            "image": "shopify://shop_images/Top_Trends.png",
+            "title": "How to pick your shade like a pro",
             "link": ""
           }
         },
         "card_7YeGYP": {
           "type": "card",
           "settings": {
-            "title": "Beginner's guide to extensions",
+            "image": "shopify://shop_images/Guides_and_Tutorials.png",
+            "title": "Style inspo for every occasion",
             "link": ""
           }
         },
         "card_ezNGWJ": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Wedding.png",
             "title": "Beginner's guide to extensions",
             "link": ""
           }
@@ -466,6 +471,7 @@
         "card_L68tEC": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Lifestyle.png",
             "title": "Beginner's guide to extensions",
             "link": ""
           }
