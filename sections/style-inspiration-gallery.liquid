@@ -1,0 +1,479 @@
+{{ 'section-style-inspiration-gallery.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{{ 'style-inspiration-gallery.js' | asset_url | script_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style-inspiration-gallery
+  id="StyleGallery-{{ section.id }}"
+  class="section-style-inspiration-gallery color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  data-section-id="{{ section.id }}"
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="sig-heading h2">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- comment -%} Filter tabs {%- endcomment -%}
+    <div class="sig-filters" role="tablist" aria-label="Filter styles">
+      <button class="sig-filter-btn" role="tab" aria-selected="true" data-filter="all">All</button>
+      <span class="sig-filter-sep" aria-hidden="true">|</span>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="boho">Boho</button>
+      <span class="sig-filter-sep" aria-hidden="true">|</span>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="classic">Classic</button>
+      <span class="sig-filter-sep" aria-hidden="true">|</span>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="modern">Modern</button>
+      <span class="sig-filter-sep" aria-hidden="true">|</span>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="romantic">Romantic</button>
+    </div>
+
+    <div class="sig-layout">
+      {%- comment -%} ── Left column: gallery slider ── {%- endcomment -%}
+      <div class="sig-layout__gallery">
+        {%- comment -%} Loading skeleton — visible until JS renders groups {%- endcomment -%}
+        <div class="sig-loading" aria-hidden="true">
+          <div class="sig-skeleton-group">
+            <div class="sig-skeleton-item sig-skeleton-item--portrait"></div>
+            <div class="sig-skeleton-item sig-skeleton-item--portrait"></div>
+            <div class="sig-skeleton-item sig-skeleton-item--landscape"></div>
+          </div>
+          <div class="sig-skeleton-group sig-skeleton-group--b">
+            <div class="sig-skeleton-item"></div>
+            <div class="sig-skeleton-item"></div>
+            <div class="sig-skeleton-item"></div>
+          </div>
+          <div class="sig-skeleton-group">
+            <div class="sig-skeleton-item sig-skeleton-item--portrait"></div>
+            <div class="sig-skeleton-item sig-skeleton-item--portrait"></div>
+            <div class="sig-skeleton-item sig-skeleton-item--landscape"></div>
+          </div>
+        </div>
+
+        <slider-component-custom
+          id="SigSlider-{{ section.id }}"
+          class="sig-slider-component"
+          data-visual="dots"
+        >
+          <ul
+            id="Slider-{{ section.id }}"
+            class="sig-grid slider"
+            role="list"
+            aria-label="{{ section.settings.heading | default: 'Style inspiration gallery' | escape }}"
+          >
+            {%- comment -%} Groups rendered by style-inspiration-gallery.js {%- endcomment -%}
+          </ul>
+
+          <div class="slider-buttons sig-slider-buttons no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+            <div class="slider-counter slider-counter--dots">
+              <div class="slideshow__control-wrapper"></div>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+          </div>
+        </slider-component-custom>
+
+        <p class="sig-empty" hidden>No styles found for this filter.</p>
+      </div>
+
+      {%- comment -%} ── Right column: info panel ── {%- endcomment -%}
+      <div class="sig-layout__panel">
+        <div
+          class="sig-panel"
+          id="SigPanel-{{ section.id }}"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <div class="sig-panel__card">
+            <div class="sig-panel__card-body">
+              <h3 class="sig-panel__heading h4"></h3>
+              <p class="sig-panel__editorial-text"></p>
+              <div class="sig-panel__images">
+                <div class="sig-panel__lifestyle-image media"></div>
+                <div class="sig-panel__product-image media"></div>
+              </div>
+            </div>
+            <div class="sig-panel__footer">
+              <div class="sig-panel__footer-thumb media"></div>
+              <div class="sig-panel__footer-info">
+                <span class="sig-panel__product-title"></span>
+                <span class="sig-panel__product-shade"></span>
+              </div>
+              <a class="sig-panel__cta button" href="#">Shop Now</a>
+            </div>
+          </div>
+
+          <div class="sig-panel__review">
+            <div class="sig-panel__review-header">
+              <span class="sig-panel__review-author h5"></span>
+              <div class="sig-panel__stars" role="img" aria-label="5 out of 5 stars"></div>
+            </div>
+            <p class="sig-panel__review-text"></p>
+          </div>
+
+          <p class="sig-panel__indicator">
+            <span class="sig-panel__indicator-current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="sig-panel__indicator-total"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%}
+    Gallery data. Replace placeholder src / image values with real Shopify CDN URLs.
+    Each asset needs:
+      id                — unique string
+      type              — "image" or "video"
+      src               — CDN URL (video: MP4; image: image_url output)
+      poster            — thumbnail URL for videos; null for images
+      alt               — descriptive alt text
+      layout            — "portrait" | "landscape" | "tall"
+      filters           — array of filter labels matching the tabs above (case-insensitive)
+      editorial_heading — heading shown at the top of the panel card
+      editorial         — body copy shown below the heading
+      product.title / product.shade / product.url / product.image
+      review.author / review.rating (1–5) / review.text
+  {%- endcomment -%}
+  <script id="SigData-{{ section.id }}" type="application/json">
+    {
+      "filters": ["Boho", "Classic", "Modern", "Romantic"],
+      "assets": [
+        {
+          "id": "1",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Boho bridal updo with clip-in extensions",
+          "layout": "portrait",
+          "filters": ["Boho", "Classic"],
+          "editorial_heading": "Effortless Boho Waves",
+          "editorial": "Effortless waves with a boho twist — achieved with our Classic Clip-Ins.",
+          "product": {
+            "title": "Classic Clip-Ins",
+            "shade": "Darkest Brown",
+            "url": "/products/classic-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Kamila",
+            "rating": 5,
+            "text": "Absolutely loved these, wore them on my wedding day and had so many compliments."
+          }
+        },
+        {
+          "id": "2",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Classic wedding hair with soft waves",
+          "layout": "portrait",
+          "filters": ["Classic"],
+          "editorial_heading": "Timeless Wedding Elegance",
+          "editorial": "Timeless elegance for your special day.",
+          "product": {
+            "title": "Seamless Clip-Ins",
+            "shade": "Golden Brown",
+            "url": "/products/seamless-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Sophie",
+            "rating": 5,
+            "text": "These extensions blended perfectly with my natural hair."
+          }
+        },
+        {
+          "id": "3",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Boho bridal hair landscape editorial shot",
+          "layout": "landscape",
+          "filters": ["Boho"],
+          "editorial_heading": "Free-Spirited Texture",
+          "editorial": "Free-spirited texture for the boho bride.",
+          "product": {
+            "title": "Wavy Clip-Ins",
+            "shade": "Light Brown",
+            "url": "/products/wavy-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Emma",
+            "rating": 5,
+            "text": "The waves looked so natural, everyone thought it was my real hair!"
+          }
+        },
+        {
+          "id": "4",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Modern sleek bridal hair portrait",
+          "layout": "portrait",
+          "filters": ["Modern"],
+          "editorial_heading": "Sleek Modern Bride",
+          "editorial": "Sleek and polished for the modern bride.",
+          "product": {
+            "title": "Straight Clip-Ins",
+            "shade": "Jet Black",
+            "url": "/products/straight-clip-ins",
+            "image": ""
+          },
+          "review": { "author": "Priya", "rating": 5, "text": "So smooth and shiny, exactly what I was looking for." }
+        },
+        {
+          "id": "5",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Romantic bridal curls with extensions",
+          "layout": "portrait",
+          "filters": ["Romantic"],
+          "editorial_heading": "Romantic Bridal Curls",
+          "editorial": "Romantic curls for a dreamy wedding look.",
+          "product": {
+            "title": "Curly Clip-Ins",
+            "shade": "Dark Blonde",
+            "url": "/products/curly-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Isabelle",
+            "rating": 5,
+            "text": "My curls lasted all day and night. Absolutely stunning!"
+          }
+        },
+        {
+          "id": "6",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Romantic tall portrait with flowing extensions",
+          "layout": "tall",
+          "filters": ["Romantic", "Boho"],
+          "editorial_heading": "Flowing Ethereal Length",
+          "editorial": "Flowing length for a romantic, ethereal look.",
+          "product": {
+            "title": "Classic Clip-Ins",
+            "shade": "Chestnut Brown",
+            "url": "/products/classic-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Ava",
+            "rating": 5,
+            "text": "Added so much length and volume. Perfect for my boho wedding."
+          }
+        },
+        {
+          "id": "7",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Modern structured updo with clip-ins",
+          "layout": "portrait",
+          "filters": ["Modern"],
+          "editorial_heading": "Structured Modern Updo",
+          "editorial": "Structured updo elevated with seamless extensions.",
+          "product": {
+            "title": "Seamless Clip-Ins",
+            "shade": "Platinum Blonde",
+            "url": "/products/seamless-clip-ins",
+            "image": ""
+          },
+          "review": { "author": "Charlotte", "rating": 5, "text": "My stylist was amazed at how well they blended." }
+        },
+        {
+          "id": "8",
+          "type": "video",
+          "src": "",
+          "poster": "",
+          "alt": "Behind the scenes bridal hair tutorial",
+          "layout": "portrait",
+          "filters": ["Classic", "Modern"],
+          "editorial_heading": "Bridal Transformation",
+          "editorial": "Watch how our extensions transform a bridal look.",
+          "product": {
+            "title": "Classic Clip-Ins",
+            "shade": "Medium Brown",
+            "url": "/products/classic-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Zoe",
+            "rating": 5,
+            "text": "Followed this tutorial and nailed the look for my wedding!"
+          }
+        },
+        {
+          "id": "9",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Classic bridal hair landscape shot",
+          "layout": "landscape",
+          "filters": ["Classic", "Romantic"],
+          "editorial_heading": "Classic Halo Perfection",
+          "editorial": "Classic bridal hair, perfected with halo extensions.",
+          "product": {
+            "title": "Halo Extensions",
+            "shade": "Darkest Brown",
+            "url": "/products/halo-extensions",
+            "image": ""
+          },
+          "review": { "author": "Grace", "rating": 5, "text": "The halo was so comfortable and stayed in all day." }
+        },
+        {
+          "id": "10",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Boho tall portrait with natural texture extensions",
+          "layout": "tall",
+          "filters": ["Boho"],
+          "editorial_heading": "Natural Boho Texture",
+          "editorial": "Natural texture meets effortless length.",
+          "product": {
+            "title": "Wavy Clip-Ins",
+            "shade": "Balayage Brown",
+            "url": "/products/wavy-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Lily",
+            "rating": 4,
+            "text": "Really beautiful extensions, very natural looking texture."
+          }
+        },
+        {
+          "id": "11",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Romantic soft waves bridal portrait",
+          "layout": "portrait",
+          "filters": ["Romantic"],
+          "editorial_heading": "Soft Romantic Waves",
+          "editorial": "Soft waves for a romantic evening look.",
+          "product": {
+            "title": "Classic Clip-Ins",
+            "shade": "Caramel Blonde",
+            "url": "/products/classic-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Olivia",
+            "rating": 5,
+            "text": "Everyone was asking where I got my extensions, they looked so real!"
+          }
+        },
+        {
+          "id": "12",
+          "type": "image",
+          "src": "",
+          "poster": null,
+          "alt": "Modern clean lines bridal hair portrait",
+          "layout": "portrait",
+          "filters": ["Modern", "Classic"],
+          "editorial_heading": "Clean-Line Modern Style",
+          "editorial": "Clean lines and modern elegance.",
+          "product": {
+            "title": "Seamless Clip-Ins",
+            "shade": "Dark Brown",
+            "url": "/products/seamless-clip-ins",
+            "image": ""
+          },
+          "review": {
+            "author": "Mia",
+            "rating": 5,
+            "text": "Absolutely seamless blend. My hair stylist was impressed!"
+          }
+        }
+      ]
+    }
+  </script>
+</style-inspiration-gallery>
+
+{% schema %}
+{
+  "name": "Style Inspiration Gallery",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose by style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Style Inspiration Gallery"
+    }
+  ]
+}
+{% endschema %}

@@ -9,3 +9,10 @@ ehthumbs.db
 Thumbs.db
 
 .shopify
+
+.claude/
+.github/
+CLAUDE.md
+
+prds/
+to-build/
