@@ -314,6 +314,181 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "yotpo_reviews_split_EY4hfW": {
+      "type": "yotpo-reviews-split",
+      "name": "Yotpo reviews – split",
+      "settings": {
+        "color_scheme": "background-2",
+        "heading": "What our customers say",
+        "subheading": "Thousands of women trust Cliphair. Here's why:",
+        "data_source": "api",
+        "star_color": "#000000",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "trackable_name": ""
+      }
+    },
+    "press_bar_RM4Gax": {
+      "type": "press-bar",
+      "blocks": {
+        "logo_ax9geH": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Hair_Dresser_Journal_Logo_V3.png",
+            "link": ""
+          }
+        },
+        "logo_FhL98z": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Metro_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_Bd44A9": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/The_Sun_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_4nqY6B": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Daily_Mail_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_P6LYNk": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Reader_s_Digest_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_wDEjHr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Independent_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_GNWpwf": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Grazia_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_ViBw3K": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Marie_Claire_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_jAFMzT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Salon_Logo.webp",
+            "link": ""
+          }
+        },
+        "logo_UQmKXm": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Cosmopolitan_Logo.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_ax9geH",
+        "logo_FhL98z",
+        "logo_Bd44A9",
+        "logo_4nqY6B",
+        "logo_P6LYNk",
+        "logo_wDEjHr",
+        "logo_GNWpwf",
+        "logo_ViBw3K",
+        "logo_jAFMzT",
+        "logo_UQmKXm"
+      ],
+      "name": "Press Bar",
+      "settings": {
+        "label": "Our features...",
+        "logo_height": 52,
+        "scroll_duration": 40,
+        "color_scheme": "background-2",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "blog_cards_carousel_RDHLew": {
+      "type": "blog-cards-carousel",
+      "blocks": {
+        "card_yfy6cJ": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        },
+        "card_B6LzFk": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        },
+        "card_Hhzmdb": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        },
+        "card_7YeGYP": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        },
+        "card_ezNGWJ": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        },
+        "card_L68tEC": {
+          "type": "card",
+          "settings": {
+            "title": "Beginner's guide to extensions",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_yfy6cJ",
+        "card_B6LzFk",
+        "card_Hhzmdb",
+        "card_7YeGYP",
+        "card_ezNGWJ",
+        "card_L68tEC"
+      ],
+      "name": "Blog Cards Carousel",
+      "settings": {
+        "title": "The blog spot",
+        "subtitle": "Something here to say we want to educate our customers & help",
+        "columns_mobile": 1,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -323,6 +498,9 @@
     "fef9cc49-05dc-468b-82e4-1520264647b6",
     "custom_liquid_FeaaFh",
     "hair_goal_cards_carousel_i7waLK",
-    "hair_goal_cards_grid_GxXgbq"
+    "hair_goal_cards_grid_GxXgbq",
+    "yotpo_reviews_split_EY4hfW",
+    "press_bar_RM4Gax",
+    "blog_cards_carousel_RDHLew"
   ]
 }
