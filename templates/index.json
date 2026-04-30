@@ -495,6 +495,38 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "blog_spot_aPTw9A": {
+      "type": "blog-spot",
+      "name": "Blog spot",
+      "settings": {
+        "heading": "What’s trending",
+        "heading_size": "h2",
+        "introduction": "",
+        "tags_size": "h4",
+        "text_alignment": "left",
+        "blog": "hair-blog",
+        "post_limit": 4,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "columns_desktop": 4,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "show_image": true,
+        "image_ratio": "square",
+        "show_date": false,
+        "show_author": true,
+        "show_view_all": true,
+        "enable_tags": false,
+        "scroll_to_grid": false,
+        "tags_columns_desktop": 3,
+        "tags_swipe_on_desktop": false,
+        "tags_columns_mobile": "1",
+        "tags_swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -507,6 +539,7 @@
     "hair_goal_cards_grid_GxXgbq",
     "yotpo_reviews_split_EY4hfW",
     "press_bar_RM4Gax",
-    "blog_cards_carousel_RDHLew"
+    "blog_cards_carousel_RDHLew",
+    "blog_spot_aPTw9A"
   ]
 }
