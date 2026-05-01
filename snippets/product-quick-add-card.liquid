@@ -32,9 +32,9 @@
         </p>
       </div>
       <div class="text-wrapper__bottom">
-        <p class="">
+        <p class="" data-product-id="{{ card_product.id }}" data-variant-id="{{ card_product.selected_or_first_available_variant.id }}">
           From {{ cart.currency.symbol -}}
-          <span class="product_price">{{ card_product.price_min | money_without_currency }}</span>
+          <span class="product_price igPrice">{{ card_product.price_min | money_without_currency }}</span>
         </p>
 
         <div class="quick-add no-js-hidden">
