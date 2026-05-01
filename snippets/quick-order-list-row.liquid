@@ -16,6 +16,7 @@
 <tr
   class="variant-item{% unless section.settings.show_image %} variant-item--no-media{% endunless %}{% if item.available and item.unit_price_measurement %} variant-item--unit-price{% endif %}"
   id="Variant-{{ variant.id }}"
+  data-product-id="{{ variant.product.id }}"
   data-variant-id="{{ variant.id }}"
   data-cart-qty="{{ cart_qty }}"
 >
@@ -66,7 +67,7 @@
           {{ 'products.product.price.regular_price' | t }}
         </dt>
         <dd>
-          <s class="variant-item__old-price price price--end">
+          <s class="variant-item__old-price price price--end igComparePrice">
             {{ item.compare_at_price | money }}
           </s>
         </dd>
@@ -336,7 +337,7 @@
           {{ 'products.product.price.regular_price' | t }}
         </dt>
         <dd>
-          <s class="variant-item__old-price price price--end">
+          <s class="variant-item__old-price price price--end igComparePrice">
             {{ item.compare_at_price | money }}
           </s>
         </dd>
