@@ -115,6 +115,7 @@
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab26": {
       "type": "custom-carrousel-3-bridal24",
+      "disabled": true,
       "custom_css": [
         "section {background: rgba(229, 228, 241, 0.4) !important;}",
         ".section_header h2 {font-weight: 400;}",
@@ -221,7 +222,6 @@
         "heading_RHGTDb",
         "text_G9iGQT"
       ],
-      "disabled": true,
       "custom_css": [
         ".gradient {background: rgba(229, 228, 241, 0.4) !important;}"
       ],
@@ -244,10 +244,8 @@
         "bg_color": "#4e4e4e",
         "max_width": "280",
         "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 50,
-        "desktop-p_top-bottom": 30,
-        "desktop-p_sides": 0
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "bridal_dropdown_DCMaTp": {
@@ -367,10 +365,8 @@
         "bg_color": "#4e4e4e",
         "max_width": "280",
         "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 30,
-        "desktop-p_top-bottom": 30,
-        "desktop-p_sides": 50
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2690": {
