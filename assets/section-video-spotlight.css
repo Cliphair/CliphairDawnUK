@@ -1,0 +1,378 @@
+/* ============================================================
+   Section: Video Spotlight
+   Mobile-first. Reuses Dawn's slider-button, slider-counter,
+   deferred-media and rating classes. Only defines layout &
+   spotlight-specific styles here.
+   ============================================================ */
+
+/* ── Custom properties ─────────────────────────────────────── */
+.section-video-spotlight {
+    --vs-slide-w: 26rem;
+    --vs-slide-aspect: 9 / 16;
+    --vs-gap: 1.6rem;
+    --vs-scale-inactive: 0.82;
+    --vs-opacity-inactive: 0.55;
+    --vs-radius: 1.6rem;
+    --vs-transition: transform 0.4s ease, opacity 0.4s ease;
+    --vs-swatch-size: 5.6rem;
+    overflow: hidden;
+    /* prevent horizontal bleed */
+}
+
+/* ── Section heading ───────────────────────────────────────── */
+.vs-heading-wrapper {
+    margin-bottom: 2.4rem;
+}
+
+.vs-heading {
+    margin: 0;
+}
+
+/* ── Carousel track wrapper (clips overflow) ───────────────── */
+.vs-track-outer {
+    width: 100%;
+    overflow: hidden;
+    /* breathing room so the scaled-up active card isn't visually tight */
+    padding-block: 2rem;
+    margin-block: -2rem;
+}
+
+/* ── Scrollable flex track ─────────────────────────────────── */
+.vs-track {
+    display: flex;
+    align-items: center;
+    gap: var(--vs-gap);
+    /* Inline padding centres the first & last slide (JS updates via CSS var) */
+    padding-inline: var(--vs-track-pad, 2rem);
+    overflow-x: scroll;
+    /* scrollable — required for scrollTo() to work */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* No scroll-snap: JS drives exact centering */
+}
+
+.vs-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Individual slide ──────────────────────────────────────── */
+.vs-slide {
+    flex-shrink: 0;
+    width: var(--vs-slide-w);
+    aspect-ratio: var(--vs-slide-aspect);
+    border-radius: var(--vs-radius);
+    overflow: hidden;
+    position: relative;
+    transform: scale(var(--vs-scale-inactive));
+    opacity: var(--vs-opacity-inactive);
+    transition: var(--vs-transition);
+    cursor: pointer;
+}
+
+.vs-slide.is-active {
+    transform: scale(1);
+    opacity: 1;
+    cursor: default;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .vs-slide {
+        transition: opacity 0.2s ease;
+    }
+
+    .vs-track {
+        scroll-behavior: auto;
+    }
+}
+
+/* ── Slide inner ───────────────────────────────────────────── */
+.vs-slide__inner {
+    position: absolute;
+    inset: 0;
+}
+
+/* ── Deferred media wrapper fills the slide ────────────────── */
+.vs-slide__media.deferred-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    /* slide already has radius */
+}
+
+/* ── Poster button fills the slide ────────────────────────── */
+.vs-slide__poster.deferred-media__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.vs-slide__poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hide the play button overlay — muted preview plays automatically */
+.vs-slide__poster .deferred-media__poster-button {
+    display: none;
+}
+
+/*
+ * Prevent the DeferredMedia poster <button> from capturing clicks on inactive
+ * slides. Clicks bubble up to the <li> instead, which calls _goToSlide().
+ */
+.vs-slide:not(.is-active) .deferred-media__poster {
+    pointer-events: none;
+}
+
+/* ── Video element fills the slide ────────────────────────── */
+.vs-slide__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* landscape video covers portrait card */
+    display: block;
+    border-radius: 0;
+}
+
+/* ── Corner play button (opens full-video modal) ───────────── */
+.vs-slide__play-btn-wrapper {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    z-index: 2;
+}
+
+/* Hidden on inactive slides */
+.vs-slide:not(.is-active) .vs-slide__play-btn-wrapper {
+    display: none;
+}
+
+.vs-slide__play-btn {
+    background: rgba(0, 0, 0, 0.55);
+    border: 0.15rem solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.vs-slide__play-btn:hover,
+.vs-slide__play-btn:focus-visible {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.1);
+}
+
+.vs-slide__play-btn .icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-left: 0.2rem;
+    /* optical centering for the play triangle */
+}
+
+/* ── Controls row (prev · next) ──────────────────────────── */
+.vs-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    padding-inline: 1.6rem;
+}
+
+/* ── Rotate Dawn's caret icon to make correct arrows ──────── */
+.vs-controls__prev .icon-caret {
+    transform: rotate(90deg);
+}
+
+.vs-controls__next .icon-caret {
+    transform: rotate(-90deg);
+}
+
+/* ── Info area ─────────────────────────────────────────────── */
+.vs-info-area {
+    margin-top: 2.4rem;
+    position: relative;
+    min-height: 9rem;
+    /* prevents layout shift between panels */
+}
+
+/* ── Info panel (one per block, visibility toggled by JS) ──── */
+.vs-info-panel {
+    display: none;
+    flex-direction: column;
+    gap: 1.6rem;
+    animation: vsInfoFadeIn 0.3s ease forwards;
+}
+
+.vs-info-panel.is-active {
+    display: flex;
+}
+
+@keyframes vsInfoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vs-info-panel {
+        animation: none;
+    }
+}
+
+/* ── Product row (swatch + name + CTA) ────────────────────── */
+.vs-info-panel__product {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+/* ── Swatch circle ─────────────────────────────────────────── */
+.vs-swatch {
+    flex-shrink: 0;
+    width: var(--vs-swatch-size);
+    height: var(--vs-swatch-size);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.2rem solid rgba(var(--color-foreground), 0.15);
+}
+
+.vs-swatch__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── Product name ──────────────────────────────────────────── */
+.vs-info-panel__text {
+    flex: 1;
+    min-width: 0;
+}
+
+.vs-info-panel__product-name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Shop Now CTA ──────────────────────────────────────────── */
+.vs-info-panel__cta.button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* ── Review row ────────────────────────────────────────────── */
+.vs-info-panel__review {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.vs-info-panel__review .rating {
+    margin: 0;
+}
+
+.vs-info-panel__reviewer {
+    font-size: 1.3rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.vs-info-panel__review-text {
+    margin: 0;
+    font-size: 1.4rem;
+    font-style: italic;
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+/* ── Empty state ───────────────────────────────────────────── */
+.vs-empty {
+    padding-block: 4rem;
+    text-align: center;
+}
+
+.vs-empty__text {
+    color: rgba(var(--color-foreground), 0.5);
+}
+
+/* ── Responsive: tablet (750px+) ──────────────────────────── */
+@media screen and (min-width: 750px) {
+    .section-video-spotlight {
+        --vs-slide-w: 28rem;
+    }
+
+    .vs-heading-wrapper {
+        margin-bottom: 3.2rem;
+    }
+
+    .vs-info-panel__product {
+        flex-wrap: nowrap;
+    }
+
+    .vs-info-panel__review {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+}
+
+/* ── Responsive: desktop (990px+) ─────────────────────────── */
+@media screen and (min-width: 990px) {
+    .section-video-spotlight {
+        --vs-slide-w: 30rem;
+    }
+
+    .vs-controls {
+        margin-top: 2rem;
+    }
+
+    .vs-info-area {
+        margin-top: 3.2rem;
+    }
+
+    .vs-info-panel__product-name {
+        font-size: 1.6rem;
+    }
+}
+
+/* ── Modal video override (portrait-safe sizing) ───────────── */
+/*
+ * The existing .modal-video__video rule sets height/width: 100%.
+ * object-fit: contain ensures portrait or landscape video
+ * scales correctly inside the modal without cropping.
+ */
+.vs-modal__video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}

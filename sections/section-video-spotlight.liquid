@@ -1,0 +1,445 @@
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+{{ 'section-video-spotlight.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-video-spotlight.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="section-video-spotlight color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  id="section-{{ section.id }}"
+>
+  {%- if section.settings.heading != blank -%}
+    <div class="page-width vs-heading-wrapper">
+      <h2 class="vs-heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <video-spotlight-slider
+      id="VideoSpotlight-{{ section.id }}"
+      data-section-id="{{ section.id }}"
+      data-block-count="{{ section.blocks.size }}"
+    >
+      {%- comment -%} ── Carousel track ──────────────────────────────── {%- endcomment -%}
+      <div class="vs-track-outer" aria-label="{{ section.settings.heading | escape }}" role="region">
+        <ul
+          id="VsTrack-{{ section.id }}"
+          class="vs-track"
+          role="list"
+        >
+          {%- for block in section.blocks -%}
+            {%- assign media_id = section.id | append: '-' | append: forloop.index -%}
+            <li
+              id="VsSlide-{{ section.id }}-{{ forloop.index }}"
+              class="vs-slide{% if forloop.first %} is-active{% endif %}"
+              data-index="{{ forloop.index0 }}"
+              role="listitem"
+              aria-label="Slide {{ forloop.index }} {{ 'general.slider.of' | t }} {{ section.blocks.size }}"
+              {% unless forloop.first %}
+                aria-hidden="true"
+              {% endunless %}
+              {{ block.shopify_attributes }}
+            >
+              <div class="vs-slide__inner">
+                {%- if block.settings.video != blank -%}
+                  <deferred-media
+                    class="vs-slide__media deferred-media"
+                    data-media-id="{{ media_id }}"
+                  >
+                    <button
+                      id="Deferred-Poster-{{ media_id }}"
+                      class="vs-slide__poster deferred-media__poster"
+                      type="button"
+                      aria-label="{{ 'sections.video.load_video' | t: description: block.settings.product_name | escape }}"
+                    >
+                      {%- if block.settings.poster_image != blank -%}
+                        {%- if forloop.first -%}
+                          {{
+                            block.settings.poster_image
+                            | image_url: width: 800
+                            | image_tag:
+                              loading: 'eager',
+                              fetchpriority: 'high',
+                              widths: '300, 400, 600, 800',
+                              sizes: '(min-width: 990px) 28rem, (min-width: 750px) 24rem, 72vw',
+                              class: 'vs-slide__poster-img',
+                              alt: block.settings.product_name
+                          }}
+                        {%- else -%}
+                          {{
+                            block.settings.poster_image
+                            | image_url: width: 800
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '300, 400, 600, 800',
+                              sizes: '(min-width: 990px) 28rem, (min-width: 750px) 24rem, 72vw',
+                              class: 'vs-slide__poster-img',
+                              alt: block.settings.product_name
+                          }}
+                        {%- endif -%}
+                      {%- else -%}
+                        {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg vs-slide__poster-img' }}
+                      {%- endif -%}
+                      <span class="deferred-media__poster-button motion-reduce">
+                        {%- render 'icon-play' -%}
+                      </span>
+                    </button>
+                    <template>
+                      {{
+                        block.settings.video
+                        | video_tag:
+                          image_size: '800x',
+                          autoplay: true,
+                          loop: false,
+                          controls: false,
+                          muted: true,
+                          class: 'vs-slide__video',
+                          playsinline: true
+                      }}
+                    </template>
+                  </deferred-media>
+                {%- else -%}
+                  <div class="vs-slide__media">
+                    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg vs-slide__poster-img' }}
+                  </div>
+                {%- endif -%}
+
+                {%- comment -%} Corner play button — opens full-quality modal {%- endcomment -%}
+                {%- if block.settings.video != blank -%}
+                  <modal-opener
+                    class="vs-slide__play-btn-wrapper"
+                    data-modal="#VideoModal-{{ section.id }}-{{ forloop.index }}"
+                  >
+                    <button
+                      type="button"
+                      class="vs-slide__play-btn"
+                      aria-label="Watch {{ block.settings.product_name | escape }} — full video"
+                      aria-haspopup="dialog"
+                    >
+                      {%- render 'icon-play' -%}
+                    </button>
+                  </modal-opener>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      {%- comment -%} ── Controls (prev / next) ──────────────────────── {%- endcomment -%}
+      <div class="vs-controls no-js-hidden">
+        <button
+          type="button"
+          class="slider-button slider-button--prev vs-controls__prev"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+          aria-controls="VsTrack-{{ section.id }}"
+        >
+          {%- render 'icon-caret' -%}
+        </button>
+
+        <button
+          type="button"
+          class="slider-button slider-button--next vs-controls__next"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+          aria-controls="VsTrack-{{ section.id }}"
+        >
+          {%- render 'icon-caret' -%}
+        </button>
+      </div>
+
+      {%- comment -%} ── Per-slide info panel ────────────────────────── {%- endcomment -%}
+      <div class="vs-info-area page-width" aria-live="polite" aria-atomic="true">
+        {%- for block in section.blocks -%}
+          <div
+            class="vs-info-panel{% if forloop.first %} is-active{% endif %}"
+            data-index="{{ forloop.index0 }}"
+            {% unless forloop.first %}
+              aria-hidden="true"
+            {% endunless %}
+          >
+            <div class="vs-info-panel__product">
+              {%- if block.settings.swatch_image != blank -%}
+                <div class="vs-swatch" aria-hidden="true">
+                  {{
+                    block.settings.swatch_image
+                    | image_url: width: 120
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '60, 80, 120',
+                      sizes: '5.6rem',
+                      class: 'vs-swatch__img',
+                      alt: block.settings.product_name
+                  }}
+                </div>
+              {%- endif -%}
+
+              <div class="vs-info-panel__text">
+                {%- if block.settings.product_name != blank -%}
+                  <p class="vs-info-panel__product-name">{{ block.settings.product_name | escape }}</p>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.product_link != blank -%}
+                <a
+                  href="{{ block.settings.product_link }}"
+                  class="button button--secondary vs-info-panel__cta"
+                  aria-label="Shop Now — {{ block.settings.product_name | escape }}"
+                >
+                  Shop Now
+                </a>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.reviewer_name != blank or block.settings.review_text != blank -%}
+              <div class="vs-info-panel__review">
+                {%- assign stars = block.settings.star_rating | default: 5 -%}
+                <div
+                  class="rating"
+                  aria-label="{{ stars }} out of 5 stars"
+                >
+                  <p
+                    class="rating-star"
+                    style="--rating: {{ stars }}; --rating-max: 5; --rating-decimal: 0;"
+                    aria-hidden="true"
+                  ></p>
+                </div>
+
+                {%- if block.settings.reviewer_name != blank -%}
+                  <span class="vs-info-panel__reviewer">{{ block.settings.reviewer_name | escape }}</span>
+                {%- endif -%}
+
+                {%- if block.settings.review_text != blank -%}
+                  <p class="vs-info-panel__review-text">{{ block.settings.review_text | escape }}</p>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </video-spotlight-slider>
+
+    {%- comment -%} ── Full-video modals (one per block) ──────────── {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.settings.video != blank -%}
+        <modal-dialog
+          id="VideoModal-{{ section.id }}-{{ forloop.index }}"
+          class="modal-video media-modal color-{{ section.settings.color_scheme }}"
+        >
+          <div
+            class="modal-video__content"
+            role="dialog"
+            aria-label="{{ block.settings.product_name | escape }}"
+            aria-modal="true"
+            tabindex="-1"
+          >
+            <button
+              id="ModalClose-{{ section.id }}-{{ forloop.index }}"
+              type="button"
+              class="modal-video__toggle"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              {%- render 'icon-close' -%}
+            </button>
+            <div class="modal-video__content-info">
+              <deferred-media class="modal-video__video template-popup">
+                <template>
+                  {{
+                    block.settings.video
+                    | video_tag: autoplay: true, controls: true, muted: false, loop: false, class: 'vs-modal__video'
+                  }}
+                </template>
+              </deferred-media>
+            </div>
+          </div>
+        </modal-dialog>
+      {%- endif -%}
+    {%- endfor -%}
+
+  {%- else -%}
+    <div class="page-width vs-empty">
+      <p class="vs-empty__text">Add video blocks to get started.</p>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Video Spotlight",
+  "tag": "section",
+  "class": "section section-video-spotlight",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real hair, real life"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_slide",
+      "name": "Video slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster image",
+          "info": "Shown before the video loads. Portrait ratio (9:16) recommended."
+        },
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "swatch_image",
+          "label": "Swatch / product image",
+          "info": "Small circular image shown in the info bar."
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product name",
+          "default": "Clip-in Hair Extensions"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product link"
+        },
+        {
+          "type": "header",
+          "content": "Review"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review quote",
+          "default": "\"Absolutely love them, they blend perfectly!\""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Spotlight",
+      "blocks": [
+        {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Clip-in Hair Extensions",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
+        },
+        {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Tape-in Hair Extensions",
+            "star_rating": 5,
+            "reviewer_name": "Emily R.",
+            "review_text": "\"So natural-looking, couldn't be happier!\""
+          }
+        },
+        {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Halo Hair Extensions",
+            "star_rating": 5,
+            "reviewer_name": "Jessica T.",
+            "review_text": "\"Game changer! On and off in seconds.\""
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10
+}
+{% endschema %}
