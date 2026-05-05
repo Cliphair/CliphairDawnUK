@@ -1,0 +1,187 @@
+/* ================================================
+   Wedding Shop Banner
+   ================================================ */
+
+.wsb__card {
+    position: relative;
+}
+
+/* ---- Image column ---- */
+.wsb__image-col {
+    position: relative;
+    min-height: 20rem; /* fallback when no image is uploaded */
+}
+
+.wsb__image-col picture {
+    display: block;
+}
+
+/* Mobile: image in normal flow — its natural dimensions drive the card height */
+.wsb__image-col img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+}
+
+.wsb__image-col .placeholder-svg {
+    display: block;
+    width: 100%;
+    min-height: 36rem;
+}
+
+/* Scrim — bottom-upward gradient on mobile for text legibility */
+.wsb__scrim {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 25%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* Image label — desktop only */
+.wsb__image-label {
+    display: none;
+}
+
+/* ---- Text column — absolutely overlaid on the image on mobile ---- */
+.wsb__text-col {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2.4rem 2.4rem 3.2rem;
+    text-align: center;
+}
+
+.wsb__heading {
+    margin: 0 0 0.8rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.wsb__heading em {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.wsb__subheading {
+    margin: 0 0 1.6rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.wsb__subheading p {
+    margin: 0;
+    color: inherit;
+    font-size: 1.4rem;
+}
+
+.wsb__cta-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 1px;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.wsb__cta-link:hover {
+    opacity: 0.7;
+}
+
+/* ================================================
+   Desktop: two-column layout (≥ 990px)
+   ================================================ */
+@media screen and (min-width: 990px) {
+
+    /*
+      Flex row with stretch alignment.
+      The image column's aspect-ratio (injected from Liquid per section) makes it
+      naturally adopt the image's proportions. If text content is taller the column
+      stretches via align-self and the image covers with object-fit.
+    */
+    .wsb__card {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .wsb__image-col {
+        flex: 0 0 55%;
+        min-height: unset;
+        /* aspect-ratio injected in {%- style -%} in wedding-shop-banner.liquid */
+    }
+
+    /* Image fills the column; object-fit handles any height overage from text */
+    .wsb__image-col img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.8rem 0 0 0.8rem;
+    }
+
+    /* Scrim: right-to-white fade, blends into the text panel */
+    .wsb__scrim {
+        background: linear-gradient(to right,
+                transparent 50%,
+                rgba(255, 255, 255, 0.9) 80%,
+                rgb(255, 255, 255) 100%);
+    }
+
+    .wsb__image-label {
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 2;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    /* Text column: static flex item, vertically centred, scheme background */
+    .wsb__text-col {
+        flex: 0 0 45%;
+        position: static;
+        inset: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem;
+        text-align: center;
+        color: inherit;
+        border-radius: 0 0.8rem 0.8rem 0;
+        /* Scheme background without background-attachment: fixed */
+        background: rgb(var(--color-background));
+        background: var(--gradient-background);
+    }
+
+    .wsb__heading {
+        color: inherit;
+        font-size: clamp(2.2rem, 2.5vw, 3.6rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .wsb__subheading {
+        color: inherit;
+        max-width: 36rem;
+    }
+
+    .wsb__subheading p {
+        color: inherit;
+    }
+
+    .wsb__cta-link {
+        color: inherit;
+        text-decoration-color: currentColor;
+    }
+}

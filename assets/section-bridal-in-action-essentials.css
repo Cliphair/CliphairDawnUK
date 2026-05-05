@@ -1,0 +1,351 @@
+.biae {
+    display: grid;
+    gap: 2rem;
+}
+
+.biae__panel {
+    background: #fff;
+    border-radius: 2.4rem;
+    padding: 2rem;
+    min-width: 0;
+}
+
+.biae__panel-header {
+    margin-bottom: 1.6rem;
+}
+
+.biae__panel-title {
+    margin: 0;
+    font-size: 2.4rem;
+    line-height: 1.1;
+}
+
+.biae__video-pages,
+.biae__product-pages {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.biae__video-page,
+.biae__product-page {
+    width: 100%;
+}
+
+.biae__video-pages.slider,
+.biae__product-pages.slider {
+    display: flex;
+    gap: 1.2rem;
+    align-items: stretch;
+}
+
+.biae__video-pages.slider .biae__video-page,
+.biae__product-pages.slider .biae__product-page {
+    flex: 0 0 100%;
+}
+
+.biae__video-card-grid,
+.biae__product-page-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.biae__video-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.biae__video-card {
+    min-width: 0;
+}
+
+.biae__video-media-wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+.biae__video-poster,
+.biae__video-poster--placeholder {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    overflow: hidden;
+    border-radius: 1.8rem;
+    background: #eadfce;
+}
+
+.biae__deferred-popup,
+.biae__deferred-popup .deferred-media__poster {
+    display: block;
+    height: 100%;
+}
+
+.biae__video-image,
+.biae__video-poster img,
+.biae__video-poster .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biae__deferred-popup .deferred-media__poster-button {
+    top: 1.2rem;
+    left: 1.2rem;
+    transform: none;
+    width: 4.4rem;
+    height: 4.4rem;
+    z-index: 3;
+}
+
+.biae__deferred-popup .deferred-media__poster-button:hover {
+    transform: scale(1.08);
+}
+
+.biae__deferred-popup .deferred-media__poster-button .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.biae__video-tag {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 3;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.biae__video-meta {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 1.6rem;
+    background: rgba(23, 22, 20, 0.86);
+    color: #fff;
+}
+
+.biae__video-meta-main {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.biae__video-product-thumb {
+    width: 4.8rem;
+    height: 4.8rem;
+    flex: 0 0 auto;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.biae__video-product-thumb-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biae__video-copy {
+    min-width: 0;
+}
+
+.biae__video-handle,
+.biae__video-description {
+    margin: 0;
+    color: inherit;
+}
+
+.biae__video-handle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.biae__video-description {
+    margin-top: 0.3rem;
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.biae__mini-button,
+.biae__footer-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.8rem;
+    padding: 0.8rem 1.4rem;
+    border: 0.1rem solid currentColor;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.biae__mini-button {
+    flex: 0 0 auto;
+    min-width: max-content;
+    background: #fff;
+}
+
+.biae__panel-footer {
+    margin-top: 1.6rem;
+}
+
+.biae__slider-buttons,
+.biae__product-slider-buttons {
+    margin-top: 1.6rem;
+}
+
+.biae__slider-buttons .slider-button,
+.biae__product-slider-buttons .slider-button {
+    width: 4rem;
+    height: 4rem;
+}
+
+.biae__product-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.biae__product-card {
+    min-width: 0;
+}
+
+.biae__product-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 1.6rem;
+    border-radius: 2rem;
+    background: #f7efe5;
+    color: inherit;
+    text-decoration: none;
+}
+
+.biae__product-link--placeholder {
+    display: flex;
+    flex-direction: column;
+}
+
+.biae__product-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.8rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: #231f1c;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.biae__product-media {
+    aspect-ratio: 1;
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+    border-radius: 1.6rem;
+}
+
+.biae__product-image,
+.biae__product-media img,
+.biae__product-media .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biae__product-details {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.biae__product-title {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.biae__product-price {
+    flex: 0 0 auto;
+    text-align: right;
+}
+
+.biae__product-price .price {
+    margin: 0;
+}
+
+.biae__product-price .price__container {
+    justify-content: flex-end;
+}
+
+.biae__empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20rem;
+    padding: 2rem;
+    border: 0.1rem dashed rgba(17, 17, 17, 0.25);
+    border-radius: 1.8rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 749px) {
+    .biae__panel {
+        padding: 1.6rem;
+    }
+
+    .biae__panel-title {
+        font-size: 2.1rem;
+    }
+
+    .biae__video-meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .biae__mini-button {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .biae {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr);
+        align-items: start;
+    }
+
+    .biae__panel {
+        padding: 2.4rem;
+    }
+
+    .biae__panel-title {
+        font-size: 2.8rem;
+    }
+}

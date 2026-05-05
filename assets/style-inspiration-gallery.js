@@ -30,62 +30,13 @@ class StyleInspirationGallery extends HTMLElement {
     );
   }
 
-  /* ── Group building: look-ahead algorithm ── */
+  /* ── Group building: fixed 5-item groups ── */
   buildGroups(assets) {
-    const remaining = [...assets];
     const groups = [];
-    let nextType = 'A';
-
-    const extractFirst = (layout) => {
-      const idx = remaining.findIndex((a) => a.layout === layout);
-      if (idx === -1) return null;
-      return remaining.splice(idx, 1)[0];
-    };
-
-    while (remaining.some((a) => a.layout === 'portrait')) {
-      const p1 = extractFirst('portrait');
-      if (!p1) break;
-
-      const p2 = extractFirst('portrait');
-      if (!p2) {
-        groups.push({ type: 'single', items: [p1] });
-        break;
-      }
-
-      if (nextType === 'A') {
-        const landscape = extractFirst('landscape');
-        if (landscape) {
-          groups.push({ type: 'A', items: [p1, p2, landscape] });
-        } else {
-          const p3 = extractFirst('portrait');
-          const p4 = extractFirst('portrait');
-          const items = [p1, p2];
-          if (p3) items.push(p3);
-          if (p4) items.push(p4);
-          groups.push({ type: 'A2', items });
-        }
-      } else {
-        const tall = extractFirst('tall');
-        if (tall) {
-          groups.push({ type: 'B', items: [p1, p2, tall] });
-        } else {
-          const landscape = extractFirst('landscape');
-          if (landscape) {
-            groups.push({ type: 'A', items: [p1, p2, landscape] });
-          } else {
-            const p3 = extractFirst('portrait');
-            const p4 = extractFirst('portrait');
-            const items = [p1, p2];
-            if (p3) items.push(p3);
-            if (p4) items.push(p4);
-            groups.push({ type: 'A2', items });
-          }
-        }
-      }
-
-      nextType = nextType === 'A' ? 'B' : 'A';
+    for (let i = 0; i < assets.length; i += 5) {
+      const items = assets.slice(i, i + 5);
+      if (items.length > 0) groups.push({ items });
     }
-
     return groups;
   }
 
@@ -134,21 +85,20 @@ class StyleInspirationGallery extends HTMLElement {
 
   /* ── Render a single group ── */
   renderGroup(group, index) {
-    const typeClass = { A: 'a', A2: 'a2', B: 'b', single: 'single' }[group.type] || 'a2';
     const li = document.createElement('li');
     li.id = `Slide-${this.sectionId}-${index + 1}`;
-    li.className = `sig-group sig-group--${typeClass} slider__slide custom__slide`;
+    li.className = 'sig-group slider__slide custom__slide';
     li.setAttribute('role', 'group');
     li.setAttribute('aria-label', `Group ${index + 1}`);
 
-    group.items.forEach((item) => li.appendChild(this.renderItem(item)));
+    group.items.forEach((item, i) => li.appendChild(this.renderItem(item, i === 2)));
     this.gridEl.appendChild(li);
   }
 
   /* ── Render a single item ── */
-  renderItem(item) {
+  renderItem(item, isSpan = false) {
     const div = document.createElement('div');
-    div.className = `sig-item sig-item--${item.layout}`;
+    div.className = `sig-item ${isSpan ? 'sig-item--span' : 'sig-item--portrait'}`;
     div.dataset.itemId = item.id;
     div.setAttribute('tabindex', '0');
     div.setAttribute('role', 'button');
@@ -156,8 +106,8 @@ class StyleInspirationGallery extends HTMLElement {
     if (item.id === this.activeItemId) div.classList.add('sig-item--active');
 
     div.innerHTML = item.type === 'video'
-      ? this.videoHTML(item)
-      : this.imageHTML(item);
+      ? this.videoHTML(item, isSpan)
+      : this.imageHTML(item, isSpan);
 
     div.addEventListener('click', () => this.onItemClick(item, div));
     div.addEventListener('keydown', (e) => {
@@ -170,7 +120,7 @@ class StyleInspirationGallery extends HTMLElement {
     return div;
   }
 
-  imageHTML(item) {
+  imageHTML(item, isSpan = false) {
     const src = item.src || '';
     if (!src) {
       return `<span class="visually-hidden">${item.alt}</span>`;
@@ -180,17 +130,17 @@ class StyleInspirationGallery extends HTMLElement {
       alt="${this.escAttr(item.alt)}"
       loading="lazy"
       class="sig-item__img"
-      width="400"
-      height="600"
+      width="186"
+      height="${isSpan ? 498 : 245}"
     >`;
   }
 
-  videoHTML(item) {
+  videoHTML(item, isSpan = false) {
     const poster = item.poster || '';
     const src = item.src || '';
     const posterId = `Deferred-Poster-sig-${item.id}`;
     const posterImg = poster
-      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="400" height="600">`
+      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="186" height="${isSpan ? 498 : 245}">`
       : '';
 
     return `<deferred-media-popup
@@ -344,9 +294,25 @@ class StyleInspirationGallery extends HTMLElement {
 
   /* ── Patch SliderComponentCustom's sliderFirstItemNode after dynamic render ── */
   _fixSliderFirstItem() {
-    if (this.sliderEl) {
-      this.sliderEl.sliderFirstItemNode = this.sliderEl.slider?.querySelector('.custom__slide') || null;
+    if (!this.sliderEl) return;
+    this.sliderEl.sliderFirstItemNode = this.sliderEl.slider?.querySelector('.custom__slide') || null;
+
+    /* Patch initPages once so slidesPerPage is never 0 (would create a phantom dot
+       when each group is intentionally wider than the container for the peek effect). */
+    if (!this.sliderEl._initPagesPatchedBySIG) {
+      this.sliderEl._initPagesPatchedBySIG = true;
+      const originalInitPages = this.sliderEl.initPages.bind(this.sliderEl);
+      this.sliderEl.initPages = function () {
+        originalInitPages();
+        if (this.slidesPerPage < 1) {
+          this.slidesPerPage = 1;
+          this.totalPages = Math.max(1, this.sliderItemsToShow.length - this.slidesPerPage + 1);
+          this.update();
+        }
+      };
     }
+
+    this.sliderEl.initPages();
   }
 
   /* ── Utility: escape HTML attribute values ── */

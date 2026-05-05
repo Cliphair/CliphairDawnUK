@@ -1,0 +1,260 @@
+{{ 'section-wedding-shop-banner.css' | asset_url | stylesheet_tag }}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap');
+</style>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- assign _ar_img = section.settings.image_desktop | default: section.settings.image -%}
+  {%- if _ar_img != blank -%}
+    @media screen and (min-width: 990px) {
+      #shopify-section-{{ section.id }} .wsb__image-col {
+        aspect-ratio: {{ _ar_img.aspect_ratio }};
+      }
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="wsb__card color-{{ section.settings.color_scheme }}">
+      {%- comment -%} ——— Image column ——— {%- endcomment -%}
+      <div class="wsb__image-col">
+        {%- liquid
+          assign img_mobile = section.settings.image
+          assign img_desktop = section.settings.image_desktop | default: img_mobile
+        -%}
+
+        {%- if img_mobile != blank -%}
+          <picture>
+            {%- if section.settings.image_desktop != blank -%}
+              <source
+                media="(min-width: 990px)"
+                srcset="{{ img_desktop | image_url: width: 1200 }} 1200w, {{ img_desktop | image_url: width: 860 }} 860w"
+                sizes="55vw"
+              >
+            {%- endif -%}
+            {{
+              img_mobile
+              | image_url: width: 860
+              | image_tag:
+                loading: 'lazy',
+                widths: '430, 600, 860, 1200',
+                sizes: '(min-width: 990px) 55vw, 100vw',
+                alt: img_mobile.alt
+            }}
+          </picture>
+        {%- else -%}
+          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+
+        {%- comment -%} Gradient scrim: bottom-fade on mobile, right-to-white on desktop {%- endcomment -%}
+        <div class="wsb__scrim" aria-hidden="true"></div>
+
+        {%- comment -%} Image label — visible on desktop only via CSS {%- endcomment -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'image_label' and block.settings.label != blank -%}
+            <div class="wsb__image-label" aria-hidden="true" {{ block.shopify_attributes }}>
+              {{- block.settings.label | escape -}}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- comment -%} ——— End image column ——— {%- endcomment -%}
+
+      {%- comment -%} ——— Text column ——— {%- endcomment -%}
+      <div class="wsb__text-col">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              {%- if block.settings.heading != blank -%}
+                <h2
+                  class="wsb__heading {{ block.settings.heading_size }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.heading }}
+                </h2>
+              {%- endif -%}
+
+            {%- when 'subheading' -%}
+              {%- if block.settings.text != blank -%}
+                <div class="wsb__subheading rte" {{ block.shopify_attributes }}>
+                  {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+
+            {%- when 'button' -%}
+              {%- if block.settings.label != blank -%}
+                <a
+                  {% if block.settings.link != blank %}
+                    href="{{ block.settings.link }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  class="wsb__cta-link"
+                  {{ block.shopify_attributes }}
+                >
+                  {{- block.settings.label | escape -}}
+                </a>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      {%- comment -%} ——— End text column ——— {%- endcomment -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Wedding Shop Banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Mobile image",
+      "info": "Recommended: 430 × 600 px"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image",
+      "info": "Optional — falls back to mobile image if empty. Recommended: 1200 × 800 px"
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_label",
+      "name": "Image label",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label text",
+          "default": "Wedding Shop",
+          "info": "Shown at the bottom-left of the image on desktop only."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Worn Down <em>the Aisle</em>",
+          "info": "Wrap words in <em> tags for Libre Caslon italic."
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Size",
+          "options": [
+            { "value": "h3", "label": "Small" },
+            { "value": "h2", "label": "Medium" },
+            { "value": "h1", "label": "Large" },
+            { "value": "h0", "label": "Extra large" }
+          ],
+          "default": "h1"
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Trusted by thousands of brides on the day that matters most</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Link",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Link text",
+          "default": "Explore Wedding Shop"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wedding Shop Banner",
+      "blocks": [{ "type": "image_label" }, { "type": "heading" }, { "type": "subheading" }, { "type": "button" }]
+    }
+  ]
+}
+{% endschema %}

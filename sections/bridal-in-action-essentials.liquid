@@ -1,0 +1,548 @@
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'section-bridal-in-action-essentials.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign video_count = 0
+  assign product_count = 0
+
+  for block in section.blocks
+    case block.type
+      when 'video_card'
+        assign video_count = video_count | plus: 1
+      when 'product_card'
+        assign product_count = product_count | plus: 1
+    endcase
+  endfor
+
+  assign show_video_slider = false
+  if video_count > 2
+    assign show_video_slider = true
+  endif
+
+  assign show_product_slider = false
+  if product_count > 4
+    assign show_product_slider = true
+  endif
+
+  assign product_page_count = product_count | plus: 3 | divided_by: 4
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <section class="biae" aria-labelledby="BiaeHeading-{{ section.id }}">
+      <h2 id="BiaeHeading-{{ section.id }}" class="visually-hidden">
+        {{ section.settings.video_heading | default: section.settings.product_heading | escape }}
+      </h2>
+
+      <div class="biae__panel biae__panel--video">
+        <div class="biae__panel-header">
+          {%- if section.settings.video_heading != blank -%}
+            <h3 class="biae__panel-title h3">{{ section.settings.video_heading | escape }}</h3>
+          {%- endif -%}
+        </div>
+
+        {%- if video_count > 0 -%}
+          <slider-component-custom
+            class="biae__video-slider"
+            data-visual="dots"
+          >
+            <ul
+              id="Slider-{{ section.id }}-videos"
+              class="biae__video-pages{% if show_video_slider %} slider slider--everywhere{% endif %}"
+              role="list"
+              aria-label="{{ section.settings.video_heading | default: 'In Action videos' | escape }}"
+            >
+              {%- assign rendered_video_count = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'video_card' -%}
+                  {%- assign video_modulo = rendered_video_count | modulo: 2 -%}
+                  {%- if video_modulo == 0 -%}
+                    <li
+                      id="Slide-{{ section.id }}-videos-{{ rendered_video_count | divided_by: 2 | floor | plus: 1 }}"
+                      class="biae__video-page custom__slide{% if show_video_slider %} slider__slide{% endif %}"
+                    >
+                      <div class="biae__video-card-grid">
+                  {%- endif -%}
+
+                  {%- liquid
+                    assign linked_product = block.settings.product
+                    assign product_thumb = block.settings.product_image
+                    if product_thumb == blank and linked_product != blank and linked_product.featured_media != blank
+                      assign product_thumb = linked_product.featured_media.preview_image
+                    endif
+
+                    assign poster_image = block.settings.cover_image
+                    if poster_image == blank and block.settings.video != blank
+                      assign poster_image = block.settings.video.preview_image
+                    endif
+
+                    assign video_id = block.settings.video.id | default: block.settings.video_url.id
+                    assign video_title = block.settings.description | default: block.settings.handle | default: section.settings.video_heading
+                  -%}
+
+                  <article class="biae__video-card" {{ block.shopify_attributes }}>
+                    <div class="biae__video-media-wrapper">
+                      {%- if video_id != blank -%}
+                        <deferred-media-popup
+                          class="deferred-media global-media-settings biae__deferred-popup"
+                          data-media-id="biae-{{ block.id }}"
+                        >
+                          <button
+                            type="button"
+                            id="Deferred-Poster-{{ block.id }}"
+                            class="deferred-media__poster media biae__video-poster"
+                            aria-label="Play video: {{ video_title | escape }}"
+                          >
+                            {%- if block.settings.tag != blank -%}
+                              <span class="biae__video-tag">{{ block.settings.tag | escape }}</span>
+                            {%- endif -%}
+                            <span class="deferred-media__poster-button motion-reduce">
+                              {%- render 'icon-play' -%}
+                            </span>
+                            {%- if poster_image != blank -%}
+                              {{
+                                poster_image
+                                | image_url: width: 720
+                                | image_tag:
+                                  loading: 'lazy',
+                                  widths: '165, 360, 535, 720',
+                                  sizes: '(min-width: 990px) 22vw, calc(50vw - 2.4rem)',
+                                  class: 'biae__video-image',
+                                  alt: video_title
+                              }}
+                            {%- else -%}
+                              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                            {%- endif -%}
+                          </button>
+                          <template>
+                            {%- if block.settings.video != blank -%}
+                              {{
+                                block.settings.video
+                                | video_tag:
+                                  image_size: '1100x',
+                                  autoplay: true,
+                                  loop: false,
+                                  controls: true,
+                                  muted: false
+                              }}
+                            {%- elsif block.settings.video_url != blank -%}
+                              {%- if block.settings.video_url.type == 'youtube' -%}
+                                <iframe
+                                  src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?enablejsapi=1&autoplay=1"
+                                  class="js-youtube"
+                                  allow="autoplay; encrypted-media"
+                                  allowfullscreen
+                                  title="{{ video_title | escape }}"
+                                ></iframe>
+                              {%- else -%}
+                                <iframe
+                                  src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?autoplay=1"
+                                  class="js-vimeo"
+                                  allow="autoplay; encrypted-media"
+                                  allowfullscreen
+                                  title="{{ video_title | escape }}"
+                                ></iframe>
+                              {%- endif -%}
+                            {%- endif -%}
+                          </template>
+                        </deferred-media-popup>
+                      {%- else -%}
+                        <div class="biae__video-poster biae__video-poster--placeholder media">
+                          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                      {%- endif -%}
+
+                      <div class="biae__video-meta">
+                        <div class="biae__video-meta-main">
+                          {%- if product_thumb != blank -%}
+                            <div class="biae__video-product-thumb">
+                              {{
+                                product_thumb
+                                | image_url: width: 120
+                                | image_tag:
+                                  loading: 'lazy',
+                                  widths: '60, 90, 120',
+                                  sizes: '6rem',
+                                  class: 'biae__video-product-thumb-image',
+                                  alt: linked_product.title
+                              }}
+                            </div>
+                          {%- endif -%}
+
+                          <div class="biae__video-copy">
+                            {%- if block.settings.handle != blank -%}
+                              <p class="biae__video-handle">{{ block.settings.handle | escape }}</p>
+                            {%- endif -%}
+                            {%- if block.settings.description != blank -%}
+                              <p class="biae__video-description">{{ block.settings.description | escape }}</p>
+                            {%- endif -%}
+                          </div>
+                        </div>
+
+                        {%- if linked_product != blank and block.settings.button_label != blank -%}
+                          <a class="biae__mini-button" href="{{ linked_product.url }}">
+                            {{ block.settings.button_label | escape }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </article>
+
+                  {%- assign rendered_video_count = rendered_video_count | plus: 1 -%}
+                  {%- assign close_video_page = rendered_video_count | modulo: 2 -%}
+                  {%- if close_video_page == 0 or rendered_video_count == video_count -%}
+                    </div>
+                    </li>
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+            {%- if show_video_slider -%}
+              <div class="slider-buttons biae__slider-buttons no-js-hidden">
+                <button
+                  type="button"
+                  class="slider-button slider-button--prev"
+                  name="previous"
+                  aria-label="{{ 'general.slider.previous_slide' | t }}"
+                >
+                  {%- render 'icon-caret' -%}
+                </button>
+                <div class="slider-counter slider-counter--dots">
+                  <div class="slideshow__control-wrapper"></div>
+                </div>
+                <button
+                  type="button"
+                  class="slider-button slider-button--next"
+                  name="next"
+                  aria-label="{{ 'general.slider.next_slide' | t }}"
+                >
+                  {%- render 'icon-caret' -%}
+                </button>
+              </div>
+            {%- endif -%}
+          </slider-component-custom>
+        {%- else -%}
+          <div class="biae__empty-state">Add video blocks to populate this panel.</div>
+        {%- endif -%}
+
+        {%- if section.settings.social_link_label != blank -%}
+          <div class="biae__panel-footer">
+            <a
+              {% if section.settings.social_link != blank %}
+                href="{{ section.settings.social_link }}"
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+              class="biae__footer-link"
+            >
+              {{ section.settings.social_link_label | escape }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="biae__panel biae__panel--products">
+        <div class="biae__panel-header">
+          {%- if section.settings.product_heading != blank -%}
+            <h3 class="biae__panel-title h3">{{ section.settings.product_heading | escape }}</h3>
+          {%- endif -%}
+        </div>
+
+        {%- if product_count > 0 -%}
+          <slider-component class="biae__product-slider">
+            <ul
+              id="Slider-{{ section.id }}-products"
+              class="biae__product-pages{% if show_product_slider %} slider slider--everywhere{% endif %}"
+              role="list"
+              aria-label="{{ section.settings.product_heading | default: 'Bridal Hair Essentials' | escape }}"
+            >
+              {%- assign rendered_product_count = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'product_card' -%}
+                  {%- assign product_modulo = rendered_product_count | modulo: 4 -%}
+                  {%- if product_modulo == 0 -%}
+                    <li
+                      id="Slide-{{ section.id }}-products-{{ rendered_product_count | divided_by: 4 | floor | plus: 1 }}"
+                      class="biae__product-page custom__slide{% if show_product_slider %} slider__slide{% endif %}"
+                    >
+                      <div class="biae__product-page-grid">
+                  {%- endif -%}
+
+                  {%- liquid
+                    assign product_item = block.settings.product
+                    assign card_image = block.settings.override_image
+                    if card_image == blank and product_item != blank and product_item.featured_media != blank
+                      assign card_image = product_item.featured_media.preview_image
+                    endif
+                    assign card_title = block.settings.override_title | default: product_item.title
+                  -%}
+
+                  <article class="biae__product-card" {{ block.shopify_attributes }}>
+                    {%- if product_item != blank -%}
+                      <a class="biae__product-link" href="{{ product_item.url }}">
+                        {%- if block.settings.badge_text != blank -%}
+                          <span class="biae__product-badge">{{ block.settings.badge_text | escape }}</span>
+                        {%- endif -%}
+
+                        <div class="biae__product-media">
+                          {%- if card_image != blank -%}
+                            {{
+                              card_image
+                              | image_url: width: 720
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '165, 360, 535, 720',
+                                sizes: '(min-width: 990px) 14vw, calc(50vw - 3.2rem)',
+                                class: 'biae__product-image',
+                                alt: card_title
+                            }}
+                          {%- else -%}
+                            {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                          {%- endif -%}
+                        </div>
+
+                        <div class="biae__product-details">
+                          <span class="biae__product-title">{{ card_title | escape }}</span>
+                          <span class="biae__product-price">
+                            {% render 'price', product: product_item, use_variant: true %}
+                          </span>
+                        </div>
+                      </a>
+                    {%- else -%}
+                      <div class="biae__product-link biae__product-link--placeholder">
+                        <div class="biae__product-media">
+                          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                        <div class="biae__product-details">
+                          <span class="biae__product-title">Select a product</span>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </article>
+
+                  {%- assign rendered_product_count = rendered_product_count | plus: 1 -%}
+                  {%- assign close_product_page = rendered_product_count | modulo: 4 -%}
+                  {%- if close_product_page == 0 or rendered_product_count == product_count -%}
+                    </div>
+                    </li>
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+            {%- if show_product_slider -%}
+              <div class="slider-buttons biae__product-slider-buttons no-js-hidden">
+                <button
+                  type="button"
+                  class="slider-button slider-button--prev"
+                  name="previous"
+                  aria-label="{{ 'general.slider.previous_slide' | t }}"
+                >
+                  {%- render 'icon-caret' -%}
+                </button>
+
+                <div class="slider-counter caption visually-hidden">
+                  <span class="slider-counter--current">1</span>
+                  <span aria-hidden="true"> / </span>
+                  <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                  <span class="slider-counter--total">{{ product_page_count }}</span>
+                </div>
+
+                <button
+                  type="button"
+                  class="slider-button slider-button--next"
+                  name="next"
+                  aria-label="{{ 'general.slider.next_slide' | t }}"
+                >
+                  {%- render 'icon-caret' -%}
+                </button>
+              </div>
+            {%- endif -%}
+          </slider-component>
+        {%- else -%}
+          <div class="biae__empty-state">Add product blocks to populate this panel.</div>
+        {%- endif -%}
+      </div>
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bridal In Action",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_heading",
+      "label": "Video panel heading",
+      "default": "In Action"
+    },
+    {
+      "type": "text",
+      "id": "product_heading",
+      "label": "Product panel heading",
+      "default": "Bridal Hair Essentials"
+    },
+    {
+      "type": "text",
+      "id": "social_link_label",
+      "label": "Social link label",
+      "default": "Find us on Socials"
+    },
+    {
+      "type": "url",
+      "id": "social_link",
+      "label": "Social link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_card",
+      "name": "Video card",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Shopify-hosted video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "label": "External video URL",
+          "info": "Used when no Shopify-hosted video is selected."
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Poster image"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Top-right tag",
+          "default": "Bridal"
+        },
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Handle or creator",
+          "default": "@cliphairlimited"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Soft bridal volume finished with our clip-ins."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Linked product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Override product thumbnail"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "CTA label",
+          "default": "Shop Now"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "override_image",
+          "label": "Override image"
+        },
+        {
+          "type": "text",
+          "id": "override_title",
+          "label": "Override title"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal In Action",
+      "blocks": [
+        { "type": "video_card" },
+        { "type": "video_card" },
+        { "type": "product_card" },
+        { "type": "product_card" },
+        { "type": "product_card" },
+        { "type": "product_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
