@@ -108,6 +108,31 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_v2_VkJ4n4": {
+      "type": "rich-text-v2",
+      "blocks": {
+        "heading_cxVRw4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Still figuring it out? We’ve got you.",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cxVRw4"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "colour_match_quiz_grid_4hxCWX": {
       "type": "colour-match-quiz-grid",
       "blocks": {
@@ -147,52 +172,120 @@
         "video_card_aEiBDB": {
           "type": "video_card",
           "settings": {
-            "tag": "Bridal",
-            "handle": "@cliphairlimited",
-            "description": "Soft bridal volume finished with our clip-ins.",
-            "product": "",
+            "video": "shopify://files/videos/bridal-26-social-videos-1-video.mp4",
+            "cover_image": "shopify://shop_images/bridal-26-social-videos-1.jpg",
+            "tag": "",
+            "handle": "",
+            "description": "Ellie's wedding hair by @zwhairmua, wearing 22\" Ultra Volume Clip Ins in shade Dark Brown",
+            "product": "dark-brown-3-ultra-volume-clip-in-full-head-set-240-300g",
             "button_label": "Shop Now"
           }
         },
         "video_card_cbT3j6": {
           "type": "video_card",
           "settings": {
-            "tag": "Bridal",
-            "handle": "@cliphairlimited",
-            "description": "Soft bridal volume finished with our clip-ins.",
-            "product": "",
+            "video": "shopify://files/videos/bridal-26-social-videos-2-video.mp4",
+            "cover_image": "shopify://shop_images/bridal-26-social-videos-2.jpg",
+            "tag": "",
+            "handle": "",
+            "description": "Styled by @amyrosebridal, wearing Classic Full Head Clip Ins in shade Biscuit Blondie",
+            "product": "full-head-set-clip-in-hair-extensions-brown-blonde-mix-18-613",
+            "button_label": "Shop Now"
+          }
+        },
+        "video_card_jyC963": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-social-videos-3-video.mp4",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/bridal-26-social-videos-3.jpg",
+            "tag": "",
+            "handle": "",
+            "description": "Katie's wedding hair by @zwhairmua, wearing Double Wefted Clip Ins in shade Chocolate Honey",
+            "product": "double-wefted-set-clip-in-hair-extensions-brown-blonde-mix-4-27",
+            "button_label": "Shop Now"
+          }
+        },
+        "video_card_V8kyRa": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-social-videos-4-video.mp4",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/bridal-26-social-videos-4.jpg",
+            "tag": "",
+            "handle": "",
+            "description": "Michele's wedding hair by @zwhairmua, wearing Quad Weft Clip In Piece in shade BlondeMe",
+            "product": "quad-wefted-remy-clip-in-human-hair-extensions-blondeme-60-ss",
+            "button_label": "Shop Now"
+          }
+        },
+        "video_card_w3KrTB": {
+          "type": "video_card",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-social-videos-5-video.mp4",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/bridal-26-social-videos-5.jpg",
+            "tag": "",
+            "handle": "",
+            "description": "Josie's wedding hair by @zwhairmua, wearing 22\" Ultra Volume Clip Ins in shade Chocolate Honey",
+            "product": "chocolate-honey-4-27-ultra-volume-clip-in-full-head-set-240-300g",
             "button_label": "Shop Now"
           }
         },
         "product_card_LTzgWG": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "override_title": "",
+            "product": "14-inch-mini-ponytail-extensions",
+            "override_image": "shopify://shop_images/Dark-Brown-Double-Weft-Clip-In-Hair-Extensions_3-dw_website-full.webp",
+            "override_title": "Double Weft",
             "badge_text": ""
           }
         },
         "product_card_LCR4cJ": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "override_title": "",
+            "product": "iced-cappuccino-14-22-ultra-volume-clip-in-full-head-set-240-300g",
+            "override_title": "Ultra Volume",
             "badge_text": ""
           }
         },
         "product_card_6kD6ke": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "override_title": "",
+            "product": "full-head-set-clip-in-hair-extensions-lightest-blonde-60",
+            "override_title": "Full Head Set",
             "badge_text": ""
           }
         },
         "product_card_TnbBVa": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "override_title": "",
+            "product": "nano-ring-hair-extensions-double-drawn-light-auburn-30",
+            "override_title": "Remy Nano Ring",
+            "badge_text": ""
+          }
+        },
+        "product_card_X4fnBQ": {
+          "type": "product_card",
+          "settings": {
+            "product": "remy-royale-double-drawn-tape-hair-extensions-natural-mocha-melt",
+            "override_title": "Remy Royale Tapes",
+            "badge_text": ""
+          }
+        },
+        "product_card_3XFgb6": {
+          "type": "product_card",
+          "settings": {
+            "product": "royale-human-hair-weft-weave-human-hair-extensions-jet-black-1",
+            "override_title": "Remy Royale Weave",
+            "badge_text": ""
+          }
+        },
+        "product_card_7pY7te": {
+          "type": "product_card",
+          "settings": {
+            "product": "hair-extension-hanger-and-carrier-bag",
+            "override_title": "Hair Extension Carrier & Hanger",
             "badge_text": ""
           }
         }
@@ -200,17 +293,23 @@
       "block_order": [
         "video_card_aEiBDB",
         "video_card_cbT3j6",
+        "video_card_jyC963",
+        "video_card_V8kyRa",
+        "video_card_w3KrTB",
         "product_card_LTzgWG",
         "product_card_LCR4cJ",
         "product_card_6kD6ke",
-        "product_card_TnbBVa"
+        "product_card_TnbBVa",
+        "product_card_X4fnBQ",
+        "product_card_3XFgb6",
+        "product_card_7pY7te"
       ],
       "name": "Bridal In Action",
       "settings": {
-        "video_heading": "In Action",
-        "product_heading": "Bridal Hair Essentials",
-        "social_link_label": "Find us on Socials",
-        "social_link": "",
+        "video_heading": "Brides Who Inspire Us.",
+        "product_heading": "Our wedding day must-haves ",
+        "social_link_label": "Share your look",
+        "social_link": "https://www.instagram.com/cliphairlimited/",
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -222,6 +321,7 @@
     "slideshow_ckHteq",
     "intro-section",
     "style_inspiration_gallery_eFqqyF",
+    "rich_text_v2_VkJ4n4",
     "colour_match_quiz_grid_4hxCWX",
     "bridal_in_action_essentials_VqPLtW"
   ]
