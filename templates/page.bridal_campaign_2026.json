@@ -21,49 +21,45 @@
         "padding_bottom": 0
       }
     },
-    "wedding_shop_banner_LCUfFR": {
-      "type": "wedding-shop-banner",
+    "slideshow_ckHteq": {
+      "type": "slideshow",
       "blocks": {
-        "image_label_3NxNbj": {
-          "type": "image_label",
+        "slide_nt3AhC": {
+          "type": "slide",
           "settings": {
-            "label": "Wedding Shop"
-          }
-        },
-        "heading_9TPr4G": {
-          "type": "heading",
-          "settings": {
-            "heading": "Worn Down <em>the Aisle</em>",
-            "heading_size": "h1"
-          }
-        },
-        "subheading_7LxQEX": {
-          "type": "subheading",
-          "settings": {
-            "text": "<p>Trusted by thousands of brides on the day that matters most</p>"
-          }
-        },
-        "button_dVCDQ6": {
-          "type": "button",
-          "settings": {
-            "label": "Explore Wedding Shop",
-            "link": ""
+            "image": "shopify://shop_images/main-banner-mobile-slideshow.jpg",
+            "image_desktop": "shopify://shop_images/main-banner-desktop-slideshow.jpg",
+            "image_url": "",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center",
+            "banner_id": ""
           }
         }
       },
       "block_order": [
-        "image_label_3NxNbj",
-        "heading_9TPr4G",
-        "subheading_7LxQEX",
-        "button_dVCDQ6"
+        "slide_nt3AhC"
       ],
-      "name": "Wedding Shop Banner",
+      "name": "t:sections.slideshow.presets.name",
       "settings": {
-        "image": "shopify://shop_images/main-banner-mobile.jpg",
-        "image_desktop": "shopify://shop_images/main-banner-desktop.jpg",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand",
+        "trackable_name": ""
       }
     },
     "intro-section": {
@@ -223,7 +219,7 @@
   },
   "order": [
     "6368dc69-0f53-4509-a1fe-d8783409b1a1",
-    "wedding_shop_banner_LCUfFR",
+    "slideshow_ckHteq",
     "intro-section",
     "style_inspiration_gallery_eFqqyF",
     "colour_match_quiz_grid_4hxCWX",
