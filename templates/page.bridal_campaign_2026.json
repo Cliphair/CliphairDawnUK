@@ -112,6 +112,36 @@
         "padding_bottom": 36
       }
     },
+    "colour_match_quiz_grid_4hxCWX": {
+      "type": "colour-match-quiz-grid",
+      "blocks": {
+        "link_xKMjGB": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/quiz.jpg",
+            "url": ""
+          }
+        },
+        "link_Mtxezz": {
+          "type": "link",
+          "settings": {
+            "image_mobile": "shopify://shop_images/competition.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_xKMjGB",
+        "link_Mtxezz"
+      ],
+      "name": "Colour Match & Quiz",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "trackable_name": ""
+      }
+    },
     "bridal_in_action_essentials_VqPLtW": {
       "type": "bridal-in-action-essentials",
       "blocks": {
@@ -193,6 +223,7 @@
     "wedding_shop_banner_LCUfFR",
     "intro-section",
     "style_inspiration_gallery_eFqqyF",
+    "colour_match_quiz_grid_4hxCWX",
     "bridal_in_action_essentials_VqPLtW"
   ]
 }
