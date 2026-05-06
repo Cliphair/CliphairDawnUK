@@ -68,7 +68,7 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Something here",
+            "heading": "Meet Our Muses",
             "heading_size": "h2",
             "h1": false
           }
@@ -76,7 +76,7 @@
         "intro": {
           "type": "text",
           "settings": {
-            "text": "<p>Lorem ipsum dolo lorem ipsum doloraloadipisax ing elit, xnol adipisax ing elit, xnol lorem ipsum</p>",
+            "text": "<p>This year, every look in our Wedding campaign is inspired by a real Cliphair bride and the hair that made her feel completely herself. Chosen by thousands of brides around the world and trusted by expert stylists, each look is truly aisle approved.  Real weddings. Real confidence. Hair made for the day you will never forget.</p>",
             "read-more_text": ""
           }
         }
