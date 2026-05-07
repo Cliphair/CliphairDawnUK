@@ -259,6 +259,7 @@
           "settings": {
             "product": "",
             "collection": "ultra-clip-in-hair-extensions",
+            "override_image": "shopify://shop_images/Iced-Cappuccino-Extra-Thick-Hair-Extensions-Ultra-Volume_14-22-tw_website-attachment_1c798fb1-7488-4f56-970d-d064d85d9ece.webp",
             "override_title": "Ultra Volume",
             "badge_text": ""
           }
@@ -268,6 +269,7 @@
           "settings": {
             "product": "",
             "collection": "full-head-clip-in-hair-extensions",
+            "override_image": "shopify://shop_images/60-fhs_website-attachment.jpg",
             "override_title": "Full Head Set",
             "badge_text": ""
           }
@@ -277,6 +279,7 @@
           "settings": {
             "product": "",
             "collection": "nano-rings-hair-extensions",
+            "override_image": "shopify://shop_images/30-rnr_website-full-min.jpg",
             "override_title": "Remy Nano Ring",
             "badge_text": ""
           }
@@ -286,6 +289,7 @@
           "settings": {
             "product": "",
             "collection": "remy-royale-tape-in-extensions",
+            "override_image": "shopify://shop_images/n.mocha-rtp_website-attachment.jpg",
             "override_title": "Remy Royale Tapes",
             "badge_text": ""
           }
@@ -293,8 +297,9 @@
         "product_card_3XFgb6": {
           "type": "product_card",
           "settings": {
-            "product": "royale-human-hair-weft-weave-human-hair-extensions-jet-black-1",
-            "collection": "",
+            "product": "",
+            "collection": "remy-royale-double-drawn-hair-weft-extensions",
+            "override_image": "shopify://shop_images/1-rrh_website-full.jpg",
             "override_title": "Remy Royale Weave",
             "badge_text": ""
           }
