@@ -87,18 +87,20 @@
       ],
       "custom_css": [
         ".rich-text__wrapper {width: 100%;}",
-        ".rich-text__blocks {margin:0 auto;}",
+        ".rich-text__blocks {margin: 0 auto;}",
         ".isolate {margin-top: 15px;}",
-        ".rich-text__heading {letter-spacing: 0;font-weight: 400;} .rich-text__text {margin-top: 1rem;} .rich-text__text p {letter-spacing: 0;line-height: 1.2em;}",
-        "@media screen and (min-width: 990px) {.left {text-align: center;} .rich-text__heading {font-size: 2rem;} .rich-text__text {margin-top: 1.5rem;} .rich-text__text p {font-size: 1.5rem;}}"
+        ".rich-text__heading {letter-spacing: 0; font-weight: 400;}",
+        ".rich-text__text {margin-top: 1rem;}",
+        ".rich-text__text p {letter-spacing: 0; line-height: 1.2em;}",
+        "@media screen and (min-width: 990px) {.left {text-align: center; } .rich-text__heading {font-size: 2rem; } .rich-text__text {margin-top: 1.5rem; } .rich-text__text p {font-size: 1.5rem; }}"
       ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
-        "color_scheme": "",
+        "color_scheme": "scheme-e4399386-e738-4bbf-ba69-1c461dd9d271",
         "full_width": true,
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "style_inspiration_gallery_eFqqyF": {
@@ -106,9 +108,9 @@
       "name": "Style Inspiration Gallery",
       "settings": {
         "heading": "Choose by style",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "rich_text_v2_VkJ4n4": {
@@ -129,13 +131,13 @@
       "custom_css": [
         ".rich-text__wrapper {width: 100%;}",
         ".rich-text__blocks {max-width: unset;}",
-        ".rich-text__heading{font-size:1.6rem; letter-spacing:0; line-height:1.5em; font-weight:400;}",
+        ".rich-text__heading {font-size: 1.6rem; letter-spacing: 0; line-height: 1.5em; font-weight: 400;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 20
@@ -181,6 +183,7 @@
           "type": "video_card",
           "settings": {
             "video": "shopify://files/videos/bridal-26-social-videos-1-video.mp4",
+            "video_url": "",
             "cover_image": "shopify://shop_images/bridal-26-social-videos-1.jpg",
             "tag": "",
             "handle": "",
@@ -193,6 +196,7 @@
           "type": "video_card",
           "settings": {
             "video": "shopify://files/videos/bridal-26-social-videos-2-video.mp4",
+            "video_url": "",
             "cover_image": "shopify://shop_images/bridal-26-social-videos-2.jpg",
             "tag": "",
             "handle": "",
@@ -244,6 +248,7 @@
           "type": "product_card",
           "settings": {
             "product": "14-inch-mini-ponytail-extensions",
+            "collection": "",
             "override_image": "shopify://shop_images/Dark-Brown-Double-Weft-Clip-In-Hair-Extensions_3-dw_website-full.webp",
             "override_title": "Double Weft",
             "badge_text": ""
@@ -253,6 +258,7 @@
           "type": "product_card",
           "settings": {
             "product": "iced-cappuccino-14-22-ultra-volume-clip-in-full-head-set-240-300g",
+            "collection": "",
             "override_title": "Ultra Volume",
             "badge_text": ""
           }
@@ -261,6 +267,7 @@
           "type": "product_card",
           "settings": {
             "product": "full-head-set-clip-in-hair-extensions-lightest-blonde-60",
+            "collection": "",
             "override_title": "Full Head Set",
             "badge_text": ""
           }
@@ -269,6 +276,7 @@
           "type": "product_card",
           "settings": {
             "product": "nano-ring-hair-extensions-double-drawn-light-auburn-30",
+            "collection": "",
             "override_title": "Remy Nano Ring",
             "badge_text": ""
           }
@@ -277,6 +285,7 @@
           "type": "product_card",
           "settings": {
             "product": "remy-royale-double-drawn-tape-hair-extensions-natural-mocha-melt",
+            "collection": "",
             "override_title": "Remy Royale Tapes",
             "badge_text": ""
           }
@@ -285,6 +294,7 @@
           "type": "product_card",
           "settings": {
             "product": "royale-human-hair-weft-weave-human-hair-extensions-jet-black-1",
+            "collection": "",
             "override_title": "Remy Royale Weave",
             "badge_text": ""
           }
@@ -293,6 +303,7 @@
           "type": "product_card",
           "settings": {
             "product": "hair-extension-hanger-and-carrier-bag",
+            "collection": "",
             "override_title": "Hair Extension Carrier & Hanger",
             "badge_text": ""
           }
@@ -315,14 +326,59 @@
       "name": "Bridal In Action",
       "settings": {
         "video_heading": "Brides Who Inspire Us.",
-        "video_intro":"You could be our next muse. Share your wedding hair and inspire the bride who comes after you.",
+        "video_intro": "You could be our next muse. Share your wedding hair and inspire the bride who comes after you.",
         "product_heading": "Our wedding day must-haves",
         "product_intro": "Tried, tested and trusted by thousands of brides. These are the products that make the difference on the day that matters most.",
         "social_link_label": "Share your look",
         "social_link": "https://www.instagram.com/cliphairlimited/",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "bridal_reviews_slider_zjy3Et": {
+      "type": "bridal-reviews-slider",
+      "blocks": {
+        "review_miMxEL": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Name here",
+            "stars": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+          }
+        },
+        "review_EgzJLL": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Name here",
+            "stars": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+          }
+        },
+        "review_UbkHUL": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Name here",
+            "stars": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+          }
+        }
+      },
+      "block_order": [
+        "review_miMxEL",
+        "review_EgzJLL",
+        "review_UbkHUL"
+      ],
+      "name": "Bridal reviews slider",
+      "settings": {
+        "heading": "Lets hear from our Brides",
+        "introduction": "",
+        "heading_size": "h2",
+        "enable_autoplay": true,
+        "autoplay_speed": 5,
+        "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     }
   },
@@ -333,6 +389,7 @@
     "style_inspiration_gallery_eFqqyF",
     "rich_text_v2_VkJ4n4",
     "colour_match_quiz_grid_4hxCWX",
-    "bridal_in_action_essentials_VqPLtW"
+    "bridal_in_action_essentials_VqPLtW",
+    "bridal_reviews_slider_zjy3Et"
   ]
 }
