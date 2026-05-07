@@ -6,151 +6,194 @@ class StyleInspirationGallery extends HTMLElement {
     this.data = JSON.parse(dataEl.textContent);
     this.sectionId = this.dataset.sectionId;
     this.activeFilter = 'all';
-    this.activeItemId = null;
-    this.allGroups = [];
-    this.renderedGroupCount = 0;
-    this.INITIAL_GROUPS = 2;
-    this.observer = null;
 
     this.gridEl = this.querySelector(`#Slider-${this.sectionId}`);
     this.sliderEl = this.querySelector('slider-component-custom');
     this.panelEl = this.querySelector(`#SigPanel-${this.sectionId}`);
     this.loadingEl = this.querySelector('.sig-loading');
     this.emptyEl = this.querySelector('.sig-empty');
+    this.filterButtons = Array.from(this.querySelectorAll('.sig-filter-btn'));
+    this.scrollbarEl = this.querySelector('.sig-scrollbar');
+    this.scrollbarTrackEl = this.querySelector('.sig-scrollbar__track');
+    this.scrollbarThumbEl = this.querySelector('.sig-scrollbar__thumb');
+    this.layoutEl = this.querySelector('.sig-layout');
+    this.panelPlaceholderEl = this.querySelector(`#SigPanelPlaceholder-${this.sectionId}`);
+    this.reviewToggleEl = this.querySelector('.sig-panel__review-toggle');
+    this.filtersById = new Map(
+      (this.data.filters || []).map((filter) => [this.normalizeFilter(filter.id || filter.label), filter])
+    );
+    this.shuffledAssetsByFilter = new Map();
+    this.scrollbarDrag = null;
+    this.reviewWordLimit = 24;
 
     this.bindFilters();
-    this.renderGroups(true);
+    this.bindSliderEvents();
+    this.bindScrollbar();
+    this.bindReviewToggle();
+    this.renderSlides(true);
   }
 
-  /* ── Filtered asset list ── */
   get filteredAssets() {
-    if (this.activeFilter === 'all') return this.data.assets;
-    return this.data.assets.filter((a) =>
-      a.filters.some((f) => f.toLowerCase() === this.activeFilter)
-    );
-  }
+    if (!this.shuffledAssetsByFilter.has(this.activeFilter)) {
+      const assets = this.activeFilter === 'all'
+        ? [...(this.data.assets || [])]
+        : (this.data.assets || []).filter((asset) =>
+          (asset.filters || []).some((filter) => this.normalizeFilter(filter) === this.activeFilter)
+        );
 
-  /* ── Group building: fixed 5-item groups ── */
-  buildGroups(assets) {
-    const groups = [];
-    for (let i = 0; i < assets.length; i += 5) {
-      const items = assets.slice(i, i + 5);
-      if (items.length > 0) groups.push({ items });
+      this.shuffledAssetsByFilter.set(this.activeFilter, this.shuffleAssets(assets));
     }
-    return groups;
+
+    return this.shuffledAssetsByFilter.get(this.activeFilter) || [];
   }
 
-  /* ── Full render (initial load or filter change) ── */
-  renderGroups(initial = false) {
-    this.showLoading(initial);
+  get activeFilterData() {
+    return this.filtersById.get(this.activeFilter) || this.filtersById.get('all') || null;
+  }
 
-    const render = () => {
+  buildColumns(assets) {
+    const columns = [];
+    const columnMap = [
+      [0, 3],
+      [1, 4],
+      [2],
+    ];
+
+    for (let index = 0; index < assets.length; index += 5) {
+      const chunk = assets.slice(index, index + 5);
+
+      columnMap.forEach((columnIndexes) => {
+        const items = columnIndexes.map((itemIndex) => chunk[itemIndex]).filter(Boolean);
+        if (!items.length) return;
+
+        columns.push({
+          items,
+          isTall: columnIndexes.length === 1,
+        });
+      });
+    }
+
+    return columns;
+  }
+
+  renderSlides(initial = false) {
+    this.showLoading(initial);
+    this.resetSliderPosition(false);
+
+    requestAnimationFrame(() => {
       this.gridEl.innerHTML = '';
-      this.renderedGroupCount = 0;
 
       const assets = this.filteredAssets;
-      this.allGroups = this.buildGroups(assets);
+      const columns = this.buildColumns(assets);
 
-      if (this.allGroups.length === 0) {
+      if (!columns.length) {
         this.hideLoading();
         this.emptyEl.removeAttribute('hidden');
         this.panelEl.setAttribute('hidden', '');
+        this.updateIndicator(0, 0);
         this.sliderEl.resetSlider();
         return;
       }
 
       this.emptyEl.setAttribute('hidden', '');
-
-      const batch = this.allGroups.slice(0, this.INITIAL_GROUPS);
-      batch.forEach((group, i) => this.renderGroup(group, i));
-      this.renderedGroupCount = batch.length;
-
-      const firstItem = this.allGroups[0]?.items[0];
-      if (firstItem) {
-        this.activeItemId = firstItem.id;
-        this.updatePanel(firstItem);
-        const firstEl = this.gridEl.querySelector('.sig-item');
-        if (firstEl) firstEl.classList.add('sig-item--active');
-      }
+      columns.forEach((column, index) => this.renderColumn(column, index));
 
       this.hideLoading();
+      this.updatePanel();
+      this.resetSliderPosition(false);
       this.sliderEl.resetSlider();
-      this._fixSliderFirstItem();
-      this.setupLazyLoad();
-    };
-
-    /* Small rAF gap so the skeleton is visible during filter transitions */
-    requestAnimationFrame(render);
-  }
-
-  /* ── Render a single group ── */
-  renderGroup(group, index) {
-    const li = document.createElement('li');
-    li.id = `Slide-${this.sectionId}-${index + 1}`;
-    li.className = 'sig-group slider__slide custom__slide';
-    li.setAttribute('role', 'group');
-    li.setAttribute('aria-label', `Group ${index + 1}`);
-
-    group.items.forEach((item, i) => li.appendChild(this.renderItem(item, i === 2)));
-    this.gridEl.appendChild(li);
-  }
-
-  /* ── Render a single item ── */
-  renderItem(item, isSpan = false) {
-    const div = document.createElement('div');
-    div.className = `sig-item ${isSpan ? 'sig-item--span' : 'sig-item--portrait'}`;
-    div.dataset.itemId = item.id;
-    div.setAttribute('tabindex', '0');
-    div.setAttribute('role', 'button');
-    div.setAttribute('aria-label', item.alt);
-    if (item.id === this.activeItemId) div.classList.add('sig-item--active');
-
-    div.innerHTML = item.type === 'video'
-      ? this.videoHTML(item, isSpan)
-      : this.imageHTML(item, isSpan);
-
-    div.addEventListener('click', () => this.onItemClick(item, div));
-    div.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.onItemClick(item, div);
-      }
+      this.syncSliderState(columns.length);
+      this.updateScrollbar();
+      this.updateIndicatorFromSlider();
     });
-
-    return div;
   }
 
-  imageHTML(item, isSpan = false) {
+  syncSliderState(columnCount) {
+    if (!this.sliderEl) return;
+
+    if (columnCount < 2) {
+      this.sliderEl.totalPages = columnCount;
+      this.sliderEl.currentPage = columnCount ? 1 : 0;
+      return;
+    }
+
+    const sliderItemsToShow = this.sliderEl.sliderItemsToShow || [];
+    const slidesPerPage = Math.max(1, this.sliderEl.slidesPerPage || 1);
+    this.sliderEl.totalPages = Math.max(1, sliderItemsToShow.length - slidesPerPage + 1);
+    this.sliderEl.currentPage = Math.min(this.sliderEl.currentPage || 1, this.sliderEl.totalPages);
+  }
+
+  renderColumn(column, index) {
+    const slide = document.createElement('li');
+    slide.id = `Slide-${this.sectionId}-${index + 1}`;
+    slide.className = `sig-column slider__slide custom__slide ${column.isTall ? 'sig-column--tall' : 'sig-column--stack'}`;
+    slide.setAttribute('role', 'group');
+    slide.setAttribute('aria-label', `Column ${index + 1}`);
+
+    column.items.forEach((item) => slide.appendChild(this.renderItem(item, column.isTall)));
+    this.gridEl.appendChild(slide);
+  }
+
+  renderItem(item, isTall = false) {
+    const tile = document.createElement('div');
+    tile.className = `sig-item ${isTall ? 'sig-item--tall' : 'sig-item--portrait'}`;
+    tile.dataset.itemId = item.id;
+
+    tile.innerHTML = item.type === 'video'
+      ? this.videoHTML(item, isTall)
+      : this.imageHTML(item, isTall);
+
+    const filterTrigger = tile.querySelector('.sig-item__filter-trigger');
+    if (filterTrigger) {
+      filterTrigger.addEventListener('click', () => this.onItemClick(item));
+    }
+
+    return tile;
+  }
+
+  imageHTML(item, isTall = false) {
     const src = item.src || '';
     if (!src) {
-      return `<span class="visually-hidden">${item.alt}</span>`;
+      return `<span class="visually-hidden">${this.escAttr(item.alt)}</span>`;
     }
+
     return `<img
       src="${this.escAttr(src)}"
       alt="${this.escAttr(item.alt)}"
       loading="lazy"
       class="sig-item__img"
       width="186"
-      height="${isSpan ? 498 : 245}"
-    >`;
+      height="${isTall ? 498 : 245}"
+    >
+    <button
+      type="button"
+      class="sig-item__filter-trigger"
+      aria-label="Show ${this.escAttr(item.alt)} details"
+    ></button>`;
   }
 
-  videoHTML(item, isSpan = false) {
+  videoHTML(item, isTall = false) {
     const poster = item.poster || '';
     const src = item.src || '';
     const posterId = `Deferred-Poster-sig-${item.id}`;
     const posterImg = poster
-      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="186" height="${isSpan ? 498 : 245}">`
+      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="186" height="${isTall ? 498 : 245}">`
       : '';
 
     return `<deferred-media-popup
-      class="deferred-media global-media-settings"
+      class="deferred-media global-media-settings sig-deferred-media"
       data-media-id="sig-${this.escAttr(item.id)}"
     >
+      ${posterImg}
+      <button
+        type="button"
+        class="sig-item__filter-trigger sig-item__filter-trigger--video"
+        aria-label="Show ${this.escAttr(item.alt)} details"
+      ></button>
       <button
         type="button"
         id="${posterId}"
-        class="deferred-media__poster media"
+        class="deferred-media__poster sig-item__play-trigger"
         aria-label="Play video: ${this.escAttr(item.alt)}"
       >
         <span class="deferred-media__poster-button motion-reduce">
@@ -158,7 +201,6 @@ class StyleInspirationGallery extends HTMLElement {
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.48177 0.814643C0.81532 0.448245 0 0.930414 0 1.69094V12.2081C0 12.991 0.858787 13.4702 1.52503 13.0592L10.5398 7.49813C11.1918 7.09588 11.1679 6.13985 10.4965 5.77075L1.48177 0.814643Z" fill="currentColor"/>
           </svg>
         </span>
-        ${posterImg}
       </button>
       <template>
         <video autoplay playsinline controls class="sig-video" style="width:100%;max-height:80vh;">
@@ -168,154 +210,284 @@ class StyleInspirationGallery extends HTMLElement {
     </deferred-media-popup>`;
   }
 
-  /* ── Item click ── */
-  onItemClick(item, wrapper) {
-    this.querySelectorAll('.sig-item--active').forEach((el) =>
-      el.classList.remove('sig-item--active')
-    );
-    wrapper.classList.add('sig-item--active');
-    this.activeItemId = item.id;
-    this.updatePanel(item);
+  onItemClick(item) {
+    const targetFilter = this.getTargetFilter(item);
+    if (!targetFilter || targetFilter === this.activeFilter) return;
+
+    this.setActiveFilter(targetFilter);
 
     if (window.innerWidth <= 430) {
       this.panelEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-  /* ── Update bottom panel ── */
-  updatePanel(item) {
-    const p = item.product;
-    const r = item.review;
+  getTargetFilter(item) {
+    const itemFilters = (item.filters || []).map((filter) => this.normalizeFilter(filter));
 
-    // CTA href
-    this.panelEl.querySelector('.sig-panel__cta').href = p?.url || '#';
+    if (this.activeFilter !== 'all' && itemFilters.includes(this.activeFilter)) {
+      return this.activeFilter;
+    }
 
-    // Lifestyle image (left) — the selected gallery item's own image
+    return itemFilters[0] || 'all';
+  }
+
+  setActiveFilter(filterId) {
+    if (filterId === this.activeFilter) return;
+
+    this.activeFilter = filterId;
+    this.updateFilterButtons();
+    this.renderSlides(false);
+  }
+
+  resetSliderPosition(smooth = false) {
+    if (!this.gridEl) return;
+
+    this.gridEl.scrollTo({
+      left: 0,
+      behavior: smooth ? 'smooth' : 'auto',
+    });
+
+    if (this.sliderEl) {
+      this.sliderEl.currentPage = this.gridEl.children.length ? 1 : 0;
+    }
+  }
+
+  updatePanel() {
+    const filterData = this.activeFilterData;
+    const hasPanel = this.activeFilter !== 'all' && Boolean(filterData?.panel);
+
+    this.layoutEl?.classList.toggle('sig-layout--panel-hidden', !hasPanel);
+    if (!hasPanel) {
+      this.panelPlaceholderEl?.removeAttribute('hidden');
+      this.panelPlaceholderEl?.setAttribute('aria-hidden', 'false');
+      this.panelEl.setAttribute('hidden', '');
+      this.panelEl.setAttribute('aria-hidden', 'true');
+      return;
+    }
+
+    this.panelPlaceholderEl?.setAttribute('hidden', '');
+    this.panelPlaceholderEl?.setAttribute('aria-hidden', 'true');
+    this.panelEl.setAttribute('aria-hidden', 'false');
+
+    const panel = filterData?.panel || {};
+    const product = panel.product || {};
+    const review = panel.review || {};
+
+    this.panelEl.querySelector('.sig-panel__cta').href = product.url || '#';
+
     const lifestyleEl = this.panelEl.querySelector('.sig-panel__lifestyle-image');
-    lifestyleEl.innerHTML = item.src
-      ? `<img src="${this.escAttr(item.src)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-panel__img" width="400" height="533">`
+    lifestyleEl.innerHTML = panel.image
+      ? `<img src="${this.escAttr(panel.image)}" alt="${this.escAttr(panel.image_alt || filterData?.label || '')}" loading="lazy" class="sig-panel__img" width="400" height="533">`
       : '';
 
-    // Product image (right)
     const productImgEl = this.panelEl.querySelector('.sig-panel__product-image');
-    productImgEl.innerHTML = p?.image
-      ? `<img src="${this.escAttr(p.image)}" alt="${this.escAttr(p.title || '')}" loading="lazy" class="sig-panel__img" width="400" height="533">`
+    productImgEl.innerHTML = product.image
+      ? `<img src="${this.escAttr(product.image)}" alt="${this.escAttr(product.title || '')}" loading="lazy" class="sig-panel__img" width="400" height="533">`
       : '';
 
-    // Footer thumbnail
     const thumbEl = this.panelEl.querySelector('.sig-panel__footer-thumb');
-    thumbEl.innerHTML = p?.image
-      ? `<img src="${this.escAttr(p.image)}" alt="" loading="lazy" class="sig-panel__img" width="80" height="80">`
+    thumbEl.innerHTML = product.image
+      ? `<img src="${this.escAttr(product.image)}" alt="" loading="lazy" class="sig-panel__img" width="80" height="80">`
       : '';
 
-    // Heading, editorial text, product info
-    this.panelEl.querySelector('.sig-panel__heading').textContent = item.editorial_heading || '';
-    this.panelEl.querySelector('.sig-panel__editorial-text').textContent = item.editorial || '';
-    this.panelEl.querySelector('.sig-panel__product-title').textContent = p?.title || '';
-    this.panelEl.querySelector('.sig-panel__product-shade').textContent = p?.shade ? `in shade ${p.shade}` : '';
+    this.panelEl.querySelector('.sig-panel__heading').textContent = panel.editorial_heading || '';
+    this.panelEl.querySelector('.sig-panel__editorial-text').textContent = panel.editorial || '';
+    this.panelEl.querySelector('.sig-panel__product-title').textContent = product.title || '';
 
-    // Stars
-    const rating = r?.rating ?? 5;
+    const rating = review.rating ?? 5;
     const starsEl = this.panelEl.querySelector('.sig-panel__stars');
     starsEl.textContent = '★'.repeat(Math.min(rating, 5)) + '☆'.repeat(Math.max(0, 5 - rating));
     starsEl.setAttribute('aria-label', `${rating} out of 5 stars`);
 
-    // Review
-    this.panelEl.querySelector('.sig-panel__review-text').textContent = r?.text || '';
-    this.panelEl.querySelector('.sig-panel__review-author').textContent = r?.author || '';
-
-    // Indicator: position of this item among currently filtered assets
-    const assets = this.filteredAssets;
-    const idx = assets.findIndex((a) => a.id === item.id);
-    this.panelEl.querySelector('.sig-panel__indicator-current').textContent = idx + 1;
-    this.panelEl.querySelector('.sig-panel__indicator-total').textContent = assets.length;
-
+    this.reviewToggleEl?.setAttribute('data-expanded', 'false');
+    this.panelEl.querySelector('.sig-panel__review-text').textContent = this.getReviewPreview(review.text || '');
+    this.panelEl.querySelector('.sig-panel__review-author').textContent = review.author || '';
+    this.updateReviewToggle(review.text || '');
     this.panelEl.removeAttribute('hidden');
   }
 
-  /* ── Skeleton visibility ── */
   showLoading(showSkeleton = true) {
     if (showSkeleton && this.loadingEl) this.loadingEl.removeAttribute('hidden');
     this.gridEl.style.visibility = 'hidden';
   }
+
   hideLoading() {
     if (this.loadingEl) this.loadingEl.setAttribute('hidden', '');
     this.gridEl.style.visibility = '';
   }
 
-  /* ── Filter tabs ── */
   bindFilters() {
-    this.querySelectorAll('.sig-filter-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        this.querySelectorAll('.sig-filter-btn').forEach((b) =>
-          b.setAttribute('aria-selected', 'false')
-        );
-        btn.setAttribute('aria-selected', 'true');
-        this.activeFilter = btn.dataset.filter;
-        this.renderGroups(false);
+    this.filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        this.setActiveFilter(button.dataset.filter || 'all');
       });
+    });
+
+    this.updateFilterButtons();
+  }
+
+  bindReviewToggle() {
+    if (!this.reviewToggleEl) return;
+
+    this.reviewToggleEl.addEventListener('click', () => {
+      const filterData = this.activeFilterData;
+      const fullText = filterData?.panel?.review?.text || '';
+      const isExpanded = this.reviewToggleEl.getAttribute('data-expanded') === 'true';
+
+      this.reviewToggleEl.setAttribute('data-expanded', isExpanded ? 'false' : 'true');
+      this.panelEl.querySelector('.sig-panel__review-text').textContent = isExpanded
+        ? this.getReviewPreview(fullText)
+        : fullText;
+      this.reviewToggleEl.textContent = isExpanded ? 'Read more' : 'Read less';
     });
   }
 
-  /* ── Lazy load remaining groups via IntersectionObserver ── */
-  setupLazyLoad() {
-    if (this.observer) this.observer.disconnect();
-    if (this.renderedGroupCount >= this.allGroups.length) return;
-
-    const sentinel = this.gridEl.lastElementChild;
-    if (!sentinel) return;
-
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          this.observer.disconnect();
-          this.loadMoreGroups();
-        }
-      },
-      { rootMargin: '300px' }
-    );
-
-    this.observer.observe(sentinel);
-  }
-
-  loadMoreGroups() {
-    const BATCH = 2;
-    const next = this.allGroups.slice(
-      this.renderedGroupCount,
-      this.renderedGroupCount + BATCH
-    );
-    next.forEach((group, i) =>
-      this.renderGroup(group, this.renderedGroupCount + i)
-    );
-    this.renderedGroupCount += next.length;
-    this.sliderEl.resetPages();
-    this.setupLazyLoad();
-  }
-
-  /* ── Patch SliderComponentCustom's sliderFirstItemNode after dynamic render ── */
-  _fixSliderFirstItem() {
+  bindSliderEvents() {
     if (!this.sliderEl) return;
-    this.sliderEl.sliderFirstItemNode = this.sliderEl.slider?.querySelector('.custom__slide') || null;
 
-    /* Patch initPages once so slidesPerPage is never 0 (would create a phantom dot
-       when each group is intentionally wider than the container for the peek effect). */
-    if (!this.sliderEl._initPagesPatchedBySIG) {
-      this.sliderEl._initPagesPatchedBySIG = true;
-      const originalInitPages = this.sliderEl.initPages.bind(this.sliderEl);
-      this.sliderEl.initPages = function () {
-        originalInitPages();
-        if (this.slidesPerPage < 1) {
-          this.slidesPerPage = 1;
-          this.totalPages = Math.max(1, this.sliderItemsToShow.length - this.slidesPerPage + 1);
-          this.update();
-        }
+    this.sliderEl.addEventListener('slideChanged', () => {
+      this.updateIndicatorFromSlider();
+      this.updateScrollbar();
+    });
+
+    this.gridEl?.addEventListener('scroll', () => this.updateScrollbar(), { passive: true });
+    window.addEventListener('resize', () => this.updateScrollbar());
+  }
+
+  bindScrollbar() {
+    if (!this.scrollbarTrackEl || !this.scrollbarThumbEl || !this.gridEl) return;
+
+    this.scrollbarThumbEl.addEventListener('pointerdown', (event) => {
+      event.preventDefault();
+      const trackRect = this.scrollbarTrackEl.getBoundingClientRect();
+      const thumbRect = this.scrollbarThumbEl.getBoundingClientRect();
+
+      this.scrollbarDrag = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startLeft: thumbRect.left - trackRect.left,
       };
+
+      this.scrollbarThumbEl.setPointerCapture(event.pointerId);
+    });
+
+    this.scrollbarThumbEl.addEventListener('pointermove', (event) => {
+      if (!this.scrollbarDrag || event.pointerId !== this.scrollbarDrag.pointerId) return;
+      this.onScrollbarDrag(event.clientX);
+    });
+
+    const clearDrag = (event) => {
+      if (!this.scrollbarDrag || event.pointerId !== this.scrollbarDrag.pointerId) return;
+      this.scrollbarThumbEl.releasePointerCapture(event.pointerId);
+      this.scrollbarDrag = null;
+    };
+
+    this.scrollbarThumbEl.addEventListener('pointerup', clearDrag);
+    this.scrollbarThumbEl.addEventListener('pointercancel', clearDrag);
+
+    this.scrollbarTrackEl.addEventListener('click', (event) => {
+      if (event.target === this.scrollbarThumbEl) return;
+
+      const rect = this.scrollbarTrackEl.getBoundingClientRect();
+      const thumbWidth = this.scrollbarThumbEl.offsetWidth;
+      const targetLeft = event.clientX - rect.left - thumbWidth / 2;
+      this.scrollToScrollbarPosition(targetLeft, true);
+    });
+  }
+
+  onScrollbarDrag(clientX) {
+    const trackWidth = this.scrollbarTrackEl.clientWidth;
+    const thumbWidth = this.scrollbarThumbEl.offsetWidth;
+    const maxLeft = Math.max(0, trackWidth - thumbWidth);
+    const delta = clientX - this.scrollbarDrag.startX;
+    const targetLeft = Math.min(Math.max(0, this.scrollbarDrag.startLeft + delta), maxLeft);
+    this.scrollToScrollbarPosition(targetLeft, false);
+  }
+
+  scrollToScrollbarPosition(targetLeft, smooth = false) {
+    const maxScroll = this.gridEl.scrollWidth - this.gridEl.clientWidth;
+    const maxLeft = Math.max(0, this.scrollbarTrackEl.clientWidth - this.scrollbarThumbEl.offsetWidth);
+    const ratio = maxLeft > 0 ? targetLeft / maxLeft : 0;
+
+    this.gridEl.scrollTo({
+      left: ratio * Math.max(0, maxScroll),
+      behavior: smooth ? 'smooth' : 'auto',
+    });
+  }
+
+  updateScrollbar() {
+    if (!this.scrollbarEl || !this.scrollbarTrackEl || !this.scrollbarThumbEl || !this.gridEl) return;
+
+    const scrollWidth = this.gridEl.scrollWidth;
+    const clientWidth = this.gridEl.clientWidth;
+    const maxScroll = Math.max(0, scrollWidth - clientWidth);
+    const canScroll = maxScroll > 0;
+
+    this.scrollbarEl.toggleAttribute('hidden', !canScroll);
+    if (!canScroll) return;
+
+    const trackWidth = this.scrollbarTrackEl.clientWidth;
+    const visibleRatio = clientWidth / scrollWidth;
+    const thumbWidth = Math.max(48, Math.round(trackWidth * visibleRatio));
+    const maxLeft = Math.max(0, trackWidth - thumbWidth);
+    const left = maxScroll > 0 ? (this.gridEl.scrollLeft / maxScroll) * maxLeft : 0;
+
+    this.scrollbarThumbEl.style.width = `${thumbWidth}px`;
+    this.scrollbarThumbEl.style.transform = `translateX(${left}px)`;
+  }
+
+  updateReviewToggle(fullText) {
+    if (!this.reviewToggleEl) return;
+
+    const words = this.getWords(fullText);
+    const shouldToggle = words.length > this.reviewWordLimit;
+    this.reviewToggleEl.hidden = !shouldToggle;
+    this.reviewToggleEl.textContent = 'Read more';
+  }
+
+  getReviewPreview(text) {
+    const words = this.getWords(text);
+    if (words.length <= this.reviewWordLimit) return text;
+    return `${words.slice(0, this.reviewWordLimit).join(' ')}...`;
+  }
+
+  getWords(text) {
+    return String(text).trim().split(/\s+/).filter(Boolean);
+  }
+
+  shuffleAssets(assets) {
+    const shuffled = [...assets];
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
     }
 
-    this.sliderEl.initPages();
+    return shuffled;
   }
 
-  /* ── Utility: escape HTML attribute values ── */
+  updateFilterButtons() {
+    this.filterButtons.forEach((button) => {
+      const isActive = (button.dataset.filter || 'all') === this.activeFilter;
+      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
+  updateIndicatorFromSlider() {
+    const totalPages = this.sliderEl?.totalPages || (this.gridEl.children.length ? 1 : 0);
+    const currentPage = totalPages > 0 ? Math.min(this.sliderEl?.currentPage || 1, totalPages) : 0;
+    this.updateIndicator(currentPage, totalPages);
+  }
+
+  updateIndicator(current, total) {
+    this.panelEl.querySelector('.sig-panel__indicator-current').textContent = current || 0;
+    this.panelEl.querySelector('.sig-panel__indicator-total').textContent = total || 0;
+  }
+
+  normalizeFilter(value = '') {
+    return String(value).trim().toLowerCase();
+  }
+
   escAttr(str) {
     return String(str)
       .replace(/&/g, '&amp;')

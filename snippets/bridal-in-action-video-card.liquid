@@ -1,0 +1,118 @@
+{%- liquid
+  assign linked_product = block.settings.product
+  assign product_thumb = block.settings.product_image
+  if product_thumb == blank and linked_product != blank and linked_product.featured_media != blank
+    assign product_thumb = linked_product.featured_media.preview_image
+  endif
+
+  assign poster_image = block.settings.cover_image
+  if poster_image == blank and block.settings.video != blank
+    assign poster_image = block.settings.video.preview_image
+  endif
+
+  assign video_id = block.settings.video.id | default: block.settings.video_url.id
+  assign video_title = block.settings.description | default: block.settings.handle | default: video_heading
+-%}
+
+<article class="biae__video-card" {{ block.shopify_attributes }}>
+  <div class="biae__video-media-wrapper">
+    {%- if video_id != blank -%}
+      <deferred-media-popup
+        class="deferred-media global-media-settings biae__deferred-popup"
+        data-media-id="biae-{{ block.id }}"
+      >
+        <button
+          type="button"
+          id="Deferred-Poster-{{ block.id }}"
+          class="deferred-media__poster media biae__video-poster"
+          aria-label="Play video: {{ video_title | escape }}"
+        >
+          {%- if block.settings.tag != blank -%}
+            <span class="biae__video-tag">{{ block.settings.tag | escape }}</span>
+          {%- endif -%}
+          <span class="deferred-media__poster-button motion-reduce">
+            {%- render 'icon-play' -%}
+          </span>
+          {%- if poster_image != blank -%}
+            {{
+              poster_image
+              | image_url: width: 720
+              | image_tag:
+                loading: 'lazy',
+                widths: '165, 360, 535, 720',
+                sizes: image_sizes,
+                class: 'biae__video-image',
+                alt: video_title
+            }}
+          {%- else -%}
+            {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </button>
+        <template>
+          {%- if block.settings.video != blank -%}
+            {{
+              block.settings.video
+              | video_tag: image_size: '1100x', autoplay: true, loop: false, controls: true, muted: false
+            }}
+          {%- elsif block.settings.video_url != blank -%}
+            {%- if block.settings.video_url.type == 'youtube' -%}
+              <iframe
+                src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?enablejsapi=1&autoplay=1"
+                class="js-youtube"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="{{ video_title | escape }}"
+              ></iframe>
+            {%- else -%}
+              <iframe
+                src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?autoplay=1"
+                class="js-vimeo"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="{{ video_title | escape }}"
+              ></iframe>
+            {%- endif -%}
+          {%- endif -%}
+        </template>
+      </deferred-media-popup>
+    {%- else -%}
+      <div class="biae__video-poster biae__video-poster--placeholder media">
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+
+    <div class="biae__video-meta">
+      <div class="biae__video-meta-main">
+        {%- if product_thumb != blank -%}
+          <div class="biae__video-product-thumb">
+            {{
+              product_thumb
+              | image_url: width: 120
+              | image_tag:
+                loading: 'lazy',
+                widths: '60, 90, 120',
+                sizes: '6rem',
+                class: 'biae__video-product-thumb-image',
+                alt: linked_product.title
+            }}
+          </div>
+        {%- endif -%}
+
+        <div class="biae__video-copy">
+          {%- if block.settings.handle != blank -%}
+            <p class="biae__video-handle">{{ block.settings.handle | escape }}</p>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="biae__video-description">{{ block.settings.description | escape }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if linked_product != blank and block.settings.button_label != blank -%}
+        <a class="biae__mini-button" href="{{ linked_product.url }}">
+          {{ block.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</article>

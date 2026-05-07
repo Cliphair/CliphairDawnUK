@@ -1,0 +1,102 @@
+{%- liquid
+  assign product_item = block.settings.product
+  assign collection_item = block.settings.collection
+  assign card_url = blank
+  assign card_image = block.settings.override_image
+  assign card_title = block.settings.override_title
+  assign card_price = blank
+  assign card_price_display = blank
+  assign show_from_price = false
+
+  if product_item != blank
+    assign card_url = product_item.url
+    if card_image == blank and product_item.featured_media != blank
+      assign card_image = product_item.featured_media.preview_image
+    endif
+    if card_title == blank
+      assign card_title = product_item.title
+    endif
+    assign card_price = product_item.price_min
+    if product_item.price_varies
+      assign show_from_price = true
+    endif
+  elsif collection_item != blank
+    assign card_url = collection_item.url
+    if card_image == blank
+      assign card_image = collection_item.featured_image
+    endif
+    if card_image == blank and collection_item.products.first != blank and collection_item.products.first.featured_media != blank
+      assign card_image = collection_item.products.first.featured_media.preview_image
+    endif
+    if card_title == blank
+      assign card_title = collection_item.title
+    endif
+    assign lowest_price = blank
+    for collection_product in collection_item.products
+      assign collection_product_price = collection_product.price_min
+      if lowest_price == blank or collection_product_price < lowest_price
+        assign lowest_price = collection_product_price
+      endif
+    endfor
+    assign card_price = lowest_price
+    if card_price != blank
+      assign show_from_price = true
+    endif
+  endif
+
+  if card_price != blank
+    if settings.currency_code_enabled
+      assign card_price_display = card_price | money_with_currency
+    else
+      assign card_price_display = card_price | money
+    endif
+  endif
+-%}
+
+<article class="biae__product-card" {{ block.shopify_attributes }}>
+  {%- if card_url != blank -%}
+    <a class="biae__product-link" href="{{ card_url }}">
+      {%- if block.settings.badge_text != blank -%}
+        <span class="biae__product-badge">{{ block.settings.badge_text | escape }}</span>
+      {%- endif -%}
+
+      <div class="biae__product-media">
+        {%- if card_image != blank -%}
+          {{
+            card_image
+            | image_url: width: 720
+            | image_tag:
+              loading: 'lazy',
+              widths: '165, 360, 535, 720',
+              sizes: '(min-width: 990px) 14vw, calc(50vw - 3.2rem)',
+              class: 'biae__product-image',
+              alt: card_title
+          }}
+        {%- else -%}
+          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <div class="biae__product-details">
+        <span class="biae__product-title">{{ card_title | escape }}</span>
+        {%- if card_price_display != blank -%}
+          <span class="biae__product-price">
+            {%- if show_from_price -%}
+              <span class="biae__product-price-prefix">From</span>
+            {%- endif -%}
+            <span class="biae__product-price-value">{{- card_price_display -}}</span>
+          </span>
+        {%- endif -%}
+      </div>
+    </a>
+  {%- else -%}
+    <div class="biae__product-link biae__product-link--placeholder">
+      <div class="biae__product-media">
+        {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+      <div class="biae__product-details">
+        <span class="biae__product-title">Select a product or collection</span>
+      </div>
+    </div>
+  {%- endif -%}
+</article>

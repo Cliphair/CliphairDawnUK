@@ -87,15 +87,18 @@
       ],
       "custom_css": [
         ".rich-text__wrapper {width: 100%;}",
-        ".rich-text__blocks {max-width: unset;}"
+        ".rich-text__blocks {margin:0 auto;}",
+        ".isolate {margin-top: 15px;}",
+        ".rich-text__heading {letter-spacing: 0;font-weight: 400;} .rich-text__text {margin-top: 1rem;} .rich-text__text p {letter-spacing: 0;line-height: 1.2em;}",
+        "@media screen and (min-width: 990px) {.left {text-align: center;} .rich-text__heading {font-size: 2rem;} .rich-text__text {margin-top: 1.5rem;} .rich-text__text p {font-size: 1.5rem;}}"
       ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "style_inspiration_gallery_eFqqyF": {
@@ -123,6 +126,11 @@
       "block_order": [
         "heading_cxVRw4"
       ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%;}",
+        ".rich-text__blocks {max-width: unset;}",
+        ".rich-text__heading{font-size:1.6rem; letter-spacing:0; line-height:1.5em; font-weight:400;}",
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -130,7 +138,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "colour_match_quiz_grid_4hxCWX": {
@@ -307,7 +315,9 @@
       "name": "Bridal In Action",
       "settings": {
         "video_heading": "Brides Who Inspire Us.",
-        "product_heading": "Our wedding day must-haves ",
+        "video_intro":"You could be our next muse. Share your wedding hair and inspire the bride who comes after you.",
+        "product_heading": "Our wedding day must-haves",
+        "product_intro": "Tried, tested and trusted by thousands of brides. These are the products that make the difference on the day that matters most.",
         "social_link_label": "Share your look",
         "social_link": "https://www.instagram.com/cliphairlimited/",
         "color_scheme": "",

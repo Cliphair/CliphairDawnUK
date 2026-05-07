@@ -1,0 +1,447 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'section-bridal-reviews-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <section class="bridal-reviews-slider isolate" aria-labelledby="SectionHeading-{{ section.id }}">
+      {%- if section.settings.heading != blank or section.settings.introduction != blank -%}
+        <div class="bridal-reviews-slider__header center">
+          {%- if section.settings.heading != blank -%}
+            <h2
+              id="SectionHeading-{{ section.id }}"
+              class="bridal-reviews-slider__title inline-richtext {{ section.settings.heading_size }}"
+            >
+              {{ section.settings.heading }}
+            </h2>
+          {%- endif -%}
+
+          {%- if section.settings.introduction != blank -%}
+            <div class="bridal-reviews-slider__intro rte">
+              {{ section.settings.introduction }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <slider-component-custom
+          class="bridal-reviews-slider__carousel large-up-hide"
+          data-visual="dots"
+          data-loop="true"
+          data-autoplay="{{ section.settings.enable_autoplay }}"
+          data-speed="{{ section.settings.autoplay_speed }}"
+        >
+          <ul
+            id="Slider-{{ section.id }}-mobile"
+            class="bridal-reviews-slider__track list-unstyled slider slider--everywhere"
+            role="list"
+            aria-label="{{ section.settings.heading | default: 'Bridal reviews' | escape }}"
+          >
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign initials_source = block.settings.customer_name | strip
+                assign initials = ''
+                assign initials_words = initials_source | split: ' '
+
+                for word in initials_words limit: 2
+                  assign trimmed_word = word | strip
+                  if trimmed_word != blank
+                    assign initial = trimmed_word | slice: 0, 1 | upcase
+                    assign initials = initials | append: initial
+                  endif
+                endfor
+
+                if initials == blank and initials_source != blank
+                  assign initials = initials_source | slice: 0, 1 | upcase
+                endif
+
+                assign review_length = block.settings.review_text | strip | size
+                assign show_read_more = false
+                if review_length > 115
+                  assign show_read_more = true
+                endif
+              -%}
+
+              <li
+                id="Slide-{{ section.id }}-mobile-{{ forloop.index }}"
+                class="bridal-reviews-slider__slide custom__slide slider__slide"
+                {{ block.shopify_attributes }}
+              >
+                <article class="bridal-review-card">
+                  <div class="bridal-review-card__avatar">
+                    {%- if block.settings.image != blank -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 180
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '72, 96, 144, 180',
+                          sizes: '7.2rem',
+                          class: 'bridal-review-card__avatar-image',
+                          alt: block.settings.customer_name
+                      }}
+                    {%- else -%}
+                      <span class="bridal-review-card__initials" aria-hidden="true">{{ initials }}</span>
+                      <span class="visually-hidden">{{ block.settings.customer_name | escape }}</span>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="bridal-review-card__content">
+                    <div class="bridal-review-card__meta">
+                      {%- if block.settings.customer_name != blank -%}
+                        <h3 class="bridal-review-card__name h3">{{ block.settings.customer_name | escape }}</h3>
+                      {%- endif -%}
+
+                      <div class="bridal-review-card__stars" aria-label="{{ block.settings.stars }} out of 5 stars">
+                        {%- assign max_stars = 5 -%}
+                        {%- assign empty_stars = max_stars | minus: block.settings.stars -%}
+                        {%- for star in (1..block.settings.stars) -%}
+                          <span class="bridal-review-card__star bridal-review-card__star--filled">
+                            {%- render 'icon-star' -%}
+                          </span>
+                        {%- endfor -%}
+                        {%- for star in (1..empty_stars) -%}
+                          <span class="bridal-review-card__star bridal-review-card__star--empty">
+                            {%- render 'icon-star' -%}
+                          </span>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+
+                    {%- if block.settings.review_text != blank -%}
+                      {%- if show_read_more -%}
+                        <details class="bridal-review-card__details">
+                          <div class="bridal-review-card__text bridal-review-card__text--clamped rte">
+                            {{ block.settings.review_text | escape | newline_to_br }}
+                          </div>
+                          <summary class="bridal-review-card__toggle link link--text focus-inset">
+                            <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--more"
+                              >Read more</span
+                            >
+                            <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--less"
+                              >Read less</span
+                            >
+                          </summary>
+                        </details>
+                      {%- else -%}
+                        <div class="bridal-review-card__text rte">
+                          {{ block.settings.review_text | escape | newline_to_br }}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </article>
+              </li>
+            {%- endfor -%}
+          </ul>
+
+          <div class="bridal-reviews-slider__controls bridal-reviews-slider__controls--mobile no-js-hidden">
+            <div class="slider-counter slider-counter--dots bridal-reviews-slider__dots">
+              <div class="slideshow__control-wrapper"></div>
+            </div>
+          </div>
+        </slider-component-custom>
+
+        <slider-component-custom
+          class="bridal-reviews-slider__carousel small-hide"
+          data-visual="dots"
+          data-loop="true"
+          data-autoplay="{{ section.settings.enable_autoplay }}"
+          data-speed="{{ section.settings.autoplay_speed }}"
+        >
+          <ul
+            id="Slider-{{ section.id }}-desktop"
+            class="bridal-reviews-slider__track list-unstyled slider slider--everywhere"
+            role="list"
+            aria-label="{{ section.settings.heading | default: 'Bridal reviews' | escape }}"
+          >
+            {%- for block in section.blocks -%}
+              {%- assign pair_index = forloop.index0 | modulo: 2 -%}
+              {%- if pair_index == 0 -%}
+                <li
+                  id="Slide-{{ section.id }}-desktop-{{ forloop.index0 | divided_by: 2 | floor | plus: 1 }}"
+                  class="bridal-reviews-slider__slide bridal-reviews-slider__slide--desktop custom__slide slider__slide"
+                >
+                  <div class="bridal-reviews-slider__desktop-grid">
+              {%- endif -%}
+
+              {%- liquid
+                assign initials_source = block.settings.customer_name | strip
+                assign initials = ''
+                assign initials_words = initials_source | split: ' '
+
+                for word in initials_words limit: 2
+                  assign trimmed_word = word | strip
+                  if trimmed_word != blank
+                    assign initial = trimmed_word | slice: 0, 1 | upcase
+                    assign initials = initials | append: initial
+                  endif
+                endfor
+
+                if initials == blank and initials_source != blank
+                  assign initials = initials_source | slice: 0, 1 | upcase
+                endif
+
+                assign review_length = block.settings.review_text | strip | size
+                assign show_read_more = false
+                if review_length > 115
+                  assign show_read_more = true
+                endif
+              -%}
+
+              <article class="bridal-review-card" {{ block.shopify_attributes }}>
+                <div class="bridal-review-card__avatar">
+                  {%- if block.settings.image != blank -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 180
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '72, 96, 144, 180',
+                        sizes: '7.2rem',
+                        class: 'bridal-review-card__avatar-image',
+                        alt: block.settings.customer_name
+                    }}
+                  {%- else -%}
+                    <span class="bridal-review-card__initials" aria-hidden="true">{{ initials }}</span>
+                    <span class="visually-hidden">{{ block.settings.customer_name | escape }}</span>
+                  {%- endif -%}
+                </div>
+
+                <div class="bridal-review-card__content">
+                  <div class="bridal-review-card__meta">
+                    {%- if block.settings.customer_name != blank -%}
+                      <h3 class="bridal-review-card__name h3">{{ block.settings.customer_name | escape }}</h3>
+                    {%- endif -%}
+
+                    <div class="bridal-review-card__stars" aria-label="{{ block.settings.stars }} out of 5 stars">
+                      {%- assign max_stars = 5 -%}
+                      {%- assign empty_stars = max_stars | minus: block.settings.stars -%}
+                      {%- for star in (1..block.settings.stars) -%}
+                        <span class="bridal-review-card__star bridal-review-card__star--filled">
+                          {%- render 'icon-star' -%}
+                        </span>
+                      {%- endfor -%}
+                      {%- for star in (1..empty_stars) -%}
+                        <span class="bridal-review-card__star bridal-review-card__star--empty">
+                          {%- render 'icon-star' -%}
+                        </span>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+
+                  {%- if block.settings.review_text != blank -%}
+                    {%- if show_read_more -%}
+                      <details class="bridal-review-card__details">
+                        <div class="bridal-review-card__text bridal-review-card__text--clamped rte">
+                          {{ block.settings.review_text | escape | newline_to_br }}
+                        </div>
+                        <summary class="bridal-review-card__toggle link link--text focus-inset">
+                          <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--more"
+                            >Read more</span
+                          >
+                          <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--less"
+                            >Read less</span
+                          >
+                        </summary>
+                      </details>
+                    {%- else -%}
+                      <div class="bridal-review-card__text rte">
+                        {{ block.settings.review_text | escape | newline_to_br }}
+                      </div>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </article>
+
+              {%- assign close_pair = forloop.index | modulo: 2 -%}
+              {%- if close_pair == 0 or forloop.last -%}
+                </div>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+          <div class="slider-buttons bridal-reviews-slider__controls no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+
+            <div class="slider-counter slider-counter--dots bridal-reviews-slider__dots">
+              <div class="slideshow__control-wrapper"></div>
+            </div>
+
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+          </div>
+        </slider-component-custom>
+
+      {%- else -%}
+        <div class="bridal-reviews-slider__empty-state center">Add review blocks to populate this section.</div>
+      {%- endif -%}
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bridal reviews slider",
+  "tag": "section",
+  "class": "section section-bridal-reviews-slider",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Lets hear from our Brides"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer image"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "Name here"
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal reviews slider",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -30,34 +30,42 @@
     <div class="sig-filters" role="tablist" aria-label="Filter styles">
       <button class="sig-filter-btn" role="tab" aria-selected="true" data-filter="all">All</button>
       <span class="sig-filter-sep" aria-hidden="true">|</span>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="hair up">Hair Up</button>
+      <span class="sig-filter-sep" aria-hidden="true">|</span>
       <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="hair down">Hair Down</button>
       <span class="sig-filter-sep" aria-hidden="true">|</span>
       <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="half up half down">
         Half Up Half Down
       </button>
       <span class="sig-filter-sep" aria-hidden="true">|</span>
-      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="braid">Braid</button>
-      <span class="sig-filter-sep" aria-hidden="true">|</span>
-      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="bun">Bun</button>
+      <button class="sig-filter-btn" role="tab" aria-selected="false" data-filter="braids">Braids</button>
     </div>
 
     <div class="sig-layout">
       {%- comment -%} â”€â”€ Left column: gallery slider â”€â”€ {%- endcomment -%}
       <div class="sig-layout__gallery">
-        {%- comment -%} Loading skeleton â€” visible until JS renders groups {%- endcomment -%}
+        {%- comment -%} Loading skeleton â€” visible until JS renders columns {%- endcomment -%}
         <div class="sig-loading" aria-hidden="true">
-          <div class="sig-skeleton-group">
-            <div class="sig-skeleton-item"></div>
-            <div class="sig-skeleton-item"></div>
-            <div class="sig-skeleton-item"></div>
+          <div class="sig-skeleton-column sig-skeleton-column--stack">
             <div class="sig-skeleton-item"></div>
             <div class="sig-skeleton-item"></div>
           </div>
-          <div class="sig-skeleton-group">
+          <div class="sig-skeleton-column sig-skeleton-column--stack">
             <div class="sig-skeleton-item"></div>
             <div class="sig-skeleton-item"></div>
+          </div>
+          <div class="sig-skeleton-column sig-skeleton-column--tall">
+            <div class="sig-skeleton-item"></div>
+          </div>
+          <div class="sig-skeleton-column sig-skeleton-column--stack">
             <div class="sig-skeleton-item"></div>
             <div class="sig-skeleton-item"></div>
+          </div>
+          <div class="sig-skeleton-column sig-skeleton-column--stack">
+            <div class="sig-skeleton-item"></div>
+            <div class="sig-skeleton-item"></div>
+          </div>
+          <div class="sig-skeleton-column sig-skeleton-column--tall">
             <div class="sig-skeleton-item"></div>
           </div>
         </div>
@@ -85,9 +93,6 @@
             >
               {%- render 'icon-caret' -%}
             </button>
-            <div class="slider-counter slider-counter--dots">
-              <div class="slideshow__control-wrapper"></div>
-            </div>
             <button
               type="button"
               class="slider-button slider-button--next"
@@ -97,6 +102,14 @@
               {%- render 'icon-caret' -%}
             </button>
           </div>
+
+          <div class="sig-scrollbar" aria-hidden="true">
+            <div class="sig-scrollbar__track">
+              <button type="button" class="sig-scrollbar__thumb" tabindex="-1">
+                <span class="visually-hidden">Gallery scrollbar</span>
+              </button>
+            </div>
+          </div>
         </slider-component-custom>
 
         <p class="sig-empty" hidden>No styles found for this filter.</p>
@@ -104,6 +117,38 @@
 
       {%- comment -%} â”€â”€ Right column: info panel â”€â”€ {%- endcomment -%}
       <div class="sig-layout__panel">
+        <div
+          class="sig-panel-placeholder"
+          id="SigPanelPlaceholder-{{ section.id }}"
+          hidden
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-hidden="true"
+        >
+          <div class="sig-panel-placeholder__card">
+            <p class="sig-panel-placeholder__eyebrow">Choose a style</p>
+            <h3 class="sig-panel-placeholder__heading h4">Select a filter to see curated details</h3>
+            <p class="sig-panel-placeholder__text">
+              Pick Hair Up, Hair Down, Half Up Half Down or Braids to load the matching product, review and editorial
+              guidance.
+            </p>
+            <div class="sig-panel-placeholder__media">
+              <div class="sig-panel-placeholder__block sig-panel-placeholder__block--large"></div>
+              <div class="sig-panel-placeholder__block sig-panel-placeholder__block--large"></div>
+            </div>
+            <div class="sig-panel-placeholder__footer">
+              <div class="sig-panel-placeholder__block sig-panel-placeholder__block--thumb"></div>
+              <div class="sig-panel-placeholder__copy">
+                <div class="sig-panel-placeholder__block sig-panel-placeholder__block--line"></div>
+                <div
+                  class="sig-panel-placeholder__block sig-panel-placeholder__block--line sig-panel-placeholder__block--line-short"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div
           class="sig-panel"
           id="SigPanel-{{ section.id }}"
@@ -124,21 +169,20 @@
               <div class="sig-panel__footer-thumb media"></div>
               <div class="sig-panel__footer-info">
                 <span class="sig-panel__product-title"></span>
-                <span class="sig-panel__product-shade"></span>
               </div>
               <a class="sig-panel__cta button" href="#">Shop Now</a>
             </div>
-          </div>
-
-          <div class="sig-panel__review">
-            <div class="sig-panel__review-header">
-              <span class="sig-panel__review-author h5"></span>
-              <div class="sig-panel__stars" role="img" aria-label="5 out of 5 stars"></div>
+            <div class="sig-panel__review">
+              <div class="sig-panel__review-header">
+                <span class="sig-panel__review-author h5"></span>
+                <div class="sig-panel__stars" role="img" aria-label="5 out of 5 stars"></div>
+              </div>
+              <p class="sig-panel__review-text"></p>
+              <button type="button" class="sig-panel__review-toggle link" hidden>Read more</button>
             </div>
-            <p class="sig-panel__review-text"></p>
           </div>
 
-          <p class="sig-panel__indicator">
+          <p class="sig-panel__indicator" hidden>
             <span class="sig-panel__indicator-current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="sig-panel__indicator-total"></span>
@@ -150,269 +194,415 @@
 
   {%- comment -%}
     Gallery data. Replace placeholder src / image values with real Shopify CDN URLs.
-    Each asset needs:
-      id                â€” unique string
-      type              â€” "image" or "video"
-      src               â€” CDN URL (video: MP4; image: image_url output)
-      poster            â€” thumbnail URL for videos; null for images
-      alt               â€” descriptive alt text
-
-      filters           â€” array of filter labels matching the tabs above (case-insensitive)
-      editorial_heading â€” heading shown at the top of the panel card
-      editorial         â€” body copy shown below the heading
-      product.title / product.shade / product.url / product.image
-      review.author / review.rating (1â€“5) / review.text
+    Each filter owns the shared panel content. Assets only drive the gallery media.
   {%- endcomment -%}
   <script id="SigData-{{ section.id }}" type="application/json">
     {
-      "filters": ["Hair Down", "Half Up Half Down", "Braid", "Bun"],
+      "filters": [
+        {
+          "id": "all",
+          "label": "All",
+          "panel": {
+            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+            "image_alt": "All bridal styles inspiration panel image",
+            "editorial_heading": "Wedding hair inspiration for every style",
+            "editorial": "Explore bridal looks across soft waves, half-up styling, braids and buns with extension-led volume and length.",
+            "product": {
+              "title": "Classic Clip-Ins",
+              "url": "/products/classic-clip-ins",
+              "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
+            },
+            "review": {
+              "author": "Kamila",
+              "rating": 5,
+              "text": "Absolutely loved these, wore them on my wedding day and had so many compliments."
+            }
+          }
+        },
+        {
+          "id": "hair up",
+          "label": "Hair Up",
+          "panel": {
+            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-9.jpg?v=1778073692",
+            "image_alt": "Hair up bridal style panel image",
+            "editorial_heading": "Hair Up",
+            "editorial": "Clean and elegant or softly textured, buns offer a timeless bridal look that keeps everything beautifully in place all day long.",
+            "product": {
+              "title": "Quad Weft Piece Clip In Extension in shade Darkest Brown",
+              "url": "/products/quad-wefted-remy-clip-in-human-hair-extensions-darkest-brown-2",
+              "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Darkest-Brown-One-Piece-Hair-Extensions_2-qwp_website-attachment_e8d09ee8-d1a0-4b0f-92c2-993f373e533f.webp"
+            },
+            "review": {
+              "author": "Zoe Stevenson, Bridal Hair Specialist",
+              "rating": 5,
+              "text": "Cliphair is the only brand I choose to work with, and one I confidently recommend to all my brides for their wedding day. The range of volume options is fantastic, allowing me to tailor each look perfectly, and the shade variety is truly impressive. Around 99% of the time, I’m able to find an exact or very close colour match, which is why they’ve become my go-to brand.Their extensions provide incredible hold, beautiful volume, and seamless colour payoff, helping to elevate every bridal hairstyle. They really do add that extra special touch, ensuring my brides feel confident and look their absolute best on such an important day."
+            }
+          }
+        },
+        {
+          "id": "hair down",
+          "label": "Hair Down",
+          "panel": {
+            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-9.jpg?v=1778073742",
+            "image_alt": "Hair down bridal style panel image",
+            "editorial_heading": "Hair Down",
+            "editorial": "From sleek Hollywood waves to soft romantic curls, hair down is the ultimate glamour statement on your wedding day. ",
+            "product": {
+              "title": "Classic Full Head Clip Ins in shade BlondeMe",
+              "url": "/products/full-head-remy-clip-in-human-hair-extensions-blonde-me-60-ss",
+              "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/60-ss-fhs_website-attachment.jpg?v=1767958197"
+            },
+            "review": {
+              "author": "Sophie, Real Cliphair Bride",
+              "rating": 5,
+              "text": "Hair Down placeholder review copy."
+            }
+          }
+        },
+        {
+          "id": "half up half down",
+          "label": "Half Up Half Down",
+          "panel": {
+            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-2.jpg?v=1778073616",
+            "image_alt": "Half up half down bridal style panel image",
+            "editorial_heading": "Half Up Half Down",
+            "editorial": "The most versatile of all bridal styles. A style that frames the face beautifully while keeping your length on show.",
+            "product": {
+              "title": "Double Wefted Clip Ins in shade Barbie Blonde",
+              "url": "/products/double-wefted-full-head-remy-clip-in-human-hair-extensions-barbie-blonde-16-60",
+              "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/products/16-60-dw_original-full.jpg?v=1753874640"
+            },
+            "review": {
+              "author": "Suzanne Dusek, Founder of the SD Bridal Pro Team",
+              "rating": 5,
+              "text": "I absolutely love working with Cliphair hair extensions and regularly recommend them to all of my brides and clients. The quality is fantastic, and they style beautifully every time. They’re reliable, easy to work with, and consistently deliver great results highly recommended!"
+            }
+          }
+        },
+        {
+          "id": "braids",
+          "label": "Braids",
+          "panel": {
+            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-braid-1.jpg?v=1778074018",
+            "image_alt": "Braids bridal style panel image",
+            "editorial_heading": "Braids",
+            "editorial": "Detailed, intricate and completely show-stopping. Braids add a sculptural, statement-making quality to bridal hair that is truly in a league of their own.",
+            "product": {
+              "title": "Double Wefted Clip Ins in shade Medium Brown",
+              "url": "/products/double-wefted-set-clip-in-hair-extensions-medium-brown-4",
+              "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/Medium-Brown-Double-Weft-Clip-In-Hair-Extensions_4-dw_website-full.webp?v=1753875047"
+            },
+            "review": {
+              "author": "Lauren Witts, Founder of Revelations Bridal",
+              "rating": 5,
+              "text": "I have been using ClipHair extensions since I began doing bridal hair. They are the ONLY brand I use for my brides. The quality is second to none and the shade variety is a bridal hairstylist’s dream. Plus, the ordering process is always seamless and FAST (and I live in the US!) I’ll never use another brand."
+            }
+          }
+        }
+      ],
       "assets": [
         {
           "id": "1",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Hair Down bridal updo with clip-in extensions",
-          "filters": ["Hair Down", "Half Up Half Down"],
-          "editorial_heading": "Effortless Hair Down Waves",
-          "editorial": "Effortless waves with a boho twist â€” achieved with our Half Up Half Down Clip-Ins.",
-          "product": {
-            "title": "Half Up Half Down Clip-Ins",
-            "shade": "Darkest Brown",
-            "url": "/products/classic-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Kamila",
-            "rating": 5,
-            "text": "Absolutely loved these, wore them on my wedding day and had so many compliments."
-          }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/4408a093220c48dfbffdcecddf580009.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-1.jpg",
+          "alt": "Hair Down bridal look 1",
+          "filters": ["Hair Down"]
         },
         {
           "id": "2",
           "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-2.jpg",
           "poster": null,
-          "alt": "Half Up Half Down wedding hair with soft waves",
-          "filters": ["Half Up Half Down"],
-          "editorial_heading": "Timeless Wedding Elegance",
-          "editorial": "Timeless elegance for your special day.",
-          "product": {
-            "title": "Seamless Clip-Ins",
-            "shade": "Golden Brown",
-            "url": "/products/seamless-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Sophie",
-            "rating": 5,
-            "text": "These extensions blended perfectly with my natural hair."
-          }
+          "alt": "Hair Down bridal look 2",
+          "filters": ["Hair Down"]
         },
         {
           "id": "3",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Hair Down bridal hair landscape editorial shot",
-          "filters": ["Hair Down"],
-          "editorial_heading": "Free-Spirited Texture",
-          "editorial": "Free-spirited texture for the boho bride.",
-          "product": {
-            "title": "Wavy Clip-Ins",
-            "shade": "Light Brown",
-            "url": "/products/wavy-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Emma",
-            "rating": 5,
-            "text": "The waves looked so natural, everyone thought it was my real hair!"
-          }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/89eb1fdbc4fc43be8957c061a0637b76.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-3.jpg",
+          "alt": "Hair Down bridal look 3",
+          "filters": ["Hair Down"]
         },
         {
           "id": "4",
           "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-4.jpg",
           "poster": null,
-          "alt": "Braid sleek bridal hair portrait",
-          "filters": ["Braid"],
-          "editorial_heading": "Sleek Braid Bride",
-          "editorial": "Sleek and polished for the modern bride.",
-          "product": {
-            "title": "Straight Clip-Ins",
-            "shade": "Jet Black",
-            "url": "/products/straight-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": { "author": "Priya", "rating": 5, "text": "So smooth and shiny, exactly what I was looking for." }
+          "alt": "Hair Down bridal look 4",
+          "filters": ["Hair Down"]
         },
         {
           "id": "5",
           "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-5.jpg",
           "poster": null,
-          "alt": "Bun bridal curls with extensions",
-          "filters": ["Bun"],
-          "editorial_heading": "Bun Bridal Curls",
-          "editorial": "Bun curls for a dreamy wedding look.",
-          "product": {
-            "title": "Curly Clip-Ins",
-            "shade": "Dark Blonde",
-            "url": "/products/curly-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Isabelle",
-            "rating": 5,
-            "text": "My curls lasted all day and night. Absolutely stunning!"
-          }
+          "alt": "Hair Down bridal look 5",
+          "filters": ["Hair Down"]
         },
         {
           "id": "6",
           "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-6.jpg",
           "poster": null,
-          "alt": "Bun tall portrait with flowing extensions",
-          "filters": ["Bun", "Hair Down"],
-          "editorial_heading": "Flowing Ethereal Length",
-          "editorial": "Flowing length for a romantic, ethereal look.",
-          "product": {
-            "title": "Half Up Half Down Clip-Ins",
-            "shade": "Chestnut Brown",
-            "url": "/products/classic-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Ava",
-            "rating": 5,
-            "text": "Added so much length and volume. Perfect for my boho wedding."
-          }
+          "alt": "Hair Down bridal look 6",
+          "filters": ["Hair Down"]
         },
         {
           "id": "7",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Braid structured updo with clip-ins",
-          "filters": ["Braid"],
-          "editorial_heading": "Structured Braid Updo",
-          "editorial": "Structured updo elevated with seamless extensions.",
-          "product": {
-            "title": "Seamless Clip-Ins",
-            "shade": "Platinum Blonde",
-            "url": "/products/seamless-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": { "author": "Charlotte", "rating": 5, "text": "My stylist was amazed at how well they blended." }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/adc8142d1d704f808f948474deb1a62f.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-7.jpg",
+          "alt": "Hair Down bridal look 7",
+          "filters": ["Hair Down"]
         },
         {
           "id": "8",
-          "type": "video",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "alt": "Behind the scenes bridal hair tutorial",
-          "filters": ["Half Up Half Down", "Braid"],
-          "editorial_heading": "Bridal Transformation",
-          "editorial": "Watch how our extensions transform a bridal look.",
-          "product": {
-            "title": "Half Up Half Down Clip-Ins",
-            "shade": "Medium Brown",
-            "url": "/products/classic-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Zoe",
-            "rating": 5,
-            "text": "Followed this tutorial and nailed the look for my wedding!"
-          }
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-8.jpg",
+          "poster": null,
+          "alt": "Hair Down bridal look 8",
+          "filters": ["Hair Down"]
         },
         {
           "id": "9",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Half Up Half Down bridal hair landscape shot",
-          "filters": ["Half Up Half Down", "Bun"],
-          "editorial_heading": "Half Up Half Down Halo Perfection",
-          "editorial": "Half Up Half Down bridal hair, perfected with halo extensions.",
-          "product": {
-            "title": "Halo Extensions",
-            "shade": "Darkest Brown",
-            "url": "/products/halo-extensions",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": { "author": "Grace", "rating": 5, "text": "The halo was so comfortable and stayed in all day." }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/700f1546fa894ba8a7950e4882fc16c6.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-9.jpg",
+          "alt": "Hair Down bridal look 9",
+          "filters": ["Hair Down"]
         },
         {
           "id": "10",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Hair Down tall portrait with natural texture extensions",
-          "filters": ["Hair Down"],
-          "editorial_heading": "Natural Hair Down Texture",
-          "editorial": "Natural texture meets effortless length.",
-          "product": {
-            "title": "Wavy Clip-Ins",
-            "shade": "Balayage Brown",
-            "url": "/products/wavy-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Lily",
-            "rating": 4,
-            "text": "Really beautiful extensions, very natural looking texture."
-          }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/9b7819b2aeff435fb6b19c25c7f0e52f.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-10.jpg",
+          "alt": "Hair Down bridal look 10",
+          "filters": ["Hair Down"]
         },
         {
           "id": "11",
-          "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
-          "poster": null,
-          "alt": "Bun soft waves bridal portrait",
-          "filters": ["Bun"],
-          "editorial_heading": "Soft Bun Waves",
-          "editorial": "Soft waves for a romantic evening look.",
-          "product": {
-            "title": "Half Up Half Down Clip-Ins",
-            "shade": "Caramel Blonde",
-            "url": "/products/classic-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Olivia",
-            "rating": 5,
-            "text": "Everyone was asking where I got my extensions, they looked so real!"
-          }
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/b4c8d992aa9745d18071521ea69db1c1.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-11.jpg",
+          "alt": "Hair Down bridal look 11",
+          "filters": ["Hair Down"]
         },
         {
           "id": "12",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/277f6653c70a474c907ab9dbc87b0671.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-hair-down-12.jpg",
+          "alt": "Hair Down bridal look 12",
+          "filters": ["Hair Down"]
+        },
+        {
+          "id": "13",
           "type": "image",
-          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-1.jpg",
           "poster": null,
-          "alt": "Braid clean lines bridal hair portrait",
-          "filters": ["Braid", "Half Up Half Down"],
-          "editorial_heading": "Clean-Line Braid Style",
-          "editorial": "Clean lines and modern elegance.",
-          "product": {
-            "title": "Seamless Clip-Ins",
-            "shade": "Dark Brown",
-            "url": "/products/seamless-clip-ins",
-            "image": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/new-homepage-placeholder.jpg?v=1776696117"
-          },
-          "review": {
-            "author": "Mia",
-            "rating": 5,
-            "text": "Absolutely seamless blend. My hair stylist was impressed!"
-          }
+          "alt": "Half Up Half Down bridal look 1",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "14",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-2.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 2",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "15",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/28ceb72f2c094cb8bcfa2572b11a8be8.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-3.jpg",
+          "alt": "Half Up Half Down bridal look 3",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "16",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-4.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 4",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "17",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-5.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 5",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "18",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/038bb38ab1fe4f4e9f604ab236c0466c.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-6.jpg",
+          "alt": "Half Up Half Down bridal look 6",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "19",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-7.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 7",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "20",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-8.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 8",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "21",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-9.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 9",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "22",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/a2b566dd33b64ba6bb05958b91779cf9.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-10.jpg",
+          "alt": "Half Up Half Down bridal look 10",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "23",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-11.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 11",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "24",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-half-up-half-down-12.jpg",
+          "poster": null,
+          "alt": "Half Up Half Down bridal look 12",
+          "filters": ["Half Up Half Down"]
+        },
+        {
+          "id": "25",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-1.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 1",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "26",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-2.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 2",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "27",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-3.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 3",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "28",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-4.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 4",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "29",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-5.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 5",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "30",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-6.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 6",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "31",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/c7d2071826894e8689eed9d6956955c3.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-7.jpg",
+          "alt": "Hair Up bridal look 7",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "32",
+          "type": "video",
+          "src": "https://cdn.shopify.com/videos/c/o/v/c175a16e877d4e189deb43d494d7c3ca.mp4",
+          "poster": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-8.jpg",
+          "alt": "Hair Up bridal look 8",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "33",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-9.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 9",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "34",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-bun-10.jpg",
+          "poster": null,
+          "alt": "Hair Up bridal look 10",
+          "filters": ["Hair Up"]
+        },
+        {
+          "id": "35",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-braid-1.jpg",
+          "poster": null,
+          "alt": "Braids bridal look 1",
+          "filters": ["Braids"]
+        },
+        {
+          "id": "36",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-braid-2.jpg",
+          "poster": null,
+          "alt": "Braids bridal look 2",
+          "filters": ["Braids"]
+        },
+        {
+          "id": "37",
+          "type": "image",
+          "src": "https://cdn.shopify.com/s/files/1/0069/6470/7389/files/bridal-26-braid-3.jpg",
+          "poster": null,
+          "alt": "Braids bridal look 3",
+          "filters": ["Braids"]
         }
       ]
     }
   </script>
 </style-inspiration-gallery>
 
-{{ 'style-inspiration-gallery.js' | asset_url | script_tag }}
+<script src="{{ 'style-inspiration-gallery.js' | asset_url }}" defer></script>
 
 {% schema %}
 {
