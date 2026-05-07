@@ -177,7 +177,8 @@
         "link_aTMmXT"
       ],
       "custom_css": [
-        "div.gradient > div {max-width: 900px; margin: 0 auto;}"
+        "div.gradient > div {max-width: 900px; margin: 0 auto;}",
+        "@media screen and (max-width: 749px) {.images-container {flex-wrap: wrap; } .images-container > * {width: calc((100% - 1rem) / 2); min-width: calc((100% - 1rem) / 2); flex-grow: 1; }}"
       ],
       "name": "Colour Match & Quiz",
       "settings": {
