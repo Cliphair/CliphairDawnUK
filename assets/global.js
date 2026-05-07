@@ -627,7 +627,9 @@ class DeferredMediaPopUp extends DeferredMedia {
       const content = document.createElement('div');
       content.classList.add("background-overlay", "deferred-media-popup-container")
       content.appendChild(this.querySelector('template').content.firstElementChild.cloneNode(true));
-      content.addEventListener("click", this.closeContent)
+      content.addEventListener("click", (event) => {
+        if (event.target === content) this.closeContent();
+      })
 
       document.querySelector("body").insertAdjacentElement('beforeend', content)
       document.querySelector("body").classList.add('overflow-hidden-desktop')
@@ -786,16 +788,62 @@ class SliderComponent extends HTMLElement {
 customElements.define('slider-component', SliderComponent);
 
 class SliderComponentCustom extends SliderComponent {
+  initSlider() {
+    this.slider = this.querySelector('[id^="Slider-"]');
+    this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
+    this.enableSliderLooping = this.dataset.loop === 'true';
+    this.currentPageElement = this.querySelector('.slider-counter--current');
+    this.pageTotalElement = this.querySelector('.slider-counter--total');
+    this.prevButton = this.querySelector('button[name="previous"]');
+    this.nextButton = this.querySelector('button[name="next"]');
+
+    if (!this.slider) return;
+
+    if (this.resizeObserver) this.resizeObserver.disconnect();
+    if (this.updateBound) this.slider.removeEventListener('scroll', this.updateBound);
+
+    if (this.prevButton && this.onButtonClickBound) {
+      this.prevButton.removeEventListener('click', this.onButtonClickBound);
+    }
+
+    if (this.nextButton && this.onButtonClickBound) {
+      this.nextButton.removeEventListener('click', this.onButtonClickBound);
+    }
+
+    this.initPages();
+    this.updateBound = this.update.bind(this);
+    this.onButtonClickBound = this.onButtonClick.bind(this);
+    this.resizeObserver = new ResizeObserver(() => this.initPages());
+    this.resizeObserver.observe(this.slider);
+    this.slider.addEventListener('scroll', this.updateBound);
+
+    if (this.prevButton) this.prevButton.addEventListener('click', this.onButtonClickBound);
+    if (this.nextButton) this.nextButton.addEventListener('click', this.onButtonClickBound);
+
+    this.bindBridalReviewCardHeightEvents();
+    this.syncBridalReviewCardHeights();
+  }
+
   constructor() {
     super();
     this.sliderVisual = this.dataset.visual;
-    this.sliderControlWrapper = this.querySelector('.slider-buttons');
+    this.sliderControlWrapper = this.querySelector('.slideshow__control-wrapper');
     this.direction = 'right';
+    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    if (!this.sliderControlWrapper) return;
+    if (!this.slider) return;
 
     this.sliderFirstItemNode = this.slider.querySelector('.custom__slide');
     if (this.sliderItemsToShow.length > 0) this.currentPage = 1;
+
+    this.focusInHandlingBound = this.focusInHandling.bind(this);
+    this.focusOutHandlingBound = this.focusOutHandling.bind(this);
+    this.addEventListener('mouseover', this.focusInHandlingBound);
+    this.addEventListener('mouseleave', this.focusOutHandlingBound);
+    this.addEventListener('focusin', this.focusInHandlingBound);
+    this.addEventListener('focusout', this.focusOutHandlingBound);
+
+    if (this.dataset.autoplay === 'true') this.setAutoPlay();
   }
 
   onButtonClick(event) {
@@ -816,11 +864,43 @@ class SliderComponentCustom extends SliderComponent {
   }
 
   update() {
-    super.update();
+    if (!this.slider || !this.sliderItemOffset || !this.sliderItemsToShow.length) return;
+
+    const previousPage = this.currentPage;
+    this.currentPage = Math.min(this.totalPages, Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1);
+
+    if (this.currentPageElement && this.pageTotalElement) {
+      this.currentPageElement.textContent = this.currentPage;
+      this.pageTotalElement.textContent = this.totalPages;
+    }
+
+    if (this.currentPage != previousPage) {
+      this.dispatchEvent(
+        new CustomEvent('slideChanged', {
+          detail: {
+            currentPage: this.currentPage,
+            currentElement: this.sliderItemsToShow[this.currentPage - 1],
+          },
+        })
+      );
+    }
+
     this.renderVisualSlider();
     this.sliderControlButtons = this.querySelectorAll('.slider-counter__link');
-    this.prevButton.removeAttribute('disabled');
-    this.nextButton.removeAttribute('disabled');
+
+    if (this.prevButton && this.nextButton && !this.enableSliderLooping) {
+      if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
+        this.prevButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.prevButton.removeAttribute('disabled');
+      }
+
+      if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
+        this.nextButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.nextButton.removeAttribute('disabled');
+      }
+    }
 
     if (!this.sliderControlButtons.length) return;
 
@@ -849,7 +929,7 @@ class SliderComponentCustom extends SliderComponent {
   }
 
   renderVisualSlider() {
-    const sliderContainer = this.querySelector('.slideshow__control-wrapper');
+    const sliderContainer = this.sliderControlWrapper;
 
     if (!sliderContainer) return;
 
@@ -858,7 +938,7 @@ class SliderComponentCustom extends SliderComponent {
       const button = document.createElement('button');
       button.classList.add("slider-counter__link", `slider-counter__link--${this.sliderVisual}`, "link");
       button.ariaLabel = `Load page ${i + 1} of ${this.totalPages}`;
-      button.ariaControls = this.firstChild.id;
+      button.ariaControls = this.slider.id;
 
       if (this.sliderVisual === 'dots') {
         button.innerHTML = '<span class="dot"></span>';
@@ -868,6 +948,83 @@ class SliderComponentCustom extends SliderComponent {
 
       sliderContainer.append(button);
     }
+  }
+
+  bindBridalReviewCardHeightEvents() {
+    if (!this.querySelector('.bridal-review-card')) return;
+
+    this.reviewDetailElements = this.querySelectorAll('.bridal-review-card__details');
+    if (!this.onReviewDetailsToggleBound) {
+      this.onReviewDetailsToggleBound = () => this.syncBridalReviewCardHeights();
+    }
+
+    this.reviewDetailElements.forEach((detailsElement) => {
+      if (detailsElement.dataset.heightSyncBound === 'true') return;
+      detailsElement.addEventListener('toggle', this.onReviewDetailsToggleBound);
+      detailsElement.dataset.heightSyncBound = 'true';
+    });
+  }
+
+  syncBridalReviewCardHeights() {
+    const reviewCards = this.querySelectorAll('.bridal-review-card');
+
+    if (!reviewCards.length) return;
+
+    reviewCards.forEach((card) => {
+      card.style.minHeight = '';
+    });
+
+    let tallestCardHeight = 0;
+    reviewCards.forEach((card) => {
+      tallestCardHeight = Math.max(tallestCardHeight, card.offsetHeight);
+    });
+
+    if (!tallestCardHeight) return;
+
+    reviewCards.forEach((card) => {
+      card.style.minHeight = `${tallestCardHeight}px`;
+    });
+  }
+
+  setAutoPlay() {
+    if (this.reducedMotion.matches || this.totalPages < 2) {
+      this.pause();
+      return;
+    }
+
+    this.autoplaySpeed = Number(this.dataset.speed) * 1000;
+    if (!this.autoplaySpeed) return;
+    this.play();
+  }
+
+  focusInHandling() {
+    this.pause();
+  }
+
+  focusOutHandling() {
+    if (this.dataset.autoplay === 'true') this.setAutoPlay();
+  }
+
+  play() {
+    this.slider.setAttribute('aria-live', 'off');
+    clearInterval(this.autoplay);
+    this.autoplay = setInterval(() => this.autoRotateSlides(), this.autoplaySpeed);
+  }
+
+  pause() {
+    this.slider.setAttribute('aria-live', 'polite');
+    clearInterval(this.autoplay);
+  }
+
+  autoRotateSlides() {
+    if (!this.sliderItemOffset || this.totalPages < 2) return;
+
+    const slideScrollPosition =
+      this.currentPage >= this.totalPages
+        ? 0
+        : this.slider.scrollLeft + this.sliderItemOffset;
+
+    this.setSlidePosition(slideScrollPosition);
   }
 }
 

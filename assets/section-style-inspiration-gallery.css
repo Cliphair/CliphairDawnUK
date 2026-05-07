@@ -155,6 +155,8 @@
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;
+  overflow-clip-margin: unset;
+  overflow: visible;
 }
 
 .sig-item:hover .sig-item__img,

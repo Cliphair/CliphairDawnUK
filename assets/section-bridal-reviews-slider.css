@@ -1,7 +1,7 @@
 .bridal-reviews-slider {
-    --bridal-review-card-background: #f7f1eb;
+    --bridal-review-card-background: #F5F0EC;
     --bridal-review-avatar-background: #ccb39e;
-    --bridal-review-star-color: #111111;
+    --bridal-review-star-color: #000;
     --bridal-review-star-empty-color: rgba(17, 17, 17, 0.22);
     --bridal-review-border-color: rgba(var(--color-foreground), 0.08);
 }
@@ -12,7 +12,10 @@
 }
 
 .bridal-reviews-slider__title {
-    margin: 0;
+    font-size: 20px;
+    margin: 0rem;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
 .bridal-reviews-slider__intro {
@@ -97,19 +100,20 @@
     align-items: center;
     gap: 1.2rem;
     flex-wrap: wrap;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
 }
 
 .bridal-review-card__name {
     margin: 0;
     font-size: 2rem;
-    line-height: 1.1;
+    line-height: 1;
+    letter-spacing: -0.06em;
 }
 
 .bridal-review-card__stars {
     display: inline-flex;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
 }
 
 .bridal-review-card__star {
@@ -133,36 +137,65 @@
 
 .bridal-review-card__details {
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .bridal-review-card__text {
     margin: 0;
     color: rgb(var(--color-foreground));
-    line-height: 1.25;
+    line-height: 1.2;
+    font-size: 1.8rem;
+    letter-spacing: -.06em;
+    order: 1;
 }
 
 .bridal-review-card__text p {
     margin: 0;
 }
 
-.bridal-review-card__text--clamped {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.bridal-review-card__details .bridal-review-card__text {
+    display: none;
 }
 
-.bridal-review-card__details[open] .bridal-review-card__text--clamped {
+.bridal-review-card__details[open] .bridal-review-card__text {
     display: block;
     overflow: visible;
 }
 
 .bridal-review-card__toggle {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 0.8rem;
+    display: inline;
+    order: 2;
     font-size: 1.3rem;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+}
+
+.bridal-review-card__toggle::-webkit-details-marker {
+    display: none;
+}
+
+.bridal-review-card__excerpt {
+    color: rgb(var(--color-foreground));
+    line-height: 1.2;
+    font-size: 1.8rem;
+    letter-spacing: -.06em;
+}
+
+.bridal-review-card__toggle-label {
+    display: inline;
+    color: rgb(var(--color-foreground));
+    text-decoration: underline;
     text-underline-offset: 0.2rem;
+    line-height: 1.2;
+    font-size: 1.8rem;
+    letter-spacing: -.06em;
+}
+
+.bridal-review-card__toggle-label--more {
+    margin-left: 0.5rem;
 }
 
 .bridal-review-card__toggle-label--less,
@@ -170,8 +203,13 @@
     display: none;
 }
 
+.bridal-review-card__details[open] .bridal-review-card__excerpt {
+    display: none;
+}
+
 .bridal-review-card__details[open] .bridal-review-card__toggle-label--less {
     display: inline;
+    margin-top: 0.8rem;
 }
 
 .bridal-reviews-slider__controls {
@@ -183,22 +221,15 @@
     justify-content: center;
 }
 
+.bridal-reviews-slider__controls--desktop {
+    display: flex;
+    justify-content: center;
+}
+
 .bridal-reviews-slider__dots .slideshow__control-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.bridal-reviews-slider__controls .slider-button {
-    width: 4.4rem;
-    height: 4.4rem;
-    border: 0.1rem solid var(--bridal-review-border-color);
-    border-radius: 50%;
-    background: rgb(var(--color-background));
-}
-
-.bridal-reviews-slider__controls .slider-button .icon {
-    height: 0.9rem;
 }
 
 .bridal-reviews-slider__empty-state {
@@ -219,14 +250,14 @@
         gap: 1.4rem;
     }
 
-    .bridal-review-card__meta {
+    /* .bridal-review-card__meta {
         gap: 0.8rem;
         margin-bottom: 0.6rem;
     }
 
     .bridal-review-card__name {
         font-size: 1.8rem;
-    }
+    } */
 }
 
 @media screen and (min-width: 750px) {

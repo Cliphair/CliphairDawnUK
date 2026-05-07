@@ -70,9 +70,9 @@
                   assign initials = initials_source | slice: 0, 1 | upcase
                 endif
 
-                assign review_length = block.settings.review_text | strip | size
+                assign review_word_count = block.settings.review_text | strip | split: ' ' | size
                 assign show_read_more = false
-                if review_length > 115
+                if review_word_count > 20
                   assign show_read_more = true
                 endif
               -%}
@@ -126,10 +126,10 @@
                     {%- if block.settings.review_text != blank -%}
                       {%- if show_read_more -%}
                         <details class="bridal-review-card__details">
-                          <div class="bridal-review-card__text bridal-review-card__text--clamped rte">
-                            {{ block.settings.review_text | escape | newline_to_br }}
-                          </div>
-                          <summary class="bridal-review-card__toggle link link--text focus-inset">
+                          <summary class="bridal-review-card__toggle focus-inset">
+                            <span class="bridal-review-card__excerpt">
+                              {{ block.settings.review_text | strip | escape | truncatewords: 20, '' }}
+                            </span>
                             <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--more"
                               >Read more</span
                             >
@@ -137,6 +137,9 @@
                               >Read less</span
                             >
                           </summary>
+                          <div class="bridal-review-card__text rte">
+                            {{ block.settings.review_text | escape | newline_to_br }}
+                          </div>
                         </details>
                       {%- else -%}
                         <div class="bridal-review-card__text rte">
@@ -197,9 +200,9 @@
                   assign initials = initials_source | slice: 0, 1 | upcase
                 endif
 
-                assign review_length = block.settings.review_text | strip | size
+                assign review_word_count = block.settings.review_text | strip | split: ' ' | size
                 assign show_read_more = false
-                if review_length > 115
+                if review_word_count > 20
                   assign show_read_more = true
                 endif
               -%}
@@ -248,10 +251,10 @@
                   {%- if block.settings.review_text != blank -%}
                     {%- if show_read_more -%}
                       <details class="bridal-review-card__details">
-                        <div class="bridal-review-card__text bridal-review-card__text--clamped rte">
-                          {{ block.settings.review_text | escape | newline_to_br }}
-                        </div>
-                        <summary class="bridal-review-card__toggle link link--text focus-inset">
+                        <summary class="bridal-review-card__toggle focus-inset">
+                          <span class="bridal-review-card__excerpt">
+                            {{ block.settings.review_text | strip | escape | truncatewords: 20, '' }}
+                          </span>
                           <span class="bridal-review-card__toggle-label bridal-review-card__toggle-label--more"
                             >Read more</span
                           >
@@ -259,6 +262,9 @@
                             >Read less</span
                           >
                         </summary>
+                        <div class="bridal-review-card__text rte">
+                          {{ block.settings.review_text | escape | newline_to_br }}
+                        </div>
                       </details>
                     {%- else -%}
                       <div class="bridal-review-card__text rte">
@@ -277,28 +283,10 @@
             {%- endfor -%}
           </ul>
 
-          <div class="slider-buttons bridal-reviews-slider__controls no-js-hidden">
-            <button
-              type="button"
-              class="slider-button slider-button--prev"
-              name="previous"
-              aria-label="{{ 'general.slider.previous_slide' | t }}"
-            >
-              {%- render 'icon-caret' -%}
-            </button>
-
+          <div class="bridal-reviews-slider__controls bridal-reviews-slider__controls--desktop no-js-hidden">
             <div class="slider-counter slider-counter--dots bridal-reviews-slider__dots">
               <div class="slideshow__control-wrapper"></div>
             </div>
-
-            <button
-              type="button"
-              class="slider-button slider-button--next"
-              name="next"
-              aria-label="{{ 'general.slider.next_slide' | t }}"
-            >
-              {%- render 'icon-caret' -%}
-            </button>
           </div>
         </slider-component-custom>
 

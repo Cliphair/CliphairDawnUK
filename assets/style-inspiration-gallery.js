@@ -179,6 +179,10 @@ class StyleInspirationGallery extends HTMLElement {
     const posterImg = poster
       ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="186" height="${isTall ? 498 : 245}">`
       : '';
+    const popupPosterAttr = poster ? ` poster="${this.escAttr(poster)}"` : '';
+    const popupPosterFallback = poster
+      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}">`
+      : '';
 
     return `<deferred-media-popup
       class="deferred-media global-media-settings sig-deferred-media"
@@ -203,8 +207,9 @@ class StyleInspirationGallery extends HTMLElement {
         </span>
       </button>
       <template>
-        <video autoplay playsinline controls class="sig-video" style="width:100%;max-height:80vh;">
+        <video playsinline="playsinline" autoplay="autoplay" controls="controls" preload="metadata" class="sig-video" style="width:100%;max-height:80vh;"${popupPosterAttr}>
           <source src="${this.escAttr(src)}" type="video/mp4">
+          ${popupPosterFallback}
         </video>
       </template>
     </deferred-media-popup>`;

@@ -131,7 +131,7 @@
       "custom_css": [
         ".rich-text__wrapper {width: 100%;}",
         ".rich-text__blocks {max-width: unset;}",
-        ".rich-text__heading {font-size: 1.6rem; letter-spacing: 0; line-height: 1.5em; font-weight: 400;}"
+        ".rich-text__heading {font-size: 2rem; letter-spacing: 0; line-height: 1em; font-weight: 400;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -339,35 +339,98 @@
     "bridal_reviews_slider_zjy3Et": {
       "type": "bridal-reviews-slider",
       "blocks": {
-        "review_miMxEL": {
+        "review_Mika": {
           "type": "review",
           "settings": {
-            "customer_name": "Name here",
+            "customer_name": "Mika",
             "stars": 5,
-            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+            "review_text": "I recently purchased Cliphair extensions for my wedding, and I couldn’t be happier! They were absolutely perfect in every way. From the moment I received them, I was impressed by their quality. They were incredibly lightweight and comfortable throughout the day. The colour match was spot on, and they held up beautifully despite the salty air and humidity. The quality was truly remarkable. If you’re looking for high-quality, natural-looking hair, then Cliphair is the way to go!"
           }
         },
-        "review_EgzJLL": {
+        "review_Sabrina": {
           "type": "review",
           "settings": {
-            "customer_name": "Name here",
+            "customer_name": "Sabrina",
             "stars": 5,
-            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+            "review_text": "These extensions were great! I purchased them for a bride who wanted a modern Hollywood wave style and the colour blended seamlessly with the natural tones in her hair. They are always super easy to work with and easy to curl and set for the waves. I also love the price-point, especially as they are such fantastic quality."
           }
         },
-        "review_UbkHUL": {
+        "review_Holly": {
           "type": "review",
           "settings": {
-            "customer_name": "Name here",
+            "customer_name": "Holly",
             "stars": 5,
-            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam egestas sed est ut aliquet."
+            "review_text": "Wore them on my wedding day and they looked fantastic and was very pleased with how long they stayed in. Overall I am so glad I went for these amazing extensions for my wedding day, they made my hair look 100 times better."
+          }
+        },
+        "review_Sophie": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Sophie",
+            "stars": 5,
+            "review_text": "So many wonderful compliments. Perfect match, thickness is fabulous, and I feel and look incredible with this hair! Also used the extensions on my wedding day."
+          }
+        },
+        "review_Lucy": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Lucy",
+            "stars": 5,
+            "review_text": "These extensions look just like real hair and blend in really well. The colour is accurate to the photo and is enough to give a good level of volume to fine hair. Great value for money and great quality. I used these for my wedding and they made my hair look SO much nicer."
+          }
+        },
+        "review_Shannon": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Shannon",
+            "stars": 5,
+            "review_text": "Absolutely loved them! Bought extensions for my wedding and I’m glad I did now. I got so many compliments and the stylist loved them. They gave me so much more confidence."
+          }
+        },
+        "review_Jessica": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Jessica",
+            "stars": 5,
+            "review_text": "Couldn’t recommend enough! Ordered these for my wedding day and the quality of hair was unreal. Colour match was perfect!"
+          }
+        },
+        "review_Nicola": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Nicola",
+            "stars": 5,
+            "review_text": "Fantastic colour match! Bought for thickness for my wedding and you can’t even see them! Never had extensions before but the process was quick and simple. Would definitely recommend."
+          }
+        },
+        "review_Stacey": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Stacey",
+            "stars": 5,
+            "review_text": "Great quality hair! I’ve been having extensions for years and honestly these are lovely, I’ve bought these for my wedding and the company colour matched so well! Definitely recommend."
+          }
+        },
+        "review_Jennifer": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Jennifer",
+            "stars": 5,
+            "review_text": "I have never used hair extensions before and these were brilliant! These clip ins are great. They look so natural, the colour matching service is great too, and the colour I was matched with was perfect. Thank you Cliphair! I will be using these on my wedding day."
           }
         }
       },
       "block_order": [
-        "review_miMxEL",
-        "review_EgzJLL",
-        "review_UbkHUL"
+        "review_Mika",
+        "review_Sabrina",
+        "review_Holly",
+        "review_Sophie",
+        "review_Lucy",
+        "review_Shannon",
+        "review_Jessica",
+        "review_Nicola",
+        "review_Stacey",
+        "review_Jennifer"
       ],
       "name": "Bridal reviews slider",
       "settings": {
