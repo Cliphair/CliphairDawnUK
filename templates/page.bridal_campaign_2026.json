@@ -247,8 +247,8 @@
         "product_card_LTzgWG": {
           "type": "product_card",
           "settings": {
-            "product": "14-inch-mini-ponytail-extensions",
-            "collection": "",
+            "product": "",
+            "collection": "double-wefted-clip-in-hair-extensions",
             "override_image": "shopify://shop_images/Dark-Brown-Double-Weft-Clip-In-Hair-Extensions_3-dw_website-full.webp",
             "override_title": "Double Weft",
             "badge_text": ""
@@ -257,8 +257,8 @@
         "product_card_LCR4cJ": {
           "type": "product_card",
           "settings": {
-            "product": "iced-cappuccino-14-22-ultra-volume-clip-in-full-head-set-240-300g",
-            "collection": "",
+            "product": "",
+            "collection": "ultra-clip-in-hair-extensions",
             "override_title": "Ultra Volume",
             "badge_text": ""
           }
@@ -266,8 +266,8 @@
         "product_card_6kD6ke": {
           "type": "product_card",
           "settings": {
-            "product": "full-head-set-clip-in-hair-extensions-lightest-blonde-60",
-            "collection": "",
+            "product": "",
+            "collection": "full-head-clip-in-hair-extensions",
             "override_title": "Full Head Set",
             "badge_text": ""
           }
@@ -275,8 +275,8 @@
         "product_card_TnbBVa": {
           "type": "product_card",
           "settings": {
-            "product": "nano-ring-hair-extensions-double-drawn-light-auburn-30",
-            "collection": "",
+            "product": "",
+            "collection": "nano-rings-hair-extensions",
             "override_title": "Remy Nano Ring",
             "badge_text": ""
           }
@@ -284,8 +284,8 @@
         "product_card_X4fnBQ": {
           "type": "product_card",
           "settings": {
-            "product": "remy-royale-double-drawn-tape-hair-extensions-natural-mocha-melt",
-            "collection": "",
+            "product": "",
+            "collection": "remy-royale-tape-in-extensions",
             "override_title": "Remy Royale Tapes",
             "badge_text": ""
           }
