@@ -73,26 +73,27 @@
             "h1": false
           }
         },
-        "intro": {
-          "type": "text",
+        "inline_text_read_more_VAKyJW": {
+          "type": "inline_text_read_more",
           "settings": {
-            "text": "<p>This year, every look in our Wedding campaign is inspired by a real Cliphair bride and the hair that made her feel completely herself. Chosen by thousands of brides around the world and trusted by expert stylists, each look is truly aisle approved.  Real weddings. Real confidence. Hair made for the day you will never forget.</p>",
-            "read-more_text": ""
+            "text": "This year, every look in our Wedding campaign is inspired by a real Cliphair bride and the hair that made her feel completely herself. Chosen by thousands of brides around the world and trusted by expert stylists,",
+            "read_more_text": "each look is truly aisle approved.  Real weddings. Real confidence. Hair made for the day you will never forget.",
+            "read_more_label": "Read More",
+            "read_less_label": "Read Less"
           }
         }
       },
       "block_order": [
         "header",
-        "intro"
+        "inline_text_read_more_VAKyJW"
       ],
       "custom_css": [
         ".rich-text__wrapper {width: 100%;}",
         ".rich-text__blocks {margin: 0 auto;}",
         ".isolate {margin-top: 15px;}",
         ".rich-text__heading {letter-spacing: 0; font-weight: 400;}",
-        ".rich-text__text {margin-top: 1rem;}",
-        ".rich-text__text p {letter-spacing: 0; line-height: 1.2em;}",
-        "@media screen and (min-width: 990px) {.left {text-align: center; } .rich-text__heading {font-size: 2rem; } .rich-text__text {margin-top: 1.5rem; } .rich-text__text p {font-size: 1.5rem; }}"
+        ".rich-text__text {margin-top: 1rem; letter-spacing: 0; line-height: 1.2em;}",
+        "@media screen and (min-width: 990px) {.left {text-align: center; } .rich-text__heading {font-size: 2rem; } .rich-text__text {margin-top: 1.5rem; font-size: 1.5rem; }}"
       ],
       "settings": {
         "desktop_content_position": "left",
@@ -106,8 +107,8 @@
     "style_inspiration_gallery_eFqqyF": {
       "type": "style-inspiration-gallery",
       "custom_css": [
-        "h2{margin-top:30px}",
-        "@media screen and(min-width:990px){h2{margin-top:40px}}"
+        "h2 {margin-top: 30px;}",
+        "@media screen and(min-width:990px) {h2 {margin-top: 40px; }}"
       ],
       "name": "Style Inspiration Gallery",
       "settings": {
