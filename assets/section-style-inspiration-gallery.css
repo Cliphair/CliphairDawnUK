@@ -205,7 +205,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 3;
+  z-index: 2;
 }
 
 .sig-item .deferred-media__poster-button {
