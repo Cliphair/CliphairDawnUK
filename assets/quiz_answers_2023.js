@@ -41,12 +41,12 @@ var answers = {
 		</div>`,
     "type_2":`
 		<div class=' answer__image-container'>
-			<img class='answer__image lazyload' width='471' height='705' loading='lazy' src='https://cdn.shopify.com/s/files/1/0069/6470/7389/files/one_piece_clip_in_human_hair_extensions.jpg?v=1650895494'>
+			<img class='answer__image lazyload' width='471' height='705' loading='lazy' src='https://cdn.shopify.com/s/files/1/0069/6470/7389/files/613-hal_website-full.jpg?v=1768562444'>
 		</div>
 		<div class=' answer__text-container'>
-			<h3><a class='' href='https://www.cliphair.co.uk/collections/supreme-quad-weft' title='Supreme collection'>Supreme Quad Weft Hair Extensions</a></h3>
+			<h3><a class='' href='https://www.cliphair.co.uk/collections/halo-hair-extensions' title='Halo collection'>Halo Hair Extension</a></h3>
         	<p>Featuring an application point that hides easily in your natural hair, and strands that will blend in with your tresses right on the ends, giving your mane that plump and voluminous look. Perfect to achieve camera-worthy, flowing lengths.</p>
-        	<a href='https://www.cliphair.co.uk/collections/supreme-quad-weft' title='Supreme collection' class='shop-now-btn'>Shop Now</a>
+        	<a href='https://www.cliphair.co.uk/collections/halo-hair-extensions' title='Halo collection' class='shop-now-btn'>Shop Now</a>
 		</div>`,
     "type_3":`
 		<div class=' answer__image-container'>
