@@ -168,10 +168,6 @@
     top: 2.7rem;
 }
 
-.biae__deferred-popup .deferred-media__poster-button:hover {
-    transform: scale(1.08);
-}
-
 .biae__deferred-popup .deferred-media__poster-button .icon {
     width: 1.5rem;
     height: 1.5rem;

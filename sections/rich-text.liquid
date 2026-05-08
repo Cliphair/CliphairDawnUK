@@ -78,6 +78,28 @@
                   <span class="read-less__btn">Read Less</span>
                 </div>
               {% endif %}
+            {%- when 'inline_text_read_more' -%}
+              <p
+                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                <span>
+                  {{ block.settings.text }}
+                  {% if block.settings.read_more_text != blank -%}
+                    <span class="read-more__btn">{{ block.settings.read_more_label }}</span>
+                  {%- endif %}
+                </span>
+                {% if block.settings.read_more_text != blank %}
+                  <span class="hidden">
+                    {{ block.settings.read_more_text }}
+                    <span class="read-less__btn">{{ block.settings.read_less_label }}</span>
+                  </span>
+                {% endif %}
+              </p>
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -314,6 +336,36 @@
           "type": "richtext",
           "id": "read-more_text",
           "label": "Read more description"
+        }
+      ]
+    },
+    {
+      "type": "inline_text_read_more",
+      "name": "Text with read more",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Share information about your brand with your customers.",
+          "label": "Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "read_more_text",
+          "label": "Read more text"
+        },
+        {
+          "type": "text",
+          "id": "read_more_label",
+          "default": "Read More",
+          "label": "Read more label"
+        },
+        {
+          "type": "text",
+          "id": "read_less_label",
+          "default": "Read Less",
+          "label": "Read less label"
         }
       ]
     },
