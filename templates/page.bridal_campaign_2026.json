@@ -105,13 +105,16 @@
     },
     "style_inspiration_gallery_eFqqyF": {
       "type": "style-inspiration-gallery",
-      "custom_css": [],
+      "custom_css": [
+        "h2{margin-top:30px}",
+        "@media screen and(min-width:990px){h2{margin-top:40px}}"
+      ],
       "name": "Style Inspiration Gallery",
       "settings": {
         "heading": "Choose by style",
         "anchor_id": "style-inspiration-gallery",
         "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40
       }
     },
