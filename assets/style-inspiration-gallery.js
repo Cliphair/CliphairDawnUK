@@ -5,6 +5,8 @@ class StyleInspirationGallery extends HTMLElement {
 
     this.data = JSON.parse(dataEl.textContent);
     this.sectionId = this.dataset.sectionId;
+    this.anchorId = this.dataset.anchorId || '';
+    this.filterQueryParam = this.dataset.filterQueryParam || 'style_filter';
     this.activeFilter = 'all';
 
     this.gridEl = this.querySelector(`#Slider-${this.sectionId}`);
@@ -25,6 +27,7 @@ class StyleInspirationGallery extends HTMLElement {
     this.shuffledAssetsByFilter = new Map();
     this.scrollbarDrag = null;
     this.reviewWordLimit = 24;
+    this.activeFilter = this.getInitialFilter();
 
     this.bindFilters();
     this.bindSliderEvents();
@@ -237,11 +240,46 @@ class StyleInspirationGallery extends HTMLElement {
   }
 
   setActiveFilter(filterId) {
-    if (filterId === this.activeFilter) return;
+    const nextFilter = this.normalizeFilter(filterId) || 'all';
+    if (!this.filtersById.has(nextFilter) || nextFilter === this.activeFilter) return;
 
-    this.activeFilter = filterId;
+    this.activeFilter = nextFilter;
     this.updateFilterButtons();
+    this.updateFilterQueryParam();
     this.renderSlides(false);
+  }
+
+  getInitialFilter() {
+    const params = new URLSearchParams(window.location.search);
+    const requestedFilter = this.normalizeFilter(params.get(this.filterQueryParam) || '');
+
+    if (!requestedFilter || !this.filtersById.has(requestedFilter)) {
+      return 'all';
+    }
+
+    const hashTarget = this.normalizeHash(window.location.hash);
+    if (!hashTarget) {
+      return requestedFilter;
+    }
+
+    const validTargets = [this.normalizeHash(this.anchorId), this.normalizeHash(this.id)].filter(Boolean);
+    return validTargets.includes(hashTarget) ? requestedFilter : 'all';
+  }
+
+  updateFilterQueryParam() {
+    if (!window.history?.replaceState) return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (this.activeFilter === 'all') {
+      params.delete(this.filterQueryParam);
+    } else {
+      params.set(this.filterQueryParam, this.toFilterParamValue(this.activeFilter));
+    }
+
+    const queryString = params.toString();
+    const nextUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`;
+    window.history.replaceState({}, '', nextUrl);
   }
 
   resetSliderPosition(smooth = false) {
@@ -490,7 +528,15 @@ class StyleInspirationGallery extends HTMLElement {
   }
 
   normalizeFilter(value = '') {
-    return String(value).trim().toLowerCase();
+    return String(value).trim().toLowerCase().replace(/[-_]+/g, ' ').replace(/\s+/g, ' ');
+  }
+
+  normalizeHash(value = '') {
+    return String(value).trim().replace(/^#/, '').toLowerCase();
+  }
+
+  toFilterParamValue(value = '') {
+    return this.normalizeFilter(value).replace(/\s+/g, '-');
   }
 
   escAttr(str) {

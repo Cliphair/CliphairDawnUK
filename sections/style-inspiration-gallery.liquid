@@ -16,9 +16,25 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign section_anchor_id = section.settings.anchor_id | handleize
+
+  if section_anchor_id == blank
+    assign section_anchor_id = 'style-inspiration-gallery-' | append: section.id
+  endif
+-%}
+
+{%- style -%}
+  #{{ section_anchor_id }} {
+    scroll-margin-top: calc(var(--header-height, 0px) + 2rem);
+  }
+{%- endstyle -%}
+
 <style-inspiration-gallery
-  id="StyleGallery-{{ section.id }}"
+  id="{{ section_anchor_id }}"
   class="section-style-inspiration-gallery color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  data-anchor-id="{{ section_anchor_id }}"
+  data-filter-query-param="style_filter"
   data-section-id="{{ section.id }}"
 >
   <div class="page-width">
@@ -618,6 +634,13 @@
       "id": "heading",
       "label": "Heading",
       "default": "Choose by style"
+    },
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "info": "Used for direct links, for example #style-inspiration-gallery",
+      "default": "style-inspiration-gallery"
     },
     {
       "type": "color_scheme",
