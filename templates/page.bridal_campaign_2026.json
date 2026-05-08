@@ -99,15 +99,17 @@
         "content_alignment": "left",
         "color_scheme": "scheme-e4399386-e738-4bbf-ba69-1c461dd9d271",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "style_inspiration_gallery_eFqqyF": {
       "type": "style-inspiration-gallery",
+      "custom_css": [],
       "name": "Style Inspiration Gallery",
       "settings": {
         "heading": "Choose by style",
+        "anchor_id": "style-inspiration-gallery",
         "color_scheme": "scheme-f18383b0-5e18-4a1f-9121-af2b6ea63b5c",
         "padding_top": 40,
         "padding_bottom": 40
