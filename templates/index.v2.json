@@ -37,9 +37,9 @@
         "slide_H7gM9z": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/homepage-banner-rewards-mobile.jpg",
-            "image_desktop": "shopify://shop_images/homepage-banner-rewards-desktop.jpg",
-            "image_url": "shopify://pages/rewards",
+            "image": "shopify://shop_images/bridal-2026-mobile-banner.jpg",
+            "image_desktop": "shopify://shop_images/bridal-2026-desktop-banner.jpg",
+            "image_url": "shopify://pages/cliphair-bridal-hair-extensions",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -52,14 +52,15 @@
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
-            "banner_id": "rewards"
+            "banner_id": "bridal-2026"
           }
         },
         "slide_TpRyJJ": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/lived-in-colour-mobile-v1.jpg",
-            "image_desktop": "shopify://shop_images/lived-in-colour-desktop-v2.jpg",
+            "image": "shopify://shop_images/lived-in-colour-mobile-v2.jpg",
+            "image_desktop": "shopify://shop_images/lived-in-colour-desktop-v1.jpg",
             "image_url": "shopify://collections/balayage-hair-extensions",
             "heading": "",
             "heading_size": "h1",
@@ -78,8 +79,8 @@
         },
         "slide_cnhnUM": {
           "type": "slide",
-          "disabled": true,
           "name": "Shop By Shade",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
             "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
