@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -20,7 +20,7 @@
       "type": "back-to",
       "disabled": true,
       "settings": {
-        "back_url": "shopify:\/\/pages\/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -37,77 +37,77 @@
         "5cf4a578-3a7c-4b75-8bda-e9e256b1346a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "4c443c67-0909-4aae-a9f7-de0b4048a6ac": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "2d56f423-76e2-4284-b4d2-d39f5bde082d": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "8d432e39-bf04-47f9-8a71-b6564a527788": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "3b6484f7-dd5d-4c33-86ab-37d858595aee": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "cbc59886-7721-4179-8e76-fa8493333b83": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "1f082aa3-7d54-46b1-9a2d-0946fbe6f500": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "743ff431-0882-4164-ac19-b756fbae1ad7": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "426281ce-2920-445f-9935-82f71c8a5392": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "9dd4957e-5772-410d-92e6-373f5029dd7b": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "d157ae1d-23d0-4d77-8b12-8d30cb1fdca8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         }
@@ -159,9 +159,9 @@
         "desktop-p_left": 30,
         "enable_text": true,
         "custom_text": true,
-        "header": "<h1>WEDDING HAIR QUIZ<\/h1>",
+        "header": "<h1>WEDDING HAIR QUIZ</h1>",
         "sub_header": "",
-        "description": "<p>Finding the perfect look for a big day isn't always easy, but don't worry - we've got you covered.<\/p>",
+        "description": "<p>Finding the perfect look for a big day isn't always easy, but don't worry - we've got you covered.</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h1",
@@ -196,17 +196,12 @@
       "settings": {
         "bg_color": "#4e4e4e",
         "max_width": "1500",
-        "height": 1,
-        "mobile-p_top-bottom": 10,
-        "mobile-p_sides": 20,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 50
+        "height": 1
       }
     },
     "template": {
       "type": "bridal_quiz_2024",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

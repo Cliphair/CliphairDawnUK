@@ -9,12 +9,9 @@
  */
 {
   "sections": {
-    "header":{
+    "header": {
       "type": "page-header",
-      "settings": {
-        "custom-title": false,
-        "hide": true
-      }
+      "settings": {}
     },
     "166445343207c9fec0": {
       "type": "page_font_bridal23",
@@ -29,7 +26,7 @@
     "4d843d5e-c6f7-4b45-90ae-75194bbc4062": {
       "type": "back-to",
       "settings": {
-        "back_url": "shopify:\/\/pages\/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -46,77 +43,77 @@
         "5cf4a578-3a7c-4b75-8bda-e9e256b1346a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "4c443c67-0909-4aae-a9f7-de0b4048a6ac": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "2d56f423-76e2-4284-b4d2-d39f5bde082d": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "8d432e39-bf04-47f9-8a71-b6564a527788": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "3b6484f7-dd5d-4c33-86ab-37d858595aee": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "cbc59886-7721-4179-8e76-fa8493333b83": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "1f082aa3-7d54-46b1-9a2d-0946fbe6f500": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "743ff431-0882-4164-ac19-b756fbae1ad7": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "426281ce-2920-445f-9935-82f71c8a5392": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "9dd4957e-5772-410d-92e6-373f5029dd7b": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "d157ae1d-23d0-4d77-8b12-8d30cb1fdca8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         }
@@ -160,8 +157,8 @@
       "settings": {
         "max-width": "2560",
         "bg-color": "#FFF",
-        "desktop-image": "shopify:\/\/shop_images\/bride-desktop.jpg",
-        "mobile-image": "shopify:\/\/shop_images\/bride-mobile.jpg",
+        "desktop-image": "shopify://shop_images/bride-desktop.jpg",
+        "mobile-image": "shopify://shop_images/bride-mobile.jpg",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -184,8 +181,8 @@
         "custom_text": true,
         "header": "",
         "sub_header": "",
-        "description": "<p>For the modern bride we’ve selected a curly modification of classic Hollywood Waves, in line with her bold imagery and colour of choice.<\/p>",
-        "read_more": "<p>A consistent deep side part melts in a cascade of beautifully curated curls obtained by using Ultra Volume hair extensions for ultimate fullness and body. The finish is kept classy yet edgy with bold, dark roots fading in an ashy blonde tone<\/p>",
+        "description": "<p>For the modern bride we’ve selected a curly modification of classic Hollywood Waves, in line with her bold imagery and colour of choice.</p>",
+        "read_more": "<p>A consistent deep side part melts in a cascade of beautifully curated curls obtained by using Ultra Volume hair extensions for ultimate fullness and body. The finish is kept classy yet edgy with bold, dark roots fading in an ashy blonde tone</p>",
         "text_width": 100,
         "title_tag": "h2",
         "header_mobile_font": 10,
@@ -220,37 +217,37 @@
         "db6e6d6c-1024-4b7b-81ea-ca860641ded6": {
           "type": "text",
           "settings": {
-            "intro": "<p><em>wearing... <\/em><\/p>",
-            "title": "<p>ULTRA VOLUME CLIP-INS<\/p>",
-            "text": "<p>Romantic & Voluptuous. The unmatched volume of this clip-in set adds instant thickness for a full-bodied, irresistibly plump mane<\/p>",
+            "intro": "<p><em>wearing... </em></p>",
+            "title": "<p>ULTRA VOLUME CLIP-INS</p>",
+            "text": "<p>Romantic & Voluptuous. The unmatched volume of this clip-in set adds instant thickness for a full-bodied, irresistibly plump mane</p>",
             "btn-text": "SHOP NOW",
-            "btn-url": "shopify:\/\/collections\/ultra-clip-in-hair-extensions"
+            "btn-url": "shopify://collections/ultra-clip-in-hair-extensions"
           }
         },
         "7b0b45a9-ef51-4523-994e-999f26181054": {
           "type": "product-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/product_bd775368-982c-470f-aad2-3a06d3cbbd22.jpg",
-            "url": "shopify:\/\/products\/blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
+            "image": "shopify://shop_images/product_bd775368-982c-470f-aad2-3a06d3cbbd22.jpg",
+            "url": "shopify://products/blondeme-60-ss-ultra-volume-clip-in-full-head-set-240-300g"
           }
         },
         "01181e71-d833-4436-ac59-7cc84fce23bb": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_8973d01d-1fb7-469d-8e7d-74d8e6f5c2d8.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0e1b81bd2a0c4d759d93fb8eded43ec1.mp4"
+            "image": "shopify://shop_images/video_8973d01d-1fb7-469d-8e7d-74d8e6f5c2d8.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/0e1b81bd2a0c4d759d93fb8eded43ec1.mp4"
           }
         },
         "880f6fab-4f77-4019-8192-c3ef9f7de5e7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/model_ad070614-f203-4882-a96c-1c625f02db6d.jpg"
+            "image": "shopify://shop_images/model_ad070614-f203-4882-a96c-1c625f02db6d.jpg"
           }
         },
         "a1e182ae-c69b-40b9-8be9-ef3bbedc8dd5": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/model2.jpg"
+            "image": "shopify://shop_images/model2.jpg"
           }
         }
       },
@@ -261,11 +258,9 @@
         "880f6fab-4f77-4019-8192-c3ef9f7de5e7",
         "a1e182ae-c69b-40b9-8be9-ef3bbedc8dd5"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "header": "<p><em>Romantic & Voluptuous<\/em><\/p>",
+        "header": "<p><em>Romantic & Voluptuous</em></p>",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1440",
@@ -304,11 +299,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 10,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "3e9392eb-32e5-4fed-9458-3c5dceff56e9": {
@@ -317,13 +308,13 @@
         "0dc58b64-3fbf-4d51-ac90-226fccfb0c84": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/before_e7000b64-9a1f-49d2-887f-7053ddc145e3.jpg"
+            "image": "shopify://shop_images/before_e7000b64-9a1f-49d2-887f-7053ddc145e3.jpg"
           }
         },
         "c12d7994-80a6-43f7-b40a-c1681cc8cde3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/after_2b5b126c-c3e7-4723-a431-08bf49400b77.jpg"
+            "image": "shopify://shop_images/after_2b5b126c-c3e7-4723-a431-08bf49400b77.jpg"
           }
         }
       },
@@ -332,8 +323,8 @@
         "c12d7994-80a6-43f7-b40a-c1681cc8cde3"
       ],
       "settings": {
-        "header": "<p>GLOSS & GLAM: Before & After<\/p>",
-        "shade-image": "shopify:\/\/shop_images\/shade_525bbd42-4e95-4369-ab0b-0a7c52451179.jpg",
+        "header": "<p>GLOSS & GLAM: Before & After</p>",
+        "shade-image": "shopify://shop_images/shade_525bbd42-4e95-4369-ab0b-0a7c52451179.jpg",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "768",
@@ -397,7 +388,7 @@
         "desktop-arrow": 40,
         "include-btn": true,
         "btn-text": "MORE BLOGS",
-        "btn-url": "https:\/\/www.cliphair.co.uk\/blogs\/hair-blog\/tagged\/bridal-blogs",
+        "btn-url": "https://www.cliphair.co.uk/blogs/hair-blog/tagged/bridal-blogs",
         "btn-color": "#000000",
         "btn-bg-color": "#edeae7"
       }
@@ -408,14 +399,14 @@
         "e706980d-4910-4ca6-ac0c-68f3f6cbf9cd": {
           "type": "html-intro",
           "settings": {
-            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type<\/p>\n<p><i class=\"fa-solid fa-question\"><\/i><\/p>\n<p>You have short hair &amp; are considering getting hair extensions<\/p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"><\/i><\/p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you<\/p>\n<p><i class=\"fa-regular fa-heart\"><\/i><\/p>\n<p>It's your first time getting hair extensions<\/p>\n<p><i class=\"fa-regular fa-clock\"><\/i><\/p>"
+            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type</p>\n<p><i class=\"fa-solid fa-question\"></i></p>\n<p>You have short hair &amp; are considering getting hair extensions</p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"></i></p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you</p>\n<p><i class=\"fa-regular fa-heart\"></i></p>\n<p>It's your first time getting hair extensions</p>\n<p><i class=\"fa-regular fa-clock\"></i></p>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
           "type": "button",
           "settings": {
             "btn-text": "ASK US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         }
       },
