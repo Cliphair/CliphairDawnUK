@@ -21,6 +21,9 @@ class StyleInspirationGallery extends HTMLElement {
     this.layoutEl = this.querySelector('.sig-layout');
     this.panelPlaceholderEl = this.querySelector(`#SigPanelPlaceholder-${this.sectionId}`);
     this.reviewToggleEl = this.querySelector('.sig-panel__review-toggle');
+    this.imageModalEl = document.getElementById(`SigImageModal-${this.sectionId}`);
+    this.imageModalDialogEl = this.imageModalEl?.querySelector('[role="dialog"]');
+    this.imageModalContentEl = this.imageModalEl?.querySelector('.sig-image-modal__content-info');
     this.filtersById = new Map(
       (this.data.filters || []).map((filter) => [this.normalizeFilter(filter.id || filter.label), filter])
     );
@@ -33,6 +36,7 @@ class StyleInspirationGallery extends HTMLElement {
     this.bindSliderEvents();
     this.bindScrollbar();
     this.bindReviewToggle();
+    this.bindImageModal();
     this.renderSlides(true);
   }
 
@@ -148,7 +152,20 @@ class StyleInspirationGallery extends HTMLElement {
 
     const filterTrigger = tile.querySelector('.sig-item__filter-trigger');
     if (filterTrigger) {
-      filterTrigger.addEventListener('click', () => this.onItemClick(item));
+      filterTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        this.onItemActivate(item);
+      });
+    }
+
+    const playTrigger = tile.querySelector('.sig-item__play-trigger');
+    if (playTrigger) {
+      playTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        this.onItemActivate(item, { source: 'play-trigger' });
+      });
     }
 
     return tile;
@@ -157,12 +174,12 @@ class StyleInspirationGallery extends HTMLElement {
   imageHTML(item, isTall = false) {
     const src = item.src || '';
     if (!src) {
-      return `<span class="visually-hidden">${this.escAttr(item.alt)}</span>`;
+      return `<span class="visually-hidden">${this.escAttr(item.alt || '')}</span>`;
     }
 
     return `<img
       src="${this.escAttr(src)}"
-      alt="${this.escAttr(item.alt)}"
+      alt="${this.escAttr(item.alt || '')}"
       loading="lazy"
       class="sig-item__img"
       width="186"
@@ -171,62 +188,46 @@ class StyleInspirationGallery extends HTMLElement {
     <button
       type="button"
       class="sig-item__filter-trigger"
-      aria-label="Show ${this.escAttr(item.alt)} details"
+      aria-label="Show ${this.escAttr(item.alt || 'style image')} details and enlarge image"
     ></button>`;
   }
 
   videoHTML(item, isTall = false) {
     const poster = item.poster || '';
-    const src = item.src || '';
-    const posterId = `Deferred-Poster-sig-${item.id}`;
     const posterImg = poster
-      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}" loading="lazy" class="sig-item__img" width="186" height="${isTall ? 498 : 245}">`
-      : '';
-    const popupPosterAttr = poster ? ` poster="${this.escAttr(poster)}"` : '';
-    const popupPosterFallback = poster
-      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt)}">`
+      ? `<img src="${this.escAttr(poster)}" alt="${this.escAttr(item.alt || '')}" loading="lazy" class="sig-item__img" width="186" height="${isTall ? 498 : 245}">`
       : '';
 
-    return `<deferred-media-popup
-      class="deferred-media global-media-settings sig-deferred-media"
-      data-media-id="sig-${this.escAttr(item.id)}"
-    >
+    return `<div class="sig-video-tile">
       ${posterImg}
       <button
         type="button"
         class="sig-item__filter-trigger sig-item__filter-trigger--video"
-        aria-label="Show ${this.escAttr(item.alt)} details"
+        aria-label="Show ${this.escAttr(item.alt || 'style video')} details and play video"
       ></button>
       <button
         type="button"
-        id="${posterId}"
-        class="deferred-media__poster sig-item__play-trigger"
-        aria-label="Play video: ${this.escAttr(item.alt)}"
+        class="sig-item__play-trigger"
+        aria-label="Play video: ${this.escAttr(item.alt || 'style video')}"
       >
-        <span class="deferred-media__poster-button motion-reduce">
+        <span class="sig-item__play-button motion-reduce">
           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-play" fill="none" viewBox="0 0 10 14">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.48177 0.814643C0.81532 0.448245 0 0.930414 0 1.69094V12.2081C0 12.991 0.858787 13.4702 1.52503 13.0592L10.5398 7.49813C11.1918 7.09588 11.1679 6.13985 10.4965 5.77075L1.48177 0.814643Z" fill="currentColor"/>
           </svg>
         </span>
       </button>
-      <template>
-        <video playsinline="playsinline" autoplay="autoplay" controls="controls" preload="metadata" class="sig-video" style="width:100%;max-height:80vh;"${popupPosterAttr}>
-          <source src="${this.escAttr(src)}" type="video/mp4">
-          ${popupPosterFallback}
-        </video>
-      </template>
-    </deferred-media-popup>`;
+    </div>`;
   }
 
-  onItemClick(item) {
+  onItemActivate(item, { source = 'tile' } = {}) {
     const targetFilter = this.getTargetFilter(item);
-    if (!targetFilter || targetFilter === this.activeFilter) return;
+    const shouldUpdateFilter = Boolean(targetFilter && targetFilter !== this.activeFilter);
 
-    this.setActiveFilter(targetFilter);
-
-    if (window.innerWidth <= 430) {
-      this.panelEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (shouldUpdateFilter) {
+      this.setActiveFilter(targetFilter);
     }
+
+    this.openMediaModal(item, { source });
   }
 
   getTargetFilter(item) {
@@ -247,6 +248,51 @@ class StyleInspirationGallery extends HTMLElement {
     this.updateFilterButtons();
     this.updateFilterQueryParam();
     this.renderSlides(false);
+  }
+
+  openMediaModal(item) {
+    if (!this.imageModalEl || !this.imageModalContentEl || !item?.src) return;
+
+    const altText = item.alt || (item.type === 'video' ? 'Style inspiration video' : 'Style inspiration image');
+    if (this.imageModalDialogEl) {
+      this.imageModalDialogEl.setAttribute(
+        'aria-label',
+        item.type === 'video' ? `Expanded video: ${altText}` : `Expanded image: ${altText}`
+      );
+    }
+
+    this.imageModalEl.show(this.getFocusReturnTarget());
+
+    this.imageModalContentEl.innerHTML = item.type === 'video'
+      ? `<video
+          class="sig-image-modal__media sig-image-modal__media--video"
+          playsinline
+          autoplay
+          controls
+          preload="metadata"
+          ${item.poster ? `poster="${this.escAttr(item.poster)}"` : ''}
+        >
+          <source src="${this.escAttr(item.src)}" type="video/mp4">
+        </video>`
+      : `<img
+          class="sig-image-modal__media sig-image-modal__media--image"
+          src="${this.escAttr(item.src)}"
+          alt="${this.escAttr(altText)}"
+          loading="eager"
+          width="1200"
+          height="1600"
+        >`;
+
+    if (item.type === 'video') {
+      const videoEl = this.imageModalContentEl.querySelector('video');
+      requestAnimationFrame(() => {
+        videoEl?.play?.().catch(() => { });
+      });
+    }
+  }
+
+  getFocusReturnTarget() {
+    return this.filterButtons.find((button) => button.getAttribute('aria-selected') === 'true') || this;
   }
 
   getInitialFilter() {
@@ -382,6 +428,19 @@ class StyleInspirationGallery extends HTMLElement {
         ? this.getReviewPreview(fullText)
         : fullText;
       this.reviewToggleEl.textContent = isExpanded ? 'Read more' : 'Read less';
+    });
+  }
+
+  bindImageModal() {
+    if (!this.imageModalEl || !this.imageModalDialogEl) return;
+
+    this.imageModalDialogEl.addEventListener('click', (event) => {
+      const clickedMedia = event.target.closest('.sig-image-modal__media');
+      const clickedCloseButton = event.target.closest('.sig-image-modal__toggle');
+
+      if (!clickedMedia && !clickedCloseButton) {
+        this.imageModalEl.hide();
+      }
     });
   }
 

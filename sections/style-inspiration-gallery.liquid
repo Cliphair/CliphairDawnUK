@@ -616,6 +616,26 @@
       ]
     }
   </script>
+
+  <modal-dialog id="SigImageModal-{{ section.id }}" class="sig-image-modal">
+    <div
+      role="dialog"
+      aria-label="Expanded style media"
+      aria-modal="true"
+      class="sig-image-modal__content"
+      tabindex="-1"
+    >
+      <button
+        id="ModalClose-SigImageModal-{{ section.id }}"
+        type="button"
+        class="sig-image-modal__toggle"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {%- render 'icon-close' -%}
+      </button>
+      <div class="sig-image-modal__content-info"></div>
+    </div>
+  </modal-dialog>
 </style-inspiration-gallery>
 
 <script src="{{ 'style-inspiration-gallery.js' | asset_url }}" defer></script>
