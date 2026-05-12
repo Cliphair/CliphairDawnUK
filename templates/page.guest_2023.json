@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -13,7 +22,7 @@
     "4d843d5e-c6f7-4b45-90ae-75194bbc4062": {
       "type": "back-to",
       "settings": {
-        "back_url": "shopify:\/\/pages\/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -30,77 +39,77 @@
         "5cf4a578-3a7c-4b75-8bda-e9e256b1346a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "4c443c67-0909-4aae-a9f7-de0b4048a6ac": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "2d56f423-76e2-4284-b4d2-d39f5bde082d": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "8d432e39-bf04-47f9-8a71-b6564a527788": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "3b6484f7-dd5d-4c33-86ab-37d858595aee": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "cbc59886-7721-4179-8e76-fa8493333b83": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "1f082aa3-7d54-46b1-9a2d-0946fbe6f500": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "743ff431-0882-4164-ac19-b756fbae1ad7": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "426281ce-2920-445f-9935-82f71c8a5392": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "9dd4957e-5772-410d-92e6-373f5029dd7b": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "d157ae1d-23d0-4d77-8b12-8d30cb1fdca8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         }
@@ -151,9 +160,9 @@
         "desktop-p_left": 30,
         "enable_text": true,
         "custom_text": true,
-        "header": "<p><em>CELEBRATING SOMEONE’S EVERLASTING LOVE?<\/em><\/p>",
+        "header": "<p><em>CELEBRATING SOMEONE’S EVERLASTING LOVE?</em></p>",
         "sub_header": "",
-        "description": "<p>Check out how to do it in style with our Wedding Guest Lookbook. Elegant updos, romantic half-ups, modern free-flowing lengths… And how to get the look in the comfort of your own home. Curated by hair and trend experts!<\/p>",
+        "description": "<p>Check out how to do it in style with our Wedding Guest Lookbook. Elegant updos, romantic half-ups, modern free-flowing lengths… And how to get the look in the comfort of your own home. Curated by hair and trend experts!</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -189,8 +198,8 @@
         "4311b137-2a03-479d-ba05-9874ab7b94a7": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/red_hair_thumbnail.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5a9c4fe7699f428ca2336c2677d5babe.mp4",
+            "image": "shopify://shop_images/red_hair_thumbnail.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/5a9c4fe7699f428ca2336c2677d5babe.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -200,8 +209,8 @@
         "3f100ab2-e2e5-4b0a-ba14-9f81be03f237": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_1_96aa6405-115c-43f0-8964-b74dd7dada7c.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e059dc4c21dc474b859ef8aca67af7ee.mp4",
+            "image": "shopify://shop_images/video_1_96aa6405-115c-43f0-8964-b74dd7dada7c.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/e059dc4c21dc474b859ef8aca67af7ee.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -211,8 +220,8 @@
         "f136dd82-10ff-461d-8c06-e0ebf2c0565d": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_8_d97f4a7d-57f0-4aec-90b6-bbb2f0b1d06c.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9e6ec0e899cc471e877071d46854fbbf.mp4",
+            "image": "shopify://shop_images/video_8_d97f4a7d-57f0-4aec-90b6-bbb2f0b1d06c.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/9e6ec0e899cc471e877071d46854fbbf.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -222,8 +231,8 @@
         "7033f690-4013-4b3a-a7d9-931f50224649": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_7.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/53b850b2891946faa61c3097d422d8f1.mp4",
+            "image": "shopify://shop_images/video_7.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/53b850b2891946faa61c3097d422d8f1.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -233,8 +242,8 @@
         "9044efb2-d4e6-4a93-973c-01f644910929": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_6.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/27b5f54361b44c25a5481a7b10710f2a.mp4",
+            "image": "shopify://shop_images/video_6.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/27b5f54361b44c25a5481a7b10710f2a.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -244,8 +253,8 @@
         "38f2a608-7e1c-4a64-83d3-4466487cb30b": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_5_d956e0be-b39f-4c57-93f2-cdc6160e2384.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e1a51063a0a44bf09c0ce5fec1e3adc5.mp4",
+            "image": "shopify://shop_images/video_5_d956e0be-b39f-4c57-93f2-cdc6160e2384.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/e1a51063a0a44bf09c0ce5fec1e3adc5.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -255,8 +264,8 @@
         "df42cf72-1239-4dda-83ab-d51df5bba471": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_4_791ab290-e86b-4208-a64d-c5979d0dd04a.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4f8325caaf4bde931d66b49637d8b5.mp4",
+            "image": "shopify://shop_images/video_4_791ab290-e86b-4208-a64d-c5979d0dd04a.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/ab4f8325caaf4bde931d66b49637d8b5.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -266,8 +275,8 @@
         "448e401b-452f-4eed-95a6-233e03b85e2a": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_3_e84cfadb-1796-4e0a-8788-9565d4eba706.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cabb3c3579884c00a3a3b79aa6ca3e08.mp4",
+            "image": "shopify://shop_images/video_3_e84cfadb-1796-4e0a-8788-9565d4eba706.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/cabb3c3579884c00a3a3b79aa6ca3e08.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -277,8 +286,8 @@
         "8c9499de-647d-4e66-a28a-3701334628ad": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_2_5654aaf9-fade-4e9d-9fdb-dd2492e78a24.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5a676bec32bb41b6aee81c4ccde8544d.mp4",
+            "image": "shopify://shop_images/video_2_5654aaf9-fade-4e9d-9fdb-dd2492e78a24.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/5a676bec32bb41b6aee81c4ccde8544d.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -301,7 +310,7 @@
         "img {border-radius: 8px;}"
       ],
       "settings": {
-        "header": "<p>BECOME A TRUE WEDDING A-LISTER<\/p>",
+        "header": "<p>BECOME A TRUE WEDDING A-LISTER</p>",
         "intro": "",
         "image_orientation": "portrait",
         "title-position": "bottom",
@@ -338,7 +347,7 @@
         "arrow-position-desktop": 45,
         "include-btn": true,
         "btn-text": "SEE MORE",
-        "btn-url": "\/pages\/2023-bridal-hair-extensions-videos",
+        "btn-url": "/pages/2023-bridal-hair-extensions-videos",
         "btn-color": "#ffffff",
         "btn-bg-color": "#000000",
         "btn-size-mobile": 12,
@@ -350,11 +359,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 10,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "c8d5f432-7d2a-4eba-8e14-45785e411715": {
@@ -363,36 +368,36 @@
         "a46ea66b-02de-4e4a-9747-e4083af904e1": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/social_1.jpg",
+            "image": "shopify://shop_images/social_1.jpg",
             "circle_image": false,
             "border": false,
             "text": "",
             "subtitle": "",
-            "url": "https:\/\/www.instagram.com\/p\/CqtKa80qFQf\/ ",
+            "url": "https://www.instagram.com/p/CqtKa80qFQf/ ",
             "image-url": ""
           }
         },
         "41dd8db0-091d-45f3-bea2-db26aea4d968": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/social_2.jpg",
+            "image": "shopify://shop_images/social_2.jpg",
             "circle_image": false,
             "border": false,
             "text": "",
             "subtitle": "",
-            "url": "https:\/\/www.instagram.com\/p\/CqGpSfsr3Ys\/",
+            "url": "https://www.instagram.com/p/CqGpSfsr3Ys/",
             "image-url": ""
           }
         },
         "f7dacb9b-33ea-43e4-9f7d-95638bae60ad": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/social_3.jpg",
+            "image": "shopify://shop_images/social_3.jpg",
             "circle_image": false,
             "border": false,
             "text": "",
             "subtitle": "",
-            "url": "https:\/\/www.instagram.com\/p\/Cp8WHM_MQ_R\/",
+            "url": "https://www.instagram.com/p/Cp8WHM_MQ_R/",
             "image-url": ""
           }
         }
@@ -403,10 +408,10 @@
         "f7dacb9b-33ea-43e4-9f7d-95638bae60ad"
       ],
       "settings": {
-        "header": "<p>STAY SOCIAL<\/p>",
+        "header": "<p>STAY SOCIAL</p>",
         "intro": "",
         "main-button-text": "EXPLORE MORE",
-        "main-button-url": "https:\/\/www.instagram.com\/cliphairlimited\/",
+        "main-button-url": "https://www.instagram.com/cliphairlimited/",
         "max_width": "1440",
         "bg_color": "#ffffff",
         "mobile-p_top": 10,
@@ -424,7 +429,7 @@
         "desktop-text-font_size": 20,
         "text_color": "#000000",
         "include-button": false,
-        "button-text": "<p>test<\/p>",
+        "button-text": "<p>test</p>",
         "mobile-button-font_size": 12,
         "desktop-button-font_size": 18,
         "button_color": "#000000",
@@ -448,23 +453,23 @@
         "5ae7fff7-f977-42b8-a791-c95cd1d06710": {
           "type": "review",
           "settings": {
-            "title": "<p>FANTASTIC COLOUR MATCH!<\/p>",
+            "title": "<p>FANTASTIC COLOUR MATCH!</p>",
             "author": "Nicole L.",
-            "content": "<p>Fantastic colour match! Bought for thickness for my wedding and you can’t even see them! Never had extensions before but the process was quick<\/p>",
+            "content": "<p>Fantastic colour match! Bought for thickness for my wedding and you can’t even see them! Never had extensions before but the process was quick</p>",
             "read-more": "",
             "review-stars": 5,
-            "image": "shopify:\/\/shop_images\/review_2.jpg"
+            "image": "shopify://shop_images/review_2.jpg"
           }
         },
         "f0106ea6-4b76-4884-b73d-97edb7225eb3": {
           "type": "review",
           "settings": {
-            "title": "<p>WOULD HIGHLY RECOMMEND<\/p>",
+            "title": "<p>WOULD HIGHLY RECOMMEND</p>",
             "author": "Joanna Q.",
-            "content": "<p>I purchased the wrap around ponytail for my friends wedding. It was so easy to put in and stayed in place the whole day\/night. Would highly recommend. I have fine hair and the volume that it added was amazing.<\/p>",
+            "content": "<p>I purchased the wrap around ponytail for my friends wedding. It was so easy to put in and stayed in place the whole day/night. Would highly recommend. I have fine hair and the volume that it added was amazing.</p>",
             "read-more": "",
             "review-stars": 5,
-            "image": "shopify:\/\/shop_images\/review_1.jpg"
+            "image": "shopify://shop_images/review_1.jpg"
           }
         }
       },
@@ -473,7 +478,7 @@
         "f0106ea6-4b76-4884-b73d-97edb7225eb3"
       ],
       "settings": {
-        "title": "<p><strong>What Our Wedding Superstars Say...<\/strong><\/p>",
+        "title": "<p><strong>What Our Wedding Superstars Say...</strong></p>",
         "max-width": "1440",
         "header-color": "#000000",
         "text-color": "#000000",
@@ -506,7 +511,7 @@
         "arrow-position-desktop": 45,
         "include-btn": true,
         "btn-text": "MORE REVIEWS",
-        "btn-url": "\/pages\/2023-bridal-hair-extensions-reviews",
+        "btn-url": "/pages/2023-bridal-hair-extensions-reviews",
         "btn-color": "#000000",
         "btn-bg-color": "#edeae7"
       }
@@ -516,11 +521,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 10,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "c40d35d5-1ed0-4861-90e6-3cbeff9d1e0c": {
@@ -560,7 +561,7 @@
         "desktop-arrow": 40,
         "include-btn": true,
         "btn-text": "MORE BLOGS",
-        "btn-url": "https:\/\/www.cliphair.co.uk\/blogs\/hair-blog\/tagged\/bridal-blogs",
+        "btn-url": "https://www.cliphair.co.uk/blogs/hair-blog/tagged/bridal-blogs",
         "btn-color": "#000000",
         "btn-bg-color": "#edeae7"
       }
@@ -570,11 +571,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 10,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "bridal23_custom-text": {
@@ -583,14 +580,14 @@
         "e706980d-4910-4ca6-ac0c-68f3f6cbf9cd": {
           "type": "html-intro",
           "settings": {
-            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type<\/p>\n<p><i class=\"fa-solid fa-question\"><\/i><\/p>\n<p>You have short hair &amp; are considering getting hair extensions<\/p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"><\/i><\/p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you<\/p>\n<p><i class=\"fa-regular fa-heart\"><\/i><\/p>\n<p>It's your first time getting hair extensions<\/p>\n<p><i class=\"fa-regular fa-clock\"><\/i><\/p>"
+            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type</p>\n<p><i class=\"fa-solid fa-question\"></i></p>\n<p>You have short hair &amp; are considering getting hair extensions</p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"></i></p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you</p>\n<p><i class=\"fa-regular fa-heart\"></i></p>\n<p>It's your first time getting hair extensions</p>\n<p><i class=\"fa-regular fa-clock\"></i></p>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
           "type": "button",
           "settings": {
             "btn-text": "ASK US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         }
       },

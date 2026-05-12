@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "166445343207c9fec0": {
@@ -13,7 +22,7 @@
     "4d843d5e-c6f7-4b45-90ae-75194bbc4062": {
       "type": "back-to",
       "settings": {
-        "back_url": "shopify:\/\/pages\/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -30,77 +39,77 @@
         "5cf4a578-3a7c-4b75-8bda-e9e256b1346a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "4c443c67-0909-4aae-a9f7-de0b4048a6ac": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "2d56f423-76e2-4284-b4d2-d39f5bde082d": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "8d432e39-bf04-47f9-8a71-b6564a527788": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "3b6484f7-dd5d-4c33-86ab-37d858595aee": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "cbc59886-7721-4179-8e76-fa8493333b83": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "1f082aa3-7d54-46b1-9a2d-0946fbe6f500": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "743ff431-0882-4164-ac19-b756fbae1ad7": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "426281ce-2920-445f-9935-82f71c8a5392": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "9dd4957e-5772-410d-92e6-373f5029dd7b": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "d157ae1d-23d0-4d77-8b12-8d30cb1fdca8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         }
@@ -154,9 +163,9 @@
         "desktop-p_left": 30,
         "enable_text": true,
         "custom_text": true,
-        "header": "<h1><em>STYLIST SPOTLIGHT<\/em><\/h1>",
+        "header": "<h1><em>STYLIST SPOTLIGHT</em></h1>",
         "sub_header": "",
-        "description": "<p>See how these skilled hair professionals used Cliphair’s hair extensions to transform their wedding creations. From blushing brides to trendy wedding guests, let these gorgeous, curated looks inspire you!<\/p>",
+        "description": "<p>See how these skilled hair professionals used Cliphair’s hair extensions to transform their wedding creations. From blushing brides to trendy wedding guests, let these gorgeous, curated looks inspire you!</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -192,91 +201,91 @@
         "172d19fc-413b-4ae6-ac2d-67877cb616e7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video.jpg"
+            "image": "shopify://shop_images/bride-video.jpg"
           }
         },
         "1b1f4863-efdb-42b7-949f-c117cfefddff": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_1_92ec0883-dabb-4d28-951f-1debc4af7066.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/699106db18444b8c964eeffcd073f9ed.mp4"
+            "image": "shopify://shop_images/bride-video_1_92ec0883-dabb-4d28-951f-1debc4af7066.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/699106db18444b8c964eeffcd073f9ed.mp4"
           }
         },
         "a6c56a2d-ec01-4083-a761-3695bd85640c": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_2_02106585-c89f-4992-9f9b-5aa27596f9d9.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d571352711b0465eaa41b336ec0d44e7.mp4"
+            "image": "shopify://shop_images/bride-video_2_02106585-c89f-4992-9f9b-5aa27596f9d9.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/d571352711b0465eaa41b336ec0d44e7.mp4"
           }
         },
         "eef3c0ae-1a98-4a4a-a7ec-5f61303792b7": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_3_17b12a17-da6c-48ea-8c5e-241cded86b2b.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/629380684ebe4197bc5a37482624a4ee.mp4"
+            "image": "shopify://shop_images/bride-video_3_17b12a17-da6c-48ea-8c5e-241cded86b2b.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/629380684ebe4197bc5a37482624a4ee.mp4"
           }
         },
         "0989ef2c-484b-45c2-b79e-1770738ce1d5": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_4_a1df701d-2aac-416e-b819-ac788a840f40.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2c103d65158242f3bda1374007c3903b.mp4"
+            "image": "shopify://shop_images/bride-video_4_a1df701d-2aac-416e-b819-ac788a840f40.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/2c103d65158242f3bda1374007c3903b.mp4"
           }
         },
         "d39b1b3a-6df6-4f5f-a3b1-f994d6532a52": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_5.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5d372260123b4bee851800892ab71205.mp4"
+            "image": "shopify://shop_images/bride-video_5.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/5d372260123b4bee851800892ab71205.mp4"
           }
         },
         "161d48c7-3017-4c1c-b2e5-510893e42785": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_6.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/55f4dcc5bee14f8497a20a912de10afe.mp4"
+            "image": "shopify://shop_images/bride-video_6.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/55f4dcc5bee14f8497a20a912de10afe.mp4"
           }
         },
         "cf7e32d3-ca2c-4cb8-841d-d40dc4b18afc": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_7.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/42ab216a25174cc0b23b8be3a8f9d53c.mp4"
+            "image": "shopify://shop_images/bride-video_7.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/42ab216a25174cc0b23b8be3a8f9d53c.mp4"
           }
         },
         "8e1e362b-27cc-4332-97b1-eccdf2c70af9": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_8.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b591e190bc648dea8d4669164943c94.mp4"
+            "image": "shopify://shop_images/bride-video_8.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/3b591e190bc648dea8d4669164943c94.mp4"
           }
         },
         "d8472c52-6e4c-4872-9403-8c2e7b62e6cd": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_9.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6837a7253bd04b559e2b456c16042372.mp4"
+            "image": "shopify://shop_images/bride-video_9.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/6837a7253bd04b559e2b456c16042372.mp4"
           }
         },
         "ae0d9d55-0db1-4bfd-aace-7daa2fd83cfa": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_10.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7dc225eb86e34701b8bc891dd7898da1.mp4"
+            "image": "shopify://shop_images/bride-video_10.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/7dc225eb86e34701b8bc891dd7898da1.mp4"
           }
         },
         "b85a25d2-ff98-41cc-806a-5cd67d088e09": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_11.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ed4e4b690f454e35857dac9923007ace.mp4"
+            "image": "shopify://shop_images/bride-video_11.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/ed4e4b690f454e35857dac9923007ace.mp4"
           }
         },
         "e99a6dfb-2cc9-49f1-8e25-0f387f32290a": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bride-video_12.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/423eba7199934b538f20a86ec6d86942.mp4"
+            "image": "shopify://shop_images/bride-video_12.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/423eba7199934b538f20a86ec6d86942.mp4"
           }
         }
       },
@@ -296,7 +305,7 @@
         "e99a6dfb-2cc9-49f1-8e25-0f387f32290a"
       ],
       "settings": {
-        "header": "<h2><em>Inspo for The Bride<\/em><\/h2><p>Saying \"I do\" has never looked better<\/p>",
+        "header": "<h2><em>Inspo for The Bride</em></h2><p>Saying \"I do\" has never looked better</p>",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1440",
@@ -335,11 +344,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 0,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 0,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "6093b70d-7853-4210-b264-4307c71f097e": {
@@ -348,56 +353,56 @@
         "62c22489-6d61-44c5-9022-8daa8bbf1b15": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video.jpg"
+            "image": "shopify://shop_images/bridesmaid-video.jpg"
           }
         },
         "1dd49a7c-55a5-4412-8dba-a62f4ffa8a27": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_1.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f35341dbac4a4f139711b783b5e78b64.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_1.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/f35341dbac4a4f139711b783b5e78b64.mp4"
           }
         },
         "9b4afce9-2402-4468-b2e4-c342ea6e4f25": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_2.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3ba0c85b85f144c5b50022ff8753f63e.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_2.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/3ba0c85b85f144c5b50022ff8753f63e.mp4"
           }
         },
         "bca5bdba-cc73-4a3a-ab6c-2614a364121e": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_3.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fd2d2a87757946f5920e4b9da61d7836.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_3.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/fd2d2a87757946f5920e4b9da61d7836.mp4"
           }
         },
         "72506437-d96f-4066-9967-6187d2201e6a": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_4.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/45e3c41a2fff481d936b4454030b35de.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_4.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/45e3c41a2fff481d936b4454030b35de.mp4"
           }
         },
         "b8868f5a-5fc2-454d-be55-595d0a21fd52": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_5.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e069c377754341d7b75dd529a395d13d.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_5.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/e069c377754341d7b75dd529a395d13d.mp4"
           }
         },
         "130fb587-91e7-4694-a2e0-da0361ef0bb7": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bridesmaid-video-thumbnail_6.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/10dd6ca7b33d4febac9a94bc8f48d3a1.mp4"
+            "image": "shopify://shop_images/bridesmaid-video-thumbnail_6.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/10dd6ca7b33d4febac9a94bc8f48d3a1.mp4"
           }
         },
         "6597a83a-16db-4c58-b5ea-fc6c5d706efb": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screenshot_2023-05-09_at_17.14_1_1_1.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/52fc06819037460e850718568d1724f9.mp4"
+            "image": "shopify://shop_images/Screenshot_2023-05-09_at_17.14_1_1_1.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/52fc06819037460e850718568d1724f9.mp4"
           }
         }
       },
@@ -412,7 +417,7 @@
         "6597a83a-16db-4c58-b5ea-fc6c5d706efb"
       ],
       "settings": {
-        "header": "<h2><em>Inspo for The Bridesmaids<\/em><\/h2><p>Supporting your best friend with full-glamour<\/p>",
+        "header": "<h2><em>Inspo for The Bridesmaids</em></h2><p>Supporting your best friend with full-glamour</p>",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1440",
@@ -451,11 +456,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 0,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 0,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "83c403b2-e085-4a30-9642-cd45c7e56c21": {
@@ -464,28 +465,28 @@
         "dd073945-4009-4320-aa21-cb6813fc9d03": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mother-of-bride.jpg"
+            "image": "shopify://shop_images/mother-of-bride.jpg"
           }
         },
         "6fa5cc1c-3bb6-4018-bc8f-63067a278ce0": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mother-of-bride-video_2.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7b1facaef1ec4ab88f4d52e1c40123c6.mp4"
+            "image": "shopify://shop_images/mother-of-bride-video_2.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/7b1facaef1ec4ab88f4d52e1c40123c6.mp4"
           }
         },
         "d807a868-e118-4045-8e55-5b0ed3789dcc": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mother-of-bride-video_3.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/175c12aedcb24471ab9ada4220c9daf9.mp4"
+            "image": "shopify://shop_images/mother-of-bride-video_3.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/175c12aedcb24471ab9ada4220c9daf9.mp4"
           }
         },
         "000444d5-ded6-4814-ab49-3bb63a725ad0": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mother-of-bride-video_1.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3de4f2071acf4c499b16084083987114.mp4"
+            "image": "shopify://shop_images/mother-of-bride-video_1.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/3de4f2071acf4c499b16084083987114.mp4"
           }
         }
       },
@@ -496,7 +497,7 @@
         "000444d5-ded6-4814-ab49-3bb63a725ad0"
       ],
       "settings": {
-        "header": "<h2><em>Inspo for The Mother Of The Bride<\/em><\/h2><p>Legendary hairstyles for a legendary mother<\/p>",
+        "header": "<h2><em>Inspo for The Mother Of The Bride</em></h2><p>Legendary hairstyles for a legendary mother</p>",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1440",
@@ -535,11 +536,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 0,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 0,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "8c953213-13e4-4a61-9bb8-0a3313a097ff": {
@@ -548,63 +545,63 @@
         "0898a697-95c2-4d72-b317-2f8cf3551e2d": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/guest-video.jpg"
+            "image": "shopify://shop_images/guest-video.jpg"
           }
         },
         "c7986ea2-6e78-4b7c-8969-3fb6128910c4": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_1_96aa6405-115c-43f0-8964-b74dd7dada7c.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e059dc4c21dc474b859ef8aca67af7ee.mp4"
+            "image": "shopify://shop_images/video_1_96aa6405-115c-43f0-8964-b74dd7dada7c.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/e059dc4c21dc474b859ef8aca67af7ee.mp4"
           }
         },
         "c471cc1f-8012-45aa-8efd-5b0ef6e9054a": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_8_d97f4a7d-57f0-4aec-90b6-bbb2f0b1d06c.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9e6ec0e899cc471e877071d46854fbbf.mp4"
+            "image": "shopify://shop_images/video_8_d97f4a7d-57f0-4aec-90b6-bbb2f0b1d06c.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/9e6ec0e899cc471e877071d46854fbbf.mp4"
           }
         },
         "032401e2-0876-4efb-879f-33f06f06997d": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_7.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/53b850b2891946faa61c3097d422d8f1.mp4"
+            "image": "shopify://shop_images/video_7.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/53b850b2891946faa61c3097d422d8f1.mp4"
           }
         },
         "47caf079-1dae-4ce9-8779-50c2220f002f": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_6.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/27b5f54361b44c25a5481a7b10710f2a.mp4"
+            "image": "shopify://shop_images/video_6.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/27b5f54361b44c25a5481a7b10710f2a.mp4"
           }
         },
         "877df257-7c8b-44c5-be45-e5ca925e2869": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_5_d956e0be-b39f-4c57-93f2-cdc6160e2384.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e1a51063a0a44bf09c0ce5fec1e3adc5.mp4"
+            "image": "shopify://shop_images/video_5_d956e0be-b39f-4c57-93f2-cdc6160e2384.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/e1a51063a0a44bf09c0ce5fec1e3adc5.mp4"
           }
         },
         "98f39d2f-3d5b-4e6a-9ba4-d5ed1f0044c0": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_4_791ab290-e86b-4208-a64d-c5979d0dd04a.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4f8325caaf4bde931d66b49637d8b5.mp4"
+            "image": "shopify://shop_images/video_4_791ab290-e86b-4208-a64d-c5979d0dd04a.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/ab4f8325caaf4bde931d66b49637d8b5.mp4"
           }
         },
         "db98d658-3468-4a0b-a5c3-1f49ba3291b1": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_3_e84cfadb-1796-4e0a-8788-9565d4eba706.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cabb3c3579884c00a3a3b79aa6ca3e08.mp4"
+            "image": "shopify://shop_images/video_3_e84cfadb-1796-4e0a-8788-9565d4eba706.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/cabb3c3579884c00a3a3b79aa6ca3e08.mp4"
           }
         },
         "e46ac801-4447-4f03-8abc-ef9d8afddf01": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/video_2_5654aaf9-fade-4e9d-9fdb-dd2492e78a24.jpg",
-            "video-url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5a676bec32bb41b6aee81c4ccde8544d.mp4"
+            "image": "shopify://shop_images/video_2_5654aaf9-fade-4e9d-9fdb-dd2492e78a24.jpg",
+            "video-url": "https://cdn.shopify.com/videos/c/o/v/5a676bec32bb41b6aee81c4ccde8544d.mp4"
           }
         }
       },
@@ -620,7 +617,7 @@
         "e46ac801-4447-4f03-8abc-ef9d8afddf01"
       ],
       "settings": {
-        "header": "<h2><em>Inspo for Wedding Guest<\/em><\/h2><p>The trendiest looks for true wedding superstars<\/p>",
+        "header": "<h2><em>Inspo for Wedding Guest</em></h2><p>The trendiest looks for true wedding superstars</p>",
         "text_color": "#000000",
         "bg_color": "#ffffff",
         "max_width": "1440",
@@ -659,11 +656,7 @@
       "settings": {
         "bg_color": "#c3c3c3",
         "max_width": "1200",
-        "height": 1,
-        "mobile-p_top-bottom": 0,
-        "mobile-p_sides": 10,
-        "desktop-p_top-bottom": 0,
-        "desktop-p_sides": 16
+        "height": 1
       }
     },
     "bridal23_custom-text": {
@@ -672,14 +665,14 @@
         "e706980d-4910-4ca6-ac0c-68f3f6cbf9cd": {
           "type": "html-intro",
           "settings": {
-            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type<\/p>\n<p><i class=\"fa-solid fa-question\"><\/i><\/p>\n<p>You have short hair &amp; are considering getting hair extensions<\/p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"><\/i><\/p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you<\/p>\n<p><i class=\"fa-regular fa-heart\"><\/i><\/p>\n<p>It's your first time getting hair extensions<\/p>\n<p><i class=\"fa-regular fa-clock\"><\/i><\/p>"
+            "html-intro": "<p>Are unsure of which hair extensions is best for your hair type</p>\n<p><i class=\"fa-solid fa-question\"></i></p>\n<p>You have short hair &amp; are considering getting hair extensions</p>\n<p><i class=\"fa-solid fa-hand-holding-heart\"></i></p>\n<p>You've got medium to thick hair &amp; are unsure which would be the best hair extensions for you</p>\n<p><i class=\"fa-regular fa-heart\"></i></p>\n<p>It's your first time getting hair extensions</p>\n<p><i class=\"fa-regular fa-clock\"></i></p>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
           "type": "button",
           "settings": {
             "btn-text": "ASK US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         }
       },
