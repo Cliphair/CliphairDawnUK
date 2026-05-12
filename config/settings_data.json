@@ -274,14 +274,14 @@
       },
       "accent-1": {
         "settings": {
-          "background": "#ffffff",
-          "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(253, 248, 255, 1) 100%)",
-          "headers": "#2d2f76",
-          "text": "#121212",
-          "button": "#ba69a1",
+          "background": "#f1f1f1",
+          "background_gradient": "",
+          "headers": "#000000",
+          "text": "#000000",
+          "button": "#000000",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#ba69a1"
+          "secondary_button_label": "#000000",
+          "shadow": "#000000"
         }
       },
       "accent-2": {

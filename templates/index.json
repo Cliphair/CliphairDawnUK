@@ -141,6 +141,16 @@
         "padding_bottom": 0
       }
     },
+    "custom_liquid_FeaaFh": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 23px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 20px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 23px;\n}\n\n}\n{% endstyle %}",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "fef9cc49-05dc-468b-82e4-1520264647b6": {
       "type": "rich-text-v2",
       "blocks": {
@@ -173,14 +183,15 @@
         "padding_bottom": 0
       }
     },
-    "custom_liquid_FeaaFh": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "simple_divider_PDe7hq": {
+      "type": "simple-divider",
+      "name": "Simple divider",
       "settings": {
-        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 23px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 20px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 23px;\n}\n\n}\n{% endstyle %}",
-        "color_scheme": "background-1",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "divider_color": "#c0c0c0",
+        "divider_height": 1,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "hair_goal_cards_carousel_i7waLK": {
@@ -245,6 +256,17 @@
         "image_ratio": "portrait",
         "enable_lcp_priority": false,
         "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "simple_divider_zUAqrr": {
+      "type": "simple-divider",
+      "name": "Simple divider",
+      "settings": {
+        "divider_color": "#c0c0c0",
+        "divider_height": 1,
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -311,22 +333,59 @@
         "show_more_label": "View More",
         "show_less_label": "View Less",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
     "yotpo_reviews_split_EY4hfW": {
       "type": "yotpo-reviews-split",
       "name": "Yotpo reviews – split",
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "accent-1",
         "heading": "What our customers say",
         "subheading": "Thousands of women trust Cliphair. Here's why:",
         "data_source": "api",
         "star_color": "#000000",
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 40,
+        "padding_bottom": 40,
         "trackable_name": ""
+      }
+    },
+    "split_banner_shade_FEbjbG": {
+      "type": "split-banner-shade",
+      "blocks": {
+        "shade_slider_trKMUK": {
+          "type": "shade_slider",
+          "settings": {
+            "color_scheme": "",
+            "heading": "Or shop by shade...",
+            "menu": "shop-by-shade",
+            "image_ratio": "square",
+            "enable_lcp_priority": false
+          }
+        },
+        "banner_ffP3CX": {
+          "type": "banner",
+          "settings": {
+            "color_scheme": "",
+            "title": "We've given our rewards <em>a glow-up!</em>",
+            "text": "<p>Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.</p>",
+            "button_label": "Join Now",
+            "button_url": "",
+            "button_style": "primary",
+            "content_position": "bottom-left",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "shade_slider_trKMUK",
+        "banner_ffP3CX"
+      ],
+      "name": "Split — Banner & Shade Slider",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "press_bar_RM4Gax": {
@@ -420,7 +479,7 @@
         "label": "Our features...",
         "logo_height": 52,
         "scroll_duration": 40,
-        "color_scheme": "background-2",
+        "color_scheme": "accent-1",
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -496,6 +555,84 @@
         "padding_bottom": 36
       }
     },
+    "section_video_spotlight_9ehDBf": {
+      "type": "section-video-spotlight",
+      "blocks": {
+        "video_slide_K84Ta4": {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Clip-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
+        },
+        "video_slide_7qCMcT": {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Tape-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Emily R.",
+            "review_text": "\"So natural-looking, couldn't be happier!\""
+          }
+        },
+        "video_slide_k34hfH": {
+          "type": "video_slide",
+          "settings": {
+            "product_name": "Halo Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Jessica T.",
+            "review_text": "\"Game changer! On and off in seconds.\""
+          }
+        }
+      },
+      "block_order": [
+        "video_slide_K84Ta4",
+        "video_slide_7qCMcT",
+        "video_slide_k34hfH"
+      ],
+      "name": "Video Spotlight",
+      "settings": {
+        "heading": "Real hair, real life",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_list_QrcM99": {
+      "type": "image-list",
+      "name": "Images list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 3,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "trackable_name": ""
+      }
+    },
+    "simple_divider_L3tY7h": {
+      "type": "simple-divider",
+      "name": "Simple divider",
+      "settings": {
+        "divider_color": "#c0c0c0",
+        "divider_height": 1,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "blog_spot_aPTw9A": {
       "type": "blog-spot",
       "name": "Blog spot",
@@ -524,8 +661,8 @@
         "tags_columns_mobile": "1",
         "tags_swipe_on_mobile": false,
         "slider_visual": "counter",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     }
   },
@@ -533,13 +670,19 @@
     "trust_bar_wQaLCk",
     "slideshow_3tCMjU",
     "image_cta_columns_EDYpn7",
-    "fef9cc49-05dc-468b-82e4-1520264647b6",
     "custom_liquid_FeaaFh",
+    "fef9cc49-05dc-468b-82e4-1520264647b6",
+    "simple_divider_PDe7hq",
     "hair_goal_cards_carousel_i7waLK",
+    "simple_divider_zUAqrr",
     "hair_goal_cards_grid_GxXgbq",
     "yotpo_reviews_split_EY4hfW",
+    "split_banner_shade_FEbjbG",
     "press_bar_RM4Gax",
     "blog_cards_carousel_RDHLew",
+    "section_video_spotlight_9ehDBf",
+    "image_list_QrcM99",
+    "simple_divider_L3tY7h",
     "blog_spot_aPTw9A"
   ]
 }
