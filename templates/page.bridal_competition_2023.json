@@ -9,12 +9,9 @@
  */
 {
   "sections": {
-    "header":{
+    "header": {
       "type": "page-header",
-      "settings": {
-        "custom-title": false,
-        "hide": true
-      }
+      "settings": {}
     },
     "166445343207c9fec0": {
       "type": "page_font_bridal23",
@@ -29,7 +26,7 @@
     "4d843d5e-c6f7-4b45-90ae-75194bbc4062": {
       "type": "back-to",
       "settings": {
-        "back_url": "shopify:\/\/pages\/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -46,77 +43,77 @@
         "5cf4a578-3a7c-4b75-8bda-e9e256b1346a": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "4c443c67-0909-4aae-a9f7-de0b4048a6ac": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "2d56f423-76e2-4284-b4d2-d39f5bde082d": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "8d432e39-bf04-47f9-8a71-b6564a527788": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "3b6484f7-dd5d-4c33-86ab-37d858595aee": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "cbc59886-7721-4179-8e76-fa8493333b83": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "1f082aa3-7d54-46b1-9a2d-0946fbe6f500": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "743ff431-0882-4164-ac19-b756fbae1ad7": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "426281ce-2920-445f-9935-82f71c8a5392": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         },
         "9dd4957e-5772-410d-92e6-373f5029dd7b": {
           "type": "text",
           "settings": {
-            "text": "<p>🤎<\/p>",
+            "text": "<p>🤎</p>",
             "custom_bg": false
           }
         },
         "d157ae1d-23d0-4d77-8b12-8d30cb1fdca8": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>#brideswearcliphair<\/strong><\/p>",
+            "text": "<p><strong>#brideswearcliphair</strong></p>",
             "custom_bg": false
           }
         }
@@ -160,8 +157,8 @@
       "settings": {
         "max-width": "2560",
         "bg-color": "#ffffff",
-        "desktop-image": "shopify:\/\/shop_images\/bridal-competition-banner-desktop.jpg",
-        "mobile-image": "shopify:\/\/shop_images\/bridal-competition-banner-mobile.jpg",
+        "desktop-image": "shopify://shop_images/bridal-competition-banner-desktop.jpg",
+        "mobile-image": "shopify://shop_images/bridal-competition-banner-mobile.jpg",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -184,7 +181,7 @@
         "custom_text": true,
         "header": "",
         "sub_header": "",
-        "description": "<p>Put your skills to test and show us what you've got. Bridal hair specialists and trainees alike are welcome to take part in the most awaited, yearly styling competition!<\/p>",
+        "description": "<p>Put your skills to test and show us what you've got. Bridal hair specialists and trainees alike are welcome to take part in the most awaited, yearly styling competition!</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -220,7 +217,7 @@
         "b2e25af8-50df-4002-b665-35e07beb662c": {
           "type": "title",
           "settings": {
-            "title": "<h2><em>OUR WINNER PRIZES<\/em><\/h2>"
+            "title": "<h2><em>OUR WINNER PRIZES</em></h2>"
           }
         }
       },
@@ -258,7 +255,7 @@
       "settings": {
         "max-width": "768",
         "bg-color": "#ffffff",
-        "desktop-image": "shopify:\/\/shop_images\/prizes.jpg",
+        "desktop-image": "shopify://shop_images/prizes.jpg",
         "url": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -270,50 +267,50 @@
         "5bfbb645-efc4-433d-a30f-94f1fd0f272d": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Bridal Look  - Win up to £1000<\/h3>",
-            "body": "<ul><li>Any bridal hair creation pictured on a model\/bride<\/li><li>Prize - Perform at salon international + Ultimate Hair Kit (bundle worth £500) + £500 Cash prize<\/li><\/ul>"
+            "title": "<h3>Best Bridal Look  - Win up to £1000</h3>",
+            "body": "<ul><li>Any bridal hair creation pictured on a model/bride</li><li>Prize - Perform at salon international + Ultimate Hair Kit (bundle worth £500) + £500 Cash prize</li></ul>"
           }
         },
         "1239cf9a-5ce1-484d-8cf1-571cf17cb060": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Student Look  - Win up to £800<\/h3>",
-            "body": "<ul><li>Any bridal hair created pictured on a model\/bride (Only open to academies & students)<\/li><li>Prize - Perform at salon international + Ultimate Hair Kit (bundle worth £500) + £300 Cash Prize<\/li><\/ul>"
+            "title": "<h3>Best Student Look  - Win up to £800</h3>",
+            "body": "<ul><li>Any bridal hair created pictured on a model/bride (Only open to academies & students)</li><li>Prize - Perform at salon international + Ultimate Hair Kit (bundle worth £500) + £300 Cash Prize</li></ul>"
           }
         },
         "b49338e3-6d69-42b6-bd95-e782336595ed": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Hair Down<\/h3>",
-            "body": "<ul><li>This category is for any bridal hair down styles.<\/li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International <\/li><\/ul>"
+            "title": "<h3>Best Hair Down</h3>",
+            "body": "<ul><li>This category is for any bridal hair down styles.</li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International </li></ul>"
           }
         },
         "8df0be81-0671-4777-bf73-d567243e7074": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Hair Up<\/h3>",
-            "body": "<ul><li>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).<\/li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International <\/li><\/ul>"
+            "title": "<h3>Best Hair Up</h3>",
+            "body": "<ul><li>This category is for any bridal hair up styles including buns (excluding ponytails and braided styles).</li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International </li></ul>"
           }
         },
         "1f84c24a-0e3f-410f-bf5b-32d565e97f70": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Half Up Half Down<\/h3>",
-            "body": "<ul><li>This category is for any bridal half up half down styles.<\/li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International <\/li><\/ul>"
+            "title": "<h3>Best Half Up Half Down</h3>",
+            "body": "<ul><li>This category is for any bridal half up half down styles.</li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International </li></ul>"
           }
         },
         "b6418222-8463-47e6-b6f2-8338fc61363d": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Braid<\/h3>",
-            "body": "<ul><li>This category is for any braided bridal hairstyle.<\/li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International<\/li><\/ul>"
+            "title": "<h3>Best Braid</h3>",
+            "body": "<ul><li>This category is for any braided bridal hairstyle.</li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International</li></ul>"
           }
         },
         "d6bba54a-62a0-4d39-be82-d9cf10a4bf20": {
           "type": "item",
           "settings": {
-            "title": "<h3>Best Ponytail<\/h3>",
-            "body": "<ul><li>This category is for any bridal ponytail hairstyle.<\/li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International <\/li><\/ul>"
+            "title": "<h3>Best Ponytail</h3>",
+            "body": "<ul><li>This category is for any bridal ponytail hairstyle.</li><li>Prize - Win £125 worth of Cliphair Vouchers & two tickets to Salon International </li></ul>"
           }
         }
       },
@@ -327,7 +324,7 @@
         "d6bba54a-62a0-4d39-be82-d9cf10a4bf20"
       ],
       "settings": {
-        "section_title": "<h2>Take a look at our list of categories to find out more!<\/h2>",
+        "section_title": "<h2>Take a look at our list of categories to find out more!</h2>",
         "intro": "",
         "text_color": "#000000",
         "bg_color": "#edeae7",
@@ -353,7 +350,7 @@
         "b2e25af8-50df-4002-b665-35e07beb662c": {
           "type": "title",
           "settings": {
-            "title": "<h2>How To Enter?<\/h2>"
+            "title": "<h2>How To Enter?</h2>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
@@ -361,13 +358,13 @@
           "disabled": true,
           "settings": {
             "btn-text": "MESSAGE US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         },
         "824cb1dd-2db3-4a66-aa9f-1b975e2b78d0": {
           "type": "html-intro",
           "settings": {
-            "html-intro": "<p>1) Create a bridal hair look with or without extensions<\/p>\n<p>2) Share your post on Instagram OR Facebook<\/p>\n<p>3) Follow us &amp; tag @Cliphairlimited in your post<\/p>\n<p>4) Use the #CliphairBridalAwards hashtag for all entries<\/p>\n<p>5) For student\/academy entries ONLY please use the hashtag #CliphairBridalStudents<\/p>"
+            "html-intro": "<p>1) Create a bridal hair look with or without extensions</p>\n<p>2) Share your post on Instagram OR Facebook</p>\n<p>3) Follow us &amp; tag @Cliphairlimited in your post</p>\n<p>4) Use the #CliphairBridalAwards hashtag for all entries</p>\n<p>5) For student/academy entries ONLY please use the hashtag #CliphairBridalStudents</p>"
           }
         }
       },
@@ -421,9 +418,9 @@
         "desktop-p_left": 16,
         "enable_text": true,
         "custom_text": true,
-        "header": "<h2>Who Can Enter?<\/h2>",
+        "header": "<h2>Who Can Enter?</h2>",
         "sub_header": "",
-        "description": "<p>Any qualified, training or student hairstylist<\/p>",
+        "description": "<p>Any qualified, training or student hairstylist</p>",
         "read_more": "",
         "text_width": 100,
         "title_tag": "h2",
@@ -459,7 +456,7 @@
         "b2e25af8-50df-4002-b665-35e07beb662c": {
           "type": "title",
           "settings": {
-            "title": "<h2>FURTHER QUESTIONS?<\/h2>"
+            "title": "<h2>FURTHER QUESTIONS?</h2>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
@@ -467,13 +464,13 @@
           "disabled": true,
           "settings": {
             "btn-text": "MESSAGE US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         },
         "4a9feb28-14dc-4844-ac96-e0c2bae2e97c": {
           "type": "intro",
           "settings": {
-            "intro": "<p>The competition will run from 1st June to 30th June 2023. Entries must be submitted before 11:59 pm BST<\/p><p>Open to the UK only<\/p><p>● All hairstyles must be created on a real person not a training mannequin.<\/p><p>● Stylists and students must only enter only into their   respective awards. Any entries made to both student and stylist will be disqualified to maintain fairness.<\/p><p>● Unlimited entries<\/p>"
+            "intro": "<p>The competition will run from 1st June to 30th June 2023. Entries must be submitted before 11:59 pm BST</p><p>Open to the UK only</p><p>● All hairstyles must be created on a real person not a training mannequin.</p><p>● Stylists and students must only enter only into their   respective awards. Any entries made to both student and stylist will be disqualified to maintain fairness.</p><p>● Unlimited entries</p>"
           }
         }
       },
@@ -515,8 +512,8 @@
         "8d224a9a-d838-44bd-9645-69130d624d22": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stylist_1.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/716c960fdc454fb0ad6081f49f1c605b.mp4",
+            "image": "shopify://shop_images/stylist_1.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/716c960fdc454fb0ad6081f49f1c605b.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -526,8 +523,8 @@
         "1ffde32e-4121-40f2-8925-d0563a55cec4": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stylist_4.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/596a8b2fd62c4f13bb0e03a9042b4a84.mp4",
+            "image": "shopify://shop_images/stylist_4.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/596a8b2fd62c4f13bb0e03a9042b4a84.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -537,8 +534,8 @@
         "60b7f9aa-90e2-4a46-8b76-71ad94e1e054": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stylist_3.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c5dead28eb0b49749c8e06e96cd842f0.mp4",
+            "image": "shopify://shop_images/stylist_3.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/c5dead28eb0b49749c8e06e96cd842f0.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -548,8 +545,8 @@
         "df207e16-0887-4bd4-a50c-b1ad422143f2": {
           "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stylist_2.jpg",
-            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a6366e2bab674cd691eefe67ebc2e63f.mp4",
+            "image": "shopify://shop_images/stylist_2.jpg",
+            "video_link": "https://cdn.shopify.com/videos/c/o/v/a6366e2bab674cd691eefe67ebc2e63f.mp4",
             "video_title": "",
             "description": "",
             "button-text": "",
@@ -564,7 +561,7 @@
         "df207e16-0887-4bd4-a50c-b1ad422143f2"
       ],
       "settings": {
-        "header": "<p>HERE IS SOME INSPO<\/p>",
+        "header": "<p>HERE IS SOME INSPO</p>",
         "intro": "",
         "image_orientation": "portrait",
         "title-position": "bottom",
@@ -601,7 +598,7 @@
         "arrow-position-desktop": 43,
         "include-btn": true,
         "btn-text": "SEE MORE",
-        "btn-url": "\/pages\/2023-bridal-hair-extensions-videos",
+        "btn-url": "/pages/2023-bridal-hair-extensions-videos",
         "btn-color": "#ffffff",
         "btn-bg-color": "#000000",
         "btn-size-mobile": 12,
@@ -614,11 +611,7 @@
       "settings": {
         "bg_color": "#e2e2e2",
         "max_width": "1250",
-        "height": 0.5,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 0,
-        "desktop-p_top-bottom": 20,
-        "desktop-p_sides": 0
+        "height": 0.5
       }
     },
     "65b6eba2-59db-46ca-b1e0-462964b08b65": {
@@ -627,36 +620,36 @@
         "b6f07ee4-75db-4529-848a-09f74af8b452": {
           "type": "item",
           "settings": {
-            "title": "<p>How many times can I enter my wedding hair style?<\/p>",
-            "body": "<ul><li>There is no limit to the number of times you can enter!<\/li><\/ul>"
+            "title": "<p>How many times can I enter my wedding hair style?</p>",
+            "body": "<ul><li>There is no limit to the number of times you can enter!</li></ul>"
           }
         },
         "4665d89f-7457-4768-ae7b-94d383570f11": {
           "type": "item",
           "settings": {
-            "title": "<p>Can I enter if I am outside the UK?<\/p>",
-            "body": "<ul><li>Unfortunately, you have to be located within the UK to enter.<\/li><\/ul>"
+            "title": "<p>Can I enter if I am outside the UK?</p>",
+            "body": "<ul><li>Unfortunately, you have to be located within the UK to enter.</li></ul>"
           }
         },
         "cb2bdf37-7daf-4858-85c8-2c2f74b7342e": {
           "type": "item",
           "settings": {
-            "title": "<p>Do I have to use extensions to create the style?<\/p>",
-            "body": "<ul><li>No, we are accepting entries with and without extensions.<\/li><\/ul>"
+            "title": "<p>Do I have to use extensions to create the style?</p>",
+            "body": "<ul><li>No, we are accepting entries with and without extensions.</li></ul>"
           }
         },
         "6ca94460-8d08-4741-bea1-d3bf5959c0ef": {
           "type": "item",
           "settings": {
-            "title": "<p>When does the competition end?<\/p>",
-            "body": "<ul><li>30th June 2023.<\/li><\/ul>"
+            "title": "<p>When does the competition end?</p>",
+            "body": "<ul><li>30th June 2023.</li></ul>"
           }
         },
         "a39685c9-d200-4290-a5b9-cefa9865c3dd": {
           "type": "item",
           "settings": {
-            "title": "<p>When will the winners be announced?<\/p>",
-            "body": "<ul><li>Winners will be announced on our social channels on the 11th August 2023.<\/li><\/ul>"
+            "title": "<p>When will the winners be announced?</p>",
+            "body": "<ul><li>Winners will be announced on our social channels on the 11th August 2023.</li></ul>"
           }
         }
       },
@@ -668,7 +661,7 @@
         "a39685c9-d200-4290-a5b9-cefa9865c3dd"
       ],
       "settings": {
-        "section_title": "<p>Frequently Asked Questions<\/p>",
+        "section_title": "<p>Frequently Asked Questions</p>",
         "intro": "",
         "text_color": "#000000",
         "bg_color": "#ffffff",
@@ -694,14 +687,14 @@
         "b2e25af8-50df-4002-b665-35e07beb662c": {
           "type": "title",
           "settings": {
-            "title": "<h2>FURTHER QUESTIONS?<\/h2>"
+            "title": "<h2>FURTHER QUESTIONS?</h2>"
           }
         },
         "1a47bcbd-1805-4f90-888f-1e086368cbe3": {
           "type": "button",
           "settings": {
             "btn-text": "MESSAGE US",
-            "btn-url": "https:\/\/wa.me\/message\/6QDHMKVKM5HWC1"
+            "btn-url": "https://wa.me/message/6QDHMKVKM5HWC1"
           }
         }
       },

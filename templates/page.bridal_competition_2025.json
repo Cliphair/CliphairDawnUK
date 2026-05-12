@@ -32,7 +32,7 @@
       "type": "back-to",
       "disabled": true,
       "settings": {
-        "back_url": "shopify://pages/cliphair-bridal-hair-extensions",
+        "back_url": "shopify://pages/cliphair-wedding-hair-extensions",
         "back_text": "Back To Bridal Campaign",
         "max_width": false,
         "mobile_font": 10,
@@ -243,11 +243,7 @@
       "settings": {
         "bg_color": "#4e4e4e",
         "max_width": "280",
-        "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 50,
-        "desktop-p_top-bottom": 30,
-        "desktop-p_sides": 0
+        "height": 1
       }
     },
     "bridal_dropdown_DCMaTp": {
@@ -366,11 +362,7 @@
       "settings": {
         "bg_color": "#4e4e4e",
         "max_width": "280",
-        "height": 1,
-        "mobile-p_top-bottom": 20,
-        "mobile-p_sides": 30,
-        "desktop-p_top-bottom": 30,
-        "desktop-p_sides": 50
+        "height": 1
       }
     },
     "1d34c519-ab19-4ca8-8ddf-5dcd4b9fab2690": {
