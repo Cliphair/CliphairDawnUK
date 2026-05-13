@@ -173,7 +173,7 @@
           "settings": {
             "image_mobile": "shopify://shop_images/bridal-26-awards-new-mobile.jpg",
             "image_desktop": "shopify://shop_images/bridal-26-awards-new-desktop.jpg",
-            "url": ""
+            "url": "shopify://pages/hairstylist-award"
           }
         }
       },
