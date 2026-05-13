@@ -321,6 +321,10 @@
         "card_Vjf7Ab",
         "card_8ffBPb"
       ],
+      "custom_css": [
+        ".hair-goal-card__badge {background: #C2D9E8;color: #000;}",
+        ".hair-goal-card__text{background:#F1F1F1;}"
+      ],
       "name": "Hair Goal — Grid",
       "settings": {
         "title": "Which extensions are right for you?",
@@ -335,11 +339,7 @@
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 40
-      },
-      "custom_css": [
-        ".hair-goal-card__badge {background: #C2D9E8;color: #000;}",
-        ".hair-goal-card__text{background:#F1F1F1;}"
-      ]
+      }
     },
     "yotpo_reviews_split_EY4hfW": {
       "type": "yotpo-reviews-split",
@@ -364,8 +364,7 @@
             "color_scheme": "",
             "heading": "Or shop by shade...",
             "menu": "shop-by-shade",
-            "image_ratio": "square",
-            "enable_lcp_priority": false
+            "image_ratio": "square"
           }
         },
         "banner_ffP3CX": {
@@ -377,8 +376,7 @@
             "button_label": "Join Now",
             "button_url": "",
             "button_style": "primary",
-            "content_position": "bottom-left",
-            "text_color": "#ffffff"
+            "content_position": "bottom-left"
           }
         }
       },
