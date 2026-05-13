@@ -2,6 +2,7 @@
 {{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
 {{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-split-banner-shade.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-split-banner-shade.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -19,6 +20,7 @@
 <div class="section-{{ section.id }}-padding">
   <div class="split-banner-shade__outer">
     <div class="split-banner-shade__grid page-width" style="padding-right:0; padding-left:0;">
+      {%- assign prioritise_first_image = section.settings.prioritise_lcp -%}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'shade_slider' -%}
@@ -45,30 +47,31 @@
               {%- endunless -%}
 
               {%- if shade_count > 0 -%}
-                <slider-component-custom
+                <split-banner-shade-slider
                   id="shade-slider-{{ section.id }}"
                   class="split-banner-shade__slider"
                   data-visual="dots"
                 >
                   <ul
-                    id="ShadeSlider-{{ section.id }}"
+                    id="Slider-{{ section.id }}"
                     class="split-banner-shade__shade-list grid grid--peek slider slider--tablet slider--desktop"
                     role="list"
                     aria-label="{{ block.settings.heading | strip_html | escape }}"
                   >
-                    {%- assign is_first = true -%}
                     {%- for link in menu.links -%}
                       {%- if link.type == 'collection_link' -%}
-                        {%- assign col = link.object -%}
-                        {%- assign loading_attr = 'lazy' -%}
-                        {%- assign fetchpriority_attr = 'auto' -%}
-                        {%- if is_first and block.settings.enable_lcp_priority -%}
-                          {%- assign loading_attr = 'eager' -%}
-                          {%- assign fetchpriority_attr = 'high' -%}
-                        {%- endif -%}
-                        {%- assign is_first = false -%}
+                        {%- liquid
+                          assign col = link.object
+                          assign loading_attr = 'lazy'
+                          assign fetchpriority_attr = 'auto'
+                          if prioritise_first_image
+                            assign loading_attr = 'eager'
+                            assign fetchpriority_attr = 'high'
+                            assign prioritise_first_image = false
+                          endif
+                        -%}
                         <li
-                          id="Shade-{{ section.id }}-{{ forloop.index }}"
+                          id="Slide-{{ section.id }}-{{ forloop.index }}"
                           class="split-banner-shade__shade-item hair-goal-card hair-goal-card--carousel grid__item custom__slide slider__slide"
                         >
                           <a href="{{ link.url }}" class="hair-goal-card__link">
@@ -84,7 +87,6 @@
                                     sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 55vw',
                                     class: 'hair-goal-card__image',
                                     alt: col.title
-                                  | escape
                                 }}
                               {%- else -%}
                                 {{ 'image' | placeholder_svg_tag: 'hair-goal-card__image placeholder' }}
@@ -120,7 +122,7 @@
                       </button>
                     </div>
                   {%- endif -%}
-                </slider-component-custom>
+                </split-banner-shade-slider>
               {%- else -%}
                 <p class="split-banner-shade__empty">No shades found. Add collection links to the selected menu.</p>
               {%- endif -%}
@@ -133,48 +135,77 @@
             >
               {%- liquid
                 assign banner_image = block.settings.image_desktop
-                assign banner_image_mobile = block.settings.image_mobile
+                assign banner_image_mobile = block.settings.image_mobile | default: banner_image
                 if banner_image == blank
                   assign banner_image = banner_image_mobile
                 endif
+                assign banner_render_image = banner_image_mobile | default: banner_image
+                assign banner_alt = block.settings.title | strip_html
+                if banner_render_image != blank and banner_render_image.alt != blank
+                  assign banner_alt = banner_render_image.alt
+                endif
+                assign banner_loading = 'lazy'
+                assign banner_fetchpriority = 'auto'
+                if prioritise_first_image and banner_render_image != blank
+                  assign banner_loading = 'eager'
+                  assign banner_fetchpriority = 'high'
+                  assign prioritise_first_image = false
+                endif
+                if banner_render_image != blank
+                  assign banner_render_height = banner_render_image.width | divided_by: banner_render_image.aspect_ratio | round
+                endif
+                assign banner_mobile_aspect_ratio = banner_image_mobile.aspect_ratio | default: banner_render_image.aspect_ratio
+                assign banner_desktop_aspect_ratio = banner_image.aspect_ratio | default: banner_render_image.aspect_ratio
               -%}
 
-              <div class="split-banner-shade__banner-inner split-banner-shade__banner-inner--{{ block.settings.content_position }}">
-                {%- if banner_image != blank -%}
-                  <div class="split-banner-shade__banner-media">
-                    {%- comment -%} Desktop image {%- endcomment -%}
-                    {{
-                      banner_image
-                      | image_url: width: 1500
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '375, 550, 750, 1000, 1200, 1500',
-                        sizes: '(min-width: 990px) 50vw, 100vw',
-                        class: 'split-banner-shade__banner-img split-banner-shade__banner-img--desktop',
-                        alt: block.settings.title
-                      | strip_html
-                      | escape
-                    }}
-                    {%- if banner_image_mobile != blank and banner_image_mobile != banner_image -%}
-                      {{
-                        banner_image_mobile
-                        | image_url: width: 800
-                        | image_tag:
-                          loading: 'lazy',
-                          widths: '375, 550, 750, 800',
-                          sizes: '100vw',
-                          class: 'split-banner-shade__banner-img split-banner-shade__banner-img--mobile',
-                          alt: block.settings.title
-                        | strip_html
-                        | escape
-                      }}
+              <div
+                class="split-banner-shade__banner-inner split-banner-shade__banner-inner--{{ block.settings.content_position }}"
+                style="--split-banner-shade-overlay-opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }}; --split-banner-shade-aspect-ratio-mobile: {{ banner_mobile_aspect_ratio }}; --split-banner-shade-aspect-ratio-desktop: {{ banner_desktop_aspect_ratio }};"
+              >
+                {%- if banner_render_image != blank -%}
+                  <picture class="split-banner-shade__banner-media">
+                    {%- if banner_image_mobile != blank -%}
+                      <source
+                        media="(max-width: 749px)"
+                        srcset="
+                          {{ banner_image_mobile | image_url: width: 375 }} 375w,
+                          {{ banner_image_mobile | image_url: width: 550 }} 550w,
+                          {{ banner_image_mobile | image_url: width: 750 }} 750w,
+                          {{ banner_image_mobile | image_url: width: 900 }} 900w
+                        "
+                        sizes="100vw"
+                      >
                     {%- endif -%}
-                  </div>
+                    {%- if banner_image != blank -%}
+                      <source
+                        media="(min-width: 750px)"
+                        srcset="
+                          {{ banner_image | image_url: width: 750 }} 750w,
+                          {{ banner_image | image_url: width: 1000 }} 1000w,
+                          {{ banner_image | image_url: width: 1200 }} 1200w,
+                          {{ banner_image | image_url: width: 1500 }} 1500w
+                        "
+                        sizes="(min-width: 990px) 50vw, 100vw"
+                      >
+                    {%- endif -%}
+                    <img
+                      class="split-banner-shade__banner-img"
+                      src="{{ banner_render_image | image_url: width: 900 }}"
+                      loading="{{ banner_loading }}"
+                      fetchpriority="{{ banner_fetchpriority }}"
+                      sizes="(min-width: 990px) 50vw, 100vw"
+                      alt="{{ banner_alt | escape }}"
+                      width="{{ banner_render_image.width }}"
+                      height="{{ banner_render_height }}"
+                    >
+                  </picture>
                 {%- endif -%}
 
-                <div class="split-banner-shade__banner-content" style="color: {{ block.settings.text_color }};">
+                <div class="split-banner-shade__banner-overlay"></div>
+
+                <div class="split-banner-shade__banner-content">
                   {%- unless block.settings.title == blank -%}
-                    <h2 class="split-banner-shade__banner-title">{{ block.settings.title }}</h2>
+                    <p class="split-banner-shade__banner-title">{{ block.settings.title }}</p>
                   {%- endunless -%}
                   {%- unless block.settings.text == blank -%}
                     <div class="split-banner-shade__banner-text rte">{{ block.settings.text }}</div>
@@ -229,6 +260,13 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "prioritise_lcp",
+      "label": "Prioritise first image (LCP)",
+      "info": "Enable only when this section is the first visible content on the page.",
+      "default": false
     }
   ],
   "blocks": [
@@ -266,13 +304,6 @@
             { "value": "landscape", "label": "Landscape (4:3)" }
           ],
           "default": "square"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_lcp_priority",
-          "label": "Prioritise first shade image (LCP)",
-          "info": "Enable only when this section is the first visible content on the page.",
-          "default": false
         }
       ]
     },
@@ -301,7 +332,7 @@
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "Heading",
+          "label": "Title",
           "default": "We've given our rewards <em>a glow-up!</em>"
         },
         {
@@ -347,10 +378,14 @@
           "default": "bottom-left"
         },
         {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text colour",
-          "default": "#ffffff"
+          "type": "range",
+          "id": "image_overlay_opacity",
+          "label": "Image overlay opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 25
         }
       ]
     }

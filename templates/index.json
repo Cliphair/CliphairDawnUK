@@ -335,7 +335,11 @@
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 40
-      }
+      },
+      "custom_css": [
+        ".hair-goal-card__badge {background: #C2D9E8;color: #000;}",
+        ".hair-goal-card__text{background:#F1F1F1;}"
+      ]
     },
     "yotpo_reviews_split_EY4hfW": {
       "type": "yotpo-reviews-split",
@@ -385,7 +389,7 @@
       "name": "Split — Banner & Shade Slider",
       "settings": {
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 0
       }
     },
     "press_bar_RM4Gax": {
