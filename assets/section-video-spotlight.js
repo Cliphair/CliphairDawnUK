@@ -1,30 +1,19 @@
-/**
- * VideoSpotlightSlider — Custom Web Component
- *
- * Responsibilities:
- *  - Centre the active slide (spotlight scale handled by CSS `.is-active`)
- *  - Load each slide's video via Dawn's DeferredMedia only when that slide
- *    becomes active (performance: no video data loaded for off-screen slides)
- *  - Pause the outgoing slide's video on navigation
- *  - Auto-advance to the next slide when the active video ends
- *  - Sync the info panel with the active slide (no dots — arrows only)
- *  - Re-play the modal video after Dawn's pauseAllMedia() runs on modal open
- *  - Support Theme Editor section:load / block:select events
- */
-
 class VideoSpotlightSlider extends HTMLElement {
     constructor() {
         super();
         this._activeIndex = 0;
         this._slides = [];
         this._infoPanels = [];
-        this._resizeObserver = null;
+        this._lastDirection = 1;
+        this._modalObservers = [];
+        this._wideMedia = window.matchMedia('(min-width: 750px)');
+        this._handleViewportChange = this._handleViewportChange.bind(this);
+        this._handleSectionLoad = this._handleSectionLoad.bind(this);
+        this._handleBlockSelect = this._handleBlockSelect.bind(this);
     }
 
     connectedCallback() {
         this._sectionId = this.dataset.sectionId;
-
-        // Core DOM refs
         this._track = this.querySelector('.vs-track');
         this._prevBtn = this.querySelector('[name="previous"]');
         this._nextBtn = this.querySelector('[name="next"]');
@@ -33,122 +22,186 @@ class VideoSpotlightSlider extends HTMLElement {
 
         if (!this._track || !this._slides.length) return;
 
-        this._setTrackPadding();
-        this._goToSlide(0, false);
+        this.dataset.slideCount = String(this._slides.length);
+        this._updateLayoutMode();
+        this._bindEvents();
+        this._goToSlide(0, false, 1);
         this._setupModalAutoPlay();
-
-        // Navigation buttons
-        this._prevBtn?.addEventListener('click', () => this._navigate(-1));
-        this._nextBtn?.addEventListener('click', () => this._navigate(1));
-
-        // Clicking a non-active slide navigates to it
-        this._slides.forEach((slide) => {
-            slide.addEventListener('click', () => {
-                const idx = parseInt(slide.dataset.index, 10);
-                if (idx !== this._activeIndex) this._goToSlide(idx);
-            });
-        });
-
-        // Recalculate track padding on resize
-        this._resizeObserver = new ResizeObserver(() => {
-            this._setTrackPadding();
-            this._goToSlide(this._activeIndex, false);
-        });
-        this._resizeObserver.observe(this._track);
-
-        // Theme Editor support
-        document.addEventListener('shopify:section:load', (e) => {
-            if (e.detail.sectionId === this._sectionId) {
-                this._goToSlide(0, false);
-            }
-        });
-
-        document.addEventListener('shopify:block:select', (e) => {
-            const block = e.target;
-            if (!block || !block.closest(`#VideoSpotlight-${this._sectionId}`)) return;
-            const idx = this._slides.findIndex((s) => s === block || s.contains(block));
-            if (idx > -1) this._goToSlide(idx);
-        });
     }
 
     disconnectedCallback() {
-        this._resizeObserver?.disconnect();
+        this._prevBtn?.removeEventListener('click', this._handlePrevClick);
+        this._nextBtn?.removeEventListener('click', this._handleNextClick);
+
+        this._slides.forEach((slide) => {
+            if (slide._clickHandler) {
+                slide.removeEventListener('click', slide._clickHandler);
+                slide._clickHandler = null;
+            }
+        });
+
+        if (typeof this._wideMedia.removeEventListener === 'function') {
+            this._wideMedia.removeEventListener('change', this._handleViewportChange);
+        } else {
+            this._wideMedia.removeListener(this._handleViewportChange);
+        }
+
+        document.removeEventListener('shopify:section:load', this._handleSectionLoad);
+        document.removeEventListener('shopify:block:select', this._handleBlockSelect);
+
+        this._modalObservers.forEach((observer) => observer.disconnect());
+        this._modalObservers = [];
     }
 
+    _bindEvents() {
+        this._handlePrevClick = () => this._navigate(-1);
+        this._handleNextClick = () => this._navigate(1);
 
-    // ── Track padding so first & last slides can be centred ─────
+        this._prevBtn?.addEventListener('click', this._handlePrevClick);
+        this._nextBtn?.addEventListener('click', this._handleNextClick);
 
-    _setTrackPadding() {
-        if (!this._track || !this._slides.length) return;
-        const trackWidth = this._track.parentElement.offsetWidth;
-        const slideWidth = this._slides[0].offsetWidth;
-        const pad = Math.max(0, (trackWidth - slideWidth) / 2);
-        this._track.style.setProperty('--vs-track-pad', `${pad}px`);
-        // Also set the CSS custom property used in the stylesheet
-        this._track.style.paddingInline = `${pad}px`;
+        this._slides.forEach((slide) => {
+            slide._clickHandler = () => {
+                const index = parseInt(slide.dataset.index, 10);
+                if (!Number.isNaN(index) && index !== this._activeIndex) {
+                    this._goToSlide(index, true, this._getNavigationDirection(index));
+                }
+            };
+            slide.addEventListener('click', slide._clickHandler);
+        });
+
+        if (typeof this._wideMedia.addEventListener === 'function') {
+            this._wideMedia.addEventListener('change', this._handleViewportChange);
+        } else {
+            this._wideMedia.addListener(this._handleViewportChange);
+        }
+
+        document.addEventListener('shopify:section:load', this._handleSectionLoad);
+        document.addEventListener('shopify:block:select', this._handleBlockSelect);
     }
 
-    // ── Core navigation ─────────────────────────────────────────
+    _handleViewportChange() {
+        this._updateLayoutMode();
+        this._applySlideState(false);
+    }
+
+    _handleSectionLoad(event) {
+        if (event.detail.sectionId === this._sectionId) {
+            this._updateLayoutMode();
+            this._goToSlide(0, false, 1);
+        }
+    }
+
+    _handleBlockSelect(event) {
+        const block = event.target.closest('.vs-slide');
+        if (!block || !this.contains(block)) return;
+
+        const index = this._slides.indexOf(block);
+        if (index > -1) {
+            this._goToSlide(index, true, this._getNavigationDirection(index));
+        }
+    }
+
+    _updateLayoutMode() {
+        this.dataset.layout = this._wideMedia.matches ? 'wide' : 'mobile';
+    }
 
     _navigate(direction) {
-        const newIndex = (this._activeIndex + direction + this._slides.length) % this._slides.length;
-        this._goToSlide(newIndex);
+        if (this._slides.length < 2) return;
+        const nextIndex = (this._activeIndex + direction + this._slides.length) % this._slides.length;
+        this._goToSlide(nextIndex, true, direction);
     }
 
-    _goToSlide(index, animate = true) {
-        // Pause and detach ended-listener from the outgoing slide
-        const outgoing = this._slides[this._activeIndex];
-        if (outgoing) {
-            const outVideo = outgoing.querySelector('video');
-            if (outVideo) {
-                outVideo.pause();
-                if (outgoing._endedHandler) {
-                    outVideo.removeEventListener('ended', outgoing._endedHandler);
-                    outgoing._endedHandler = null;
+    _goToSlide(index, animate = true, direction = 1) {
+        const outgoingSlide = this._slides[this._activeIndex];
+        if (outgoingSlide) {
+            const outgoingVideo = outgoingSlide.querySelector('video');
+            if (outgoingVideo) {
+                outgoingVideo.pause();
+                if (outgoingSlide._endedHandler) {
+                    outgoingVideo.removeEventListener('ended', outgoingSlide._endedHandler);
+                    outgoingSlide._endedHandler = null;
                 }
             }
         }
 
         this._activeIndex = index;
+        this._lastDirection = direction || this._lastDirection;
 
-        // Update slides
-        this._slides.forEach((slide, i) => {
-            const active = i === index;
-            slide.classList.toggle('is-active', active);
-            slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
-
-        // Update info panels
-        this._infoPanels.forEach((panel, i) => {
-            const active = i === index;
-            panel.classList.toggle('is-active', active);
-            panel.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
-
-        // Scroll track to centre the active slide
-        this._centerSlide(index, animate);
-
-        // Load and play video for the incoming slide
+        this._applySlideState(animate);
         this._activateVideo(index);
     }
 
-    // ── Centre the active slide in the viewport ─────────────────
+    _applySlideState(animate = true) {
+        if (!animate) {
+            this.classList.add('is-static');
+            requestAnimationFrame(() => this.classList.remove('is-static'));
+        }
 
-    _centerSlide(index, animate = true) {
-        const slide = this._slides[index];
-        if (!slide || !this._track) return;
+        this._slides.forEach((slide, index) => {
+            const isActive = index === this._activeIndex;
+            const slot = this._getSlotForIndex(index);
 
-        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-        const trackVisible = this._track.parentElement.offsetWidth;
-        const scrollLeft = slideCenter - trackVisible / 2;
+            slide.dataset.slot = slot;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
 
-        this._track.scrollTo({
-            left: scrollLeft,
-            behavior: animate ? 'smooth' : 'instant',
+        this._infoPanels.forEach((panel, index) => {
+            const isActive = index === this._activeIndex;
+            panel.classList.toggle('is-active', isActive);
+            panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         });
     }
 
-    // ── Video lifecycle ──────────────────────────────────────────
+    _getSlotForIndex(index) {
+        const count = this._slides.length;
+        const isWide = this._wideMedia.matches;
+
+        if (count === 1) return 'center';
+        if (count === 2) return this._getTwoSlideSlot(index);
+
+        const delta = this._getSignedDelta(index);
+        if (delta === 0) return 'center';
+        if (delta === -1) return 'left-1';
+        if (delta === 1) return 'right-1';
+
+        if (isWide) {
+            if (delta === -2) return 'left-2';
+            if (delta === 2) return 'right-2';
+        }
+
+        return 'hidden';
+    }
+
+    _getTwoSlideSlot(index) {
+        if (index === this._activeIndex) return 'center';
+        return this._activeIndex % 2 === 0 ? 'right-1' : 'left-1';
+    }
+
+    _getSignedDelta(index) {
+        const count = this._slides.length;
+        const forward = (index - this._activeIndex + count) % count;
+        const backward = (this._activeIndex - index + count) % count;
+
+        if (forward === 0) return 0;
+        if (forward < backward) return forward;
+        if (backward < forward) return -backward;
+
+        return this._lastDirection > 0 ? -backward : forward;
+    }
+
+    _getNavigationDirection(targetIndex) {
+        const count = this._slides.length;
+        const forward = (targetIndex - this._activeIndex + count) % count;
+        const backward = (this._activeIndex - targetIndex + count) % count;
+
+        if (forward === backward) {
+            return this._lastDirection > 0 ? 1 : -1;
+        }
+
+        return forward < backward ? 1 : -1;
+    }
 
     _activateVideo(index) {
         const slide = this._slides[index];
@@ -158,11 +211,8 @@ class VideoSpotlightSlider extends HTMLElement {
         if (!deferredMedia) return;
 
         if (!deferredMedia.hasAttribute('loaded')) {
-            // First visit: loadContent() calls pauseAllMedia(), clones the
-            // <template> into the DOM, and plays the video (autoplay attr).
             deferredMedia.loadContent(false);
         } else {
-            // Revisiting slide: video already in DOM, restart it.
             const video = slide.querySelector('video');
             if (video) {
                 video.currentTime = 0;
@@ -170,7 +220,6 @@ class VideoSpotlightSlider extends HTMLElement {
             }
         }
 
-        // Attach ended-listener to auto-advance once the preview video finishes.
         const video = slide.querySelector('video');
         if (video) {
             slide._endedHandler = () => this._navigate(1);
@@ -178,39 +227,30 @@ class VideoSpotlightSlider extends HTMLElement {
         }
     }
 
-    // ── Modal video auto-play ────────────────────────────────────
-
     _setupModalAutoPlay() {
-        // ModalDialog.show() order: loadContent() → set [open] → pauseAllMedia()
-        // pauseAllMedia() immediately pauses the video that loadContent() just
-        // started. We observe the [open] attribute and re-play after a tick so
-        // the play() call runs after pauseAllMedia has completed.
-        //
-        // Modal elements are moved to <body> by ModalDialog.connectedCallback(),
-        // so requestAnimationFrame ensures they've been relocated before querying.
         requestAnimationFrame(() => {
-            this._slides.forEach((_, i) => {
-                const modal = document.getElementById(`VideoModal-${this._sectionId}-${i + 1}`);
+            this._slides.forEach((_, index) => {
+                const modal = document.getElementById(`VideoModal-${this._sectionId}-${index + 1}`);
                 if (!modal) return;
 
-                new MutationObserver(() => {
+                const observer = new MutationObserver(() => {
                     const video = modal.querySelector('video');
+
                     if (modal.hasAttribute('open')) {
-                        // Re-play after pauseAllMedia() has run
                         setTimeout(() => {
                             if (video) {
                                 video.currentTime = 0;
                                 video.play().catch(() => { });
                             }
                         }, 0);
-                    } else {
-                        // Modal closed: reset so next open starts from beginning
-                        if (video) {
-                            video.pause();
-                            video.currentTime = 0;
-                        }
+                    } else if (video) {
+                        video.pause();
+                        video.currentTime = 0;
                     }
-                }).observe(modal, { attributes: true, attributeFilter: ['open'] });
+                });
+
+                observer.observe(modal, { attributes: true, attributeFilter: ['open'] });
+                this._modalObservers.push(observer);
             });
         });
     }

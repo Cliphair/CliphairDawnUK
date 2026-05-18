@@ -65,9 +65,9 @@
     endif
   -%}
 
-  <div class="page-width isolate" style="padding:0!important;">
+  <div class="page-width isolate">
     {%- unless section.settings.heading == blank -%}
-      <div class="page-width {% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin {{ section.settings.text_alignment }}">
+      <div class="title-wrapper--no-top-margin {{ section.settings.text_alignment }}">
         <h2
           id="SectionHeading-{{ section.id }}"
           class="blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -81,11 +81,12 @@
     {%- endunless -%}
 
     {% unless section.settings.introduction == blank %}
-      <div class="page-width intro-wrapper {{ section.settings.text_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      <div
+        class="intro-wrapper {{ section.settings.text_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         {% if settings.animations_reveal_on_scroll %}
           data-cascade
         {% endif %}
-        >
+      >
         {{ section.settings.introduction }}
       </div>
     {% endunless %}
@@ -204,7 +205,7 @@
     {% endif %}
 
     {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
-      <slider-component class="page-width blog-posts-wrapper slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <slider-component class="blog-posts-wrapper slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <ul
           class="grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} blog-posts--{{ section.settings.limit }}-items"
           id="Slider-{{ section.id }}"

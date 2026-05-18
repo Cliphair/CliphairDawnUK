@@ -145,7 +145,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 23px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 20px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 23px;\n}\n\n}\n{% endstyle %}",
+        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 23px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 20px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (min-width:350px) and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 23px;\n}\n\n}\n{% endstyle %}",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
@@ -605,22 +605,293 @@
         "padding_bottom": 36
       }
     },
-    "image_list_QrcM99": {
-      "type": "image-list",
-      "name": "Images list",
+    "image_list_nPnYgL": {
+      "type": "spotted-on",
+      "blocks": {
+        "image_UJnFyW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sophie-turner-as-seen-on.webp",
+            "img_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/465063354_1246309533376847_5255723324710601841_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTgwMC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QGdYmktNhOJ12wyJ_BQC314PTy84sofKgEPznteBnY6m474Pb0mNtItTL54bOAmwFA&_nc_ohc=DsCXeBwOz-0Q7kNvwE-mMjA&_nc_gid=gAk-T7OE9r7iGV2Hn9x9vA&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzQ5MDE0MTM5MDI1ODAzMjg4Ng%3D%3D.3-ccb7-5&oh=00_Afa42izMQiUBBmUPRKyWyG1K3BGA1ROfHrYHltHmWPWo5Q&oe=68CDB242&_nc_sid=10d13b",
+            "alt": "@sophiet styled by @halleybrisker",
+            "text_label": "<p>@sophiet styled by @halleybrisker</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">16\" Barbie Blonde Seamless Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_Bt9aJr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ameliadimz.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@ameliadimz styled by @elliefoxhair </p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-lightest-brown-18\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Lightest Brown (#18)\">20\" Lightest Brown (#18) Double Weft Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_8rezVL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/amyhartxo.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@amyhartxo Styled By @hairbyjaypinder</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">18\" Barbie Blonde (#16/60) Seamless Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_fDTmfe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-9.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@nicolacoughlan styled by @halleybrisker for SKIMS</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">22\" Barbie Blonde Double Drawn Seamless Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_pC6jNV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/chloeburrows.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@chloeburrows styled by @hairbyjaypinder</p><p><a href=\"/products/blonde-mix-16-60-clip-in-ponytail-extensions\" title=\"Barbie Blonde (#16/60) Straight Up Wrap Around Ponytail Extension\">24\" Barbie Blonde Wrap Around Ponytail</a></p>",
+            "link": ""
+          }
+        },
+        "image_g8G4zb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/emthenutritionist.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@emthenutritionist styled by @hairbyjaypinder </p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">18” Lightest Blonde (#60) Seamless Clip Ins </a></p>",
+            "link": ""
+          }
+        },
+        "image_FNDhT7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-10.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@juliannemoore styled by @halleybrisker</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-light-auburn\" title=\"Light Auburn (#30) Double Drawn Seamless Clip In Hair Extensions\">22\" Light Auburn Double Drawn Seamless Clip In Hair Extenions</a></p>",
+            "link": ""
+          }
+        },
+        "image_KJrQnV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/fern-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Fern Mccann Styled By @hairbyjaypinder</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-medium-brown\" target=\"_blank\" title=\"Medium Brown (#4) Double Drawn Seamless Clip In Hair Extensions\">22\" Medium Brown (#4) Seamless Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_rHmacL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kellyosbourne.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@kellyosbourne styled by @hairbyjaypinder</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" target=\"_blank\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">20\" Lightest Blonde (#60) Seamless Clip-In Extensions </a></p>",
+            "link": ""
+          }
+        },
+        "image_jLtYAq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lottie-moss-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@lottiemossxo styled by @leahsmithhair_</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">24\" Barbie Blonde Double Drawn Seamless Clip Ins</a></p>",
+            "link": ""
+          }
+        },
+        "image_C8JtLM": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-11.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@ekinsuofficial styled by @leahsmithhair</p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-medium-brown-4\" title=\"Medium Brown (#4) Double Wefted Full Head Clip In Hair Extensions\">20\" Medium Brown Double Weft Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_6GEaeT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kelsey-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@being_kelsey styled by @hairbyjaypinder</p><p><a href=\"/products/remy-royale-seamless-clip-ins-16-60\" target=\"_blank\" title=\"Barbie Blonde (#16/60) Double Drawn Seamless Clip In Hair Extensions\">16\" Barbie Blonde (#16/60) Seamless Clip-In Extensions </a></p>",
+            "link": ""
+          }
+        },
+        "image_EHCiUE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/grace-rosa-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@gracexrosa styled by @ashleyleehair</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">24\" Lightest Blonde Double Drawn Seamless Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_gkxjfU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-12.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@poppydelevingne styled by @kjfowles</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-lightest-blonde\" title=\"Lightest Blonde (#60) Double Drawn Seamless Clip In Hair Extensions\">22\" Lightest Blonde Seamless Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_gbwtBe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bre-as-seen-on.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@bre_tiesi styled by @hairbyjaypinder</p><p><a href=\"/products/jet-black-1-ultra-volume-clip-in-full-head-set-240-300g\" target=\"_blank\" title=\"Jet Black (#1) Ultra-Volume Clip In Full Head Set (240-300G)\">24\" Jet Black Ultra Volume Clip Ins </a></p>",
+            "link": ""
+          }
+        },
+        "image_fGPUME": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-13.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@ameliamarni styled by @leahsmithhair</p><p><a href=\"/products/remy-royale-seamless-clip-ins-dark-espresso-melt\" title=\"Espresso Melt Balayage Double Drawn Seamless Clip In Hair Extensions\">20\" Espresso Melt Balayage Double Drawn Seamless Clip In Hair Extensions</a></p>",
+            "link": ""
+          }
+        },
+        "image_4bXD9L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-1.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Courtney Love styled by @peteburkill</p><p><a href=\"/products/double-wefted-set-clip-in-hair-extensions-bleach-blonde-613\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Bleach Blonde (#613)\">20\" Double Wefted Clip Ins in shade Bleach Blonde</a></p>",
+            "link": ""
+          }
+        },
+        "image_bRzTFF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-2.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@danielle_harold styled by @hairbyjaayyy</p><p><a href=\"/products/ice-blonde-ultra-volume-clip-in-full-head-set-240-300g\" title=\"Ice Blonde Ultra-Volume Clip In Full Head Set (240-300G)\">26” Ultra Volume Clip Ins in shade Ice Blonde</a></p>",
+            "link": ""
+          }
+        },
+        "image_eLKDPX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-3.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@chloegshore</p><p><a href=\"/products/nano-ring-hair-extensions-double-drawn-brown-blonde-mix-18-613\" title=\"Biscuit Blondey (#18/613) Nano Ring Hair Extensions\">24” Remy Royale Nano Rings in shade Biscuit Blondey</a></p>",
+            "link": ""
+          }
+        },
+        "image_hdRCk8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-4.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@gracebeverley styled by @joekelllz</p><p><a href=\"/products/blonde-mix-16-60-clip-in-ponytail-extensions\" title=\"Barbie Blonde (#16/60) Straight Up Wrap Around Ponytail Extension\">20” Wrap Around Ponytailin shade Barbie Blonde</a></p>",
+            "link": ""
+          }
+        },
+        "image_E7dnRR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-5.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@talliastormstyled by @leahsmithhair_</p><p><a href=\"/products/double-wefted-full-head-remy-clip-in-human-hair-extensions-barbie-blonde-16-60\" title=\"Double Wefted Full Head Remy Clip in Human Hair Extensions - Barbie Blonde (#16/60)\">Double Wefted Clip Insin shade Barbie Blonde</a></p>",
+            "link": ""
+          }
+        },
+        "image_UQLB3b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-6.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@lizziecundystyled by @kbhairextensions</p><p><a href=\"/collections/remy-royale-tape-in-extensions\" title=\"High Quality Remy Royale Tape In Hair Extensions\">20” Remy Royale Tapes in shade Hazelnut Brondie, Medium Brown & Light Brown</a></p>",
+            "link": ""
+          }
+        },
+        "image_XVckgU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-7.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@bellehassan</p><p><a href=\"/products/remy-royale-seamless-clip-ins-soft-bronze\" title=\"Soft Bronze Balayage Double Drawn Seamless Clip In Hair Extensions\">20” Seamless Clip Insin shade Soft Bronze Balayage</a></p>",
+            "link": ""
+          }
+        },
+        "image_LDcWRQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/as-seen-on-image-8.webp",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>@harley_brash</p><p><a href=\"/products/seamless-clip-in-hair-extensions-double-drawn-blondeme\" title=\"BlondeMe (#60/SS) Double Drawn Seamless Clip In Hair Extensions\">22” Seamless Clip Ins in shadeBlonde Me</a></p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_UJnFyW",
+        "image_Bt9aJr",
+        "image_8rezVL",
+        "image_fDTmfe",
+        "image_pC6jNV",
+        "image_g8G4zb",
+        "image_FNDhT7",
+        "image_KJrQnV",
+        "image_rHmacL",
+        "image_jLtYAq",
+        "image_C8JtLM",
+        "image_6GEaeT",
+        "image_EHCiUE",
+        "image_gkxjfU",
+        "image_gbwtBe",
+        "image_fGPUME",
+        "image_4bXD9L",
+        "image_bRzTFF",
+        "image_eLKDPX",
+        "image_hdRCk8",
+        "image_E7dnRR",
+        "image_UQLB3b",
+        "image_XVckgU",
+        "image_LDcWRQ"
+      ],
+      "custom_css": [
+        ".text-container {text-align: left;}"
+      ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "introduction": "",
-        "text_allignment": "left",
+        "title": "As Seen On",
+        "heading_size": "h2",
+        "introduction": "<p>Our hair in the spotlight: Browse some of the best Cliphair looks worn by your favourite celebs! </p>",
+        "text_alignment": "left",
         "columns_desktop": 3,
-        "swipe_on_desktop": false,
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "slider_visual": "counter",
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "swipe_on_desktop": true,
+        "color_scheme": "inverse",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "slider_visual": "dots",
+        "padding_top": 40,
+        "padding_bottom": 40,
         "trackable_name": ""
       }
     },
@@ -633,6 +904,16 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "custom_liquid_FeaaFh2": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% style %}\n#shopify-section-template--28562159370614__blog_spot_aPTw9A .article-card__excerpt {\n  display:none;\n}\n#shopify-section-template--28562159370614__blog_spot_aPTw9A .card__information {\n  background-color: #F1F1F1;\n padding:1.4rem 1.6rem;\n}\n{% endstyle %}",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "blog_spot_aPTw9A": {
@@ -665,7 +946,13 @@
         "slider_visual": "counter",
         "padding_top": 0,
         "padding_bottom": 40
-      }
+      },
+      "custom_css": [
+        ".blog__title{font-size:2.3rem;font-weight:400;line-height:1;letter-spacing:-0.02em;margin-bottom:3rem;}",
+        ".card__heading{font-size:1.5rem;line-height:1.2;letter-spacing:-0.05em;margin-bottom:0.5rem;}",
+        ".caption-with-letter-spacing{font-size:1rem;line-height:1.8;letter-spacing:-0.01em;text-transform:none;font-weight:400;}",
+        "@media screen and (min-width:990px){.blog__title{font-size:2.6rem;margin-bottom:5rem;}.card__heading{font-size:2rem;}.caption-with-letter-spacing{font-size:1.6rem;}}"
+      ]
     }
   },
   "order": [
@@ -683,8 +970,9 @@
     "press_bar_RM4Gax",
     "blog_cards_carousel_RDHLew",
     "section_video_spotlight_9ehDBf",
-    "image_list_QrcM99",
+    "image_list_nPnYgL",
     "simple_divider_L3tY7h",
+    "custom_liquid_FeaaFh2",
     "blog_spot_aPTw9A"
   ]
 }

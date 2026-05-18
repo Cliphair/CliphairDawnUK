@@ -24,7 +24,7 @@
 >
   {%- if section.settings.heading != blank -%}
     <div class="page-width vs-heading-wrapper">
-      <h2 class="vs-heading {{ section.settings.heading_size }}">
+      <h2 class="vs-heading">
         {{ section.settings.heading }}
       </h2>
     </div>
@@ -140,33 +140,32 @@
             </li>
           {%- endfor -%}
         </ul>
-      </div>
 
-      {%- comment -%} ── Controls (prev / next) ──────────────────────── {%- endcomment -%}
-      <div class="vs-controls no-js-hidden">
-        <button
-          type="button"
-          class="slider-button slider-button--prev vs-controls__prev"
-          name="previous"
-          aria-label="{{ 'general.slider.previous_slide' | t }}"
-          aria-controls="VsTrack-{{ section.id }}"
-        >
-          {%- render 'icon-caret' -%}
-        </button>
+        <div class="vs-controls no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev vs-controls__prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+            aria-controls="VsTrack-{{ section.id }}"
+          >
+            {%- render 'icon-caret' -%}
+          </button>
 
-        <button
-          type="button"
-          class="slider-button slider-button--next vs-controls__next"
-          name="next"
-          aria-label="{{ 'general.slider.next_slide' | t }}"
-          aria-controls="VsTrack-{{ section.id }}"
-        >
-          {%- render 'icon-caret' -%}
-        </button>
+          <button
+            type="button"
+            class="slider-button slider-button--next vs-controls__next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+            aria-controls="VsTrack-{{ section.id }}"
+          >
+            {%- render 'icon-caret' -%}
+          </button>
+        </div>
       </div>
 
       {%- comment -%} ── Per-slide info panel ────────────────────────── {%- endcomment -%}
-      <div class="vs-info-area page-width" aria-live="polite" aria-atomic="true">
+      <div class="vs-info-area" aria-live="polite" aria-atomic="true">
         {%- for block in section.blocks -%}
           <div
             class="vs-info-panel{% if forloop.first %} is-active{% endif %}"
@@ -175,56 +174,60 @@
               aria-hidden="true"
             {% endunless %}
           >
-            <div class="vs-info-panel__product">
-              {%- if block.settings.swatch_image != blank -%}
-                <div class="vs-swatch" aria-hidden="true">
-                  {{
-                    block.settings.swatch_image
-                    | image_url: width: 120
-                    | image_tag:
-                      loading: 'lazy',
-                      widths: '60, 80, 120',
-                      sizes: '5.6rem',
-                      class: 'vs-swatch__img',
-                      alt: block.settings.product_name
-                  }}
-                </div>
-              {%- endif -%}
+            <div class="vs-info-panel__product-bar">
+              <div class="vs-info-panel__product">
+                {%- if block.settings.swatch_image != blank -%}
+                  <div class="vs-swatch" aria-hidden="true">
+                    {{
+                      block.settings.swatch_image
+                      | image_url: width: 120
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '60, 80, 120',
+                        sizes: '5.6rem',
+                        class: 'vs-swatch__img',
+                        alt: block.settings.product_name
+                    }}
+                  </div>
+                {%- endif -%}
 
-              <div class="vs-info-panel__text">
-                {%- if block.settings.product_name != blank -%}
-                  <p class="vs-info-panel__product-name">{{ block.settings.product_name | escape }}</p>
+                <div class="vs-info-panel__text">
+                  {%- if block.settings.product_name != blank -%}
+                    <p class="vs-info-panel__product-name">{{ block.settings.product_name | escape }}</p>
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.product_link != blank -%}
+                  <a
+                    href="{{ block.settings.product_link }}"
+                    class="button button--secondary vs-info-panel__cta"
+                    aria-label="Shop Now - {{ block.settings.product_name | escape }}"
+                  >
+                    Shop Now
+                  </a>
                 {%- endif -%}
               </div>
-
-              {%- if block.settings.product_link != blank -%}
-                <a
-                  href="{{ block.settings.product_link }}"
-                  class="button button--secondary vs-info-panel__cta"
-                  aria-label="Shop Now — {{ block.settings.product_name | escape }}"
-                >
-                  Shop Now
-                </a>
-              {%- endif -%}
             </div>
 
             {%- if block.settings.reviewer_name != blank or block.settings.review_text != blank -%}
-              <div class="vs-info-panel__review">
+              <div class="vs-info-panel__review-card">
                 {%- assign stars = block.settings.star_rating | default: 5 -%}
-                <div
-                  class="rating"
-                  aria-label="{{ stars }} out of 5 stars"
-                >
-                  <p
-                    class="rating-star"
-                    style="--rating: {{ stars }}; --rating-max: 5; --rating-decimal: 0;"
-                    aria-hidden="true"
-                  ></p>
-                </div>
+                <div class="vs-info-panel__review-header">
+                  {%- if block.settings.reviewer_name != blank -%}
+                    <span class="vs-info-panel__reviewer">{{ block.settings.reviewer_name | escape }}</span>
+                  {%- endif -%}
 
-                {%- if block.settings.reviewer_name != blank -%}
-                  <span class="vs-info-panel__reviewer">{{ block.settings.reviewer_name | escape }}</span>
-                {%- endif -%}
+                  <div
+                    class="rating"
+                    aria-label="{{ stars }} out of 5 stars"
+                  >
+                    <span
+                      class="rating-star"
+                      style="--rating: {{ stars }}; --rating-max: 5; --rating-decimal: 0;"
+                      aria-hidden="true"
+                    ></span>
+                  </div>
+                </div>
 
                 {%- if block.settings.review_text != blank -%}
                   <p class="vs-info-panel__review-text">{{ block.settings.review_text | escape }}</p>
@@ -294,17 +297,6 @@
       "id": "heading",
       "label": "Heading",
       "default": "Real hair, real life"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "label": "Heading size",
-      "options": [
-        { "value": "h2", "label": "Small" },
-        { "value": "h1", "label": "Medium" },
-        { "value": "h0", "label": "Large" }
-      ],
-      "default": "h1"
     },
     {
       "type": "color_scheme",
