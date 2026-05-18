@@ -565,6 +565,8 @@
         "video_slide_K84Ta4": {
           "type": "video_slide",
           "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-9-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-9.jpg",
             "product_name": "Clip-in Hair Extensions",
             "product_link": "",
             "star_rating": 5,
@@ -575,6 +577,8 @@
         "video_slide_7qCMcT": {
           "type": "video_slide",
           "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-3-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-3.jpg",
             "product_name": "Tape-in Hair Extensions",
             "product_link": "",
             "star_rating": 5,
@@ -585,18 +589,72 @@
         "video_slide_k34hfH": {
           "type": "video_slide",
           "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-11-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-11.jpg",
             "product_name": "Halo Hair Extensions",
             "product_link": "",
             "star_rating": 5,
             "reviewer_name": "Jessica T.",
             "review_text": "\"Game changer! On and off in seconds.\""
           }
+        },
+        "video_slide_VKeKJ9": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-12-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-12.jpg",
+            "product_name": "Clip-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
+        },
+        "video_slide_EzRp4D": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-10-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-10.jpg",
+            "product_name": "Clip-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
+        },
+        "video_slide_drDyYr": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-7-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-7.jpg",
+            "product_name": "Clip-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
+        },
+        "video_slide_UtUeeV": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/bridal-26-hair-down-1-video.mp4",
+            "poster_image": "shopify://shop_images/bridal-26-hair-down-1.jpg",
+            "product_name": "Clip-in Hair Extensions",
+            "product_link": "",
+            "star_rating": 5,
+            "reviewer_name": "Sarah M.",
+            "review_text": "\"Absolutely love them, they blend perfectly!\""
+          }
         }
       },
       "block_order": [
         "video_slide_K84Ta4",
         "video_slide_7qCMcT",
-        "video_slide_k34hfH"
+        "video_slide_k34hfH",
+        "video_slide_VKeKJ9",
+        "video_slide_EzRp4D",
+        "video_slide_drDyYr",
+        "video_slide_UtUeeV"
       ],
       "name": "Video Spotlight",
       "settings": {
