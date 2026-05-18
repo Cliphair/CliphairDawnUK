@@ -567,8 +567,9 @@
           "settings": {
             "video": "shopify://files/videos/bridal-26-hair-down-9-video.mp4",
             "poster_image": "shopify://shop_images/bridal-26-hair-down-9.jpg",
+            "swatch_image": "shopify://shop_images/350-fhs_website-attachment.jpg",
             "product_name": "Clip-in Hair Extensions",
-            "product_link": "",
+            "product_link": "/",
             "star_rating": 5,
             "reviewer_name": "Sarah M.",
             "review_text": "\"Absolutely love them, they blend perfectly!\""
