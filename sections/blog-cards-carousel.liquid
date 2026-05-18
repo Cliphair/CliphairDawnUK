@@ -15,7 +15,7 @@
   }
   #BlogCards-{{ section.id }} {
     --cols-mobile: {{ section.settings.columns_mobile }};
-    --cols-tablet: {{ section.settings.columns_desktop | minus: 1 }};
+    --cols-tablet: {{ section.settings.columns_mobile | plus: 1 }};
     --cols-desktop: {{ section.settings.columns_desktop }};
   }
 {%- endstyle -%}
@@ -76,7 +76,7 @@
                 <span class="blog-cards__card-title">{{ block.settings.title }}</span>
               {%- endunless -%}
               <span class="blog-cards__card-arrow" aria-hidden="true">
-                {%- render 'icon-arrow' -%}
+                {%- render 'icon-caret' -%}
               </span>
             </div>
             {%- if block.settings.link != blank -%}
