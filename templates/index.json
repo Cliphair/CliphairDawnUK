@@ -179,7 +179,7 @@
         "content_alignment": "left",
         "color_scheme": "background-faded-pink",
         "full_width": true,
-        "padding_top": 52,
+        "padding_top": 56,
         "padding_bottom": 0
       }
     },
@@ -190,8 +190,8 @@
         "divider_color": "#c0c0c0",
         "divider_height": 1,
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 48,
+        "padding_bottom": 36
       }
     },
     "hair_goal_cards_carousel_i7waLK": {
@@ -267,8 +267,8 @@
         "divider_color": "#c0c0c0",
         "divider_height": 1,
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "hair_goal_cards_grid_GxXgbq": {
@@ -338,7 +338,7 @@
         "show_less_label": "View Less",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 44
       }
     },
     "yotpo_reviews_split_EY4hfW": {
@@ -555,8 +555,8 @@
         "columns_mobile": 1,
         "columns_desktop": 4,
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 68,
+        "padding_bottom": 60
       }
     },
     "section_video_spotlight_9ehDBf": {
@@ -661,8 +661,8 @@
       "settings": {
         "heading": "Real hair, real life",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "image_list_nPnYgL": {
@@ -950,8 +950,8 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "dots",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 56,
+        "padding_bottom": 0,
         "trackable_name": ""
       }
     },
@@ -962,8 +962,8 @@
         "divider_color": "#c0c0c0",
         "divider_height": 1,
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 52,
+        "padding_bottom": 64
       }
     },
     "custom_liquid_FeaaFh2": {
