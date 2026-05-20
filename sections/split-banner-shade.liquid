@@ -2,7 +2,6 @@
 {{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
 {{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-split-banner-shade.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'section-split-banner-shade.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -33,31 +32,36 @@
                 endif
               endfor
               assign show_controls = false
-              if shade_count > 1
+              if shade_count > 4
                 assign show_controls = true
               endif
               assign image_ratio = block.settings.image_ratio | default: 'portrait'
+              assign image_sizes = '(min-width: 990px) 145px, calc((100vw - 6rem) / 4)'
             -%}
             <div
-              class="split-banner-shade__column split-banner-shade__column--shades color-{{ block.settings.color_scheme }} gradient"
+              class=" page-width split-banner-shade__column split-banner-shade__column--shades color-{{ block.settings.color_scheme }} gradient"
               {{ block.shopify_attributes }}
             >
               {%- unless block.settings.heading == blank -%}
-                <h2 class="split-banner-shade__heading">{{ block.settings.heading | escape }}</h2>
+                <div class="split-banner-shade__heading-wrapper">
+                  <h2 class="split-banner-shade__heading">{{ block.settings.heading | escape }}</h2>
+                </div>
               {%- endunless -%}
 
               {%- if shade_count > 0 -%}
-                <split-banner-shade-slider
+                <slider-component-custom
                   id="shade-slider-{{ section.id }}"
                   class="split-banner-shade__slider"
                   data-visual="dots"
                 >
                   <ul
                     id="Slider-{{ section.id }}"
-                    class="split-banner-shade__shade-list grid grid--peek slider slider--tablet slider--desktop"
+                    class="split-banner-shade__shade-list slider slider--everywhere"
                     role="list"
                     aria-label="{{ block.settings.heading | strip_html | escape }}"
                   >
+                    {%- assign rendered_shades = 0 -%}
+                    {%- assign slide_index = 0 -%}
                     {%- for link in menu.links -%}
                       {%- if link.type == 'collection_link' -%}
                         {%- liquid
@@ -69,11 +73,24 @@
                             assign fetchpriority_attr = 'high'
                             assign prioritise_first_image = false
                           endif
+                          assign rendered_shades = rendered_shades | plus: 1
+                          assign slide_slot = rendered_shades | modulo: 4
+                          if slide_slot == 1
+                            assign slide_index = slide_index | plus: 1
+                          endif
                         -%}
-                        <li
-                          id="Slide-{{ section.id }}-{{ forloop.index }}"
-                          class="split-banner-shade__shade-item hair-goal-card hair-goal-card--carousel grid__item custom__slide slider__slide"
-                        >
+                        {%- if slide_slot == 1 -%}
+                          <li
+                            id="Slide-{{ section.id }}-{{ slide_index }}"
+                            class="split-banner-shade__shade-item custom__slide slider__slide"
+                          >
+                            <div
+                              class="split-banner-shade__shade-grid"
+                              role="group"
+                              aria-label="Shade slide {{ slide_index }}"
+                            >
+                        {%- endif -%}
+                        <div class="split-banner-shade__shade-card hair-goal-card hair-goal-card--carousel">
                           <a href="{{ link.url }}" class="hair-goal-card__link">
                             <div class="hair-goal-card__media hair-goal-card__media--{{ image_ratio }}">
                               {%- if col.featured_image != blank -%}
@@ -83,8 +100,8 @@
                                   | image_tag:
                                     loading: loading_attr,
                                     fetchpriority: fetchpriority_attr,
-                                    widths: '225, 450, 675, 900',
-                                    sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 55vw',
+                                    widths: '120, 180, 240, 320',
+                                    sizes: image_sizes,
                                     class: 'hair-goal-card__image',
                                     alt: col.title
                                 }}
@@ -96,7 +113,11 @@
                               <span class="hair-goal-card__name">{{ link.title | escape }}</span>
                             </div>
                           </a>
-                        </li>
+                        </div>
+                        {%- if slide_slot == 0 or rendered_shades == shade_count -%}
+                          </div>
+                          </li>
+                        {%- endif -%}
                       {%- endif -%}
                     {%- endfor -%}
                   </ul>
@@ -122,45 +143,47 @@
                       </button>
                     </div>
                   {%- endif -%}
-                </split-banner-shade-slider>
+                </slider-component-custom>
               {%- else -%}
                 <p class="split-banner-shade__empty">No shades found. Add collection links to the selected menu.</p>
               {%- endif -%}
             </div>
 
           {%- when 'banner' -%}
+            {%- liquid
+              assign banner_image = block.settings.image_desktop
+              assign banner_image_mobile = block.settings.image_mobile | default: banner_image
+              if banner_image == blank
+                assign banner_image = banner_image_mobile
+              endif
+              assign banner_render_image = banner_image_mobile | default: banner_image
+              assign banner_alt = banner_render_image.alt | default: ''
+              assign banner_loading = 'lazy'
+              assign banner_fetchpriority = 'auto'
+              if prioritise_first_image and banner_render_image != blank
+                assign banner_loading = 'eager'
+                assign banner_fetchpriority = 'high'
+                assign prioritise_first_image = false
+              endif
+              if banner_render_image != blank
+                assign banner_render_height = banner_render_image.width | divided_by: banner_render_image.aspect_ratio | round
+              endif
+              assign banner_mobile_aspect_ratio = banner_image_mobile.aspect_ratio | default: banner_render_image.aspect_ratio
+              assign banner_desktop_aspect_ratio = banner_image.aspect_ratio | default: banner_render_image.aspect_ratio
+            -%}
             <div
               class="split-banner-shade__column split-banner-shade__column--banner color-{{ block.settings.color_scheme }} gradient"
               {{ block.shopify_attributes }}
             >
-              {%- liquid
-                assign banner_image = block.settings.image_desktop
-                assign banner_image_mobile = block.settings.image_mobile | default: banner_image
-                if banner_image == blank
-                  assign banner_image = banner_image_mobile
-                endif
-                assign banner_render_image = banner_image_mobile | default: banner_image
-                assign banner_alt = block.settings.title | strip_html
-                if banner_render_image != blank and banner_render_image.alt != blank
-                  assign banner_alt = banner_render_image.alt
-                endif
-                assign banner_loading = 'lazy'
-                assign banner_fetchpriority = 'auto'
-                if prioritise_first_image and banner_render_image != blank
-                  assign banner_loading = 'eager'
-                  assign banner_fetchpriority = 'high'
-                  assign prioritise_first_image = false
-                endif
-                if banner_render_image != blank
-                  assign banner_render_height = banner_render_image.width | divided_by: banner_render_image.aspect_ratio | round
-                endif
-                assign banner_mobile_aspect_ratio = banner_image_mobile.aspect_ratio | default: banner_render_image.aspect_ratio
-                assign banner_desktop_aspect_ratio = banner_image.aspect_ratio | default: banner_render_image.aspect_ratio
-              -%}
-
-              <div
-                class="split-banner-shade__banner-inner split-banner-shade__banner-inner--{{ block.settings.content_position }}"
-                style="--split-banner-shade-overlay-opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }}; --split-banner-shade-aspect-ratio-mobile: {{ banner_mobile_aspect_ratio }}; --split-banner-shade-aspect-ratio-desktop: {{ banner_desktop_aspect_ratio }};"
+              {%- unless block.settings.title == blank -%}
+                <div class=" page-width split-banner-shade__heading-wrapper">
+                  <h2 class="split-banner-shade__heading">{{ block.settings.title | escape }}</h2>
+                </div>
+              {%- endunless -%}
+              <a
+                href="{{ block.settings.url }}"
+                class="split-banner-shade__banner-link"
+                style="--split-banner-shade-aspect-ratio-mobile: {{ banner_mobile_aspect_ratio }}; --split-banner-shade-aspect-ratio-desktop: {{ banner_desktop_aspect_ratio }};"
               >
                 {%- if banner_render_image != blank -%}
                   <picture class="split-banner-shade__banner-media">
@@ -200,26 +223,10 @@
                     >
                   </picture>
                 {%- endif -%}
-
-                <div class="split-banner-shade__banner-overlay"></div>
-
-                <div class="split-banner-shade__banner-content">
-                  {%- unless block.settings.title == blank -%}
-                    <p class="split-banner-shade__banner-title">{{ block.settings.title }}</p>
-                  {%- endunless -%}
-                  {%- unless block.settings.text == blank -%}
-                    <div class="split-banner-shade__banner-text rte">{{ block.settings.text }}</div>
-                  {%- endunless -%}
-                  {%- if block.settings.button_label != blank and block.settings.button_url != blank -%}
-                    <a
-                      href="{{ block.settings.button_url }}"
-                      class="button{% if block.settings.button_style == 'secondary' %} button--secondary{% elsif block.settings.button_style == 'tertiary' %} button--tertiary{% else %} button--primary{% endif %}"
-                    >
-                      {{ block.settings.button_label | escape }}
-                    </a>
-                  {%- endif -%}
-                </div>
-              </div>
+                {%- unless block.settings.link_text == blank -%}
+                  <span class="visually-hidden">{{ block.settings.link_text | escape }}</span>
+                {%- endunless -%}
+              </a>
             </div>
         {%- endcase -%}
       {%- endfor -%}
@@ -330,62 +337,21 @@
           "info": "Displayed on screens narrower than 750px. Falls back to desktop image if not set."
         },
         {
-          "type": "inline_richtext",
-          "id": "title",
-          "label": "Title",
-          "default": "We've given our rewards <em>a glow-up!</em>"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.</p>"
-        },
-        {
           "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "Join Now"
+          "id": "title",
+          "label": "Title"
         },
         {
           "type": "url",
-          "id": "button_url",
-          "label": "Button URL"
+          "id": "url",
+          "label": "Link URL"
         },
         {
-          "type": "select",
-          "id": "button_style",
-          "label": "Button style",
-          "options": [
-            { "value": "primary", "label": "Primary" },
-            { "value": "secondary", "label": "Secondary" },
-            { "value": "tertiary", "label": "Tertiary" }
-          ],
-          "default": "primary"
-        },
-        {
-          "type": "select",
-          "id": "content_position",
-          "label": "Content position",
-          "options": [
-            { "value": "top-left", "label": "Top left" },
-            { "value": "top-center", "label": "Top centre" },
-            { "value": "middle-left", "label": "Middle left" },
-            { "value": "middle-center", "label": "Middle centre" },
-            { "value": "bottom-left", "label": "Bottom left" },
-            { "value": "bottom-center", "label": "Bottom centre" }
-          ],
-          "default": "bottom-left"
-        },
-        {
-          "type": "range",
-          "id": "image_overlay_opacity",
-          "label": "Image overlay opacity",
-          "min": 0,
-          "max": 100,
-          "step": 5,
-          "unit": "%",
-          "default": 25
+          "type": "text",
+          "id": "link_text",
+          "label": "Link description",
+          "info": "Hidden from view but read by search engines and screen readers. Describe where this banner links to.",
+          "default": "Shop our rewards programme"
         }
       ]
     }
