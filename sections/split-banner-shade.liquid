@@ -15,7 +15,7 @@
     }
   }
 {%- endstyle -%}
-
+{% if customer %}{{ customer.metafields.yotpo.loyalty_opt_in_source }}{% endif %}
 <div class="section-{{ section.id }}-padding">
   <div class="split-banner-shade__outer">
     <div class="split-banner-shade__grid page-width" style="padding-right:0; padding-left:0;">

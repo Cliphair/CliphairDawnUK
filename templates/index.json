@@ -371,13 +371,7 @@
           "type": "banner",
           "settings": {
             "color_scheme": "",
-            "title": "A title here",
-            "text": "<p>Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.</p>",
-            "button_label": "Join Now",
-            "button_url": "",
-            "button_style": "primary",
-            "content_position": "bottom-left",
-            "image_overlay_opacity": 25
+            "title": "A title here"
           }
         }
       },
