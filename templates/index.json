@@ -274,6 +274,33 @@
     "hair_goal_cards_grid_GxXgbq": {
       "type": "hair-goal-cards-grid",
       "blocks": {
+        "card_bV773G": {
+          "type": "card",
+          "settings": {
+            "badge": "",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": ""
+          }
+        },
+        "card_zaABAk": {
+          "type": "card",
+          "settings": {
+            "badge": "",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": ""
+          }
+        },
+        "card_KcQtfq": {
+          "type": "card",
+          "settings": {
+            "badge": "",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": ""
+          }
+        },
         "card_j9qWpP": {
           "type": "card",
           "settings": {
@@ -316,6 +343,9 @@
         }
       },
       "block_order": [
+        "card_bV773G",
+        "card_zaABAk",
+        "card_KcQtfq",
         "card_j9qWpP",
         "card_pwtpqk",
         "card_Vjf7Ab",
@@ -371,7 +401,9 @@
           "type": "banner",
           "settings": {
             "color_scheme": "",
-            "title": "A title here"
+            "title": "A title here",
+            "url": "",
+            "link_text": "Shop our rewards programme"
           }
         }
       },
