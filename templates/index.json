@@ -80,7 +80,6 @@
         "slide_cnhnUM": {
           "type": "slide",
           "name": "Shop By Shade",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
             "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
