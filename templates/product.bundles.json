@@ -82,6 +82,7 @@
         },
         "yotpo_loyalty_rewards_product_points_module_app_block_QDYrEh": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "disabled": true,
           "settings": {}
         },
         "order_deadline_67UiV7": {
