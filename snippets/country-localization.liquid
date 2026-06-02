@@ -56,8 +56,67 @@
         </li>
       {% endfor %}
 
-      
+      <li class="disclosure_break-line"></li>
+
+<li class="disclosure__item" tabindex="-1">
+  <button type="button" class="link link--text disclosure__link caption-large focus-inset js-load-all-countries">
+    More countries
+  </button>
+</li>
+
+
     </ul>
+<script type="application/json" id="{{ localPosition }}CountriesJson">
+[
+  {%- for country in localization.available_countries -%}
+    {
+      "name": {{ country.name | json }},
+      "iso_code": {{ country.iso_code | json }},
+      "currency_iso": {{ country.currency.iso_code | json }},
+      "currency_symbol": {{ country.currency.symbol | json }},
+      "flag": {{ country | image_url: width: 32 | json }}
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+]
+</script>
+
   </div>
 </div>
 <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+
+
+<script>
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.js-load-all-countries');
+  if (!btn) return;
+
+  var wrapper = btn.closest('.disclosure__list-wrapper');
+  var list = wrapper.querySelector('.disclosure__list');
+  var jsonEl = wrapper.parentElement.querySelector('script[type="application/json"]');
+
+  if (!jsonEl || list.dataset.loadedCountries === 'true') return;
+
+  var countries = JSON.parse(jsonEl.textContent);
+
+  countries.forEach(function(country) {
+    if (list.querySelector('[data-value="' + country.iso_code + '"]')) return;
+
+    var li = document.createElement('li');
+    li.className = 'disclosure__item';
+    li.setAttribute('tabindex', '-1');
+
+    li.innerHTML =
+      '<a class="link link--text disclosure__link caption-large focus-inset" href="#" data-value="' + country.iso_code + '">' +
+        '<span class="localization-form__flag">' +
+          '<img src="' + country.flag + '" alt="' + country.name + '" width="32" height="24" loading="lazy">' +
+        '</span>' +
+        country.currency_iso + ' ' + country.currency_symbol +
+      '</a>';
+
+    list.appendChild(li);
+  });
+
+  list.dataset.loadedCountries = 'true';
+  btn.closest('li').remove();
+});
+</script>
