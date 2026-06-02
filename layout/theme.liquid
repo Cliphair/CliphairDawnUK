@@ -478,25 +478,47 @@
       window.KlarnaThemeGlobals={};{%case template.name%} {%when"product"%} window.KlarnaThemeGlobals.data_purchase_amount={{product.first_available_variant.price}};window.KlarnaThemeGlobals.productVariants={{product.variants|json}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%when"cart"%} window.KlarnaThemeGlobals.data_purchase_amount={{cart.total_price}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%endcase%}
     </script>
     <!-- End Klarna -->
-<script>
-function openKlearRecruit() {
 
-  if (window.klrRecruit) {
-    window.klrRecruit.openRecruit();
-    return;
+
+
+    
+<script>
+function openKlearRecruit(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
   }
 
-  const script = document.createElement('script');
+  function openPopup() {
+    if (window.klrRecruit && typeof window.klrRecruit.openRecruit === 'function') {
+      window.klrRecruit.openRecruit();
+    }
+  }
+
+  if (window.klrRecruit && typeof window.klrRecruit.openRecruit === 'function') {
+    openPopup();
+    return false;
+  }
+
+  if (window.klearRecruitLoading) {
+    setTimeout(openPopup, 1500);
+    return false;
+  }
+
+  window.klearRecruitLoading = true;
+
+  var script = document.createElement('script');
   script.src = 'https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524';
   script.async = true;
 
   script.onload = function () {
-    if (window.klrRecruit) {
-      window.klrRecruit.openRecruit();
-    }
+    window.klearRecruitLoading = false;
+    setTimeout(openPopup, 500);
   };
 
   document.body.appendChild(script);
+
+  return false;
 }
 </script>
 
