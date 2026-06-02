@@ -88,6 +88,7 @@
         },
         "order_deadline_67UiV7": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
+          "disabled": true,
           "settings": {
             "product": "{{product}}",
             "style": "timeline",
