@@ -113,6 +113,7 @@
         },
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
           "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
+          "disabled": true,
           "settings": {
             "text_align": "inherit",
             "margin_top": 16,
