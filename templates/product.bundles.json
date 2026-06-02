@@ -70,6 +70,7 @@
         },
         "sc_back_in_stock_app_block_9r4aki": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
