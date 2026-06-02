@@ -354,12 +354,7 @@
     ></script>
     <!-- End Yotpo -->
 
-    <!-- Klear influencer form -->
-    <script
-      async
-      src="https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524"
-    ></script>
-
+   
     <script>
       if (window.location.pathname == 'https://www.cliphair.co.uk/hair-extensions-news/wp-content/uploads/') {
         location.replace(
@@ -483,6 +478,29 @@
       window.KlarnaThemeGlobals={};{%case template.name%} {%when"product"%} window.KlarnaThemeGlobals.data_purchase_amount={{product.first_available_variant.price}};window.KlarnaThemeGlobals.productVariants={{product.variants|json}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%when"cart"%} window.KlarnaThemeGlobals.data_purchase_amount={{cart.total_price}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%endcase%}
     </script>
     <!-- End Klarna -->
+<script>
+function openKlearRecruit() {
+
+  if (window.klrRecruit) {
+    window.klrRecruit.openRecruit();
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.src = 'https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524';
+  script.async = true;
+
+  script.onload = function () {
+    if (window.klrRecruit) {
+      window.klrRecruit.openRecruit();
+    }
+  };
+
+  document.body.appendChild(script);
+}
+</script>
+
+
   </body>
 </html>
 {% comment %}
