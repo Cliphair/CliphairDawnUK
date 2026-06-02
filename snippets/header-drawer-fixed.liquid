@@ -3327,7 +3327,7 @@
                         <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
                       {%- endform -%}
                     </noscript>
-{% comment %}
+
                     <localization-form class="no-js-hidden">
                       {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
                         <div>
@@ -3338,8 +3338,7 @@
                         </div>
                       {%- endform -%}
                     </localization-form>
-
-                    {% endcomment %}
+                    
                   {% endif %}
 
                   {%- if localization.available_languages and localization.available_languages.size > 1 -%}
