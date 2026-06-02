@@ -2829,7 +2829,28 @@
                   id="HeaderMenu-info-hub-ambassador"
                   class="mega-menu__link link"
                 >
-                  <span onclick="klrRecruit.openRecruit()">Become An Ambassador</span>
+                  <span onclick="openKlearRecruit()">Become An Ambassador</span>
+
+<script>
+  function openKlearRecruit() {
+    if (window.klrRecruit) {
+      window.klrRecruit.openRecruit();
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524';
+    script.async = true;
+
+    script.onload = function () {
+      if (window.klrRecruit) {
+        window.klrRecruit.openRecruit();
+      }
+    };
+
+    document.body.appendChild(script);
+  }
+</script>
                 </span>
                 <modal-opener
                   id="HeaderMenu-info-hub-trade"
