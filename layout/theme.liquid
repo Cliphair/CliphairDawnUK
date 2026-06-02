@@ -479,41 +479,46 @@
     </script>
     <!-- End Klarna -->
 
-
-
-    
 <script>
 function openKlearRecruit(event) {
   if (event) {
     event.preventDefault();
-    event.stopPropagation();
   }
+
+  var klearSrc = 'https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524';
 
   function openPopup() {
     if (window.klrRecruit && typeof window.klrRecruit.openRecruit === 'function') {
       window.klrRecruit.openRecruit();
+      return true;
     }
-  }
-
-  if (window.klrRecruit && typeof window.klrRecruit.openRecruit === 'function') {
-    openPopup();
     return false;
   }
 
+  if (openPopup()) return false;
+
   if (window.klearRecruitLoading) {
-    setTimeout(openPopup, 1500);
+    setTimeout(openPopup, 1000);
     return false;
   }
 
   window.klearRecruitLoading = true;
 
   var script = document.createElement('script');
-  script.src = 'https://klear.com/dist/external.bundle.js?form=7b8e7f282e50817e0d385ee78dfd50f95f75f524';
+  script.src = klearSrc;
   script.async = true;
 
   script.onload = function () {
     window.klearRecruitLoading = false;
-    setTimeout(openPopup, 500);
+
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+
+      if (openPopup() || tries >= 10) {
+        clearInterval(timer);
+      }
+    }, 300);
   };
 
   document.body.appendChild(script);
