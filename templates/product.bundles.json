@@ -70,7 +70,6 @@
         },
         "sc_back_in_stock_app_block_9r4aki": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
-          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
@@ -83,12 +82,10 @@
         },
         "yotpo_loyalty_rewards_product_points_module_app_block_QDYrEh": {
           "type": "shopify://apps/yotpo-loyalty-rewards/blocks/product-points-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-          "disabled": true,
           "settings": {}
         },
         "order_deadline_67UiV7": {
           "type": "shopify://apps/order-deadline-2/blocks/app-block-product/aa720489-6f6f-40f0-bb97-2aeb4afd8498",
-          "disabled": true,
           "settings": {
             "product": "{{product}}",
             "style": "timeline",
@@ -114,7 +111,6 @@
         },
         "clearpay_on_site_messaging_payments_messaging_pLyzBQ": {
           "type": "shopify://apps/clearpay-on-site-messaging/blocks/payments-messaging/5d763983-d3e6-4888-9966-4e1170b26ae9",
-          "disabled": true,
           "settings": {
             "text_align": "inherit",
             "margin_top": 16,
