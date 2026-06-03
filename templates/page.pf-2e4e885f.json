@@ -11,11 +11,234 @@
   "sections": {
     "pf-2e4e885f": {
       "type": "pf-2e4e885f",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_HQeDzY": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_AWgxwr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Facebook_Cover_email_Klarna.jpg",
+            "image_url": "",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center",
+            "banner_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_AWgxwr"
+      ],
+      "name": "t:sections.slideshow.presets.name",
       "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand",
+        "trackable_name": ""
+      }
+    },
+    "rich_text_amNyyX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UGjjft": {
+          "type": "heading",
+          "settings": {
+            "heading": "Klarna FAQs",
+            "heading_size": "h1",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UGjjft"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_a39Kc3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yzNBJ4": {
+          "type": "heading",
+          "settings": {
+            "heading": "SHOP NOW, PAY LATER",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
+        "text_knA8Yn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Keep your hair game strong and shop hair extensions now and pay nothing for 30 days OR spread the cost or pay in 3 easy installments. No fees, no interest and no hassle.</p>",
+            "read-more_text": ""
+          }
+        },
+        "heading_Ln4Vzx": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHO IS KLARNA?",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
+        "text_BUPjYN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Klarna is the provider of smooth payments to more than 100,000 online stores. Over 60 million consumers worldwide have trusted Klarna to securely handle their payments, and now you can too when you shop with us.</p>",
+            "read-more_text": ""
+          }
+        },
+        "heading_wmHDcq": {
+          "type": "heading",
+          "settings": {
+            "heading": "HOW DOES IT WORK?",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yzNBJ4",
+        "text_knA8Yn",
+        "heading_Ln4Vzx",
+        "text_BUPjYN",
+        "heading_wmHDcq"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "image_list_nmtU66": {
+      "type": "image-list",
+      "blocks": {
+        "image_qpaGHq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Graphic_1_23cc43fb-11b9-45da-9399-f8ee65a01f77.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_qpaGHq"
+      ],
+      "name": "Images list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 1,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
+      }
+    },
+    "rich_text_bWbjwp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tF7yQb": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHAT HAPPENS AFTER?",
+            "heading_size": "h2",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_tF7yQb"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "image_list_NmfEPH": {
+      "type": "image-list",
+      "blocks": {
+        "image_HM7a6a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Klarna_Graphic_2.jpg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_HM7a6a"
+      ],
+      "name": "Images list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 1,
+        "swipe_on_desktop": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "trackable_name": ""
       }
     }
   },
   "order": [
-    "pf-2e4e885f"
+    "pf-2e4e885f",
+    "slideshow_HQeDzY",
+    "rich_text_amNyyX",
+    "rich_text_a39Kc3",
+    "image_list_nmtU66",
+    "rich_text_bWbjwp",
+    "image_list_NmfEPH"
   ]
 }
