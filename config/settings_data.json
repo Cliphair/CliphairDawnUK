@@ -224,14 +224,14 @@
           "snowfall_pages": "all"
         }
       },
-      "16357531335331704164": {
-        "type": "shopify://apps/wheelify-spin-wheel/blocks/wheelify/505ff42c-abce-4466-9558-7e1d3b2cfcd7",
-        "disabled": true,
-        "settings": {}
-      },
       "pagefly-page-builder": {
         "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": true,
+        "settings": {}
+      },
+      "16357531335331704164": {
+        "type": "shopify://apps/wheelify-spin-wheel/blocks/wheelify/505ff42c-abce-4466-9558-7e1d3b2cfcd7",
+        "disabled": false,
         "settings": {}
       }
     },
