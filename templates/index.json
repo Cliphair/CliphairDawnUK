@@ -267,8 +267,8 @@
         "divider_color": "#c0c0c0",
         "divider_height": 1,
         "full_width": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "hair_goal_cards_grid_GxXgbq": {
@@ -277,68 +277,101 @@
         "card_bV773G": {
           "type": "card",
           "settings": {
-            "badge": "",
-            "title": "Max Volume",
-            "subtitle": "Thick, full, head-turning",
-            "link": ""
+            "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
+            "badge": "all hair types",
+            "title": "Double Weft Full Head",
+            "subtitle": "All-rounder, most popular",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
         },
         "card_zaABAk": {
           "type": "card",
           "settings": {
-            "badge": "",
-            "title": "Max Volume",
-            "subtitle": "Thick, full, head-turning",
+            "image": "shopify://shop_images/Classic_Full_Head.webp",
+            "badge": "thin & fine hair",
+            "title": "Classic Full Head",
+            "subtitle": "Lightweight & discreet",
             "link": ""
           }
         },
         "card_KcQtfq": {
           "type": "card",
           "settings": {
-            "badge": "",
-            "title": "Max Volume",
-            "subtitle": "Thick, full, head-turning",
+            "image": "shopify://shop_images/Seamless_Full_Head.webp",
+            "badge": "all hair types",
+            "title": "Seamless Full Head",
+            "subtitle": "Most discreet clip-ins",
             "link": ""
           }
         },
         "card_j9qWpP": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-clip-ins.jpg",
-            "badge": "BEGINNER",
-            "title": "Clip-In Extensions",
-            "subtitle": "The easiest way to start. On in minutes, off whenever.",
+            "image": "shopify://shop_images/Ultra-Volume_Full_Head.webp",
+            "badge": "average to thick hair",
+            "title": "Ultra-Volume Full Head",
+            "subtitle": "Max volume & dramatic length",
             "link": ""
           }
         },
         "card_pwtpqk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-tapes.jpg",
-            "badge": "SEMI-PERMANENT",
-            "title": "Tape-In Extensions",
-            "subtitle": "Lightweight & long-lasting. Fitted by your hair stylist.",
+            "image": "shopify://shop_images/Curly_Full_Head.jpg",
+            "badge": "all hair types",
+            "title": "Curly Full Head",
+            "subtitle": "Natural curly texture",
             "link": ""
           }
         },
         "card_Vjf7Ab": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-seamless.jpg",
-            "badge": "MAX VOLUME",
-            "title": "Double Weft",
-            "subtitle": "Max fullness, fewer pieces. Best for average to thick hair.",
-            "link": ""
+            "image": "shopify://shop_images/Halo_Hair_Extensions.webp",
+            "badge": "all hair types",
+            "title": "Halo Hair Extensions",
+            "subtitle": "Super discreet & comfortable, beginner friendly",
+            "link": "shopify://collections/halo-hair-extensions"
           }
         },
         "card_8ffBPb": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-placeholder.jpg",
-            "badge": "QUICK TO APPLY",
-            "title": "Halo Extensions",
-            "subtitle": "No clips, no tape, no glue. Our halo goes on in seconds",
-            "link": ""
+            "image": "shopify://shop_images/One_Piece_Top_Up_Hair_Extensions.webp",
+            "badge": "thin & fine hair",
+            "title": "Top Up Piece",
+            "subtitle": "Quick volume boost",
+            "link": "shopify://collections/one-piece-top-up-hair-extensions"
+          }
+        },
+        "card_myqqgR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Quad_Weft_Pieces.webp",
+            "badge": "medium hair types",
+            "title": "Quad Weft Piece",
+            "subtitle": "Fast and full",
+            "link": "shopify://collections/quad-weft-hair-extensions"
+          }
+        },
+        "card_xAbJGF": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Straight_Up_Wrap_Around_Clip_In_Ponytail_Extensions.webp",
+            "badge": "all hair types",
+            "title": "Clip In Ponytail",
+            "subtitle": "Instant ponytail",
+            "link": "shopify://collections/clip-in-ponytail-extensions"
+          }
+        },
+        "card_79LgiR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Clip_In_Fringes.webp",
+            "badge": "all hair types",
+            "title": "Clip In Fringe",
+            "subtitle": "No-cut fringe",
+            "link": "shopify://collections/fringe-clip-in-hair-extensions"
           }
         }
       },
@@ -349,7 +382,10 @@
         "card_j9qWpP",
         "card_pwtpqk",
         "card_Vjf7Ab",
-        "card_8ffBPb"
+        "card_8ffBPb",
+        "card_myqqgR",
+        "card_xAbJGF",
+        "card_79LgiR"
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
