@@ -373,6 +373,15 @@
             "subtitle": "No-cut fringe",
             "link": "shopify://collections/fringe-clip-in-hair-extensions"
           }
+        },
+        "card_agEdAE": {
+          "type": "card",
+          "settings": {
+            "badge": "",
+            "title": "Max Volume",
+            "subtitle": "Thick, full, head-turning",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -385,7 +394,8 @@
         "card_8ffBPb",
         "card_myqqgR",
         "card_xAbJGF",
-        "card_79LgiR"
+        "card_79LgiR",
+        "card_agEdAE"
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
@@ -1048,7 +1058,7 @@
       ],
       "name": "Blog spot",
       "settings": {
-        "heading": "What’s trending",
+        "heading": "Latest Blogs",
         "heading_size": "h2",
         "introduction": "",
         "tags_size": "h4",
