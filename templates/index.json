@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/checkmark-icon.svg",
             "icon": "check",
             "label": "100% Human hair",
-            "link": "/"
+            "link": "shopify://pages/care-instructions"
           }
         },
         "badge_Nhtimr": {
@@ -27,7 +27,7 @@
             "image": "shopify://shop_images/colour-match-icon.svg",
             "icon": "colour-match",
             "label": "Free colour match",
-            "link": ""
+            "link": "shopify://pages/colour-matching-service"
           }
         },
         "badge_P636gk": {
@@ -36,7 +36,7 @@
             "image": "shopify://shop_images/return-icon.svg",
             "icon": "returns",
             "label": "Free returns",
-            "link": ""
+            "link": "shopify://pages/returns-information"
           }
         },
         "badge_W73pFR": {
@@ -45,7 +45,7 @@
             "image": "shopify://shop_images/dispatch-icon.svg",
             "icon": "dispatch",
             "label": "7-day dispatch",
-            "link": ""
+            "link": "shopify://pages/delivery-information"
           }
         }
       },
