@@ -145,7 +145,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 23px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 20px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (min-width:350px) and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 23px;\n}\n\n}\n{% endstyle %}",
+        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 24px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 16px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (min-width:350px) and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 18px;\n}\n\n}\n{% endstyle %}",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
@@ -179,7 +179,7 @@
         "content_alignment": "left",
         "color_scheme": "background-faded-pink",
         "full_width": true,
-        "padding_top": 56,
+        "padding_top": 40,
         "padding_bottom": 0
       }
     },
@@ -190,8 +190,8 @@
         "divider_color": "#c0c0c0",
         "divider_height": 1,
         "full_width": true,
-        "padding_top": 48,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "hair_goal_cards_carousel_i7waLK": {
