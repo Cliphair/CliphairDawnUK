@@ -36,7 +36,7 @@ video-spotlight-slider {
 }
 
 .vs-heading {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     line-height: 1;
     letter-spacing: -.02em;
     margin: 0 0 4rem;
@@ -519,6 +519,7 @@ video-spotlight-slider[data-slide-count='2'] {
 
     .vs-track {
         height: var(--vs-slide-height);
+        margin-bottom: var(--vs-card-gap);
     }
 
     .vs-slide[data-slot='left-1'],

@@ -6,12 +6,19 @@ if (!customElements.get('yotpo-reviews-split')) {
                 super();
                 this.source = this.dataset.source || 'api';
                 this.sectionId = this.dataset.sectionId;
+                this.shapeMask = this.dataset.shapeMask === 'true';
                 this.appKey = 'aMREVTSJZfbqjVqxLsKxYMHAmpb94LftONho8TDm'; // Safe public key
-                this.TRUNCATE_WORDS = 15;
+                this.TRUNCATE_WORDS = 10;
             }
 
             connectedCallback() {
                 this.init();
+                if (Shopify.designMode) {
+                    this._sectionLoadHandler = (e) => {
+                        if (e.detail.sectionId === this.sectionId) this.init();
+                    };
+                    document.addEventListener('shopify:section:load', this._sectionLoadHandler);
+                }
             }
 
             async init() {
@@ -38,23 +45,27 @@ if (!customElements.get('yotpo-reviews-split')) {
             // ----------------------------------------
 
             async fetchReviews() {
-                const url = `https://api.yotpo.com/v1/widget/${this.appKey}/reviews.json?per_page=100`;
+                const url = `https://api.yotpo.com/v1/widget/${this.appKey}/reviews.json?per_page=150`;
                 try {
                     const response = await fetch(url);
                     if (!response.ok) throw new Error(`HTTP ${response.status}`);
                     const data = await response.json();
                     const reviews = data?.response?.reviews || [];
 
-                    return reviews
-                        .filter((r) => r.score >= 4 && r.content?.trim().split(/\s+/).filter(Boolean).length >= 10)
-                        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-                        .slice(0, 5)
-                        .map((r) => ({
-                            image: r.images_data?.[0]?.original_url || null,
-                            name: r.user.display_name || 'Anonymous',
-                            score: r.score,
-                            text: r.content,
-                        }));
+                    const fiveStars = reviews
+                        .filter((r) => r.score === 5 && r.content?.trim().split(/\s+/).filter(Boolean).length >= 10)
+                        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+                    const withImage = fiveStars.filter((r) => r.images_data?.length > 0);
+                    const withoutImage = fiveStars.filter((r) => !r.images_data?.length);
+                    const picked = [...withImage, ...withoutImage].slice(0, 5);
+
+                    return picked.map((r) => ({
+                        image: r.images_data?.[0]?.original_url || null,
+                        name: r.user.display_name || 'Anonymous',
+                        score: r.score,
+                        text: r.content,
+                    }));
                 } catch (err) {
                     console.error('[YotpoReviewsSplit] Failed to fetch reviews:', err);
                     return [];
@@ -97,8 +108,10 @@ if (!customElements.get('yotpo-reviews-split')) {
             }
 
             buildCardHTML(review) {
+                const avatarShapeClass = this.shapeMask ? ' reviews-split__avatar--shape' : '';
+                const avatarShapeStyle = this.shapeMask ? ` style="clip-path: url(#shape-clip-${this.sectionId})"` : '';
                 const avatarHTML = review.image
-                    ? `<div class="reviews-split__avatar">
+                    ? `<div class="reviews-split__avatar${avatarShapeClass}"${avatarShapeStyle}>
             <img
               src="${this.escapeAttr(review.image)}"
               alt="${this.escapeAttr(review.name)} review photo"
@@ -114,18 +127,10 @@ if (!customElements.get('yotpo-reviews-split')) {
 
                 const starsHTML = Array.from({ length: review.score }, () => `
           <span class="reviews__reviews-review" aria-hidden="true">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.94 47.94" xml:space="preserve">
-              <path d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412
-                l12.091,1.757c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528
-                c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042
-                c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685
-                c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685
-                c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042
-                c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528
-                c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757
-                c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956
-                C22.602,0.567,25.338,0.567,26.285,2.486z"/>
-            </svg>
+            <svg viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9033 6.15182L19.2986 6.94655C19.4581 6.96127 19.5741 7.06429 19.6321 7.22618C19.6756 7.37335 19.6321 7.53524 19.5306 7.63827L14.8175 12.0976L16.0502 18.5143C16.0792 18.6762 16.0212 18.8234 15.8907 18.9117C15.7601 19 15.6006 19.0147 15.4701 18.9411L9.82886 15.7769L4.18762 18.9411C4.05711 19.0147 3.89759 19.0147 3.76707 18.9117C3.63655 18.8234 3.57855 18.6615 3.60755 18.5143L4.84021 12.0976L0.127095 7.63827C0.0110801 7.53524 -0.0324255 7.37335 0.025582 7.22618C0.0690877 7.07901 0.199605 6.97599 0.359125 6.94655L6.75446 6.15182L9.46631 0.235476C9.53882 0.0883036 9.66934 0 9.82886 0C9.98838 0 10.1189 0.0883036 10.1914 0.235476L12.9178 6.16654L12.9033 6.15182Z" fill="currentColor"/>
+</svg>
+
           </span>`).join('');
 
                 return `
@@ -170,8 +175,12 @@ if (!customElements.get('yotpo-reviews-split')) {
             initReadMore() {
                 this.querySelectorAll('.reviews-split__body').forEach((body) => {
                     const textEl = body.querySelector('.reviews-split__text');
-                    const readMoreBtn = body.querySelector('.reviews-split__read-more');
-                    const readLessBtn = body.querySelector('.reviews-split__read-less');
+
+                    // Clone-replace buttons to drop any listeners from a previous init() call
+                    let readMoreBtn = body.querySelector('.reviews-split__read-more');
+                    let readLessBtn = body.querySelector('.reviews-split__read-less');
+                    if (readMoreBtn) { const f = readMoreBtn.cloneNode(true); readMoreBtn.replaceWith(f); readMoreBtn = f; }
+                    if (readLessBtn) { const f = readLessBtn.cloneNode(true); readLessBtn.replaceWith(f); readLessBtn = f; }
 
                     // Prefer data-full-text (set in both Liquid and JS-built cards)
                     const fullText = body.dataset.fullText || textEl?.textContent?.trim() || '';
@@ -185,21 +194,28 @@ if (!customElements.get('yotpo-reviews-split')) {
 
                         if (readMoreBtn) {
                             readMoreBtn.hidden = false;
+                            readMoreBtn.setAttribute('aria-expanded', 'false');
                             readMoreBtn.addEventListener('click', () => {
                                 textEl.textContent = fullText;
                                 readMoreBtn.hidden = true;
-                                if (readLessBtn) readLessBtn.hidden = false;
-                                // Customer is reading — stop auto-advancing
+                                if (readLessBtn) {
+                                    readLessBtn.hidden = false;
+                                    readLessBtn.setAttribute('aria-expanded', 'true');
+                                }
                                 this.pauseAutoRotate?.();
                             });
                         }
                         if (readLessBtn) {
                             readLessBtn.hidden = true;
+                            readLessBtn.setAttribute('aria-expanded', 'false');
                             readLessBtn.addEventListener('click', () => {
                                 textEl.textContent = truncated;
                                 readLessBtn.hidden = true;
-                                if (readMoreBtn) readMoreBtn.hidden = false;
-                                // Customer collapsed — resume after a full interval
+                                readLessBtn.setAttribute('aria-expanded', 'false');
+                                if (readMoreBtn) {
+                                    readMoreBtn.hidden = false;
+                                    readMoreBtn.setAttribute('aria-expanded', 'false');
+                                }
                                 clearTimeout(this._autoRotateResume);
                                 this._autoRotateResume = setTimeout(
                                     () => this.resumeAutoRotate?.(),
@@ -236,8 +252,9 @@ if (!customElements.get('yotpo-reviews-split')) {
                 slides.forEach((_, i) => {
                     const btn = document.createElement('button');
                     btn.type = 'button';
-                    btn.className = 'reviews-split__dot' + (i === 0 ? ' reviews-split__dot--active' : '');
+                    btn.className = 'slider-counter__link slider-counter__link--dots link' + (i === 0 ? ' slider-counter__link--active' : '');
                     btn.setAttribute('aria-label', `Go to review ${i + 1} of ${slides.length}`);
+                    btn.innerHTML = '<span class="dot"></span>';
                     btn.addEventListener('click', () => {
                         if (slides.length < 2) return;
                         const itemOffset = slides[1].offsetLeft - slides[0].offsetLeft;
@@ -249,8 +266,8 @@ if (!customElements.get('yotpo-reviews-split')) {
                 // Sync active dot via SliderComponent's slideChanged event (fires on every scroll update)
                 sliderEl.addEventListener('slideChanged', (e) => {
                     const activeIndex = e.detail.currentPage - 1;
-                    Array.from(dotsContainer.querySelectorAll('.reviews-split__dot')).forEach((dot, j) => {
-                        dot.classList.toggle('reviews-split__dot--active', j === activeIndex);
+                    Array.from(dotsContainer.querySelectorAll('.slider-counter__link--dots')).forEach((dot, j) => {
+                        dot.classList.toggle('slider-counter__link--active', j === activeIndex);
                     });
                 });
             }
@@ -316,6 +333,9 @@ if (!customElements.get('yotpo-reviews-split')) {
             disconnectedCallback() {
                 clearInterval(this._autoRotate);
                 clearTimeout(this._autoRotateResume);
+                if (this._sectionLoadHandler) {
+                    document.removeEventListener('shopify:section:load', this._sectionLoadHandler);
+                }
             }
 
             // ----------------------------------------
