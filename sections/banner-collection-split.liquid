@@ -219,6 +219,7 @@
                           shape_style: block.settings.shape_style,
                           text_position: block.settings.text_position,
                           show_title: block.settings.show_title,
+                          card_title: link.title,
                           section_id: section.id,
                           img_sizes: img_sizes,
                           loading: card_img_loading
@@ -419,9 +420,18 @@
           "id": "text_align",
           "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.label",
           "options": [
-            { "value": "left", "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__1.label" },
-            { "value": "center", "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__2.label" },
-            { "value": "right", "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__3.label" }
+            {
+              "value": "left",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__1.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__2.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.text_align.options__3.label"
+            }
           ],
           "default": "left"
         },
@@ -472,15 +482,42 @@
           "id": "content_position",
           "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.label",
           "options": [
-            { "value": "top-left", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__1.label" },
-            { "value": "top-center", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__2.label" },
-            { "value": "top-right", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__3.label" },
-            { "value": "center-left", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__4.label" },
-            { "value": "center", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__5.label" },
-            { "value": "center-right", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__6.label" },
-            { "value": "bottom-left", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__7.label" },
-            { "value": "bottom-center", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__8.label" },
-            { "value": "bottom-right", "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__9.label" }
+            {
+              "value": "top-left",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__1.label"
+            },
+            {
+              "value": "top-center",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__2.label"
+            },
+            {
+              "value": "top-right",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__3.label"
+            },
+            {
+              "value": "center-left",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__4.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__5.label"
+            },
+            {
+              "value": "center-right",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__6.label"
+            },
+            {
+              "value": "bottom-left",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__7.label"
+            },
+            {
+              "value": "bottom-center",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__8.label"
+            },
+            {
+              "value": "bottom-right",
+              "label": "t:sections.banner-collection-split.blocks.banner.settings.content_position.options__9.label"
+            }
           ],
           "default": "center-left"
         }
@@ -513,9 +550,18 @@
           "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.label",
           "info": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.info",
           "options": [
-            { "value": "none", "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__1.label" },
-            { "value": "circle", "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__2.label" },
-            { "value": "flower", "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__3.label" }
+            {
+              "value": "none",
+              "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__1.label"
+            },
+            {
+              "value": "circle",
+              "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__2.label"
+            },
+            {
+              "value": "flower",
+              "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.shape_style.options__3.label"
+            }
           ],
           "default": "none"
         },
@@ -530,8 +576,14 @@
           "id": "text_position",
           "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.text_position.label",
           "options": [
-            { "value": "bottom", "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.text_position.options__1.label" },
-            { "value": "top", "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.text_position.options__2.label" }
+            {
+              "value": "bottom",
+              "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.text_position.options__1.label"
+            },
+            {
+              "value": "top",
+              "label": "t:sections.banner-collection-split.blocks.collection_carousel.settings.text_position.options__2.label"
+            }
           ],
           "default": "bottom"
         },
