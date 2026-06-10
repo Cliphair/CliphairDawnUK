@@ -3365,6 +3365,150 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "banner-collection-split": {
+      "name": "Banner + collection",
+      "settings": {
+        "gap": {
+          "label": "Gap between panels"
+        }
+      },
+      "blocks": {
+        "banner": {
+          "name": "Banner",
+          "settings": {
+            "label": {
+              "label": "Label",
+              "info": "Displays above the banner, matching the carousel heading style."
+            },
+            "image": {
+              "label": "Image"
+            },
+            "alt_text": {
+              "label": "Alt text",
+              "info": "Leave empty only if Decorative image is enabled."
+            },
+            "decorative": {
+              "label": "Decorative image",
+              "info": "Enable for purely visual images with no informational content. Hides the image from screen readers."
+            },
+            "image_focus": {
+              "content": "Image focus"
+            },
+            "object_position_x": {
+              "label": "Focus X"
+            },
+            "object_position_y": {
+              "label": "Focus Y"
+            },
+            "mobile_ratio": {
+              "content": "Mobile aspect ratio"
+            },
+            "mobile_ratio_w": {
+              "label": "Width"
+            },
+            "mobile_ratio_h": {
+              "label": "Height"
+            },
+            "text_content": {
+              "content": "Text content"
+            },
+            "heading": {
+              "label": "Heading"
+            },
+            "subheading": {
+              "label": "Subheading"
+            },
+            "text_align": {
+              "label": "Text alignment",
+              "options__1": { "label": "Left" },
+              "options__2": { "label": "Centre" },
+              "options__3": { "label": "Right" }
+            },
+            "button_label": {
+              "label": "Button label"
+            },
+            "button_url": {
+              "label": "Button URL"
+            },
+            "text_container": {
+              "content": "Text container"
+            },
+            "show_container": {
+              "label": "Show container",
+              "info": "Displays a coloured background behind the text."
+            },
+            "text_color_scheme": {
+              "label": "Text colour scheme",
+              "info": "Always applied to the text. Enable the container to also show the scheme's background colour."
+            },
+            "padding": {
+              "label": "Content padding"
+            },
+            "content_position_header": {
+              "content": "Content position"
+            },
+            "content_position": {
+              "label": "Position",
+              "options__1": { "label": "Top left" },
+              "options__2": { "label": "Top centre" },
+              "options__3": { "label": "Top right" },
+              "options__4": { "label": "Centre left" },
+              "options__5": { "label": "Centre" },
+              "options__6": { "label": "Centre right" },
+              "options__7": { "label": "Bottom left" },
+              "options__8": { "label": "Bottom centre" },
+              "options__9": { "label": "Bottom right" }
+            }
+          }
+        },
+        "collection_carousel": {
+          "name": "Collection carousel",
+          "settings": {
+            "linklist": {
+              "label": "Menu",
+              "info": "Select a menu whose items link to collections. Non-collection links are skipped."
+            },
+            "heading": {
+              "label": "Heading",
+              "info": "Optional label displayed above the carousel."
+            },
+            "cards": {
+              "content": "Cards"
+            },
+            "shape_style": {
+              "label": "Image shape",
+              "info": "\"Flower\" and \"Circle\" force a square image ratio.",
+              "options__1": { "label": "None" },
+              "options__2": { "label": "Circle" },
+              "options__3": { "label": "Flower" }
+            },
+            "show_title": {
+              "label": "Show collection name"
+            },
+            "text_position": {
+              "label": "Name position",
+              "options__1": { "label": "Below image" },
+              "options__2": { "label": "On image (overlay)" }
+            },
+            "desktop": {
+              "content": "Desktop"
+            },
+            "columns_desktop": {
+              "label": "Columns"
+            },
+            "mobile": {
+              "content": "Mobile"
+            },
+            "cards_per_view_mobile": {
+              "label": "Cards per view"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Banner + collection"
+      }
     }
   }
 }
