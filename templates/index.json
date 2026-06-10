@@ -272,10 +272,10 @@
       }
     },
     "hair_goal_cards_grid_GxXgbq": {
-      "type": "hair-goal-cards-grid",
+      "type": "hair-goal-cards-switcher",
       "blocks": {
         "card_bV773G": {
-          "type": "card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
             "badge": "all hair types",
@@ -285,7 +285,7 @@
           }
         },
         "card_zaABAk": {
-          "type": "card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Classic_Full_Head.webp",
             "badge": "thin & fine hair",
@@ -295,7 +295,7 @@
           }
         },
         "card_KcQtfq": {
-          "type": "card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Seamless_Full_Head.webp",
             "badge": "all hair types",
@@ -305,7 +305,7 @@
           }
         },
         "card_j9qWpP": {
-          "type": "card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Ultra-Volume_Full_Head.webp",
             "badge": "average to thick hair",
@@ -315,7 +315,7 @@
           }
         },
         "card_pwtpqk": {
-          "type": "card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Curly_Full_Head.jpg",
             "badge": "all hair types",
@@ -325,7 +325,7 @@
           }
         },
         "card_Vjf7Ab": {
-          "type": "card",
+          "type": "professional_card",
           "settings": {
             "image": "shopify://shop_images/Halo_Hair_Extensions.webp",
             "badge": "all hair types",
@@ -335,7 +335,7 @@
           }
         },
         "card_8ffBPb": {
-          "type": "card",
+          "type": "professional_card",
           "settings": {
             "image": "shopify://shop_images/One_Piece_Top_Up_Hair_Extensions.webp",
             "badge": "thin & fine hair",
@@ -345,7 +345,7 @@
           }
         },
         "card_myqqgR": {
-          "type": "card",
+          "type": "professional_card",
           "settings": {
             "image": "shopify://shop_images/Quad_Weft_Pieces.webp",
             "badge": "medium hair types",
@@ -355,7 +355,7 @@
           }
         },
         "card_xAbJGF": {
-          "type": "card",
+          "type": "professional_card",
           "settings": {
             "image": "shopify://shop_images/Straight_Up_Wrap_Around_Clip_In_Ponytail_Extensions.webp",
             "badge": "all hair types",
@@ -365,22 +365,13 @@
           }
         },
         "card_79LgiR": {
-          "type": "card",
+          "type": "professional_card",
           "settings": {
             "image": "shopify://shop_images/Clip_In_Fringes.webp",
             "badge": "all hair types",
             "title": "Clip In Fringe",
             "subtitle": "No-cut fringe",
             "link": "shopify://collections/fringe-clip-in-hair-extensions"
-          }
-        },
-        "card_agEdAE": {
-          "type": "card",
-          "settings": {
-            "badge": "",
-            "title": "Max Volume",
-            "subtitle": "Thick, full, head-turning",
-            "link": ""
           }
         }
       },
@@ -394,24 +385,25 @@
         "card_8ffBPb",
         "card_myqqgR",
         "card_xAbJGF",
-        "card_79LgiR",
-        "card_agEdAE"
+        "card_79LgiR"
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
         ".hair-goal-card__text {background: #f1f1f1;}"
       ],
-      "name": "Hair Goal — Grid",
+      "name": "Hair Goal — Switcher",
       "settings": {
         "title": "Which extensions are right for you?",
         "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
         "image_ratio": "square",
         "enable_lcp_priority": false,
-        "columns_mobile": "2",
-        "columns_desktop": "4",
-        "initial_visible": 4,
-        "show_more_label": "View More",
-        "show_less_label": "View Less",
+        "clip_in_label": "Clip-Ins",
+        "professional_label": "Professional",
+        "clip_in_view_all_label": "Shop All Clip-Ins",
+        "clip_in_view_all_url": "/",
+        "professional_view_all_label": "Shop All Professional",
+        "professional_view_all_url": "/",
+        "switcher_alignment":"center",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 44
@@ -429,39 +421,6 @@
         "padding_top": 40,
         "padding_bottom": 40,
         "trackable_name": ""
-      }
-    },
-    "split_banner_shade_FEbjbG": {
-      "type": "split-banner-shade",
-      "blocks": {
-        "shade_slider_trKMUK": {
-          "type": "shade_slider",
-          "settings": {
-            "color_scheme": "",
-            "heading": "Or shop by shade...",
-            "menu": "shop-by-shade",
-            "image_ratio": "square"
-          }
-        },
-        "banner_ffP3CX": {
-          "type": "banner",
-          "settings": {
-            "color_scheme": "",
-            "title": "A title here",
-            "url": "",
-            "link_text": "Shop our rewards programme"
-          }
-        }
-      },
-      "block_order": [
-        "shade_slider_trKMUK",
-        "banner_ffP3CX"
-      ],
-      "name": "Split — Banner & Shade Slider",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0,
-        "prioritise_lcp": false
       }
     },
     "press_bar_RM4Gax": {
@@ -1098,7 +1057,6 @@
     "simple_divider_zUAqrr",
     "hair_goal_cards_grid_GxXgbq",
     "yotpo_reviews_split_EY4hfW",
-    "split_banner_shade_FEbjbG",
     "press_bar_RM4Gax",
     "blog_cards_carousel_RDHLew",
     "section_video_spotlight_9ehDBf",

@@ -404,6 +404,10 @@
         "padding_top": "Top padding",
         "padding_bottom": "Bottom padding"
       },
+      "above_the_fold": {
+        "label": "Section is above the fold",
+        "info": "Tick this when the section is visible on page load. Disables entrance animations to prevent layout shift and protect LCP."
+      },
       "spacing": "Spacing",
       "colors": {
         "label": "Color scheme",

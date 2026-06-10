@@ -1,0 +1,587 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider-custom.css' | asset_url | stylesheet_tag }}
+{{ 'component-hair-goal-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-hair-goal-cards-switcher.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign clip_in_blocks = section.blocks | where: 'type', 'clip_in_card'
+  assign professional_blocks = section.blocks | where: 'type', 'professional_card'
+  assign has_two_groups = false
+  if clip_in_blocks.size > 0 and professional_blocks.size > 0
+    assign has_two_groups = true
+  endif
+  assign col_desktop = section.settings.columns_desktop | plus: 0
+  assign col_mobile = section.settings.columns_mobile
+  assign col_tablet = col_desktop | plus: col_mobile | divided_by: 2 | ceil
+  assign image_sizes = '(min-width: 990px) calc((100vw - 10rem) / ' | append: col_desktop | append: '), (min-width: 750px) calc((100vw - 3rem) / ' | append: col_tablet | append: '), calc((100vw - 3rem) / ' | append: col_mobile | append: ')'
+  assign clip_in_label = section.settings.clip_in_label | default: 'Clip-In Extensions'
+  assign professional_label = section.settings.professional_label | default: 'Professional Extensions'
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- unless section.settings.title == blank -%}
+    <div class="page-width">
+      <h2 class="hair-goal-cards-switcher__heading">{{ section.settings.title }}</h2>
+    </div>
+  {%- endunless -%}
+
+  {%- unless section.settings.introduction == blank -%}
+    <div class="page-width">
+      <div class="rte hair-goal-cards-switcher__introduction">{{ section.settings.introduction }}</div>
+    </div>
+  {%- endunless -%}
+
+  {%- if has_two_groups -%}
+    <div class="page-width hair-goal-cards-switcher__toggle-wrapper hair-goal-cards-switcher__toggle-wrapper--{{ section.settings.switcher_alignment }}">
+      <div id="Toggle-{{ section.id }}" class="hair-goal-cards-switcher__toggle">
+        <span class="hair-goal-cards-switcher__toggle-indicator" aria-hidden="true"></span>
+        <button
+          type="button"
+          class="hair-goal-cards-switcher__toggle-btn hair-goal-cards-switcher__toggle-btn--active"
+          data-target="panel-clip-in-{{ section.id }}"
+          aria-pressed="true"
+        >
+          {{- clip_in_label | escape -}}
+        </button>
+        <button
+          type="button"
+          class="hair-goal-cards-switcher__toggle-btn"
+          data-target="panel-professional-{{ section.id }}"
+          aria-pressed="false"
+        >
+          {{- professional_label | escape -}}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if clip_in_blocks.size > 0 or section.settings.clip_in_view_all_url != blank -%}
+    <div id="panel-clip-in-{{ section.id }}" class="hair-goal-cards-switcher__panel">
+      {%- unless section.settings.clip_in_intro == blank -%}
+        <div class="page-width">
+          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.clip_in_intro }}</div>
+        </div>
+      {%- endunless -%}
+      <slider-component-custom
+        id="slider-clip-in-{{ section.id }}"
+        class="hair-goal-cards-switcher__slider page-width"
+        style="padding:0!important"
+        data-visual="dots"
+      >
+        <ul
+          id="Slider-ClipIn-{{ section.id }}"
+          class="hair-goal-cards-switcher__list grid grid--{{ col_desktop }}-col-desktop grid--{{ col_tablet }}-col-tablet grid--{{ col_mobile }}-col-tablet-down grid--peek slider slider--tablet slider--desktop"
+          role="list"
+          aria-label="{{ clip_in_label | escape }}"
+        >
+          {%- for block in clip_in_blocks -%}
+            {%- liquid
+              assign card_priority = false
+              if forloop.first and section.settings.enable_lcp_priority
+                assign card_priority = true
+              endif
+            -%}
+            {%- render 'hair-goal-card',
+              block: block,
+              card_mode: 'carousel',
+              section_id: section.id,
+              index: forloop.index,
+              is_slide: true,
+              image_ratio: section.settings.image_ratio,
+              image_sizes: image_sizes,
+              enable_priority: card_priority
+            -%}
+          {%- endfor -%}
+
+          {%- if section.settings.clip_in_view_all_url != blank and section.settings.clip_in_view_all_label != blank -%}
+            <li
+              id="Slide-ClipIn-{{ section.id }}-viewall"
+              class="hair-goal-card hair-goal-card--carousel hair-goal-card--view-all grid__item custom__slide slider__slide"
+            >
+              <a href="{{ section.settings.clip_in_view_all_url }}" class="hair-goal-card__link">
+                <div class="hair-goal-card__view-all-inner">
+                  <span class="hair-goal-card__view-all-text">
+                    {{- section.settings.clip_in_view_all_label | escape -}}
+                  </span>
+                  {%- render 'icon-arrow' -%}
+                </div>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+
+        {%- if clip_in_blocks.size > 1 -%}
+          <div class="slider-buttons hair-goal-cards-switcher__footer no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+            <div class="slideshow__control-wrapper slider-counter slider-counter--dots"></div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+          </div>
+        {%- endif -%}
+      </slider-component-custom>
+    </div>
+  {%- endif -%}
+
+  {%- if professional_blocks.size > 0 or section.settings.professional_view_all_url != blank -%}
+    <div id="panel-professional-{{ section.id }}" class="hair-goal-cards-switcher__panel" hidden>
+      {%- unless section.settings.professional_intro == blank -%}
+        <div class="page-width">
+          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.professional_intro }}</div>
+        </div>
+      {%- endunless -%}
+      <slider-component-custom
+        id="slider-professional-{{ section.id }}"
+        class="hair-goal-cards-switcher__slider page-width"
+        style="padding:0!important"
+        data-visual="dots"
+      >
+        <ul
+          id="Slider-Professional-{{ section.id }}"
+          class="hair-goal-cards-switcher__list grid grid--{{ col_desktop }}-col-desktop grid--{{ col_tablet }}-col-tablet grid--{{ col_mobile }}-col-tablet-down grid--peek slider slider--tablet slider--desktop"
+          role="list"
+          aria-label="{{ professional_label | escape }}"
+        >
+          {%- for block in professional_blocks -%}
+            {%- render 'hair-goal-card',
+              block: block,
+              card_mode: 'carousel',
+              section_id: section.id,
+              index: forloop.index,
+              is_slide: true,
+              image_ratio: section.settings.image_ratio,
+              image_sizes: image_sizes,
+              enable_priority: false
+            -%}
+          {%- endfor -%}
+
+          {%- if section.settings.professional_view_all_url != blank
+            and section.settings.professional_view_all_label != blank
+          -%}
+            <li
+              id="Slide-Professional-{{ section.id }}-viewall"
+              class="hair-goal-card hair-goal-card--carousel hair-goal-card--view-all grid__item custom__slide slider__slide"
+            >
+              <a href="{{ section.settings.professional_view_all_url }}" class="hair-goal-card__link">
+                <div class="hair-goal-card__view-all-inner">
+                  <span class="hair-goal-card__view-all-text">
+                    {{- section.settings.professional_view_all_label | escape -}}
+                  </span>
+                  {%- render 'icon-arrow' -%}
+                </div>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+
+        {%- if professional_blocks.size > 1 -%}
+          <div class="slider-buttons hair-goal-cards-switcher__footer no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+            <div class="slideshow__control-wrapper slider-counter slider-counter--dots"></div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {%- render 'icon-caret' -%}
+            </button>
+          </div>
+        {%- endif -%}
+      </slider-component-custom>
+    </div>
+  {%- endif -%}
+</div>
+
+{%- if has_two_groups -%}
+  <script>
+    (function () {
+      var section = document.getElementById('shopify-section-{{ section.id }}');
+      if (!section) return;
+      var btns = section.querySelectorAll('.hair-goal-cards-switcher__toggle-btn');
+      var indicator = section.querySelector('.hair-goal-cards-switcher__toggle-indicator');
+
+      function equaliseButtons() {
+        btns.forEach(function (b) { b.style.minWidth = ''; });
+        var maxW = Math.max.apply(null, Array.from(btns).map(function (b) { return b.offsetWidth; }));
+        btns.forEach(function (b) { b.style.minWidth = maxW + 'px'; });
+      }
+
+      function equaliseCardHeights() {
+        var panels = Array.from(section.querySelectorAll('.hair-goal-cards-switcher__panel'));
+
+        // Temporarily reveal hidden panels so their cards can be measured
+        var revealed = [];
+        panels.forEach(function (p) {
+          if (p.hasAttribute('hidden')) {
+            p.removeAttribute('hidden');
+            p.style.visibility = 'hidden';
+            p.style.position = 'absolute';
+            p.style.width = '100%';
+            revealed.push(p);
+          }
+        });
+
+        // Reset then find the tallest card across all panels
+        var allCards = Array.from(section.querySelectorAll('.hair-goal-card'));
+        allCards.forEach(function (c) { c.style.minHeight = ''; });
+        var maxH = 0;
+        allCards.forEach(function (c) { maxH = Math.max(maxH, c.offsetHeight); });
+        if (maxH > 0) allCards.forEach(function (c) { c.style.minHeight = maxH + 'px'; });
+
+        // Restore hidden panels
+        revealed.forEach(function (p) {
+          p.style.visibility = '';
+          p.style.position = '';
+          p.style.width = '';
+          p.setAttribute('hidden', '');
+        });
+      }
+
+      function moveIndicator(btn, animate) {
+        if (!indicator) return;
+        if (!animate) indicator.style.transition = 'none';
+        indicator.style.width = btn.offsetWidth + 'px';
+        indicator.style.height = btn.offsetHeight + 'px';
+        indicator.style.top = btn.offsetTop + 'px';
+        indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+        if (!animate) {
+          indicator.getBoundingClientRect(); // force reflow before re-enabling transition
+          indicator.style.transition = '';
+        }
+      }
+
+      equaliseButtons();
+      equaliseCardHeights();
+      var activeBtn = section.querySelector('.hair-goal-cards-switcher__toggle-btn--active');
+      if (activeBtn) moveIndicator(activeBtn, false);
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          equaliseButtons();
+          equaliseCardHeights();
+          var active = section.querySelector('.hair-goal-cards-switcher__toggle-btn--active');
+          if (active) moveIndicator(active, false);
+        }, 100);
+      });
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.getAttribute('aria-pressed') === 'true') return;
+          moveIndicator(btn, true);
+          var targetId = btn.getAttribute('data-target');
+          var targetPanel = section.querySelector('#' + targetId);
+          if (!targetPanel) return;
+          btns.forEach(function (b) {
+            b.classList.remove('hair-goal-cards-switcher__toggle-btn--active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('hair-goal-cards-switcher__toggle-btn--active');
+          btn.setAttribute('aria-pressed', 'true');
+          section.querySelectorAll('.hair-goal-cards-switcher__panel').forEach(function (p) {
+            p.setAttribute('hidden', '');
+          });
+          targetPanel.removeAttribute('hidden');
+          window.dispatchEvent(new Event('resize'));
+        });
+      });
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hair Goal — Switcher",
+  "tag": "section",
+  "class": "section section-hair-goal-cards-switcher",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction text"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "options": [
+        { "value": "portrait", "label": "Portrait (3:4)" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lcp_priority",
+      "label": "Prioritise first card image (LCP)",
+      "info": "Enable only when this section is the first visible content on the page.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Switcher labels"
+    },
+    {
+      "type": "text",
+      "id": "clip_in_label",
+      "label": "Clip-In tab label",
+      "default": "Clip-In Extensions"
+    },
+    {
+      "type": "text",
+      "id": "professional_label",
+      "label": "Professional tab label",
+      "default": "Professional Extensions"
+    },
+    {
+      "type": "select",
+      "id": "switcher_alignment",
+      "label": "Switcher alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Clip-In tab"
+    },
+    {
+      "type": "richtext",
+      "id": "clip_in_intro",
+      "label": "Clip-In intro text",
+      "info": "Shown below the switcher when the Clip-In tab is active."
+    },
+    {
+      "type": "header",
+      "content": "Clip-In — View All card"
+    },
+    {
+      "type": "text",
+      "id": "clip_in_view_all_label",
+      "label": "View All card label",
+      "info": "Leave blank to hide the View All card.",
+      "default": "Shop All Clip-Ins"
+    },
+    {
+      "type": "url",
+      "id": "clip_in_view_all_url",
+      "label": "View All card link"
+    },
+    {
+      "type": "header",
+      "content": "Professional tab"
+    },
+    {
+      "type": "richtext",
+      "id": "professional_intro",
+      "label": "Professional intro text",
+      "info": "Shown below the switcher when the Professional tab is active."
+    },
+    {
+      "type": "header",
+      "content": "Professional — View All card"
+    },
+    {
+      "type": "text",
+      "id": "professional_view_all_label",
+      "label": "View All card label",
+      "info": "Leave blank to hide the View All card.",
+      "default": "Shop All Professional"
+    },
+    {
+      "type": "url",
+      "id": "professional_view_all_url",
+      "label": "View All card link"
+    },
+    {
+      "type": "header",
+      "content": "Columns"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Colour and spacing"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "clip_in_card",
+      "name": "Clip-In Card",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "info": "Short label overlaid on the image — e.g. ALL HAIR TYPES"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Classic Full Head"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Lightweight & discreet"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "professional_card",
+      "name": "Professional Card",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "info": "Short label overlaid on the image — e.g. SALON ONLY"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Tape-In Extensions"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Flat, seamless & long-lasting"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hair Goal — Switcher",
+      "settings": {
+        "title": "Which extensions are right for you?",
+        "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
+        "image_ratio": "square",
+        "clip_in_label": "Clip-In Extensions",
+        "professional_label": "Professional Extensions"
+      },
+      "blocks": [
+        { "type": "clip_in_card" },
+        { "type": "clip_in_card" },
+        { "type": "professional_card" },
+        { "type": "professional_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

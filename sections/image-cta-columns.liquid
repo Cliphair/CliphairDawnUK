@@ -15,85 +15,87 @@
 {%- endstyle -%}
 
 <div class="image-cta-columns color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  {%- if section.blocks.size > 0 -%}
-    <ul
-      class="image-cta-columns__list"
-      role="list"
-    >
-      {%- for block in section.blocks -%}
-        <li class="image-cta-columns__item" {{ block.shopify_attributes }}>
-          <div class="image-cta-card">
-            {%- comment -%} Background image {%- endcomment -%}
-            <div class="image-cta-card__media" aria-hidden="true">
-              {%- if block.settings.image != blank -%}
-                {%- liquid
-                  assign mobile_img = block.settings.image
-                  assign desktop_img = block.settings.image_desktop
-                  assign img_height = mobile_img.width | divided_by: mobile_img.aspect_ratio | round
-                -%}
-                <picture>
-                  <source
-                    media="(max-width: 749px)"
-                    srcset="
-                      {{ mobile_img | image_url: width: 375 }} 375w,
-                      {{ mobile_img | image_url: width: 550 }} 550w,
-                      {{ mobile_img | image_url: width: 750 }} 750w
-                    "
-                    sizes="50vw"
-                  >
-                  {%- if desktop_img != blank -%}
+  <div class="page-width">
+    {%- if section.blocks.size > 0 -%}
+      <ul
+        class="image-cta-columns__list"
+        role="list"
+      >
+        {%- for block in section.blocks -%}
+          <li class="image-cta-columns__item" {{ block.shopify_attributes }}>
+            <div class="image-cta-card">
+              {%- comment -%} Background image {%- endcomment -%}
+              <div class="image-cta-card__media" aria-hidden="true">
+                {%- if block.settings.image != blank -%}
+                  {%- liquid
+                    assign mobile_img = block.settings.image
+                    assign desktop_img = block.settings.image_desktop
+                    assign img_height = mobile_img.width | divided_by: mobile_img.aspect_ratio | round
+                  -%}
+                  <picture>
                     <source
-                      media="(min-width: 750px)"
+                      media="(max-width: 749px)"
                       srcset="
-                        {{ desktop_img | image_url: width: 750 }} 750w,
-                        {{ desktop_img | image_url: width: 1100 }} 1100w,
-                        {{ desktop_img | image_url: width: 1500 }} 1500w
+                        {{ mobile_img | image_url: width: 375 }} 375w,
+                        {{ mobile_img | image_url: width: 550 }} 550w,
+                        {{ mobile_img | image_url: width: 750 }} 750w
                       "
                       sizes="50vw"
                     >
-                  {%- endif -%}
-                  <img
-                    src="{{ mobile_img | image_url: width: 750 }}"
-                    loading="lazy"
-                    alt="{{ mobile_img.alt | escape }}"
-                    width="{{ mobile_img.width }}"
-                    height="{{ img_height }}"
-                    class="image-cta-card__img"
-                  >
-                </picture>
-              {%- else -%}
-                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {%- endif -%}
-            </div>
-
-            {%- comment -%} Overlaid content {%- endcomment -%}
-            <div class="image-cta-card__content">
-              <div class="image-cta-card__body">
-                {%- if block.settings.heading != blank -%}
-                  <p class="image-cta-card__heading">{{ block.settings.heading }}</p>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  <p class="image-cta-card__text">{{ block.settings.text }}</p>
+                    {%- if desktop_img != blank -%}
+                      <source
+                        media="(min-width: 750px)"
+                        srcset="
+                          {{ desktop_img | image_url: width: 750 }} 750w,
+                          {{ desktop_img | image_url: width: 1100 }} 1100w,
+                          {{ desktop_img | image_url: width: 1500 }} 1500w
+                        "
+                        sizes="50vw"
+                      >
+                    {%- endif -%}
+                    <img
+                      src="{{ mobile_img | image_url: width: 750 }}"
+                      loading="lazy"
+                      alt="{{ mobile_img.alt | escape }}"
+                      width="{{ mobile_img.width }}"
+                      height="{{ img_height }}"
+                      class="image-cta-card__img"
+                    >
+                  </picture>
+                {%- else -%}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
                 {%- endif -%}
               </div>
-              {%- if block.settings.button_label != blank -%}
-                <a
-                  class="button image-cta-card__btn"
-                  {% if block.settings.button_link != blank %}
-                    href="{{ block.settings.button_link }}"
-                  {% else %}
-                    role="link" aria-disabled="true"
-                  {% endif %}
-                >
-                  {{- block.settings.button_label | escape -}}
-                </a>
-              {%- endif -%}
+
+              {%- comment -%} Overlaid content {%- endcomment -%}
+              <div class="image-cta-card__content">
+                <div class="image-cta-card__body">
+                  {%- if block.settings.heading != blank -%}
+                    <p class="image-cta-card__heading">{{ block.settings.heading }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="image-cta-card__text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.button_label != blank -%}
+                  <a
+                    class="button image-cta-card__btn"
+                    {% if block.settings.button_link != blank %}
+                      href="{{ block.settings.button_link }}"
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                  >
+                    {{- block.settings.button_label | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
             </div>
-          </div>
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
 </div>
 
 {% schema %}

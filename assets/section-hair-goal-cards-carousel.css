@@ -61,7 +61,7 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
   }
 }
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
   .section-hair-goal-cards-carousel .slider.hair-goal-cards-carousel__list {
     scroll-padding-left: calc((100vw - 1600px + 10rem)/2);
   }
@@ -69,7 +69,7 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
   .section-hair-goal-cards-carousel .slider.hair-goal-cards-carousel__list:after {
     padding-left: calc((100vw - 1600px + 10rem)/2);
   }
-}
+} */
 
 /* ---------- Card widths ----------
    Overrides Dawn's .slider--tablet.grid--peek .grid__item (0,3,0)
@@ -88,11 +88,11 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
   }
 }
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
   .section-hair-goal-cards-carousel .grid--peek.slider .grid__item:first-of-type {
     margin-left: calc((100vw - 1600px + 10rem)/2);
   }
-}
+} */
 
 @media screen and (max-width: 349px) {
   section.section-hair-goal-cards-carousel .grid--peek .hair-goal-card.grid__item {
@@ -133,8 +133,6 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
 /* Desktop (>1600px)— 4 cards + half-card peek each side */
 @media screen and (min-width: 1600px) {
   section.section-hair-goal-cards-carousel .grid--peek .hair-goal-card.grid__item {
-    /* width: 24%;
-    min-width: 24%; */
     width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 4)) / 4.5);
     min-width: calc((100% - 5rem - (var(--grid-desktop-horizontal-spacing) * 4)) / 4.5);
   }
@@ -215,7 +213,7 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
   right: 0.8rem;
 }
 
-@media screen and (min-width:1600px) {
+/* @media screen and (min-width:1600px) {
   .hair-goal-cards-carousel__slider .slider-button--prev {
     left: calc((100vw - 1600px)/2)
   }
@@ -223,7 +221,7 @@ section.section-hair-goal-cards-carousel .hair-goal-cards-carousel__list {
   .hair-goal-cards-carousel__slider .slider-button--next {
     right: calc((100vw - 1600px)/2)
   }
-}
+} */
 
 .hair-goal-cards-carousel__slider .slider-button .icon-caret {
   height: 1.2rem;

@@ -55,8 +55,15 @@
 
 /* --- Track wrapper (position anchor for nav buttons) --- */
 
-.blog-cards__track-wrapper {
+.section-blog-cards-carousel .blog-cards__track-wrapper {
   position: relative;
+  padding: 0;
+}
+
+@media screen and (min-width: 1600px) {
+  .section-blog-cards-carousel .blog-cards__track-wrapper {
+    padding: 0 5rem;
+  }
 }
 
 /* --- Scrollable list ---
@@ -129,7 +136,7 @@
   }
 }
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
   .blog-cards__list {
     padding-left: calc((100vw - 1600px + 10rem) / 2);
     scroll-padding-left: calc((100vw - 1600px + 10rem) / 2);
@@ -147,7 +154,7 @@
   .section-blog-cards-carousel .slider-button--next.blog-cards__nav-btn {
     right: calc((100vw - 1600px) / 2);
   }
-}
+} */
 
 /* --- Scroll snap ---
    Mobile (2-row column-flow): odd-indexed items are first in their column —

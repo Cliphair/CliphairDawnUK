@@ -1,5 +1,10 @@
 /* Section: image-cta-columns */
 
+.section-image-cta-columns .page-width {
+    padding: 0;
+    max-width: calc(var(--page-width) - 10rem);
+}
+
 /* ── Grid ─────────────────────────────────────────────────── */
 .image-cta-columns__list {
     list-style: none;
