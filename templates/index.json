@@ -279,7 +279,7 @@
           "settings": {
             "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
             "badge": "all hair types",
-            "title": "Double Weft Full Head",
+            "title": "Double Weft Full Head (180-220g)",
             "subtitle": "All-rounder, most popular",
             "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
@@ -289,7 +289,7 @@
           "settings": {
             "image": "shopify://shop_images/Classic_Full_Head.webp",
             "badge": "thin & fine hair",
-            "title": "Classic Full Head",
+            "title": "Classic Full Head (130g)",
             "subtitle": "Lightweight & discreet",
             "link": ""
           }
@@ -299,7 +299,7 @@
           "settings": {
             "image": "shopify://shop_images/Seamless_Full_Head.webp",
             "badge": "all hair types",
-            "title": "Seamless Full Head",
+            "title": "Seamless Full Head (150-190g)",
             "subtitle": "Most discreet clip-ins",
             "link": ""
           }
@@ -309,13 +309,14 @@
           "settings": {
             "image": "shopify://shop_images/Ultra-Volume_Full_Head.webp",
             "badge": "average to thick hair",
-            "title": "Ultra-Volume Full Head",
+            "title": "Ultra-Volume Full Head (240-300g)",
             "subtitle": "Max volume & dramatic length",
             "link": ""
           }
         },
         "card_pwtpqk": {
           "type": "clip_in_card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Curly_Full_Head.jpg",
             "badge": "all hair types",
@@ -325,7 +326,7 @@
           }
         },
         "card_Vjf7Ab": {
-          "type": "professional_card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Halo_Hair_Extensions.webp",
             "badge": "all hair types",
@@ -335,17 +336,18 @@
           }
         },
         "card_8ffBPb": {
-          "type": "professional_card",
+          "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/One_Piece_Top_Up_Hair_Extensions.webp",
             "badge": "thin & fine hair",
-            "title": "Top Up Piece",
+            "title": "Top Up Piece (40g)",
             "subtitle": "Quick volume boost",
             "link": "shopify://collections/one-piece-top-up-hair-extensions"
           }
         },
         "card_myqqgR": {
-          "type": "professional_card",
+          "type": "clip_in_card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Quad_Weft_Pieces.webp",
             "badge": "medium hair types",
@@ -355,7 +357,8 @@
           }
         },
         "card_xAbJGF": {
-          "type": "professional_card",
+          "type": "clip_in_card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Straight_Up_Wrap_Around_Clip_In_Ponytail_Extensions.webp",
             "badge": "all hair types",
@@ -365,13 +368,74 @@
           }
         },
         "card_79LgiR": {
-          "type": "professional_card",
+          "type": "clip_in_card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Clip_In_Fringes.webp",
             "badge": "all hair types",
             "title": "Clip In Fringe",
             "subtitle": "No-cut fringe",
             "link": "shopify://collections/fringe-clip-in-hair-extensions"
+          }
+        },
+        "card_79LgiR1": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Tape_In_Hair_Extension.webp",
+            "badge": "all hair types",
+            "title": "Tape In Hair Extensions (100g)",
+            "subtitle": "Everyday, cost-effective tapes",
+            "link": "shopify://collections/tape-in-hair-extensions"
+          }
+        },
+        "card_79LgiR2": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Nano_Ring_Hair_Extension.webp",
+            "badge": "thin & fine hair",
+            "title": "Remy Royale Nano Rings (50g)",
+            "subtitle": "More secure hold",
+            "link": "shopify://collections/nano-rings-hair-extensions"
+          }
+        },
+        "card_79LgiR3": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Remy_Royale_Hair_Weft_Extensions.webp",
+            "badge": "average to thick hair",
+            "title": "Remy Royale Classic Weft (120g)",
+            "subtitle": "Secure fit for thicker hair",
+            "link": "shopify://collections/human-hair-weave-wefts-hair-extensions"
+          }
+        },
+        "card_79LgiR4": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Remy_Royale_Invisible_Tape_In_Hair_Extensions.webp",
+            "badge": "all hair types",
+            "title": "Remy Royale Invisible Tape Ins (50g)",
+            "subtitle": "Most discreet professional fit",
+            "link": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions"
+          }
+        },
+        "card_79LgiR5": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/High_Quality_Remy_Royale_Tape_In_Hair_Extensions.webp",
+            "badge": "all hair types",
+            "title": "Remy Royale Tape Ins (50g)",
+            "subtitle": "Premium grade",
+            "link": "shopify://collections/remy-royale-tape-in-extensions"
+          }
+        },
+        "card_79LgiR6": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Remy_Royale_Flat_Weft_Hair_Extensions.webp",
+            "badge": "average to thick hair",
+            "title": "Remy Royale Flat Track Weft (120g)",
+            "subtitle": "Lies flatter, more comfortable",
+            "link": "shopify://collections/flat-weft-hair-extensions"
           }
         }
       },
@@ -385,7 +449,13 @@
         "card_8ffBPb",
         "card_myqqgR",
         "card_xAbJGF",
-        "card_79LgiR"
+        "card_79LgiR",
+        "card_79LgiR2",
+        "card_79LgiR1",
+        "card_79LgiR3",
+        "card_79LgiR4",
+        "card_79LgiR6",
+        "card_79LgiR5"
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
@@ -456,6 +526,7 @@
             "mobile_ratio_h": 3,
             "heading": "We’ve given our rewards <em>a glow-up!</em>",
             "subheading": "Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.",
+            "heading_custom_font": "libre_caslon_text_n4",
             "text_align": "left",
             "button_label": "Join Now",
             "button_url": "shopify://pages/rewards",
@@ -474,10 +545,12 @@
       "settings": {
         "color_scheme": "",
         "above_the_fold": false,
-        "gap": 50,
+        "gap": 0,
         "padding_top": 32,
-        "padding_bottom": 32
-      }
+        "padding_bottom": 0
+      },
+      "custom_css": [
+        ".banner-collection-split__text-content .button {--color-button:128,110,176;--color-button-text:255,255,255;}"]
     },
     "press_bar_RM4Gax": {
       "type": "press-bar",

@@ -30,6 +30,22 @@
     <div class="banner-collection-split__row">
       {%- for block in section.blocks -%}
         {%- if block.type == 'banner' -%}
+          {%- style -%}
+            {%- assign heading_font_italic = block.settings.heading_custom_font | font_modify: 'style', 'italic' -%}
+            {{ block.settings.heading_custom_font | font_face: font_display: 'swap' }}
+            {%- if heading_font_italic -%}{{ heading_font_italic | font_face: font_display: 'swap' }}{%- endif -%}
+            .section-banner-collection-split #Banner-{{ section.id }}-{{ forloop.index }} .banner-collection-split__heading {
+              --font-heading-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
+              --font-heading-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
+              --font-heading-style: normal;
+            }
+            .section-banner-collection-split #Banner-{{ section.id }}-{{ forloop.index }} .banner-collection-split__heading em {
+              font-family: {{ block.settings.heading_custom_font.family | default: 'inherit' }};
+              font-style: italic;
+              font-weight: {{ block.settings.heading_custom_font.weight | default: 'inherit' }};
+            }
+          {%- endstyle -%}
+
           {%- liquid
             assign img_loading = 'lazy'
             assign img_fetchpriority = 'auto'
@@ -92,7 +108,7 @@
               </h2>
             {%- endif -%}
 
-            <div class="banner-collection-split__banner-inner">
+            <div id="Banner-{{ section.id }}-{{ forloop.index }}" class="banner-collection-split__banner-inner">
               {%- if block.settings.image != blank -%}
                 {%- assign banner_img_alt = block.settings.alt_text | escape -%}
                 {%- if block.settings.decorative -%}
@@ -414,6 +430,13 @@
           "type": "inline_richtext",
           "id": "subheading",
           "label": "t:sections.banner-collection-split.blocks.banner.settings.subheading.label"
+        },
+
+        {
+          "type": "font_picker",
+          "id": "heading_custom_font",
+          "label": "Heading custom font",
+          "default": "inter_n3"
         },
         {
           "type": "select",

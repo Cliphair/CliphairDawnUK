@@ -28,12 +28,11 @@ if (!customElements.get('banner-carousel-slider')) {
         // ensuring Math.floor returns N (not N-1) when exactly N columns fit.
         const gap = this.sliderItemOffset - this.sliderItemsToShow[0].offsetWidth;
         this.slidesPerPage = Math.max(1, Math.floor((this.slider.clientWidth + gap) / this.sliderItemOffset));
-        // Use scroll range rather than item count so totalPages never exceeds the number of
-        // positions the slider can actually reach — prevents the prev button getting stuck when
-        // the last two page targets collapse onto the same clamped scroll position.
-        const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
-        const pageStep = this.slidesPerPage * this.sliderItemOffset;
-        this.totalPages = Math.max(1, Math.round(maxScroll / pageStep) + 1);
+        // Calculate totalPages from column count, not scrollWidth — the .slider--desktop::after
+        // pseudo-element becomes a phantom grid column that inflates scrollWidth by one extra track,
+        // causing Math.round(scrollWidth / pageStep) to return one page too many.
+        const totalColumns = Math.ceil(this.sliderItemsToShow.length / 2); // grid always has 2 rows
+        this.totalPages = Math.max(1, Math.ceil(totalColumns / this.slidesPerPage));
       } else {
         // Single-row (mobile / tablet)
         this.sliderItemOffset = this.sliderItemsToShow[1].offsetLeft - this.sliderItemsToShow[0].offsetLeft;
