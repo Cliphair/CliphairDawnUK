@@ -24,6 +24,15 @@
     "collapsible_content_xfWhPY": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_pD8YUe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Right to Cancel (Statutory Withdrawal Right)",
+            "icon": "none",
+            "row_content": "<p>Under consumer protection law, you have the right to cancel your order within 14 days of receiving your items, without giving a reason. This is your statutory right and applies to all EU and UK customers.</p><p>How to exercise your right to cancel:</p><p>You can submit a cancellation request using our withdrawal form at this <a href=\"/pages/eu-withdrawal-form\" target=\"_blank\" title=\"Withdrawal form\">page</a>. You do not need an account or to log in. Simply provide your name and order number, confirm your request, and you will receive a confirmation email immediately.</p><p>What happens after you submit:</p><p>You will receive a confirmation email immediately. Our Customer Service team will then review your request and be in touch to guide you through the next steps, whether that's cancelling the order or arranging a return.</p><p>Refund timeline:</p><p>Refunds will be processed once the returned goods have been received and inspected. Refunds are issued to your original payment method.</p><p>Return costs for cancelled orders:</p><ul><li>UK customers: free returns via DPD.</li><li>EU and international customers: the cost of returning the goods is the responsibility of the customer.</li></ul><p><strong>Please note:</strong> This 14-day statutory right is separate from our 60-day commercial returns policy below, which gives you an even longer window to return unwanted items. Both options are available to you.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_BEEB8F": {
           "type": "collapsible_row",
           "settings": {
@@ -47,7 +56,7 @@
           "settings": {
             "heading": "Why Has My Return Or Exchange Request Been Denied?",
             "icon": "none",
-            "row_content": "<p>The reason why our team might reject your return or exchange request is usually down to the conditions of one or more of your items. This can be because of broken hygiene seals, visible signs of usage, alterations, product build-up, etc.</p><p>Visible signs of usage, alterations, and product build-up include:</p><ul><li>Hair dye</li><li>Hair that has been worn, brushed, or styled</li><li>Hair extensions set that are incomplete</li><li>Hair that smells as a result of using products or improper storage</li></ul><p>Other reasons why we can reject a return are:</p><ul><li>The wrong item has been sent</li><li>The return has been requested after 60 days</li></ul><p>Polite note: <strong>curly clip in hair extensions </strong>won’t be able to be returned without their silver/gold hygiene bands.</p>",
+            "row_content": "<p>The reason why our team might reject your return or exchange request is usually down to the conditions of one or more of your items. This can be because of broken hygiene seals, visible signs of usage, alterations, product build-up, etc.</p><p>Visible signs of usage, alterations, and product build-up include:</p><ul><li>Hair dye</li><li>Hair that has been worn, brushed, or styled</li><li>Hair extensions set that are incomplete</li><li>Hair that smells as a result of using products or improper storage</li></ul><p>Other reasons why we can reject a return are:</p><ul><li>The wrong item has been sent</li><li>The return has been requested after 60 days</li></ul><p>Polite note: <strong>curly clip in hair extensions </strong>won’t be able to be returned without their silver/gold hygiene bands.<br/><br/>The conditions above apply to our 60-day commercial returns policy. If you are exercising your 14-day statutory right to cancel, the product must be returned but you do not need to provide a reason for cancellation. However, you are responsible for any diminished value of the goods if this results from handling beyond what is necessary to establish the nature, characteristics, and functioning of the product.</p>",
             "page": ""
           }
         },
@@ -134,6 +143,7 @@
         }
       },
       "block_order": [
+        "collapsible_row_pD8YUe",
         "collapsible_row_BEEB8F",
         "collapsible_row_wtbtpJ",
         "collapsible_row_DVTXLa",
