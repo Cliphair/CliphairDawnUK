@@ -51,7 +51,6 @@
         "announcement-bar-0",
         "announcement-bar-1"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "",
         "show_line_separator": false,
@@ -65,6 +64,7 @@
     },
     "countdown_DwXXJA": {
       "type": "countdown",
+      "disabled": true,
       "settings": {
         "text": "Double Loyalty Points. Earn 2 points for every £1 spent.",
         "timer_text": "Ends In:",
