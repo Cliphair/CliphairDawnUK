@@ -65,7 +65,7 @@
     endif
   %}
 
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover" data-base-price="{{ card_product.price }}">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -245,6 +245,9 @@
                 NEW
               </span>
             {%- endif -%}
+            <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }} hidden badge--intelligems-pct">
+              -<span class="ig-pct-value"></span>%
+            </span>
           </div>
           {% if badge_style == 'fixed' %}
             <div class="card__badge {{ settings.badge_position }} float">
@@ -266,6 +269,7 @@
                   NEW
                 </span>
               {% endif %}
+              <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }} hidden badge--intelligems-sale">SALE</span>
             </div>
           {% endif %}
         </div>
@@ -478,7 +482,7 @@
     </div>
   </div>
 {%- else -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover" data-base-price="{{ card_product.price }}">
     <div
       class="
         card card--{{ settings.card_style }}
