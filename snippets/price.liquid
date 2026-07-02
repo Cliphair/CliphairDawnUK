@@ -232,6 +232,36 @@
         {% endif %}
       {% endif %}
     </div>
+    <div class="price__intelligems price__sale">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+      <span
+        class="price-item price-item--regular"
+        {% if use_variant %}
+          data-variant-id="{{ target.id }}"
+        {% else %}
+          data-product-id="{{ target.id }}"
+        {% endif -%}
+      >
+        <s class="igComparePrice">
+          {% if settings.currency_code_enabled %}
+            {{ price | money_with_currency }}
+          {% else %}
+            {{ price | money }}
+          {% endif %}
+        </s>
+      </span>
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+      <span
+        class="price-item price-item--sale price-item--last"
+        {% if use_variant %}
+          data-variant-id="{{ target.id }}"
+        {% else %}
+          data-product-id="{{ target.id }}"
+        {% endif -%}
+      >
+        {{ money_price }}
+      </span>
+    </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
       <span

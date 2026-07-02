@@ -55,13 +55,16 @@
 }
 
 .price__sale,
+.price__intelligems,
 .price__availability,
 .price .price__badge-sale,
 .price .price__badge-sold-out,
 .price .price__badge-new-arrival,
 .price--on-sale .price__regular,
 .price--on-sale .price__availability,
-.price--code-sale .price__regular {
+.price--code-sale .price__regular,
+.price--intelligems .price__regular,
+.price--intelligems .price__sale {
   display: none;
 }
 
@@ -77,7 +80,8 @@
 }
 
 .price--on-sale .price__sale,
-.price--code-sale .price__sale {
+.price--code-sale .price__sale,
+.price--intelligems .price__intelligems {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -90,7 +94,8 @@
 }
 
 .price--on-sale .price-item--regular,
-.price--code-sale .price-item--regular {
+.price--code-sale .price-item--regular,
+.price--intelligems .price__intelligems .price-item--regular {
   text-decoration: line-through;
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.3rem;
@@ -116,4 +121,8 @@
   margin-top: 0.2rem;
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
+}
+
+.price--on-sale .price__intelligems{
+  display:none!important;
 }
