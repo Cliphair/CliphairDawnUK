@@ -135,9 +135,8 @@
         "announcement_image_Q3tyyb": {
           "type": "announcement-image",
           "name": "Sale",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Free_Sunday_Delivery_1.gif",
+            "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": "shopify://pages/hair-extensions-by-colour"
