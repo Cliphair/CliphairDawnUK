@@ -136,7 +136,7 @@
           "type": "announcement-image",
           "name": "Sale",
           "settings": {
-            "image": "shopify://shop_images/Free_Express_Delivery_Message_Black_copy.gif",
+            "image": "shopify://shop_images/Free_Saturday_Ticker_75_Version.gif",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": "shopify://pages/hair-extensions-by-colour"
