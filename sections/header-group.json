@@ -24,9 +24,8 @@
         },
         "announcement_89cGFt": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Earn points on every order – join The Cliphair Collective today!",
+            "text": "Earn double points on every order – join The Cliphair Collective today!",
             "link": "shopify://pages/rewards"
           }
         },
