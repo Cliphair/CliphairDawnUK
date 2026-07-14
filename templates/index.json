@@ -751,37 +751,38 @@
         "video_slide_k34hfH": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-11-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-11.jpg",
-            "product_name": "Halo Hair Extensions",
-            "product_link": "",
+            "video": "shopify://files/videos/RFW-RTP-1B- 22 inchs-3rd July 2025-@loladelucaa-2.mp4",
+            "poster_image": "shopify://shop_images/RFW-RTP-1B-_22_inchs-3rd_July_2025-_loladelucaa-2.jpg",
+            "swatch_image": "shopify://shop_images/natural-black-1b-snippet.webp",
+            "product_name": "22\" Natural Black Remy Royale Flat Weft",
+            "product_link": "shopify://products/jet-black-1-remy-royale-flat-weft-hair-extensions",
             "star_rating": 5,
-            "reviewer_name": "Jessica T.",
-            "review_text": "\"Game changer! On and off in seconds.\""
+            "reviewer_name": "",
+            "review_text": ""
           }
         },
         "video_slide_VKeKJ9": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-12-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-12.jpg",
-            "product_name": "Clip-in Hair Extensions",
-            "product_link": "",
+            "poster_image": "shopify://shop_images/RTP-_2-22_inchs-1st_January_2025-_alicethurley.jpg",
+            "swatch_image": "shopify://shop_images/Darkest_Brown_Hair_Extensions.webp",
+            "product_name": "22\" Remy Royale Tape Ins",
+            "product_link": "shopify://products/remy-royale-double-drawn-tape-in-darkest-brown-2",
             "star_rating": 5,
-            "reviewer_name": "Sarah M.",
-            "review_text": "\"Absolutely love them, they blend perfectly!\""
+            "reviewer_name": "",
+            "review_text": ""
           }
         },
         "video_slide_EzRp4D": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-10-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-10.jpg",
-            "product_name": "Clip-in Hair Extensions",
-            "product_link": "",
+            "poster_image": "shopify://shop_images/WPT-_16_60-14inch-12th_December_2024-_collinsteagan_AMSR.jpg",
+            "swatch_image": "shopify://shop_images/barbie-blonde-16-60-snippet.webp",
+            "product_name": "14\" Barbie Blonde Wrap Around Ponytail",
+            "product_link": "shopify://products/blonde-mix-16-60-clip-in-ponytail-extensions",
             "star_rating": 5,
-            "reviewer_name": "Sarah M.",
-            "review_text": "\"Absolutely love them, they blend perfectly!\""
+            "reviewer_name": "",
+            "review_text": ""
           }
         }
       },
