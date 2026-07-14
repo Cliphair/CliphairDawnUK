@@ -200,7 +200,7 @@
         "card_GcmGkr": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-model-1.jpg",
+            "image": "shopify://shop_images/fuller-ticker-hair.jpg",
             "title": "Fuller, Thicker Hair",
             "subtitle": "More body for fine or flat hair, without going longer",
             "link": "shopify://collections/hair-extensions-for-volume"
@@ -209,7 +209,7 @@
         "card_pqPm3g": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-model-2.jpg",
+            "image": "shopify://shop_images/add-serious-length.jpg",
             "title": "Add Serious Length",
             "subtitle": "Go noticeably longer",
             "link": "shopify://collections/long-hair-extensions"
@@ -218,7 +218,7 @@
         "card_z4nQaT": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-model-3.jpg",
+            "image": "shopify://shop_images/quick-no-fuss-extensions.jpg",
             "title": "Quick, No-Fuss Extensions",
             "subtitle": "In and out in minutes. Easiest if you're new or short on time",
             "link": "shopify://collections/easy-clip-in-hair-extensions"
@@ -227,7 +227,7 @@
         "card_UncrVm": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-model-1.jpg",
+            "image": "shopify://shop_images/hair-for-big-occasions.jpg",
             "title": "Hair for Big Occasions",
             "subtitle": "Full, glamorous hair for weddings, events and nights out",
             "link": "shopify://collections/wedding-occasion-hair-extensions"
@@ -236,7 +236,7 @@
         "card_q4b9dA": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/new-homepage-model-2.jpg",
+            "image": "shopify://shop_images/extensions-that-last-for-months.jpg",
             "title": "Extensions That Last for Months",
             "subtitle": "Professional hair extensions",
             "link": "shopify://collections/permanent-extensions"
@@ -378,16 +378,6 @@
             "link": "shopify://collections/fringe-clip-in-hair-extensions"
           }
         },
-        "card_79LgiR1": {
-          "type": "professional_card",
-          "settings": {
-            "image": "shopify://shop_images/Tape_In_Hair_Extension.webp",
-            "badge": "all hair types",
-            "title": "Tape In Hair Extensions (100g)",
-            "subtitle": "Everyday, cost-effective tapes",
-            "link": "shopify://collections/tape-in-hair-extensions"
-          }
-        },
         "card_79LgiR2": {
           "type": "professional_card",
           "settings": {
@@ -396,6 +386,16 @@
             "title": "Remy Royale Nano Rings (50g)",
             "subtitle": "More secure hold",
             "link": "shopify://collections/nano-rings-hair-extensions"
+          }
+        },
+        "card_79LgiR1": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Tape_In_Hair_Extension.webp",
+            "badge": "all hair types",
+            "title": "Tape In Hair Extensions (100g)",
+            "subtitle": "Everyday, cost-effective tapes",
+            "link": "shopify://collections/tape-in-hair-extensions"
           }
         },
         "card_79LgiR3": {
@@ -418,16 +418,6 @@
             "link": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions"
           }
         },
-        "card_79LgiR5": {
-          "type": "professional_card",
-          "settings": {
-            "image": "shopify://shop_images/High_Quality_Remy_Royale_Tape_In_Hair_Extensions.webp",
-            "badge": "all hair types",
-            "title": "Remy Royale Tape Ins (50g)",
-            "subtitle": "Premium grade",
-            "link": "shopify://collections/remy-royale-tape-in-extensions"
-          }
-        },
         "card_79LgiR6": {
           "type": "professional_card",
           "settings": {
@@ -436,6 +426,16 @@
             "title": "Remy Royale Flat Track Weft (120g)",
             "subtitle": "Lies flatter, more comfortable",
             "link": "shopify://collections/flat-weft-hair-extensions"
+          }
+        },
+        "card_79LgiR5": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/High_Quality_Remy_Royale_Tape_In_Hair_Extensions.webp",
+            "badge": "all hair types",
+            "title": "Remy Royale Tape Ins (50g)",
+            "subtitle": "Premium grade",
+            "link": "shopify://collections/remy-royale-tape-in-extensions"
           }
         }
       },
@@ -526,7 +526,7 @@
             "mobile_ratio_h": 3,
             "heading": "We’ve given our rewards <em>a glow-up!</em>",
             "subheading": "Great hair. Greater rewards. Enjoy exclusive benefits every time you shop.",
-            "heading_custom_font": "libre_caslon_text_n4",
+            "heading_custom_font": "inter_n3",
             "text_align": "left",
             "button_label": "Join Now",
             "button_url": "shopify://pages/rewards",
@@ -541,6 +541,9 @@
         "collection_carousel_tdPwrn",
         "banner_88qLMM"
       ],
+      "custom_css": [
+        ".banner-collection-split__text-content .button {--color-button: 128, 110, 176; --color-button-text: 255, 255, 255;}"
+      ],
       "name": "t:sections.banner-collection-split.presets.name",
       "settings": {
         "color_scheme": "",
@@ -548,9 +551,7 @@
         "gap": 0,
         "padding_top": 32,
         "padding_bottom": 0
-      },
-      "custom_css": [
-        ".banner-collection-split__text-content .button {--color-button:128,110,176;--color-button-text:255,255,255;}"]
+      }
     },
     "press_bar_RM4Gax": {
       "type": "press-bar",
@@ -655,48 +656,48 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/The_Hair_Extensions_Bible.png",
-            "title": "Beginner's guide to extensions",
-            "link": ""
+            "title": "The Hair Extension Bible",
+            "link": "/blogs/hair-blog/tagged/the-hair-extensions-bible#main-blog-categories"
           }
         },
         "card_B6LzFk": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/haircare-tips.webp",
-            "title": "How to master haircare at home",
-            "link": ""
+            "title": "Hair Care & Tips",
+            "link": "/blogs/hair-blog/tagged/hair-care-tips#main-blog-categories"
           }
         },
         "card_Hhzmdb": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Top_Trends.png",
-            "title": "How to pick your shade like a pro",
-            "link": ""
+            "title": "Top Trends",
+            "link": "/blogs/hair-blog/tagged/top-trends#main-blog-categories"
           }
         },
         "card_7YeGYP": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Guides_and_Tutorials.png",
-            "title": "Style inspo for every occasion",
-            "link": ""
+            "title": "Styling Guides & Tutorials",
+            "link": "/blogs/hair-blog/tagged/styling-guides-tutorials#main-blog-categories"
           }
         },
         "card_ezNGWJ": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Wedding.png",
-            "title": "Beginner's guide to extensions",
-            "link": ""
+            "title": "Wedding& Occasion Hair",
+            "link": "/blogs/hair-blog/tagged/wedding-occasion-hair#main-blog-categories"
           }
         },
         "card_L68tEC": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Lifestyle.png",
-            "title": "Beginner's guide to extensions",
-            "link": ""
+            "title": "Lifestyle & Pop Culture",
+            "link": "/blogs/hair-blog/tagged/lifestyle-pop-culture#main-blog-categories"
           }
         }
       },
@@ -711,7 +712,7 @@
       "name": "Blog Cards Carousel",
       "settings": {
         "title": "The blog spot",
-        "subtitle": "Something here to say we want to educate our customers & help",
+        "subtitle": "For the latest haircare tips, top trends and more, browse our blog categories and Hair Extensions Bible for everything you need to know about hair and extensions!",
         "columns_mobile": 1,
         "columns_desktop": 3,
         "color_scheme": "",
@@ -731,8 +732,8 @@
             "product_name": "Clip-in Hair Extensions",
             "product_link": "/",
             "star_rating": 5,
-            "reviewer_name": "Sarah M.",
-            "review_text": "\"Absolutely love them, they blend perfectly!\""
+            "reviewer_name": "",
+            "review_text": ""
           }
         },
         "video_slide_7qCMcT": {
@@ -743,8 +744,8 @@
             "product_name": "Tape-in Hair Extensions",
             "product_link": "",
             "star_rating": 5,
-            "reviewer_name": "Emily R.",
-            "review_text": "\"So natural-looking, couldn't be happier!\""
+            "reviewer_name": "",
+            "review_text": ""
           }
         },
         "video_slide_k34hfH": {
