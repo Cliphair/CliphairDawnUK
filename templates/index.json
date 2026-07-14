@@ -726,11 +726,11 @@
         "video_slide_K84Ta4": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-9-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-9.jpg",
-            "swatch_image": "shopify://shop_images/350-fhs_website-attachment.jpg",
-            "product_name": "Clip-in Hair Extensions",
-            "product_link": "/",
+            "video": "shopify://files/videos/RCF-18_613-20+inchs-23rd+April+2025-@hollyjai_.mp4",
+            "poster_image": "shopify://shop_images/RCF-18_613-20_inchs-23rd_April_2025-_hollyjai.jpg",
+            "swatch_image": "shopify://shop_images/biscuit-blondey-18-613-snippet.webp",
+            "product_name": "20” Biscuit Blondey Seamless Clip Ins",
+            "product_link": "shopify://products/seamless-clip-in-hair-extensions-double-drawn-lightest-brown-bleach-blonde-mix",
             "star_rating": 5,
             "reviewer_name": "",
             "review_text": ""
@@ -739,10 +739,10 @@
         "video_slide_7qCMcT": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-3-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-3.jpg",
-            "product_name": "Tape-in Hair Extensions",
-            "product_link": "",
+            "poster_image": "shopify://shop_images/DW-_33-24_inchs-23rd_November_2024-_paigelauren_bridalhair-2.jpg",
+            "swatch_image": "shopify://shop_images/dark-auburn-33-snippet.webp",
+            "product_name": "20” Dark Auburn Double Weft Clip Ins",
+            "product_link": "shopify://products/double-weft-set-real-human-clip-in-hair-extensions-dark-auburn-copper-red-33",
             "star_rating": 5,
             "reviewer_name": "",
             "review_text": ""
@@ -783,30 +783,6 @@
             "reviewer_name": "Sarah M.",
             "review_text": "\"Absolutely love them, they blend perfectly!\""
           }
-        },
-        "video_slide_drDyYr": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-7-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-7.jpg",
-            "product_name": "Clip-in Hair Extensions",
-            "product_link": "",
-            "star_rating": 5,
-            "reviewer_name": "Sarah M.",
-            "review_text": "\"Absolutely love them, they blend perfectly!\""
-          }
-        },
-        "video_slide_UtUeeV": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/bridal-26-hair-down-1-video.mp4",
-            "poster_image": "shopify://shop_images/bridal-26-hair-down-1.jpg",
-            "product_name": "Clip-in Hair Extensions",
-            "product_link": "",
-            "star_rating": 5,
-            "reviewer_name": "Sarah M.",
-            "review_text": "\"Absolutely love them, they blend perfectly!\""
-          }
         }
       },
       "block_order": [
@@ -814,9 +790,7 @@
         "video_slide_7qCMcT",
         "video_slide_k34hfH",
         "video_slide_VKeKJ9",
-        "video_slide_EzRp4D",
-        "video_slide_drDyYr",
-        "video_slide_UtUeeV"
+        "video_slide_EzRp4D"
       ],
       "name": "Video Spotlight",
       "settings": {
