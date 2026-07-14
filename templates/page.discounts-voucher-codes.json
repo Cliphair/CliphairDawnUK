@@ -19,22 +19,13 @@
     "e9e4959a-efe2-488f-89ff-2322f5b4ddbe": {
       "type": "page-header",
       "settings": {
-        "custom-title": false,
-        "first-line": "",
-        "second-line": "",
-        "hide": true,
-        "text_colour": "#000000",
-        "bg_colour": "#ffffff",
-        "mobile-font-size": 14,
-        "mobile-top-padding": 0,
-        "mobile-bottom-padding": 0,
-        "mobile-right-padding": 0,
-        "mobile-left-padding": 0,
-        "desktop-font-size": 20,
-        "desktop-top-padding": 0,
-        "desktop-bottom-padding": 0,
-        "desktop-right-padding": 0,
-        "desktop-left-padding": 0
+        "show_title": false,
+        "custom_title": "",
+        "heading_size": "h2",
+        "text_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "custom_banner_y8aiUw": {
@@ -253,6 +244,7 @@
     },
     "b1f47739-8db2-4a53-8c42-834bfda16f1413": {
       "type": "custom_multicolumn_hc",
+      "disabled": true,
       "custom_css": [
         ".text_container {margin: 0;}",
         ".section_header > * {font-weight: 400; margin-bottom: 0;}"
@@ -331,6 +323,7 @@
         "paypal_Dr3fdm",
         "text_mbNPmd"
       ],
+      "disabled": true,
       "custom_css": [
         ".inner-container {justify-content: center;}"
       ],
