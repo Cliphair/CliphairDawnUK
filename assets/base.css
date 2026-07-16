@@ -3952,3 +3952,75 @@ swym-storefront-layout-as-drawer .swym-storefront-layout-body {
 .wheelify-wrapper-spinner #wheelify-cc-spin-a-sale-already-used-spin-quota p {
   color: red;
 }
+
+/* Free Gift */
+body .docapp-fg-current.docapp-fg-on-hover {
+	display: none !important
+}
+
+body .docapp-free-gift-progress .docapp-fg-progress-goal .docapp-fg-goal-text-content {
+	box-shadow: none;
+}
+
+body .docapp-promo-popup {
+	background: #fdf8ff !important;
+}
+
+body .docapp-promo-popup__header__title {
+	font-weight: 400 !important;
+	background: #414141 !important;
+	color: #fff !important;
+}
+
+body .docapp-promo-popup__header__body {
+	background-color: transparent !important;
+	color: #414141 !important;
+}
+
+body .docapp-promo-popup__continue {
+	background: #a590c1 !important;
+}
+
+body .docapp-promo-widget-variables .docapp-promo-popup__continue:hover {
+	background: rgb(165, 144, 193) !important;
+}
+
+body .docapp-free-gift-float-icon.docapp-promo-widget-variables.docapp-free-gift-circle {
+	z-index: 1 !important;
+	right: 15px !important;
+}
+
+body .docapp-overlay-container .docapp-overlay-content.docapp-overlay-content__fullscreen {
+	background: #fdf8ff !important;
+}
+
+body .docapp-gift-choice-modal-item-wrapper {
+	padding: 10px !important;
+	--docapp-card-primary: 165, 144, 193 !important;
+	background-color: rgba(var(--docapp-card-primary), .1) !important;
+	border: 1px solid rgba(var(--docapp-card-primary), 1) !important;
+	border-radius: 10px !important;
+	margin: 0 5px !important;
+}
+
+body #docapp-gift-choice-modal-wrapper footer .docapp-gift-choice-modal-cart-button,
+body #docapp-gift-choice-modal-wrapper footer .docapp-gift-choice-modal-done-button {
+	font-weight: 400 !important;
+}
+
+@media screen and (min-width:768px) {
+	body #docapp-gift-choice-modal-wrapper {
+		padding-right: 0 !important;
+		right: 0 !important;
+	}
+
+	body .docapp-gift-choices,
+	body #docapp-gift-choice-modal-wrapper section section {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+
+	body #docapp-gift-choice-modal-wrapper section section>div {
+		width: 100% !important;
+	}
+}
