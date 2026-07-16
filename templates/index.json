@@ -297,6 +297,9 @@
         "card_UncrVm",
         "card_q4b9dA"
       ],
+      "custom_css": [
+        ".hair-goal-card__text {background: #f5f5f4; flex-grow:1;}"
+      ],
       "name": "Hair Goal — Carousel",
       "settings": {
         "title": "Shop by your hair goal",
