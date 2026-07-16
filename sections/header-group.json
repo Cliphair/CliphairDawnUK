@@ -21,17 +21,8 @@
             "link": ""
           }
         },
-        "announcement_89cGFt": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Earn points on every order – join The Cliphair Collective today!",
-            "link": "shopify://pages/rewards"
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "We now ship 7 days a week! Next Day Delivery available every day",
             "link": ""
@@ -39,7 +30,6 @@
         },
         "announcement-bar-1": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
@@ -48,7 +38,6 @@
       },
       "block_order": [
         "announcement_gQWRRt",
-        "announcement_89cGFt",
         "announcement-bar-0",
         "announcement-bar-1"
       ],
