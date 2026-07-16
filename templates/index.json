@@ -1202,6 +1202,159 @@
         "padding_top": 0,
         "padding_bottom": 40
       }
+    },
+    "f41c0e3b-b362-4900-8b02-4a5cc75bd290": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--15283894157373__f41c0e3b-b362-4900-8b02-4a5cc75bd290-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does Remy Hair Extensions mean? ",
+            "icon": "none",
+            "row_content": "<p>Remy Hair Extensions are the best quality Real Human Hair Extensions available. All the hair is guaranteed to have intact cuticles that are all aligned in one direction to increase longevity, shine and manageability. Insist on Remy hair if you want to look your best!</p>",
+            "page": ""
+          }
+        },
+        "0394d474-e0db-48d3-a259-bbfdf9e7c37e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I know which Real Hair Extension is best for my hair type?",
+            "icon": "none",
+            "row_content": "<p>This will depend on what you wish to achieve with real human hair extensions and how you integrate them into your lifestyle. Our Cliphair <a href=\"/pages/contact-us\" title=\"Contact Us\">customer service team</a> are always on hand to help you make the right hair extension choice. You can find everything you need to know in our <a href=\"/blogs/hair-blog/hair-extension-buying-guide-and-hair-glossary\" title=\"Buying Hair Extensions: Everything You Need To Know\">Ultimate Buying Guide</a> which includes recommendations for all hair types and concerns such as thin, thick, curly, short or straight hair.   </p>",
+            "page": ""
+          }
+        },
+        "bd8078ec-ab43-41e6-93c8-2ba90617a437": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can you curl or straighten Cliphair Real Human Hair Extensions?",
+            "icon": "none",
+            "row_content": "<p>Yes, you can curl, wave, straighten and heat style your extensions just like your own hair as they are made from 100% Remy human hair. Just remember to always protect your extensions with <a href=\"/products/cliphair-heat-spray\" title=\"Hair Extension Heat Protection Spray\">Cliphair’s Heat Protection Spray</a>. </p>",
+            "page": ""
+          }
+        },
+        "90c2bf7a-ad88-4fcc-a36e-1e6d60c48754": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long do real human hair extensions usually last?",
+            "icon": "none",
+            "row_content": "<p>The longevity of hair extensions is influenced by factors such as the quality of the hair, the method of installation, how well they are cared for, and how often they are used. Clip-ins tend to last 12-18 months with good care, whereas permanent extensions should be removed and reinstalled every 6-8 weeks, but the hair can last up to a year if looked after properly. For more information, take a look at our dedicated blog “<a href=\"/blogs/hair-blog/ever-wondered-how-long-do-hair-extensions-last\" title=\"Ever Wondered How Long Do Hair Extensions Last?\">How long do hair extensions last?</a>”.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15283894157373__f41c0e3b-b362-4900-8b02-4a5cc75bd290-collapsible_row-2",
+        "0394d474-e0db-48d3-a259-bbfdf9e7c37e",
+        "bd8078ec-ab43-41e6-93c8-2ba90617a437",
+        "90c2bf7a-ad88-4fcc-a36e-1e6d60c48754"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 400;}",
+        ".collapsible-section-layout {padding-top: 0 !important; padding-bottom: 0 !important;}",
+        ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ's",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "section",
+        "arrow_style": "half-arrow",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "faq_schema": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "button_label": "VIEW MORE FAQ'S",
+        "link": "shopify://pages/faqs",
+        "button_style_secondary": false,
+        "padding_top": 40,
+        "padding_bottom": 44
+      }
+    },
+    "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b": {
+      "type": "image-list",
+      "blocks": {
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Ethically-Sourced-_White_32345e81-b264-4ed2-9a09-7ac34b332700.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Ethically<br>Sourced</p>",
+            "link": ""
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Outstanding-Reviews-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Outstanding<br>Reviews</p>",
+            "link": "shopify://pages/testimonials"
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cliphair-Rewards-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Cliphair<br>Rewards</p>",
+            "link": "shopify://pages/rewards"
+          }
+        },
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Free-Delivery-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Free Delivery<br>& Returns</p>",
+            "link": ""
+          }
+        },
+        "cbdbff03-f013-487f-8288-6c9a46426bc6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Buy-Now-Pay-Later-_White.svg",
+            "img_url": "",
+            "alt": "",
+            "text_label": "<p>Buy Now<br>Pay Later</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-1",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-2",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-3",
+        "template--15283894157373__c6a82ce6-f9b5-448b-af80-7e17ba7abc7b-logo_image-4",
+        "cbdbff03-f013-487f-8288-6c9a46426bc6"
+      ],
+      "custom_css": [
+        "img {max-height: 70px;}",
+        "a {text-decoration: none;}",
+        "@media screen and (min-width: 750px) and (max-width: 989px) {.grid--4-col-tablet .grid__item {width: calc((100% - var(--grid-desktop-horizontal-spacing) * 4) / 5); }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "introduction": "",
+        "text_allignment": "left",
+        "columns_desktop": 5,
+        "swipe_on_desktop": false,
+        "color_scheme": "background-collection-titles",
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "slider_visual": "counter",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "trackable_name": ""
+      }
     }
   },
   "order": [
@@ -1222,6 +1375,8 @@
     "image_list_nPnYgL",
     "simple_divider_L3tY7h",
     "custom_liquid_FeaaFh2",
-    "blog_spot_aPTw9A"
+    "blog_spot_aPTw9A",
+    "f41c0e3b-b362-4900-8b02-4a5cc75bd290",
+    "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b"
   ]
 }
