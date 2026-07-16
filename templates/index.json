@@ -298,7 +298,7 @@
         "card_q4b9dA"
       ],
       "custom_css": [
-        ".hair-goal-card__text {background: #f5f5f4; flex-grow:1;}"
+        ".hair-goal-card__text {background: #f5f5f4; flex-grow: 1;}"
       ],
       "name": "Hair Goal — Carousel",
       "settings": {
@@ -1261,8 +1261,8 @@
         "heading_alignment": "center",
         "layout": "section",
         "arrow_style": "half-arrow",
-        "color_scheme": "inverse",
-        "container_color_scheme": "inverse",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
         "open_first_collapsible_row": false,
         "faq_schema": true,
         "image_ratio": "adapt",
