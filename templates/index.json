@@ -1258,7 +1258,7 @@
         "caption": "",
         "heading": "FAQ's",
         "heading_size": "h1",
-        "heading_alignment": "center",
+        "heading_alignment": "left",
         "layout": "section",
         "arrow_style": "half-arrow",
         "color_scheme": "background-1",
