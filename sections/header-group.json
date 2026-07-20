@@ -23,10 +23,9 @@
         },
         "announcement_89cGFt": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Earn double points on every order – join The Cliphair Collective today!",
-            "link": "shopify://pages/rewards"
+            "text": "Shop Blonde Shades & Get A Free Purple Shampoo - Automatically Applied",
+            "link": "shopify://collections/blonde-hair-extensions"
           }
         },
         "announcement-bar-0": {
