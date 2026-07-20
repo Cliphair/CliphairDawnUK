@@ -1,0 +1,104 @@
+{% comment %}
+  Renders a collection link card.
+
+  Accepts:
+  - collection:    {Object}   Shopify collection object (link.object) — required
+  - url:           {String}   Link href (link.url) — required
+  - card_title:    {String}   Override title. Defaults to collection.title
+  - shape_style:   {String}   'flower', 'circle', or 'none'. Default: 'none'
+  - text_position: {String}   'bottom' or 'top'. Default: 'bottom'
+  - show_title:    {Boolean}  Display the title. Default: true
+  - section_id:    {String}   Section ID — required when shape_style is 'flower'
+  - img_sizes:     {String}   Responsive sizes attribute
+  - loading:       {String}   'lazy' or 'eager'. Default: 'lazy'
+
+  Usage:
+  {% render 'card-collection-link',
+    collection: link.object,
+    url: link.url,
+    shape_style: block.settings.shape_style,
+    text_position: block.settings.text_position,
+    show_title: block.settings.show_title,
+    section_id: section.id,
+    img_sizes: img_sizes,
+    loading: 'lazy'
+  %}
+{% endcomment %}
+
+{%- liquid
+  unless shape_style == 'flower' or shape_style == 'circle'
+    assign shape_style = 'none'
+  endunless
+  unless show_title == false
+    assign show_title = true
+  endunless
+  unless text_position == 'top'
+    assign text_position = 'bottom'
+  endunless
+  if img_sizes == blank
+    assign img_sizes = '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw'
+  endif
+  if loading == blank
+    assign loading = 'lazy'
+  endif
+  assign title = card_title | default: collection.title
+-%}
+
+<a
+  href="{{ url }}"
+  class="card-collection-link center"
+  {%- unless show_title and text_position == 'bottom' -%}
+    aria-label="{{ title | escape }}"
+  {%- endunless -%}
+>
+  <div
+    class="card-collection-link__media card-collection-link__media--{{ shape_style }}"
+    {%- if shape_style == 'flower' %}
+      style="clip-path: url(#shape-clip-{{ section_id }})"
+    {% endif %}
+  >
+    {%- if collection.image -%}
+      <img
+        srcset="
+          {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if collection.image.width >= 330 -%}{{ collection.image | image_url: width: 330 }} 330w,{%- endif -%}
+          {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+          {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if collection.image.width >= 1000 -%}{{ collection.image | image_url: width: 1000 }} 1000w,{%- endif -%}
+          {{ collection.image | image_url }} {{ collection.image.width }}w
+        "
+        src="{{ collection.image | image_url: width: 535 }}"
+        sizes="{{ img_sizes }}"
+        alt="{{ title | escape }}"
+        width="{{ collection.image.width }}"
+        height="{{ collection.image.height }}"
+        loading="{{ loading }}"
+        class="card-collection-link__img motion-reduce"
+      >
+    {%- else -%}
+      {{ 'collection-1' | placeholder_svg_tag: 'card-collection-link__placeholder' }}
+    {%- endif -%}
+
+    {%- if show_title and text_position == 'top' -%}
+      <span class="card-collection-link__label card-collection-link__label--overlay" aria-hidden="true">
+        {{- title -}}
+      </span>
+    {%- endif -%}
+
+    {%- if shape_style == 'flower' -%}
+      <svg
+        class="card-collection-link__shape-border"
+        viewBox="0 0 1 1"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {%- render 'shape-path-normalized' -%}
+      </svg>
+    {%- endif -%}
+  </div>
+
+  {%- if show_title and text_position == 'bottom' -%}
+    <span class="card-collection-link__label">{{ title }}</span>
+  {%- endif -%}
+</a>
