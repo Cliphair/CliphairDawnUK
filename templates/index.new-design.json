@@ -533,7 +533,7 @@
       "type": "yotpo-reviews-split",
       "name": "Yotpo reviews – split",
       "settings": {
-        "color_scheme": "accent-1",
+        "color_scheme": "new-design-1",
         "heading": "What our customers say",
         "subheading": "Thousands of women trust Cliphair. Here's why:",
         "data_source": "api",

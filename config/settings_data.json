@@ -361,16 +361,16 @@
           "shadow": "#121212"
         }
       },
-      "background-faded-blue": {
+      "new-design-1": {
         "settings": {
-          "background": "rgba(0,0,0,0)",
+          "background": "#f1f1f1",
           "background_gradient": "",
-          "headers": "#ffffff",
-          "text": "#ffffff",
-          "button": "#121212",
+          "headers": "#000000",
+          "text": "#000000",
+          "button": "#000000",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#ffffff"
+          "secondary_button_label": "#000000",
+          "shadow": "#000000"
         }
       },
       "background-white": {
