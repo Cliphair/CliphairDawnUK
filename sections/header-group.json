@@ -16,14 +16,14 @@
       "blocks": {
         "announcement_Ew7Waa": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free Monday Guaranteed Delivery Over £75 + Double Points",
+            "text": "Free Pintail Comb With Every Order - Automatically Applied",
             "link": "shopify://pages/rewards"
           }
         },
         "announcement_89cGFt": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Earn double points on every order – join The Cliphair Collective today!",
             "link": "shopify://pages/rewards"
