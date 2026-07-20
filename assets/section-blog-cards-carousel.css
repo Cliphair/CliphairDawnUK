@@ -60,7 +60,7 @@
   padding: 0;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1400px) {
   .section-blog-cards-carousel .blog-cards__track-wrapper {
     padding: 0 5rem;
   }
