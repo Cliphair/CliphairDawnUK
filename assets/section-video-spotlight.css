@@ -9,7 +9,7 @@
     --vs-controls-span: 100%;
     --vs-radius: 0.5rem;
     --vs-swatch-size: 6.1rem;
-    --vs-page-width: 130rem;
+    --vs-page-width: 150rem;
     --vs-stage-max: var(--vs-page-width);
     --vs-info-max: 43rem;
     --vs-edge-cover: max(0px, min(5rem, calc((100vw - var(--vs-page-width)) / 2)));
