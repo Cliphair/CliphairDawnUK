@@ -1,0 +1,177 @@
+.blog__title {
+	margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width:750px) {
+	.blog__title {
+		margin-bottom: 3rem;
+	}
+}
+
+.tag-wrapper {
+	margin: 4rem 0;
+	padding: 0;
+}
+
+.tag-wrapper ul {
+	margin: 0;
+}
+
+.blog-posts-wrapper,
+.blog-spot-section .blog__view-all {
+	position: relative;
+}
+
+.blog-spot-section .blog__view-all {
+	padding: 0 3rem;
+}
+
+.blog-post {
+	height: 100%;
+}
+
+.blogs-per-row-mobile-2>.blog-post {
+	width: calc((100% - var(--grid-mobile-vertical-spacing)) / 2)
+}
+
+/* .blog-post .card--standard>.card__content .card__information {
+	padding-right: 1.3rem;
+	padding-left: 1.3rem;
+} */
+
+.blog-post .card .card__inner .card__media,
+.blog-post .article-card__image {
+	border: 0;
+}
+
+.blog-spot-section .blog__view-all .button {
+	width: 100%;
+	max-width: 350px;
+	min-width: fit-content;
+}
+
+/* @media screen and (min-width:750px) and (max-width:989px) {
+	.blog-posts-wrapper {
+		padding: 0 6rem;
+	}
+} */
+
+@media screen and (min-width:750px) {
+	.blog-spot-section .blog__view-all {
+		padding: 0 6rem;
+	}
+
+	/* .blog-post .card--standard>.card__content .card__information {
+		padding-right: 1.7rem;
+		padding-left: 1.7rem;
+	} */
+}
+
+/* styles override */
+/* .blog-spot-section .grid__item {
+	max-width: unset;
+} */
+
+@media screen and (max-width: 749px) {
+	/* .blog-spot-section .grid--peek.slider .grid__item:first-of-type {
+		margin-left: 0;
+	}
+
+	.blog-spot-section .grid--peek.grid--1-col-tablet-down .grid__item {
+		width: 100%;
+		min-width: 100%;
+	}
+
+	.blog-spot-section .grid--peek.grid--2-col-tablet-down .grid__item {
+		width: calc((100% - var(--grid-mobile-horizontal-spacing)) / 2);
+		min-width: calc((100% - var(--grid-mobile-horizontal-spacing)) / 2);
+	} */
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+	/* .blog-spot-section .slider--tablet.grid--peek .grid__item:first-of-type {
+		margin-left: 0;
+	} */
+
+	/* .blog-spot-section .grid--peek.grid--1-col-tablet-down .grid__item {
+		width: calc((100% - var(--grid-desktop-horizontal-spacing)) / 2);
+		min-width: calc((100% - var(--grid-desktop-horizontal-spacing)) / 2);
+	}
+
+	.blog-spot-section .grid--peek.grid--2-col-tablet-down .grid__item {
+		width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 2)) / 3);
+		min-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 2)) / 3);
+	} */
+}
+
+/* @media screen and (max-width: 989px) {
+	.blog-spot-section .slider.slider--tablet {
+		scroll-padding-left: 0;
+	}
+
+	.blog-spot-section .slider--tablet:after {
+		content: none;
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.blog-spot-section .slider--desktop {
+		scroll-padding-left: 0;
+	}
+
+	.blog-spot-section .slider--desktop:after {
+		content: none;
+	}
+
+	.blog-spot-section .slider--desktop .slider__slide:first-child {
+		margin-left: 0;
+	}
+
+	.blog-spot-section .grid--1-col-desktop .grid__item {
+		width: 100%;
+		min-width: 100%;
+	}
+
+	.blog-spot-section .grid--2-col-desktop .grid__item {
+		width: calc((100% - var(--grid-desktop-horizontal-spacing)) / 2);
+		min-width: calc((100% - var(--grid-desktop-horizontal-spacing)) / 2);
+	}
+
+	.blog-spot-section .grid--3-col-desktop .grid__item {
+		width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 2)) / 3);
+		min-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 2)) / 3);
+	}
+
+	.blog-spot-section .grid--4-col-desktop .grid__item {
+		width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 3)) / 4);
+		min-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 3)) / 4);
+	}
+
+	.blog-spot-section .grid--5-col-desktop .grid__item {
+		width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 4)) / 5);
+		min-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 4)) / 5);
+	}
+
+	.blog-spot-section .grid--6-col-desktop .grid__item {
+		width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 5)) / 6);
+		min-width: calc((100% - (var(--grid-desktop-horizontal-spacing) * 5)) / 6);
+	}
+} */
+/* 
+.blog-spot-section .slider-button {
+	position: absolute;
+	top: calc(50% - 22px);
+	right: 0;
+}
+
+.blog-spot-section .slider-button--prev {
+	left: -1.5rem;
+}
+
+.blog-spot-section .slider-button--next {
+	right: -1.5rem;
+}
+
+.blog-spot-section .slider-button .icon {
+	height: 44px;
+} */

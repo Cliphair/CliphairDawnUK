@@ -1162,7 +1162,7 @@
       }
     },
     "blog_spot_aPTw9A": {
-      "type": "blog-spot",
+      "type": "blog-spot-new-design",
       "custom_css": [
         ".blog__title {font-size: 2.4rem; font-weight: 400; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3rem;}",
         ".card__heading {font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.05em; margin-bottom: 0.5rem;}",
