@@ -24,7 +24,7 @@
   {{ 'announcement-countdown.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
-{% if template.name == "new-design" %}
+{% if template.suffix == "new-design" %}
 {{ 'announcement-new-design.css' | asset_url | stylesheet_tag }}
 
 {% endif %}
