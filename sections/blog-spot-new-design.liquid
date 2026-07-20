@@ -1,0 +1,581 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
+{{ 'section-blog-spot.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.enable_tags %}
+  {{ 'component-category-card.css' | asset_url | stylesheet_tag }}
+
+  {% liquid
+    assign categories = section.settings.blog.metafields.custom.main_categories.value
+
+    assign tags_size = 0
+    for category in categories
+      assign tags_size = tags_size | plus: 1
+    endfor
+  %}
+{% endif %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign posts_displayed = section.settings.blog.articles_count
+  if section.settings.post_limit <= section.settings.blog.articles_count or section.settings.post_limit <= 4
+    assign posts_exceed_limit = true
+    assign posts_displayed = section.settings.post_limit
+  endif
+-%}
+
+{% liquid
+  assign image_ratio = 0
+  if section.settings.image_ratio == 'square'
+    assign image_ratio = 1
+  elsif section.settings.image_ratio == 'portrait'
+    assign image_ratio = 0.6667
+  else
+    assign image_ratio = 1.7778
+  endif
+%}
+
+<div class="blog color-{{ section.settings.color_scheme }} gradient  section-{{ section.id }}-padding{% if section.settings.heading == blank %} no-heading{% endif %}">
+  {%- liquid
+    assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+    assign show_mobile_slider = false
+    if section.settings.swipe_on_mobile and section.settings.post_limit > columns_mobile_int
+      assign show_mobile_slider = true
+    endif
+
+    assign columns_desktop_int = section.settings.columns_desktop | plus: 0
+    assign show_desktop_slider = false
+    if section.settings.swipe_on_desktop and section.settings.post_limit > columns_desktop_int
+      assign show_desktop_slider = true
+    endif
+  -%}
+
+  <div class="page-width isolate">
+    {%- unless section.settings.heading == blank -%}
+      <div class="title-wrapper--no-top-margin {{ section.settings.text_alignment }}">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="blog__title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+        >
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    {%- endunless -%}
+
+    {% unless section.settings.introduction == blank %}
+      <div
+        class="intro-wrapper {{ section.settings.text_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        {{ section.settings.introduction }}
+      </div>
+    {% endunless %}
+
+    {% if section.settings.enable_tags and tags_size > 0 %}
+      {%- liquid
+        assign tags_columns_mobile_int = section.settings.tags_columns_mobile | plus: 0
+        assign tags_show_mobile_slider = false
+        if section.settings.tags_swipe_on_mobile and tags_size > tags_columns_mobile_int
+          assign tags_show_mobile_slider = true
+        endif
+
+        assign tags_columns_desktop_int = section.settings.tags_columns_desktop | plus: 0
+        assign tags_show_desktop_slider = false
+        if section.settings.tags_swipe_on_desktop and tags_size > tags_columns_desktop_int
+          assign tags_show_desktop_slider = true
+        endif
+
+        assign tags_columns_tablet = tags_columns_desktop_int | plus: tags_columns_mobile_int | divided_by: 2 | ceil
+        if tags_size > tags_columns_tablet and section.settings.tags_swipe_on_desktop
+          assign tags_show_tablet_slider = true
+        endif
+      -%}
+
+      <div class="tag-wrapper section-article-categories">
+        <slider-component
+          class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          data-visual="{{ section.settings.slider_visual }}"
+        >
+          <ul
+            class="articles-categories grid grid--{{ section.settings.tags_columns_desktop }}-col-desktop grid--{{ tags_columns_tablet }}-col-tablet grid--{{ section.settings.tags_columns_mobile }}-col-tablet-down{% if section.settings.tags_swipe_on_mobile or section.settings.tags_swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.tags_swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.tags_swipe_on_desktop %} slider--desktop{% endif %} articles-categories--{{ tags_size }}-items slide-mobile-{{ tags_show_mobile_slider }} slide-tablet-{{ tags_show_tablet_slider }} slide-desktop-{{ tags_show_desktop_slider }}"
+            id="Slider-{{ section.id }}"
+            role="list"
+          >
+            {%- liquid
+              assign columns = tags_size
+              if columns > 3
+                assign columns = 3
+              endif
+            -%}
+
+            {% for category in categories %}
+              <li
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                class="articles-list__item grid__item custom__slide{% if tags_show_mobile_slider or tags_show_tablet_slider or tags_show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                <div class="category circle">
+                  {% render 'category-card', category_object: category, blog: section.settings.blog %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          {%- if tags_show_mobile_slider or tags_show_tablet_slider or tags_show_desktop_slider -%}
+            <div class="slider-buttons no-js-hidden small-hide slider--{{ section.settings.tags_columns_desktop }}-col-desktop slider--{{ section.settings.tags_columns_mobile }}-col-tablet-down">
+              <button
+                type="button"
+                class="slider-button slider-button--prev"
+                name="previous"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+
+              <div class="slider-counter caption visually-hidden">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">{{ tags_size }}</span>
+              </div>
+
+              {% comment %}
+                <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+                  {%- if section.settings.slider_visual == 'counter' -%}
+                    <div>
+                      <span class="slider-counter--current">1</span>
+                      <span aria-hidden="true"> / </span>
+                      <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                      <span class="slider-counter--total">{{ tags_size }}</span>
+                    </div>
+                  {%- else -%}
+                    <div class="slideshow__control-wrapper">
+                      {% for category in categories %}
+                        <button
+                          class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link"
+                          aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                          aria-controls="Slider-{{ section.id }}"
+                        >
+                          {%- if section.settings.slider_visual == 'numbers' -%}
+                            {{ forloop.index -}}
+                          {%- else -%}
+                            <span class="dot"></span>
+                          {%- endif -%}
+                        </button>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {% endcomment %}
+
+              <button
+                type="button"
+                class="slider-button slider-button--next"
+                name="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+            </div>
+          {%- endif -%}
+        </slider-component>
+      </div>
+    {% endif %}
+
+    {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
+      <slider-component class="blog-posts-wrapper slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <ul
+          class="grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile or section.settings.swipe_on_desktop %} slider grid--peek{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}{% if section.settings.swipe_on_desktop %} slider--desktop{% endif %} blog-posts--{{ section.settings.limit }}-items"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- liquid
+            assign columns = section.settings.post_limit
+            if columns > 3
+              assign columns = 3
+            endif
+          -%}
+
+          {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="blog-posts__item grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              <div class="blog-post">
+                {% render 'article-card',
+                  blog: section.settings.blog,
+                  article: article,
+                  media_aspect_ratio: image_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: true
+                %}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+        {%- if show_mobile_slider or show_desktop_slider -%}
+          <div class="slider-buttons no-js-hidden slider--{{ section.settings.columns_desktop }}-col-desktop slider--{{ section.settings.columns_mobile }}-col-tablet-down">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
+            <div class="slider-counter caption visually-hidden">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
+          </div>
+        {%- endif -%}
+      </slider-component>
+    {%- endif -%}
+
+    {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
+      <div
+        class="blog__view-all center {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        <a
+          href="{{ section.settings.blog.url }}"
+          id="ViewAll-{{ section.id }}"
+          class="blog__button button"
+          aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+        >
+          VIEW LATEST
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog spot",
+  "tag": "section",
+  "class": "blog-spot-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Blog posts",
+      "label": "t:sections.featured-blog.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction"
+    },
+    {
+      "type": "select",
+      "id": "tags_size",
+      "options": [
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h3",
+      "label": "Tags size"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text alignment"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.post_limit.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.featured-blog.settings.show_author.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_view_all.label"
+    },
+    {
+      "type": "header",
+      "content": "Tags settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_tags",
+      "default": false,
+      "label": "Enable tags",
+      "info": "This section uses the a metafield defined on the blog."
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_to_grid",
+      "default": false,
+      "label": "Tag scroll to grid",
+      "info": "Scroll to articles grid after click."
+    },
+    {
+      "type": "range",
+      "id": "tags_columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "tags_swipe_on_desktop",
+      "default": false,
+      "label": "Enable swipe on desktop"
+    },
+    {
+      "type": "select",
+      "id": "tags_columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "tags_swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "select",
+      "id": "slider_visual",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
+        },
+        {
+          "value": "counter",
+          "label": "t:sections.slideshow.settings.slider_visual.options__1.label"
+        },
+        {
+          "value": "numbers",
+          "label": "t:sections.slideshow.settings.slider_visual.options__3.label"
+        }
+      ],
+      "default": "counter",
+      "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog spot"
+    }
+  ]
+}
+{% endschema %}
