@@ -1,0 +1,85 @@
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-divider {
+    display: block;
+    width: 100%;
+    height: {{ section.settings.divider_height }}px;
+    background: {{ section.settings.divider_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="section-{{ section.id }}-padding">
+  {% if section.settings.full_width %}
+    <span class="section-{{ section.id }}-divider"></span>
+  {% else %}
+    <div class="page-width">
+      <span class="section-{{ section.id }}-divider"></span>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Simple divider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider colour",
+      "default": "#D9D9D9"
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Divider height",
+      "default": 0.3
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple divider"
+    }
+  ]
+}
+{% endschema %}
