@@ -1,0 +1,87 @@
+/* ============================================================
+   Section: Trust Bar
+   Scoped to .section-trust-bar
+   Mobile-first — base styles target mobile, then tablet/desktop
+   ============================================================ */
+
+
+.section-trust-bar .page-width {
+  --page-width: 518px;
+}
+
+@media screen and (min-width:375px) {
+  .section-trust-bar .page-width {
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+  }
+}
+
+.trust-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1.2rem 2rem;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 750px) {
+  .section-trust-bar .page-width {
+    --page-width: 878px;
+  }
+
+  .trust-bar__grid {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: center;
+    gap: 1rem 4.4rem;
+  }
+}
+
+.trust-bar__item-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+a.trust-bar__item-inner--link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.trust-bar__item-inner--link:hover .trust-bar__label {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+}
+
+/* Icon wrapper — fixed square so SVGs and images are consistently sized */
+.trust-bar__icon {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-bar__icon svg,
+.trust-bar__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.trust-bar__label {
+  --label-font-size: 1.5rem;
+  font-size: var(--label-font-size);
+  line-height: 1em;
+  letter-spacing: calc(var(--label-font-size) * -0.03);
+}
+
+@media screen and (min-width: 1200px) {
+  .trust-bar__icon {
+    width: 1.8rem;
+  }
+
+  .trust-bar__label {
+    --label-font-size: 1.8rem;
+  }
+}
