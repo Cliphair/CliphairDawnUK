@@ -341,7 +341,7 @@
             "badge": "thin & fine hair",
             "title": "Classic Full Head (130g)",
             "subtitle": "Lightweight & discreet",
-            "link": ""
+            "link": "shopify://collections/full-head-clip-in-hair-extensions"
           }
         },
         "card_KcQtfq": {
@@ -351,7 +351,7 @@
             "badge": "all hair types",
             "title": "Seamless Full Head (150-190g)",
             "subtitle": "Most discreet clip-ins",
-            "link": ""
+            "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
         },
         "card_j9qWpP": {
@@ -361,7 +361,7 @@
             "badge": "average to thick hair",
             "title": "Ultra-Volume Full Head (240-300g)",
             "subtitle": "Max volume & dramatic length",
-            "link": ""
+            "link": "shopify://collections/ultra-clip-in-hair-extensions"
           }
         },
         "card_pwtpqk": {
@@ -522,10 +522,10 @@
         "switcher_alignment": "center",
         "clip_in_intro": "",
         "clip_in_view_all_label": "Shop All Clip-Ins",
-        "clip_in_view_all_url": "/",
+        "clip_in_view_all_url": "shopify://collections/clip-in-hair-extensions",
         "professional_intro": "",
         "professional_view_all_label": "Shop All Professional",
-        "professional_view_all_url": "/",
+        "professional_view_all_url": "shopify://collections/permanent-extensions",
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "",
@@ -1258,7 +1258,7 @@
         "caption": "",
         "heading": "FAQ's",
         "heading_size": "h1",
-        "heading_alignment": "left",
+        "heading_alignment": "center",
         "layout": "section",
         "arrow_style": "half-arrow",
         "color_scheme": "background-1",
