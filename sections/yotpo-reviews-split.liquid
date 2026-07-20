@@ -1,0 +1,317 @@
+{{ 'section-yotpo-reviews-split.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  #shopify-section-{{ section.id }} {
+    --reviews-star-color: {{ section.settings.star_color }};
+  }
+{%- endstyle -%}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding{% if section.settings.trackable_name != blank %} trackable-section{% endif %}"
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+>
+  <yotpo-reviews-split
+    data-source="{{ section.settings.data_source }}"
+    data-section-id="{{ section.id }}"
+    class="reviews-split page-width"
+  >
+    <div class="reviews-split__layout">
+      {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+        <div class="reviews-split__intro">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="reviews-split__heading">{{ section.settings.heading | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.subheading != blank -%}
+            <p class="reviews-split__subheading">{{ section.settings.subheading | escape }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="reviews-split__carousel-wrapper">
+        {%- if section.settings.data_source == 'api' -%}
+          <div class="reviews-split__loading reviews-loading">
+            <div class="spinner"></div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.data_source == 'manual' and section.blocks.size == 0 -%}
+          <p class="reviews-split__empty">Add review blocks in the Theme Editor to display here.</p>
+        {%- else -%}
+          <slider-component
+            data-visual="counter"
+            class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          >
+            <ul
+              id="Slider-{{ section.id }}"
+              class="reviews-split__list grid grid--1-col-desktop grid--1-col-tablet grid--1-col-tablet-down slider grid--peek slider--tablet slider--desktop"
+              role="list"
+            >
+              {%- if section.settings.data_source == 'manual' -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'review' -%}
+                    <li
+                      id="Slide-{{ section.id }}-{{ forloop.index }}"
+                      class="reviews-split__item grid__item slider__slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                      {{ block.shopify_attributes }}
+                      {% if settings.animations_reveal_on_scroll %}
+                        data-cascade
+                        style="--animation-order: {{ forloop.index }};"
+                      {% endif %}
+                    >
+                      <div class="reviews-split__card">
+                        {%- if block.settings.image != blank -%}
+                          {%- assign avatar_alt = block.settings.name | escape -%}
+                          <div class="reviews-split__avatar">
+                            {{
+                              block.settings.image
+                              | image_url: width: 200
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '80, 120, 200',
+                                sizes: '80px',
+                                alt: avatar_alt,
+                                class: 'reviews-split__avatar-img'
+                            }}
+                          </div>
+                        {%- endif -%}
+                        <div class="reviews-split__card-content">
+                          <div class="reviews-split__card-header">
+                            <div class="reviews-split__meta">
+                              {%- if block.settings.name != blank -%}
+                                <span class="reviews-split__name">{{ block.settings.name | escape }}</span>
+                              {%- endif -%}
+                              {%- assign score_int = block.settings.score | plus: 0 -%}
+                              <div
+                                class="reviews-split__stars reviews-review-container"
+                                aria-label="{{ score_int }} out of 5 stars"
+                              >
+                                {%- for i in (1..score_int) -%}
+                                  <span class="reviews__reviews-review" aria-hidden="true">
+                                    {%- render 'icon-star' -%}
+                                  </span>
+                                {%- endfor -%}
+                              </div>
+                            </div>
+                          </div>
+                          {%- if block.settings.review_text != blank -%}
+                            <div
+                              class="reviews-split__body"
+                              data-full-text="{{ block.settings.review_text | escape }}"
+                            >
+                              <p class="reviews-split__text">{{ block.settings.review_text | escape }}</p>
+                              <button class="reviews-split__read-more link" type="button" hidden>Read more</button>
+                              <button class="reviews-split__read-less link" type="button" hidden>Read less</button>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </ul>
+
+            <div class="slider-buttons slider-buttons-square no-js-hidden hidden">
+              <button
+                type="button"
+                class="slider-button slider-button--prev"
+                name="previous"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                {%- render 'icon-caret' -%}
+              </button>
+
+              <div class="slider-counter caption visually-hidden">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">
+                  {%- if section.settings.data_source == 'manual' -%}
+                    {{ section.blocks.size }}
+                  {%- else -%}
+                    0
+                  {%- endif -%}
+                </span>
+              </div>
+
+              <button
+                type="button"
+                class="slider-button slider-button--next"
+                name="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                {%- render 'icon-caret' -%}
+              </button>
+            </div>
+            <div class="reviews-split__dots" hidden></div>
+          </slider-component>
+        {%- endif -%}
+      </div>
+    </div>
+  </yotpo-reviews-split>
+</div>
+
+<script src="{{ 'yotpo-reviews-split.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Yotpo reviews – split",
+  "tag": "section",
+  "class": "section section-reviews-split",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What our customers say"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Thousands of women trust Cliphair. Here's why:"
+    },
+    {
+      "type": "header",
+      "content": "Review source"
+    },
+    {
+      "type": "paragraph",
+      "content": "Choose whether to pull the 5 latest website reviews (score 4+, with image) from Yotpo automatically, or enter reviews manually using blocks below."
+    },
+    {
+      "type": "select",
+      "id": "data_source",
+      "label": "Review source",
+      "options": [
+        {
+          "value": "api",
+          "label": "Yotpo – latest 5 (auto)"
+        },
+        {
+          "value": "manual",
+          "label": "Manual (use blocks)"
+        }
+      ],
+      "default": "api"
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star colour",
+      "default": "#ffe100"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Tracking"
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section name (for analytics)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name",
+          "default": "Happy Customer"
+        },
+        {
+          "type": "select",
+          "id": "score",
+          "label": "Star rating",
+          "options": [
+            { "value": "5", "label": "5 stars" },
+            { "value": "4", "label": "4 stars" },
+            { "value": "3", "label": "3 stars" },
+            { "value": "2", "label": "2 stars" },
+            { "value": "1", "label": "1 star" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "Absolutely love my hair extensions! The colour match was perfect and they blend so naturally."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Yotpo reviews – split",
+      "settings": {
+        "data_source": "manual"
+      },
+      "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }]
+    }
+  ]
+}
+{% endschema %}
