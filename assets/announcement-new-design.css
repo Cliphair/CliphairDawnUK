@@ -1,0 +1,21 @@
+.announcement-bar__message {
+  --announcement-font-size: 1.6rem;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--announcement-font-size);
+  line-height: 1em;
+  letter-spacing: calc(var(--announcement-font-size) * 0.03 * -1);
+}
+
+.announcement-bar__message>* {
+  font-size: inherit;
+}
+
+@media screen and (min-width:1200px) {
+  .announcement-bar__message {
+    --announcement-font-size: 2rem;
+    padding: 20px 0;
+  }
+}
