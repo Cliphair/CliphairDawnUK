@@ -21,6 +21,10 @@
 <section
   class="section-video-spotlight color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
   id="section-{{ section.id }}"
+  {% if section.settings.trackable_name != blank %}
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% endif %}
 >
   {%- if section.settings.heading != blank -%}
     <div class="page-width vs-heading-wrapper">
@@ -327,6 +331,11 @@
       "step": 4,
       "unit": "px",
       "default": 36
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
