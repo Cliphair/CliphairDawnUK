@@ -14,7 +14,16 @@
   }
 {%- endstyle -%}
 
-<div class="image-cta-columns color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div 
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+  class="image-cta-columns color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+>
   <div class="page-width">
     {%- if section.blocks.size > 0 -%}
       <ul
@@ -136,6 +145,11 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 0
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
