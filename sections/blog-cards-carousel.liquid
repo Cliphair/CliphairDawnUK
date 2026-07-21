@@ -25,6 +25,10 @@
   class="section-blog-cards-carousel color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
   data-visual="dots"
   data-section-id="{{ section.id }}"
+  {% if section.settings.trackable_name != blank %}
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% endif %}
 >
   {%- unless section.settings.title == blank and section.settings.subtitle == blank -%}
     <div class="page-width blog-cards__header">
@@ -186,6 +190,11 @@
       "unit": "px",
       "label": "Bottom padding",
       "default": 36
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
