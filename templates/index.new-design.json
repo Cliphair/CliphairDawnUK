@@ -145,7 +145,7 @@
         "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Cliphair slideshow banners",
-        "trackable_name": "homepage banners"
+        "trackable_name": "homepage-banners"
       }
     },
     "image_cta_columns_EDYpn7": {
@@ -182,7 +182,8 @@
       "settings": {
         "color_scheme": "scheme-bd7e857b-d873-4ead-bec3-573f1a9145e5",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "cm-quiz-cards"
       }
     },
     "custom_liquid_FeaaFh": {
@@ -304,7 +305,8 @@
         "enable_lcp_priority": false,
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "shop-by-hair-goal"
       }
     },
     "simple_divider_zUAqrr": {
@@ -527,7 +529,8 @@
         "columns_mobile": "2",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 44
+        "padding_bottom": 44,
+        "trackable_name": "shop-by-hair-type"
       }
     },
     "yotpo_reviews_split_EY4hfW": {
@@ -541,7 +544,7 @@
         "star_color": "#000000",
         "padding_top": 40,
         "padding_bottom": 40,
-        "trackable_name": ""
+        "trackable_name": "yotpo-reviews"
       }
     },
     "banner_collection_split_97cFWg": {
@@ -597,7 +600,8 @@
         "above_the_fold": false,
         "gap": 0,
         "padding_top": 32,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "shop-by-colour-rewards-banner"
       }
     },
     "press_bar_RM4Gax": {
@@ -693,7 +697,8 @@
         "scroll_duration": 40,
         "color_scheme": "new-design-1",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "trackable_name": "press-bar"
       }
     },
     "blog_cards_carousel_RDHLew": {
@@ -764,7 +769,8 @@
         "columns_desktop": 3,
         "color_scheme": "",
         "padding_top": 68,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "trackable_name": "hblog-tags"
       }
     },
     "section_video_spotlight_9ehDBf": {
@@ -848,7 +854,8 @@
         "heading": "Real hair, real life",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "trackable_name": "videos"
       }
     },
     "image_list_nPnYgL": {
@@ -1138,7 +1145,7 @@
         "slider_visual": "dots",
         "padding_top": 56,
         "padding_bottom": 0,
-        "trackable_name": ""
+        "trackable_name": "influencer-images"
       }
     },
     "simple_divider_L3tY7h": {
@@ -1197,7 +1204,8 @@
         "tags_swipe_on_mobile": false,
         "slider_visual": "counter",
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "trackable_name": "latest-blogs"
       }
     },
     "f41c0e3b-b362-4900-8b02-4a5cc75bd290": {
@@ -1268,7 +1276,8 @@
         "link": "shopify://pages/faqs",
         "button_style_secondary": false,
         "padding_top": 40,
-        "padding_bottom": 44
+        "padding_bottom": 44,
+        "trackable_name": "faqs"
       }
     },
     "c6a82ce6-f9b5-448b-af80-7e17ba7abc7b": {
