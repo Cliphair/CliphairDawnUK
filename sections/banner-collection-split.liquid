@@ -22,7 +22,16 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div 
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+>
   <div
     class="banner-collection-split page-width--flush{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     style="--panel-gap: {{ section.settings.gap }}px;"
@@ -339,6 +348,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 0
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
