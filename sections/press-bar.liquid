@@ -27,6 +27,10 @@
 <div
   class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
   id="PressBar-{{ section.id }}"
+  {% if section.settings.trackable_name != blank %}
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {%endif %}
 >
   <div class="page-width press-bar">
     {%- if section.settings.label != blank -%}
@@ -163,6 +167,11 @@
       "unit": "px",
       "label": "Bottom padding",
       "default": 20
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
