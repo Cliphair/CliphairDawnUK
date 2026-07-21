@@ -48,6 +48,13 @@
 
   <div
     class="images-list-wrapper {{ section.settings.text_alignment }}"
+    {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper title-wrapper--no-top-margin page-width isolate">
