@@ -59,7 +59,8 @@
       "settings": {
         "color_scheme": "scheme-6f6266cc-f4f4-49f3-8a1c-4031f84b9827",
         "padding_top": 16,
-        "padding_bottom": 16
+        "padding_bottom": 16,
+        "trackable_name": "trust-bar"
       }
     },
     "slideshow_3tCMjU": {
