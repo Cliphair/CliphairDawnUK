@@ -50,7 +50,16 @@
   endif
 %}
 
-<div class="blog color-{{ section.settings.color_scheme }} gradient  section-{{ section.id }}-padding{% if section.settings.heading == blank %} no-heading{% endif %}">
+<div 
+  {% if section.settings.trackable_name != blank %}
+    id="{{ section.settings.trackable_name | handleize }}"
+    data-section-name="{{ section.settings.trackable_name | handleize }}"
+    data-section-instance="{{ section.id }}"
+  {% else %}
+    id="{{ section.id }}"
+  {% endif %}
+  class="blog color-{{ section.settings.color_scheme }} gradient  section-{{ section.id }}-padding{% if section.settings.heading == blank %} no-heading{% endif %}"
+>
   {%- liquid
     assign columns_mobile_int = section.settings.columns_mobile | plus: 0
     assign show_mobile_slider = false
@@ -570,6 +579,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "text",
+      "id": "trackable_name",
+      "label": "Section Name (for analytics)"
     }
   ],
   "presets": [
