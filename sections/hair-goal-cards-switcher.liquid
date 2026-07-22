@@ -44,29 +44,7 @@
     </div>
   {%- endunless -%}
 
-  {%- if has_two_groups -%}
-    <div class="page-width hair-goal-cards-switcher__toggle-wrapper hair-goal-cards-switcher__toggle-wrapper--{{ section.settings.switcher_alignment }}">
-      <div id="Toggle-{{ section.id }}" class="hair-goal-cards-switcher__toggle">
-        <span class="hair-goal-cards-switcher__toggle-indicator" aria-hidden="true"></span>
-        <button
-          type="button"
-          class="hair-goal-cards-switcher__toggle-btn hair-goal-cards-switcher__toggle-btn--active"
-          data-target="panel-clip-in-{{ section.id }}"
-          aria-pressed="true"
-        >
-          {{- clip_in_label | escape -}}
-        </button>
-        <button
-          type="button"
-          class="hair-goal-cards-switcher__toggle-btn"
-          data-target="panel-professional-{{ section.id }}"
-          aria-pressed="false"
-        >
-          {{- professional_label | escape -}}
-        </button>
-      </div>
-    </div>
-  {%- endif -%}
+  
 
   {%- if clip_in_blocks.size > 0 or section.settings.clip_in_view_all_url != blank -%}
     <div id="panel-clip-in-{{ section.id }}" class="hair-goal-cards-switcher__panel">
@@ -227,6 +205,30 @@
       </slider-component-custom>
     </div>
   {%- endif -%}
+
+  {%- if has_two_groups -%}
+    <div class="page-width hair-goal-cards-switcher__toggle-wrapper hair-goal-cards-switcher__toggle-wrapper--{{ section.settings.switcher_alignment }}">
+      <div id="Toggle-{{ section.id }}" class="hair-goal-cards-switcher__toggle">
+        <span class="hair-goal-cards-switcher__toggle-indicator" aria-hidden="true"></span>
+        <button
+          type="button"
+          class="hair-goal-cards-switcher__toggle-btn hair-goal-cards-switcher__toggle-btn--active"
+          data-target="panel-clip-in-{{ section.id }}"
+          aria-pressed="true"
+        >
+          {{- clip_in_label | escape -}}
+        </button>
+        <button
+          type="button"
+          class="hair-goal-cards-switcher__toggle-btn"
+          data-target="panel-professional-{{ section.id }}"
+          aria-pressed="false"
+        >
+          {{- professional_label | escape -}}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}s
 </div>
 
 {%- if has_two_groups -%}
