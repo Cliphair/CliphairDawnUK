@@ -306,7 +306,7 @@
         "title": "Shop by your hair goal",
         "image_ratio": "portrait",
         "enable_lcp_priority": false,
-        "color_scheme": "inverse",
+        "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "trackable_name": "shop-by-hair-goal"
