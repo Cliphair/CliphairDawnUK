@@ -327,9 +327,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
-            "badge": "all hair types",
+            "badge": "MEDIUM TO THICK HAIR",
             "title": "Double Weft Full Head (180-220g)",
-            "subtitle": "All-rounder, most popular",
+            "subtitle": "Our most popular. Length with real volume",
             "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
           }
         },
@@ -337,9 +337,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Classic_Full_Head.webp",
-            "badge": "thin & fine hair",
+            "badge": "FINE TO MEDIUM HAIR",
             "title": "Classic Full Head (130g)",
-            "subtitle": "Lightweight & discreet",
+            "subtitle": "Lightest set, easiest first buy",
             "link": "shopify://collections/full-head-clip-in-hair-extensions"
           }
         },
@@ -347,9 +347,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Seamless_Full_Head.webp",
-            "badge": "all hair types",
+            "badge": "IF YOU WORRY IT WILL SHOW",
             "title": "Seamless Full Head (150-190g)",
-            "subtitle": "Most discreet clip-ins",
+            "subtitle": "Flat wefts, nothing to feel or see",
             "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
         },
@@ -357,9 +357,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Ultra-Volume_Full_Head.webp",
-            "badge": "medium to thick hair",
+            "badge": "THICK OR VERY LONG HAIR",
             "title": "Ultra-Volume Full Head (240-300g)",
-            "subtitle": "Max volume & dramatic length",
+            "subtitle": "Maximum volume and dramatic length",
             "link": "shopify://collections/ultra-clip-in-hair-extensions"
           }
         },
@@ -378,9 +378,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/Halo_Hair_Extensions.webp",
-            "badge": "all hair types",
+            "badge": "NEW TO EXTENSIONS",
             "title": "Halo Hair Extensions",
-            "subtitle": "Super discreet & comfortable, beginner friendly",
+            "subtitle": "No clips, on in seconds",
             "link": "shopify://collections/halo-hair-extensions"
           }
         },
