@@ -566,7 +566,7 @@
         "banner_88qLMM": {
           "type": "banner",
           "settings": {
-            "label": "See the difference up close",
+            "label": "",
             "image": "shopify://shop_images/desktop-rewards-banner.jpg",
             "alt_text": "",
             "decorative": true,
