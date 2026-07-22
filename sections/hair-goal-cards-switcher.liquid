@@ -31,16 +31,7 @@
   assign professional_label = section.settings.professional_label | default: 'Professional Extensions'
 -%}
 
-<div 
-  {% if section.settings.trackable_name != blank %}
-    id="{{ section.settings.trackable_name | handleize }}"
-    data-section-name="{{ section.settings.trackable_name | handleize }}"
-    data-section-instance="{{ section.id }}"
-  {% else %}
-    id="{{ section.id }}"
-  {% endif %}
-  class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
->
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- unless section.settings.title == blank -%}
     <div class="page-width">
       <h2 class="hair-goal-cards-switcher__heading">{{ section.settings.title }}</h2>
@@ -79,11 +70,7 @@
 
   {%- if clip_in_blocks.size > 0 or section.settings.clip_in_view_all_url != blank -%}
     <div id="panel-clip-in-{{ section.id }}" class="hair-goal-cards-switcher__panel">
-      {%- unless section.settings.clip_in_intro == blank -%}
-        <div class="page-width">
-          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.clip_in_intro }}</div>
-        </div>
-      {%- endunless -%}
+      
       <slider-component-custom
         id="slider-clip-in-{{ section.id }}"
         class="hair-goal-cards-switcher__slider page-width"
@@ -122,10 +109,14 @@
             >
               <a href="{{ section.settings.clip_in_view_all_url }}" class="hair-goal-card__link">
                 <div class="hair-goal-card__view-all-inner">
-                  <span class="hair-goal-card__view-all-text">
-                    {{- section.settings.clip_in_view_all_label | escape -}}
+                  <span class="hair-goal-card__view-all-icon">?</span>
+                  <span class="hair-goal-card__view-all-title">
+                    {% comment %} {{- section.settings.clip_in_view_all_label | escape -}} {% endcomment %}
+                     Not sure which is yours?
                   </span>
-                  {%- render 'icon-arrow' -%}
+                  <span class="hair-goal-card__view-all-text">Few questions, that's it</span>
+                  <span class="hair-goal-card__view-all-button">Take the hair quiz</span>
+                  {% comment %} {%- render 'icon-arrow' -%} {% endcomment %}
                 </div>
               </a>
             </li>
@@ -154,16 +145,17 @@
           </div>
         {%- endif -%}
       </slider-component-custom>
+      {%- unless section.settings.clip_in_intro == blank -%}
+        <div class="page-width">
+          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.clip_in_intro }}</div>
+        </div>
+      {%- endunless -%}
     </div>
   {%- endif -%}
 
   {%- if professional_blocks.size > 0 or section.settings.professional_view_all_url != blank -%}
     <div id="panel-professional-{{ section.id }}" class="hair-goal-cards-switcher__panel" hidden>
-      {%- unless section.settings.professional_intro == blank -%}
-        <div class="page-width">
-          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.professional_intro }}</div>
-        </div>
-      {%- endunless -%}
+      
       <slider-component-custom
         id="slider-professional-{{ section.id }}"
         class="hair-goal-cards-switcher__slider page-width"
@@ -198,10 +190,17 @@
             >
               <a href="{{ section.settings.professional_view_all_url }}" class="hair-goal-card__link">
                 <div class="hair-goal-card__view-all-inner">
-                  <span class="hair-goal-card__view-all-text">
+                  <span class="hair-goal-card__view-all-icon">?</span>
+                  <span class="hair-goal-card__view-all-title">
+                    {% comment %} {{- section.settings.clip_in_view_all_label | escape -}} {% endcomment %}
+                     Not sure which is yours?
+                  </span>
+                  <span class="hair-goal-card__view-all-text">Few questions, that's it</span>
+                  <span class="hair-goal-card__view-all-button">Take the hair quiz</span>
+                  {% comment %} <span class="hair-goal-card__view-all-text">
                     {{- section.settings.professional_view_all_label | escape -}}
                   </span>
-                  {%- render 'icon-arrow' -%}
+                  {%- render 'icon-arrow' -%} {% endcomment %}
                 </div>
               </a>
             </li>
@@ -230,6 +229,11 @@
           </div>
         {%- endif -%}
       </slider-component-custom>
+      {%- unless section.settings.professional_intro == blank -%}
+        <div class="page-width">
+          <div class="rte hair-goal-cards-switcher__panel-intro">{{ section.settings.professional_intro }}</div>
+        </div>
+      {%- endunless -%}
     </div>
   {%- endif -%}
 </div>
@@ -500,11 +504,6 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
-    },
-    {
-      "type": "text",
-      "id": "trackable_name",
-      "label": "Section Name (for analytics)"
     }
   ],
   "blocks": [
