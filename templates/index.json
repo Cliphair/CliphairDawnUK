@@ -57,7 +57,7 @@
       ],
       "name": "Trust bar",
       "settings": {
-        "color_scheme": "scheme-6f6266cc-f4f4-49f3-8a1c-4031f84b9827",
+        "color_scheme": "background-collection-titles",
         "padding_top": 16,
         "padding_bottom": 16
       }
@@ -183,7 +183,7 @@
       ],
       "name": "Image CTA columns",
       "settings": {
-        "color_scheme": "scheme-bd7e857b-d873-4ead-bec3-573f1a9145e5",
+        "color_scheme": "accent-3",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -319,47 +319,6 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "rich_text_NBBURQ": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_ggpEVG": {
-          "type": "heading",
-          "settings": {
-            "heading": "Which extensions are right for you?",
-            "heading_size": "h1",
-            "h1": false
-          }
-        },
-        "text_p6Gpx6": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Everyone's hair is different. Here is what each one is best for</p>",
-            "read-more_text": ""
-          }
-        },
-        "text_HcwgwX": {
-          "type": "text",
-          "settings": {
-            "text": "<p><a href=\"/pages/journey\" title=\"Journey\">Not sure? Take the hair quiz</a></p>",
-            "read-more_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_ggpEVG",
-        "text_p6Gpx6",
-        "text_HcwgwX"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 20
       }
     },
     "hair_goal_cards_grid_GxXgbq": {
@@ -554,14 +513,14 @@
       ],
       "name": "Hair Goal — Switcher",
       "settings": {
-        "title": "",
-        "introduction": "",
+        "title": "Which extensions are right for you?",
+        "introduction": "<p>Everyone's hair is different. Here is what each one is best for</p><p><a href=\"/pages/journey\" title=\"Journey\">Not sure? Take the hair quiz</a></p>",
         "image_ratio": "square",
         "enable_lcp_priority": false,
         "clip_in_label": "Clip-Ins",
         "professional_label": "Fitted in salon",
         "switcher_alignment": "center",
-        "clip_in_intro": "",
+        "clip_in_intro": "<p>Not sure of your shade? <a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></p><p><a href=\"/collections/clip-in-hair-extensions\" title=\"Clip In Hair Extensions\">Shop all clip-ins</a></p>",
         "clip_in_view_all_label": "Shop All Clip-Ins",
         "clip_in_view_all_url": "shopify://collections/clip-in-hair-extensions",
         "professional_intro": "",
@@ -890,7 +849,7 @@
       "name": "Video Spotlight",
       "settings": {
         "heading": "Real hair, real life",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -1407,7 +1366,6 @@
     "simple_divider_PDe7hq",
     "hair_goal_cards_carousel_i7waLK",
     "simple_divider_zUAqrr",
-    "rich_text_NBBURQ",
     "hair_goal_cards_grid_GxXgbq",
     "yotpo_reviews_split_EY4hfW",
     "banner_collection_split_97cFWg",
