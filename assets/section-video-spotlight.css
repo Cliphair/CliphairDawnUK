@@ -357,7 +357,7 @@ video-spotlight-slider[data-slide-count='2'] {
     line-height: 1.1;
     font-size: 2rem;
     font-weight: 400;
-    color: #FAF2E5;
+    color: #FFF;
 }
 
 @media screen and (min-width:990px) {
@@ -372,7 +372,7 @@ video-spotlight-slider[data-slide-count='2'] {
     padding: 1.2rem 1.8rem;
     border: 0;
     border-radius: 0.2rem;
-    background: #FAF2E5;
+    background: #FFF;
     color: #3A3838;
     box-shadow: none;
     white-space: nowrap;
