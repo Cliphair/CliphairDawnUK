@@ -1141,7 +1141,7 @@
         "text_alignment": "left",
         "columns_desktop": 3,
         "swipe_on_desktop": true,
-        "color_scheme": "background-faded-pink",
+        "color_scheme": "background-1",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "slider_visual": "dots",
