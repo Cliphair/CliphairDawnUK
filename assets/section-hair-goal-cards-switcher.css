@@ -188,6 +188,10 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
   margin-top: 2rem;
 }
 
+.hair-goal-cards-switcher__panel-intro p {
+  margin: 1rem 0;
+}
+
 /* ---------- Card text ---------- */
 
 .section-hair-goal-cards-switcher .hair-goal-card__text {
