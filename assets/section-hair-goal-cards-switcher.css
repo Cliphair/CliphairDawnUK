@@ -196,9 +196,12 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
 }
 
 /* ---------- View All card ---------- */
+.hair-goal-card--view-all{
+border: 1px dashed #cb8876;
+}
 
 .hair-goal-card--view-all .hair-goal-card__link {
-  background: rgba(var(--color-foreground), 0.04);
+      background: #fdf2e0;
   justify-content: center;
   align-items: center;
   min-height: 100%;
