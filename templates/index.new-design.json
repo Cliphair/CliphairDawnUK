@@ -178,6 +178,9 @@
         "card_zaA44y",
         "card_F9ebhR"
       ],
+      "custom_css": [
+        "#cm-quiz-cards{--gradient-background:#fff;}"
+      ],
       "name": "Image CTA columns",
       "settings": {
         "color_scheme": "accent-3",
