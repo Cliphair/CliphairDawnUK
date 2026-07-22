@@ -391,9 +391,9 @@
           "type": "clip_in_card",
           "settings": {
             "image": "shopify://shop_images/One_Piece_Top_Up_Hair_Extensions.webp",
-            "badge": "thin & fine hair",
+            "badge": "EVERYDAY VOLUME",
             "title": "Top Up Piece (40g)",
-            "subtitle": "Quick volume boost",
+            "subtitle": "One piece, in under a minute",
             "link": "shopify://collections/one-piece-top-up-hair-extensions"
           }
         },
@@ -492,13 +492,13 @@
         }
       },
       "block_order": [
-        "card_bV773G",
-        "card_KcQtfq",
-        "card_pwtpqk",
-        "card_Vjf7Ab",
         "card_zaABAk",
-        "card_8ffBPb",
+        "card_pwtpqk",
+        "card_KcQtfq",
+        "card_bV773G",
         "card_j9qWpP",
+        "card_Vjf7Ab",
+        "card_8ffBPb",
         "card_myqqgR",
         "card_xAbJGF",
         "card_79LgiR",
