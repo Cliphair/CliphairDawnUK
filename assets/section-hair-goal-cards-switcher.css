@@ -235,6 +235,7 @@ border: 1px dashed #cb8876;
   font-size: 1.2rem;
   color: rgb(var(--color-foreground));
   line-height: 1.2;
+      margin: 1rem 0 2rem;
 }
 
 .hair-goal-card__view-all-button {
