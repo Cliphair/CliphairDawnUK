@@ -161,7 +161,7 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
   }
 }
 
-.hair-goal-card{
+.section-hair-goal-cards-switcher .hair-goal-card{
   min-width:min(100%, 170px);
 }
 
