@@ -499,12 +499,15 @@
         "card_myqqgR",
         "card_xAbJGF",
         "card_79LgiR",
-        "card_79LgiR2",
         "card_79LgiR1",
-        "card_79LgiR3",
         "card_79LgiR4",
-        "card_79LgiR6",
-        "card_79LgiR5"
+        "card_79LgiR5",
+        "card_79LgiR2",
+        
+        "card_79LgiR3",
+        
+        "card_79LgiR6"
+        
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
