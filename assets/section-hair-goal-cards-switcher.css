@@ -189,7 +189,11 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
 /* ---------- Per-tab intro ---------- */
 
 .hair-goal-cards-switcher__panel-intro {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.hair-goal-cards-switcher__panel-intro p {
+  margin: .5rem 0;
 }
 
 /* ---------- Card text ---------- */
@@ -200,9 +204,12 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
 }
 
 /* ---------- View All card ---------- */
+.hair-goal-card--view-all{
+border: 1px dashed #cb8876;
+}
 
 .hair-goal-card--view-all .hair-goal-card__link {
-  background: rgba(var(--color-foreground), 0.04);
+      background: #fdf2e0;
   justify-content: center;
   align-items: center;
   min-height: 100%;
@@ -212,18 +219,58 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
   padding: 2rem 1rem;
   text-align: center;
 }
 
-.hair-goal-card__view-all-text {
-  font-size: 1.4rem;
+
+.hair-goal-card__view-all-icon {
+  font-size: 3.6rem;
   font-weight: 500;
-  color: rgb(var(--color-foreground));
+  color: #cb8876;
   line-height: 1.3;
-  letter-spacing: -0.01em;
 }
+
+.hair-goal-card__view-all-title {
+      font-size: 1.8rem;
+    font-weight: 400;
+    display: block;
+    color: rgb(var(--color-foreground));
+    line-height: 1.2;
+}
+
+.hair-goal-card__view-all-text {
+  font-size: 1.2rem;
+  color: rgb(var(--color-foreground));
+  line-height: 1.2;
+      margin: 1rem 0 2rem;
+}
+
+.hair-goal-card__view-all-button {
+  font-size: 1.2rem;
+  color: rgb(var(--color-button-text));
+  line-height: 1.2;
+      background-color: rgba(var(--color-button), var(--alpha-button-background));
+      border-radius:40px;
+      padding:1rem 1.5rem;
+}
+
+@media screen and (min-width:990px){
+  .hair-goal-card__view-all-icon {
+  font-size: 4rem;
+}
+
+  .hair-goal-card__view-all-title {
+      font-size: 2rem;
+}
+
+.hair-goal-card__view-all-text,.hair-goal-card__view-all-button {
+  font-size: 1.4rem;
+}
+}
+
+
+
 
 .hair-goal-card--view-all .icon-arrow {
   width: 1.6rem;
