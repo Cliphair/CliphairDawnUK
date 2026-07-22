@@ -44,7 +44,7 @@
           "settings": {
             "image": "shopify://shop_images/dispatch-icon.svg",
             "icon": "dispatch",
-            "label": "7-day dispatch",
+            "label": "7 day delivery",
             "link": "shopify://pages/delivery-information"
           }
         }
