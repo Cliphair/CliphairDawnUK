@@ -527,7 +527,7 @@
         "clip_in_intro": "<p>Not sure of your shade? <b><a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></b></p><p><a href=\"/collections/clip-in-hair-extensions\" title=\"Clip In Hair Extensions\">Shop all clip-ins</a></p>",
         "clip_in_view_all_label": "Shop All Clip-Ins",
         "clip_in_view_all_url": "shopify://pages/journey",
-        "professional_intro": "<p>Not sure of your shade? <b><a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></b></p><p><a href=\"/collections/permanent-extensions\" title=\"Professional Hair Extensions\">Shop all professionals</a></p>",
+        "professional_intro": "<p>Not sure of your shade? <strong><a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></strong></p><p><a href=\"/collections/permanent-extensions\" title=\"Professional Hair Extensions\">Shop all professionals</a></p>",
         "professional_view_all_label": "Shop All Professional",
         "professional_view_all_url": "shopify://pages/journey",
         "columns_desktop": 4,
