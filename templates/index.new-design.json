@@ -512,7 +512,8 @@
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
         ".hair-goal-card__text {background: #f1f1f1;}",
-        ".hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:12px;}"
+        ".hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:13px;}",
+        "@media screen and (min-width:990px){.hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:14px;}}"
       ],
       "name": "Hair Goal — Switcher",
       "settings": {
