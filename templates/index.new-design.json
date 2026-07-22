@@ -57,7 +57,7 @@
       ],
       "name": "Trust bar",
       "settings": {
-        "color_scheme": "scheme-6f6266cc-f4f4-49f3-8a1c-4031f84b9827",
+        "color_scheme": "accent-3",
         "padding_top": 16,
         "padding_bottom": 16,
         "trackable_name": "trust-bar"
@@ -180,7 +180,7 @@
       ],
       "name": "Image CTA columns",
       "settings": {
-        "color_scheme": "scheme-bd7e857b-d873-4ead-bec3-573f1a9145e5",
+        "color_scheme": "accent-3",
         "padding_top": 0,
         "padding_bottom": 0,
         "trackable_name": "cm-quiz-cards"
@@ -503,11 +503,8 @@
         "card_79LgiR4",
         "card_79LgiR5",
         "card_79LgiR2",
-        
         "card_79LgiR3",
-        
         "card_79LgiR6"
-        
       ],
       "custom_css": [
         ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
@@ -516,24 +513,23 @@
       "name": "Hair Goal — Switcher",
       "settings": {
         "title": "Which extensions are right for you?",
-        "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
+        "introduction": "<p>Everyone's hair is different. Here is what each one is best for</p><p><a href=\"/pages/journey\" title=\"Journey\">Not sure? Take the hair quiz</a></p>",
         "image_ratio": "square",
         "enable_lcp_priority": false,
-        "clip_in_label": "Clip-Ins",
-        "professional_label": "Professional",
+        "clip_in_label": "Clip-ins",
+        "professional_label": "Fitted in salon",
         "switcher_alignment": "center",
-        "clip_in_intro": "",
+        "clip_in_intro": "<p>Not sure of your shade? <a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></p><p><a href=\"/collections/clip-in-hair-extensions\" title=\"Clip In Hair Extensions\">Shop all clip-ins</a></p>",
         "clip_in_view_all_label": "Shop All Clip-Ins",
-        "clip_in_view_all_url": "shopify://collections/clip-in-hair-extensions",
-        "professional_intro": "",
+        "clip_in_view_all_url": "shopify://pages/journey",
+        "professional_intro": "<p>Not sure of your shade? <a href=\"/products/hair-extensions-sample-pieces\" title=\"Hair Extension Sample Pieces\">Order sample pieces first</a></p><p><a href=\"/collections/permanent-extensions\" title=\"Professional Hair Extensions\">Shop all professionals</a></p>",
         "professional_view_all_label": "Shop All Professional",
-        "professional_view_all_url": "shopify://collections/permanent-extensions",
+        "professional_view_all_url": "shopify://pages/journey",
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "",
         "padding_top": 0,
-        "padding_bottom": 44,
-        "trackable_name": "shop-by-hair-type"
+        "padding_bottom": 44
       }
     },
     "yotpo_reviews_split_EY4hfW": {

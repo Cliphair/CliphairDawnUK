@@ -27,7 +27,7 @@
 {% assign colour_scheme = section.settings.color_scheme %}
 {% if template.suffix == "new-design" %}
   {{ 'announcement-new-design.css' | asset_url | stylesheet_tag }}
-  {% assign colour_scheme = "scheme-b8f8b2a0-bdc3-4a09-b004-a9f17fd5df06" %}
+  {% comment %} {% assign colour_scheme = "scheme-b8f8b2a0-bdc3-4a09-b004-a9f17fd5df06" %} {% endcomment %}
 {% endif %}
 
 <div
