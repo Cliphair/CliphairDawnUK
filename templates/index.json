@@ -321,6 +321,47 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_NBBURQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ggpEVG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Which extensions are right for you?",
+            "heading_size": "h1",
+            "h1": false
+          }
+        },
+        "text_p6Gpx6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Everyone's hair is different. Here is what each one is best for</p>",
+            "read-more_text": ""
+          }
+        },
+        "text_HcwgwX": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/pages/journey\" title=\"Journey\">Not sure? Take the hair quiz</a></p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ggpEVG",
+        "text_p6Gpx6",
+        "text_HcwgwX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
     "hair_goal_cards_grid_GxXgbq": {
       "type": "hair-goal-cards-switcher",
       "blocks": {
@@ -513,12 +554,12 @@
       ],
       "name": "Hair Goal — Switcher",
       "settings": {
-        "title": "Which extensions are right for you?",
-        "introduction": "<p>Everyone's hair is different. Let's find out which works for yours...</p>",
+        "title": "",
+        "introduction": "",
         "image_ratio": "square",
         "enable_lcp_priority": false,
         "clip_in_label": "Clip-Ins",
-        "professional_label": "Professional",
+        "professional_label": "Fitted in salon",
         "switcher_alignment": "center",
         "clip_in_intro": "",
         "clip_in_view_all_label": "Shop All Clip-Ins",
@@ -1366,6 +1407,7 @@
     "simple_divider_PDe7hq",
     "hair_goal_cards_carousel_i7waLK",
     "simple_divider_zUAqrr",
+    "rich_text_NBBURQ",
     "hair_goal_cards_grid_GxXgbq",
     "yotpo_reviews_split_EY4hfW",
     "banner_collection_split_97cFWg",
