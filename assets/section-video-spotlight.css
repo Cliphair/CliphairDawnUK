@@ -14,7 +14,7 @@
     --vs-info-max: 43rem;
     --vs-edge-cover: max(0px, min(5rem, calc((100vw - var(--vs-page-width)) / 2)));
     --vs-product-bg: #a590c1;
-    --vs-product-fg: #f7efe1;
+    --vs-product-fg: #FFF;
     --vs-review-bg: #f4ede1;
     --vs-review-fg: #1f1a17;
     overflow: hidden;
