@@ -546,7 +546,7 @@
         "heading": "What our customers say",
         "subheading": "Thousands of women trust Cliphair. Here's why:",
         "data_source": "api",
-        "star_color": "#000000",
+        "star_color": "#414141",
         "padding_top": 40,
         "padding_bottom": 40,
         "trackable_name": "yotpo-reviews"
