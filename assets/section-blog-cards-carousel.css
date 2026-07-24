@@ -238,11 +238,11 @@
   color: rgb(var(--color-foreground));
 }
 
-@media screen and (min-width: 990px) {
+/* @media screen and (min-width: 990px) {
   .blog-cards__card-title {
     font-size: 2rem;
   }
-}
+} */
 
 .blog-cards__card-arrow {
   flex-shrink: 0;
