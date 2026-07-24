@@ -46,6 +46,9 @@
 .hair-goal-cards-switcher__introduction p:last-of-type{
   font-size:1.4rem;
   --alpha-link:1;
+}
+
+.hair-goal-cards-switcher__introduction a{
   text-underline-offset: .2rem;
 }
 
