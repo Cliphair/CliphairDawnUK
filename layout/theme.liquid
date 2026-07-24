@@ -371,13 +371,13 @@
 
     <!-- Intelligems scripts -->
     <script>
-      window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
       window._template = {
           directory: "{{ template.directory }}",
           name: "{{ template.name }}",
           suffix: "{{ template.suffix }}"
-      };
-    </script>
+      }
+      window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
+    </script> 
     <script
       type="module"
       blocking="render"
