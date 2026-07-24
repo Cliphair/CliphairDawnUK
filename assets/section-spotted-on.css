@@ -16,30 +16,30 @@
 
 .section-spotted-on .images-list-title {
     font-size: 2.4rem;
-    letter-spacing: -0.02em;
-    line-height: 1;
+    letter-spacing: 0;
+    line-height: 1.4;
     font-weight: 400;
 }
 
 .section-spotted-on .intro-wrapper>* {
     font-size: 1.6rem;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    letter-spacing: 0;
+    line-height: 1.4;
     font-weight: 300;
 }
 
 @media screen and (min-width:990px) {
     .section-spotted-on .images-list-title {
-        font-size: 2.6rem;
+        font-size: 3rem;
     }
 
     .section-spotted-on .intro-wrapper {
         margin-bottom: 6.6rem;
     }
 
-    .section-spotted-on .intro-wrapper>* {
+    /* .section-spotted-on .intro-wrapper>* {
         font-size: 1.8rem;
-    }
+    } */
 }
 
 @media screen and (max-width:849px) {
