@@ -45,12 +45,12 @@
 
 .hair-goal-cards-switcher__introduction p:last-of-type{
   font-size:1.4rem;
-  --alpha-link:1;
 }
 
 .hair-goal-cards-switcher__introduction a
 .hair-goal-cards-switcher__panel-intro a{
   text-underline-offset: .2rem;
+  --alpha-link:1;
 }
 
 /* @media screen and (min-width: 1200px) {
