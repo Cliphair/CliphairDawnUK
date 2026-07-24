@@ -209,6 +209,8 @@ section.section-hair-goal-cards-switcher .hair-goal-cards-switcher__list {
 
 .hair-goal-cards-switcher__panel-intro p {
   margin: 1rem 0;
+  line-height:1.4;
+  letter-spacing:0;
 }
 
 /* ---------- Card text ---------- */
