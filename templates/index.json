@@ -1168,10 +1168,10 @@
     "blog_spot_aPTw9A": {
       "type": "blog-spot",
       "custom_css": [
-        ".blog__title {font-size: 2.4rem; font-weight: 400; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3rem;}",
+        ".blog__title {font-size: 2.4rem; font-weight: 400; line-height: 1.4; letter-spacing: 0; margin-bottom: 3rem;}",
         ".card__heading {font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.05em; margin-bottom: 0.5rem;}",
         ".caption-with-letter-spacing {font-size: 1rem; line-height: 1.8; letter-spacing: -0.01em; text-transform: none; font-weight: 400;}",
-        "@media screen and (min-width: 990px) {.blog__title {font-size: 2.6rem; margin-bottom: 5rem; } .card__heading {font-size: 2rem; } .caption-with-letter-spacing {font-size: 1.6rem; }}"
+        "@media screen and (min-width: 990px) {.blog__title {font-size: 3rem; margin-bottom: 5rem; } .card__heading {font-size: 2rem; } .caption-with-letter-spacing {font-size: 1.6rem; }}"
       ],
       "name": "Blog spot",
       "settings": {
@@ -1250,9 +1250,12 @@
         "90c2bf7a-ad88-4fcc-a36e-1e6d60c48754"
       ],
       "custom_css": [
-        "h3 {font-weight: 400;}",
+        ".collapsible-content__heading {font-size: 2.4rem; letter-spacing: 0; line-height: 1.4;}",
+        "h3 {font-weight: 400; font-size: 1.8rem; line-height: 1.4; letter-spacing: 0;}",
+        ".accordion__content *{font-size:1.6rem; line-height:1.4; letter-spacing:0;}",
         ".collapsible-section-layout {padding-top: 0 !important; padding-bottom: 0 !important;}",
-        ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}"
+        ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}",
+        "@media screen and (min-width: 990px) {.collapsible-content__heading {font-size: 3rem; } h3 {font-size: 2rem; }}"
       ],
       "settings": {
         "caption": "",
