@@ -132,6 +132,10 @@
     margin-bottom: 0;
 }
 
+.section-spotted-on .text-container a{
+    text-underline-offset:.2rem;
+}
+
 @media screen and (min-width: 990px) {
     .section-spotted-on .text-container {
         padding: 2rem;
