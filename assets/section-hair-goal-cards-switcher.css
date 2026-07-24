@@ -47,7 +47,7 @@
   font-size:1.4rem;
 }
 
-.hair-goal-cards-switcher__introduction a
+.hair-goal-cards-switcher__introduction a,
 .hair-goal-cards-switcher__panel-intro a{
   text-underline-offset: .2rem;
   --alpha-link:1;
