@@ -113,6 +113,7 @@
     padding: 1.7rem;
     background: #F5F5F4;
     flex-grow: 1;
+    --alpha-link:1;
 }
 
 .section-spotted-on .images-list__item .text-container p {
