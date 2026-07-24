@@ -193,7 +193,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 24px;\n  line-height: 1.2em;\n  letter-spacing: -0.05em;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 16px;\n  line-height: 1.1em;\n  letter-spacing: -0.04em;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n}\n@media screen and (min-width:350px) and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n@media screen and (min-width:1200px){\n.rich-text__heading {\n  font-size: 26px;\n}\n.rich-text__text p {\n  font-size: 18px;\n}\n\n}\n{% endstyle %}",
+        "custom_liquid": "{% style %}\n.rich-text__wrapper {\n  width: 100% !important;\n}\n.rich-text__blocks {\n  max-width: unset !important;\n}\n.rich-text__heading {\n  font-size: 24px;\n  line-height: 1.4em;\n  letter-spacing: 0;\n  font-weight: 400;\n}\n.rich-text__text {\n  margin-top: 1.5rem;\n}\n.rich-text__text p {\n  font-size: 16px;\n  line-height: 1.4em;\n  letter-spacing: 0;\n}\n.read-more__btn,.read-less__btn{\n  font-weight: 500;\n  text-decoration: none;\n}\n.read-more__btn::after{\n  content:\"...\"\n}\n@media screen and (min-width: 990px) {\n  .rich-text__blocks {\n    max-width: unset;\n  }\n.rich-text__heading {\n  font-size: 30px;\n}\n\n}\n@media screen and (min-width:350px) and (max-width: 749px) {\n  .rich-text__wrapper--center {\n    padding: 0 3rem;\n  }\n}\n{% endstyle %}",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
@@ -1177,10 +1177,10 @@
     "blog_spot_aPTw9A": {
       "type": "blog-spot-new-design",
       "custom_css": [
-        ".blog__title {font-size: 2.4rem; font-weight: 400; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3rem;}",
+        ".blog__title {font-size: 2.4rem; font-weight: 400; line-height: 1.4; letter-spacing: 0; margin-bottom: 3rem;}",
         ".card__heading {font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.05em; margin-bottom: 0.5rem;}",
         ".caption-with-letter-spacing {font-size: 1rem; line-height: 1.8; letter-spacing: -0.01em; text-transform: none; font-weight: 400;}",
-        "@media screen and (min-width: 990px) {.blog__title {font-size: 2.6rem; margin-bottom: 5rem; } .card__heading {font-size: 2rem; } .caption-with-letter-spacing {font-size: 1.6rem; }}"
+        "@media screen and (min-width: 990px) {.blog__title {font-size: 3rem; margin-bottom: 5rem; } .card__heading {font-size: 2rem; } .caption-with-letter-spacing {font-size: 1.6rem; }}"
       ],
       "name": "Blog spot",
       "settings": {
@@ -1260,9 +1260,12 @@
         "90c2bf7a-ad88-4fcc-a36e-1e6d60c48754"
       ],
       "custom_css": [
-        "h3 {font-weight: 400;}",
+        ".collapsible-content__heading {font-size: 2.4rem; letter-spacing: 0; line-height: 1.4;}",
+        "h3 {font-weight: 400; font-size: 1.8rem; line-height: 1.4; letter-spacing: 0;}",
+        ".accordion__content *{font-size:1.6rem; line-height:1.4; letter-spacing:0;}",
         ".collapsible-section-layout {padding-top: 0 !important; padding-bottom: 0 !important;}",
-        ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}"
+        ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}",
+        "@media screen and (min-width: 990px) {.collapsible-content__heading {font-size: 3rem; } h3 {font-size: 2rem; }}"
       ],
       "settings": {
         "caption": "",
