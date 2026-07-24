@@ -91,15 +91,17 @@
   font-weight: 400;
   display: block;
   color: rgb(var(--color-foreground));
-  line-height: 1.2;
+  line-height: 1.4;
+  letter-spacing:0;
 }
 
 .hair-goal-card__desc {
   margin-top: 0.7rem;
   font-size: 1.4rem;
   color: rgb(var(--color-foreground));
-  line-height: 1.2;
+  line-height: 1.4;
   display: block;
+  letter-spacing:0;
 }
 
 @media screen and (min-width: 1200px) {
