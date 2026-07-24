@@ -46,6 +46,7 @@
 .hair-goal-cards-switcher__introduction p:last-of-type{
   font-size:1.4rem;
   --alpha-link:1;
+  text-underline-offset: .2rem;
 }
 
 /* @media screen and (min-width: 1200px) {
