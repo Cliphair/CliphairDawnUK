@@ -85,10 +85,11 @@
   display: flex;
   align-items: center;
   gap: 0;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  /* border: 0.1rem solid rgba(var(--color-foreground), 0.2); */
   border-radius: 10rem;
   width: fit-content;
   padding: 0.2rem;
+  background: #EFEDEA;
 }
 
 .hair-goal-cards-switcher__toggle-indicator {
