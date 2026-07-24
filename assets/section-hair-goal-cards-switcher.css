@@ -39,6 +39,10 @@
   }
 }
 
+.hair-goal-cards-switcher__introduction p{
+  margin:1rem 0;
+}
+
 /* @media screen and (min-width: 1200px) {
   .hair-goal-cards-switcher__introduction {
     font-size: 1.8rem;
