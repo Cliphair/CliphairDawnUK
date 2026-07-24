@@ -65,12 +65,13 @@
   padding: 0.9rem .5rem;
 }
 
-/* @media screen and (min-width:750px) {
+@media screen and (min-width:750px) {
   .hair-goal-card__badge {
-    font-size: 1.3rem;
-    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    padding: 0.9rem 1.5rem;
+    letter-spacing: 0.8px;
   }
-} */
+}
 
 /* @media screen and (min-width:1200px) {
   .hair-goal-card__badge {
