@@ -510,7 +510,7 @@
         "card_79LgiR6"
       ],
       "custom_css": [
-        ".hair-goal-card__badge {background: #c2d9e8; color: #000;}",
+        ".hair-goal-card__badge {background: #c2d9e8; color: #1F3C4D;}",
         ".hair-goal-card__text {background: #f1f1f1;}",
         ".hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:13px;}",
         ".hair-goal-cards-switcher__panel-intro p:not(:last-of-type) a,.hair-goal-cards-switcher__introduction a{font-weight:600;}",
