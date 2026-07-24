@@ -61,7 +61,10 @@
         "padding_top": 16,
         "padding_bottom": 16,
         "trackable_name": "trust-bar"
-      }
+      },
+      "custom_css":[
+        "#trust-bar{margin-top:.5rem;}"
+      ]
     },
     "slideshow_3tCMjU": {
       "type": "slideshow",
@@ -559,7 +562,7 @@
           "type": "collection_carousel",
           "settings": {
             "linklist": "choose-by-hair-colour",
-            "heading": "Or shop by shade...",
+            "heading": "Shop by shade",
             "shape_style": "none",
             "show_title": true,
             "text_position": "bottom",
