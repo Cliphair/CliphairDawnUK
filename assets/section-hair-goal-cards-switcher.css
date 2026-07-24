@@ -48,7 +48,8 @@
   --alpha-link:1;
 }
 
-.hair-goal-cards-switcher__introduction a{
+.hair-goal-cards-switcher__introduction a
+.hair-goal-cards-switcher__panel-intro a{
   text-underline-offset: .2rem;
 }
 
