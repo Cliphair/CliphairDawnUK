@@ -46,6 +46,11 @@
         },
         "sc_back_in_stock_app_block_JKfDnH": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "disabled": true,
+          "settings": {}
+        },
+        "sc_out_of_stock_placement_XmDKck": {
+          "type": "sc-out-of-stock_placement",
           "settings": {}
         },
         "information_videos_i7EUgA": {
@@ -239,6 +244,7 @@
         "banner_tmNYwa",
         "available_shades_yt4HbK",
         "sc_back_in_stock_app_block_JKfDnH",
+        "sc_out_of_stock_placement_XmDKck",
         "information_videos_i7EUgA",
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
