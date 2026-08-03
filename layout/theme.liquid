@@ -374,6 +374,10 @@
       }
     </script>
 
+    {% if template == 'product' %}
+      <script src="https://d3p29gcwgas9m8.cloudfront.net/assets/js/index.js" type="text/javascript" async></script>
+    {% endif %}   
+
     <!-- Intelligems scripts -->
     <script>
       window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
