@@ -52,6 +52,11 @@
         },
         "sc_back_in_stock_app_block_JKfDnH": {
           "type": "shopify://apps/sc-back-in-stock/blocks/app-block/839cbcb7-0406-4c2b-8e74-a54d987b90ab",
+          "disabled": true,
+          "settings": {}
+        },
+        "sc_out_of_stock_placement_kJGm8f": {
+          "type": "sc-out-of-stock_placement",
           "settings": {}
         },
         "order_deadline_2_app_block_product_DHR7j6": {
@@ -240,6 +245,7 @@
         "available_shades_yt4HbK",
         "information_videos_aV8VLF",
         "sc_back_in_stock_app_block_JKfDnH",
+        "sc_out_of_stock_placement_kJGm8f",
         "order_deadline_2_app_block_product_DHR7j6",
         "icon_with_text_AGQyTW",
         "3efc918c-8182-4ef3-bc33-60a83ed7ef86",
