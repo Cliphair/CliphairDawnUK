@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_Ew7Waa": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free Pintail Comb With Every Order - Automatically Applied",
             "link": "shopify://pages/rewards"
