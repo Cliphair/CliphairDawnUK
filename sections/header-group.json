@@ -16,10 +16,9 @@
       "blocks": {
         "announcement_Ew7Waa": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free Pintail Comb With Every Order - Automatically Applied",
-            "link": "shopify://pages/rewards"
+            "text": "Too hot to wait? Get free express delivery & free ship-to-shop! Order by 3pm (UK Only)",
+            "link": "shopify://pages/hair-extensions-by-colour"
           }
         },
         "announcement_89cGFt": {
@@ -38,6 +37,7 @@
         },
         "announcement-bar-1": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
@@ -65,13 +65,13 @@
       "type": "countdown",
       "disabled": true,
       "settings": {
-        "text": "Double Loyalty Points. Earn 2 points for every £1 spent.",
-        "timer_text": "Ends In:",
+        "text": "Free Express Shipping & Ship2Shop - UK Only",
+        "timer_text": "Order in the next:",
         "color_scheme": "accent-3",
         "year": 2026,
-        "month": "6",
-        "day": 13,
-        "hour": 23,
+        "month": "8",
+        "day": 11,
+        "hour": 14,
         "minute": 59,
         "padding_top": 8,
         "padding_bottom": 8
