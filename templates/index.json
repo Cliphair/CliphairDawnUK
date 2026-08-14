@@ -67,6 +67,7 @@
       "blocks": {
         "slide_WJew4Q": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/bridal-2026-mobile-banner.jpg",
             "image_desktop": "shopify://shop_images/bridal-2026-desktop-banner.jpg",
@@ -85,6 +86,28 @@
             "color_scheme": "background-1",
             "text_alignment_mobile": "center",
             "banner_id": "bridal-2026"
+          }
+        },
+        "slide_qaUiqB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Mobile_Website_Banner_3000x3000_e1eda47e-d2bd-4791-8246-7cdf2111e8d5.png",
+            "image_desktop": "shopify://shop_images/Desktop_Website_Banner_4110x1494_f5802a06-2078-4444-af3f-0b9a5ba98e24.png",
+            "image_url": "",
+            "heading": "",
+            "heading_size": "h1",
+            "heading_custom_font": "inter_n3",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center",
+            "banner_id": ""
           }
         },
         "slide_KNqnEE": {
@@ -135,6 +158,7 @@
       },
       "block_order": [
         "slide_WJew4Q",
+        "slide_qaUiqB",
         "slide_KNqnEE",
         "slide_H7gM9z"
       ],
@@ -1252,7 +1276,7 @@
       "custom_css": [
         ".collapsible-content__heading {font-size: 2.4rem; letter-spacing: 0; line-height: 1.4;}",
         "h3 {font-weight: 400; font-size: 1.8rem; line-height: 1.4; letter-spacing: 0;}",
-        ".accordion__content *{font-size:1.6rem; line-height:1.4; letter-spacing:0;}",
+        ".accordion__content * {font-size: 1.6rem; line-height: 1.4; letter-spacing: 0;}",
         ".collapsible-section-layout {padding-top: 0 !important; padding-bottom: 0 !important;}",
         ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}",
         "@media screen and (min-width: 990px) {.collapsible-content__heading {font-size: 3rem; } h3 {font-size: 2rem; }}"
