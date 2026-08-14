@@ -14,8 +14,16 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_V97ehG": {
+          "type": "announcement",
+          "settings": {
+            "text": "Summer not over yet! 12% off sitewide",
+            "link": "shopify://pages/hair-extensions-by-colour"
+          }
+        },
         "announcement_gQWRRt": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Real human hair. Real confidence. Made simple.",
             "link": ""
@@ -23,6 +31,7 @@
         },
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "We now ship 7 days a week! Next Day Delivery available every day",
             "link": ""
@@ -30,6 +39,7 @@
         },
         "announcement-bar-1": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
@@ -37,6 +47,7 @@
         }
       },
       "block_order": [
+        "announcement_V97ehG",
         "announcement_gQWRRt",
         "announcement-bar-0",
         "announcement-bar-1"
