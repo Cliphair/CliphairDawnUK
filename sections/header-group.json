@@ -61,6 +61,23 @@
         "enable_language_selector": false
       }
     },
+    "countdown_qmmGT8": {
+      "type": "countdown",
+      "disabled": true,
+      "name": "t:sections.countdown.presets.name",
+      "settings": {
+        "text": "",
+        "timer_text": "Ends In:",
+        "color_scheme": "accent-3",
+        "year": 2026,
+        "month": "8",
+        "day": 16,
+        "hour": 23,
+        "minute": 59,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -87,6 +104,7 @@
   },
   "order": [
     "announcement-bar",
+    "countdown_qmmGT8",
     "header",
     "breadcrumbs"
   ]
