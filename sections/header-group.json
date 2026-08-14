@@ -30,7 +30,6 @@
         },
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "We now ship 7 days a week! Next Day Delivery available every day",
             "link": ""
