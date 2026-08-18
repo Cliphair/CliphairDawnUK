@@ -33,17 +33,17 @@
   assign campaign_live = false
   assign multiple_images = false
 
-  assign v1_page  = pages['cliphair-bridal-hair-extensions']
-  assign v1_image = images['bridal-2026-mobile-plp.jpg']
+  assign v1_page  = collections['remy-royale-tape-wefts-hair-extensions']
+  assign v1_image = images['tape-weft-plp-banner.jpg']
   
-  comment
-  assign v2_page  = collections['tape-in-hair-extensions']
-  assign v2_image = images['tape-sale-feb26-collection.jpg']
-  endcomment
+  assign v2_page  = pages['cliphair-bridal-hair-extensions']
+  assign v2_image = images['bridal-2026-mobile-plp.jpg']
 
+  comment
   assign v2_page  = nil
   assign v2_image = nil
-
+  endcomment 
+  
   if v1_page and v1_image
     assign has_v1 = true
   endif
