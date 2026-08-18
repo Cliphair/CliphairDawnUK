@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_zFyqXF": {
+          "type": "announcement",
+          "settings": {
+            "text": "New Release: Remy Royale Tape Weft | SHOP NOW",
+            "link": "shopify://collections/remy-royale-tape-wefts-hair-extensions"
+          }
+        },
         "announcement_Ew7Waa": {
           "type": "announcement",
           "settings": {
@@ -37,6 +44,7 @@
         },
         "announcement-bar-1": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
@@ -44,6 +52,7 @@
         }
       },
       "block_order": [
+        "announcement_zFyqXF",
         "announcement_Ew7Waa",
         "announcement_89cGFt",
         "announcement-bar-0",
