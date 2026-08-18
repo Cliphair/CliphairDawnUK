@@ -138,6 +138,20 @@
             {{ 'navbar.sub_level.professional.remy_invisible_tape_in' | t }}
           </a>
         </li>
+
+        <li>
+          {% assign object = collections['/remy-royale-tape-wefts-hair-extensions'] %}
+          <a
+            id="HeaderDrawer-professional-tape-invisible-tape"
+            href="{{ object.url }}"
+            class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == object.url %} menu-drawer__menu-item--active{% endif %}"
+            {% if request.path == object.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            Remy Royale Tape Weft (45-55g)
+          </a>
+        </li>
       </ul>
     </div>
   </details>
