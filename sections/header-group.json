@@ -23,7 +23,6 @@
         },
         "announcement_Ew7Waa": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "Too hot to wait? Get free express delivery & free ship-to-shop! Order by 3pm (UK Only)",
             "link": "shopify://pages/hair-extensions-by-colour"
