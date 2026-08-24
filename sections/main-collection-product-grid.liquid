@@ -82,7 +82,8 @@
     assign paginate_by = paginate_by | minus: 1
   endif
 
-  if collection.url == "haircare-accessories"
+  assign exclude_collection = collections['haircare-accessories']
+  if collection.url == exclude_collection.url
     assign campaign_live = false
   endif
 %}
