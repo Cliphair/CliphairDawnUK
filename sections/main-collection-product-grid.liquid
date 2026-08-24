@@ -81,6 +81,10 @@
   if campaign_live
     assign paginate_by = paginate_by | minus: 1
   endif
+
+  if collection.url == "haircare-accessories"
+    assign campaign_live = false
+  endif
 %}
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
