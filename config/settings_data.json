@@ -238,6 +238,11 @@
         "type": "shopify://apps/dr-free-gift/blocks/instant-load/5942fed7-47f4-451f-a42f-9077b6214264",
         "disabled": false,
         "settings": {}
+      },
+      "16225679183443353566": {
+        "type": "shopify://apps/pixiehog/blocks/posthog_js_web/3bc10c13-7b55-491e-8df6-d5677acf3250",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
