@@ -3,9 +3,9 @@
    ============================================ */
 
 .section-image-reveal-grid .grid {
-    --grid-mobile-horizontal-spacing: 1.3rem;
-    --grid-mobile-vertrical-spacing: 1.5rem;
-    --grid-desktop-horizontal-spacing: 1.8rem;
+    --grid-mobile-horizontal-spacing: 1rem;
+    --grid-mobile-vertrical-spacing: 1rem;
+    --grid-desktop-horizontal-spacing: 1.5rem;
     --grid-desktop-vertical-spacing: 1.5rem;
 }
 
