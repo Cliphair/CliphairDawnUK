@@ -76,7 +76,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.image-reveal-grid.name",
+  "name": "Image Reveal Grid",
   "tag": "section",
   "class": "section section-image-reveal-grid",
   "settings": [
@@ -88,22 +88,22 @@
     },
     {
       "type": "header",
-      "content": "t:sections.image-reveal-grid.settings.header__final_date.content"
+      "content": "Reveal date"
     },
     {
       "type": "paragraph",
-      "content": "t:sections.image-reveal-grid.settings.paragraph__final_date.content"
+      "content": "Images unlock one by one, counting back from the reveal date. On the reveal date, all images are shown."
     },
     {
       "type": "number",
       "id": "final_year",
-      "label": "t:sections.image-reveal-grid.settings.number_final_year.label",
+      "label": "Year",
       "default": 2027
     },
     {
       "type": "select",
       "id": "final_month",
-      "label": "t:sections.image-reveal-grid.settings.select_final_month.label",
+      "label": "Month",
       "options": [
         { "value": "1", "label": "January" },
         { "value": "2", "label": "February" },
@@ -123,7 +123,7 @@
     {
       "type": "range",
       "id": "final_day",
-      "label": "t:sections.image-reveal-grid.settings.range_final_day.label",
+      "label": "Day",
       "min": 1,
       "max": 31,
       "step": 1,
@@ -157,19 +157,19 @@
   "blocks": [
     {
       "type": "image",
-      "name": "t:sections.image-reveal-grid.blocks.image.name",
+      "name": "Image",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.image-reveal-grid.blocks.image.settings.image.label"
+          "label": "Image"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.image-reveal-grid.presets.name",
+      "name": "Image Reveal Grid",
       "blocks": [{ "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }]
     }
   ]
