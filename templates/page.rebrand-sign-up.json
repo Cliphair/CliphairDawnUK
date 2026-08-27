@@ -46,6 +46,9 @@
       "block_order": [
         "countdown_wWmYcm"
       ],
+      "custom_css": [
+        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
+      ],
       "name": "Hero slideshow",
       "settings": {
         "color_scheme": "background-1",
@@ -69,6 +72,9 @@
     },
     "form_builder_e8KVkd": {
       "type": "form-builder",
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
       "name": "Form builder app",
       "settings": {
         "id": "4DYagcbOSSTdt212yJTlJA",
@@ -146,6 +152,9 @@
         "image_4eK9K3",
         "image_FzVaRb",
         "image_87dexa"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
       ],
       "name": "Image Reveal Grid",
       "settings": {
