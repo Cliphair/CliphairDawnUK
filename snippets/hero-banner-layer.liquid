@@ -1,0 +1,175 @@
+{%- comment -%}
+  Renders one absolutely-positioned layer (image or text) inside a hero-style
+  slideshow slide. Mirrors the positioning system from sections/hero-banner.liquid,
+  parameterised so it can be called multiple times per block (primary image,
+  secondary image, text) instead of once per section block.
+
+  Accepts:
+    layer_type              - 'image' | 'text'
+    animate                 - boolean, adds the scroll-reveal animation classes
+    pos_x_desktop, pos_y_desktop, anchor_desktop, width_desktop, size_multiplier_desktop
+    pos_x_mobile, pos_y_mobile, anchor_mobile, width_mobile, size_multiplier_mobile
+    z_index
+
+    layer_type: image
+    image, alt_text, decorative, object_position_x, object_position_y
+    img_loading, img_fetchpriority, img_preload
+
+    layer_type: text
+    heading, subheading, button_label, button_url, heading_level
+    show_container, color_scheme, show_flower_mask, padding
+{%- endcomment -%}
+
+{%- liquid
+  case anchor_desktop
+    when 'top-left'
+      assign transform_desktop = 'translate(0, 0)'
+    when 'top-center'
+      assign transform_desktop = 'translate(-50%, 0)'
+    when 'top-right'
+      assign transform_desktop = 'translate(-100%, 0)'
+    when 'center-left'
+      assign transform_desktop = 'translate(0, -50%)'
+    when 'center'
+      assign transform_desktop = 'translate(-50%, -50%)'
+    when 'center-right'
+      assign transform_desktop = 'translate(-100%, -50%)'
+    when 'bottom-left'
+      assign transform_desktop = 'translate(0, -100%)'
+    when 'bottom-center'
+      assign transform_desktop = 'translate(-50%, -100%)'
+    when 'bottom-right'
+      assign transform_desktop = 'translate(-100%, -100%)'
+    else
+      assign transform_desktop = 'translate(0, 0)'
+  endcase
+
+  case anchor_mobile
+    when 'top-left'
+      assign transform_mobile = 'translate(0, 0)'
+    when 'top-center'
+      assign transform_mobile = 'translate(-50%, 0)'
+    when 'top-right'
+      assign transform_mobile = 'translate(-100%, 0)'
+    when 'center-left'
+      assign transform_mobile = 'translate(0, -50%)'
+    when 'center'
+      assign transform_mobile = 'translate(-50%, -50%)'
+    when 'center-right'
+      assign transform_mobile = 'translate(-100%, -50%)'
+    when 'bottom-left'
+      assign transform_mobile = 'translate(0, -100%)'
+    when 'bottom-center'
+      assign transform_mobile = 'translate(-50%, -100%)'
+    when 'bottom-right'
+      assign transform_mobile = 'translate(-100%, -100%)'
+    else
+      assign transform_mobile = 'translate(0, 0)'
+  endcase
+
+  assign size_multiplier_desktop = size_multiplier_desktop | default: 1
+  assign size_multiplier_mobile = size_multiplier_mobile | default: 1
+-%}
+
+<div
+  class="hero-banner__block hero-banner__block--{{ layer_type }}{% if animate %} scroll-trigger animate--slide-in{% endif %}"
+  style="
+    --x-desktop: {{ pos_x_desktop }}%;
+    --y-desktop: {{ pos_y_desktop }}%;
+    --x-mobile: {{ pos_x_mobile }}%;
+    --y-mobile: {{ pos_y_mobile }}%;
+    --transform-desktop: {{ transform_desktop }};
+    --transform-mobile: {{ transform_mobile }};
+    --z: {{ z_index }};
+    --width-desktop: {{ width_desktop | times: size_multiplier_desktop }}%;
+    --width-mobile: {{ width_mobile | times: size_multiplier_mobile }}%;
+    {%- if layer_type == 'image' -%}
+      --obj-x: {{ object_position_x }}%;
+      --obj-y: {{ object_position_y }}%;
+    {%- endif -%}
+  "
+>
+  {%- if layer_type == 'image' -%}
+    {%- if image != blank -%}
+      {%- liquid
+        assign img_sizes = '(min-width: 750px) ' | append: width_desktop | append: 'vw, ' | append: width_mobile | append: 'vw'
+      -%}
+
+      {%- if decorative -%}
+        <img
+          srcset="
+            {%- if image.width >= 375 -%}{{ image | image_url: width: 375 }} 375w,{%- endif -%}
+            {%- if image.width >= 550 -%}{{ image | image_url: width: 550 }} 550w,{%- endif -%}
+            {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if image.width >= 1100 -%}{{ image | image_url: width: 1100 }} 1100w,{%- endif -%}
+            {%- if image.width >= 1500 -%}{{ image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {%- if image.width >= 1780 -%}{{ image | image_url: width: 1780 }} 1780w,{%- endif -%}
+            {%- if image.width >= 2000 -%}{{ image | image_url: width: 2000 }} 2000w,{%- endif -%}
+            {{ image | image_url }} {{ image.width }}w
+          "
+          src="{{ image | image_url: width: 1500 }}"
+          sizes="{{ img_sizes }}"
+          loading="{{ img_loading }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          alt=""
+          aria-hidden="true"
+        >
+      {%- else -%}
+        {{-
+          image
+          | image_url: width: 2000
+          | image_tag:
+            preload: img_preload,
+            loading: img_loading,
+            fetchpriority: img_fetchpriority,
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+            sizes: img_sizes,
+            width: image.width,
+            height: image.height,
+            alt: alt_text
+          | escape
+        -}}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'hero-banner__placeholder' }}
+    {%- endif -%}
+
+  {%- elsif layer_type == 'text' -%}
+    {%- capture text_content -%}
+      <div class="hero-banner__text-content" {% unless show_flower_mask %}style="padding: {{ padding }}px;"{% endunless %}>
+        {%- if heading != blank -%}
+          <p class="{{ heading_level }} hero-banner__heading">
+            {{- heading | escape | replace: "[break]" , "<br>" -}}
+          </p>
+        {%- endif -%}
+
+        {%- if subheading != blank -%}
+          <p class="hero-banner__subheading">{{ subheading | escape }}</p>
+        {%- endif -%}
+
+        {%- if button_label != blank and button_url != blank -%}
+          <a
+            href="{{ button_url }}"
+            class="hero-banner__button button"
+          >
+            {{- button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endcapture -%}
+
+    {%- if show_container -%}
+      <div class="hero-banner__container color-{{ color_scheme }}{% if show_flower_mask %} hero-banner__container--flower{% endif %}">
+        {%- if show_flower_mask -%}
+          <div class="hero-banner__shape" aria-hidden="true">
+            {%- render 'shape' -%}
+          </div>
+        {%- endif -%}
+        {{ text_content }}
+      </div>
+    {%- else -%}
+      {{ text_content }}
+    {%- endif -%}
+  {%- endif -%}
+</div>
