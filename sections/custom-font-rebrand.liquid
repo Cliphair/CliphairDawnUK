@@ -1,0 +1,52 @@
+<style>
+@font-face {
+    font-family: 'Chocolatier';
+    src: url('{{ "Chocolatier.woff2" | asset_url }}') format('woff2'),
+        url('{{ "Chocolatier.woff" | asset_url }}') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    }
+
+  {% assign page_font = section.settings.font %}
+  {{ page_font | font_face: font_display: 'swap' }}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+    {{ body_font_semibold | font_face: font_display: 'swap' }}
+    {{ body_font_italic | font_face: font_display: 'swap' }}
+    {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+    {{ body_font_semibold_italic | font_face: font_display: 'swap' }}
+
+  main.content-for-layout h1,
+  main.content-for-layout h2,
+  main.content-for-layout h3,
+  main.content-for-layout h4,
+  main.content-for-layout h5,
+  main.content-for-layout h6{
+}
+  
+main.content-for-layout p,
+  main.content-for-layout a,
+  main.content-for-layout label,
+  main.content-for-layout select{
+    font-family: {{ page_font.family }}, {{ page_font.fallback_families }};
+  }
+</style>
+{% schema %}
+{
+  "name": "Page Font",
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "font",
+      "label": "Page font",
+      "default": "libre_baskerville_n4"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
