@@ -1,0 +1,132 @@
+/* ============================================
+   Hero Slideshow — fixed aspect-ratio box shared by
+   every slide, regardless of block type (hero or slide)
+   ============================================ */
+
+.hero-slideshow .slideshow__slide {
+  aspect-ratio: var(--banner-ratio-mobile, 4 / 3);
+  height: auto;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .hero-slideshow .slideshow__slide {
+    aspect-ratio: var(--banner-ratio-desktop, 16 / 9);
+  }
+}
+
+/* ============================================
+   Hero Slideshow — Countdown block
+   ============================================ */
+
+.hero-slideshow__countdown-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-slideshow__countdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.hero-slideshow__countdown-heading {
+  margin: 0;
+  font-size: clamp(4.5rem, 10vw, 8rem);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.hero-slideshow__countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.3vw;
+}
+
+.hero-slideshow__countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-slideshow__countdown-digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10vw;
+  aspect-ratio: 1;
+  padding: 1rem;
+  background: rgb(var(--color-button));
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: -.01em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.hero-slideshow__countdown .countdown__digit--changed {
+  animation: hero-slideshow-countdown-fade 350ms ease;
+}
+
+@keyframes hero-slideshow-countdown-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-slideshow__countdown-label {
+  font-size: clamp(1.2rem, 3vw, 2.3rem);
+  letter-spacing: -0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero-slideshow__countdown-cta .button {
+  min-width: 60vw;
+  min-height: 10vw;
+  padding: 1rem;
+  font-size: clamp(1.9rem, 4vw, 3.3rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+@media screen and (min-width: 750px) {
+  .hero-slideshow__countdown-content {
+    gap: 1.3vw;
+  }
+
+  .hero-slideshow__countdown-heading {
+    font-size: clamp(3.5rem, 4.6vw, 9rem);
+  }
+
+  .hero-slideshow__countdown-digit {
+
+    width: 6.4vw;
+    font-size: clamp(2.8rem, 3.7vw, 7rem);
+
+  }
+
+  .hero-slideshow__countdown-label {
+    font-size: clamp(1rem, 1.3vw, 2.5rem);
+  }
+
+  .hero-slideshow__countdown-cta .button {
+    min-width: 35vw;
+    min-height: 6.2vw;
+    max-width: 675px;
+    max-height: 119px;
+    font-size: clamp(1.6rem, 2.1vw, 4.1rem);
+  }
+}

@@ -1,0 +1,163 @@
+/* ============================================
+   Hero Banner — block-based layered section
+   ============================================ */
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--banner-ratio-mobile, 4 / 3);
+}
+
+@media screen and (min-width: 750px) {
+  .hero-banner {
+    aspect-ratio: var(--banner-ratio-desktop, 16 / 9);
+  }
+}
+
+/* Base block — mobile-first */
+.hero-banner__block {
+  position: absolute;
+  left: var(--x-mobile);
+  top: var(--y-mobile);
+  transform: var(--transform-mobile);
+  z-index: var(--z, 1);
+  width: var(--width-mobile);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .hero-banner__block {
+    left: var(--x-desktop);
+    top: var(--y-desktop);
+    transform: var(--transform-desktop);
+    width: var(--width-desktop);
+  }
+}
+
+/* Image block */
+.hero-banner__block--image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: var(--obj-x, 50%) var(--obj-y, 50%);
+}
+
+.hero-banner__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgb(var(--color-background-2));
+}
+
+/* Text block — positions and centres its content */
+.hero-banner__block--text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+}
+
+/* Container — coloured background behind text */
+.hero-banner__container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgb(var(--color-background));
+}
+
+/* Flower variant — aspect-ratio enforced; SVG provides the fill */
+.hero-banner__container.hero-banner__container--flower {
+  aspect-ratio: 1;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* Flower SVG — fills the container; fill="currentColor" in shape.liquid
+   picks up this color value */
+.hero-banner__shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  color: rgb(var(--color-background));
+}
+
+/* Text content — above the shape */
+.hero-banner__text-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: rgb(var(--color-foreground));
+  width: 100%;
+}
+
+.hero-banner__heading {
+  font-size: clamp(1.5rem, 6vw, 4.5rem);
+  line-height: .8;
+  margin: 0 0 .5rem;
+  letter-spacing: 0;
+}
+
+.hero-banner__subheading {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  line-height: 1em;
+  margin: 0 0 1rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+.hero-banner__button {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  line-height: 1;
+  min-width: unset;
+  min-height: unset;
+  letter-spacing: 0;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 350px) {
+  /* .hero-banner__heading {
+    font-size: clamp(1.5rem, 6.3vw, 4.5rem);
+  } */
+
+  /* .hero-banner__button {
+    min-width: 85px;
+    min-height: 34px;
+  } */
+}
+
+@media screen and (min-width: 750px) {
+  .hero-banner__heading {
+    font-size: clamp(2.7rem, 3.2vw, 4rem);
+  }
+
+  .hero-banner__subheading {
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
+  }
+
+  .hero-banner__button {
+    font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .hero-banner__button {
+    min-width: 170px;
+    min-height: 30px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-banner__block,
+  .hero-banner__block * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
