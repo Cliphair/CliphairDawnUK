@@ -38,7 +38,7 @@
             "button_label": "",
             "link": "",
             "button_style": "link",
-            "color_scheme": "background-2",
+            "color_scheme": "background-1",
             "banner_id": ""
           }
         }
@@ -48,7 +48,7 @@
       ],
       "name": "Hero slideshow",
       "settings": {
-        "color_scheme": "accent-2",
+        "color_scheme": "background-1",
         "ratio_w_desktop": 16,
         "ratio_h_desktop": 5,
         "ratio_w_mobile": 1,
