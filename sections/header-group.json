@@ -121,6 +121,7 @@
         "announcement_image_FmKiMd": {
           "type": "announcement-image",
           "name": "Sunday Delivery",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Sunday_delivery_hair_extensions_blackfriday_sale.gif",
             "text_alignment": "center",
@@ -157,7 +158,6 @@
         "announcement_image_8amwCN",
         "announcement_image_Q3tyyb"
       ],
-      "disabled": true,
       "custom_css": [
         "img {height: auto; max-width: min(600px, 100%) !important; margin: 0 auto;}"
       ],
