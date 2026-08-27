@@ -81,7 +81,7 @@
         "max-width": "738",
         "color_scheme": "",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 40
       }
     },
     "image_reveal_grid_xzK83Q": {
@@ -162,7 +162,7 @@
         "final_year": 2026,
         "final_month": "9",
         "final_day": 7,
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 40
       }
     }
