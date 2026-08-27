@@ -23,7 +23,7 @@
 }
 
 .section-image-reveal-grid .image-reveal-grid__item--blurred .image-reveal-grid__media img {
-    filter: blur(20px);
+    filter: blur(10px);
     transform: scale(1.1);
 }
 
