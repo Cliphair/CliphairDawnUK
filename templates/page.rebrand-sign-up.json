@@ -80,8 +80,7 @@
     "form_builder_e8KVkd": {
       "type": "form-builder",
       "custom_css": [
-        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}",
-        "input[type=\"checkbox\"] + label span {background: #faf2e5!important; border: 1px solid!important; border-radius: 0!important;}"
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
       ],
       "name": "Form builder app",
       "settings": {
@@ -89,7 +88,7 @@
         "max-width": "738",
         "color_scheme": "",
         "padding_top": 60,
-        "padding_bottom": 40
+        "padding_bottom": 16
       }
     },
     "image_reveal_grid_xzK83Q": {
