@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_title": true,
         "heading_size": "h1",
@@ -20,9 +21,67 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hero_slideshow_DbRQke": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "countdown_wWmYcm": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Something's about to bloom...",
+            "end_year": 2026,
+            "end_month": "9",
+            "end_day": 7,
+            "custom_end_time": false,
+            "end_hour": 23,
+            "end_minute": 59,
+            "button_label": "",
+            "link": "",
+            "button_style": "link",
+            "color_scheme": "background-2",
+            "banner_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "countdown_wWmYcm"
+      ],
+      "name": "Hero slideshow",
+      "settings": {
+        "color_scheme": "accent-2",
+        "ratio_w_desktop": 16,
+        "ratio_h_desktop": 5,
+        "ratio_w_mobile": 1,
+        "ratio_h_mobile": 1,
+        "heading_level": "h1",
+        "above_the_fold": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "layout": "full_bleed",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Rebranding countdown",
+        "trackable_name": ""
+      }
+    },
+    "form_builder_e8KVkd": {
+      "type": "form-builder",
+      "name": "Form builder app",
+      "settings": {
+        "id": "4DYagcbOSSTdt212yJTlJA",
+        "max-width": "738",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_slideshow_DbRQke",
+    "form_builder_e8KVkd"
   ]
 }
