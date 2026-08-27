@@ -77,11 +77,91 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "image_reveal_grid_xzK83Q": {
+      "type": "image-reveal-grid",
+      "blocks": {
+        "image_xckTaD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-1.jpg"
+          }
+        },
+        "image_J6NpW8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-2.jpg"
+          }
+        },
+        "image_Ya8Ad3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-3.jpg"
+          }
+        },
+        "image_t4RcHN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-4.jpg"
+          }
+        },
+        "image_nkxK73": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-5.jpg"
+          }
+        },
+        "image_KjKHdp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-6.jpg"
+          }
+        },
+        "image_4eK9K3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-7.jpg"
+          }
+        },
+        "image_FzVaRb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-8.jpg"
+          }
+        },
+        "image_87dexa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_xckTaD",
+        "image_J6NpW8",
+        "image_Ya8Ad3",
+        "image_t4RcHN",
+        "image_nkxK73",
+        "image_KjKHdp",
+        "image_4eK9K3",
+        "image_FzVaRb",
+        "image_87dexa"
+      ],
+      "name": "Image Reveal Grid",
+      "settings": {
+        "color_scheme": "",
+        "final_year": 2026,
+        "final_month": "9",
+        "final_day": 7,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
     "hero_slideshow_DbRQke",
-    "form_builder_e8KVkd"
+    "form_builder_e8KVkd",
+    "image_reveal_grid_xzK83Q"
   ]
 }
