@@ -3,10 +3,10 @@
    ============================================ */
 
 .section-image-reveal-grid .grid {
-    --grid-mobile-horizontal-spacing: 1rem;
-    --grid-mobile-vertrical-spacing: 1rem;
-    --grid-desktop-horizontal-spacing: 1.5rem;
-    --grid-desktop-vertical-spacing: 1.5rem;
+    --grid-mobile-horizontal-spacing:0.5rem;
+    --grid-mobile-vertical-spacing: 0.5rem;
+    --grid-desktop-horizontal-spacing: 1rem;
+    --grid-desktop-vertical-spacing: 1rem;
 }
 
 .section-image-reveal-grid .image-reveal-grid__item {
