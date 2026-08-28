@@ -1,0 +1,421 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "heading_size": "h1",
+        "show_content": true,
+        "text_alignment": "left",
+        "color_scheme": "accent-4",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_font_rebrand_bY7Uit": {
+      "type": "custom-font-rebrand",
+      "name": "Page Font Rebrand",
+      "settings": {
+        "font": "plus_jakarta_sans_n4"
+      }
+    },
+    "custom_liquid_nNtwwy": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\nmain.content-for-layout .h2{\nfont-size:2.4rem;\nline-height:1;\nletter-spacing:0;\nmargin-top:1rem;\n}\n\nmain.content-for-layout p{\nfont-size:1.5rem;\nline-height:1.3em;\nletter-spacing:0;\nmargin: 1rem 0;\n}\n\nmain.content-for-layout .rich-text__caption{\nfont-size:1.2rem;\n}\n\nmain.content-for-layout .rich-text__wrapper {\nwidth:100%;\n}\n\n@media screen and (min-width: 750px) {\nmain.content-for-layout .rich-text__blocks {\nmax-width: 64rem;\ntext-align:center;\n}\n\nmain.content-for-layout .h2{\nfont-size:4.4rem;\n}\n\nmain.content-for-layout p{\nfont-size:1.8rem;\n}\n\nmain.content-for-layout .rich-text__caption{\nfont-size:1.5rem;\n}\n}\n\nmain.content-for-layout .video-section{\npadding-right:0;\npadding-left:0;\n--page-width:1000px;\n}\n\nmain.content-for-layout .title-wrapper {\nmargin-bottom:.5rem;\npadding-right:1.5rem;\npadding-left:1.5rem;\n}\n\nmain.content-for-layout .title-wrapper .title{\nmargin: 0;\nfont-size: 1.2rem;\n}\n\n@media screen and (min-width:750px){\nmain.content-for-layout .video-section{\npadding-right:5rem;\npadding-left:5rem;\n}\n\nmain.content-for-layout .title-wrapper {\ntext-align:center;\npadding-right:0;\npadding-left:0;\n}\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_4yBeyn": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_eTzNzi": {
+          "type": "caption",
+          "settings": {
+            "caption": "FOR THE COLLECTIVE",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_HfEJad": {
+          "type": "heading",
+          "settings": {
+            "heading": "Something's blooming.",
+            "heading_size": "h2",
+            "h1": true
+          }
+        },
+        "text_BcGTcw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This is the first thing we're showing you — not the last. Over the next few weeks, more will land here: the colours, the details, the reasoning. Today, we start with 30 seconds.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "caption_eTzNzi",
+        "heading_HfEJad",
+        "text_BcGTcw"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "video_pVpA9g": {
+      "type": "video",
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "DROP 1 OF THE REVEAL",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/rebrand-drop-1-video.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_HfY4EK": {
+      "type": "rich-text",
+      "blocks": {
+        "text_3jgiy7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tap to watch — sound on.</p><p>More drops are coming before 8th September. You'll get every one first.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_3jgiy7"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_hnMViY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iGNDJt": {
+          "type": "heading",
+          "settings": {
+            "heading": "We didn't rebrand. We bloomed.",
+            "heading_size": "h1",
+            "h1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iGNDJt"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}",
+        ".h1 {font-size: 1.7rem; margin-top: 0;}",
+        "@media screen and (min-width: 750px) {.h1 {font-size: 2.6rem; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "rich_text_W7Bje7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_r3twrU": {
+          "type": "button",
+          "settings": {
+            "button_label": "JOIN THE BROADCAST CHANNEL",
+            "button_link": "https://www.instagram.com/channel/AbafGW4c7yi5bVza/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "caption_wpHHVB": {
+          "type": "caption",
+          "settings": {
+            "caption": "Full bloom. 8th September 2026. Follow along until then.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "text_zb3qNx": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Full bloom. 8th September 2026. Follow along until then.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_r3twrU",
+        "caption_wpHHVB",
+        "text_zb3qNx"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}",
+        ".rich-text__buttons .button {--color-button-text: 255, 255, 255; --buttons-radius: 100px; width: 100%; --buttons-radius-outset: 100px; font-size: 1.4rem;}",
+        "@media screen and (min-width: 750px) {.rich-text__buttons .button {max-width: 309px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_ehbqQ9": {
+      "type": "rich-text",
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5;}",
+        ".rich-text__wrapper {height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; width: 87%;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_cFyM4r": {
+      "type": "rich-text",
+      "blocks": {
+        "text_nfiBph": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You're getting this because you were part of building Cliphair. <br/>cliphair.co.uk<br/><br/></p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_nfiBph"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "hero_slideshow_DbRQke": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "countdown_wWmYcm": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Something's about to bloom...",
+            "end_year": 2026,
+            "end_month": "9",
+            "end_day": 7,
+            "custom_end_time": false,
+            "end_hour": 23,
+            "end_minute": 59,
+            "button_label": "",
+            "link": "",
+            "button_style": "link",
+            "color_scheme": "background-1",
+            "banner_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "countdown_wWmYcm"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
+      ],
+      "name": "Hero slideshow",
+      "settings": {
+        "color_scheme": "background-1",
+        "ratio_w_desktop": 16,
+        "ratio_h_desktop": 4,
+        "ratio_w_mobile": 1,
+        "ratio_h_mobile": 1,
+        "heading_level": "h1",
+        "above_the_fold": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "layout": "full_bleed",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Rebranding countdown",
+        "trackable_name": ""
+      }
+    },
+    "form_builder_e8KVkd": {
+      "type": "form-builder",
+      "disabled": true,
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "Form builder app",
+      "settings": {
+        "id": "4DYagcbOSSTdt212yJTlJA",
+        "max-width": "738",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "image_reveal_grid_xzK83Q": {
+      "type": "image-reveal-grid",
+      "blocks": {
+        "image_xckTaD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-1.jpg"
+          }
+        },
+        "image_J6NpW8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-2.jpg"
+          }
+        },
+        "image_Ya8Ad3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-3.jpg"
+          }
+        },
+        "image_t4RcHN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-4.jpg"
+          }
+        },
+        "image_nkxK73": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-5.jpg"
+          }
+        },
+        "image_KjKHdp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-6.jpg"
+          }
+        },
+        "image_4eK9K3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-7.jpg"
+          }
+        },
+        "image_FzVaRb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-8.jpg"
+          }
+        },
+        "image_87dexa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/rebrand-cards-9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_xckTaD",
+        "image_J6NpW8",
+        "image_Ya8Ad3",
+        "image_t4RcHN",
+        "image_nkxK73",
+        "image_KjKHdp",
+        "image_4eK9K3",
+        "image_FzVaRb",
+        "image_87dexa"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+      ],
+      "name": "Image Reveal Grid",
+      "settings": {
+        "color_scheme": "",
+        "final_year": 2026,
+        "final_month": "9",
+        "final_day": 7,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_font_rebrand_bY7Uit",
+    "custom_liquid_nNtwwy",
+    "rich_text_4yBeyn",
+    "video_pVpA9g",
+    "rich_text_HfY4EK",
+    "rich_text_hnMViY",
+    "rich_text_W7Bje7",
+    "rich_text_ehbqQ9",
+    "rich_text_cFyM4r",
+    "hero_slideshow_DbRQke",
+    "form_builder_e8KVkd",
+    "image_reveal_grid_xzK83Q"
+  ]
+}
