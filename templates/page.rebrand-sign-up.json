@@ -80,10 +80,18 @@
     "rich_text_TK9jiX": {
       "type": "rich-text",
       "blocks": {
+        "heading_tmFW9Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "On 8th September, Cliphair changes. Sign up and you'll be the first to know when new content drops.",
+            "heading_size": "h2",
+            "h1": false
+          }
+        },
         "text_Xr6bzc": {
           "type": "text",
           "settings": {
-            "text": "<p>On 8th September, Cliphair changes. Sign up and you'll be the first to know when new content drops.</p><p>Nineteen years of one idea is about to look different. We're not saying more than that yet - but if you want the first look, the countdown, and the drops along the way, this is where it starts.</p><p>Pop your email below and we'll keep you in the loop. Or join our Broadcast Channel on Instagram for real-time updates as the reveal unfolds.</p>",
+            "text": "<p>Nineteen years of one idea is about to look different. We're not saying more than that yet - but if you want the first look, the countdown, and the drops along the way, this is where it starts.</p><p>Pop your email below and we'll keep you in the loop. Or join our Broadcast Channel on Instagram for real-time updates as the reveal unfolds.</p>",
             "read-more_text": ""
           }
         },
@@ -97,11 +105,13 @@
         }
       },
       "block_order": [
+        "heading_tmFW9Q",
         "text_Xr6bzc",
         "text_DCGLjj"
       ],
       "custom_css": [
-        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}"
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}",
+        "@media screen and (min-width: 750px) {.rich-text__blocks {max-width: 78rem; }}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -110,7 +120,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 60,
-        "padding_bottom": 20
+        "padding_bottom": 40
       }
     },
     "form_builder_e8KVkd": {
