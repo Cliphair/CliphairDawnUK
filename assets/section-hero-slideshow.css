@@ -40,6 +40,7 @@
   font-size: clamp(4.5rem, 10vw, 8rem);
   line-height: 1;
   letter-spacing: -.01em;
+  font-family: 'Chocolatier', sans-serif !important;
 }
 
 .hero-slideshow__countdown {

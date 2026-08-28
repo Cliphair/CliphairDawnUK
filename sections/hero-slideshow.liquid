@@ -4,6 +4,17 @@
 {{ 'section-hero-banner.css' | asset_url | stylesheet_tag }}
 {{ 'section-hero-slideshow.css' | asset_url | stylesheet_tag }}
 
+<style>
+  @font-face {
+    font-family: 'Chocolatier';
+    src: url('{{ "Chocolatier.woff2" | asset_url }}') format('woff2'),
+        url('{{ "Chocolatier.woff" | asset_url }}') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    }
+</style>
+
 {%- assign animate = false -%}
 {%- if settings.animations_reveal_on_scroll and section.settings.above_the_fold == false -%}
   {%- assign animate = true -%}
