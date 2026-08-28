@@ -111,7 +111,7 @@
       ],
       "custom_css": [
         ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}",
-        ".rich-text__wrapper{width:100%;}",
+        ".rich-text__wrapper {width: 100%;}",
         "@media screen and (min-width: 750px) {.rich-text__blocks {max-width: 78rem; }}"
       ],
       "name": "t:sections.rich-text.presets.name",
@@ -219,6 +219,57 @@
         "padding_top": 20,
         "padding_bottom": 40
       }
+    },
+    "rich_text_W7Bje7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_r3twrU": {
+          "type": "button",
+          "settings": {
+            "button_label": "JOIN THE BROADCAST CHANNEL",
+            "button_link": "https://www.instagram.com/channel/AbafGW4c7yi5bVza/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "caption_wpHHVB": {
+          "type": "caption",
+          "settings": {
+            "caption": "Full bloom. 8th September 2026. Follow along until then.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "text_zb3qNx": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Full bloom. 8th September 2026. Follow along until then.</p>",
+            "read-more_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_r3twrU",
+        "caption_wpHHVB",
+        "text_zb3qNx"
+      ],
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-link: 255, 132, 125;}",
+        ".rich-text__buttons .button {--buttons-radius: 100px; width: 100%; --buttons-radius-outset: 100px; font-size: 1.4rem;}",
+        "@media screen and (min-width: 750px) {.rich-text__buttons .button {max-width: 309px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -227,6 +278,7 @@
     "hero_slideshow_DbRQke",
     "rich_text_TK9jiX",
     "form_builder_e8KVkd",
-    "image_reveal_grid_xzK83Q"
+    "image_reveal_grid_xzK83Q",
+    "rich_text_W7Bje7"
   ]
 }
