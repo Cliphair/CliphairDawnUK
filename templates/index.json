@@ -55,16 +55,86 @@
         "badge_P636gk",
         "badge_W73pFR"
       ],
+      "custom_css": [
+        "#trust-bar {margin-top: 0.5rem;}"
+      ],
       "name": "Trust bar",
       "settings": {
         "color_scheme": "background-collection-titles",
         "padding_top": 16,
         "padding_bottom": 16,
         "trackable_name": "trust-bar"
+      }
+    },
+    "hero_slideshow_WUGWGb": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "countdown_GKrxUU": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Something's about to bloom...",
+            "end_year": 2026,
+            "end_month": "9",
+            "end_day": 7,
+            "custom_end_time": false,
+            "end_hour": 23,
+            "end_minute": 59,
+            "button_label": "WATCH IT UNFOLD",
+            "link": "shopify://pages/something-is-about-to-bloom",
+            "button_style": "button",
+            "color_scheme": "background-1",
+            "banner_id": ""
+          }
+        },
+        "slide_pn79pj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
+            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
+            "image_url": "shopify://pages/hair-extensions-by-colour",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center",
+            "banner_id": ""
+          }
+        }
       },
-      "custom_css":[
-        "#trust-bar{margin-top:.5rem;}"
-      ]
+      "block_order": [
+        "countdown_GKrxUU",
+        "slide_pn79pj"
+      ],
+      "custom_css": [
+        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
+      ],
+      "name": "Hero slideshow",
+      "settings": {
+        "color_scheme": "",
+        "ratio_w_desktop": 16,
+        "ratio_h_desktop": 5,
+        "ratio_w_mobile": 1,
+        "ratio_h_mobile": 1,
+        "heading_level": "h1",
+        "above_the_fold": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "layout": "full_bleed",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Homepage hero slideshow",
+        "trackable_name": ""
+      }
     },
     "slideshow_3tCMjU": {
       "type": "slideshow",
@@ -140,6 +210,7 @@
         "slide_H7gM9z",
         "slide_TpRyJJ"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
@@ -183,7 +254,7 @@
         "card_F9ebhR"
       ],
       "custom_css": [
-        "#cm-quiz-cards{--gradient-background:#fff;}"
+        "#cm-quiz-cards {--gradient-background: #fff;}"
       ],
       "name": "Image CTA columns",
       "settings": {
@@ -330,16 +401,6 @@
     "hair_goal_cards_grid_GxXgbq": {
       "type": "hair-goal-cards-switcher",
       "blocks": {
-        "card_bV773G": {
-          "type": "clip_in_card",
-          "settings": {
-            "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
-            "badge": "MEDIUM TO THICK HAIR",
-            "title": "Double Weft Full Head (180-220g)",
-            "subtitle": "Our most popular. Length with real volume",
-            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
-          }
-        },
         "card_zaABAk": {
           "type": "clip_in_card",
           "settings": {
@@ -348,6 +409,17 @@
             "title": "Classic Full Head (130g)",
             "subtitle": "Lightest set, easiest first buy",
             "link": "shopify://collections/full-head-clip-in-hair-extensions"
+          }
+        },
+        "card_pwtpqk": {
+          "type": "clip_in_card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Curly_Full_Head.jpg",
+            "badge": "all hair types",
+            "title": "Curly Full Head",
+            "subtitle": "Natural curly texture",
+            "link": ""
           }
         },
         "card_KcQtfq": {
@@ -360,6 +432,16 @@
             "link": "shopify://collections/seamless-clip-in-hair-extensions-double-drawn-hair"
           }
         },
+        "card_bV773G": {
+          "type": "clip_in_card",
+          "settings": {
+            "image": "shopify://shop_images/Double_Weft_Full_Head_180-220g.jpg",
+            "badge": "MEDIUM TO THICK HAIR",
+            "title": "Double Weft Full Head (180-220g)",
+            "subtitle": "Our most popular. Length with real volume",
+            "link": "shopify://collections/double-wefted-clip-in-hair-extensions"
+          }
+        },
         "card_j9qWpP": {
           "type": "clip_in_card",
           "settings": {
@@ -368,17 +450,6 @@
             "title": "Ultra-Volume Full Head (240-300g)",
             "subtitle": "Maximum volume and dramatic length",
             "link": "shopify://collections/ultra-clip-in-hair-extensions"
-          }
-        },
-        "card_pwtpqk": {
-          "type": "clip_in_card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Curly_Full_Head.jpg",
-            "badge": "all hair types",
-            "title": "Curly Full Head",
-            "subtitle": "Natural curly texture",
-            "link": ""
           }
         },
         "card_Vjf7Ab": {
@@ -434,16 +505,6 @@
             "link": "shopify://collections/fringe-clip-in-hair-extensions"
           }
         },
-        "card_79LgiR2": {
-          "type": "professional_card",
-          "settings": {
-            "image": "shopify://shop_images/Nano_Ring_Hair_Extension.webp",
-            "badge": "thin & fine hair",
-            "title": "Remy Royale Nano Rings (50g)",
-            "subtitle": "More secure hold",
-            "link": "shopify://collections/nano-rings-hair-extensions"
-          }
-        },
         "card_79LgiR1": {
           "type": "professional_card",
           "settings": {
@@ -452,16 +513,6 @@
             "title": "Tape In Hair Extensions (100g)",
             "subtitle": "Everyday, cost-effective tapes",
             "link": "shopify://collections/tape-in-hair-extensions"
-          }
-        },
-        "card_79LgiR3": {
-          "type": "professional_card",
-          "settings": {
-            "image": "shopify://shop_images/Remy_Royale_Hair_Weft_Extensions.webp",
-            "badge": "average to thick hair",
-            "title": "Remy Royale Classic Weft (120g)",
-            "subtitle": "Secure fit for thicker hair",
-            "link": "shopify://collections/human-hair-weave-wefts-hair-extensions"
           }
         },
         "card_79LgiR4": {
@@ -474,16 +525,6 @@
             "link": "shopify://collections/remy-royale-invisible-tape-in-hair-extensions"
           }
         },
-        "card_79LgiR6": {
-          "type": "professional_card",
-          "settings": {
-            "image": "shopify://shop_images/Remy_Royale_Flat_Weft_Hair_Extensions.webp",
-            "badge": "average to thick hair",
-            "title": "Remy Royale Flat Track Weft (120g)",
-            "subtitle": "Lies flatter, more comfortable",
-            "link": "shopify://collections/flat-weft-hair-extensions"
-          }
-        },
         "card_79LgiR5": {
           "type": "professional_card",
           "settings": {
@@ -492,6 +533,36 @@
             "title": "Remy Royale Tape Ins (50g)",
             "subtitle": "Premium grade",
             "link": "shopify://collections/remy-royale-tape-in-extensions"
+          }
+        },
+        "card_79LgiR2": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Nano_Ring_Hair_Extension.webp",
+            "badge": "thin & fine hair",
+            "title": "Remy Royale Nano Rings (50g)",
+            "subtitle": "More secure hold",
+            "link": "shopify://collections/nano-rings-hair-extensions"
+          }
+        },
+        "card_79LgiR3": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Remy_Royale_Hair_Weft_Extensions.webp",
+            "badge": "average to thick hair",
+            "title": "Remy Royale Classic Weft (120g)",
+            "subtitle": "Secure fit for thicker hair",
+            "link": "shopify://collections/human-hair-weave-wefts-hair-extensions"
+          }
+        },
+        "card_79LgiR6": {
+          "type": "professional_card",
+          "settings": {
+            "image": "shopify://shop_images/Remy_Royale_Flat_Weft_Hair_Extensions.webp",
+            "badge": "average to thick hair",
+            "title": "Remy Royale Flat Track Weft (120g)",
+            "subtitle": "Lies flatter, more comfortable",
+            "link": "shopify://collections/flat-weft-hair-extensions"
           }
         }
       },
@@ -514,11 +585,11 @@
         "card_79LgiR6"
       ],
       "custom_css": [
-        ".hair-goal-card__badge {background: #c2d9e8; color: #1F3C4D;}",
+        ".hair-goal-card__badge {background: #c2d9e8; color: #1f3c4d;}",
         ".hair-goal-card__text {background: #f1f1f1;}",
-        ".hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:13px;}",
-        ".hair-goal-cards-switcher__panel-intro p:not(:last-of-type) a,.hair-goal-cards-switcher__introduction a{font-weight:600;}",
-        "@media screen and (min-width:990px){.hair-goal-cards-switcher__panel-intro p:last-of-type{font-size:14px;}}"
+        ".hair-goal-cards-switcher__panel-intro p:last-of-type {font-size: 13px;}",
+        ".hair-goal-cards-switcher__panel-intro p:not(:last-of-type) a,.hair-goal-cards-switcher__introduction a {font-weight: 600;}",
+        "@media screen and (min-width: 990px) {.hair-goal-cards-switcher__panel-intro p:last-of-type {font-size: 14px; }}"
       ],
       "name": "Hair Goal — Switcher",
       "settings": {
@@ -1266,7 +1337,7 @@
       "custom_css": [
         ".collapsible-content__heading {font-size: 2.4rem; letter-spacing: 0; line-height: 1.4;}",
         "h3 {font-weight: 400; font-size: 1.8rem; line-height: 1.4; letter-spacing: 0;}",
-        ".accordion__content *{font-size:1.6rem; line-height:1.4; letter-spacing:0;}",
+        ".accordion__content * {font-size: 1.6rem; line-height: 1.4; letter-spacing: 0;}",
         ".collapsible-section-layout {padding-top: 0 !important; padding-bottom: 0 !important;}",
         ".collapsible-content-wrapper-narrow {max-width: unset; padding: 0;}",
         "@media screen and (min-width: 990px) {.collapsible-content__heading {font-size: 3rem; } h3 {font-size: 2rem; }}"
@@ -1377,6 +1448,7 @@
   },
   "order": [
     "trust_bar_wQaLCk",
+    "hero_slideshow_WUGWGb",
     "slideshow_3tCMjU",
     "image_cta_columns_EDYpn7",
     "custom_liquid_FeaaFh",
