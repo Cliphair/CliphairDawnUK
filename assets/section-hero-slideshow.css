@@ -70,6 +70,7 @@
   font-variant-numeric: tabular-nums;
   line-height: 1;
   box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .hero-slideshow__countdown .countdown__digit--changed {
@@ -91,6 +92,7 @@
   letter-spacing: -0.1em;
   text-transform: uppercase;
   line-height: 1;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .hero-slideshow__countdown-cta .button {
@@ -101,6 +103,7 @@
   line-height: 1;
   font-weight: 600;
   letter-spacing: -.01em;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @media screen and (min-width: 750px) {
