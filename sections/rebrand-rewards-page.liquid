@@ -48,10 +48,7 @@
 
         // 3. Build the outer container (centered)
         const rebrandContainer = document.createElement('div');
-        rebrandContainer.style.display = 'flex';
-        rebrandContainer.style.flexDirection = 'column';
-        rebrandContainer.style.alignItems = 'center';
-        rebrandContainer.style.textAlign = 'center';
+        rebrandContainer.classList.add("page-width rebrand-container");
 
         // 4. Heading
         const heading = document.createElement('h3');
