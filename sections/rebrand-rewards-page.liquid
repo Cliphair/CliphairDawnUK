@@ -49,6 +49,7 @@
         // 3. Build the outer container (centered)
         const rebrandContainer = document.createElement('div');
         rebrandContainer.classList.add("page-width");
+        rebrandContainer.classList.add("rebrand-container");
 
         // 4. Heading
         const heading = document.createElement('h3');
@@ -61,7 +62,7 @@
         // 6. Button (anchor element)
         const button = document.createElement('a');
         button.classList.add('button', 'custom-button-rewards-rebrand');
-        button.href = '#'; // update with actual href
+        button.href = '/pages/somethings-blooming';
         button.textContent = 'Watch it unfold';
 
         rebrandContainer.appendChild(heading);
