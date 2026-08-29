@@ -1,0 +1,115 @@
+{% liquid 
+    assign customer_eligible = false
+
+    if customer
+        if customer.tags contains 'yotpo-tiers-icon' or customer.tags contains 'yotpo-tiers-inner-circle' or customer.tags contains 'yotpo-tiers-insider' or customer.tags contains 'yotpo-tiers-member'
+            assign customer_eligible = true
+        endif    
+    endif
+%}
+
+
+<style>
+  @font-face {
+    font-family: 'Chocolatier';
+    src: url('{{ "Chocolatier.woff2" | asset_url }}') format('woff2'),
+        url('{{ "Chocolatier.woff" | asset_url }}') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url("//www.cliphair.co.uk/cdn/fonts/plus_jakarta_sans/plusjakartasans_n4.d80b0f185669787ac4b44bf52c1a511eaaf37245.woff2") format("woff2"),
+          url("//www.cliphair.co.uk/cdn/fonts/plus_jakarta_sans/plusjakartasans_n4.4d079d103b5ee647346f5effc3692759629e07c9.woff") format("woff");
+    }
+</style>
+
+<script>
+
+    window.canSeeRewardsRebrand = '{{  customer_eligible | default: false}}'
+
+      (function () {
+    function insertRewardsBanner() {
+      // 1. Check for the flag that gates the new section
+      if (typeof window.canSeeRewardsRebrand === 'undefined' || !window.canSeeRewardsRebrand) {
+        return;
+      }
+
+      // 2. Find the target element to insert before
+      const targetEl = document.querySelector('.yotpo-widget-instance-container[yotpo-instance-id="1292557"]');
+
+      if (!targetEl) {
+        return false; // not ready yet
+      }
+
+      // 3. Build the outer container (centered)
+      const buttonContainer = document.createElement('div');
+      buttonContainer.style.display = 'flex';
+      buttonContainer.style.flexDirection = 'column';
+      buttonContainer.style.alignItems = 'center';
+      buttonContainer.style.textAlign = 'center';
+
+      // 4. Heading
+      const heading = document.createElement('h3');
+      heading.textContent = 'Exclusive brand reveal';
+
+      // 5. Body copy
+      const body = document.createElement('p');
+      body.textContent = "We've just released a preview of new branding, coming 8th September 2026.";
+
+      // 6. Button (anchor element)
+      const button = document.createElement('a');
+      button.classList.add('button', 'custom-button-rewards-rebrand');
+      button.href = '#'; // update with actual href
+      button.textContent = 'Watch it unfold';
+
+      buttonContainer.appendChild(heading);
+      buttonContainer.appendChild(body);
+      buttonContainer.appendChild(button);
+
+      // 7. Insert before the Yotpo widget container
+      targetEl.parentNode.insertBefore(buttonContainer, targetEl);
+
+      return true; // done
+    }
+
+    function init() {
+      // Bail early if the flag isn't set, no point observing the DOM at all
+      if (typeof window.canSeeRewardsRebrand === 'undefined' || !window.canSeeRewardsRebrand) {
+        return;
+      }
+
+      // Try immediately in case Yotpo has already rendered
+      if (insertRewardsBanner()) {
+        return;
+      }
+
+      // Otherwise watch the DOM for Yotpo's container to appear
+      const observer = new MutationObserver((mutations, obs) => {
+        if (insertRewardsBanner()) {
+          obs.disconnect(); // stop watching once inserted
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+
+      // Safety net: stop watching after 15s so it doesn't run forever
+      // if the widget never loads for some reason
+      setTimeout(() => observer.disconnect(), 15000);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
