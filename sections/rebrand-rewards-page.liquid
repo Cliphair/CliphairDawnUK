@@ -8,7 +8,6 @@
     endif
 %}
 
-
 <style>
   @font-face {
     font-family: 'Chocolatier';
@@ -26,6 +25,18 @@
       font-display: swap;
       src: url("//www.cliphair.co.uk/cdn/fonts/plus_jakarta_sans/plusjakartasans_n4.d80b0f185669787ac4b44bf52c1a511eaaf37245.woff2") format("woff2"),
           url("//www.cliphair.co.uk/cdn/fonts/plus_jakarta_sans/plusjakartasans_n4.4d079d103b5ee647346f5effc3692759629e07c9.woff") format("woff");
+    }
+
+    .rebrandContainer{
+        padding-top:3rem;
+        padding-bottom:3rem;
+    }
+
+    @media screen and (min-width:990px){
+        .rebrandContainer{
+            padding-top:5rem;
+            padding-bottom:5rem;
+        }
     }
 </style>
 
@@ -48,8 +59,11 @@
 
         // 3. Build the outer container (centered)
         const rebrandContainer = document.createElement('div');
-        rebrandContainer.classList.add("page-width");
+        rebrandContainer.classList.add("color-background-1");
         rebrandContainer.classList.add("rebrand-container");
+
+        const contentCntainer = document.createElement('div');
+        contentCntainer.classList.add("page-width");
 
         // 4. Heading
         const heading = document.createElement('h3');
@@ -65,9 +79,11 @@
         button.href = '/pages/somethings-blooming';
         button.textContent = 'Watch it unfold';
 
-        rebrandContainer.appendChild(heading);
-        rebrandContainer.appendChild(body);
-        rebrandContainer.appendChild(button);
+        contentCntainer.appendChild(heading);
+        contentCntainer.appendChild(body);
+        contentCntainer.appendChild(button);
+
+        rebrandContainer.appendChild(contentCntainer);
 
         // 7. Insert before the Yotpo widget container
         targetEl.parentNode.insertBefore(rebrandContainer, targetEl);
