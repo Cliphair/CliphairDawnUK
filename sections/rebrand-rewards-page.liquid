@@ -33,18 +33,82 @@
   window.canSeeRewardsRebrand = {{ customer_eligible | default: false }};
 
   (function () {
-    function insertRewardsBanner() {
-      // ...same as before...
+  function insertRewardsBanner() {
+    // 1. Check for the flag that gates the new section
+    if (typeof window.canSeeRewardsRebrand === 'undefined' || !window.canSeeRewardsRebrand) {
+      return;
     }
 
-    function init() {
-      // ...same as before...
+    // 2. Find the target element to insert before
+    const targetEl = document.querySelector('.yotpo-widget-instance-container[yotpo-instance-id="1292557"]');
+
+    if (!targetEl) {
+      return false; // not ready yet
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
+    // 3. Build the outer container (centered)
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.flexDirection = 'column';
+    buttonContainer.style.alignItems = 'center';
+    buttonContainer.style.textAlign = 'center';
+
+    // 4. Heading
+    const heading = document.createElement('h3');
+    heading.textContent = 'Exclusive brand reveal';
+
+    // 5. Body copy
+    const body = document.createElement('p');
+    body.textContent = "We've just released a preview of new branding, coming 8th September 2026.";
+
+    // 6. Button (anchor element)
+    const button = document.createElement('a');
+    button.classList.add('button', 'custom-button-rewards-rebrand');
+    button.href = '#'; // update with actual href
+    button.textContent = 'Watch it unfold';
+
+    buttonContainer.appendChild(heading);
+    buttonContainer.appendChild(body);
+    buttonContainer.appendChild(button);
+
+    // 7. Insert before the Yotpo widget container
+    targetEl.parentNode.insertBefore(buttonContainer, targetEl);
+
+    return true; // done
+  }
+
+  function init() {
+    // Bail early if the flag isn't set, no point observing the DOM at all
+    if (typeof window.canSeeRewardsRebrand === 'undefined' || !window.canSeeRewardsRebrand) {
+      return;
     }
-  })();
+
+    // Try immediately in case Yotpo has already rendered
+    if (insertRewardsBanner()) {
+      return;
+    }
+
+    // Otherwise watch the DOM for Yotpo's container to appear
+    const observer = new MutationObserver((mutations, obs) => {
+      if (insertRewardsBanner()) {
+        obs.disconnect(); // stop watching once inserted
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Safety net: stop watching after 15s so it doesn't run forever
+    // if the widget never loads for some reason
+    setTimeout(() => observer.disconnect(), 15000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
