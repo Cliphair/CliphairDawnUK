@@ -84,11 +84,16 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "rebrand": {
+      "type": "rebrand-rewards-page",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "17225938647d9bece6",
-    "rich_text_ahhLL7"
+    "rich_text_ahhLL7",
+    "rebrand"
   ]
 }
