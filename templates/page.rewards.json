@@ -84,22 +84,11 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "custom_liquid_BTWxBp": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script>\n window.canSeeRewardsRebrand = {% if customer %}{% if customer.tags contains 'yotpo-tiers-icon' or customer.tags contains 'yotpo-tiers-inner-circle' or customer.tags contains 'yotpo-tiers-insider' or customer.tags contains 'yotpo-tiers-member'%}true{%else%}false{%endif%}{%else%}false{% endif %} ;\n\n(function () {\n  function init() {\n    // 1. Check for the flag that gates the new section\n    if (typeof window.canSeeRewardsRebrand === 'undefined' || !window.canSeeRewardsRebrand) {\n      return;\n    }\n\n    // 2. Find the target element to insert before\n    const targetEl = document.querySelector('.yotpo-widget-instance-container[yotpo-instance-id=\"1292557\"]');\n\n    if (!targetEl) {\n      return;\n    }\n\n    // 3. Build the outer container (centered)\n    const buttonContainer = document.createElement('div');\n    buttonContainer.style.display = 'flex';\n    buttonContainer.style.flexDirection = 'column';\n    buttonContainer.style.alignItems = 'center';\n    buttonContainer.style.textAlign = 'center';\n\n    // 4. Heading\n    const heading = document.createElement('h3');\n    heading.textContent = 'Exclusive brand reveal';\n\n    // 5. Body copy\n    const body = document.createElement('p');\n    body.textContent = \"We've just released a preview of new branding, coming 8th September 2026.\";\n\n    // 6. Button (anchor element)\n    const button = document.createElement('a');\n    button.classList.add('button', 'custom-button-rewards-rebrand');\n    button.href = '#'; // update with actual href\n    button.textContent = 'Watch it unfold';\n\n    buttonContainer.appendChild(heading);\n    buttonContainer.appendChild(body);\n    buttonContainer.appendChild(button);\n\n    // 7. Insert before the Yotpo widget container\n    targetEl.parentNode.insertBefore(buttonContainer, targetEl);\n  }\n\n  if (document.readyState === 'loading') {\n    document.addEventListener('DOMContentLoaded', init);\n  } else {\n    init();\n  }\n})();\n</script>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
     "main",
     "17225938647d9bece6",
-    "rich_text_ahhLL7",
-    "custom_liquid_BTWxBp"
+    "rich_text_ahhLL7"
   ]
 }
