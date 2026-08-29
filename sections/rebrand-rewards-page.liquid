@@ -1,11 +1,13 @@
 {% liquid 
     assign customer_eligible = false
 
+    comment
     if customer
         if customer.tags contains 'yotpo-tiers-icon' or customer.tags contains 'yotpo-tiers-inner-circle' or customer.tags contains 'yotpo-tiers-insider' or customer.tags contains 'yotpo-tiers-member'
             assign customer_eligible = true
         endif    
     endif
+    endcomment
 %}
 
 <style>
