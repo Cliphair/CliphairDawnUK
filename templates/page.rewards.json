@@ -87,9 +87,7 @@
     },
     "rebrand": {
       "type": "rebrand-rewards-page",
-      "custom_css": [
-        ".rebrand-container{--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
-      ],
+      "custom_css": [],
       "settings": {}
     }
   },
