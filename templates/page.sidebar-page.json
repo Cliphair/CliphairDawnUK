@@ -12,7 +12,7 @@
     "hero_slideshow_DbRQke": {
       "type": "hero-slideshow",
       "blocks": {
-        "countdown_wWmYcm": {
+        "countdown_GKrxUU": {
           "type": "countdown",
           "settings": {
             "heading": "Something's about to bloom...",
@@ -22,25 +22,48 @@
             "custom_end_time": true,
             "end_hour": 9,
             "end_minute": 0,
+            "button_label": "WATCH IT UNFOLD",
+            "link": "shopify://pages/something-is-about-to-bloom",
+            "button_style": "button",
+            "color_scheme": "background-1",
+            "banner_id": ""
+          }
+        },
+        "slide_pn79pj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
+            "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
+            "image_url": "shopify://pages/hair-extensions-by-colour",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
             "button_label": "",
             "link": "",
-            "button_style": "link",
-            "color_scheme": "background-1",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center",
             "banner_id": ""
           }
         }
       },
       "block_order": [
-        "countdown_wWmYcm"
+        "countdown_GKrxUU",
+        "slide_pn79pj"
       ],
       "custom_css": [
-        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
+        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}",
+        ".button {--buttons-radius: 100px; --buttons-radius-outset: 100px;}"
       ],
       "name": "Hero slideshow",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "",
         "ratio_w_desktop": 16,
-        "ratio_h_desktop": 4,
+        "ratio_h_desktop": 5,
         "ratio_w_mobile": 1,
         "ratio_h_mobile": 1,
         "heading_level": "h1",
@@ -48,12 +71,12 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "layout": "full_bleed",
-        "slider_visual": "counter",
-        "auto_rotate": false,
+        "slider_visual": "dots",
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Rebranding countdown",
+        "accessibility_info": "Homepage hero slideshow",
         "trackable_name": ""
       }
     },
