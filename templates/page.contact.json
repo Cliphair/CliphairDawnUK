@@ -22,9 +22,9 @@
             "custom_end_time": true,
             "end_hour": 9,
             "end_minute": 0,
-            "button_label": "",
-            "link": "",
-            "button_style": "link",
+            "button_label": "WATCH IT UNFOLD",
+            "link": "shopify://pages/something-is-about-to-bloom",
+            "button_style": "button",
             "color_scheme": "background-1",
             "banner_id": ""
           }
