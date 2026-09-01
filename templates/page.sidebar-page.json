@@ -31,6 +31,7 @@
         },
         "slide_pn79pj": {
           "type": "slide",
+          "disabled":true,
           "settings": {
             "image": "shopify://shop_images/clip-in-mobile-banner-longer.jpg",
             "image_desktop": "shopify://shop_images/high-res-image-test.jpg",
