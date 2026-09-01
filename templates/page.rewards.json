@@ -87,6 +87,7 @@
     },
     "rebrand": {
       "type": "rebrand-rewards-page",
+      "disabled": true,
       "custom_css": [],
       "settings": {}
     }
