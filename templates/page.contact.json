@@ -9,6 +9,54 @@
  */
 {
   "sections": {
+    "hero_slideshow_DbRQke": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "countdown_wWmYcm": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Something's about to bloom...",
+            "end_year": 2026,
+            "end_month": "9",
+            "end_day": 7,
+            "custom_end_time": false,
+            "end_hour": 23,
+            "end_minute": 59,
+            "button_label": "",
+            "link": "",
+            "button_style": "link",
+            "color_scheme": "background-1",
+            "banner_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "countdown_wWmYcm"
+      ],
+      "custom_css": [
+        ".hero-slideshow__countdown-slide {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}"
+      ],
+      "name": "Hero slideshow",
+      "settings": {
+        "color_scheme": "background-1",
+        "ratio_w_desktop": 16,
+        "ratio_h_desktop": 4,
+        "ratio_w_mobile": 1,
+        "ratio_h_mobile": 1,
+        "heading_level": "h1",
+        "above_the_fold": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "layout": "full_bleed",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Rebranding countdown",
+        "trackable_name": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -94,6 +142,7 @@
     }
   },
   "order": [
+    "hero_slideshow_DbRQke",
     "main",
     "form",
     "custom_liquid_YPjgqz",
