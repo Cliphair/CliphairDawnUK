@@ -8,7 +8,7 @@ if (!customElements.get('shade-selector')) {
     { selector: '.price-block', mode: 'outer' },
     // { selector: 'variant-radios', mode: 'inner' },
     // { selector: 'variant-selects', mode: 'inner' },
-    { selector: 'product-form', mode: 'outer' },
+    // { selector: 'product-form', mode: 'outer' },
     { selector: '.payment_services', mode: 'outer' },
     { selector: 'shade-selector.available-shades', mode: 'outer' },
     { selector: 'media-gallery', mode: 'outer' },
