@@ -8,7 +8,6 @@ if (!customElements.get('shade-selector')) {
     { selector: '.price-block', mode: 'outer' },
     { selector: 'variant-radios', mode: 'inner' },
     { selector: 'variant-selects', mode: 'inner' },
-    // { selector: 'product-form', mode: 'outer' },
     { selector: '.payment_services', mode: 'outer' },
     { selector: 'shade-selector.available-shades', mode: 'outer' },
     { selector: 'media-gallery', mode: 'outer' },
@@ -153,8 +152,9 @@ if (!customElements.get('shade-selector')) {
             const patchedAny = PATCH_REGIONS
               .map((region) => this.patchRegion(target, newSection, region))
               .some(Boolean);
+            const formPatched = this.patchProductForm(target, newSection);
 
-            if (!patchedAny) {
+            if (!patchedAny && !formPatched) {
               target.innerHTML = html;
             }
 
@@ -198,6 +198,36 @@ if (!customElements.get('shade-selector')) {
           patched = true;
         });
         return patched;
+      }
+
+      // Updates the add-to-cart form's hidden fields and submit-button state in
+      // place instead of replacing the <form>/<product-form> nodes, so apps that
+      // bind listeners directly to those elements (e.g. an out-of-stock widget)
+      // keep working. Mirrors global.js's updateVariantInput/updateVariantEventsInput,
+      // which do the same thing for same-product variant changes.
+      patchProductForm(oldRoot, newRoot) {
+        const oldForm = oldRoot.querySelector('product-form form');
+        const newForm = newRoot.querySelector('product-form form');
+        if (!oldForm || !newForm) return false;
+
+        newForm.querySelectorAll('input[type="hidden"]').forEach((newInput) => {
+          if (!newInput.name) return;
+          const oldInput = oldForm.querySelector(`input[type="hidden"][name="${newInput.name}"]`);
+          if (!oldInput || oldInput.value === newInput.value) return;
+          oldInput.value = newInput.value;
+          oldInput.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+
+        const oldSubmit = oldForm.querySelector('[type="submit"]');
+        const newSubmit = newForm.querySelector('[type="submit"]');
+        if (oldSubmit && newSubmit) {
+          oldSubmit.disabled = newSubmit.disabled;
+          const oldLabel = oldSubmit.querySelector('span');
+          const newLabel = newSubmit.querySelector('span');
+          if (oldLabel && newLabel) oldLabel.textContent = newLabel.textContent;
+        }
+
+        return true;
       }
 
       startLoading() {
