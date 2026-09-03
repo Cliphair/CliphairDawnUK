@@ -1,4 +1,19 @@
 if (!customElements.get('shade-selector')) {
+  // Regions patched individually on shade swap instead of replacing the whole
+  // section, so apps/custom elements outside these regions keep their state.
+  // 'outer' replaces the matched element itself; 'inner' only replaces its
+  // children, keeping the element (and any listeners bound to it) alive.
+  const PATCH_REGIONS = [
+    { selector: '.product__title', mode: 'outer' },
+    { selector: '.price-block', mode: 'outer' },
+    { selector: 'variant-radios', mode: 'inner' },
+    { selector: 'variant-selects', mode: 'inner' },
+    { selector: 'product-form', mode: 'outer' },
+    { selector: '.payment_services', mode: 'outer' },
+    { selector: 'shade-selector.available-shades', mode: 'outer' },
+    { selector: 'media-gallery', mode: 'outer' },
+  ];
+
   customElements.define(
     'shade-selector',
     class ShadeSelector extends HTMLElement {
@@ -13,6 +28,7 @@ if (!customElements.get('shade-selector')) {
         this.onclick = this.onClick.bind(this);
 
         this.summaryButton = this.querySelector('.available-shades__buttons summary');
+        this.summaryLabel = this.querySelector('.available-shades__buttons-label');
         this.summaryTarget = this.querySelector('#available-shades');
         this.initSummaryClick();
       }
@@ -101,7 +117,7 @@ if (!customElements.get('shade-selector')) {
 
         const isExpanded = this.summaryButton.getAttribute('aria-expanded') === 'true';
         if (!isExpanded) {
-          this.summaryButton.setAttribute('aria-expanded', "true");
+          this.setSummaryExpanded(true);
           this.summaryTarget.classList.toggle('hidden');
         }
 
@@ -130,7 +146,17 @@ if (!customElements.get('shade-selector')) {
             const target = document.querySelector(`[data-section="${key}"]`);
             const html = payload[key];
             if (!target || !html) return;
-            target.innerHTML = html;
+
+            const newRoot = new DOMParser().parseFromString(html, 'text/html');
+            const newSection = newRoot.querySelector(`[data-section="${key}"]`) || newRoot.body;
+
+            const patchedAny = PATCH_REGIONS
+              .map((region) => this.patchRegion(target, newSection, region))
+              .some(Boolean);
+
+            if (!patchedAny) {
+              target.innerHTML = html;
+            }
 
             const pageTitle = this.getPageTitleFromPayload(html) || document.title;
             this.updateHistory(productUrl, pageTitle);
@@ -148,6 +174,30 @@ if (!customElements.get('shade-selector')) {
 
           document.dispatchEvent(new Event('shades:updated'));
         }
+      }
+
+      // Patches all elements matching region.selector inside oldRoot with the
+      // matching elements from newRoot (paired by id where available, else by
+      // position). Returns true if anything was patched.
+      patchRegion(oldRoot, newRoot, region) {
+        const oldEls = Array.from(oldRoot.querySelectorAll(region.selector));
+        if (!oldEls.length) return false;
+        const newEls = Array.from(newRoot.querySelectorAll(region.selector));
+        if (!newEls.length) return false;
+
+        let patched = false;
+        oldEls.forEach((oldEl, index) => {
+          const newEl = (oldEl.id && newEls.find((el) => el.id === oldEl.id)) || newEls[index];
+          if (!newEl) return;
+
+          if (region.mode === 'inner') {
+            oldEl.innerHTML = newEl.innerHTML;
+          } else {
+            oldEl.outerHTML = newEl.outerHTML;
+          }
+          patched = true;
+        });
+        return patched;
       }
 
       startLoading() {
@@ -183,9 +233,20 @@ if (!customElements.get('shade-selector')) {
           this.summaryButton.addEventListener('click', (e) => {
             e.preventDefault();
             const isExpanded = this.summaryButton.getAttribute('aria-expanded') === 'true';
-            this.summaryButton.setAttribute('aria-expanded', String(!isExpanded));
+            this.setSummaryExpanded(!isExpanded);
             this.summaryTarget.classList.toggle('hidden');
           });
+        }
+      }
+
+      setSummaryExpanded(expanded) {
+        if (!this.summaryButton) return;
+        this.summaryButton.setAttribute('aria-expanded', String(expanded));
+        if (this.summaryLabel) {
+          const label = expanded
+            ? this.summaryButton.dataset.labelExpanded
+            : this.summaryButton.dataset.labelCollapsed;
+          if (label) this.summaryLabel.textContent = label;
         }
       }
     }
