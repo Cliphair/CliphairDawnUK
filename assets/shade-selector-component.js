@@ -5,13 +5,13 @@ if (!customElements.get('shade-selector')) {
   // children, keeping the element (and any listeners bound to it) alive.
   const PATCH_REGIONS = [
     { selector: '.product__title', mode: 'outer' },
-    { selector: '.price-block', mode: 'outer' },
-    { selector: 'variant-radios', mode: 'inner' },
-    { selector: 'variant-selects', mode: 'inner' },
-    // { selector: 'product-form', mode: 'outer' },
-    { selector: '.payment_services', mode: 'outer' },
-    { selector: 'shade-selector.available-shades', mode: 'outer' },
-    { selector: 'media-gallery', mode: 'outer' },
+    // { selector: '.price-block', mode: 'outer' },
+    // { selector: 'variant-radios', mode: 'inner' },
+    // { selector: 'variant-selects', mode: 'inner' },
+    // // { selector: 'product-form', mode: 'outer' },
+    // { selector: '.payment_services', mode: 'outer' },
+    // { selector: 'shade-selector.available-shades', mode: 'outer' },
+    // { selector: 'media-gallery', mode: 'outer' },
   ];
 
   customElements.define(
