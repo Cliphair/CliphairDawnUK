@@ -167,8 +167,9 @@ if (!customElements.get('shade-selector')) {
           if (window.yotpoWidgetsContainer?.initWidgets) {
             window.yotpoWidgetsContainer.initWidgets();
           }
-          if (window.Trustpilot?.loadFromElement){
-            window.Trustpilot.loadFromElement(document.querySelector('.trustpilot-widget'));
+          if (window.Trustpilot?.loadFromElement) {
+            document.querySelectorAll('.trustpilot-widget').forEach(el => window.Trustpilot.loadFromElement(el));
+            // window.Trustpilot.loadFromElement(document.querySelector('.trustpilot-widget'));
           }
           this.stopLoading();
 
