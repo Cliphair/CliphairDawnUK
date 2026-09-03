@@ -6,7 +6,7 @@ if (!customElements.get('shade-selector')) {
   const PATCH_REGIONS = [
     { selector: '.product__title', mode: 'outer' },
     { selector: '.price-block', mode: 'outer' },
-    // { selector: 'variant-radios', mode: 'inner' },
+    { selector: 'variant-radios', mode: 'inner' },
     { selector: 'variant-selects', mode: 'inner' },
     // { selector: 'product-form', mode: 'outer' },
     { selector: '.payment_services', mode: 'outer' },
