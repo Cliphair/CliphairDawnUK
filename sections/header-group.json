@@ -111,7 +111,6 @@
         "announcement_image_zkJVKU": {
           "type": "announcement-image",
           "name": "Saturday Delivery",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Saturday_Delivery_-_3pm.gif",
             "text_alignment": "center",
