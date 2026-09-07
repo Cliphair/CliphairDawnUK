@@ -55,7 +55,8 @@
     "full_bloom_story": {
       "type": "full-bloom-story",
       "custom_css": [
-        ".gradient {--color-background: 128, 110, 176; --gradient-background: #806eb0; --color-main-headers: 250, 242, 229; --color-foreground: 250, 242, 229; --color-shadow: 250, 242, 229; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 128, 110, 176; --color-secondary-button-text: 250, 242, 229; --color-link: 250, 242, 229;}"
+        ".gradient {--color-background: 128, 110, 176; --gradient-background: #806eb0; --color-main-headers: 250, 242, 229; --color-foreground: 250, 242, 229; --color-shadow: 250, 242, 229; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 128, 110, 176; --color-secondary-button-text: 250, 242, 229; --color-link: 250, 242, 229;}",
+        ".full-bloom-story__tagline {font-family: Chocolatier, sans-serif !important;}"
       ],
       "settings": {
         "color_scheme": "",
