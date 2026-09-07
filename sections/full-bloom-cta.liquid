@@ -1,0 +1,154 @@
+{{ 'component-full-bloom.css' | asset_url | stylesheet_tag }}
+{{ 'section-full-bloom-cta.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="full-bloom-shell full-bloom-cta page-width">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="full-bloom-eyebrow full-bloom-cta__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <h2 class="full-bloom-cta__heading chocolatier">{{ section.settings.heading }}</h2>
+    {%- if section.settings.text != blank -%}
+      <div class="full-bloom-cta__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    <div class="full-bloom-cta__buttons">
+      {%- if section.settings.button_1_label != blank -%}
+        <a
+          {% if section.settings.button_1_link != blank %}
+            href="{{ section.settings.button_1_link }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+          class="full-bloom-btn full-bloom-btn--offwhite full-bloom-btn--full"
+        >
+          {{- section.settings.button_1_label -}}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.button_2_label != blank -%}
+        <a
+          {% if section.settings.button_2_link != blank %}
+            href="{{ section.settings.button_2_link }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+          class="full-bloom-btn full-bloom-btn--outline-offwhite full-bloom-btn--full"
+        >
+          {{- section.settings.button_2_label -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.fine_print != blank -%}
+      <p class="full-bloom-cta__fine-print">{{ section.settings.fine_print }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.full-bloom-cta.name",
+  "tag": "section",
+  "class": "section section-full-bloom-cta",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "coral-main"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.full-bloom-cta.settings.eyebrow.label",
+      "default": "#fullbloomera"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.full-bloom-cta.settings.heading.label",
+      "default": "Come and see the new us."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.full-bloom-cta.settings.text.label",
+      "default": "<p>Everything that leaves here now is the new Cliphair. The reveal, first looks and early drops all landed in the Cliphair Collective before anywhere else. Sign up now, collect points, get exclusive offers and much more.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.full-bloom-cta.settings.header__buttons.content"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "t:sections.full-bloom-cta.settings.button_1_label.label",
+      "default": "Join the Collective"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "t:sections.full-bloom-cta.settings.button_1_link.label"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "t:sections.full-bloom-cta.settings.button_2_label.label",
+      "default": "Shop the new look"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "t:sections.full-bloom-cta.settings.button_2_link.label"
+    },
+    {
+      "type": "text",
+      "id": "fine_print",
+      "label": "t:sections.full-bloom-cta.settings.fine_print.label",
+      "default": "Same hair, new everything else · First look on our Broadcast Channel · [confirm link]"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.full-bloom-cta.presets.name"
+    }
+  ]
+}
+{% endschema %}

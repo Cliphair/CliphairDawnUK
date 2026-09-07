@@ -1,28 +1,70 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "full_bloom_hero": {
+      "type": "full-bloom-hero",
+      "blocks": {
+        "nav_link_1": { "type": "nav_link", "settings": { "label": "Shop" } },
+        "nav_link_2": { "type": "nav_link", "settings": { "label": "The Bloom" } },
+        "nav_link_3": { "type": "nav_link", "settings": { "label": "About" } }
+      },
+      "block_order": ["nav_link_1", "nav_link_2", "nav_link_3"],
       "settings": {
-        "show_title": true,
-        "heading_size": "h1",
-        "show_content": true,
-        "text_alignment": "left",
-        "color_scheme": "accent-4",
-        "padding_top": 28,
-        "padding_bottom": 28
+        "nav_button_label": "Shop the new look",
+        "heading_line_1": "In full",
+        "heading_line_2": "bloom.",
+        "eyebrow": "Reintroducing Cliphair · #fullbloomera",
+        "button_1_label": "Watch the reveal",
+        "button_2_label": "Shop the new look"
       }
+    },
+    "full_bloom_video": {
+      "type": "full-bloom-video",
+      "settings": {
+        "heading": "Meet the new us.",
+        "eyebrow": "Nineteen years in the making"
+      }
+    },
+    "full_bloom_story": {
+      "type": "full-bloom-story",
+      "settings": {}
+    },
+    "full_bloom_origin": {
+      "type": "full-bloom-origin",
+      "settings": {}
+    },
+    "full_bloom_comparison": {
+      "type": "full-bloom-comparison",
+      "blocks": {
+        "new_1": { "type": "new_point", "settings": { "text": "A brighter, bolder look everywhere you see us." } },
+        "new_2": { "type": "new_point", "settings": { "text": "New packaging, landing with your next order." } },
+        "new_3": { "type": "new_point", "settings": { "text": "A name and a mark that finally mean something." } },
+        "moved_1": { "type": "not_moved_point", "settings": { "text": "100% real human hair, like always, since 2007." } },
+        "moved_2": { "type": "not_moved_point", "settings": { "text": "The same team, and the same people answering." } },
+        "moved_3": { "type": "not_moved_point", "settings": { "text": "Free UK returns and the same fuss over your order." } }
+      },
+      "block_order": ["new_1", "new_2", "new_3", "moved_1", "moved_2", "moved_3"],
+      "settings": {}
+    },
+    "full_bloom_cta": {
+      "type": "full-bloom-cta",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "full_bloom_hero",
+    "full_bloom_video",
+    "full_bloom_story",
+    "full_bloom_origin",
+    "full_bloom_comparison",
+    "full_bloom_cta"
   ]
 }
