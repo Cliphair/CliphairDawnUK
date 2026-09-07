@@ -11,7 +11,9 @@
   "sections": {
     "fonts": {
       "type": "custom-font-rebrand",
-      "settings": {}
+      "settings": {
+        "font": "plus_jakarta_sans_n4"
+      }
     },
     "full_bloom_hero": {
       "type": "full-bloom-hero",
