@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "fonts": {
+      "type": "custom-font-rebrand",
+      "settings": {}
+    },
     "full_bloom_hero": {
       "type": "full-bloom-hero",
       "custom_css": [
@@ -171,6 +175,7 @@
     }
   },
   "order": [
+    "fonts",
     "full_bloom_hero",
     "full_bloom_video",
     "full_bloom_story",
