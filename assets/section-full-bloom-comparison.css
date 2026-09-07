@@ -1,0 +1,83 @@
+.full-bloom-comparison__heading {
+  margin: 0;
+  font-size: 3.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgb(var(--color-foreground));
+  letter-spacing: 0;
+}
+
+.full-bloom-comparison__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.full-bloom-comparison__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 2rem;
+  border-radius: 1.8rem;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+.full-bloom-comparison__card-heading {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.full-bloom-comparison__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.full-bloom-comparison__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.full-bloom-comparison__icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: auto;
+  margin-top: 0.3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .full-bloom-comparison__heading {
+    font-size: 5.3rem;
+  }
+
+  .full-bloom-comparison__cards {
+    flex-direction: row;
+    gap: 2.4rem;
+    margin-top: 2rem;
+  }
+
+  .full-bloom-comparison__card {
+    padding: 3.6rem 3.8rem;
+    border-radius: 2rem;
+  }
+
+  .full-bloom-comparison__card-heading {
+    font-size: 2.6rem;
+  }
+
+  .full-bloom-comparison__item {
+    font-size: 1.55rem;
+  }
+}
