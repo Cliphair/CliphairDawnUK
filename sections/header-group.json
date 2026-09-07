@@ -31,6 +31,7 @@
         },
         "announcement_89cGFt": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Shop Blonde Shades & Get A Free Purple Shampoo - Automatically Applied",
             "link": "shopify://collections/blonde-hair-extensions"
@@ -45,7 +46,6 @@
         },
         "announcement-bar-1": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "Free Delivery on orders over £30. Worldwide Shipping",
             "link": "shopify://pages/hair-extensions-shipping-delivery"
