@@ -11,52 +11,134 @@
   "sections": {
     "full_bloom_hero": {
       "type": "full-bloom-hero",
-      "blocks": {
-        "nav_link_1": { "type": "nav_link", "settings": { "label": "Shop" } },
-        "nav_link_2": { "type": "nav_link", "settings": { "label": "The Bloom" } },
-        "nav_link_3": { "type": "nav_link", "settings": { "label": "About" } }
-      },
-      "block_order": ["nav_link_1", "nav_link_2", "nav_link_3"],
       "settings": {
+        "color_scheme": "",
+        "logo_text": "Cliphair",
         "nav_button_label": "Shop the new look",
+        "nav_button_link": "",
+        "logo": "shopify://shop_images/rebrand-cliphair-logo.png",
         "heading_line_1": "In full",
         "heading_line_2": "bloom.",
         "eyebrow": "Reintroducing Cliphair · #fullbloomera",
+        "text": "<p>We have had a glow-up. Same hair since 2007, same team picking up the phone, same fuss over getting it right for you. What is new is the look, and it has been a long time coming. Come and meet the new us.</p>",
         "button_1_label": "Watch the reveal",
-        "button_2_label": "Shop the new look"
+        "button_1_link": "",
+        "button_2_label": "",
+        "button_2_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "full_bloom_video": {
       "type": "full-bloom-video",
       "settings": {
+        "color_scheme": "",
         "heading": "Meet the new us.",
-        "eyebrow": "Nineteen years in the making"
+        "eyebrow": "Nineteen years in the making",
+        "video": "shopify://files/videos/full-bloom-video-25.mp4",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "full_bloom_story": {
       "type": "full-bloom-story",
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "FROM BUD TO BLOOM",
+        "heading": "We are not here to change you",
+        "text": "<p>Extensions do not turn you into someone new. They give you more of what is already yours. More length when the mood takes you. More volume when you want it. More of those glance-in-the-mirror moments where you think, there I am.</p>",
+        "tagline": "Be the you you want to be.",
+        "image": "shopify://shop_images/full-bloom-sequence-mobile.png",
+        "image_desktop": "shopify://shop_images/full-bloom-sequence-desktop.png",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "full_bloom_origin": {
       "type": "full-bloom-origin",
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "Where this all came from",
+        "heading": "You built this, really.",
+        "text": "<p>Over the past year we asked you properly. Thousands of you, in your reviews and your messages, you told us what actually matters: fuller hair, the length you really want, feeling like yourself and walking into the room differently. The new look is a reflection of you, in your full bloom era.</p>",
+        "image": "shopify://shop_images/full-bloom-build-mobile.jpg",
+        "image_desktop": "shopify://shop_images/full-bloom-build-desktop.jpg",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "full_bloom_comparison": {
       "type": "full-bloom-comparison",
       "blocks": {
-        "new_1": { "type": "new_point", "settings": { "text": "A brighter, bolder look everywhere you see us." } },
-        "new_2": { "type": "new_point", "settings": { "text": "New packaging, landing with your next order." } },
-        "new_3": { "type": "new_point", "settings": { "text": "A name and a mark that finally mean something." } },
-        "moved_1": { "type": "not_moved_point", "settings": { "text": "100% real human hair, like always, since 2007." } },
-        "moved_2": { "type": "not_moved_point", "settings": { "text": "The same team, and the same people answering." } },
-        "moved_3": { "type": "not_moved_point", "settings": { "text": "Free UK returns and the same fuss over your order." } }
+        "new_1": {
+          "type": "new_point",
+          "settings": {
+            "text": "A brighter, bolder look everywhere you see us."
+          }
+        },
+        "new_2": {
+          "type": "new_point",
+          "settings": {
+            "text": "New packaging, landing with your next order."
+          }
+        },
+        "new_3": {
+          "type": "new_point",
+          "settings": {
+            "text": "A name and a mark that finally mean something."
+          }
+        },
+        "moved_1": {
+          "type": "not_moved_point",
+          "settings": {
+            "text": "100% real human hair, like always, since 2007."
+          }
+        },
+        "moved_2": {
+          "type": "not_moved_point",
+          "settings": {
+            "text": "The same team, and the same people answering."
+          }
+        },
+        "moved_3": {
+          "type": "not_moved_point",
+          "settings": {
+            "text": "Free UK returns and the same fuss over your order."
+          }
+        }
       },
-      "block_order": ["new_1", "new_2", "new_3", "moved_1", "moved_2", "moved_3"],
-      "settings": {}
+      "block_order": [
+        "new_1",
+        "new_2",
+        "new_3",
+        "moved_1",
+        "moved_2",
+        "moved_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "New look. Same everything that counts.",
+        "new_heading": "What is new",
+        "moved_heading": "What has not moved",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "full_bloom_cta": {
       "type": "full-bloom-cta",
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "eyebrow": "#fullbloomera",
+        "heading": "Come and see the new us.",
+        "text": "<p>Everything that leaves here now is the new Cliphair. The reveal, first looks and early drops all landed in the Cliphair Collective before anywhere else. Sign up now, collect points, get exclusive offers and much more.</p>",
+        "button_1_label": "Join the Collective",
+        "button_1_link": "shopify://pages/rewards",
+        "button_2_label": "",
+        "button_2_link": "",
+        "fine_print": "Same hair, new everything else",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
