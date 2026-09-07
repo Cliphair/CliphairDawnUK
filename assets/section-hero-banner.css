@@ -161,3 +161,7 @@
     animation: none !important;
   }
 }
+
+.hero-slideshow__countdown-container:has(>.hidden) .hero-slideshow__countdown-label{
+  display:none;
+}
