@@ -1,0 +1,324 @@
+{{ 'component-full-bloom.css' | asset_url | stylesheet_tag }}
+{{ 'section-full-bloom-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div id="FullBloomHero-{{ section.id }}" class="color-{{ section.settings.color_scheme }} gradient">
+  {% comment %}
+    <nav class="full-bloom-nav full-bloom-shell" aria-label="Main">
+      <div class="full-bloom-nav__mobile-bar large-up-hide">
+        <span class="full-bloom-nav__burger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <a href="{{ routes.root_url }}" class="full-bloom-wordmark full-bloom-nav__logo">
+          {{ section.settings.logo_text | default: 'Cliphair' }}
+        </a>
+        <a href="{{ routes.account_url }}" class="full-bloom-nav__account" aria-label="{{ 'customer.account.title' | t }}"></a>
+      </div>
+
+      <div class="full-bloom-nav__desktop-bar small-hide medium-hide">
+        <a href="{{ routes.root_url }}" class="full-bloom-wordmark full-bloom-nav__logo">
+          {{ section.settings.logo_text | default: 'Cliphair' }}
+        </a>
+        <div class="full-bloom-nav__links">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'nav_link' -%}
+              <a href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+                {{- block.settings.label -}}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if section.settings.nav_button_label != blank -%}
+            <a
+              href="{{ section.settings.nav_button_link | default: '#' }}"
+              class="full-bloom-btn full-bloom-btn--charcoal full-bloom-nav__cta"
+            >
+              {{- section.settings.nav_button_label -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </nav>
+  {% endcomment %}
+
+  <div class="full-bloom-hero full-bloom-shell section-{{ section.id }}-padding">
+    <div class="full-bloom-hero__grid page-width">
+      <div class="full-bloom-hero__content">
+        {%- if section.settings.logo != blank -%}
+          {%- assign logo_alt = section.settings.logo.alt | escape -%}
+          <div class="full-bloom-hero__logo">
+            {{
+              section.settings.logo
+              | image_url: width: 300
+              | image_tag:
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '150, 200, 300',
+                alt: logo_alt,
+                width: section.settings.logo.width,
+                height: section.settings.logo.height
+            }}
+          </div>
+        {%- endif -%}
+        <div style="position: relative;">
+          <h1 class="full-bloom-hero__heading chocolatier">
+            {{ section.settings.heading_line_1 -}}
+            <br>
+            {{ section.settings.heading_line_2 }}
+          </h1>
+          <div class="full-bloom-hero__motif large-up-hide" aria-hidden="true">
+            <img
+              src="{{ 'full-bloom-motif-coral.svg' | asset_url }}"
+              loading="eager"
+              fetchpriority="high"
+              alt=""
+              width="447"
+              height="465"
+            >
+          </div>
+        </div>
+
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="full-bloom-eyebrow full-bloom-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="full-bloom-hero__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        <div class="full-bloom-hero__buttons">
+          {%- if section.settings.button_1_label != blank -%}
+            {%- assign hero_video_button_href = section.settings.button_1_link | default: '#full-bloom-video' -%}
+            <a
+              href="{{ hero_video_button_href }}"
+              class="full-bloom-btn full-bloom-btn--coral full-bloom-btn--full"
+              data-full-bloom-play-video
+            >
+              {{- section.settings.button_1_label -}}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.button_2_label != blank -%}
+            <a
+              {% if section.settings.button_2_link != blank %}
+                href="{{ section.settings.button_2_link }}"
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+              class="full-bloom-btn full-bloom-btn--outline-charcoal full-bloom-btn--full"
+            >
+              {{- section.settings.button_2_label -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="full-bloom-hero__motif small-hide medium-hide" aria-hidden="true">
+        <img
+          src="{{ 'full-bloom-motif-coral.svg' | asset_url }}"
+          loading="eager"
+          fetchpriority="high"
+          alt=""
+          width="447"
+          height="465"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var trigger = document.querySelector('#FullBloomHero-{{ section.id }} [data-full-bloom-play-video]');
+    if (!trigger) {
+      console.warn('[full-bloom-hero] no element with [data-full-bloom-play-video] found inside #FullBloomHero-{{ section.id }}');
+      return;
+    }
+
+    trigger.addEventListener('click', function () {
+      var href = trigger.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') {
+        console.warn('[full-bloom-hero] button href is not an anchor, skipping video trigger:', href);
+        return;
+      }
+
+      var target = document.querySelector(href);
+      if (!target) {
+        console.warn('[full-bloom-hero] no element found matching', href);
+        return;
+      }
+
+      var posterButton = target.querySelector('.deferred-media__poster');
+      if (!posterButton) {
+        console.warn('[full-bloom-hero] target found but no .deferred-media__poster inside it (no video set on that section?)', target);
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        posterButton.click();
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.full-bloom-hero.name",
+  "tag": "section",
+  "class": "section section-full-bloom-hero",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "t:sections.full-bloom-hero.settings.logo_text.label",
+      "default": "Cliphair"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.full-bloom-hero.settings.header__nav.content"
+    },
+    {
+      "type": "text",
+      "id": "nav_button_label",
+      "label": "t:sections.full-bloom-hero.settings.nav_button_label.label",
+      "default": "Shop the new look"
+    },
+    {
+      "type": "url",
+      "id": "nav_button_link",
+      "label": "t:sections.full-bloom-hero.settings.nav_button_link.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.full-bloom-hero.settings.header__content.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.full-bloom-hero.settings.logo.label",
+      "info": "t:sections.full-bloom-hero.settings.logo.info"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "t:sections.full-bloom-hero.settings.heading_line_1.label",
+      "default": "In full"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "t:sections.full-bloom-hero.settings.heading_line_2.label",
+      "default": "bloom."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.full-bloom-hero.settings.eyebrow.label",
+      "default": "Reintroducing Cliphair · #fullbloomera"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.full-bloom-hero.settings.text.label",
+      "default": "<p>We have had a glow-up. Same hair since 2007, same team picking up the phone, same fuss over getting it right for you. What is new is the look, and it has been a long time coming. Come and meet the new us.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.full-bloom-hero.settings.header__buttons.content"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "t:sections.full-bloom-hero.settings.button_1_label.label",
+      "default": "Watch the reveal"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "t:sections.full-bloom-hero.settings.button_1_link.label",
+      "info": "t:sections.full-bloom-hero.settings.button_1_link.info"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "t:sections.full-bloom-hero.settings.button_2_label.label",
+      "default": "Shop the new look"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "t:sections.full-bloom-hero.settings.button_2_link.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nav_link",
+      "name": "t:sections.full-bloom-hero.blocks.nav_link.name",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:sections.full-bloom-hero.blocks.nav_link.settings.label.label",
+          "default": "Shop"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.full-bloom-hero.blocks.nav_link.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.full-bloom-hero.presets.name",
+      "blocks": [
+        { "type": "nav_link", "settings": { "label": "Shop" } },
+        { "type": "nav_link", "settings": { "label": "The Bloom" } },
+        { "type": "nav_link", "settings": { "label": "About" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
