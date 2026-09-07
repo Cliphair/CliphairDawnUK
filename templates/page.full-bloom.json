@@ -11,6 +11,9 @@
   "sections": {
     "full_bloom_hero": {
       "type": "full-bloom-hero",
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 250, 242, 229; --color-secondary-button-text: 255, 132, 125; --color-link: 255, 132, 125; --color-badge-foreground: 59, 56, 56; --color-badge-background: 250, 242, 229; --color-badge-border: 59, 56, 56; --payment-terms-background-color: rgb(250 242 229);}"
+      ],
       "settings": {
         "color_scheme": "",
         "logo_text": "Cliphair",
@@ -25,23 +28,29 @@
         "button_1_link": "",
         "button_2_label": "",
         "button_2_link": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "full_bloom_video": {
       "type": "full-bloom-video",
+      "custom_css": [
+        ".gradient {--color-background: 255, 207, 212; --gradient-background: #ffcfd4; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 242, 224; --color-button: 255, 242, 224; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 255, 207, 212; --color-secondary-button-text: 255, 242, 224; --color-link: 255, 242, 224; --color-badge-foreground: 59, 56, 56; --color-badge-background: 255, 207, 212; --color-badge-border: 59, 56, 56; --payment-terms-background-color: rgb(255 207 212);}"
+      ],
       "settings": {
         "color_scheme": "",
         "heading": "Meet the new us.",
         "eyebrow": "Nineteen years in the making",
         "video": "shopify://files/videos/full-bloom-video-25.mp4",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "full_bloom_story": {
       "type": "full-bloom-story",
+      "custom_css": [
+        ".gradient {--color-background: 128, 110, 176; --gradient-background: #806eb0; --color-main-headers: 250, 242, 229; --color-foreground: 250, 242, 229; --color-shadow: 250, 242, 229; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 128, 110, 176; --color-secondary-button-text: 250, 242, 229; --color-link: 250, 242, 229;}"
+      ],
       "settings": {
         "color_scheme": "",
         "eyebrow": "FROM BUD TO BLOOM",
@@ -50,12 +59,15 @@
         "tagline": "Be the you you want to be.",
         "image": "shopify://shop_images/full-bloom-sequence-mobile.png",
         "image_desktop": "shopify://shop_images/full-bloom-sequence-desktop.png",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "full_bloom_origin": {
       "type": "full-bloom-origin",
+      "custom_css": [
+        ".gradient {--color-background: 250, 242, 229; --gradient-background: #faf2e5; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 255, 132, 125; --color-button: 255, 132, 125; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 250, 242, 229; --color-secondary-button-text: 255, 132, 125; --color-link: 255, 132, 125; --color-badge-foreground: 59, 56, 56; --color-badge-background: 250, 242, 229; --color-badge-border: 59, 56, 56; --payment-terms-background-color: rgb(250 242 229);}"
+      ],
       "settings": {
         "color_scheme": "",
         "eyebrow": "Where this all came from",
@@ -63,8 +75,18 @@
         "text": "<p>Over the past year we asked you properly. Thousands of you, in your reviews and your messages, you told us what actually matters: fuller hair, the length you really want, feeling like yourself and walking into the room differently. The new look is a reflection of you, in your full bloom era.</p>",
         "image": "shopify://shop_images/full-bloom-build-mobile.jpg",
         "image_desktop": "shopify://shop_images/full-bloom-build-desktop.jpg",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_liquid_QhRQLM": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.full-bloom-comparison__card.color-purple-main{\n    --color-background: 128, 110, 176;\n    --gradient-background: #806eb0;\n    --color-main-headers: 250, 242, 229;\n    --color-foreground: 250, 242, 229;\n    --color-shadow: 250, 242, 229;\n    --color-button: 250, 242, 229;\n    --color-button-text: 59, 56, 56;\n    --color-nav-button: 217, 217, 217;\n    --color-secondary-button: 128, 110, 176;\n    --color-secondary-button-text: 250, 242, 229;\n    --color-link: 250, 242, 229;\n    --color-badge-foreground: 250, 242, 229;\n    --color-badge-background: 128, 110, 176;\n    --color-badge-border: 250, 242, 229;\n    --payment-terms-background-color: rgb(128 110 176);\n}\n\n.full-bloom-comparison__card.color-green-main{\n    --color-background: 0, 188, 121;\n    --gradient-background: #00bc79;\n    --color-main-headers: 59, 56, 56;\n    --color-foreground: 59, 56, 56;\n    --color-shadow: 250, 242, 229;\n    --color-button: 250, 242, 229;\n    --color-button-text: 59, 56, 56;\n    --color-nav-button: 217, 217, 217;\n    --color-secondary-button: 0, 188, 121;\n    --color-secondary-button-text: 250, 242, 229;\n    --color-link: 250, 242, 229;\n    --color-badge-foreground: 59, 56, 56;\n    --color-badge-background: 0, 188, 121;\n    --color-badge-border: 59, 56, 56;\n    --payment-terms-background-color: rgb(0 188 121);\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "full_bloom_comparison": {
@@ -115,17 +137,24 @@
         "moved_2",
         "moved_3"
       ],
+      "custom_css": [
+        ".gradient {--color-background: 193, 214, 231; --gradient-background: #c1d6e7; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-shadow: 250, 242, 229; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56; --color-nav-button: 217, 217, 217; --color-secondary-button: 193, 214, 231; --color-secondary-button-text: 250, 242, 229; --color-link: 250, 242, 229;}"
+      ],
       "settings": {
         "color_scheme": "",
         "heading": "New look. Same everything that counts.",
         "new_heading": "What is new",
         "moved_heading": "What has not moved",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "full_bloom_cta": {
       "type": "full-bloom-cta",
+      "custom_css": [
+        ".gradient {--color-background: 255, 132, 125; --gradient-background: #ff847d; --color-main-headers: 59, 56, 56; --color-foreground: 59, 56, 56; --color-button: 250, 242, 229; --color-button-text: 59, 56, 56;}",
+        ".button {--buttons-radius: 100px; --buttons-radius-outset: 100px;}"
+      ],
       "settings": {
         "color_scheme": "",
         "eyebrow": "#fullbloomera",
@@ -136,7 +165,7 @@
         "button_2_label": "",
         "button_2_link": "",
         "fine_print": "Same hair, new everything else",
-        "padding_top": 32,
+        "padding_top": 40,
         "padding_bottom": 32
       }
     }
@@ -146,6 +175,7 @@
     "full_bloom_video",
     "full_bloom_story",
     "full_bloom_origin",
+    "custom_liquid_QhRQLM",
     "full_bloom_comparison",
     "full_bloom_cta"
   ]
