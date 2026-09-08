@@ -363,9 +363,7 @@
   margin: 0;
   padding: 0;
   aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid;
+  object-fit: contain;
 }
 
 .author-card__name {
